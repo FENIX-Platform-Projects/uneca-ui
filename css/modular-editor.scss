@@ -1,4 +1,6 @@
 ﻿@import 'fx-mixins';
+@import 'fx-colors';
+
 
 /*========= HEADER =========*/
 .fx-editor-header {
@@ -203,6 +205,15 @@
     margin-right: 0;
 }
 
+#metadataEditorContainer{
+  .fx-editor-menu-info{
+    color: $fenix-text;
+  }
+
+}
+
+
+
 
 /** avoid dotted lines when clicking on button**/
 input[type="button"] {
@@ -300,15 +311,29 @@ input[type=text]::-ms-clear { display: none; }
 }
 
 
+///* Adjust feedback icon position */
+//#fx-editor-form .form-control-feedback {
+//    top: 0px;
+//    right: 15px;
+//}
+//#fx-editor-form .selectContainer .form-control-feedback {
+//    top: 0px;
+//    right: 25px;
+//}
+
+/*========== FORM VALIDATOR ICON POSITION ========== */
+
 /* Adjust feedback icon position */
 #fx-editor-form .form-control-feedback {
-    top: 0px;
-    right: 15px;
+  top: 0px;
+  right: -15px;
+  /* right: 15px;*/
 }
-#fx-editor-form .selectContainer .form-control-feedback {
+/**#fx-editor-form .selectContainer .form-control-feedback {
     top: 0px;
-    right: 25px;
-}
+    right: -15px;
+} **/
+
 
 /* date picker */
 .datepicker { font-size: 11px; }
