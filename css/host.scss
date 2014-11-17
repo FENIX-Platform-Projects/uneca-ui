@@ -21,6 +21,19 @@ body{
   border-color: $fenix-light-bg;
 }
 
+.navbar-brand {
+  background-image: url("img/uneca-ico.svg") !important; /* To be reviewed */
+  width: 310px !important; /* To be reviewed */
+  height: 50px !important; /* To be reviewed */
+  background-size: 100% 100% !important; /* To be reviewed */
+  background-position: 0 0 !important; /* To be reviewed */
+  background-color: $fx-cool-blue;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
+  background-color: $fx-cool-blue;
+}
+
 .navbar {
   margin-bottom: 0;
 }
@@ -32,6 +45,7 @@ body{
   h1{
     text-align: center;
     font-size: 38px;
+    font-weight: 100;
   }
 
   p{
@@ -158,3 +172,56 @@ body{
     padding: 0;
   }
 }
+
+
+
+/* //////////////////// THEMING ///////////////////// */
+
+
+/*///////////////* ANALYSIS */
+
+/*  CATALOG THEMING */
+
+#fx-catalog-submit-btn{
+  background-color: $fx-cool-blue;
+}
+
+.fx-catalog-resume-title{
+  color: $fx-cool-blue;
+}
+
+.fx-resume-item-selected{
+
+  .fx-resume-module-title{
+
+    em{
+      color: $fx-cool-blue;
+    }
+
+  }
+
+}
+
+
+
+/*///////////////* DATA EDIT */
+
+#metadataEditorContainer #fx-editor-form .panel-heading{
+  color: $fx-cool-blue;
+}
+
+#metadataEditorContainer #fx-editor-form .btn-success{
+  background-color: $fx-cool-blue;
+}
+
+#metadataEditorContainer{
+  .panel-title{
+    color: $fx-cool-blue;
+  }
+
+}
+
+
+
+
+

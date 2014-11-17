@@ -15,11 +15,27 @@ body {
 /* Menu Background color */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   background-color: #f8f8f8;
-  color: #0076ff; }
+  color: #005295; }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #666666;
   border-color: #f8f8f8; }
+
+.navbar-brand {
+  background-image: url("img/uneca-ico.svg") !important;
+  /* To be reviewed */
+  width: 310px !important;
+  /* To be reviewed */
+  height: 50px !important;
+  /* To be reviewed */
+  background-size: 100% 100% !important;
+  /* To be reviewed */
+  background-position: 0 0 !important;
+  /* To be reviewed */
+  background-color: #005295; }
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  background-color: #005295; }
 
 .navbar {
   margin-bottom: 0; }
@@ -29,7 +45,8 @@ body {
   border: none; }
   .page-header h1 {
     text-align: center;
-    font-size: 38px; }
+    font-size: 38px;
+    font-weight: 100; }
   .page-header p {
     text-align: center; }
 
@@ -80,17 +97,17 @@ body {
       margin-left: 33px; }
 
 .btn {
-  background-color: #0076ff;
+  background-color: #005295;
   color: white;
   border-color: transparent; }
   .btn:hover {
     background-color: transparent;
-    color: #0076ff;
-    border-color: #0076ff; }
+    color: #005295;
+    border-color: #005295; }
   .btn:active {
     background-color: transparent;
-    color: #0076ff;
-    border-color: #0076ff;
+    color: #005295;
+    border-color: #005295;
     -webkit-box-shadow: 0 0 0 white;
     -moz-box-shadow: 0 0 0 white;
     box-shadow: 0 0 0 white; }
@@ -128,3 +145,25 @@ body {
 
 #DSDEditorContainer .obj-box {
   padding: 0; }
+
+/* //////////////////// THEMING ///////////////////// */
+/*///////////////* ANALYSIS */
+/*  CATALOG THEMING */
+#fx-catalog-submit-btn {
+  background-color: #005295; }
+
+.fx-catalog-resume-title {
+  color: #005295; }
+
+.fx-resume-item-selected .fx-resume-module-title em {
+  color: #005295; }
+
+/*///////////////* DATA EDIT */
+#metadataEditorContainer #fx-editor-form .panel-heading {
+  color: #005295; }
+
+#metadataEditorContainer #fx-editor-form .btn-success {
+  background-color: #005295; }
+
+#metadataEditorContainer .panel-title {
+  color: #005295; }
