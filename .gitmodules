@@ -13,3 +13,6 @@
 [submodule "submodules/fenix-ui-analysis"]
 	path = submodules/fenix-ui-analysis
 	url = https://github.com/FENIX-Platform/fenix-ui-analysis.git
+[submodule "submodules/fenix-ui-common"]
+	path = submodules/fenix-ui-common
+	url = https://github.com/FENIX-Platform/fenix-ui-common.git
