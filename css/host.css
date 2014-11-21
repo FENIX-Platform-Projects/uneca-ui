@@ -1,18 +1,4 @@
 /* Fenix Utils*/
-/* Fenix - Utilities */
-/* Fenix - Variables */
-/* Layout */
-/* Typography */
-/* Fenix Colors */
-/* Specials */
-/* Fenix - Functions */
-/* Fenix - Mixins */
-/* CSS TRANSFORMS */
-/* CSS TRANSITION */
-/* 3D flow */
-/* Blurred */
-/* Color Mixins */
-/* Animations */
 /* Pages */
 /* Fenix - Home Page */
 /* HOMEPAGE */
@@ -123,7 +109,7 @@ Using the normal root/css/host.css, is impossible to override the logo without "
   height: 50px  !important;
   background-size: 100% 100%  !important;
   background-position: 0 0  !important;
-  background-color: #005295 !important; }
+  background-color: red !important; }
 
 /* //////////////////// THEMING ///////////////////// */
 /*///////////////* ANALYSIS */
