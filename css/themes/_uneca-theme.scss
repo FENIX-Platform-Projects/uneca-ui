@@ -1,3 +1,10 @@
+/* Base */
+// It could be possible to import the fenix-common-ui style and override the variables
+
+body {
+  //background-image: url(img/bg-body.png);
+}
+
 
 /* Typography */
 h1, h2, h3, h4{
@@ -17,6 +24,8 @@ Using the normal root/css/host.css, is impossible to override the logo without "
   background-position: 0 0  !important;
   background-color:$fx-cool-blue !important;
 }
+
+
 
 /* //////////////////// THEMING ///////////////////// */
 
@@ -47,4 +56,3 @@ Using the normal root/css/host.css, is impossible to override the logo without "
 }
 
 #metadataEditorContainer .panel-title{  }
-
