@@ -69,7 +69,8 @@ define(['module'], function (module) {
                                         {
                                             subjects: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Subjects.json",
                                             datatypes: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Datatypes.json",
-                                            codelists: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Codelists_UNECA.json",
+                                            //codelists: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Codelists_UNECA.json",
+                                            codelists: "config/submodules/DSDEditor/CodelistsUNECA.json",
                                             servicesUrls: servicesUrls
                                         }, function () {
                                             $('#DSDEditorContainer').hide();
@@ -88,6 +89,9 @@ define(['module'], function (module) {
                                 });
 
                                 $('body').on("columnEditDone.DSDEditor.fenix", function (e, p) {
+                                    var valRes = E.validate();
+                                    if (valRes && valRes.length > 0)
+                                        return;
                                     var newDSD = { "columns": p.payload };
                                     E.updateDSD(uid, version, newDSD, datasource, contextSys);
 
@@ -108,7 +112,6 @@ define(['module'], function (module) {
                                 var version = "";
                                 window.setTimeout(function () {
                                     $('#DataEditorContainer').hide();
-
                                 }, 2000);
 
 
@@ -177,7 +180,9 @@ define(['module'], function (module) {
 
 
                                     DE.updateData(uid, null, data, function () {
+                                        console.log("rel1");
                                         DE.updateDSD(uid, null, meta.dsd, datasource, contextSys, function () {
+                                            console.log("rel2");
                                             window.location.reload();
                                         });
                                     });
