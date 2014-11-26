@@ -1,9 +1,6 @@
 [submodule "submodules/fenix-ui-catalog"]
 	path = submodules/fenix-ui-catalog
 	url = https://github.com/FENIX-Platform/fenix-ui-catalog.git
-[submodule "submodules/fenix-ui-DSDEditor"]
-	path = submodules/fenix-ui-DSDEditor
-	url = https://github.com/FENIX-Platform/fenix-ui-DSDEditor.git
 [submodule "submodules/fenix-ui-metadata-editor"]
 	path = submodules/fenix-ui-metadata-editor
 	url = https://github.com/FENIX-Platform/fenix-ui-metadata-editor.git
@@ -19,3 +16,6 @@
 [submodule "submodules/fenix-ui-dataUpload"]
 	path = submodules/fenix-ui-dataUpload
 	url = https://github.com/FENIX-Platform/fenix-ui-dataUpload.git
+[submodule "submodules/fenix-ui-olap"]
+	path = submodules/fenix-ui-olap
+	url = https://github.com/FENIX-Platform/fenix-ui-olap.git
