@@ -2,7 +2,11 @@
 // It could be possible to import the fenix-common-ui style and override the variables
 
 body {
-  //background-image: url(img/bg-body.png);
+  background-image: url(img/bg-body.png);
+}
+
+hr{
+  border-color: $fenix-text;
 }
 
 
