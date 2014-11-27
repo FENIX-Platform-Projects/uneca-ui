@@ -19,3 +19,6 @@
 [submodule "submodules/fenix-ui-olap"]
 	path = submodules/fenix-ui-olap
 	url = https://github.com/FENIX-Platform/fenix-ui-olap.git
+[submodule "submodules/fenix-ui-DSDEditor"]
+	path = submodules/fenix-ui-DSDEditor
+	url = ../../FENIX-Platform/fenix-ui-DSDEditor.git
