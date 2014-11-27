@@ -6,7 +6,6 @@
 /* Fenix Fonts Import */
 /* Eldorado */
 /* ELDORADO FONT STANDARD CONFIGURATION*/
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|Roboto+Condensed:400,300,700);
 @font-face {
   font-family: 'eldorado_stroke';
   src: url("/eldorado_stroke.eot"); }
@@ -60,7 +59,62 @@
 
 /* Roboto */
 /* Roboto Import */
-/* It is a CDN - Read the readme file in sources directory */
+/* Roboto Regular */
+@font-face {
+  font-family: 'Roboto';
+  src: url("base/fonts/roboto/sources/sources/roboto-reg/roboto_regular/Roboto-Regular-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_regular/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-reg/roboto_regular/Roboto-Regular-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-reg/roboto_regular/Roboto-Regular-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-reg/roboto_regular/Roboto-Regular-webfont.svg#RobotoRegular") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto';
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_bold/Roboto-Bold-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_bold/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-reg/roboto_bold/Roboto-Bold-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-reg/roboto_bold/Roboto-Bold-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-reg/roboto_bold/Roboto-Bold-webfont.svg#RobotoBold") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto';
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_thin/Roboto-Thin-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_thin/Roboto-Thin-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-reg/roboto_thin/Roboto-Thin-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-reg/roboto_thin/Roboto-Thin-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-reg/roboto_thin/Roboto-Thin-webfont.svg#RobotoThin") format("svg");
+  font-weight: 100;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto';
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_light/Roboto-Light-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_light/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-reg/roboto_light/Roboto-Light-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-reg/roboto_light/Roboto-Light-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-reg/roboto_light/Roboto-Light-webfont.svg#RobotoLight") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto';
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_medium/Roboto-Medium-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_medium/Roboto-Medium-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-reg/roboto_medium/Roboto-Medium-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-reg/roboto_medium/Roboto-Medium-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-reg/roboto_medium/Roboto-Medium-webfont.svg#RobotoMedium") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto';
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_black/Roboto-Black-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-reg/roboto_black/Roboto-Black-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-reg/roboto_black/Roboto-Black-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-reg/roboto_black/Roboto-Black-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-reg/roboto_black/Roboto-Black-webfont.svg#RobotoBold") format("svg");
+  font-weight: 900;
+  font-style: normal; }
+/* Roboto Condensed */
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url("base/fonts/roboto/sources/roboto-condensed/roboto_condensed/RobotoCondensed-Regular-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-condensed/roboto_condensed/RobotoCondensed-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-condensed/roboto_condensed/RobotoCondensed-Regular-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-condensed/roboto_condensed/RobotoCondensed-Regular-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-condensed/roboto_condensed/RobotoCondensed-Regular-webfont.svg#RobotoRegular") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url("base/fonts/roboto/sources/roboto-condensed/roboto_lightcondensed/RobotoCondensed-Light-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-condensed/roboto_lightcondensed/RobotoCondensed-Light-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-condensed/roboto_lightcondensed/RobotoCondensed-Light-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-condensed/roboto_lightcondensed/RobotoCondensed-Light-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-condensed/roboto_lightcondensed/RobotoCondensed-Light-webfont.svg#RobotoRegular") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url("base/fonts/roboto/sources/roboto-condensed/roboto_boldcondensed/RobotoCondensed-Bold-webfont.eot");
+  src: url("base/fonts/roboto/sources/roboto-condensed/roboto_boldcondensed/RobotoCondensed-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("base/fonts/roboto/sources/roboto-condensed/roboto_boldcondensed/RobotoCondensed-Bold-webfont.woff") format("woff"), url("base/fonts/roboto/sources/roboto-condensed/roboto_boldcondensed/RobotoCondensed-Bold-webfont.ttf") format("truetype"), url("base/fonts/roboto/sources/roboto-condensed/roboto_boldcondensed/RobotoCondensed-Bold-webfont.svg#RobotoRegular") format("svg");
+  font-weight: 700;
+  font-style: normal; }
 /* Font Awesome */
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -492,7 +546,8 @@ legend {
   top: 7px;
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -15px 0;
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -15px 0;
+  background-size: 150px 30px;
   cursor: pointer; }
 
 .fx-catalog-modular-form-close-btn {
@@ -501,7 +556,8 @@ legend {
   right: 7px;
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -45px 0;
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -45px 0;
+  background-size: 150px 30px;
   cursor: pointer; }
 
 .fx-catalog-modular-form-resize-btn {
@@ -510,7 +566,8 @@ legend {
   right: 28px;
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -30px 0;
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -30px 0;
+  background-size: 150px 30px;
   cursor: pointer; }
 
 .fx-catalog-modular-form-label {
@@ -647,38 +704,45 @@ div[data-module="region"] .fx-catalog-modular-form-content {
 .fx-panel-plus {
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -90px 0; }
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -90px 0;
+  background-size: 150px 30px; }
 
 .fx-panel-minus {
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -90px -15px; }
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -90px -15px;
+  background-size: 150px 30px; }
 
 .fx-panel-info {
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat 0 0;
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat 0 0;
+  background-size: 150px 30px;
   float: right; }
 
 .fx-panel-required {
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -15px -15px; }
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -15px -15px;
+  background-size: 150px 30px; }
 
 .fx-panel-ok {
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -45px -15px; }
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -45px -15px;
+  background-size: 150px 30px; }
 
 .fx-panel-remove {
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -60px -15px; }
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -60px -15px;
+  background-size: 150px 30px; }
 
 .fx-panel-refresh {
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -75px -15px; }
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -75px -15px;
+  background-size: 150px 30px; }
 
 /* Fenix Popover Component */
 .popover {
@@ -755,7 +819,8 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   display: inline-block;
   height: 15px;
   width: 15px;
-  background: url("img/fenix-catalog-sprite-small.png") no-repeat -45px 0;
+  background: url("img/fenix-catalog-sprite-small.svg") no-repeat -45px 0;
+  background-size: 150px 30px;
   cursor: pointer;
   position: relative;
   top: 3px; }
@@ -903,7 +968,8 @@ div[data-module="region"] .fx-catalog-modular-form-content {
     position: absolute;
     height: 15px;
     width: 15px;
-    background: url("img/fenix-catalog-sprite-small.png") no-repeat -15px 0;
+    background: url("img/fenix-catalog-sprite-small.svg") no-repeat -15px 0;
+    background-size: 150px 30px;
     top: 3px;
     left: 12px; }
 
@@ -920,6 +986,9 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   font-size: 24px; }
 
 /* Fenix - Widgets Stack Component */
+#fx-widgets-stack {
+  z-index: 2 !important; }
+
 #fx-sessionstore-base {
   overflow-x: hidden;
   position: absolute;
@@ -964,7 +1033,8 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   padding: 5px 10px; }
   .fx-closepanel-container .fx-widget-icons {
     color: #005295;
-    margin-right: 5px; }
+    margin-right: 5px;
+    cursor: pointer; }
   .fx-closepanel-container #fx-ws-close-btn {
     text-transform: uppercase;
     color: #005295;
@@ -1065,14 +1135,14 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   color: #666666;
   text-shadow: none;
   border-color: transparent;
-  background-color: #7cc4ff;
-  background-image: -moz-linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: -ms-linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: -o-linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: -webkit-gradient(linear, center top, center bottom, from(#7cc4ff), to(#7cc4ff));
-  background-image: -webkit-linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: linear-gradient(to bottom, #7cc4ff, #7cc4ff);
+  background-color: #d9eeff;
+  background-image: -moz-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -ms-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -o-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#d9eeff), to(#d9eeff));
+  background-image: -webkit-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: linear-gradient(to bottom, #d9eeff, #d9eeff);
   -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-background-clip: padding-box;
@@ -1139,14 +1209,14 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   color: #666666;
   text-shadow: none;
   border-color: transparent;
-  background-color: #7cc4ff;
-  background-image: -moz-linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: -ms-linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: -o-linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: -webkit-gradient(linear, center top, center bottom, from(#7cc4ff), to(#7cc4ff));
-  background-image: -webkit-linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: linear-gradient(top, #7cc4ff, #7cc4ff);
-  background-image: linear-gradient(to bottom, #7cc4ff, #7cc4ff);
+  background-color: #d9eeff;
+  background-image: -moz-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -ms-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -o-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#d9eeff), to(#d9eeff));
+  background-image: -webkit-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: linear-gradient(to bottom, #d9eeff, #d9eeff);
   -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-background-clip: padding-box;
@@ -1155,15 +1225,15 @@ div[data-module="region"] .fx-catalog-modular-form-content {
 .jqx-fill-state-pressed, .jqx-widget .jqx-grid-cell-selected {
   color: #666666;
   text-shadow: none;
-  border-color: #62b8ff;
-  background-color: #62b8ff;
-  background-image: -moz-linear-gradient(top, #62b8ff, #62b8ff);
-  background-image: -ms-linear-gradient(top, #62b8ff, #62b8ff);
-  background-image: -o-linear-gradient(top, #62b8ff, #62b8ff);
-  background-image: -webkit-gradient(linear, center top, center bottom, from(#62b8ff), to(#62b8ff));
-  background-image: -webkit-linear-gradient(top, #62b8ff, #62b8ff);
-  background-image: linear-gradient(top, #62b8ff, #62b8ff);
-  background-image: linear-gradient(to bottom, #62b8ff, #62b8ff);
+  border-color: #d9eeff;
+  background-color: #d9eeff;
+  background-image: -moz-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -ms-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -o-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#d9eeff), to(#d9eeff));
+  background-image: -webkit-linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: linear-gradient(top, #d9eeff, #d9eeff);
+  background-image: linear-gradient(to bottom, #d9eeff, #d9eeff);
   -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-background-clip: padding-box;
@@ -1467,11 +1537,11 @@ div[data-module="region"] .fx-catalog-modular-form-content {
 
 .jstree-default .jstree-wholerow-clicked {
   background: none;
-  background-color: #62b8ff; }
+  background-color: #d9eeff; }
 
 .jstree-default .jstree-wholerow-hovered {
   background: none;
-  background-color: #7cc4ff; }
+  background-color: #d9eeff; }
 
 /* Pages */
 /* Fenix - Home Page */
