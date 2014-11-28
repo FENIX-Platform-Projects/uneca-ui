@@ -70,6 +70,7 @@ define(['module'], function (module) {
                                             subjects: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Subjects.json",
                                             datatypes: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Datatypes.json",
                                             //codelists: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Codelists_UNECA.json",
+
                                             codelists: "config/submodules/DSDEditor/CodelistsUNECA.json",
                                             servicesUrls: servicesUrls
                                         }, function () {

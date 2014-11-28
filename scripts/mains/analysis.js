@@ -44,6 +44,9 @@ require([
 
                 new Analysis().init({
                     catalog: new Catalog({
+                        catalog: {
+                            BLANK_FILTER: 'config/submodules/catalog/uneca-catalog-blank-filter.json'
+                        },
                         results: {
                             actions: {
                                 EDIT_METADATA: { }
