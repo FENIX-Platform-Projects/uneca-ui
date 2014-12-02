@@ -154,6 +154,7 @@
 
     if (getURLParameter("uid") != null && getURLParameter("version") == null) {
         sourceValues = {
+            "urlTest": "http://exldvsdmxreg1.ext.fao.org:7788/v2/msd/resources/metadata/uid/" + getURLParameter("uid") + "?full=true",
             "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/metadata/uid/" + getURLParameter("uid") + "?full=true",
             "type": "get"
         };
@@ -161,6 +162,7 @@
 
     if (getURLParameter("version") != null && getURLParameter("uid") != null) {
         sourceValues = {
+            "urlTest": "http://exldvsdmxreg1.ext.fao.org:7788/v2/msd/resources/metadata/" + getURLParameter("uid") + "/" + getURLParameter("version") + "?full=true",
             "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/metadata/" + getURLParameter("uid") + "/" + getURLParameter("version") + "?full=true",
             "type": "get"
         };
