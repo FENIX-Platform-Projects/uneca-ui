@@ -38,6 +38,13 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="css/icons/fx-favicon.ico">
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"/>
+
+    <script>
+        $('#copy').click(function(event){
+            e.preventDefault();
+        } );
+    </script>
 </head>
 <body>
 
@@ -52,6 +59,38 @@
         </div>
     </div>
 </div>
+ <div class="row fx-editor-data-entry-container">
+  <div><br/></div>
+<!-- Nav bar -->
+<div class="col-xs-12" id="fx-editor-navbar">
+ <div class="btn-toolbar">
+     <button type="button" onclick="exitMetadata()"  class="btn btn-primary exit-btn">
+         Close
+     </button>
+     <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+         Copy Metadata <span class="caret"></span>
+     </button>
+     <div class="dropdown-menu" >
+         <div class="col-sm-12">
+             <div class="col-sm-12">
+                 Copy the metadata of a resource
+             </div>
+             <div class="col-sm-12">
+                 <input type="text" placeholder="Enter Resource Identification Code" onclick="return false;" class="form-control input-sm" id="resourceUid" />
+             </div>
+             <br/>
+             <div class="col-sm-12">
+                 <input type="text" placeholder="Enter Resource Version (if applicable)" onclick="return false;" class="form-control input-sm" id="resourceVersion" />
+             </div>
+             <div class="col-sm-12">
+                 <button type="submit" class="btn btn-success btn-sm copy-btn">Load</button>
+             </div>
+
+         </div>
+     </div>
+ </div>
+ </div>
+
 
 
     <button id="debug_skipMeta" type="button" style="display:none">ff</button>
@@ -102,6 +141,23 @@
 
     var sourceValues = null, resourceTypeValue = "dataset", readOnlyValue = false;
 
+    $('.dropdown-menu input').click(function(e) {
+        e.stopPropagation(); //This will prevent the event from bubbling up and close the dropdown when you type/click on text boxes.
+    });
+
+    $('.copy-btn').click(function(event){
+        event.preventDefault();
+
+        var uid = document.getElementById('resourceUid');
+        var version = document.getElementById('resourceVersion');
+
+
+        // Create the event
+        var event = new CustomEvent("fx.editor.metadata.copy", {"detail": { "version": version.value, "uid": uid.value }});
+        // Dispatch/Trigger/Fire the event
+        document.body.dispatchEvent(event);
+    } );
+
     function getURLParameter(sParam) {
         var sPageURL = window.location.search.substring(1);
         var sURLVariables = sPageURL.split('&');
@@ -124,6 +180,28 @@
         }
     }
 
+    function exitMetadata(){
+        // Create the event
+        var event = new CustomEvent("fx.editor.metadata.exit", {});
+       // Dispatch/Trigger/Fire the event
+        document.body.dispatchEvent(event);
+
+    }
+
+
+
+    function copyMetadata(){
+        var uid = document.getElementById('resourceUid');
+        var version = document.getElementById('resourceVersion');
+
+
+        // Create the event
+        var event = new CustomEvent("fx.editor.metadata.copy", {"detail": { "version": version.value, "uid": uid.value }});
+        // Dispatch/Trigger/Fire the event
+        document.body.dispatchEvent(event);
+
+    }
+
     //Host Event Listener: Listening for when the Metadata Editor's 'Save & Close' button action has finished its final action
     document.body.addEventListener("fx.editor.finish", function (e) {
         console.log("=== LISTENER  ====");
@@ -138,6 +216,7 @@
 
         console.log(e.detail.data);
     }, false);
+
 
     //Example Host Function that is the callback function for the Metadata Editor's onFinishClick (i.e. 'Save & Close' button)
     function launchCreateDataset(data) {
