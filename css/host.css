@@ -661,7 +661,8 @@ div[data-module="region"] .fx-catalog-modular-form-content {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
-    border-radius: 0; }
+    border-radius: 0;
+    padding: 10px; }
     .panel-group .panel-heading .panel-title {
       font: normal normal 300 16px/normal "Roboto Condensed"; }
       .panel-group .panel-heading .panel-title a {
@@ -1643,7 +1644,9 @@ div[data-module="region"] .fx-catalog-modular-form-content {
 /* Base */
 body {
   background-image: url(img/bg-body.png);
-  padding-top: 50px;
+  padding-top: 50px; }
+
+p {
   text-align: justify; }
 
 hr {
