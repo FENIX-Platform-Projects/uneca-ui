@@ -132,7 +132,9 @@
       $tag.after(' ');
 
       // add <option /> if item represents a value not present in one of the <select />'s options
-      if (self.isSelect && !$('option[value="' + encodeURIComponent(itemValue) + '"]',self.$element)[0]) {
+
+       //tm: original if (self.isSelect && !$('option[value="' + encodeURIComponent(itemValue) + '"]',self.$element)[0]) {
+       if (self.isSelect && !$('option[value="' + itemValue + '"]',self.$element)[0]) {
         var $option = $('<option selected>' + htmlEncode(itemText) + '</option>');
         $option.data('item', item);
         $option.attr('value', itemValue);
@@ -497,11 +499,11 @@
    */
   $.fn.tagsinput = function(arg1, arg2) {
     var results = [];
-      console.log('**** tagsinput START = '+this);
+      //console.log('**** tagsinput START = '+this);
 
     this.each(function() {
       var tagsinput = $(this).data('tagsinput');
-      console.log('**** tagsinput = '+tagsinput);
+     // console.log('**** tagsinput = '+tagsinput);
 
       // Initialize a new tags input
       if (!tagsinput) {
@@ -617,7 +619,7 @@
    * data-role=tagsinput
    */
   $(function() {
-    console.log("=========================== START =============================== ");
+    //console.log("=========================== START =============================== ");
     $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
   });
 })(window.jQuery);
