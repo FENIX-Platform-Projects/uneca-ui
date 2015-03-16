@@ -16,7 +16,7 @@
          },
          "target":"analysis.html",
          "label":{
-            "EN":"Analysis",
+            "EN":"Search and Analyse",
             "FR":"PI"
          }
       },
@@ -39,6 +39,16 @@
             "FR":"PI"
          }
       },
+       {
+           "attrs":{
+               "id":"profiles"
+           },
+           "target":"profiles.html",
+           "label":{
+               "EN":"Country Statistical Profiles",
+               "FR":"PI"
+           }
+       },
       {
          "attrs":{
             "id":"modules"
