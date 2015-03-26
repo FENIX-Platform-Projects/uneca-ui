@@ -1,25 +1,36 @@
-requirejs.config({
+// relative or absolute path of Components' main.js
+require([
+    '../../submodules/fenix-ui-menu/js/paths',
+    '../../submodules/fenix-ui-common/js/Compiler'
+], function (Menu, Compiler) {
 
-    "baseUrl": "scripts/lib",
+    var menuConfig = Menu;
+    menuConfig['baseUrl'] = '../../submodules/fenix-ui-menu/js';
 
-    "paths": {
-        "host": '../index/host',
-        "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min",
-        "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min",
-        "fenix-ui-topmenu": '../components/fenix-ui-topmenu'
-    },
+    Compiler.resolve([menuConfig],
+        {
+            placeholders: { "FENIX_CDN": "//fenixapps.fao.org/repository" },
+            config: {
+                paths: {
+                    "host": '../index/host',
+                    'domReady': '{FENIX_CDN}/js/requirejs/plugins/domready/2.0.1/domReady',
+                    'highcharts': "{FENIX_CDN}/js/highcharts/4.0.4/js/highcharts",
+                    'swiper': "{FENIX_CDN}/js/swiper/2.7.5/dist/idangerous.swiper.min"
+                },
+                shim: {
+                    "bootstrap": {
+                        deps: ["jquery"]
+                    },
+                    "highcharts": {
+                        deps: ["jquery"]
+                    }
+                }
+            }
+        });
 
-    shim: {
-        "bootstrap": {
-            deps: ["jquery"]
-        }
-    }
-});
+    require(['host', 'domReady!'], function (Host) {
 
-
-require(['host', 'bootstrap', 'domReady!'], function (Host) {
-
-    var host = new Host();
-    host.initFenixComponent()
-
+        var host = new Host();
+        host.initFenixComponent();
+    });
 });

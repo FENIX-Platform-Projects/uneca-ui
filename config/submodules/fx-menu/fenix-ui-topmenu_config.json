@@ -1,79 +1,38 @@
 {
-   "items":[
-      {
-          "attrs" : {
-              "id" : "view"
-          },
-          "target" : "view.html",
-          "label":{
-              "EN":"View",
-              "FR":"PI"
-          }
+  "items": [
+    {
+      "attrs": {
+        "id": "createdataset"
       },
-       {
-           "attrs" : {
-               "id" : "analysis"
-           },
-           "target" : "analysis.html",
-           "label":{
-               "EN":"Search and Analyse",
-               "FR":"PI"
-           }
-       },
-       {
-           "type":"dropdown",
-           "children":[
-               {
-                   "attrs":{
-                       "id":"createdataset"
-                   },
-                   "target":"createdataset.html",
-                   "label":{
-                       "EN":"Create Dataset",
-                       "FR":"PI"
-                   }
-               }
-           ],
-           "label":{
-               "EN":"Data Management",
-               "FR":"PI"
-           }
-       },
-       {
-           "attrs":{
-               "id":"profiles"
-           },
-           "target":"profiles.html",
-           "label":{
-               "EN":"Country Statistical Profiles",
-               "FR":"PI"
-           }
-       },
-       {
-           "attrs":{
-               "id":"modules"
-           },
-           "target":"modules.html",
-           "label":{
-               "EN":"Modules",
-               "FR":"PI"
-           }
-       }
-   ],
-
-   "type" : "fixed-top",
-
-   "brand":{
-      "target":"index.html"
-   },
-   "languages":[
-      {
-         "lang":"EN",
-         "label":"En"
-      },
-      {
-         "lang":"FR",
-         "label":"Fr"
+      "target": "datamng.html",
+      "label": {
+        "EN": "Data Management",
+        "FR": "PI"
       }
-   ]
+    },
+    {
+      "attrs": {
+        "id": "profiles"
+      },
+      "target": "profiles.html",
+      "label": {
+        "EN": "Country Statistical Profiles",
+        "FR": "PI"
+      }
+    }
+  ],
+  "type": "fixed-top",
+  "brand": {
+    "target": "index.html"
+  },
+  "languages": [
+    {
+      "lang": "EN",
+      "label": "En"
+    },
+    {
+      "lang": "FR",
+      "label": "Fr"
+    }
+  ]
 }

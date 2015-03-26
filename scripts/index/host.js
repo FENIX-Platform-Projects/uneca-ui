@@ -1,17 +1,18 @@
 define([
-    'fenix-ui-topmenu/main'
-], function( TopMenu ){
+    'fx-menu/start'
+], function (TopMenu) {
 
-    function Host(){}
+    function Host() {
+    }
 
-    Host.prototype.initFenixComponent = function(){
+    Host.prototype.initFenixComponent = function () {
 
         new TopMenu({
-            url : 'json/fenix-ui-topmenu_config.json'
+            url: 'config/submodules/fx-menu/fenix-ui-topmenu_config.json'
         });
 
     };
 
     return Host;
-	
+
 });
