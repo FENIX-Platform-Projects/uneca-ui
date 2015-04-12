@@ -56,6 +56,163 @@
 .icojam_copybook_2:before {
   content: "\e7b5"; }
 
+.icojam_user:before {
+  content: "\ebbb"; }
+
+.icojam_exit_1:before {
+  content: "\eaeb"; }
+
+/* Icons */
+.icojam_fla:before {
+  content: "\e777"; }
+
+.icojam_flac:before {
+  content: "\e778"; }
+
+.icojam_gif:before {
+  content: "\e779"; }
+
+.icojam_html:before {
+  content: "\e77a"; }
+
+.icojam_icl:before {
+  content: "\e77b"; }
+
+.icojam_icns:before {
+  content: "\e77c"; }
+
+.icojam_ico:before {
+  content: "\e77d"; }
+
+.icojam_ini:before {
+  content: "\e77e"; }
+
+.icojam_iso:before {
+  content: "\e77f"; }
+
+.icojam_jpg:before {
+  content: "\e780"; }
+
+.icojam_log:before {
+  content: "\e781"; }
+
+.icojam_midi:before {
+  content: "\e782"; }
+
+.icojam_mkv:before {
+  content: "\e783"; }
+
+.icojam_mov:before {
+  content: "\e784"; }
+
+.icojam_mp3:before {
+  content: "\e785"; }
+
+.icojam_mp4:before {
+  content: "\e786"; }
+
+.icojam_mpg:before {
+  content: "\e787"; }
+
+.icojam_ogg:before {
+  content: "\e788"; }
+
+.icojam_ogm:before {
+  content: "\e789"; }
+
+.icojam_otf:before {
+  content: "\e78a"; }
+
+.icojam_pdf:before {
+  content: "\e78b"; }
+
+.icojam_png:before {
+  content: "\e78c"; }
+
+.icojam_ppt:before {
+  content: "\e78d"; }
+
+.icojam_pptx:before {
+  content: "\e78e"; }
+
+.icojam_psd:before {
+  content: "\e78f"; }
+
+.icojam_ra:before {
+  content: "\e790"; }
+
+.icojam_rar:before {
+  content: "\e791"; }
+
+.icojam_raw:before {
+  content: "\e792"; }
+
+.icojam_rm:before {
+  content: "\e793"; }
+
+.icojam_rtf:before {
+  content: "\e794"; }
+
+.icojam_svg:before {
+  content: "\e795"; }
+
+.icojam_svgz:before {
+  content: "\e796"; }
+
+.icojam_swf:before {
+  content: "\e797"; }
+
+.icojam_sys:before {
+  content: "\e798"; }
+
+.icojam_tga:before {
+  content: "\e799"; }
+
+.icojam_tif:before {
+  content: "\e79a"; }
+
+.icojam_ttf:before {
+  content: "\e79b"; }
+
+.icojam_txt:before {
+  content: "\e79c"; }
+
+.icojam_wav:before {
+  content: "\e79d"; }
+
+.icojam_wma:before {
+  content: "\e79e"; }
+
+.icojam_wmv:before {
+  content: "\e79f"; }
+
+.icojam_xls:before {
+  content: "\e7a0"; }
+
+.icojam_xlsx:before {
+  content: "\e7a1"; }
+
+.icojam_xml:before {
+  content: "\e7a2"; }
+
+.icojam_zip:before {
+  content: "\e7a3"; }
+
+.icojam_presentation:before {
+  content: "\e9b1"; }
+
+.icojam_document:before {
+  content: "\ea3c"; }
+
+.icojam_link_1:before {
+  content: "\ea50"; }
+
+.icojam_base_search_in:before {
+  content: "\e65e"; }
+
+.icojam_add:before {
+  content: "\e656"; }
+
 /* Roboto */
 /* Roboto Import */
 /* Roboto Regular */
@@ -279,6 +436,12 @@
 .fa-th:before {
   content: "\f00a"; }
 
+.fa-th-list:before {
+  content: "\f00b"; }
+
+.fa-home:before {
+  content: "\f015"; }
+
 .fa-clock-o:before {
   content: "\f017"; }
 
@@ -488,10 +651,89 @@ fieldset {
   fieldset .fx-fieldset-subtitle label {
     font-size: 12px; }
 
+/* Fenix - Bootstrap fixed Height */
+/*The Markup
+You have to add the class .row-same-height inside the row, and also add .col-xs-height to the columns.
+<div class="row">
+    <div class="row-same-height">
+        <div class="col-xs-6 col-xs-height"></div>
+        <div class="col-xs-3 col-xs-height col-top"></div>
+        <div class="col-xs-2 col-xs-height col-middle"></div>
+        <div class="col-xs-1 col-xs-height col-bottom"></div>
+    </div>
+</div>
+If you want to restrict the effect to a certain media query, just use .col-sm-height or .col-md-height or .col-lg-height. You can also use different column sizes on each media query.
+<div class="row">
+    <div class="row-same-height">
+        <div class="col-xs-12 col-sm-6 col-sm-height"></div>
+        <div class="col-xs-6 col-sm-3 col-sm-height col-top"></div>
+        <div class="col-xs-6 col-sm-2 col-sm-height col-middle"></div>
+        <div class="col-xs-6 col-sm-1 col-sm-height col-bottom"></div>
+    </div>
+</div>
+You choose the aligment of each column by using the classes .col-top or .col-middle or .col-bottom.
+*/
+/* vertical alignment styles */
+.col-top {
+  vertical-align: top; }
+
+.col-middle {
+  vertical-align: middle; }
+
+.col-bottom {
+  vertical-align: bottom; }
+
+/* columns of same height styles */
+.row-full-height {
+  height: 100%; }
+
+.col-full-height {
+  height: 100%;
+  vertical-align: middle; }
+
+.row-same-height {
+  display: table;
+  width: 100%;
+  /* fix overflow */
+  table-layout: fixed; }
+
+.col-xs-height {
+  display: table-cell;
+  float: none !important; }
+
+@media (min-width: 768px) {
+  .col-sm-height {
+    display: table-cell;
+    float: none !important; } }
+@media (min-width: 992px) {
+  .col-md-height {
+    display: table-cell;
+    float: none !important; } }
+@media (min-width: 1200px) {
+  .col-lg-height {
+    display: table-cell;
+    float: none !important; } }
 /* Fenix - Inputs Component */
 /* remove x icon in IE 10+ */
 input[type=text]::-ms-clear {
   display: none; }
+
+/* Input Placeholder*/
+.form-control::-webkit-input-placeholder {
+  /* WebKit browsers */
+  opacity: .5; }
+
+.form-control:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  opacity: .5; }
+
+.form-control::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  opacity: .5; }
+
+.form-control:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  opacity: .5; }
 
 /* Fenix - Labels Component */
 label {
@@ -591,16 +833,9 @@ div[data-module="region"] .fx-catalog-modular-form-content {
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   border-color: #005295; }
 
-.nav > li > a {
-  padding: 15px 10px 14px 10px;
-  /* Necessary for the border-bottom */ }
-
-.navbar-default .navbar-nav > li > a {
-  color: #666666;
-  border-bottom: 1px solid white; }
-
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  background-color: #005295; }
+  background-color: transparent;
+  color: #666666; }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #005295; }
@@ -748,6 +983,96 @@ div[data-module="region"] .fx-catalog-modular-form-content {
 .popover {
   width: 200px; }
 
+/* Radio Buttons */
+input[type="radio"] {
+  display: none; }
+
+input[type="radio"] + label {
+  cursor: pointer;
+  margin: 0 7px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 500; }
+  input[type="radio"] + label:before {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-color: #dddddd;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    border: 0 solid #005295;
+    position: relative;
+    top: 4px;
+    left: -4px; }
+
+input[type="radio"]:checked + label {
+  color: #005295; }
+  input[type="radio"]:checked + label:before {
+    border-width: 5px; }
+
+input[type="radio"] + label,
+input[type="radio"]:checked + label {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+  input[type="radio"] + label:before,
+  input[type="radio"]:checked + label:before {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+
+/* Checkbox Buttons */
+input[type="checkbox"] {
+  display: none; }
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+  margin: 0 7px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 500; }
+  input[type="checkbox"] + label:before {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-color: #dddddd;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    border: 0 solid #005295;
+    position: relative;
+    top: 4px;
+    left: -4px; }
+
+input[type="checkbox"]:checked + label {
+  color: #005295; }
+  input[type="checkbox"]:checked + label:before {
+    border-width: 5px; }
+
+input[type="checkbox"] + label,
+input[type="checkbox"]:checked + label {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+  input[type="checkbox"] + label:before,
+  input[type="checkbox"]:checked + label:before {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+
 /* Fenix - Resume Bar Component */
 .fx-resume-bar {
   padding-right: 150px;
@@ -830,6 +1155,37 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   .fx-resume-list-obj .fx-resume-obj-value {
     display: inline;
     margin-right: 7px; }
+
+/* Fenix - Top Menu Component */
+.navbar ul {
+  list-style: outside none none;
+  padding-left: 0; }
+
+.navbar .container {
+  position: relative; }
+
+.nav-pills li a {
+  color: #666666; }
+
+.navbar-brand {
+  background-image: url("img/fenix-ico.svg");
+  background-position: 0 3px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: block; }
+
+.navbar .lang_picker {
+  text-transform: uppercase; }
+
+.navbar .lang_picker li {
+  cursor: pointer; }
+
+.navbar .lang_picker li a, .navbar .lang_picker li a:hover {
+  text-align: center;
+  text-decoration: none; }
+
+.navbar .lang_picker li:last-child {
+  border-right: medium none; }
 
 /* Fenix - Sidebar Component */
 .bs-docs-sidebar.affix {
@@ -1089,6 +1445,14 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   position: relative; }
 
 /* Vendor */
+/* Fenix - Facebook Patch */
+#fb-root {
+  display: none; }
+
+/* To fill the container and nothing else */
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+  width: 100% !important; }
+
 /* Fenix - Intro Js */
 .introjs-helperNumberLayer {
   background: none;
@@ -1532,7 +1896,8 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   display: none;
   /* It hides folder icon */ }
 
-.jstree-default .jstree-node, .jstree-default .jstree-icon {
+.jstree-default .jstree-node,
+.jstree-default .jstree-icon {
   background-image: url("img/treejs-32px.png"); }
 
 .jstree-default .jstree-wholerow-clicked {
@@ -1543,6 +1908,9 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   background: none;
   background-color: #d9eeff; }
 
+/* Leaflet */
+/* Fenix Leaflet Import */
+/* Fenix Leaflet Zoom control 0.7.3*/
 /* Pages */
 /* Fenix - Home Page */
 /* HOMEPAGE */
@@ -1640,14 +2008,91 @@ div[data-module="region"] .fx-catalog-modular-form-content {
   height: 0;
   overflow: hidden; }
 
+/* Uneca Data Management */
+#main-container .container {
+  padding: 0;
+  width: 100%; }
+
+.uneca-datamng-welcome {
+  text-align: center;
+  width: 350px;
+  height: 300px;
+  background-color: white;
+  padding: 25px;
+  position: relative;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+  .uneca-datamng-welcome h3 {
+    margin-top: 0;
+    font-size: 22px; }
+  .uneca-datamng-welcome .uneca-datamng-welcome-btn {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    background-color: #dddddd;
+    border: 2px solid transparent;
+    cursor: pointer;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    margin: 5px; }
+    .uneca-datamng-welcome .uneca-datamng-welcome-btn:hover {
+      border-color: #005295; }
+    .uneca-datamng-welcome .uneca-datamng-welcome-btn a {
+      display: inline-block;
+      position: relative;
+      top: 50%;
+      width: 100%;
+      -ms-transform: translateY(-40%);
+      -webkit-transform: translateY(-40%);
+      transform: translateY(-40%); }
+      .uneca-datamng-welcome .uneca-datamng-welcome-btn a span:first-child {
+        font-size: 30px;
+        color: #666666; }
+      .uneca-datamng-welcome .uneca-datamng-welcome-btn a span:last-child {
+        text-transform: uppercase;
+        font-size: 12px; }
+      .uneca-datamng-welcome .uneca-datamng-welcome-btn a:hover, .uneca-datamng-welcome .uneca-datamng-welcome-btn a:active, .uneca-datamng-welcome .uneca-datamng-welcome-btn a:focus {
+        text-decoration: none; }
+
+#data-mng-menu-container .fx-menu {
+  margin-bottom: 0;
+  background-color: #dddddd;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: normal;
+  min-height: 30px; }
+  #data-mng-menu-container .fx-menu .fx-ul a {
+    padding-bottom: 5px;
+    padding-top: 5px; }
+#data-mng-menu-container .dropdown-menu {
+  border-top: 0; }
+
+.fx-datamng-holder {
+  min-height: 400px;
+  background-color: #f8f8f8;
+  padding-top: 20px; }
+  .fx-datamng-holder .metadata-view .container {
+    padding: 0;
+    width: 100%; }
+
 /* Theme */
 /* Base */
 body {
   background-image: url(img/bg-body.png);
   padding-top: 50px; }
-
-p {
-  text-align: justify; }
 
 hr {
   border-color: #e5e5e5; }
@@ -1663,6 +2108,13 @@ Using the normal root/css/host.css, is impossible to override the logo without "
   background-size: 100% 100%  !important;
   background-position: 0 0  !important;
   background-color: #005295 !important; }
+
+.navbar-default .navbar-nav > li > a {
+  padding-bottom: 14px; }
+
+.lang_picker_holder li {
+  float: left;
+  padding: 15px 2px; }
 
 .obj-box, .obj-box-radius10, .obj-box-title {
   -moz-border-bottom-colors: none;

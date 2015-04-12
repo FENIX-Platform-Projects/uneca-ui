@@ -7,7 +7,7 @@ body {
 }
 
 p{
-  text-align: justify;
+  //text-align: justify;
 }
 
 hr{
@@ -32,6 +32,17 @@ Using the normal root/css/host.css, is impossible to override the logo without "
   background-color:$fx-cool-blue !important;
 }
 
+
+.navbar-default .navbar-nav>li>a {
+  padding-bottom: 14px;
+}
+
+.lang_picker_holder{
+  li{
+    float: left;
+    padding: 15px 2px;
+  }
+}
 
 .obj-box{
   -moz-border-bottom-colors: none;
