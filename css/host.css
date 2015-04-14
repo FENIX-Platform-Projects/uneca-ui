@@ -2134,6 +2134,11 @@ Using the normal root/css/host.css, is impossible to override the logo without "
   padding: 20px;
   width: auto; }
 
+#DSDEditorContainer > .row {
+  margin: 0; }
+#DSDEditorContainer input[type="checkbox"] {
+  display: inline; }
+
 /* //////////////////// THEMING ///////////////////// */
 /*///////////////* ANALYSIS */
 /*  CATALOG THEMING */

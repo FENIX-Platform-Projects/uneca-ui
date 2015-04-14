@@ -61,6 +61,22 @@ Using the normal root/css/host.css, is impossible to override the logo without "
 }
 
 
+#DSDEditorContainer{
+
+  >.row{
+    margin: 0;
+//    padding: 0 15px;
+  }
+
+
+  input[type="checkbox"]{
+    display: inline;
+  }
+}
+
+
+
+
 /* //////////////////// THEMING ///////////////////// */
 
 
