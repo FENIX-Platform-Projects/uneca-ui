@@ -2136,7 +2136,8 @@ Using the normal root/css/host.css, is impossible to override the logo without "
 
 #DSDEditorContainer > .row {
   margin: 0; }
-#DSDEditorContainer input[type="checkbox"] {
+
+#modalDataUploadPreview input[type="checkbox"], #divDataEditor input[type="checkbox"], #DSDEditorContainer input[type="checkbox"] {
   display: inline; }
 
 /* //////////////////// THEMING ///////////////////// */

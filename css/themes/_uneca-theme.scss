@@ -68,7 +68,9 @@ Using the normal root/css/host.css, is impossible to override the logo without "
 //    padding: 0 15px;
   }
 
+}
 
+#modalDataUploadPreview,#divDataEditor,#DSDEditorContainer{
   input[type="checkbox"]{
     display: inline;
   }
