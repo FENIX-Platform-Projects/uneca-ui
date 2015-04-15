@@ -96,7 +96,7 @@ define([
     Fx_editor_bridge.prototype.get = function (src, callback, context) {
         var plugin;
 
-        console.log("========== IN BRIDGE: GET ================== src = "+src.getName());
+        //console.log("========== IN BRIDGE: GET ================== src = "+src.getName());
         if (!window.Fx_editor_bridge_plugins || typeof window.Fx_editor_bridge_plugins !== "object") {
             throw new Error(o.error_prefix + " Fx_editor_bridge_plugins plugins repository not valid.");
         } else {
@@ -106,7 +106,7 @@ define([
         if (!plugin) {
             throw new Error(o.error_prefix + " plugin not found.")
         }
-       console.log("o.mapping = "+ o.mapping);
+       //console.log("o.mapping = "+ o.mapping);
 
         if (typeof plugin.init !== "function") {
             throw new Error(o.error_prefix + " plugin for " + src.getName() + " does not have a public init() method.");
@@ -128,13 +128,13 @@ define([
 
                     if(jqXHR.status !== 204){
                         var data = plugin.parseJson(response);
-                        console.log("+++++++++++++++++ GET "+data);
-                        console.log("context =  "+context);
+                        //console.log("+++++++++++++++++ GET "+data);
+                        //console.log("context =  "+context);
 
                         if (context) {
                             $.proxy(callback, context, data)();
                         } else {
-                            console.log("=============== CALL TO CALLBACK ");
+                            //console.log("=============== CALL TO CALLBACK ");
                             callback(data)
                         }
 

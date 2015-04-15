@@ -1254,15 +1254,15 @@
             var name = $(this).attr("name");
 
             var a = name.split('.')
-            console.log("a");
-            console.log(a);
+            //console.log("a");
+            //console.log(a);
             var p;
             var obj;
-            console.log("================ name = "+name);
+            //console.log("================ name = "+name);
 
             if(a.length > 1) {
                 var pt = a[0];
-                console.log("pt = "+pt);
+                //console.log("pt = "+pt);
                 p = json_Utils.findParentPathForProperty(serializeForm, pt);
                 if(p == "rootProp")
                   obj = serializeForm[pt];
@@ -1271,15 +1271,15 @@
                 if($.isArray(obj)) {
                     obj = obj[0];
                 }
-                console.log("================ pt = "+pt);
+                //console.log("================ pt = "+pt);
 
             } else {
                 p = json_Utils.findParentPathForProperty(serializeForm,  $this.attr("id"));
                 obj = json_Utils.findObjectByPath(serializeForm, p);
             }
 
-            console.log("================ OBJ = "+obj);
-            console.log(obj);
+            //console.log("================ OBJ = "+obj);
+            //console.log(obj);
 
           //  var p = json_Utils.findParentPathForProperty(serializeForm,  $this.attr("id"));
            // var obj = json_Utils.findObjectByPath(serializeForm, p);
@@ -1442,8 +1442,8 @@
             }
         }
 
-        console.log("===================  FORM: getValues FINAL RESULT ========== ");
-       console.log(result);
+        //console.log("===================  FORM: getValues FINAL RESULT ========== ");
+       //console.log(result);
 
         return result;
     };
