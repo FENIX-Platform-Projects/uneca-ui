@@ -26,7 +26,7 @@ define([
         $.extend(o, defaultOptions);
         $.extend(o, options);
 
-        console.log("=============== IN BRIDGE ++++++++++++++++ for o.url: "+o.url + " | o.type: "+o.type + " | "+o.mapping);
+        //console.log("=============== IN BRIDGE ++++++++++++++++ for o.url: "+o.url + " | o.type: "+o.type + " | "+o.mapping);
 
         return $(this);
     };

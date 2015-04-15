@@ -9,13 +9,13 @@ define([
 
         var callbacks = {
             "callback 1" : function(){
-                console.log("Callback One")
+                //console.log("Callback One")
             },
             "callback 2" : function(){
-                console.log("Callback Two")
+                //console.log("Callback Two")
             },
             "callback 3" : function(){
-                console.log("Callback Three")
+                //console.log("Callback Three")
             },
 
         };

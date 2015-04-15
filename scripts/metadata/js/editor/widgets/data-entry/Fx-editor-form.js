@@ -1239,8 +1239,8 @@
         });
 
 
-        console.log("=========================SERIALIZE FORM ");
-        console.log(serializeForm);
+        //console.log("=========================SERIALIZE FORM ");
+        //console.log(serializeForm);
         //console.log("================ Serialize BEFORE = ");
         //console.log(serializeForm);
 
