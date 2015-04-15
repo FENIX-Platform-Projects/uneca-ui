@@ -9,16 +9,6 @@
         "EN": "Data Management",
         "FR": "PI"
       }
-    },
-    {
-      "attrs": {
-        "id": "profiles"
-      },
-      "target": "profiles.html",
-      "label": {
-        "EN": "Country Statistical Profiles",
-        "FR": "PI"
-      }
     }
   ],
   "type": "fixed-top",
