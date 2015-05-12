@@ -6,10 +6,24 @@
         },
         "subject": "geo"
     },
+	{
+        "val": "FAOSTAT_CommodityList",
+        "text": {
+            "EN": "FAOSTAT Commodities"
+        },
+        "subject": "item"
+    },
     {
         "val": "UNECA_AgeRange",
         "text": {
             "EN": "UNECA AgeRange"
+        },
+        "subject": "item"
+    },
+	{
+        "val": "UNECA_ClassificationOfActivities",
+        "text": {
+            "EN": "UNECA Class. of activities"
         },
         "subject": "item"
     },
