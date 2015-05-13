@@ -16,11 +16,13 @@ define(['jquery', 'fx-submodules/config/baseConfig'],
             SERVICE_BASE_ADDRESS: "http://fenix.fao.org/d3s_dev/msd"
         };*/
 
-        var services = {};
-        $.extend(services, config_base);
+        var cfg = {};
+        $.extend(cfg, config_base);
 
-        services.DSD_EDITOR_CODELISTS = "config/submodules/DSDEditor/CodelistsUNECA.json";
-        services.DSD_EDITOR_CONTEXT_SYSTEM = "UNECA";
+        cfg.DSD_EDITOR_CODELISTS = "config/submodules/DSDEditor/CodelistsUNECA.json";
+        cfg.DSD_EDITOR_CONTEXT_SYSTEM = "UNECA";
+
+        cfg.METADATA_EDITOR_AJAX_EVENT_CALL = "config/submodules/metadataEditor/fx-editor-ajax-config_DEMO.json";
 
 
         /*services.TOP_MENU = {
@@ -28,5 +30,5 @@ define(['jquery', 'fx-submodules/config/baseConfig'],
             active: "createdataset"
         };*/
 
-        return services;
+        return cfg;
     });
