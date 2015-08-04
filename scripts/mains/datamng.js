@@ -2,6 +2,7 @@
 // relative or absolute path of Components' main.js
 require([
     '../../submodules/fenix-ui-common/js/Compiler',
+    '../../submodules/fenix-ui-common/js/paths',
     '../../submodules/fenix-ui-DataEditor/js/paths',
     '../../submodules/fenix-ui-dataUpload/js/paths',
     '../../submodules/fenix-ui-DSDEditor/js/paths',
@@ -9,7 +10,10 @@ require([
     '../../submodules/fenix-ui-catalog/js/paths',
     '../../submodules/fenix-ui-menu/js/paths',
     '../../submodules/fenix-ui-data-management/src/js/paths'
-], function (Compiler, DataEditor, DataUpload, DSDEditor, MetadataEditor, Catalog, Menu, DataMng) {
+], function (Compiler, FenixCommons, DataEditor, DataUpload, DSDEditor, MetadataEditor, Catalog, Menu, DataMng) {
+
+    var fenixCommonConfig = FenixCommons;
+    fenixCommonConfig.baseUrl = '../../submodules/fenix-ui-common/js';
 
     var dataEditorConfig = DataEditor;
     dataEditorConfig['baseUrl'] = '../../submodules/fenix-ui-DataEditor/js';
@@ -32,9 +36,9 @@ require([
     var dataMngConfig = DataMng;
     dataMngConfig['baseUrl'] = '../../submodules/fenix-ui-data-management/src/js';
 
-    Compiler.resolve([dataEditorConfig, dataUploadConfig, dsdEditorConfig, metadataEditorConfig, catalogConfig, menuConfig, dataMngConfig],
+    Compiler.resolve([fenixCommonConfig, dataEditorConfig, dataUploadConfig, dsdEditorConfig, metadataEditorConfig, catalogConfig, menuConfig, dataMngConfig],
         {
-            placeholders:  {"FENIX_CDN": "//fenixapps.fao.org/repository"},
+            placeholders: { "FENIX_CDN": "//fenixapps.fao.org/repository" },
             config: {
 
                 locale: 'en',
@@ -45,7 +49,7 @@ require([
                     backbone: "{FENIX_CDN}/js/backbone/1.1.2/backbone.min",
                     handlebars: "{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
                     chaplin: "{FENIX_CDN}/js/chaplin/1.0.1/chaplin.min",
-                    amplify : '{FENIX_CDN}/js/amplify/1.1.2/amplify.min',
+                    amplify: '{FENIX_CDN}/js/amplify/1.1.2/amplify.min',
                     rsvp: '{FENIX_CDN}/js/rsvp/3.0.17/rsvp',
                     pnotify: '{FENIX_CDN}/js/pnotify/2.0.1/pnotify.custom.min',
 
