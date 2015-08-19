@@ -1,0 +1,26 @@
+{
+    "name": "uneca-ui",
+    "version": "0.0.1",
+    "description": "UNECA User Interface - powered by FENIX",
+    "main": "index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/FENIX-Platform-Projects/uneca-ui.git"
+    },
+    "keywords": [
+        "FENIX",
+        "UNECA"
+    ],
+    "author": "FENIX Development Team",
+    "license": "GPL3",
+    "bugs": {
+        "url": "https://github.com/FENIX-Platform-Projects/uneca-ui/issues"
+    },
+    "homepage": "https://github.com/FENIX-Platform-Projects/uneca-ui",
+    "dependencies": {
+
+    }
+}

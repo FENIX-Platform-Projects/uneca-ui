@@ -1,0 +1,14 @@
+{
+   "items":[
+      {
+         "attrs":{
+            "id":"landing"
+         },
+         "target":"#landing",
+         "label":{
+            "EN":"Countries List",
+            "FR":"PI"
+         }
+      }
+   ]
+}
