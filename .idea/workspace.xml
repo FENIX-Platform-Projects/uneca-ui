@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f75ad667-f7a0-443b-b3d5-da65b51faba1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitmodules" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analysis.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/DSDEditor/CodelistsUNECA.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/catalog/config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/catalog/uneca-catalog-blank-filter.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/config_base.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/datamng/config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/fx-menu/data-mng_config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/fx-menu/fenix-ui-topmenu_config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/fx-menu/uneca-profiles_config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/submodules/metadataEditor/fx-editor-ajax-config_DEMO.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datetimepicker.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrapValidator.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fenix-ui-filter.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/formprogress.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/host.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/host.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/iThing-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/analysis-ico-l.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/analysis-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/country-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/dataset-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/domain-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/fenix-catalog-sprite-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/fenix-catalog-sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/fenix-editor-sprite-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/fx-favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/label.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/modules-ico-l.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/modules-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/resultset_next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/resultset_previous.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/visualization-ico-l.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/icons/visualization-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/Economic_Cooperation_Organization_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/api-demo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/api-show.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/background-home-eco.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/background-home.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/bg-body.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/catalog-icons-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/catalog-icons-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/catalog-icons-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/catalog-icons-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/catalog-icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/crowd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/data-network-homepage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/database.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/drag.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/early-sadc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/early.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/fenix-catalog-sprite-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/fenix-catalog-sprite-small.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/fenix-ico-white.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/fenix-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/geo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/ghg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/github-ico-l.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/github-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/globe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/globe60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/icons-sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/logo-fenix.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/mind_map.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/mind_map60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/poverty.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/remote-acqui.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/remote-distr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/scatter.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/small-arrow.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/small-close.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/stack-info.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/treejs-32px.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/uneca-ico.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/img/waterTile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.cs-CZ.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.de-DE.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.en-CA.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.en-US.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.fr-FR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.he-IL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.hr-HR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.hu-HU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.it-IT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.ja-JP.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.ru-RU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.culture.sa-IN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/globalization/globalize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/backImage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/backgroundTop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_black_horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_blackhover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_blackhover_horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_blackpressed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_blackpressed_horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_blueenergy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_darkblue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_darkbluehover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/bg_darkbluepressed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/black_gradient.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/blackbackground.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_blue_indeterminate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_indeterminate_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_indeterminate_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_indeterminate_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_lightblue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_lightblue_indeterminate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/check_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/close_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/close_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/colorpicker/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/colorpicker/bar-hue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/colorpicker/bar-saturation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/colorpicker/map-hue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/colorpicker/map-saturation-overlay.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/colorpicker/map-saturation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/crosshair-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/crosshair.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_flat_30_cccccc_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_flat_50_5c5c5c_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_glass_20_555555_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_glass_40_0078a3_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_glass_40_ffc73d_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_gloss-wave_25_333333_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_highlight-soft_80_eeeeee_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_inset-soft_25_000000_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-bg_inset-soft_30_f58400_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-icons_4b8e0b_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-icons_a83300_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-icons_cccccc_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkness/ui-icons_ffffff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/darkred_gradient.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/drag.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/dragcancel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/filter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-calendar-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-calendar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-cancel-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-delete-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-down-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-down-transparent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-down-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-edit-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-first-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-first-transparent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-first-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-first.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-last-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-last-transparent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-last-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-last.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-left-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-left-transparent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-left-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-menu-minimized-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-menu-minimized.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-right-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-right-transparent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-right-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-save-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-save.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-showpassword-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-showpassword.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-up-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-up-transparent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-up-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/icon-up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_diagonals-small_0_aaaaaa_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_diagonals-thick_15_444444_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_diagonals-thick_95_ffdc2e_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_glass_55_fbf5d0_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_highlight-hard_30_285c00_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_highlight-soft_33_3a8104_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_highlight-soft_50_4eb305_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_highlight-soft_60_4ca20b_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-bg_inset-soft_10_285c00_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-icons_4eb305_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-icons_72b42d_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/le-frog/ui-icons_ffffff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/icon-first.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/icon-last.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_flat_10_000000_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_glass_100_f6f6f6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_glass_100_fdf5ce_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-icons_228ef1_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-icons_ef8c08_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-icons_ffd27a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/lightness/ui-icons_ffffff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/menubutton.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-down-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-first-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-first.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-last-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-last.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-left-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-right - Copy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-right-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-up-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/metro-icon-up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/multi-arrow.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/office-icon-down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/office-icon-first.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/office-icon-last.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/office-icon-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/office-icon-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/office-icon-up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_flat_0_eeeeee_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_flat_55_c0402a_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_flat_55_eeeeee_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_glass_100_f8f8f8_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_glass_35_dddddd_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_glass_60_eeeeee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_inset-hard_75_999999_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-bg_inset-soft_50_c9c9c9_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-icons_3383bb_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-icons_70b2e1_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-icons_999999_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/overcast/ui-icons_fbc856_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/plus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/plus_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/pointer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/rangebar_classic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/rangebar_darkblue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/rangebar_shinyblack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/rangebar_summer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/red_arrow_down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/red_arrow_up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/red_gradient.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/icon-first.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/icon-last.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-bg_flat_55_fbec88_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-bg_glass_75_d0e5f5_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-bg_glass_85_dfeffc_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-bg_gloss-wave_55_5c9ccc_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-bg_inset-hard_100_f5f8f9_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-bg_inset-hard_100_fcfdfd_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-icons_217bc0_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-icons_469bdd_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-icons_6da8d5_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-icons_d8e7f3_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/redmond/ui-icons_f9bd01_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/roundbg_check_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/roundbg_check_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/roundbg_check_indeterminate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/roundbg_check_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/roundbg_classic_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/roundbg_classic_normal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/roundbg_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/search.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/search_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/smoothness/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sortasc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sortascbutton.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sortdesc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sortdescbutton.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sortremove.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/star_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/star_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_flat_55_999999_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_flat_75_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_glass_45_0078ae_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_glass_55_f8da4e_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_glass_75_79c9ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_gloss-wave_45_e14f1c_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_gloss-wave_50_6eac2c_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_gloss-wave_75_2191c0_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-bg_inset-hard_100_fcfdfd_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-icons_0078ae_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-icons_056b93_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-icons_d8e7f3_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-icons_e0fdff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-icons_f5e175_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-icons_f7a50d_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/start/ui-icons_fcd113_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ReadMe.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_diagonals-medium_20_d34d17_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_flat_30_cccccc_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_flat_50_5c5c5c_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_gloss-wave_45_817865_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_gloss-wave_60_fece2f_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_gloss-wave_70_ffdd57_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_gloss-wave_90_fff9e5_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_highlight-soft_100_feeebd_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-bg_inset-soft_30_ffffff_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-icons_3d3d3d_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-icons_bd7b00_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-icons_d19405_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-icons_eb990f_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-icons_ed9f26_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-icons_fadc7a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/sunny/ui-icons_ffe180_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/tick.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/track_classic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/track_darkblue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/track_shinyblack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/track_summer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/wp_check_indeterminate_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/images/wp_check_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.android.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.arctic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.base.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.black.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.blackberry.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.classic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.darkblue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.energyblue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.fresh.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.highcontrast.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.metro.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.metrodark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.mobile.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.office.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.shinyblack.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.summer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.ui-darkness.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.ui-le-frog.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.ui-lightness.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.ui-overcast.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.ui-redmond.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.ui-smoothness.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.ui-start.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.ui-sunny.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.web.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqwidgets/styles/jqx.windowsphone.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/mbExtruder.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/modular-editor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/pages/_uneca-analysis.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/pages/_uneca-datamanagement.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/pages/_uneca-home.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/pages/_uneca-iframes.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/pages/_uneca-maps.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/pivot.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/themes/_uneca-theme.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/themes/_uneca-variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datamng.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/showcase/page_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/showcase/page_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/showcase/page_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/technologies/page_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/technologies/page_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/view/page_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/view/page_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/view/page_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/view/page_4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/view/page_5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/json/fenix-ui-topmenu_config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/json/fenix_interface_showcase_conf.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/json/fenix_interface_technologies_conf.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/json/fenix_interface_view_conf.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/CONTRIBUTORS.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/build/build.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/dist/css/dvf.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/dist/data/countryData.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/dist/data/stateData.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/dist/leaflet-dvf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/dist/leaflet-dvf.markers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/dist/leaflet-dvf.markers.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/dist/leaflet-dvf.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/css/MarkerCluster.Default.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/css/MarkerCluster.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/css/example.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/css/meetups.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/css/ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/NETPOPZ2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/NETZIP2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/armedConflicts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/battleDeaths.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/countries_historical.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/countyNames.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/countyStats.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/dccrimestats.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/dcprecinctstopo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/electionResults.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/flightData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/geojson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/incomesData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/pollsterData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/solidFuels.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/telephoneLines.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/us-10m.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/data/usAirports.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/airports.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/armedconflicts.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/choropleth.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/colors.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/conflictdata.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/countystats.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/dccrimes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/dcmetrobus.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/deathsbyconflict.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/earthquakes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/earthquakes.ie8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/earthquakes2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/earthquakes3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/earthquakes4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/election2012.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/election2012results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/geohashart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/geohashes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/incomelevels.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/manymarkers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/markers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/meetups.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/minard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/nlzip.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/panoramio.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/runmap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/sochistats.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/sparklines.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/uselectiondata.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/html/weather.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/grey_wash_wall/grey_wash_wall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/grey_wash_wall/grey_wash_wall_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/grey_wash_wall/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/irongrip/irongrip.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/irongrip/irongrip_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/irongrip/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/pw_maze_white/pw_maze_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/pw_maze_white/pw_maze_white_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/img/subtlepatterns/pw_maze_white/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/chromaticgallery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/colors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/earthquakes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/election2012.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/election2012results.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/geohashes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/incomelevels.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/leaflet-0.8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/markers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/meetups.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/panoramio.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/uselectiondata.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/js/weather.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/bootstrap/css/bootstrap-responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/bootstrap/css/bootstrap-responsive.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/bootstrap/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/bootstrap/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/date.format.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/geohash.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/jquery-1.11.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/json2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/jsts/javascript.util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/jsts/jsts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet.markercluster-src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet/images/layers.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet/images/marker-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet/images/marker-icon@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet/images/marker-shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet/leaflet-src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet/leaflet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet/leaflet.ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/leaflet/leaflet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/moment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/tilefilter/TileLayer.Filter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/tilefilter/TileLayer.Filter.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/16/delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/16/moveleft.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/16/moveright.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/16/new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/16/zoomin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/16/zoomout.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/24/delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/24/moveleft.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/24/moveright.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/24/new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/24/zoomin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/24/zoomout.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/32/delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/32/moveleft.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/32/moveright.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/32/new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/32/zoomin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/32/zoomout.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/img/cluster_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/timeline-locales.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/timeline-min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/timeline.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/examples/lib/timeline/timeline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/copyright.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/css/dvf.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/data/countryData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/data/stateData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.chartmarkers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.controls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.datalayer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.experimental.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.linearfunctions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.lines.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.markers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.palettes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.regularpolygon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/leaflet-dvf/src/leaflet.dvf.utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/maps.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/metadata.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/profiles.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sampledata/management/createdataset.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sampledata/management/fenix_data_upload_sample.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sampledata/view/GAUL1_NGA_maize_production_2005-2006.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sampledata/view/products.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/components/Structure/structure.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/config/countries.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/config/events.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/config/widgets.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/controllers/base/controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/controllers/countries-controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/controllers/landing-controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/domReady.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/lib/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/lib/view-helper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/models/base/collection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/models/base/model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/models/landing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/models/profiles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/routes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/templates/landing.hbs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/templates/profiles.hbs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/templates/site.hbs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/views/base/collection-view.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/views/base/view.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/views/landing-view.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/views/profiles-view.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/ctryprofiles/views/site-view.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/index/host.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/analysis.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/datamng.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/maps.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/metadata.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/modules.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/profiles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/showcase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/technologies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mains/view.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/contentCoverageGeographic_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/contentCoverageSectorDetails_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/contentCoverage_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/contentDescription_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/contentReferenceArea_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/contentStatisticalConcepts_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/dataQualityAccuracyNonSampling_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/dataQualityAccuracySampling_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/dataQualityAccuracy_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/dataQualityRevisionPractice_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/statisticalProDataCollection_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/html/statisticalProRawDataDesc_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/js/fx-form-validation-callback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/fx-editor-ajax-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/fx-editor-blank-filter.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/fx-editor-dates-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/fx-editor-gui-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/fx-editor-mapping-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/fx-editor-validation-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/metadata_sample.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/output.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/request.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/conf/json/response.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/database.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/database60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/globe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/globe60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/icons/fenix-editor-sprite-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/icons/fenix-editor-sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/icons/label.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/icons/resultset_next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/icons/resultset_previous.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/logo-fenix.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/mind_map.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/imgs/mind_map60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/nls/fr/langProperties.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/nls/langProperties.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/templates/editor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/templates/form-validation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/templates/form3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/templates/formTags.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/templates/fx_editor_template.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/templates/fx_result_fragments.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/templates/info_2_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/OLD/templates/info_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/contentCoverageGeographic_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/contentCoverageSectorDetails_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/contentCoverage_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/contentDescription_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/contentReferenceArea_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/contentStatisticalConcepts_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/dataQualityAccuracyNonSampling_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/dataQualityAccuracySampling_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/dataQualityAccuracy_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/dataQualityRevisionPractice_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/referenceSystemDatumDesc_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/referenceSystemEllipsoidDenominatorFlatteningRatio_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/statisticalProDataCollection_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/info/statisticalProRawDataDesc_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/intro/accessibility_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/intro/dataDissemination_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/html/intro/statisticalProcessing_EN.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/js/fx-form-validation-callback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/json/fx-editor-ajax-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/json/fx-editor-dates-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/json/fx-editor-gui-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/json/fx-editor-mapping-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/conf/json/fx-editor-validation-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/database.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/database60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/globe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/globe60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/icons/fenix-editor-sprite-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/icons/fenix-editor-sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/icons/label.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/icons/resultset_next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/icons/resultset_previous.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/logo-fenix.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/mind_map.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/imgs/mind_map60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/bootstrap-datetimepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/bootstrap-tagsinput.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/bootstrapValidator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/domReady.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/draggabilly.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/handlebars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/i18n.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/isotope.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/jqrangeslider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/jquery-serialize-object.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/json2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/jstorage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/moment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/nprogress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/packery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/pnotify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/pnotify.nonblock.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/require.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/stroll.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/OLDlibs/text.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/controllers/Fx-editor-data-entry.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/controllers/Fx-editor-page.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/Fx-bootstrapValidator-utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/Fx-date-utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/Fx-element-utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/Fx-formprogress-utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/Fx-json-utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/Fx-lang-utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/Fx-ui-element-creator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-clonebutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-date.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-entities.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-hierarchy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-info.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-number.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-period.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-select.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-sequence.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-subentities.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-text.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-textarea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/utils/fx-ui-elements/Fx-ui-url.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/widgets/Fx-widgets-commons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/widgets/Fx-widgets-storage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/widgets/bridge/Fx-editor-bridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/widgets/bridge/plugins/Fx-editor-bridge-dataentry-plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/widgets/data-entry/Fx-editor-form.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/widgets/data-entry/Fx-editor-menu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/js/editor/widgets/data-entry/Fx-editor-progress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/nls/fr/langProperties.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/nls/langProperties.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/paths.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/start.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/metadata/templates/fx_editor_template.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/modules/host.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/showcase/host.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/technologies/host.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/view/host.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/showcase.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-DSDEditor" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-DataEditor" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-analysis" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-catalog" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-chart-creator" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-common" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-dashboard" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-data-management" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-dataUpload" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-filter" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-menu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-metadata-editor" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-olap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/submodules/fenix-ui-table-creator" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/technologies.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/icons/catalog-ico.svg" afterPath="$PROJECT_DIR$/css/icons/catalog-ico.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+    </list>
+    <ignored path="uneca-ui.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="uneca-ui" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="35" />
+    <option name="y" value="24" />
+    <option name="width" value="1209" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uneca-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.lastSelected" value="configurable.group.appearance" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f75ad667-f7a0-443b-b3d5-da65b51faba1" name="Default" comment="" />
+      <created>1439993853739</created>
+      <option name="number" value="Default" />
+      <updated>1439993853739</updated>
+      <workItem from="1439993856113" duration="161000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="161000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="35" y="24" width="1209" height="1000" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2515073" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
