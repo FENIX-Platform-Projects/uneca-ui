@@ -1,20 +1,20 @@
 /*global define, amplify*/
 define([
     'views/base/view',
-    'text!templates/protected/protected.hbs',
-    'i18n!nls/protected',
+    'text!templates/methods/methods.hbs',
+    'i18n!nls/methods',
     'config/Events',
     'amplify'
 ], function (View, template, i18nLabels, E) {
 
     'use strict';
 
-    var ProtectedView = View.extend({
+    var MethodsView = View.extend({
 
         // Automatically render after initialize
         autoRender: true,
 
-        className: 'protected',
+        className: 'modules',
 
         // Save the template string in a prototype property.
         // This is overwritten with the compiled template function.
@@ -30,10 +30,10 @@ define([
             View.prototype.attach.call(this, arguments);
 
             //update State
-            amplify.publish(E.STATE_CHANGE, {menu: 'protected'});
+            amplify.publish(E.STATE_CHANGE, {menu: 'about'});
 
         }
     });
 
-    return ProtectedView;
+    return MethodsView;
 });

@@ -3,7 +3,7 @@
     {
       "attrs": {
         "id": "home",
-        "class":"home-menu-item"
+        "class": "home-menu-item"
       },
       "target": "#home",
       "label": {
@@ -12,20 +12,47 @@
     },
     {
       "attrs": {
-        "id": "protected"
+        "id": "profile"
       },
-      "target": "#protected",
+      "target": "#profile",
       "label": {
-        "EN": "Protected"
+        "EN": "Country Profile"
       }
     },
     {
       "attrs": {
-        "id": "about"
+        "id": "datamgmt"
       },
-      "target": "#about",
+      "target": "#datamgmt",
       "label": {
-        "EN": "About"
+        "EN": "Data Management"
+      }
+    },
+    {
+      "attrs": {
+        "id": "analysis"
+      },
+      "target": "#analysis",
+      "label": {
+        "EN": "Analysis"
+      }
+    },
+    {
+      "attrs": {
+        "id": "methods"
+      },
+      "target": "#methods",
+      "label": {
+        "EN": "Methods and Standards"
+      }
+    },
+    {
+      "attrs": {
+        "id": "modules"
+      },
+      "target": "#modules",
+      "label": {
+        "EN": "Thematic Modules"
       }
     }
   ],

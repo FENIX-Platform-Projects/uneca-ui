@@ -1,15 +1,15 @@
 /*global define, amplify*/
 define([
     'views/base/view',
-    'text!templates/statistics/analysis.hbs',
-    'i18n!nls/statistics-analysis',
+    'text!templates/analysis/analysis.hbs',
+    'i18n!nls/analysis',
     'config/Events',
     'amplify'
 ], function (View, template, i18nLabels, E) {
 
     'use strict';
 
-    var AnalysisView = View.extend({
+        var AnalysisView = View.extend({
 
         // Automatically render after initialize
         autoRender: true,
@@ -30,23 +30,9 @@ define([
             View.prototype.attach.call(this, arguments);
 
             //update State
-            amplify.publish(E.STATE_CHANGE, {menu: 'analysis'});
+            amplify.publish(E.STATE_CHANGE, {menu: 'about'});
 
-
-        },
-
-
-        unbindEventListeners: function () {
-
-        },
-
-        dispose: function () {
-
-            this.unbindEventListeners();
-
-            View.prototype.dispose.call(this, arguments);
         }
-
     });
 
     return AnalysisView;
