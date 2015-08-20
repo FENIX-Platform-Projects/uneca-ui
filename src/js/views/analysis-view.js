@@ -323,7 +323,7 @@ define([
             View.prototype.dispose.call(this, arguments);
         },
         unbindEventListeners: function() {
-            
+
         }
     });
 
