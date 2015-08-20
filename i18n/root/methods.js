@@ -1,5 +1,5 @@
 /*global define*/
 define({
-    "title": "Methods",
-    "text" : "Change me in 118n/root/methods.js"
+    "title": "Methods and Standards",
+    "standards_placeholder" : "Please select a Standard"
 });

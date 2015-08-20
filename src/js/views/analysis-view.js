@@ -1,5 +1,6 @@
 /*global define, amplify*/
 define([
+    'jquery','underscore',
     'views/base/view',
     'text!templates/analysis/analysis.hbs',
     'i18n!nls/analysis',
@@ -7,8 +8,8 @@ define([
     'config/Events',
     'fx-cat-br/start',
     'fx-ana/start',
-    'amplify'
-], function (View, template, i18nLabels,C, E, Catalog, Analysis) {
+    'amplify',
+], function ($,_,View, template, i18nLabels,C, E, Catalog, Analysis) {
 
     'use strict';
 
@@ -87,8 +88,7 @@ define([
                 session: {
                     active: false
                 }
-            })
-            this.analysis.init();
+            }).init()
 
           this._bindEventListener();
 
@@ -98,10 +98,10 @@ define([
         _bindEventListener : function() {
             var self = this;
 
-            $(s.OVERLAY_OPEN).on('click', _.bind(this.addItem, this));
 /*
-            $(s.OVERLAY_OPEN).on('click', _.bind(this.toggleOverly, this));
+            $(s.OVERLAY_OPEN).on('click', _.bind(this.addItem, this));
 */
+            $(s.OVERLAY_OPEN).on('click', _.bind(this.toggleOverly, this));
 
             $(s.OVERLAY).on('click', function (e){
 
@@ -121,6 +121,7 @@ define([
 
         },
         openOverly: function() {
+
             this.overlayStatus = 'opened';
 
             $(s.OVERLAY_OPEN).find('img').attr('src', 'css/icons/close-ico.svg');
@@ -313,6 +314,16 @@ define([
             };
 
             this.analysis.add(item);
+        },
+
+        dispose: function () {
+
+            this.unbindEventListeners();
+
+            View.prototype.dispose.call(this, arguments);
+        },
+        unbindEventListeners: function() {
+            
         }
     });
 

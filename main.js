@@ -105,6 +105,10 @@ require([
 
                     'fx-common/config/auth_users' : '../../config/auth_users.json',
                     // Override
+/*
+                    "fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/catalog/blankFilter',
+*/
+
                     'fx-ana/config/services' : '../../config/submodules/fx-analysis/Config',
                     'fx-filter/config/config-default' : '../../config/submodules/fx-filter/Config'
 
