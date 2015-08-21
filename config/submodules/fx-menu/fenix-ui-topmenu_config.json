@@ -5,7 +5,7 @@
         "id": "home",
         "class": "home-menu-item"
       },
-      "target": "#home",
+      "target": "./index.html#home",
       "label": {
         "EN": ""
       }
@@ -14,7 +14,7 @@
       "attrs": {
         "id": "profile"
       },
-      "target": "#profile",
+      "target": "./index.html#profile",
       "label": {
         "EN": "Country Profile"
       }
@@ -35,7 +35,7 @@
       "attrs": {
         "id": "analysis"
       },
-      "target": "#analysis",
+      "target": "./index.html#analysis",
       "label": {
         "EN": "Analysis"
       }
@@ -44,7 +44,7 @@
       "attrs": {
         "id": "methods"
       },
-      "target": "#methods",
+      "target": "./index.html#methods",
       "label": {
         "EN": "Methods and Standards"
       }
@@ -53,7 +53,7 @@
       "attrs": {
         "id": "modules"
       },
-      "target": "#modules",
+      "target": "./index.html#modules",
       "label": {
         "EN": "Thematic Modules"
       }

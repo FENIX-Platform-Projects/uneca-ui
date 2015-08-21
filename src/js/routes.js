@@ -8,7 +8,6 @@ define(function () {
         match('', 'home#show');
         match('home', 'home#show');
         match('profile', 'profile#show');
-        match('datamgmt', 'datamgmt#show');
         match('analysis', 'analysis#show');
         match('methods', 'methods#show');
         match('modules', 'modules#show');
