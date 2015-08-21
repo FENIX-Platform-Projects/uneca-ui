@@ -57,16 +57,9 @@ require([
                     rsvp: '{FENIX_CDN}/js/rsvp/3.0.17/rsvp',
                     pnotify: '{FENIX_CDN}/js/pnotify/2.0.1/pnotify.custom.min',
 
-/*
-                    'fx-d-m/config/config': './config/submodules/fx-data-mng/config',
-*/
-
-                    "fx-d-m/routes": "./submodules/fenix-ui-data-management/src/js/routes/routes",
-                    'fx-d-m/templates/landing' :"./submodules/fenix-ui-data-management/src/js/templates/landing/landing.hbs",
-                    'fx-d-m/templates/resume' :"./submodules/fenix-ui-data-management/src/js/templates/resume/resume.hbs",
-
                     'fx-d-m/templates/site' : "./src/js/templates/site.hbs",
-
+                    'fx-d-m/config/config' : "./config/submodules/fx-data-mng/Config",
+                    'fx-d-m/i18n/nls/site' : "./i18n/site",
                     'fx-cat-br/config/config': './config/submodules/fx-catalog/config',
 
                     'fx-submodules/config/baseConfig': './config/submodules/config_base'

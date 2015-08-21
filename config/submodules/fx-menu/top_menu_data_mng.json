@@ -5,6 +5,9 @@
         "id": "home",
         "class": "home-menu-item"
       },
+      "a_attrs": {
+        "rel": "external"
+      },
       "target": "./index.html#home",
       "label": {
         "EN": ""
@@ -13,6 +16,9 @@
     {
       "attrs": {
         "id": "profile"
+      },
+      "a_attrs": {
+        "rel": "external"
       },
       "target": "./index.html#profile",
       "label": {
@@ -23,10 +29,7 @@
       "attrs": {
         "id": "datamgmt"
       },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "datamgmt.html",
+      "target": "#",
       "label": {
         "EN": "Data Management"
       }
@@ -34,6 +37,9 @@
     {
       "attrs": {
         "id": "analysis"
+      },
+      "a_attrs": {
+        "rel": "external"
       },
       "target": "./index.html#analysis",
       "label": {
@@ -44,6 +50,9 @@
       "attrs": {
         "id": "methods"
       },
+      "a_attrs": {
+        "rel": "external"
+      },
       "target": "./index.html#methods",
       "label": {
         "EN": "Methods and Standards"
@@ -52,6 +61,9 @@
     {
       "attrs": {
         "id": "modules"
+      },
+      "a_attrs": {
+        "rel": "external"
       },
       "target": "./index.html#modules",
       "label": {
@@ -77,8 +89,5 @@
       }
     }
   ],
-  "type": "static-top",
-  "brand": {
-    "target": "#"
-  }
+  "type": "static-top"
 }

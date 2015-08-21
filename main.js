@@ -49,7 +49,6 @@ require([
     var metadataViewerConfig = MetadataViewer;
     metadataViewerConfig.baseUrl= submodules_path +'fenix-ui-metadata-viewer/js/';
 
-
     var faostatThemeConfig = FAOSTAT_THEME;
     faostatThemeConfig.baseUrl = submodules_path + '/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js';
 
@@ -67,7 +66,6 @@ require([
 
     var filterConfig = Filter;
     filterConfig.baseUrl =  submodules_path +'/fenix-ui-filter/';
-
 
     Compiler.resolve([commonConfig, menuConfig, analysisConfig,catalogConfig,
             dataEditorConfig,dsdEditorConfig,metadataEditorConfig,metadataViewerConfig,faostatThemeConfig,
@@ -104,14 +102,12 @@ require([
                     json: "../../json",
 
                     'fx-common/config/auth_users' : '../../config/auth_users.json',
-                    // Override
-/*
-                    "fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/catalog/blankFilter',
-*/
+
+                    //"fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/catalog/blankFilter',
 
                     'fx-ana/config/services' : '../../config/submodules/fx-analysis/Config',
-                    'fx-filter/config/config-default' : '../../config/submodules/fx-filter/Config'
 
+                    'fx-filter/config/config' : '../../config/submodules/fx-filter/Config'
 
                 },
 
