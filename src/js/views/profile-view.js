@@ -30,7 +30,7 @@ define([
             View.prototype.attach.call(this, arguments);
 
             //update State
-            amplify.publish(E.STATE_CHANGE, {menu: 'about'});
+            amplify.publish(E.STATE_CHANGE, {menu: 'profile'});
 
         }
     });

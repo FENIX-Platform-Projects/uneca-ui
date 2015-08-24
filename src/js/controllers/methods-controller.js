@@ -53,7 +53,7 @@ define([
         show: function (params) {
 
             if (this.validMethodId === false) {
-                Chaplin.utils.redirectTo({controller: 'standards', action: 'show'});
+                Chaplin.utils.redirectTo({controller: 'methods', action: 'show'});
             }
 
             var conf = {
