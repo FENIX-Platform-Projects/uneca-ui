@@ -8,6 +8,9 @@ require([
     './submodules/fenix-ui-catalog/js/paths',
     './submodules/fenix-ui-DataEditor/js/paths',
     './submodules/fenix-ui-DSDEditor/js/paths',
+/*
+    './submodules/fenix-ui-dataUpload/js/paths',
+*/
     './submodules/fenix-ui-metadata-editor/js/paths',
     './submodules/fenix-ui-metadata-viewer/js/paths',
     './submodules/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js/paths',
@@ -18,7 +21,7 @@ require([
     './submodules/fenix-ui-filter/src/js/paths'
 
 ], function (Compiler, Common, Menu, Analysis, Catalog,
-             DataEditor, DSDEditor,MetadataEditor, MetadataViewer,FAOSTAT_THEME,
+             DataEditor, DSDEditor, /*DataUpload,*/MetadataEditor, MetadataViewer,FAOSTAT_THEME,
              MapCreator,ChartCreator, TableCreator, FenixReport, Filter  ) {
 
     'use strict';
@@ -42,6 +45,9 @@ require([
 
     var dsdEditorConfig = DSDEditor;
     dsdEditorConfig.baseUrl = submodules_path +'fenix-ui-DSDEditor/js/';
+/*
+    var dataUploadConfig = DataUpload;
+    dataUploadConfig.baseUrl = submodules_path + 'fenix-ui-dataUpload/js/';*/
 
     var metadataEditorConfig = MetadataEditor;
     metadataEditorConfig.baseUrl = submodules_path +'fenix-ui-metadata-editor/js/';
@@ -68,7 +74,7 @@ require([
     filterConfig.baseUrl =  submodules_path +'/fenix-ui-filter/';
 
     Compiler.resolve([commonConfig, menuConfig, analysisConfig,catalogConfig,
-            dataEditorConfig,dsdEditorConfig,metadataEditorConfig,metadataViewerConfig,faostatThemeConfig,
+            dataEditorConfig,dsdEditorConfig,/*dataUploadConfig,*/metadataEditorConfig,metadataViewerConfig,faostatThemeConfig,
             mapCreatorConfig,chartCreatorConfig,tableCreatorConfig,fenixReportConfig,filterConfig],
         {
             placeholders: {"FENIX_CDN": "//fenixrepo.fao.org/cdn"},

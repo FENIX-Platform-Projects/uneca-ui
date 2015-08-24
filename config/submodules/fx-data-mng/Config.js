@@ -10,6 +10,7 @@ define(function () {
             url: 'config/submodules/fx-menu/top_menu_data_mng.json',
             template: 'fx-menu/templates/blank-fluid.html',
             active: "datamgmt"
-        }
+        },
+        FAKE_AUTHENTICATION : false
     };
 });
