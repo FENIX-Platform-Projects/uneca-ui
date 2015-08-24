@@ -2,13 +2,10 @@
 define([
     'views/base/view',
     'text!templates/modules/modules.hbs',
-    'text!templates/modules/modules_item.hbs',
     'i18n!nls/modules',
-    'handlebars',
-    'text!json/modules/modules.json',
     'config/Events',
     'amplify'
-], function (View, template,itemTemplate, i18nLabels, Handlebars, Modules,E) {
+], function (View, template, i18nLabels,E) {
 
     'use strict';
 
@@ -41,29 +38,13 @@ define([
 
             this.initVariables();
 
-            this.initComponents();
-
-
 
         },
         initVariables: function () {
 
-            this.$modulesList = this.$el.find(s.MODULE_LIST);
         },
 
-        initComponents: function() {
-            this.initModulesList();
-        },
 
-        initModulesList: function() {
-            _.each(JSON.parse(Modules), _.bind(this.printDownloads, this));
-
-        },
-        printDownloads: function (d) {
-
-            var template = Handlebars.compile(itemTemplate);
-            this.$modulesList.append(template(d));
-        },
         unbindEventListeners: function () {
 
         },

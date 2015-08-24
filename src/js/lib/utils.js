@@ -39,6 +39,8 @@ define([
         return keyword[lang.toUpperCase()];
     });
 
+
+
     utils.getLabel = function (obj) {
         return obj[requirejs.s.contexts._.config.i18n.locale.toUpperCase()];
     };
