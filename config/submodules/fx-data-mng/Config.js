@@ -21,7 +21,7 @@ define(['jquery', 'fx-submodules/config/baseConfig'],
         $.extend(cfg, config_base);
 
         // configuration data management
-        cfg.DSD_EDITOR_CODELISTS = "config/submodules/DSDEditor/CodelistsUNECA.json";
+        cfg.DSD_EDITOR_CODELISTS = "config/submodules/DSDEditor/CodelistsUneca.json";
         //cfg.DSD_EDITOR_CONTEXT_SYSTEM = "UNECA";
         cfg.DSD_EDITOR_CONTEXT_SYSTEM = "uneca";
 

@@ -7,10 +7,8 @@ define([], function () {
     //services.SERVICES_BASE_ADDRESS = "http://fenix.fao.org/d3s_dev2/msd";
 
     var services = {
-/*
-        SERVICES_BASE_ADDRESS : 'http://fenix.fao.org/d3s'
-*/
-        SERVICES_BASE_ADDRESS : 'http://fenixservices.fao.org/d3s'
+
+        SERVICES_BASE_ADDRESS : 'http://fenixservices.fao.org/d3s/msd'
 
     };
 

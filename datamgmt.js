@@ -54,6 +54,7 @@ require([
                     amplify: '{FENIX_CDN}/js/amplify/1.1.2/amplify.min',
                     rsvp: '{FENIX_CDN}/js/rsvp/3.0.17/rsvp',
                     pnotify: '{FENIX_CDN}/js/pnotify/2.0.1/pnotify.custom.min',
+                    datetimepicker: 'FENIX_CDN}/js/bootstrap-datetimepicker/4.14.30/src/js/bootstrap-datetimepicker',
 
                     'fx-d-m/templates/site' : "./src/js/templates/site.hbs",
                     'fx-d-m/config/config' : "./config/submodules/fx-data-mng/Config",

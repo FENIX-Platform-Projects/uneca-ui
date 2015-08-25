@@ -51,6 +51,8 @@ define([
             //update State
             amplify.publish(E.STATE_CHANGE, {menu: 'analysis'});
 
+            console.log(C.CATALOG_BLANK_FILTER)
+
             this.catalog = new Catalog({
 
                 container: document.querySelector(s.CATALOG_CONTAINER),

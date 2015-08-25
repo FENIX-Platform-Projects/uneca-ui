@@ -71,7 +71,7 @@ require([
     fenixReportConfig.baseUrl= submodules_path +'fenix-ui-reports/src/js/';
 
     var filterConfig = Filter;
-    filterConfig.baseUrl =  submodules_path +'/fenix-ui-filter/';
+    filterConfig.baseUrl =  submodules_path +'fenix-ui-filter/';
 
     Compiler.resolve([commonConfig, menuConfig, analysisConfig,catalogConfig,
             dataEditorConfig,dsdEditorConfig,/*dataUploadConfig,*/metadataEditorConfig,metadataViewerConfig,faostatThemeConfig,
@@ -109,11 +109,13 @@ require([
 
                     'fx-common/config/auth_users' : '../../config/auth_users.json',
 
-                    //"fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/catalog/blankFilter',
+                    "fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/fx-catalog/blankFilter',
 
                     'fx-ana/config/services' : '../../config/submodules/fx-analysis/Config',
 
-                    'fx-filter/config/config' : '../../config/submodules/fx-filter/Config'
+                    'fx-filter/config/config' : '../../config/submodules/fx-filter/Config',
+
+                    'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi'
 
                 },
 

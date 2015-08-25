@@ -27,7 +27,10 @@ define(function () {
             TOP_MENU_AUTH_MODE_HIDDEN_ITEMS: ['login'],
             TOP_MENU_PUBLIC_MODE_HIDDEN_ITEMS :['datamgmt', 'logout'],
 
-            SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK : "home"
+            SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK : "home",
+/*
+            CATALOG_BLANK_FILTER: "config/submodules/fx-catalog/blank-filter.json"
+*/
 
         };
     });
