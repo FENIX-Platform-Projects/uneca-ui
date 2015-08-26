@@ -103,14 +103,8 @@ define([
             amplify.subscribe('fx.widget.catalog.select', _.bind(this.closeOverly, this));
         },
 
-        toggleOverly: function () {
-            this.overlayStatus === 'opened' ? this.closeOverly() : this.openOverly();
-
-        },
 
         openOverly: function () {
-
-            this.overlayStatus = 'opened';
 
             $(s.OVERLAY).show();
             $(s.OVERLAY).css({
@@ -122,7 +116,6 @@ define([
         },
 
         closeOverly: function () {
-            this.overlayStatus = 'closed';
 
             $(s.OVERLAY_CONTENT).fadeOut("fast", function () {
                 $(s.OVERLAY_CONTENT).hide();
