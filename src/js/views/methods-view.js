@@ -122,7 +122,7 @@ define([
             this.$standardsList.on("changed.jstree", _.bind(function (e, data) {
                 var id = data.selected[0];
 
-                Backbone.history.navigate('#standards/' + id, {trigger: false});
+                Backbone.history.navigate('#methods/' + id, {trigger: false});
 
                 this.onStandardSelect(id);
             }, this));

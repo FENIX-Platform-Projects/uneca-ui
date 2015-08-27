@@ -40,6 +40,12 @@ define([
     });
 
 
+    Handlebars.registerHelper('prova', function(keyword) {
+
+           console.log(arguments)
+    });
+
+
 
     utils.getLabel = function (obj) {
         return obj[requirejs.s.contexts._.config.i18n.locale.toUpperCase()];

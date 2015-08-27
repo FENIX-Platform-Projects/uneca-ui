@@ -28,6 +28,8 @@ define(function () {
             TOP_MENU_PUBLIC_MODE_HIDDEN_ITEMS :['datamgmt', 'logout'],
 
             SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK : "home",
+
+            GAUL0_CODE_LIST : 'http://fenixservices.fao.org/d3s/msd/resources/data/uid/GAUL0',
 /*
             CATALOG_BLANK_FILTER: "config/submodules/fx-catalog/blank-filter.json"
 */

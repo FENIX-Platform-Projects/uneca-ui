@@ -1,13 +1,15 @@
 /*global define*/
 define([
+    'jquery',
     'backbone',
     'chaplin',
+    'config/Config',
     'controllers/base/controller',
     'views/profile-view',
     'text!json/methods/models.json',
     'q',
     'amplify'
-], function (Backbone,Chaplin,Controller, View, MethodsCollection, Q) {
+], function ($, Backbone, Chaplin, C, Controller, View, MethodsCollection, Q) {
 
     'use strict';
 
@@ -15,54 +17,46 @@ define([
 
         beforeAction: function (params) {
 
+            this.currentCountryId  =  params.id;
+
             Controller.prototype.beforeAction.call(this, arguments);
 
-            return this.performAccessControlChecks(params).then( _.bind(this.allowAccess, this), _.bind(this.denyAccess, this));
+            //TODO cache codelist
+
+            return this.performAccessControlChecks(params).then( _.bind(this.onSuccess, this), _.bind(this.onError, this));
         },
 
-        denyAccess: function () {
+        onError: function ( ) {
 
-            this.validstandardId = false;
+            alert("Impossible to load country list")
         },
 
-        allowAccess: function () {
+        onSuccess: function ( countries ) {
 
-            this.validstandardId = true;
+            this.countries = countries;
+
+            var country = _.findWhere(this.countries, { code : this.currentCountryId});
+
+            this.validCountrydId = !!country;
+
         },
 
         performAccessControlChecks: function (params) {
 
-            return new Q.Promise(_.bind(function (fulfilled, rejected) {
-
-                this.collection = JSON.parse(MethodsCollection);
-
-                var model = _.findWhere(this.collection, {id: params.id});
-
-                if (model === undefined) {
-                    //It is NOT a valid standards id
-                    rejected();
-
-                } else {
-                    //It is a valid standards id
-                    fulfilled();
-                }
-
-            }, this));
+            return new Q($.ajax({
+                url : C.GAUL0_CODE_LIST
+            }));
         },
 
         show: function (params) {
 
-            if (this.validMethodId === false) {
-                Chaplin.utils.redirectTo({controller: 'profile', action: 'show'});
-            }
-
             var conf = {
                 region: 'main',
-                standardCollection: this.collection
+                countries: this.countries
             };
 
             //Pass the valid id to view if valid
-            if (this.validstandardId === true) {
+            if (this.validCountrydId === true) {
                 conf.id = params.id;
             } else {
                 Backbone.history.navigate('#profile/' , {trigger: false});

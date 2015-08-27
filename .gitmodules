@@ -49,3 +49,6 @@
 [submodule "submodules/fenix-ui-dataUpload"]
 	path = submodules/fenix-ui-dataUpload
 	url = https://github.com/FENIX-Platform/fenix-ui-dataUpload.git
+[submodule "submodules/fenix-ui-dashboard"]
+	path = submodules/fenix-ui-dashboard
+	url = https://github.com/FENIX-Platform/fenix-ui-dashboard/
