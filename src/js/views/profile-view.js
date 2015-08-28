@@ -6,13 +6,14 @@ define([
     'text!templates/profile/profile.hbs',
     'text!templates/profile/list.hbs',
     'text!templates/profile/dashboard.hbs',
+    'text!templates/profile/bases.hbs',
     'i18n!nls/profile',
     'config/Events',
     'config/profile/config',
     'handlebars',
     'amplify',
     'bootstrap-list-filter'
-], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, i18nLabels, E, PC, Handlebars) {
+], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, PC, Handlebars) {
 
     'use strict';
 
@@ -21,7 +22,8 @@ define([
         SEARCH_FILTER_INPUT : "#searchinput",
         COUNTRY_LIST : '#list-countries',
         SEARCH_ITEM_CHILD : 'a',
-        SEARCH_ITEM_EL : '.country-item'
+        SEARCH_ITEM_EL : '.country-item',
+        DASHBOARD_CONTENT : "#dashboard-content"
     };
 
     var ProfileView = View.extend({
@@ -85,11 +87,33 @@ define([
 
             this.$content.html(dashboardTemplate);
 
+            //print jstree
+
+            this._printDashboardBase('resume');
+
             //dashboard configuration
-            var conf = this._getDashboardConfig();
+            var conf = this._getDashboardConfig('resume');
 
             this._renderDashboard(conf);
 
+            //bind events from tree click to dashboard refresh
+            /*
+            * - destroy current dashboard
+            * - inject new template    this._printDashboardBase( jstree item selected );
+            * - render new dashboard
+            *
+            * */
+
+        },
+
+        _printDashboardBase : function ( id ) {
+
+            //Inject HTML
+            var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
+                template = Handlebars.compile(source.prop('outerHTML')),
+                html = template();
+
+            this.$el.find(s.DASHBOARD_CONTENT).html(html);
         },
 
         _createCountryFilter : function () {
@@ -98,7 +122,9 @@ define([
             return [];
         },
 
-        _getDashboardConfig : function () {
+        _getDashboardConfig : function (id) {
+
+            //get from PC the 'id' conf
 
             var conf = $.extend(true, {}, PC);
 
