@@ -40,10 +40,59 @@ define([
     });
 
 
-    Handlebars.registerHelper('prova', function(keyword) {
+    Handlebars.registerHelper("each_with_index_1", function(array, fn) {
 
-           console.log(arguments)
+        var result = '';
+        var lang = requirejs.s.contexts._.config.i18n.locale;
+        var index = array.data.index +1
+
+        if(index ===1 || index%4 === 1 ){
+
+        }
+
+        // return the finished buffer
+        return result;
+
     });
+
+    Handlebars.registerHelper("list_countries_creator", function(array, fn) {
+
+        var countries= array.data.root.countries;
+        var lang = requirejs.s.contexts._.config.i18n.locale;
+        lang = lang.toUpperCase();
+        var result = '';
+
+        var firstDone = false;
+        var secondDone = false;
+        for(var i = 0, length = countries.length; i<length; i++) {
+            // first
+            if(i===0 || i %3 ===0){
+                result+= '<div class="row">';
+                result+= '<li class="col-xs-4">' +
+                    '<a href="/#profile/'+countries[i].code+'">'
+                    +countries[i].title[lang]+'</a></li>';
+                firstDone = true;
+            }else if(i===1 || firstDone) {
+                result+= '<li class="col-xs-4">' +
+                    '<a href="/#profile/'+countries[i].code+'">'
+                    +countries[i].title[lang]+'</a></li>';
+                firstDone = false;
+                secondDone  =true;
+            }else if (i===2 || secondDone) {
+                result+= '<li class="col-xs-4">' +
+                    '<a href="/#profile/'+countries[i].code+'">'
+                    +countries[i].title[lang]+'</a></li>';
+                result+= '</div>';
+                secondDone  =false;
+            }
+        }
+        if(length%3 !== 0) {
+            result+= '</div>';
+        }
+        return new Handlebars.SafeString(result);;
+
+    });
+
 
 
 

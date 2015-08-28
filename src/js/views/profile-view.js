@@ -60,12 +60,16 @@ define([
 
         _printCountryList: function () {
 
+            var index = 0;
+            this.countriesReady = [];
+
             var template = Handlebars.compile(listTemplate),
                 html    = template({countries : this.countries});
 
             this.$content.html(html)
 
         },
+
 
         _printCountryDashboard: function () {
 
