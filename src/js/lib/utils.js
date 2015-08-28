@@ -69,18 +69,18 @@ define([
             if(i===0 || i %3 ===0){
                 result+= '<div class="row">';
                 result+= '<li class="col-xs-4">' +
-                    '<a href="/#profile/'+countries[i].code+'">'
+                    '<a href="profile/'+countries[i].code+'">'
                     +countries[i].title[lang]+'</a></li>';
                 firstDone = true;
             }else if(i===1 || firstDone) {
                 result+= '<li class="col-xs-4">' +
-                    '<a href="/#profile/'+countries[i].code+'">'
+                    '<a href="profile/'+countries[i].code+'">'
                     +countries[i].title[lang]+'</a></li>';
                 firstDone = false;
                 secondDone  =true;
             }else if (i===2 || secondDone) {
                 result+= '<li class="col-xs-4">' +
-                    '<a href="/#profile/'+countries[i].code+'">'
+                    '<a href="profile/'+countries[i].code+'">'
                     +countries[i].title[lang]+'</a></li>';
                 result+= '</div>';
                 secondDone  =false;
