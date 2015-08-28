@@ -9,11 +9,13 @@ define([
     'text!templates/profile/bases.hbs',
     'i18n!nls/profile',
     'config/Events',
+    'text!config/profile/lateral_menu.json',
     'config/profile/config',
     'handlebars',
     'amplify',
-    'bootstrap-list-filter'
-], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, PC, Handlebars) {
+    'bootstrap-list-filter',
+    'jstree'
+], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate,i18nLabels, E, LateralMenuConfig,PC,  Handlebars) {
 
     'use strict';
 
@@ -23,7 +25,8 @@ define([
         COUNTRY_LIST : '#list-countries',
         SEARCH_ITEM_CHILD : 'a',
         SEARCH_ITEM_EL : '.country-item',
-        DASHBOARD_CONTENT : "#dashboard-content"
+        DASHBOARD_CONTENT : "#dashboard-content",
+        LATERAL_MENU: '#lateral-menu'
     };
 
     var ProfileView = View.extend({
@@ -66,6 +69,7 @@ define([
         _initVariables: function () {
 
             this.$content = this.$el.find(s.CONTENT);
+
         },
 
         _printCountryList: function () {
@@ -85,16 +89,31 @@ define([
 
         _printCountryDashboard: function () {
 
+            var self= this;
+
+
             this.$content.html(dashboardTemplate);
+            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
+
+
 
             //print jstree
+            this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
+                //select first node
+                .on("ready.jstree", function () {
+                    self.$lateralMenu.jstree(true).select_node('ul > li:first');
+                    self._bindEventListener();
+                });
+
 
             this._printDashboardBase('resume');
 
             //dashboard configuration
             var conf = this._getDashboardConfig('resume');
 
-            this._renderDashboard(conf);
+            this._renderDashboard(conf['resume']);
+
+
 
             //bind events from tree click to dashboard refresh
             /*
@@ -104,6 +123,22 @@ define([
             *
             * */
 
+        },
+
+        _bindEventListener: function() {
+            var self = this;
+            this.$lateralMenu.on('changed.jstree', function (e, data) {
+                self._onChangeDashboard(data.selected[0]);
+            });
+
+        },
+
+
+        _onChangeDashboard: function (itemSelected) {
+
+            this._printDashboardBase( 'resume' );
+            var conf = this._getDashboardConfig('resume');
+            this._renderDashboard(conf[itemSelected]);
         },
 
         _printDashboardBase : function ( id ) {
