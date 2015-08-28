@@ -1,19 +1,27 @@
 /*global define, amplify*/
 define([
+    'jquery',
     'views/base/view',
+    'fx-ds/start',
     'text!templates/profile/profile.hbs',
     'text!templates/profile/list.hbs',
     'text!templates/profile/dashboard.hbs',
     'i18n!nls/profile',
     'config/Events',
+    'config/profile/config',
     'handlebars',
-    'amplify'
-], function (View, template, listTemplate, dashboardTemplate, i18nLabels, E, Handlebars) {
+    'amplify',
+    'bootstrap-list-filter'
+], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, i18nLabels, E, PC, Handlebars) {
 
     'use strict';
 
     var s = {
-        CONTENT : "#profile-content"
+        CONTENT : "#profile-content",
+        SEARCH_FILTER_INPUT : "#searchinput",
+        COUNTRY_LIST : '#list-countries',
+        SEARCH_ITEM_CHILD : 'a',
+        SEARCH_ITEM_EL : '.country-item'
     };
 
     var ProfileView = View.extend({
@@ -60,25 +68,58 @@ define([
 
         _printCountryList: function () {
 
-            var index = 0;
-            this.countriesReady = [];
-
             var template = Handlebars.compile(listTemplate),
                 html    = template({countries : this.countries});
 
-            this.$content.html(html)
+            this.$content.html(html);
+
+            //Init filter
+            $(s.COUNTRY_LIST).btsListFilter(s.SEARCH_FILTER_INPUT, {
+                itemEl: s.SEARCH_ITEM_EL,
+                itemChild: s.SEARCH_ITEM_CHILD
+            });
 
         },
 
-
         _printCountryDashboard: function () {
 
-            this.$content.html(dashboardTemplate)
+            this.$content.html(dashboardTemplate);
 
-            console.log("_printCountryDashboard")
+            //dashboard configuration
+            var conf = this._getDashboardConfig();
+
+            this._renderDashboard(conf);
+
+        },
+
+        _createCountryFilter : function () {
+
+            //create country filter
+            return [];
+        },
+
+        _getDashboardConfig : function () {
+
+            var conf = $.extend(true, {}, PC);
+
+            conf.filter = this._createCountryFilter();
+
+            return PC;
+        },
+
+        _renderDashboard: function (config) {
+
+            if (this.unecaDashboard && this.unecaDashboard.destroy) {
+                this.unecaDashboard.destroy();
+            }
+
+            this.unecaDashboard = new Dashboard({
+                layout: "injected"
+            });
+
+            this.unecaDashboard.render(config);
+
         }
-
-
 
     });
 

@@ -18,11 +18,12 @@ require([
     './submodules/fenix-ui-chart-creator/src/js/paths',
     './submodules/fenix-ui-table-creator/src/js/paths',
     './submodules/fenix-ui-reports/src/js/paths',
+    './submodules/fenix-ui-dashboard/src/js/paths',
     './submodules/fenix-ui-filter/src/js/paths'
 
 ], function (Compiler, Common, Menu, Analysis, Catalog,
              DataEditor, DSDEditor, /*DataUpload,*/MetadataEditor, MetadataViewer,FAOSTAT_THEME,
-             MapCreator,ChartCreator, TableCreator, FenixReport, Filter  ) {
+             MapCreator,ChartCreator, TableCreator, FenixReport, Dashboard, Filter  ) {
 
     'use strict';
 
@@ -70,12 +71,15 @@ require([
     var fenixReportConfig = FenixReport;
     fenixReportConfig.baseUrl= submodules_path +'fenix-ui-reports/src/js/';
 
+    var dashboardConfig = Dashboard;
+    dashboardConfig.baseUrl= submodules_path +'fenix-ui-dashboard/src/js/';
+
     var filterConfig = Filter;
     filterConfig.baseUrl =  submodules_path +'fenix-ui-filter/';
 
     Compiler.resolve([commonConfig, menuConfig, analysisConfig,catalogConfig,
             dataEditorConfig,dsdEditorConfig,/*dataUploadConfig,*/metadataEditorConfig,metadataViewerConfig,faostatThemeConfig,
-            mapCreatorConfig,chartCreatorConfig,tableCreatorConfig,fenixReportConfig,filterConfig],
+            mapCreatorConfig,chartCreatorConfig,tableCreatorConfig,fenixReportConfig,filterConfig, dashboardConfig],
         {
             placeholders: {"FENIX_CDN": "//fenixrepo.fao.org/cdn"},
 
@@ -100,6 +104,7 @@ require([
                     i18n: "{FENIX_CDN}/js/requirejs/plugins/i18n/2.0.4/i18n",
                     text: '{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text',
                     rsvp: '{FENIX_CDN}/js/rsvp/3.0.17/rsvp',
+                    "bootstrap-list-filter" :'{FENIX_CDN}/js/bootstrap-list-filter/0.2.1/bootstrap-list-filter.min',
 
                     amplify: '{FENIX_CDN}/js/amplify/1.1.2/amplify.min',
 

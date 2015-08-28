@@ -67,29 +67,29 @@ define([
         for(var i = 0, length = countries.length; i<length; i++) {
             // first
             if(i===0 || i %3 ===0){
-                result+= '<div class="row">';
-                result+= '<li class="col-xs-4">' +
+                //result+= '<div>';
+                result+= '<div class="col-md-4 country-item">' +
                     '<a href="profile/'+countries[i].code+'">'
-                    +countries[i].title[lang]+'</a></li>';
+                    +countries[i].title[lang]+'</a></div>';
                 firstDone = true;
             }else if(i===1 || firstDone) {
-                result+= '<li class="col-xs-4">' +
+                result+= '<div class="col-md-4 country-item">' +
                     '<a href="profile/'+countries[i].code+'">'
-                    +countries[i].title[lang]+'</a></li>';
+                    +countries[i].title[lang]+'</a></div>';
                 firstDone = false;
                 secondDone  =true;
             }else if (i===2 || secondDone) {
-                result+= '<li class="col-xs-4">' +
+                result+= '<div class="col-md-4 country-item">' +
                     '<a href="profile/'+countries[i].code+'">'
-                    +countries[i].title[lang]+'</a></li>';
-                result+= '</div>';
+                    +countries[i].title[lang]+'</a></div>';
+                //result+= '</div>';
                 secondDone  =false;
             }
         }
-        if(length%3 !== 0) {
+       /* if(length%3 !== 0) {
             result+= '</div>';
-        }
-        return new Handlebars.SafeString(result);;
+        }*/
+        return new Handlebars.SafeString(result);
 
     });
 
