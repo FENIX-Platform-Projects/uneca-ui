@@ -1,5 +1,6 @@
 /*global define, amplify*/
 define([
+    'jquery',
     'backbone',
     'views/base/view',
     'text!templates/methods/methods.hbs',
@@ -11,11 +12,8 @@ define([
     'q',
     'jstree',
     'amplify',
-/*
-    'webix,'
-*/
     'jqwidgets'
-], function (Backbone,View, template, i18nLabels, Handlebars, Utils, C,E, Q) {
+], function ($,Backbone,View, template, i18nLabels, Handlebars, Utils, C,E, Q) {
 
     'use strict';
 
@@ -23,7 +21,7 @@ define([
         STANDARD_LIST: "#standards-list",
         STANDARD_CONTAINERS: "#standards-container",
         TREE_CONTAINER: '#codelist-tree-container',
-        TREE_TITLE : 'codelist-title'
+        TREE_TITLE : '#codelist-title'
     };
 
     var MethodsView = View.extend({
@@ -64,7 +62,7 @@ define([
 
             this.$standardsList = this.$el.find(s.STANDARD_LIST);
             this.$standardsCodelistTitle = this.$el.find(s.TREE_TITLE);
-            this.$standardsTree =  this.$el.find(s.TREE_CONTAINER);
+            this.$standardsTreeContainer =  this.$el.find(s.TREE_CONTAINER);
         },
 
         initComponents: function () {
@@ -118,7 +116,13 @@ define([
             var self = this;
 
             this.$standardsList.on("changed.jstree", _.bind(function (e, data) {
+                e.preventDefault();
                 var id = data.selected[0];
+                this.$titleCodelist = data.node.text;
+
+                if(this.$treeHolder) {
+                    this.$treeHolder.jqxTreeGrid('destroy')
+                }
 
                 Backbone.history.navigate('#methods/' + id, {trigger: false});
 
@@ -154,11 +158,12 @@ define([
         _onCreatingTree : function (  ) {
 
             var self = this;
-            console.log(this.$dataToBePrepared)
 
-        /*    if(this.$standardsTree && this.$standardsTree.length >0) {
-                this.$standardsTree.jqxTreeGrid('destroy')
-            }*/
+            if(this.$standardsCodelistTitle.text()){
+                this.$standardsCodelistTitle.text('')
+            }
+            this.$standardsCodelistTitle.text(this.$titleCodelist);
+
             var source =
             {
                 dataType: "array",
@@ -178,8 +183,11 @@ define([
             };
             var dataAdapter = new $.jqx.dataAdapter(source);
 
+            this.$standardsTreeContainer.append('<div id="tree-holder"></div>');
+            this.$treeHolder =  this.$el.find('#tree-holder');
+
             // create Tree Grid
-            this.$standardsTree.jqxTreeGrid(
+            this.$treeHolder.jqxTreeGrid(
                 {
                     width: 600,
                     source: dataAdapter,
@@ -187,10 +195,8 @@ define([
                     columns: [
                         { text: 'Code', dataField: 'code' },
                         { text: 'Title', dataField: 'title'},
-                    ],
-                    ready: function () {
-                        $(s.TREE_CONTAINER).jqxTreeGrid('expandRow', '1');
-                    }
+                    ]
+
                 });
         },
 
@@ -206,15 +212,14 @@ define([
 
             this.$standardsList.jstree('destroy');
             this.$standardsList.off();
-            this.$standardsTree.jqxTreeGrid('destroy')
 
-
+            if(this.$treeHolder) {
+                this.$treeHolder.jqxTreeGrid('destroy');
+            }
         },
 
         dispose: function () {
-
             this.unbindEventListeners();
-
             View.prototype.dispose.call(this, arguments);
         }
 
