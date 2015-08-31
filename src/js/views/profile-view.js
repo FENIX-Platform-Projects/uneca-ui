@@ -15,17 +15,17 @@ define([
     'amplify',
     'bootstrap-list-filter',
     'jstree'
-], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate,i18nLabels, E, LateralMenuConfig,PC,  Handlebars) {
+], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, PC, Handlebars) {
 
     'use strict';
 
     var s = {
-        CONTENT : "#profile-content",
-        SEARCH_FILTER_INPUT : "#searchinput",
-        COUNTRY_LIST : '#list-countries',
-        SEARCH_ITEM_CHILD : 'a',
-        SEARCH_ITEM_EL : '.country-item',
-        DASHBOARD_CONTENT : "#dashboard-content",
+        CONTENT: "#profile-content",
+        SEARCH_FILTER_INPUT: "#searchinput",
+        COUNTRY_LIST: '#list-countries',
+        SEARCH_ITEM_CHILD: 'a',
+        SEARCH_ITEM_EL: '.country-item',
+        DASHBOARD_CONTENT: "#dashboard-content",
         LATERAL_MENU: '#lateral-menu'
     };
 
@@ -75,7 +75,7 @@ define([
         _printCountryList: function () {
 
             var template = Handlebars.compile(listTemplate),
-                html    = template({countries : this.countries});
+                html = template({countries: this.countries});
 
             this.$content.html(html);
 
@@ -89,59 +89,62 @@ define([
 
         _printCountryDashboard: function () {
 
-            var self= this;
-
+            var self = this;
 
             this.$content.html(dashboardTemplate);
+
             this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
-
-
 
             //print jstree
             this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
-                //select first node
-                .on("ready.jstree", function () {
-                    self.$lateralMenu.jstree(true).select_node('ul > li:first');
-                    self._bindEventListener();
-                });
 
+                //Limit selection e select only leafs for indicators
+                .on("select_node.jstree", _.bind(function (e, data) {
 
-            this._printDashboardBase('resume');
+                    if ( !data.instance.is_leaf(data.node) ) {
 
-            //dashboard configuration
-            var conf = this._getDashboardConfig('resume');
+                        self.$lateralMenu.jstree(true).deselect_node(data.node, true);
 
-            this._renderDashboard(conf['resume']);
+                        self.$lateralMenu.jstree(true).toggle_node(data.node);
 
+                    } else {
 
+                        self._onChangeDashboard(data.selected[0]);
+
+                    }
+
+                }, this));
+
+            this._printDashboard('resume');
 
             //bind events from tree click to dashboard refresh
             /*
-            * - destroy current dashboard
-            * - inject new template    this._printDashboardBase( jstree item selected );
-            * - render new dashboard
-            *
-            * */
+             * - destroy current dashboard
+             * - inject new template    this._printDashboardBase( jstree item selected );
+             * - render new dashboard
+             *
+             * */
 
         },
 
-        _bindEventListener: function() {
-            var self = this;
-            this.$lateralMenu.on('changed.jstree', function (e, data) {
-                self._onChangeDashboard(data.selected[0]);
-            });
+        _printDashboard : function ( item ) {
+
+            this._printDashboardBase(item);
+
+            var conf = this._getDashboardConfig(item);
+
+            this._renderDashboard(conf);
+        },
+
+        _onChangeDashboard: function (item) {
+
+            console.log(item)
+
+            this._printDashboard(item);
 
         },
 
-
-        _onChangeDashboard: function (itemSelected) {
-
-            this._printDashboardBase( 'resume' );
-            var conf = this._getDashboardConfig('resume');
-            this._renderDashboard(conf[itemSelected]);
-        },
-
-        _printDashboardBase : function ( id ) {
+        _printDashboardBase: function (id) {
 
             //Inject HTML
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
@@ -151,21 +154,28 @@ define([
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
         },
 
-        _createCountryFilter : function () {
+        _createCountryFilter: function () {
 
             //create country filter
             return [];
         },
 
-        _getDashboardConfig : function (id) {
+        _getDashboardConfig: function (id) {
 
             //get from PC the 'id' conf
 
-            var conf = $.extend(true, {}, PC);
+            var base =  PC[id],
+                conf;
+
+            if (!base) {
+                alert("Impossible to load dashboard configuration for [" + id + "]");
+            }
+
+            conf = $.extend(true, {}, base);
 
             conf.filter = this._createCountryFilter();
 
-            return PC;
+            return conf;
         },
 
         _renderDashboard: function (config) {

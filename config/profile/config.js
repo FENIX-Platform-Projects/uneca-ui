@@ -5,7 +5,7 @@ define(function () {
 
         "resume" : {
             //data cube's uid
-            uid: "resume",
+            uid: "FLUDE_TOPIC_1",
 
             //bridge configuration
             bridge: {
@@ -750,6 +750,7 @@ define(function () {
 
 
         },
+
         "FLUDE_TOPIC_1": {
             //data cube's uid
             uid: "FLUDE_TOPIC_1",

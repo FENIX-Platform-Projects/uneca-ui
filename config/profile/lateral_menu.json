@@ -1,44 +1,81 @@
 {
   "core": {
-    "multiple" : false,
+    "multiple": false,
     "data": [
       {
-        "id": "FLUDE_TOPIC_1",
-        "text": "Forest Area and Characteristics "
+        "id": "demographic",
+        "text": "Demographic and social statistics",
+        "children": [
+          {
+            "id": "population",
+            "text": "Population"
+          },
+          {
+            "id": "education",
+            "text": "Education"
+          },
+          {
+            "id": "health",
+            "text": "Health"
+          },
+          {
+            "id": "labour",
+            "text": "Labour"
+          }
+        ]
       },
       {
-        "id": "FLUDE_TOPIC_2",
-        "text": "Production"
+        "id": "economics",
+        "text": "Economic statistics",
+        "children": [
+          {
+            "id": "balance_of_payments",
+            "text": "Balance of Payments"
+          },
+          {
+            "id": "gdp_constant",
+            "text": "GDP by kind of Economic Activity at Constant Prices"
+          },
+          {
+            "id": "gdp_current",
+            "text": "GDP by kind of Economic Activity at Current Prices"
+          },
+          {
+            "id": "monetary_statistics",
+            "text": "Monetary Statistics"
+          },
+          {
+            "id": "public_finance",
+            "text": "Public Finance"
+          },
+          {
+            "id": "energy",
+            "text": "Energy"
+          },
+          {
+            "id": "imports",
+            "text": "Imports"
+          }
+        ]
       },
       {
-        "id": "FLUDE_TOPIC_3",
-        "text": "Disturbance and Forest Degradation"
-      },
-      {
-        "id": "FLUDE_TOPIC_4",
-        "text": "Measuring Progress towards SFM"
-      },
-      {
-        "id": "FLUDE_TOPIC_5",
-        "text": "Biodiversity and Conservation"
-      },
-      {
-        "id": "FLUDE_TOPIC_6",
-        "text": "Protective Functions and Selective Ecosystem Services"
-      },
-      {
-        "id": "FLUDE_TOPIC_7",
-        "text": "Economics/Livelihood"
-      },
-      {
-        "id": "FLUDE_TOPIC_8",
-        "text": "Ownership"
-      },
-      {
-        "id": "ANNUAL_DATA",
-        "text": "Annual Data"
+        "id": "environment",
+        "text": "Environment and multi-Domain statistics",
+        "children": [
+          {
+            "id": "infrastructure",
+            "text": "Infrastructure"
+          },
+          {
+            "id": "poverty",
+            "text": "Poverty"
+          }
+        ]
       }
     ]
   },
-  "plugins": ["checkbox", "wholerow"]
+  "plugins": [
+    "checkbox",
+    "wholerow"
+  ]
 }

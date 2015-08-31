@@ -44,7 +44,7 @@ define([
         performAccessControlChecks: function (params) {
 
             return new Q($.ajax({
-                url : C.GAUL0_CODE_LIST
+                url : C.COUNTRIES_CODE_LIST
             }));
         },
 

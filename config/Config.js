@@ -3,6 +3,8 @@ define(function () {
 
         'use strict';
 
+    var CODELIST_PREFIX = 'http://fenixservices.fao.org/d3s/msd/resources/data/uid/'
+
         return {
 
             //Chaplin JS configuration
@@ -29,8 +31,10 @@ define(function () {
 
             SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK : "home",
 
-            GAUL0_CODE_LIST : 'http://fenixservices.fao.org/d3s/msd/resources/data/uid/GAUL0',
-            CODELIST_URL : 'http://fenixservices.fao.org/d3s/msd/resources/data/uid/'
+            COUNTRIES_CODE_LIST : CODELIST_PREFIX + "UNECA_ISO3",
+            CODELIST_URL : CODELIST_PREFIX
+
+
 /*
             CATALOG_BLANK_FILTER: "config/submodules/fx-catalog/blank-filter.json"
 */
