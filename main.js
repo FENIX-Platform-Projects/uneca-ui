@@ -122,7 +122,9 @@ require([
 
                     'fx-filter/config/config' : '../../config/submodules/fx-filter/Config',
 
-                    'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi'
+                    'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi',
+
+                    'fx-ds/config/config' : '../../config/submodules/fx-dashboard/config'
 
                 },
 

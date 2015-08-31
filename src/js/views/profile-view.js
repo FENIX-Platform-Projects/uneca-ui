@@ -10,12 +10,13 @@ define([
     'i18n!nls/profile',
     'config/Events',
     'text!config/profile/lateral_menu.json',
+    'text!config/profile/resume_countries.json',
     'config/profile/config',
     'handlebars',
     'amplify',
     'bootstrap-list-filter',
     'jstree'
-], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, PC, Handlebars) {
+], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars) {
 
     'use strict';
 
@@ -138,8 +139,6 @@ define([
 
         _onChangeDashboard: function (item) {
 
-            console.log(item)
-
             this._printDashboard(item);
 
         },
@@ -149,7 +148,8 @@ define([
             //Inject HTML
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
                 template = Handlebars.compile(source.prop('outerHTML')),
-                html = template();
+                context = JSON.parse(resumeInfo),
+                html = template(context && context[this.id] ? context[this.id] : {});
 
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
         },
@@ -157,14 +157,30 @@ define([
         _createCountryFilter: function () {
 
             //create country filter
-            return [];
+            return {
+                "name": "filter",
+                "parameters": {
+                    "rows": {
+                        "CountryCode": {
+                            "codes": [
+                                {
+                                    "uid": "ISO3",
+                                    "codes": [
+                                       this.id
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            };
         },
 
         _getDashboardConfig: function (id) {
 
             //get from PC the 'id' conf
 
-            var base =  PC[id],
+            var base = PC[id],
                 conf;
 
             if (!base) {
@@ -173,7 +189,7 @@ define([
 
             conf = $.extend(true, {}, base);
 
-            conf.filter = this._createCountryFilter();
+            conf.filter = [this._createCountryFilter()];
 
             return conf;
         },
