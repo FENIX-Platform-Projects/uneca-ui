@@ -30,6 +30,7 @@ define(function () {
             SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK : "home",
 
             GAUL0_CODE_LIST : 'http://fenixservices.fao.org/d3s/msd/resources/data/uid/GAUL0',
+            CODELIST_URL : 'http://fenixservices.fao.org/d3s/msd/resources/data/uid/'
 /*
             CATALOG_BLANK_FILTER: "config/submodules/fx-catalog/blank-filter.json"
 */

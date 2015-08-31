@@ -3,21 +3,27 @@ define([
     'backbone',
     'views/base/view',
     'text!templates/methods/methods.hbs',
-    'text!templates/methods/methods_item.hbs',
     'i18n!nls/methods',
     'handlebars',
     'lib/utils',
+    'config/Config',
     'config/Events',
+    'q',
     'jstree',
-    'amplify'
-], function (Backbone,View, template,itemTemplate, i18nLabels, Handlebars, Utils, E) {
+    'amplify',
+/*
+    'webix,'
+*/
+    'jqwidgets'
+], function (Backbone,View, template, i18nLabels, Handlebars, Utils, C,E, Q) {
 
     'use strict';
 
     var s = {
         STANDARD_LIST: "#standards-list",
         STANDARD_CONTAINERS: "#standards-container",
-        STANDARD_PLACEHOLDER: "#standards-placeholder"
+        TREE_CONTAINER: '#codelist-tree-container',
+        TREE_TITLE : 'codelist-title'
     };
 
     var MethodsView = View.extend({
@@ -57,8 +63,8 @@ define([
         initVariables: function () {
 
             this.$standardsList = this.$el.find(s.STANDARD_LIST);
-            this.$standardsContainers = this.$el.find(s.STANDARD_CONTAINERS);
-            this.$standardPlaceholder = this.$standardsContainers.find(s.STANDARD_PLACEHOLDER);
+            this.$standardsCodelistTitle = this.$el.find(s.TREE_TITLE);
+            this.$standardsTree =  this.$el.find(s.TREE_CONTAINER);
         },
 
         initComponents: function () {
@@ -76,8 +82,6 @@ define([
                 },
                 "plugins": ["wholerow"]
             }).on('ready.jstree', function (e, data) {
-
-                //data.instance.open_node(["id1","id2","id3"]);
 
                 if (self.hasOwnProperty("id")){
                     data.instance.select_node([self.id]);
@@ -98,61 +102,103 @@ define([
             return result;
         },
 
-        printStandard: function (id) {
 
-            var model = _.findWhere(this.standardCollection, {id: id}),
-                template,
-                $compiled;
+        _onStartingSelected : function(id) {
+            var self = this;
+            $.ajax({
+                url : C.CODELIST_URL+ id
+            }).done(function(data){
+                self._onTakingCodelist(data);
 
-            if (model !== undefined) {
-
-                template = Handlebars.compile(itemTemplate);
-                $compiled = template(model);
-                this.$standardsContainers.append($compiled);
-
-            } else {
-                //Show placeholder
-                this.$standardPlaceholder.show();
-            }
-
+            })
         },
 
+
         bindEventListeners: function () {
+            var self = this;
 
             this.$standardsList.on("changed.jstree", _.bind(function (e, data) {
                 var id = data.selected[0];
 
                 Backbone.history.navigate('#methods/' + id, {trigger: false});
 
-                this.onStandardSelect(id);
+                self._onStartingSelected(id);
+
             }, this));
         },
 
-        onStandardSelect : function ( id ) {
-
-            var $candidateStandard;
-
-            // Clear the standards container
-            this.$standardsContainers.children().hide();
-
-            //Search if the Standards is already printed
-            $candidateStandard = this.$standardsContainers.find('[data-standard="'+id+'"]');
-
-            if ($candidateStandard.length > 0) {
-                //Standard was already printed so show it
-                $candidateStandard.show();
-                return;
-            }
-
-            //The standards has to be printed
-            this.printStandard(id);
-
+        _onTakingCodelist: function(data) {
+            this.$lang = (requirejs.s.contexts._.config.i18n.locale).toUpperCase();
+            this.$dataToBePrepared  = this._onPrepareData(data);
+            this._onCreatingTree();
         },
+
+        _onPrepareData : function( data) {
+
+            var result = [];
+            for(var i= 0, length = data.length; i<length; i++) {
+
+              var element = {
+                    'code' : data[i].code,
+                    'title': data[i].title[this.$lang]
+                }
+                if(data[i].children && data[i].children.length >0) {
+                    element['expanded'] = false
+                    element['children']= this._onPrepareData(data[i].children);
+                }
+                result.push(element);
+            }
+            return result;
+        },
+
+        _onCreatingTree : function (  ) {
+
+            var self = this;
+            console.log(this.$dataToBePrepared)
+
+        /*    if(this.$standardsTree && this.$standardsTree.length >0) {
+                this.$standardsTree.jqxTreeGrid('destroy')
+            }*/
+            var source =
+            {
+                dataType: "array",
+                dataFields: [
+                    { name: 'code', type: 'string' },
+                    { name: 'title', type: 'string' },
+                    { name: 'children', type: 'array' },
+                    { name: 'expanded', type: 'bool' }
+                ],
+                hierarchy:
+                {
+                    root: 'children'
+                },
+                id: 'children',
+
+                localData: this.$dataToBePrepared
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+
+            // create Tree Grid
+            this.$standardsTree.jqxTreeGrid(
+                {
+                    width: 600,
+                    source: dataAdapter,
+                    sortable: true,
+                    columns: [
+                        { text: 'Code', dataField: 'code' },
+                        { text: 'Title', dataField: 'title'},
+                    ],
+                    ready: function () {
+                        $(s.TREE_CONTAINER).jqxTreeGrid('expandRow', '1');
+                    }
+                });
+        },
+
 
         configurePage: function () {
 
             if (this.id !== undefined) {
-                this.onStandardSelect(this.id);
+                this._onStartingSelected(this.id);
             }
         },
 
@@ -160,6 +206,8 @@ define([
 
             this.$standardsList.jstree('destroy');
             this.$standardsList.off();
+            this.$standardsTree.jqxTreeGrid('destroy')
+
 
         },
 

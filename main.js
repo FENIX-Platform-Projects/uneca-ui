@@ -112,6 +112,8 @@ require([
                     config: "../../config",
                     json: "../../json",
 
+                    'webix' : 'http://fenixrepo.fao.org/cdn/js/webix/2.2.1/js/webix',
+
                     'fx-common/config/auth_users' : '../../config/auth_users.json',
 
                     "fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/fx-catalog/blankFilter',
