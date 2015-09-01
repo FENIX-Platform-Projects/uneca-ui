@@ -23,7 +23,7 @@ body{
 }
 
 .btn{
-  @include fx-border-radius(5);
+  @include fx-border-radius(0);
   height: 25px;
   min-width: 100px;
   padding: 3px 12px;
@@ -43,49 +43,10 @@ body{
 
 }
 
+
 .container {
   background-color: white;
 }
 
-/* TEMPORARY */
-
-.btn.btn-default.json-editor-btn-collapse {
-  color: $fx-cool-blue !important;
-  border-color: transparent !important;
-  i {
-    color: $fx-cool-blue !important;
-    &:before{
-      content:'EXPAND';
-      font-size:10px;
-      color: $fenix-text;
-    }
-  }
-}
-
-
-.btn-table-go, .btn-scores-go{
-  background-color: $buttons;
-  color: white;
-
-
-  &:hover, &:active, &:visited, &:focus{
-    background-color: $buttons;
-    border-color: transparent;
-    color: white;
-  }
-
-}
-
-.btn-reset{
-  background-color: white;
-  color: $fenix-text;
-  border-color: transparent;
-
-  &:hover, &:active, &:visited, &:focus{
-    background-color: white;
-    border-color: transparent;
-    color: $fenix-text;
-  }
-}
 
 
