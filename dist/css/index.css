@@ -7183,7 +7183,17 @@ input[type="checkbox"]:checked + label {
 /* Base */
 /* Base style File */
 body {
-  background-color: #f1f1f1; }
+  background-image: url(../../src/css/img/bg-body.png); }
+
+.navbar-brand {
+  background-image: url(../../src/css/img/uneca-ico.svg);
+  width: 310px;
+  height: 50px;
+  position: relative;
+  left: -15px;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-color: #005493; }
 
 .container {
   background-color: white; }
@@ -7248,7 +7258,9 @@ footer.container {
   footer.container a {
     color: #666666;
     line-height: 22px;
-    padding-left: 5px; }
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block; }
   footer.container a:link,
   footer.container a:visited,
   footer.container a:focus,
@@ -7256,7 +7268,6 @@ footer.container {
     text-decoration: none; }
   footer.container a:hover {
     width: 100%;
-    display: inline-block;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     -webkit-transition: all 0.3s ease 0s;
@@ -7485,6 +7496,51 @@ ul[role="group"] {
 /* Homepage */
 [data-page='home'] .container-breadcrumb {
   display: none; }
+
+/* Fenix - Home Page */
+/* HOMEPAGE */
+.uneca-home-container .panel-body {
+  background-color: #f1f1f1;
+  padding: 0 15px; }
+.uneca-home-container .uneca-home-title {
+  font: normal normal 700 10px/normal "Roboto";
+  color: #005493;
+  padding: 15px; }
+.uneca-home-container .obj-box, .uneca-home-container .obj-box-radius10, .uneca-home-container .obj-box-title {
+  padding: 0; }
+.uneca-home-container p {
+  padding: 0 15px;
+  font-size: 12px; }
+.uneca-home-container .uneca-home-social {
+  padding: 0 15px;
+  font-size: 18px; }
+.uneca-home-container hr {
+  border-color: #f1f1f1;
+  margin-bottom: 0; }
+.uneca-home-container .panel-heading {
+  padding: 0 15px; }
+.uneca-home-container .panel-default {
+  border-color: transparent; }
+.uneca-home-container .panel-group .panel-heading .panel-title a {
+  text-transform: none;
+  color: #005493;
+  font-size: 14px; }
+.uneca-home-container .fx-panel-plus {
+  margin-right: 5px; }
+.uneca-home-container .uneca-home-panel-sub {
+  margin: 7px 0;
+  border-bottom: 1px solid  #e5e5e5; }
+  .uneca-home-container .uneca-home-panel-sub:last-child {
+    border-color: transparent; }
+.uneca-home-container .uneca-home-entrypoint {
+  text-align: center;
+  padding: 0 25px; }
+  .uneca-home-container .uneca-home-entrypoint .col-xs-4 {
+    border-right: 1px solid #e5e5e5; }
+    .uneca-home-container .uneca-home-entrypoint .col-xs-4:last-child {
+      border-color: transparent; }
+.uneca-home-container .uneca-home-entrypoint-container {
+  padding: 5px; }
 
 /* Fenix - Analysis Page */
 #overlay .close-overlay {

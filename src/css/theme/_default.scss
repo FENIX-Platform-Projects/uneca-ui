@@ -1,11 +1,18 @@
 /* Base style File */
 
-body{
-
-  background-color: $fenix-light-bg;
-
+body {
+  background-image: url(../../src/css/img/bg-body.png);
 }
 
+.navbar-brand {
+  background-image: url(../../src/css/img/uneca-ico.svg);
+  width: 310px;
+  height: 50px ;
+  position: relative;
+  left: -15px;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-color: $fx-cool-blue; }
 
 .container{
   background-color: white;
