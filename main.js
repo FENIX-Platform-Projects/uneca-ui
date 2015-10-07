@@ -113,6 +113,9 @@ require([
                     orbitControls : "{FENIX_CDN}/js/threejs/4.4/OrbitControls",
                     renderPass : "{FENIX_CDN}/js/threejs/4.4/RenderPass",
                     shaderPass : "{FENIX_CDN}/js/threejs/4.4/ShaderPass",
+                    canvasRender: "http://www.mentaltoy.com/fao/CanvasRenderer", // TO BE REVIEWED
+                    detector: "http://www.mentaltoy.com/fao/Detector", // TO BE REVIEWED
+                    tweenMax: "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min", // TO BE REVIEWED
                     threejs : "{FENIX_CDN}/js/threejs/4.4/three.min",
 
                     'highcharts': '{FENIX_CDN}/js/highcharts/4.1.6/js/highcharts',
