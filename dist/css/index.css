@@ -5745,9 +5745,6 @@ div[data-module="sector"] .fx-catalog-modular-form-content {
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #005493; }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  border-bottom: 1px solid #005493; }
-
 /* Fenix - Object Box Component */
 .obj-box, .obj-box-radius10, .obj-box-title {
   -moz-border-bottom-colors: none;

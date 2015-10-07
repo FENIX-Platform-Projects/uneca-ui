@@ -1,4 +1,4 @@
-/*global define, _:false, $, console, amplify, FM*/
+/*global define, _:false, $, console, amplify, FM, THREE*/
 define([
     'views/base/view',
     'config/Config',
@@ -8,8 +8,15 @@ define([
     'i18n!nls/home',
     'handlebars',
     'fx-common/WDSClient',
+    'copyShader',
+    'effectComposer',
+    'maskPass',
+    'renderPass',
+    'shaderPass',
+    'threejs',
+    "highcharts",
     'amplify'
-], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient) {
+], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient ) {
 
     'use strict';
 
@@ -28,6 +35,9 @@ define([
         },
 
         attach: function () {
+
+            console.log(THREE)
+            console.log($.fn.highcharts)
 
             View.prototype.attach.call(this, arguments);
 

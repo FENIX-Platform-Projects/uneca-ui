@@ -106,6 +106,17 @@ require([
                     rsvp: '{FENIX_CDN}/js/rsvp/3.0.17/rsvp',
                     "bootstrap-list-filter" :'{FENIX_CDN}/js/bootstrap-list-filter/0.2.1/bootstrap-list-filter.min',
 
+                    //Threejs
+                    copyShader : "{FENIX_CDN}/js/threejs/4.4/CopyShader",
+                    effectComposer : "{FENIX_CDN}/js/threejs/4.4/EffectComposer",
+                    maskPass : "{FENIX_CDN}/js/threejs/4.4/MaskPass",
+                    orbitControls : "{FENIX_CDN}/js/threejs/4.4/OrbitControls",
+                    renderPass : "{FENIX_CDN}/js/threejs/4.4/RenderPass",
+                    shaderPass : "{FENIX_CDN}/js/threejs/4.4/ShaderPass",
+                    threejs : "{FENIX_CDN}/js/threejs/4.4/three.min",
+
+                    'highcharts': '{FENIX_CDN}/js/highcharts/4.1.6/js/highcharts',
+
                     amplify: '{FENIX_CDN}/js/amplify/1.1.2/amplify.min',
 
                     nls: "../../i18n",
@@ -131,6 +142,30 @@ require([
                 // Underscore and Backbone are not AMD-capable per default,
                 // so we need to use the AMD wrapping of RequireJS
                 shim: {
+
+                    copyShader: {
+                        deps: ["threejs"]
+                    },
+                    effectComposer: {
+                        deps: ["threejs"]
+                    },
+                    maskPass: {
+                        deps: ["threejs"]
+                    },
+                    orbitControls: {
+                        deps: ["threejs"]
+                    },
+                    renderPass: {
+                        deps: ["threejs"]
+                    },
+                    shaderPass: {
+                        deps: ["threejs"]
+                    },
+
+                    "highcharts": {
+                        "exports": "Highcharts",
+                        "deps": ["jquery"]
+                    },
                     bootstrap: {
                         deps: ["jquery"]
                     },
