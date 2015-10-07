@@ -41,6 +41,8 @@ define([
 
             View.prototype.attach.call(this, arguments);
 
+            this.initWorldMap();
+
             //update State
             amplify.publish(E.STATE_CHANGE, {menu: 'home'});
 
@@ -66,6 +68,9 @@ define([
 
         configurePage: function () {
 
+
+
+
         },
 
         bindEventListeners: function () {
@@ -83,6 +88,196 @@ define([
             View.prototype.dispose.call(this, arguments);
         }
     });
+
+
+    var renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene;
+
+    HomeView.prototype.initWorldMap = function () {
+        // Inizialization
+        scena = new THREE.Scene();
+
+
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setClearColor(0x000000, 1.0);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMapEnabled = true;
+
+
+
+        cameraSfondo = new THREE.OrthographicCamera(
+            -window.innerWidth // LEFT This property defines the border for the leftmost position to be rendered.
+            , window.innerWidth // RIGHT This property defines the border for the rightmost position to be rendered.
+            , window.innerHeight // TOP This property defines the border for the topmost position to be rendered.
+            , -window.innerHeight // BOTTOM This property defines the border for the bottommost position to be rendered.
+            , -10000, 10000 //This property defines the point, based on the position of the camera, from where the scene will be rendered. , This property defines the point, based on position of the camera, to whic the scene will be rendered
+        );
+        cameraSfondo.position.z = 50;
+
+        sfondoScena = new THREE.Scene();
+        var materialColor = new THREE.MeshBasicMaterial({map: THREE.ImageUtils.loadTexture('src/images/starry_background.jpg'), depthTest: false }); /// DEPTH TEST FALSE SUPER IMPORTANT TO COMPOSING!!!
+
+        var sfondoBG = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), materialColor);
+        sfondoBG.position.z = -100;
+        sfondoBG.scale.set(window.innerWidth * 2, window.innerHeight * 2, 1); // LOOK AT THE SCALE!!!!!
+        sfondoScena.add(sfondoBG);
+
+
+
+
+        // texture
+
+        var manager = new THREE.LoadingManager();
+        manager.onProgress = function ( item, loaded, total ) {
+
+            console.log( item, loaded, total );
+
+            console.log( (loaded / total * 100) + '% loaded' );
+
+
+        };
+
+
+        manager.onLoad = function () {
+            // All the texure are loaded
+            console.log( 'all Loaded' );
+        };
+
+
+        var nuvoleTexture = new THREE.Texture();
+        var terraTexture = new THREE.Texture();
+        var terraNormal = new THREE.Texture();
+        var terraSpec = new THREE.Texture();
+
+
+        var loader = new THREE.ImageLoader( manager );
+        loader.load( 'src/images/fair_clouds_4k.png', function ( image ) {  nuvoleTexture.image = image; nuvoleTexture.needsUpdate = true; } );
+        loader.load( 'src/images/earthmap4k.jpg', function ( image ) {  terraTexture.image = image; terraTexture.needsUpdate = true; } );
+        loader.load( 'src/images/earth_normalmap_flat4k.jpg', function ( image ) {  terraNormal.image = image; terraNormal.needsUpdate = true; } );
+        loader.load( 'src/images/earthspec4k.jpg', function ( image ) {  terraSpec.image = image; terraSpec.needsUpdate = true; } );
+
+//        loader.load( 'images/earthmap4k.jpg', function ( image ) {
+//
+//            terraTexture.image = image;
+//            terraTexture.needsUpdate = true;
+//
+//        } );
+
+
+//
+//        var onProgress = function ( xhr ) {
+//            if ( xhr.lengthComputable ) {
+//                var percentComplete = xhr.loaded / xhr.total * 100;
+//                console.log( Math.round(percentComplete, 2) + '% downloaded' );
+//            }
+//        };
+//
+//        var onError = function ( xhr ) {
+//        };
+
+
+
+
+        // Create cloud material
+        // var nuvoleTexture = THREE.ImageUtils.loadTexture('images/fair_clouds_4k.png');
+        var nuvoleMateriale = new THREE.MeshPhongMaterial();
+
+        nuvoleMateriale.map = nuvoleTexture;
+        nuvoleMateriale.transparent = true;
+
+
+        //Terra
+        var sferaGeometria = new THREE.SphereGeometry(15, 30, 30); // Radius, number of width segment, number of height segment Only radius is required
+        // Create earth material
+        //var terraTexture = THREE.ImageUtils.loadTexture('images/earthmap4k.jpg');
+        //var terraNormal = THREE.ImageUtils.loadTexture('images/earth_normalmap_flat4k.jpg');
+        //var terraSpec = THREE.ImageUtils.loadTexture('images/earthspec4k.jpg');
+        var terraMateriale = new THREE.MeshPhongMaterial(); // Reacts to lights
+
+        terraMateriale.map = terraTexture;
+        terraMateriale.normalMap = terraNormal;
+        terraMateriale.normalScale = new THREE.Vector2(0.5,0.7); // Scale of the bump effect
+        terraMateriale.specularMap = terraSpec;
+        terraMateriale.specular = new THREE.Color(0x00283a); // Color of the specular
+
+        var terraMesh = new THREE.Mesh(sferaGeometria, terraMateriale);
+        terraMesh.name = 'terra';
+
+        scena.add(terraMesh);
+
+        // Nuvole
+        var nuvoleGeometria = new THREE.SphereGeometry(sferaGeometria.parameters.radius * 1.01, sferaGeometria.parameters.widthSegments, sferaGeometria.parameters.heightSegments);
+        var nuvoleMesh = new THREE.Mesh(nuvoleGeometria, nuvoleMateriale);
+
+        scena.add(nuvoleMesh);
+
+        var luceDirezionale = new THREE.DirectionalLight(0xffffff, 1); // Color, intensity
+        //luceDirezionale.position = new THREE.Vector3(100, 10, -50);
+        luceDirezionale.name = "direzionale";
+
+        scena.add(luceDirezionale);
+
+
+        var luceAmbientale = new THREE.AmbientLight(0x111111); // Only light color
+
+        scena.add(luceAmbientale);
+
+        //controlliCamera = new THREE.OrbitControls(camera);
+        camera.position.x = 35;
+        camera.position.y = 36;
+        camera.position.z = 33;
+        camera.lookAt(scena.position);
+
+
+//        control = new function () {
+//            this.rotationSpeed = 0.005;
+//            this.opacity = 0.6;
+//            this.color = cuboMateriale.color.getHex();
+//        };
+//
+//        addControlGui(control);
+//        addStatsObject();
+
+        // setup the composer steps
+        // first render the background
+        var bgPass = new THREE.RenderPass(sfondoScena, cameraSfondo);
+        // next render the scene (rotating earth), without clearing the current output
+        var renderPass = new THREE.RenderPass(scena, camera);
+        renderPass.clear = false;
+        // finally copy the result to the screen
+        var effectCopy = new THREE.ShaderPass(THREE.CopyShader);
+        effectCopy.renderToScreen = true;
+
+        // add these passes to the composer
+        composer = new THREE.EffectComposer(renderer);
+        composer.addPass(bgPass);
+        composer.addPass(renderPass);
+        composer.addPass(effectCopy);
+
+
+        var container = document.getElementById('container');
+        console.log('eeeeeeeee');
+        container.appendChild(renderer.domElement); //domElement is a property of WEBGLRender
+
+
+        this.renderScene();
+
+    }
+
+
+    HomeView.prototype.renderScene = function () {
+        //controlliCamera.update();
+        //stats.update();
+
+        //renderer.render(scena, camera);
+        renderer.autoClear = false;
+        composer.render();
+        requestAnimationFrame(renderScene);
+
+    }
+
 
     return HomeView;
 });
