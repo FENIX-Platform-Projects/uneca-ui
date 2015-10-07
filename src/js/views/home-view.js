@@ -20,7 +20,7 @@ define([
 
     'use strict';
 
-    var s = { };
+    var s = {},renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene;
 
     var HomeView = View.extend({
 
@@ -86,13 +86,8 @@ define([
             this.unbindEventListeners();
 
             View.prototype.dispose.call(this, arguments);
-        }
-    });
-
-
-    var renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene;
-
-    HomeView.prototype.initWorldMap = function () {
+        },
+    initWorldMap : function () {
         // Inizialization
         scena = new THREE.Scene();
 
@@ -264,19 +259,25 @@ define([
 
         this.renderScene();
 
-    }
-
-
-    HomeView.prototype.renderScene = function () {
+    },
+    renderScene : function () {
         //controlliCamera.update();
         //stats.update();
 
         //renderer.render(scena, camera);
         renderer.autoClear = false;
         composer.render();
-        requestAnimationFrame(renderScene);
+        requestAnimationFrame(this.renderScene);
 
     }
+    });
+
+
+
+
+
+
+
 
 
     return HomeView;
