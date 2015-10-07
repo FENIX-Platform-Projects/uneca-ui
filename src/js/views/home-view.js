@@ -13,6 +13,7 @@ define([
     'maskPass',
     'renderPass',
     'shaderPass',
+    'orbitControls',
     'threejs',
     "highcharts",
     'amplify'
@@ -20,7 +21,7 @@ define([
 
     'use strict';
 
-    var s = {},renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene;
+    var s = {},renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene,containerWidth,containerHeight;
 
     var HomeView = View.extend({
 
@@ -87,17 +88,19 @@ define([
 
             View.prototype.dispose.call(this, arguments);
         },
-    initWorldMap : function () {
+        initWorldMap : function () {
         // Inizialization
         scena = new THREE.Scene();
+        var container = document.getElementById('container');
+        containerWidth = $('#container').width();
+        containerHeight = $('#container').height();
 
-
-        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera = new THREE.PerspectiveCamera(45, containerWidth / containerHeight, 0.1, 1000);
 
 
         renderer = new THREE.WebGLRenderer();
         renderer.setClearColor(0x000000, 1.0);
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(containerWidth, containerHeight);
         renderer.shadowMapEnabled = true;
 
 
@@ -131,6 +134,8 @@ define([
 
             console.log( (loaded / total * 100) + '% loaded' );
 
+            $('#preload-text').text((loaded / total * 100) + '% loaded')
+
 
         };
 
@@ -138,6 +143,8 @@ define([
         manager.onLoad = function () {
             // All the texure are loaded
             console.log( 'all Loaded' );
+            $('#world-preload').removeClass('visible');
+
         };
 
 
@@ -219,10 +226,10 @@ define([
 
         scena.add(luceAmbientale);
 
-        //controlliCamera = new THREE.OrbitControls(camera);
-        camera.position.x = 35;
-        camera.position.y = 36;
-        camera.position.z = 33;
+        controlliCamera = new THREE.OrbitControls(camera);
+        camera.position.x = 15;
+        camera.position.y = 16;
+        camera.position.z = 13;
         camera.lookAt(scena.position);
 
 
@@ -252,22 +259,36 @@ define([
         composer.addPass(effectCopy);
 
 
-        var container = document.getElementById('container');
+
         console.log('eeeeeeeee');
         container.appendChild(renderer.domElement); //domElement is a property of WEBGLRender
 
-
+        window.addEventListener('resize', this.onWindowResize, false);
         this.renderScene();
 
     },
     renderScene : function () {
-        //controlliCamera.update();
+        controlliCamera.update();
         //stats.update();
+        var rotSpeed = 0.0005;
+        camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
+        camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
+        camera.lookAt(scena.position);
 
-        //renderer.render(scena, camera);
+        renderer.render(scena, camera);
         renderer.autoClear = false;
         composer.render();
-        requestAnimationFrame(this.renderScene);
+        console.log('ma che è');
+       requestAnimationFrame(this.renderScene.bind( this ));
+
+    },
+    onWindowResize: function() {
+        containerWidth = $('#container').width();
+        containerHeight = $('#container').height();
+        camera.aspect = containerWidth / containerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(containerWidth , containerHeight);
 
     }
     });
