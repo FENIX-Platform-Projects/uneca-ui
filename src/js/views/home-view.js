@@ -8,6 +8,7 @@ define([
     'i18n!nls/home',
     'handlebars',
     'fx-common/WDSClient',
+    'fx-c-c/config/creators/highcharts_template',
     'copyShader',
     'effectComposer',
     'maskPass',
@@ -15,15 +16,19 @@ define([
     'shaderPass',
     'orbitControls',
     'threejs',
+    'detector',
+    'canvasRender',
     "highcharts",
 
     'tweenMax',
     'amplify'
-], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient) {
+], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient, chartTemplate) {
 
     'use strict';
 
-    var s = {}, renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene, containerWidth, containerHeight;
+    var s = {
+        CHART_TABS : '#home-charts-tab a[data-toggle="tab"]'
+    }, renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene, containerWidth, containerHeight;
 
     var mouseX = 0, mouseY = 0;
 
@@ -45,12 +50,9 @@ define([
 
         attach: function () {
 
-            console.log(THREE)
-            console.log($.fn.highcharts)
-
             View.prototype.attach.call(this, arguments);
 
-            this.initWorldMap();
+            //this.initWorldMap();
 
             //update State
             amplify.publish(E.STATE_CHANGE, {menu: 'home'});
@@ -78,14 +80,194 @@ define([
 
         configurePage: function () {
 
+            this.initCharts();
+        },
 
+        initCharts: function () {
+
+            $('#chart1').highcharts($.extend(true, {}, chartTemplate, {
+                title: {
+                    text: 'Gross Domestic Product'
+                },
+                credits: {
+                    enabled: false
+                },
+                colors: [ //Colori delle charts
+                    '#a62d3e',
+                    '#986e2e',
+                    '#744490',
+                    '#E10079',
+                    '#2D1706',
+                    '#F1E300',
+                    '#F7AE3C',
+                    '#DF3328'
+                ],
+                xAxis: {
+                    categories: [
+                        '2001',
+                        '2002',
+                        '2003',
+                        '2004',
+                        '2005',
+                        '2006',
+                        '2007',
+                        '2008',
+                        '2009',
+                        '2010',
+                        '2011',
+                        '2012',
+                        '2013'
+                    ],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Million AED'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'UAE',
+                    data: [379411.97, 403299.59, 456662.43, 542884.56, 663317.65, 815722.97, 947197.06, 1158580.53, 931152.67, 1050516.19, 1276025.00, 1367323.00, 1477594.25]
+
+                }]
+            }));
+
+            $('#chart2').highcharts($.extend(true, {}, chartTemplate, {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Trade'
+                },
+                credits: {
+                    enabled: false
+                },
+                colors: [ //Colori delle charts
+                    '#a62d3e',
+                    '#986e2e',
+                    '#744490',
+                    '#E10079',
+                    '#2D1706',
+                    '#F1E300',
+                    '#F7AE3C',
+                    '#DF3328'
+                ],
+                xAxis: {
+                    categories: ['2001',
+                        '2002',
+                        '2003',
+                        '2004',
+                        '2005',
+                        '2006',
+                        '2007',
+                        '2008',
+                        '2009',
+                        '2010', '2011']
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Trade, World (value in AED)'
+                    }
+                },
+                tooltip: {
+                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                    shared: true
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    }
+                },
+                series: [{
+                    name: 'Re-Export',
+                    data: [31444008427.00, 41124922234.00, 50696679981.00, 69515225632.00, 97043197533.00, 95580167401.00, 128338414920.29, 162844575681.00, 147693366837.24, 185863253742.03, 210842814591.00]
+                }, {
+                    name: 'Export',
+                    data: [7535955504.00, 8649496688.00, 10588599116.00, 14615221779.00, 16462607861.00, 29232285857.00, 36262324842.00, 60359055129.00, 65278896533.54, 83077687322.91, 114038287878.38]
+                },
+                    {
+                        name: 'Import',
+                        data: [147775800078.00, 202896419979.00, 247589715083.00, 291048964687.00, 388356836394.00, 565719823370.00, 447393840482.09, 485413921745.90, 602757314852.26, 667520204394.26, 685068106621.00]
+                    }]
+            }));
+
+            $('#chart3').highcharts($.extend(true, {}, chartTemplate, {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Arable and Permanent Crop Land Area, 1000 ha'
+                },
+                credits: {
+                    enabled: false
+                },
+                colors: [ //Colori delle charts
+                    '#a62d3e',
+                    '#986e2e',
+                    '#744490',
+                    '#E10079',
+                    '#2D1706',
+                    '#F1E300',
+                    '#F7AE3C',
+                    '#DF3328'
+                ],
+                xAxis: {
+                    categories: ['2010',
+                        '2011',
+                        '2012',
+                        '2013']
+                },
+                yAxis: {
+                    min: 0
+                },
+                tooltip: {
+                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+                    shared: true
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    }
+                },
+                series: [{
+                    name: 'UAE',
+                    data: [92.53, 88.50, 76.63, 77.24]
+                }]
+            }));
         },
 
         bindEventListeners: function () {
 
+            var self = this;
+
+            $(s.CHART_TABS).on('shown.bs.tab', function (e) {
+                e.preventDefault();
+
+                console.log($(e.currentTarget).data("id"))
+
+                self.initCharts();
+            });
+
         },
 
         unbindEventListeners: function () {
+            $(s.CHART_TABS).off('shown.bs.tab');
 
         },
 

@@ -113,9 +113,9 @@ require([
                     orbitControls : "{FENIX_CDN}/js/threejs/4.4/OrbitControls",
                     renderPass : "{FENIX_CDN}/js/threejs/4.4/RenderPass",
                     shaderPass : "{FENIX_CDN}/js/threejs/4.4/ShaderPass",
-                    canvasRender: "http://www.mentaltoy.com/fao/CanvasRenderer", // TO BE REVIEWED
-                    detector: "http://www.mentaltoy.com/fao/Detector", // TO BE REVIEWED
-                    tweenMax: "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min", // TO BE REVIEWED
+                    canvasRender: "{FENIX_CDN}/js/threejs/4.4/CanvasRenderer", // TO BE REVIEWED
+                    detector: "{FENIX_CDN}/js/threejs/4.4/Detector", // TO BE REVIEWED
+                    tweenMax: "{FENIX_CDN}/js/tweenmax/1.18.0/tweenmax.min", // TO BE REVIEWED
                     threejs : "{FENIX_CDN}/js/threejs/4.4/three.min",
 
                     'highcharts': '{FENIX_CDN}/js/highcharts/4.1.6/js/highcharts',
@@ -145,7 +145,12 @@ require([
                 // Underscore and Backbone are not AMD-capable per default,
                 // so we need to use the AMD wrapping of RequireJS
                 shim: {
-
+                    canvasRender: {
+                        deps: ["threejs"]
+                    },
+                    detector: {
+                        deps: ["threejs"]
+                    },
                     copyShader: {
                         deps: ["threejs"]
                     },
