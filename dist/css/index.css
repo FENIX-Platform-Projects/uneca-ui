@@ -7182,15 +7182,18 @@ input[type="checkbox"]:checked + label {
 body {
   background-image: url(../../src/css/img/bg-body.png); }
 
+#main-container {
+  position: relative; }
+
 .navbar-brand {
-  background-image: url(../../src/css/img/uneca-ico.svg);
-  width: 310px;
-  height: 50px;
+  background-image: url(../../src/css/img/uneca-logo.jpg);
+  width: 408px;
+  height: 47px;
   position: relative;
-  left: -15px;
   background-size: 100% 100%;
   background-position: 0 0;
-  background-color: #005493; }
+  background-color: #005493;
+  margin: 15px 0; }
 
 .container {
   background-color: white; }
@@ -7494,8 +7497,97 @@ ul[role="group"] {
 [data-page='home'] .container-breadcrumb {
   display: none; }
 
-/* Fenix - Home Page */
-/* HOMEPAGE */
+.home-overlay {
+  background-color: #05232e;
+  opacity: 0.6;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -21px; }
+
+.home-header {
+  min-height: 300px;
+  position: relative;
+  opacity: 0; }
+  .home-header .home-btn-holder {
+    padding-top: 50px; }
+  .home-header .home-btn-container .col-sm-6 .home-btn {
+    border: 1px solid white;
+    line-height: 100%;
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+    .home-header .home-btn-container .col-sm-6 .home-btn:link, .home-header .home-btn-container .col-sm-6 .home-btn:visited, .home-header .home-btn-container .col-sm-6 .home-btn:hover, .home-header .home-btn-container .col-sm-6 .home-btn:focus, .home-header .home-btn-container .col-sm-6 .home-btn:active {
+      text-decoration: none; }
+    .home-header .home-btn-container .col-sm-6 .home-btn:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -ms-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s; }
+  .home-header .welcome {
+    color: white;
+    padding-left: 20%; }
+  .home-header .home-logo {
+    background-image: url(../../src/css/img/uneca-ico.svg);
+    width: 350px;
+    height: 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 55%;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .home-header .evidence {
+    display: inline-block;
+    padding: 3px;
+    background-color: white;
+    font-weight: 500;
+    font-size: 10px;
+    color: #03232e;
+    margin-left: 20%; }
+  .home-header .carousel .arrow-left, .home-header .carousel .arrow-right {
+    width: 18px;
+    height: 67px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .home-header .carousel .arrow-left {
+    background-image: url(../../src/css/img/arrow-left.svg); }
+  .home-header .carousel .arrow-right {
+    background-image: url(../../src/css/img/arrow-right.svg); }
+  .home-header .carousel .carousel-inner {
+    height: 120px; }
+    .home-header .carousel .carousel-inner .item {
+      height: 100%;
+      padding: 0 20%;
+      font-size: 18px;
+      font-weight: 500;
+      color: white; }
+      .home-header .carousel .carousel-inner .item p.home-topic {
+        position: relative;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%); }
+  .home-header .carousel-control.right, .home-header .carousel-control.left {
+    background: none; }
+
 .uneca-home-container .panel-body {
   background-color: #f1f1f1;
   padding: 0 15px; }
@@ -7526,7 +7618,7 @@ ul[role="group"] {
   margin-right: 5px; }
 .uneca-home-container .uneca-home-panel-sub {
   margin: 7px 0;
-  border-bottom: 1px solid  #e5e5e5; }
+  border-bottom: 1px solid #e5e5e5; }
   .uneca-home-container .uneca-home-panel-sub:last-child {
     border-color: transparent; }
 .uneca-home-container .uneca-home-entrypoint {
@@ -7541,8 +7633,10 @@ ul[role="group"] {
 
 #container {
   width: 100%;
-  height: 400px;
-  position: relative; }
+  height: 300px;
+  position: absolute;
+  top: -21px;
+  /*As .navbar margin-bottom*/ }
 
 #world-preload {
   position: absolute;

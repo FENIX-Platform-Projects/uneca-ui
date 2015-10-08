@@ -1,28 +1,155 @@
 /* Homepage */
 
+[data-page='home'] {
 
-
-[data-page='home']{
-
-  .container-breadcrumb{
+  .container-breadcrumb {
     display: none;
   }
 
 }
 
+.home-overlay {
+  background-color: #05232e;
+  opacity: 0.6;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -21px;
+}
 
-/* Fenix - Home Page */
+.home-header {
+  min-height: 300px;
+  position: relative;
+  opacity: 0;
 
-/* HOMEPAGE */
+.home-btn-holder{
+  padding-top: 50px;
+}
+
+  .home-btn-container {
+
+
+
+    .col-sm-6 {
+
+      .home-btn {
+        border: 1px solid white;
+        line-height: 100%;
+        display: inline-block;
+        padding: 20px;
+        margin-bottom: 40px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        @include animate();
+
+        &:link,
+        &:visited,
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: none;
+        }
+
+        &:hover{
+          background-color: rgba(255,255,255,0.3);
+          @include animate();
+        }
+      }
+
+    }
+
+  }
+
+  .welcome {
+    color: white;
+    padding-left: 20%;
+  }
+
+  .home-logo {
+    background-image: url(../../src/css/img/uneca-ico.svg);
+    width: 350px;
+    height: 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 55%;
+    @include fx-transfor-me(translateX(-50%));
+  }
+
+  .evidence {
+    display: inline-block;
+    padding: 3px;
+    background-color: white;
+    font-weight: 500;
+    font-size: 10px;
+    color: #03232e;
+    margin-left: 20%;
+  }
+
+  .carousel {
+
+
+    .arrow-left, .arrow-right {
+      width: 18px;
+      height: 67px;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include fx-transfor-me(translate(-50%, -50%));
+    }
+
+    .arrow-left {
+      background-image: url(../../src/css/img/arrow-left.svg);
+    }
+
+    .arrow-right {
+      background-image: url(../../src/css/img/arrow-right.svg);
+    }
+
+    .carousel-inner {
+      height: 120px;
+
+      .item {
+        height: 100%;
+        padding: 0 20%;
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        p.home-topic {
+          position: relative;
+          top: 50%;
+          @include fx-transfor-me(translateY(-50%));
+        }
+
+      }
+    }
+
+  }
+
+  .carousel-control {
+
+  }
+
+  .carousel-control.right, .carousel-control.left {
+
+    background: none;
+  }
+
+}
+
 $uneca-home-padding: 15px;
 
-.uneca-home-container{
-  .panel-body{
+.uneca-home-container {
+  .panel-body {
     background-color: $fenix-light-bg;
     padding: 0 15px;
   }
 
-  .uneca-home-title{
+  .uneca-home-title {
     font: $fx-text-smalltitle-bold;
     color: $fx-cool-blue;
     padding: $uneca-home-padding;
@@ -32,26 +159,26 @@ $uneca-home-padding: 15px;
     padding: 0;
   }
 
-  p{
+  p {
     padding: 0 $uneca-home-padding;
     font-size: 12px;
   }
 
-  .uneca-home-social{
+  .uneca-home-social {
     padding: 0 $uneca-home-padding;
     font-size: 18px;
   }
 
-  hr{
+  hr {
     border-color: $fenix-light-bg;
     margin-bottom: 0;
   }
 
-  .panel-heading{
+  .panel-heading {
     padding: 0 15px;
   }
 
-  .panel-default{
+  .panel-default {
     border-color: transparent;
   }
 
@@ -62,43 +189,44 @@ $uneca-home-padding: 15px;
 
   }
 
-  .fx-panel-plus{
+  .fx-panel-plus {
     margin-right: 5px;
   }
 
-  .uneca-home-panel-sub{
+  .uneca-home-panel-sub {
     margin: 7px 0;
-    border-bottom: 1px solid  #e5e5e5;
-    &:last-child{
+    border-bottom: 1px solid #e5e5e5;
+    &:last-child {
       border-color: transparent;
     }
   }
 
-  .uneca-home-entrypoint{
+  .uneca-home-entrypoint {
     text-align: center;
     padding: 0 25px;
     .col-xs-4 {
       border-right: 1px solid #e5e5e5;
-      &:last-child{
+      &:last-child {
         border-color: transparent;
       }
     }
   }
 
-  .uneca-home-entrypoint-container{
+  .uneca-home-entrypoint-container {
     padding: 5px;
   }
 
 }
 
-#container{
+#container {
   width: 100%;
-  height: 400px;
-  position: relative;
+  height: 300px;
+  position: absolute;
+  top: -21px; /*As .navbar margin-bottom*/
 
 }
 
-#world-preload{
+#world-preload {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -108,7 +236,7 @@ $uneca-home-padding: 15px;
 
 }
 
-#world-preload.visible{
+#world-preload.visible {
   opacity: 1;
 }
 

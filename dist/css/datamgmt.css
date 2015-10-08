@@ -7262,15 +7262,18 @@ input[type="checkbox"]:checked + label {
 body {
   background-image: url(../../src/css/img/bg-body.png); }
 
+#main-container {
+  position: relative; }
+
 .navbar-brand {
-  background-image: url(../../src/css/img/uneca-ico.svg);
-  width: 310px;
-  height: 50px;
+  background-image: url(../../src/css/img/uneca-logo.jpg);
+  width: 408px;
+  height: 47px;
   position: relative;
-  left: -15px;
   background-size: 100% 100%;
   background-position: 0 0;
-  background-color: #005493; }
+  background-color: #005493;
+  margin: 15px 0; }
 
 .container {
   background-color: white; }

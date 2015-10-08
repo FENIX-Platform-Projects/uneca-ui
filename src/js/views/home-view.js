@@ -52,7 +52,7 @@ define([
 
             View.prototype.attach.call(this, arguments);
 
-            //this.initWorldMap();
+            this.initWorldMap();
 
             //update State
             amplify.publish(E.STATE_CHANGE, {menu: 'home'});
@@ -279,6 +279,27 @@ define([
         },
         initWorldMap: function () {
             // Inizialization
+
+
+
+
+
+            if( Detector.webgl ){
+                renderer = new THREE.WebGLRenderer({
+                    antialias       : true
+                });
+
+                // uncomment if webgl is required
+                //}else{
+                //  Detector.addGetWebGLMessage();
+                //  return true;
+            }else{
+                renderer    = new THREE.CanvasRenderer();
+            }
+
+
+
+
             scena = new THREE.Scene();
             var container = document.getElementById('container');
             containerWidth = $('#container').width();
@@ -287,7 +308,7 @@ define([
             camera = new THREE.PerspectiveCamera(45, containerWidth / containerHeight, 0.1, 1000);
 
 
-            renderer = new THREE.WebGLRenderer();
+
             renderer.setClearColor(0x000000, 1.0);
             renderer.setSize(containerWidth, containerHeight);
             renderer.shadowMapEnabled = true;
@@ -323,7 +344,8 @@ define([
 
                 console.log((loaded / total * 100) + '% loaded');
 
-                $('#preload-text').text((loaded / total * 100) + '% loaded')
+               // $('#preload-text').text((loaded / total * 100) + '% loaded') // For preload
+
 
 
             };
@@ -333,14 +355,20 @@ define([
                 // All the texure are loaded
                 console.log('all Loaded');
                 $('#world-preload').removeClass('visible');
-                TweenMax.to(camera.position, 5, {
-                    x: 32, z:-30,y:1 , onUpdate: function () {
-                        //camera.updateProjectionMatrix();
-                        //camera.lookAt(scena.position);
+                TweenMax.to(camera.position, 5, {x: 23, z:-10,y:0 , onComplete:
+                    function () {
+                        startHomeHeader();
+
                     }
                 });
+                //TweenMax.to(terraMesh.position, 5, {x: -3, z:-7,y:0 ,fov:10});
             };
 
+
+            function startHomeHeader(){
+                TweenMax.to($('.home-header'), 2, {opacity: 1});
+                $('.carousel').carousel('cycle');
+            }
 
             var nuvoleTexture = new THREE.Texture();
             var terraTexture = new THREE.Texture();
@@ -441,6 +469,7 @@ define([
             camera.lookAt(scena.position);
 
 
+
 //        control = new function () {
 //            this.rotationSpeed = 0.005;
 //            this.opacity = 0.6;
@@ -476,7 +505,7 @@ define([
         renderScene: function () {
             //controlliCamera.update();
             //stats.update();
-            var rotSpeed = 0.0005;
+            //var rotSpeed = 0.0005;
             //camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
             //camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
             //camera.position.x += ( mouseX - camera.position.x ) * .0005;
@@ -503,7 +532,7 @@ define([
         },
         onDocumentMouseMove: function (event) {
 
-            mouseX = ( event.clientX - windowHalfX ) / 8;
+            //mouseX = ( event.clientX - windowHalfX ) / 8;
             //mouseY = ( event.clientY - windowHalfY ) / 4;
 
         }
