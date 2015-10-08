@@ -152,7 +152,7 @@ define([
                 console.log('all Loaded');
                 $('#world-preload').removeClass('visible');
                 TweenMax.to(camera.position, 5, {
-                    x: 32, z:-19,y:1 , onUpdate: function () {
+                    x: 32, z:-30,y:1 , onUpdate: function () {
                         //camera.updateProjectionMatrix();
                         //camera.lookAt(scena.position);
                     }
@@ -285,7 +285,6 @@ define([
             composer.addPass(effectCopy);
 
 
-            console.log('eeeeeeeee');
             container.appendChild(renderer.domElement); //domElement is a property of WEBGLRender
             container.addEventListener( 'mousemove', this.onDocumentMouseMove, false );
             window.addEventListener('resize', this.onWindowResize, false);
