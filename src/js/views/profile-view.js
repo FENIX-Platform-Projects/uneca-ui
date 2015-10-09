@@ -15,7 +15,8 @@ define([
     'handlebars',
     'amplify',
     'bootstrap-list-filter',
-    'jstree'
+    'jstree',
+    'fenix-ui-map'
 ], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars) {
 
     'use strict';
@@ -27,7 +28,8 @@ define([
         SEARCH_ITEM_CHILD: 'a',
         SEARCH_ITEM_EL: '.country-item',
         DASHBOARD_CONTENT: "#dashboard-content",
-        LATERAL_MENU: '#lateral-menu'
+        LATERAL_MENU: '#lateral-menu',
+        MAP_CONTAINER : "#country-map-container"
     };
 
     var ProfileView = View.extend({
@@ -122,6 +124,8 @@ define([
 
             this._printDashboard('resume');
 
+            this._printCountryMap();
+
             //bind events from tree click to dashboard refresh
             /*
              * - destroy current dashboard
@@ -130,6 +134,52 @@ define([
              *
              * */
 
+        },
+
+        _printCountryMap : function () {
+
+            try {
+                 var m = new FM.Map(s.MAP_CONTAINER, {
+                        plugins: {
+                            disclaimerfao: false,
+                            geosearch: false,
+                            mouseposition: false,
+                            controlloading : false,
+                            zoomcontrol: 'bottomright'
+                        },
+                        guiController: {
+                            overlay: false,
+                            baselayer: true,
+                            wmsLoader: false
+                        }
+                    });
+            }
+            catch(e) {
+                console.log(e)
+            }
+
+            m.createMap();
+
+            m.addLayer(new FM.layer({
+                layers: 'fenix:gaul0_line_3857',
+                layertitle: 'Country Boundaries',
+                urlWMS: 'http://fenix.fao.org/geoserver',
+                opacity: '0.9',
+                zindex: '500',
+                lang: 'en'
+            }));
+
+            m.addLayer(new FM.layer({
+                layers: 'fenix:gaul0_faostat_3857',
+                layertitle: '',
+                urlWMS: 'http://fenix.fao.org/geoserver',
+                style: 'highlight_polygon',
+                cql_filter: "iso3 IN ('" + this.id + "')",
+                hideLayerInControllerList: true,
+                lang: 'en'
+            }));
+
+            m.zoomTo("country", "iso3", this.id);
         },
 
         _printDashboard : function ( item ) {
