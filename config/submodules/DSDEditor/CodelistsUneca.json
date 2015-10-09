@@ -21,6 +21,13 @@
     "subject": "item"
   },
   {
+    "val": "UNECA_Partner",
+    "text": {
+      "EN": "UNECA Partner"
+    },
+    "subject": "item"
+  },
+  {
     "val": "UNECA_Gender",
     "text": {
       "EN": "UNECA Gender"
@@ -33,14 +40,14 @@
     "text": {
       "EN": "UNECA Currencies"
     },
-    "subject": "item"
+    "subject": "um"
   },
   {
     "val": "UNECA_UnitMeasure",
     "text": {
       "EN": "UNECA Unit of Measure"
     },
-    "subject": "item"
+    "subject": "um"
   },
   {
     "val": "UNECA_EconomicSector",

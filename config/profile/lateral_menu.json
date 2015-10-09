@@ -32,44 +32,54 @@
             "id": "balance_of_payments",
             "text": "Balance of Payments"
           },
+
+
           {
-            "id": "gdp_constant",
-            "text": "GDP by kind of Economic Activity at Constant Prices"
+            "id": "gdp",
+            "text": "GDP"
           },
-          {
-            "id": "gdp_current",
-            "text": "GDP by kind of Economic Activity at Current Prices"
-          },
+
           {
             "id": "monetary_statistics",
             "text": "Monetary Statistics"
+          },
+          {
+            "id": "financial_flows",
+            "text": "Financial Flows"
           },
           {
             "id": "public_finance",
             "text": "Public Finance"
           },
           {
-            "id": "energy",
-            "text": "Energy"
+            "id": "debt",
+            "text": "Debt"
           },
           {
-            "id": "imports",
-            "text": "Imports"
-          }
-        ]
-      },
-      {
-        "id": "environment",
-        "text": "Environment and multi-Domain statistics",
-        "children": [
-          {
-            "id": "infrastructure",
-            "text": "Infrastructure"
+            "id": "inflation",
+            "text": "Inflation"
           },
           {
-            "id": "poverty",
-            "text": "Poverty"
+            "id": "sectorial",
+            "text":"Sectorial Statistics",
+            "children": [
+              {
+                "id": "energy",
+                "text": "Energy"
+              },
+              {
+                "id": "tourism",
+                "text": "Tourism"
+              },
+              {
+                "id": "infrastructure",
+                "text": "Infrastructure"
+              }
+
+
+            ]
           }
+
         ]
       }
     ]
