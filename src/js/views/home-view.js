@@ -19,7 +19,7 @@ define([
     'detector',
     'canvasRender',
     "highcharts",
-
+    'projector',
     'tweenMax',
     'amplify'
 ], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient, chartTemplate) {
@@ -285,7 +285,11 @@ define([
 
 
             if( Detector.webgl ){
+                console.log('nicola dapauara computer supersonic');
+
                 renderer = new THREE.WebGLRenderer({
+
+
                     antialias       : true
                 });
 
@@ -294,6 +298,8 @@ define([
                 //  Detector.addGetWebGLMessage();
                 //  return true;
             }else{
+                console.log('dani purciaro computer vecchio')
+
                 renderer    = new THREE.CanvasRenderer();
             }
 

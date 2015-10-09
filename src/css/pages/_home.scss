@@ -65,7 +65,6 @@
   .home-btn-container {
 
 
-
     .col-sm-6 {
 
       .home-btn {
@@ -140,12 +139,17 @@
     }
 
     .arrow-left {
+      left: 100%;
       background-image: url(../../src/css/img/arrow-left.svg);
     }
 
     .arrow-right {
+      left: 0;
       background-image: url(../../src/css/img/arrow-right.svg);
     }
+
+
+
 
     .carousel-inner {
       height: 120px;

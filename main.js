@@ -111,6 +111,7 @@ require([
                     effectComposer : "{FENIX_CDN}/js/threejs/4.4/EffectComposer",
                     maskPass : "{FENIX_CDN}/js/threejs/4.4/MaskPass",
                     orbitControls : "{FENIX_CDN}/js/threejs/4.4/OrbitControls",
+                    projector : "{FENIX_CDN}/js/threejs/4.4/Projector",
                     renderPass : "{FENIX_CDN}/js/threejs/4.4/RenderPass",
                     shaderPass : "{FENIX_CDN}/js/threejs/4.4/ShaderPass",
                     canvasRender: "{FENIX_CDN}/js/threejs/4.4/CanvasRenderer", // TO BE REVIEWED
@@ -149,6 +150,9 @@ require([
                         deps: ["threejs"]
                     },
                     detector: {
+                        deps: ["threejs"]
+                    },
+                    projector:{
                         deps: ["threejs"]
                     },
                     copyShader: {
