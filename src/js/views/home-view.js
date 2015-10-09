@@ -93,8 +93,8 @@ define([
                     enabled: false
                 },
                 colors: [ //Colori delle charts
-                    '#a62d3e',
-                    '#986e2e',
+                    '#005493',
+                    '#005493',
                     '#744490',
                     '#E10079',
                     '#2D1706',
@@ -218,8 +218,8 @@ define([
                     enabled: false
                 },
                 colors: [ //Colori delle charts
-                    '#a62d3e',
-                    '#986e2e',
+                    '#005493',
+                    '#005493',
                     '#744490',
                     '#E10079',
                     '#2D1706',
@@ -344,7 +344,7 @@ define([
 
                 console.log((loaded / total * 100) + '% loaded');
 
-               // $('#preload-text').text((loaded / total * 100) + '% loaded') // For preload
+                $('#preload-text').text((loaded / total * 100) + '% loaded') // For preload
 
 
 
@@ -355,7 +355,9 @@ define([
                 // All the texure are loaded
                 console.log('all Loaded');
                 $('#world-preload').removeClass('visible');
-                TweenMax.to(camera.position, 5, {x: 23, z:-10,y:0 , onComplete:
+
+
+                TweenMax.to(camera.position, 4, {x: 23, z:-10,y:0 , onComplete:
                     function () {
                         startHomeHeader();
 
@@ -366,7 +368,12 @@ define([
 
 
             function startHomeHeader(){
-                TweenMax.to($('.home-header'), 2, {opacity: 1});
+                TweenMax.to($('.welcome'), 2, {opacity: 1});
+                TweenMax.to($('.home-logo, .topic-container'), 2, {opacity: 1, delay:.5});
+                TweenMax.to($(' .one'), 2, {opacity: 1, delay:1.3});
+                TweenMax.to($(' .two'), 2, {opacity: 1, delay:1.7});
+                TweenMax.to($(' .three'), 2, {opacity: 1, delay:2.0});
+                TweenMax.to($(' .four'), 2, {opacity: 1, delay:2.3});
                 $('.carousel').carousel('cycle');
             }
 

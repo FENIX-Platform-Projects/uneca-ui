@@ -8,6 +8,11 @@
 
 }
 
+#home-charts-tab{
+  padding: 25px;
+}
+
+
 .home-overlay {
   background-color: #05232e;
   opacity: 0.6;
@@ -17,10 +22,41 @@
   top: -21px;
 }
 
+.topic-container,.home-logo, .welcome, .one, .two, .three, .four {
+  opacity: 0;
+}
+
+.nav-tabs{
+  border: none;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  border: none;
+  border: 1px solid $fx-cool-blue ;
+  @include fx-no-border-radius();
+}
+
+.nav>li>a{
+  padding: 3px 15px;
+  color: $fenix-text;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+  color: $fx-cool-blue;
+}
+
+.nav-tabs>li>a:hover, .nav>li>a:focus, .nav>li>a:hover{
+  @include fx-no-border-radius();
+  border-color: transparent;
+}
+
 .home-header {
   min-height: 300px;
   position: relative;
-  opacity: 0;
+
+
 
 .home-btn-holder{
   padding-top: 50px;
@@ -69,13 +105,14 @@
   }
 
   .home-logo {
+
     background-image: url(../../src/css/img/uneca-ico.svg);
     width: 350px;
     height: 48px;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    left: 55%;
+    left: 47%;
     @include fx-transfor-me(translateX(-50%));
   }
 
@@ -236,6 +273,18 @@ $uneca-home-padding: 15px;
 
 }
 
+#preload-text{
+  color: $fx-cool-alt;
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-transform: uppercase;
+  @include fx-transfor-me(translate(-50%,-50%));
+}
+
 #world-preload.visible {
   opacity: 1;
 }
@@ -243,5 +292,47 @@ $uneca-home-padding: 15px;
 
 
 
+/*//////////////////////////////////////////// Navbar Media queries */
 
+
+/* Ipad */
+@media (min-width: 768px) and (max-width: 990px) {
+
+  .home-header  {
+    .home-logo{
+      left: 58%;
+    }
+
+    .home-btn-holder{
+      padding-top: 75px;
+    }
+
+
+
+  }
+
+}
+
+/* Iphone */
+
+@media (max-width: 767px) {
+
+  .home-header  {
+    .home-logo{
+      left: 55%;
+    }
+
+    .home-btn-holder{
+      padding-top: 75px;
+    }
+
+
+
+  }
+
+
+
+  /* End of the iPhone media query*/
+
+}
 
