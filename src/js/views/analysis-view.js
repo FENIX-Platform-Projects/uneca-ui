@@ -21,7 +21,8 @@ define([
         OVERLAY: "#overlay",
         OVERLAY_CONTENT: '.overlay-content',
         OVERLAY_OPEN: '.open-overlay',
-        OVERLAY_CLOSE: '.close-overlay'
+        OVERLAY_CLOSE: '.close-overlay',
+        PAGE_CONTENT : "#analysis-page-content"
     };
 
     var AnalysisView = View.extend({
@@ -90,7 +91,6 @@ define([
 
             this._bindEventListener();
 
-
         },
 
         _bindEventListener: function () {
@@ -104,11 +104,15 @@ define([
 
         openOverly: function () {
 
+            $(s.PAGE_CONTENT).hide();
+
             $(s.OVERLAY).show();
+
             $(s.OVERLAY).css({
                 height : '100%',
                 width : '100%'
             });
+
             $(s.OVERLAY_CONTENT).fadeIn('fast');
 
         },
@@ -118,6 +122,7 @@ define([
             $(s.OVERLAY_CONTENT).fadeOut("fast", function () {
                 $(s.OVERLAY_CONTENT).hide();
                 $(s.OVERLAY).hide();
+                $(s.PAGE_CONTENT).show();
             });
 
         },

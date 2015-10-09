@@ -39,6 +39,8 @@ define([
 
             this.validCountrydId = !!country;
 
+            this.country = country;
+
         },
 
         performAccessControlChecks: function (params) {
@@ -58,6 +60,7 @@ define([
             //Pass the valid id to view if valid
             if (this.validCountrydId === true) {
                 conf.id = params.id;
+                conf.country = this.country;
             } else {
                 Backbone.history.navigate('#profile/' , {trigger: false});
             }
@@ -66,7 +69,6 @@ define([
         }
 
     });
-
 
     return ProfileController;
 });

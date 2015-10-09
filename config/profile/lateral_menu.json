@@ -60,24 +60,16 @@
             "text": "Inflation"
           },
           {
-            "id": "sectorial",
-            "text":"Sectorial Statistics",
-            "children": [
-              {
-                "id": "energy",
-                "text": "Energy"
-              },
-              {
-                "id": "tourism",
-                "text": "Tourism"
-              },
-              {
-                "id": "infrastructure",
-                "text": "Infrastructure"
-              }
-
-
-            ]
+            "id": "energy",
+            "text": "Energy"
+          },
+          {
+            "id": "tourism",
+            "text": "Tourism"
+          },
+          {
+            "id": "infrastructure",
+            "text": "Infrastructure"
           }
 
         ]

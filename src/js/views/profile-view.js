@@ -36,6 +36,8 @@ define([
 
             this.countries = params.countries;
 
+            this.country = params.country;
+
             View.prototype.initialize.call(this, arguments);
 
         },
@@ -91,8 +93,10 @@ define([
         _printCountryDashboard: function () {
 
             var self = this;
+            var template = Handlebars.compile(dashboardTemplate),
+                html = template({country : this.country.title.EN});
 
-            this.$content.html(dashboardTemplate);
+            this.$content.html(html);
 
             this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
 

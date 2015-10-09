@@ -58,6 +58,7 @@ define([
             this.configurePage();
 
         },
+
         initVariables: function () {
 
             this.$standardsList = this.$el.find(s.STANDARD_LIST);
@@ -83,6 +84,8 @@ define([
 
                 if (self.hasOwnProperty("id")){
                     data.instance.select_node([self.id]);
+                } else {
+                    data.instance.select_node('ul > li:first');
                 }
 
             });
@@ -100,7 +103,6 @@ define([
             return result;
         },
 
-
         _onStartingSelected : function(id) {
             var self = this;
             $.ajax({
@@ -110,7 +112,6 @@ define([
 
             })
         },
-
 
         bindEventListeners: function () {
             var self = this;
