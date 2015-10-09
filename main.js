@@ -139,6 +139,8 @@ require([
 
                     'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi',
 
+                    'fx-report/config/md-export/config' : '../../config/submodules/fx-report/md-export/config',
+
                     'fx-ds/config/config' : '../../config/submodules/fx-dashboard/config'
 
                 },
