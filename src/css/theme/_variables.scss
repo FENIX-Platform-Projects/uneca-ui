@@ -31,9 +31,7 @@ $fx-cool-alt: #51b5ff;
 
 $fx-secondary-color: desaturate( $fx-cool-blue, 50% );
 
-$fx-main-color-light: lighten($fx-cool-blue, 42%);  // Ideal for selection
-$fx-main-color-lighter: lighten($fx-cool-blue, 42%); // Ideal for hovers
-$fx-main-color-darker: darken($fx-cool-blue, 20%); // Ideal for hovers
+
 
 
 
@@ -80,4 +78,6 @@ $custom-color6: #0d6cac; // Fao Blue
 $custom-color7: #4fa3db; // Fao Azure
 $custom-color8: #ec6e00; // Fao Orange
 
-
+$fx-main-color-light: #ced8df;  // Ideal for selection
+$fx-main-color-lighter: #ced8df ;// Ideal for hovers
+$fx-main-color-darker: #ced8df; // Ideal for hovers

@@ -26,31 +26,36 @@
   opacity: 0;
 }
 
-.nav-tabs{
-  border: none;
+#home-charts-tab{
+  .nav-tabs{
+    border: none;
+  }
+
+  .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    border: none;
+    border: 1px solid $fx-cool-blue ;
+    @include fx-no-border-radius();
+  }
+
+  .nav>li>a{
+    padding: 3px 15px;
+    color: $fenix-text;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+    color: $fx-cool-blue;
+  }
+
+  .nav-tabs>li>a:hover, .nav>li>a:focus, .nav>li>a:hover{
+    @include fx-no-border-radius();
+    border-color: transparent;
+  }
+
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-  border: none;
-  border: 1px solid $fx-cool-blue ;
-  @include fx-no-border-radius();
-}
 
-.nav>li>a{
-  padding: 3px 15px;
-  color: $fenix-text;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
-  color: $fx-cool-blue;
-}
-
-.nav-tabs>li>a:hover, .nav>li>a:focus, .nav>li>a:hover{
-  @include fx-no-border-radius();
-  border-color: transparent;
-}
 
 .home-header {
   min-height: 300px;
