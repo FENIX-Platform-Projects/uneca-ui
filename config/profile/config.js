@@ -293,53 +293,53 @@ define(function () {
                  Population Pyramid
                  */
 
-                {
-                    //Time series
-                    id: 'population-6',
-                    type: 'chart',
-                    class: "fx-timeseries-ecample",
-                    //needed if layout = injected
-                    container: "#population-6",
-                    config: {
-                        container: "#population-6",
-                        adapter: {
-                            type: "standard",
-                            xDimensions: 'time',
-                            yDimensions: 'item',
-                            valueDimensions: 'value',
-                            seriesDimensions: []
-                        },
-                        template: {
-                            //"title": "Top 25..."
-                        },
-                        creator: {
-
-
-
-                        }
-                    },
-
-
-                    filter: [
-                        {
-                            "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "codes": [
-                                                    "010101"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        }
-                    ]
-                },
+                //{
+                //    //Time series
+                //    id: 'population-6',
+                //    type: 'chart',
+                //    class: "fx-timeseries-ecample",
+                //    //needed if layout = injected
+                //    container: "#population-6",
+                //    config: {
+                //        container: "#population-6",
+                //        adapter: {
+                //            type: "standard",
+                //            xDimensions: 'time',
+                //            yDimensions: 'item',
+                //            valueDimensions: 'value',
+                //            seriesDimensions: []
+                //        },
+                //        template: {
+                //            //"title": "Top 25..."
+                //        },
+                //        creator: {
+                //
+                //
+                //
+                //        }
+                //    },
+                //
+                //
+                //    filter: [
+                //        {
+                //            "name": "filter",
+                //            "parameters": {
+                //                "rows": {
+                //                    "IndicatorCode": {
+                //                        "codes": [
+                //                            {
+                //                                "uid": "UNECA_ClassificationOfActivities",
+                //                                "codes": [
+                //                                    "010101"
+                //                                ]
+                //                            }
+                //                        ]
+                //                    }
+                //                }
+                //            }
+                //        }
+                //    ]
+                //},
 
 
 
