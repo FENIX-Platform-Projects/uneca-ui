@@ -264,7 +264,6 @@ $uneca-home-padding: 15px;
   height: 300px;
   position: absolute;
   top: -21px; /*As .navbar margin-bottom*/
-
 }
 
 #world-preload {
@@ -274,6 +273,19 @@ $uneca-home-padding: 15px;
   background-color: $fenix-light-hr;
   @include animate(1s);
   opacity: 0;
+
+}
+
+.world-fallback{
+  opacity: 0;
+  background-image:  url(../../src/css/img/world-fallback.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 
 }
 
