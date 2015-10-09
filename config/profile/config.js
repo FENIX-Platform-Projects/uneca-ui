@@ -294,22 +294,32 @@ define(function () {
                  */
 
                 {
-                    id: 'population-7',
-                    type: 'table',
-                    class: "fx-map-chart",
+                    //Time series
+                    id: 'population-6',
+                    type: 'chart',
+                    class: "fx-timeseries-ecample",
                     //needed if layout = injected
-                    container: "#population-7",
+                    container: "#population-6",
                     config: {
-                        container: "#population-7",
-                        leaflet: {
-                            zoomControl: false,
-                            attributionControl: true,
-                            scrollWheelZoom: false,
-                            minZoom: 2
+                        container: "#population-6",
+                        adapter: {
+                            type: "standard",
+                            xDimensions: 'time',
+                            yDimensions: 'item',
+                            valueDimensions: 'value',
+                            seriesDimensions: []
+                        },
+                        template: {
+                            //"title": "Top 25..."
+                        },
+                        creator: {
+
+
+
                         }
                     },
-                    // for now it takes the id, TODO: add uid as well
-                    allowedFilter: [],
+
+
                     filter: [
                         {
                             "name": "filter",
@@ -320,15 +330,12 @@ define(function () {
                                             {
                                                 "uid": "UNECA_ClassificationOfActivities",
                                                 "codes": [
-                                                    "010102"
+                                                    "010101"
                                                 ]
                                             }
                                         ]
                                     }
-                                },
-                                "columns": ["IndicatorCode", "CountryCode", "Year", "GenderCode", "AgeRangeCode", "Value"]
-
-
+                                }
                             }
                         }
                     ]
@@ -1071,7 +1078,7 @@ define(function () {
                     config: {
                         container: "#gdp-2",
                         adapter: {
-                            type: "standard",
+                            type: "line",
                             xDimensions: 'Year',
                             yDimensions: "IndicatorCode",
                             valueDimensions: 'Value',
@@ -1081,11 +1088,7 @@ define(function () {
                             //"title": "Top 25..."
                         },
                         creator: {
-                            chartObj: {
-                                chart: {
-                                    type: "column"
-                                }
-                            }
+
                         }
                     },
 
