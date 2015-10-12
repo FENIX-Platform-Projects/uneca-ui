@@ -7705,6 +7705,27 @@ ul[role="group"] {
   top: 0;
   left: 0; }
 
+.mobile-btn {
+  background-color: #495c66;
+  height: 50px;
+  width: calc(100% - 30px);
+  line-height: 50px;
+  display: block;
+  padding: 0 0 0 10px;
+  margin: 15px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer; }
+  .mobile-btn:link, .mobile-btn:visited, .mobile-btn:hover, .mobile-btn:focus, .mobile-btn:active {
+    color: white;
+    font-size: 14px;
+    text-decoration: none; }
+  .mobile-btn .icojam_mobile_phone {
+    font-size: 32px;
+    position: relative;
+    top: 9px;
+    left: 0; }
+
 #preload-text {
   color: #51b5ff;
   font-weight: 500;

@@ -293,6 +293,40 @@ $uneca-home-padding: 15px;
 
 }
 
+.mobile-btn{
+  background-color: #495c66;
+  height: 50px;
+  width: calc(100% - 30px);
+  line-height: 50px;
+  display: block;
+  padding: 0 0 0 10px;
+  margin: 15px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .icojam_mobile_phone{
+    font-size: 32px;
+    position: relative;
+
+    top: 9px;
+    left: 0;
+
+  }
+
+
+}
+
 #preload-text{
   color: $fx-cool-alt;
   font-weight: 500;
