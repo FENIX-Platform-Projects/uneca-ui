@@ -7737,6 +7737,46 @@ ul[role="group"] {
     padding-top: 75px; }
 
   /* End of the iPhone media query*/ }
+/*Partner*/
+[data-partner] {
+  width: 16.6%; }
+  [data-partner] a {
+    height: 50px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; }
+
+[data-partner='fra'] a {
+  background-image: url("../../src/images/partners/fra-off.png"); }
+[data-partner='fra'].active > a {
+  background-image: url("../../src/images/partners/fra.png"); }
+
+[data-partner='fe'] a {
+  background-image: url("../../src/images/partners/fe-off.png"); }
+[data-partner='fe'].active > a {
+  background-image: url("../../src/images/partners/fe.png"); }
+
+[data-partner='unece'] a {
+  background-image: url("../../src/images/partners/unece-off.png"); }
+[data-partner='unece'].active > a {
+  background-image: url("../../src/images/partners/unece.png"); }
+
+[data-partner='mp'] a {
+  background-image: url("../../src/images/partners/mp-off.png"); }
+[data-partner='mp'].active > a {
+  background-image: url("../../src/images/partners/mp.png"); }
+
+[data-partner='ofac'] a {
+  background-image: url("../../src/images/partners/ofac-off.png"); }
+[data-partner='ofac'].active > a {
+  background-image: url("../../src/images/partners/ofac.png"); }
+
+[data-partner='itto'] a {
+  background-image: url("../../src/images/partners/itto-off.png"); }
+[data-partner='itto'].active > a {
+  background-image: url("../../src/images/partners/itto.png"); }
+
 /* Profile Page */
 /* Fenix - Analysis Page */
 #overlay .close-overlay {

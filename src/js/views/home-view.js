@@ -81,6 +81,11 @@ define([
         configurePage: function () {
 
             this.initCharts();
+
+            $(document).off('click.bs.tab.data-api', '[data-hover="tab"]');
+            $(document).on('mouseenter.bs.tab.data-api', '[data-toggle="tab"], [data-hover="tab"]', function () {
+                $(this).tab('show');
+            });
         },
 
         initCharts: function () {

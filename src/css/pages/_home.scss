@@ -356,3 +356,42 @@ $uneca-home-padding: 15px;
 
 }
 
+
+/*Partner*/
+[data-partner] {
+  width: 16.6%;
+
+  a {
+    height: 50px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+  }
+
+}
+
+$partners: fra fe unece mp ofac itto;
+
+@each $partner in $partners {
+
+  [data-partner='#{$partner}'] {
+
+    a {
+      background-image: url('../../src/images/partners/#{$partner}-off.png');
+    }
+
+    &.active {
+
+      >a {
+        background-image: url('../../src/images/partners/#{$partner}.png');
+      }
+
+    }
+
+  }
+
+}
+
+
