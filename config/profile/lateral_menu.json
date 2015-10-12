@@ -5,6 +5,9 @@
       {
         "id": "demographic",
         "text": "Demographic and social statistics",
+        "state"       : {
+          "opened"    : true
+        },
         "children": [
           {
             "id": "population",
@@ -27,6 +30,9 @@
       {
         "id": "economics",
         "text": "Economic statistics",
+        "state" : {
+          "opened" : true
+        },
         "children": [
           {
             "id": "balance_of_payments",
