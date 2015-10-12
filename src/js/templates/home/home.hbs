@@ -133,9 +133,11 @@
                     </div>
                     <div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2">
                         <div class="panel-body">
-                            <div class="uneca-home-panel-sub">Balance of Payments <span class="fx-panel-info"></span></div>
+                            <div class="uneca-home-panel-sub">Balance of Payments <span class="fx-panel-info"></span>
+                            </div>
                             <div class="uneca-home-panel-sub">GDP <span class="fx-panel-info"></span></div>
-                            <div class="uneca-home-panel-sub">Monetary Statistics <span class="fx-panel-info"></span></div>
+                            <div class="uneca-home-panel-sub">Monetary Statistics <span class="fx-panel-info"></span>
+                            </div>
                             <div class="uneca-home-panel-sub">Financial Flows <span class="fx-panel-info"></span></div>
                             <div class="uneca-home-panel-sub">Public Finance <span class="fx-panel-info"></span></div>
                             <div class="uneca-home-panel-sub">Debt <span class="fx-panel-info"></span></div>
@@ -161,8 +163,10 @@
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a data-id="first" href="#tab-chart-1" role="tab"
                                                               data-toggle="tab">GDP</a></li>
-                    <li role="presentation"><a data-id="second" href="#tab-chart-2" role="tab" data-toggle="tab">Trade</a></li>
-                    <li role="presentation"><a data-id="third" href="#tab-chart-3" role="tab" data-toggle="tab">Crop</a></li>
+                    <li role="presentation"><a data-id="second" href="#tab-chart-2" role="tab"
+                                               data-toggle="tab">Trade</a></li>
+                    <li role="presentation"><a data-id="third" href="#tab-chart-3" role="tab" data-toggle="tab">Crop</a>
+                    </li>
                 </ul>
 
                 <!-- Tab panes-->
@@ -180,36 +184,54 @@
             </div>
 
             <div class="uneca-home-title">HOW DATA PORTAL WORKS</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim ante at tellus commodo
-                consequat. Morbi cursus rhoncus nisl a pulvinar. Cum sociis natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. Pellentesque vel finibus lectus, at vehicula felis. Sed
-                non nisi dui. Donec sed vestibulum lacus, eget lobortis purus. Duis nec mi nec quam porta euismod.
-                Aliquam rutrum et libero tempus volutpat. In hac habitasse platea dictumst. Curabitur aliquet
-                commodo nulla, ac varius elit egestas id. Suspendisse laoreet arcu quis magna convallis, ut
-                vulputate eros interdum. In consequat mi id libero egestas maximus.</p>
+            <p> The ECA Data portal is an internet based platform for compilation and dissemination of
+                data on various socio-economic indicators on African countries. It holds data on a wide range of indicators
+                covering various areas such as Population, Education, Health, National Accounts, Agriculture, Mining,
+                Energy, Environment, Tourism, Trade as well as Millennium Development Goals indicators.</p>
 
-            <p>Dolor sit amet, consectetur adipiscing elit. Curabitur dignissim ante at tellus commodo consequat.
-                Morbi cursus rhoncus nisl a pulvinar. Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Pellentesque vel finibus lectus, at vehicula felis. Sed non nisi dui. Donec
-                sed vestibulum lacus, eget lobortis purus. </p>
+            <p>The platform provides data access features like search, browse by countries or thematic areas and provides
+                predefined data sets on selected topics. Available data may be downloaded to excel, comma separated value
+                (CSV), Microsoft Word or Adobe PDF formats. </p>
 
-            <p>Consectetur adipiscing elit. Curabitur dignissim ante at tellus commodo consequat. Morbi cursus
-                rhoncus nisl a pulvinar. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                ridiculus mus. Pellentesque vel finibus lectus, at vehicula felis. Sed non nisi dui. Donec sed
-                vestibulum lacus, eget lobortis purus. </p>
+            <div class="uneca-home-title">PARTNERS</div>
+            <div data-role="partners">
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim ante at tellus commodo
-                consequat. Morbi cursus rhoncus nisl a pulvinar. Cum sociis natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. Pellentesque vel finibus lectus, at vehicula felis. Sed
-                non nisi dui. Donec sed vestibulum lacus, eget lobortis purus. Duis nec mi nec quam porta euismod.
-                Aliquam rutrum et libero tempus volutpat. In hac habitasse platea dictumst. Curabitur aliquet
-                commodo nulla, ac varius elit egestas id. Suspendisse laoreet arcu quis magna convallis, ut
-                vulputate eros interdum. In consequat mi id libero egestas maximus.</p>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active" data-partner='fra'><a href="#partner-fra" aria-controls="home" role="tab"
+                                                                                 data-toggle="tab"></a></li>
+                    <li role="presentation" data-partner='fe'><a href="#partner-fe" aria-controls="profile" role="tab"
+                                                                 data-toggle="tab"></a></li>
+                    <li role="presentation" data-partner='unece'><a href="#partner-unece" aria-controls="messages" role="tab"
+                                                                    data-toggle="tab"></a></li>
+                    <li role="presentation" data-partner='mp'><a href="#partner-mp" aria-controls="settings" role="tab"
+                                                                 data-toggle="tab"></a></li>
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="partner-fra">{{ home_partner_fra }}</div>
+                    <div role="tabpanel" class="tab-pane fade" id="partner-fe">{{ home_partner_fe }}</div>
+                    <div role="tabpanel" class="tab-pane fade" id="partner-unece">{{ home_partner_unece }}</div>
+                    <div role="tabpanel" class="tab-pane fade" id="partner-mp">{{ home_partner_mp }}</div>
+                </div>
+
+            </div>
+
             <br>
         </div>
     </div>
     <div class="col-sm-3">
         <div class="obj-box">
+
+
+            <a class="mobile-btn">
+
+                Mobile App
+
+            </a>
+
             <div class="uneca-home-title">ABOUT UNECA</div>
             <p>Established by the Economic and Social Council (ECOSOC) of the United Nations (UN) in 1958 as one of
                 the UN's five regional commissions, ECA's mandate is to promote the economic and social development
@@ -251,27 +273,3 @@
 
 
 
-<h2 class="flude-title-square" >Partners</h2>
-<div data-role="partners">
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active" data-partner='fra'><a href="#partner-fra"  aria-controls="home" role="tab" data-toggle="tab"></a></li>
-        <li role="presentation" data-partner='fe'><a href="#partner-fe"  aria-controls="profile" role="tab" data-toggle="tab"></a></li>
-        <li role="presentation" data-partner='unece'><a href="#partner-unece"  aria-controls="messages" role="tab" data-toggle="tab"></a></li>
-        <li role="presentation" data-partner='mp'><a href="#partner-mp"  aria-controls="settings" role="tab" data-toggle="tab"></a></li>
-        <li role="presentation" data-partner='ofac'><a href="#partner-ofac"  aria-controls="settings" role="tab" data-toggle="tab"></a></li>
-        <li role="presentation" data-partner='itto'><a href="#partner-itto"   aria-controls="settings" role="tab" data-toggle="tab"></a></li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="partner-fra">{{ home_partner_fra }}</div>
-        <div role="tabpanel" class="tab-pane fade" id="partner-fe">{{ home_partner_fe }}</div>
-        <div role="tabpanel" class="tab-pane fade" id="partner-unece">{{ home_partner_unece }}</div>
-        <div role="tabpanel" class="tab-pane fade" id="partner-mp">{{ home_partner_mp }}</div>
-        <div role="tabpanel" class="tab-pane fade" id="partner-ofac">{{ home_partner_ofac }}</div>
-        <div role="tabpanel" class="tab-pane fade" id="partner-itto">{{ home_partner_itto }}</div>
-    </div>
-
-</div>

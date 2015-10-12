@@ -1,5 +1,40 @@
 /* Profile Page */
 
 .country-name{
+  margin-top: 0;
 
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.dl-horizontal dt{
+  width: 90px;
+}
+
+.dl-horizontal dd{
+  margin-left: 120px;
+}
+
+
+#lateral-menu{
+  z-index: 1;
+  position: relative;
+}
+
+.lat-men{
+  position: relative;
+}
+
+.lateral-menu-container{
+  top: 0;left: 15px;
+  position: absolute;
+  margin-bottom: 15px;
+  height: 100%;
+  width: calc(100% - 30px);
+  background-color: $fenix-light-bg;
+}
+
+ul[role="group"]{
+  background-color:$fenix-light-bg;
+  
 }

@@ -395,3 +395,25 @@ $partners: fra fe unece mp ofac itto;
 }
 
 
+
+[data-role='partners']{
+
+  .nav>li>a:focus, .nav>li>a:hover{
+    background-color: transparent;
+    border-color:transparent ;
+  }
+
+  .nav-tabs{
+    border-color:transparent ;
+  }
+
+  .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    border-color:transparent ;
+  }
+
+  .tab-pane{
+    height: 100px;
+    padding: 0 15px;
+  }
+}
+
