@@ -5367,7 +5367,6 @@ input[type="button"]::-moz-focus-inner {
   -ms-border-radius: 0;
   border-radius: 0;
   margin-bottom: 20px;
-  min-height: 100px;
   padding: 19px 0 16px 19px; }
 
 /*========= HEADER =========*/
@@ -5410,6 +5409,9 @@ input[type="button"]::-moz-focus-inner {
 .jstree-holder {
   height: 209px;
   overflow-y: auto; }
+
+.fx_result_icon {
+  font-size: 30px; }
 
 /*========= RESULTS */
 /*========= COMMONS =========*/
