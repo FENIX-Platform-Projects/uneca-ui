@@ -7744,6 +7744,9 @@ ul[role="group"] {
 #world-preload.visible {
   opacity: 1; }
 
+.fx-filter-form-module {
+  width: 50%; }
+
 /*//////////////////////////////////////////// Navbar Media queries */
 /* Ipad */
 @media (min-width: 768px) and (max-width: 990px) {
