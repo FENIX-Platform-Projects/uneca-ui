@@ -7922,6 +7922,12 @@ ul[role="group"] {
   position: absolute;
   left: 15px; }
 
+.methods .jstree-anchor {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: calc(100% - 50px); }
+
 .fx-catalog-modular-form-content {
   height: 240px !important; }
   .fx-catalog-modular-form-content .jstree-holder {

@@ -190,7 +190,7 @@ define([
             // create Tree Grid
             this.$treeHolder.jqxTreeGrid(
                 {
-                    width: 600,
+                    width: '100%',
                     source: dataAdapter,
                     sortable: true,
                     columns: [

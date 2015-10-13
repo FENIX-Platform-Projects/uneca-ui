@@ -50,3 +50,13 @@
   position: absolute;
   left: 15px;
 }
+
+.methods{
+  .jstree-anchor{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 50px);
+  }
+}
+
