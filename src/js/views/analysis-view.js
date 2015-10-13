@@ -108,22 +108,22 @@ define([
 
             $(s.OVERLAY).show();
 
+/*
             $(s.OVERLAY).css({
                 height : '100%',
                 width : '100%'
             });
+*/
 
-            $(s.OVERLAY_CONTENT).fadeIn('fast');
+            $(s.OVERLAY_CONTENT).show();
 
         },
 
         closeOverly: function () {
 
-            $(s.OVERLAY_CONTENT).fadeOut("fast", function () {
-                $(s.OVERLAY_CONTENT).hide();
-                $(s.OVERLAY).hide();
-                $(s.PAGE_CONTENT).show();
-            });
+            $(s.OVERLAY_CONTENT).hide();
+            $(s.OVERLAY).hide();
+            $(s.PAGE_CONTENT).show();
 
         },
 
