@@ -7519,7 +7519,7 @@ ul[role="group"] {
   display: none; }
 
 #home-charts-tab {
-  padding: 25px; }
+  padding: 15px 15px 0 15px; }
 
 .home-overlay {
   background-color: #05232e;
@@ -7595,6 +7595,7 @@ ul[role="group"] {
     color: white;
     font-size: 12px;
     font-weight: 500;
+    position: relative;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -ms-transition: all 0.3s ease 0s;
@@ -7609,6 +7610,16 @@ ul[role="group"] {
       -ms-transition: all 0.3s ease 0s;
       -o-transition: all 0.3s ease 0s;
       transition: all 0.3s ease 0s; }
+    .home-header .home-btn-container .col-sm-6 .home-btn span {
+      font-size: 37px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      background-color: #495c66;
+      height: 100%;
+      width: 50px;
+      line-height: 51px; }
   .home-header .welcome {
     color: white;
     padding-left: 20%; }
@@ -7663,47 +7674,59 @@ ul[role="group"] {
   .home-header .carousel-control.right, .home-header .carousel-control.left {
     background: none; }
 
-.uneca-home-container .panel-body {
+.panel-body {
   background-color: #f1f1f1;
   padding: 0 15px; }
-.uneca-home-container .uneca-home-title {
+
+.uneca-home-title {
   font: normal normal 700 10px/normal "Roboto";
   color: #005493;
   padding: 15px; }
-.uneca-home-container .obj-box, .uneca-home-container .obj-box-radius10, .uneca-home-container .obj-box-title {
+
+.obj-box, .obj-box-radius10, .obj-box-title {
   padding: 0; }
+
 .uneca-home-container p {
   padding: 0 15px;
   font-size: 12px; }
-.uneca-home-container .uneca-home-social {
+
+.uneca-home-social {
   padding: 0 15px;
   font-size: 18px; }
-.uneca-home-container hr {
+
+hr {
   border-color: #f1f1f1;
   margin-bottom: 0; }
-.uneca-home-container .panel-heading {
+
+.panel-heading {
   padding: 0 15px; }
-.uneca-home-container .panel-default {
+
+.panel-default {
   border-color: transparent; }
-.uneca-home-container .panel-group .panel-heading .panel-title a {
+
+.panel-group .panel-heading .panel-title a {
   text-transform: none;
   color: #005493;
   font-size: 14px; }
-.uneca-home-container .fx-panel-plus {
+
+.fx-panel-plus {
   margin-right: 5px; }
-.uneca-home-container .uneca-home-panel-sub {
+
+.uneca-home-panel-sub {
   margin: 7px 0;
   border-bottom: 1px solid #e5e5e5; }
-  .uneca-home-container .uneca-home-panel-sub:last-child {
+  .uneca-home-panel-sub:last-child {
     border-color: transparent; }
-.uneca-home-container .uneca-home-entrypoint {
+
+.uneca-home-entrypoint {
   text-align: center;
   padding: 0 25px; }
-  .uneca-home-container .uneca-home-entrypoint .col-xs-4 {
+  .uneca-home-entrypoint .col-xs-4 {
     border-right: 1px solid #e5e5e5; }
-    .uneca-home-container .uneca-home-entrypoint .col-xs-4:last-child {
+    .uneca-home-entrypoint .col-xs-4:last-child {
       border-color: transparent; }
-.uneca-home-container .uneca-home-entrypoint-container {
+
+.uneca-home-entrypoint-container {
   padding: 5px; }
 
 #container {
@@ -7737,8 +7760,9 @@ ul[role="group"] {
   left: 0; }
 
 .mobile-btn {
-  background-color: #495c66;
-  height: 50px;
+  background-color: #51b5ff;
+  background-image: url(../../src/images/motox.png);
+  height: 75px;
   width: calc(100% - 30px);
   line-height: 50px;
   display: block;
@@ -7746,7 +7770,10 @@ ul[role="group"] {
   margin: 15px;
   color: white;
   font-size: 14px;
-  cursor: pointer; }
+  cursor: pointer;
+  background-position: 160% 26%;
+  background-repeat: no-repeat;
+  font-weight: 700; }
   .mobile-btn:link, .mobile-btn:visited, .mobile-btn:hover, .mobile-btn:focus, .mobile-btn:active {
     color: white;
     font-size: 14px;
@@ -7756,6 +7783,13 @@ ul[role="group"] {
     position: relative;
     top: 9px;
     left: 0; }
+
+.highcharts-title {
+  font-weight: 700;
+  color: #005493 !important;
+  text-transform: uppercase;
+  font-size: 10px !important;
+  fill: #005493 !important; }
 
 #preload-text {
   color: #51b5ff;
@@ -7782,13 +7816,19 @@ ul[role="group"] {
   .home-header .home-logo {
     left: 58%; }
   .home-header .home-btn-holder {
-    padding-top: 75px; } }
+    padding-top: 75px; }
+
+  .mobile-btn {
+    background-position: -160% 26%; } }
 /* Iphone */
 @media (max-width: 767px) {
   .home-header .home-logo {
     left: 55%; }
   .home-header .home-btn-holder {
     padding-top: 75px; }
+
+  .mobile-btn {
+    background-position: 50% 26%; }
 
   /* End of the iPhone media query*/ }
 /*Partner*/
@@ -7882,6 +7922,15 @@ ul[role="group"] {
   position: absolute;
   right: 0;
   z-index: 1; }
+
+.close-catalog {
+  position: relative;
+  top: -30px;
+  left: -10px; }
+
+#fx-catalog-submit-btn {
+  bottom: -3px;
+  right: -3px; }
 
 /* Uneca data management */
 .data-mng-secondary-menu-container .container {

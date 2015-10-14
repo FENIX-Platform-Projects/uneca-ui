@@ -28,7 +28,7 @@ define([
 
     var s = {
         CHART_TABS : '#home-charts-tab a[data-toggle="tab"]'
-    }, renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene, containerWidth, containerHeight;
+    }, renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene, containerWidth, containerHeight, terraMesh, nuvoleMesh;
 
     var mouseX = 0, mouseY = 0;
 
@@ -290,7 +290,7 @@ define([
 
 
             if( Detector.webgl ){
-                console.log('nicola dapauara computer supersonic');
+                //console.log('nicola dapauara computer supersonic');
 
                 renderer = new THREE.WebGLRenderer({
 
@@ -435,7 +435,7 @@ define([
                 terraMateriale.specularMap = terraSpec;
                 terraMateriale.specular = new THREE.Color(0x00283a); // Color of the specular
 
-                var terraMesh = new THREE.Mesh(sferaGeometria, terraMateriale);
+                terraMesh = new THREE.Mesh(sferaGeometria, terraMateriale);
                 terraMesh.name = 'terra';
 
                 scena.add(terraMesh);
@@ -443,8 +443,8 @@ define([
                 //terraMesh.position.set(0,0, 0);
 
                 // Nuvole
-                var nuvoleGeometria = new THREE.SphereGeometry(sferaGeometria.parameters.radius * 1.01, sferaGeometria.parameters.widthSegments, sferaGeometria.parameters.heightSegments);
-                var nuvoleMesh = new THREE.Mesh(nuvoleGeometria, nuvoleMateriale);
+                var nuvoleGeometria = new THREE.SphereGeometry(sferaGeometria.parameters.radius * 1.02, sferaGeometria.parameters.widthSegments, sferaGeometria.parameters.heightSegments);
+                nuvoleMesh = new THREE.Mesh(nuvoleGeometria, nuvoleMateriale);
 
                 scena.add(nuvoleMesh);
 
@@ -496,7 +496,7 @@ define([
 
 
                 container.appendChild(renderer.domElement); //domElement is a property of WEBGLRender
-                container.addEventListener( 'mousemove', this.onDocumentMouseMove, false );
+                $( window ).mousemove( this.onDocumentMouseMove);
                 window.addEventListener('resize', this.onWindowResize, false);
                 this.renderScene();
 
@@ -547,8 +547,30 @@ define([
         },
         onDocumentMouseMove: function (event) {
 
-            //mouseX = ( event.clientX - windowHalfX ) / 8;
+
+
+            mouseX = ( event.clientX - windowHalfX ) / 8;
             //mouseY = ( event.clientY - windowHalfY ) / 4;
+
+            console.log(mouseX * Math.PI / 180);
+
+             var rotazione = (mouseX * Math.PI / 180) / 20;
+            //var rotazioneY = (mouseY * Math.PI / 180) / 10;
+
+            terraMesh.rotation.y = rotazione;
+            nuvoleMesh.rotation.y = rotazione;
+
+            //terraMesh.rotation.z = rotazioneY;
+            //nuvoleMesh.rotation.z = rotazioneY;
+
+            //TweenMax.to(terraMesh.rotation, 4, {x: 23, z:-10,y:0 , onComplete:
+            //    function () {
+            //        self.startHomeHeader();
+            //
+            //    }
+            //});
+
+
 
         },
         startHomeHeader : function(){
@@ -559,6 +581,7 @@ define([
         TweenMax.to($(' .three'), 2, {opacity: 1, delay:2.0});
         TweenMax.to($(' .four'), 2, {opacity: 1, delay:2.3});
         $('.carousel').carousel('cycle');
+
     }
     });
 

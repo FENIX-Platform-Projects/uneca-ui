@@ -9,7 +9,7 @@
 }
 
 #home-charts-tab{
-  padding: 25px;
+  padding: 15px 15px 0 15px;
 }
 
 
@@ -83,6 +83,8 @@
         color: white;
         font-size: 12px;
         font-weight: 500;
+        position: relative;
+
         @include animate();
 
         &:link,
@@ -97,6 +99,20 @@
           background-color: rgba(255,255,255,0.3);
           @include animate();
         }
+
+        span{
+          font-size: 37px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: inline-block;
+          background-color: #495c66;
+          height: 100%;
+
+          width: 50px;
+          line-height: 51px;
+        }
+
       }
 
     }
@@ -189,7 +205,7 @@
 
 $uneca-home-padding: 15px;
 
-.uneca-home-container {
+
   .panel-body {
     background-color: $fenix-light-bg;
     padding: 0 15px;
@@ -205,7 +221,7 @@ $uneca-home-padding: 15px;
     padding: 0;
   }
 
-  p {
+.uneca-home-container p {
     padding: 0 $uneca-home-padding;
     font-size: 12px;
   }
@@ -214,6 +230,7 @@ $uneca-home-padding: 15px;
     padding: 0 $uneca-home-padding;
     font-size: 18px;
   }
+
 
   hr {
     border-color: $fenix-light-bg;
@@ -262,7 +279,7 @@ $uneca-home-padding: 15px;
     padding: 5px;
   }
 
-}
+
 
 #container {
   width: 100%;
@@ -294,8 +311,9 @@ $uneca-home-padding: 15px;
 }
 
 .mobile-btn{
-  background-color: #495c66;
-  height: 50px;
+  background-color: $fx-cool-alt;
+  background-image:  url(../../src/images/motox.png);
+  height: 75px;
   width: calc(100% - 30px);
   line-height: 50px;
   display: block;
@@ -304,6 +322,10 @@ $uneca-home-padding: 15px;
   color: white;
   font-size: 14px;
   cursor: pointer;
+  background-position: 160% 26%;
+  background-repeat: no-repeat;
+  font-weight: 700;
+  //color: $fx-cool-alt;
 
   &:link,
   &:visited,
@@ -325,6 +347,14 @@ $uneca-home-padding: 15px;
   }
 
 
+}
+
+.highcharts-title{
+  font-weight: 700;
+  color: $fx-cool-blue !important;
+  text-transform: uppercase;
+  font-size: 10px !important;
+  fill: $fx-cool-blue !important;
 }
 
 #preload-text{
@@ -369,6 +399,11 @@ $uneca-home-padding: 15px;
 
   }
 
+  .mobile-btn{
+    background-position: -160% 26%;
+
+  }
+
 }
 
 /* Iphone */
@@ -385,6 +420,12 @@ $uneca-home-padding: 15px;
     }
 
 
+
+  }
+
+
+  .mobile-btn{
+    background-position: 50% 26%;
 
   }
 
