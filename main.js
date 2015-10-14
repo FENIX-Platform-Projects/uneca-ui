@@ -81,7 +81,7 @@ require([
             dataEditorConfig,dsdEditorConfig,/*dataUploadConfig,*/metadataEditorConfig,metadataViewerConfig,faostatThemeConfig,
             mapCreatorConfig,chartCreatorConfig,tableCreatorConfig,fenixReportConfig,filterConfig, dashboardConfig],
         {
-            placeholders: {"FENIX_CDN": "//fenixrepo.fao.org/cdn"},
+            placeholders: {"FENIX_CDN": "http://fenixrepo.fao.org/cdn"},
 
             config: {
 
@@ -200,6 +200,22 @@ require([
                 //, urlArgs: 'bust=' +  (new Date()).getTime()
             }
         });
+
+    /*
+    var paths = requirejs.s.contexts._.config.paths,
+        keys = Object.keys(paths),
+        rs = "";
+
+    for (var i = 0 ; i < keys.length ; i++) {
+        if (paths[keys[i]].indexOf("http://fenixrepo") === 0) {
+            rs = rs +(paths[keys[i]]) + '.js' + '\n';
+        }
+    }
+
+    console.log(rs)
+
+    */
+
 
     // Bootstrap the application
     require([
