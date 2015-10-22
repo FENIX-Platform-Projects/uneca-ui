@@ -574,6 +574,7 @@ define([
 
         },
         startHomeHeader : function(){
+        TweenMax.to($('.world-fallback'), 1, {opacity: 1});
         TweenMax.to($('.welcome'), 1, {opacity: 1});
         TweenMax.to($('.home-logo, .topic-container'), 2, {opacity: 1, delay:.5});
         TweenMax.to($(' .one'), 2, {opacity: 1, delay:1.3});

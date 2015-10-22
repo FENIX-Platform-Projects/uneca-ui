@@ -37,7 +37,16 @@
       },
       "target": "#analysis",
       "label": {
-        "EN": "Analysis"
+        "EN": "Analysis & Download"
+      }
+    },
+    {
+      "attrs": {
+        "id": "domains"
+      },
+      "target": "#domains",
+      "label": {
+        "EN": "Browse by Domain"
       }
     },
     {

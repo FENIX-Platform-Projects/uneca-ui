@@ -22,7 +22,7 @@ define([
         OVERLAY_CONTENT: '.overlay-content',
         OVERLAY_OPEN: '.open-overlay',
         OVERLAY_CLOSE: '.close-overlay',
-        PAGE_CONTENT : "#analysis-page-content"
+        PAGE_CONTENT: "#analysis-page-content"
     };
 
     var AnalysisView = View.extend({
@@ -65,10 +65,22 @@ define([
                         SELECT_RESOURCE: {
                             event: 'select',
                             labels: {
-                                EN: 'Select Resource'
+                                EN: 'View'
                             }
-
+                        },
+                        METADATA: {
+                            event: 'metadata',
+                            labels: {
+                                EN: 'Metadata'
+                            }
+                        },
+                        DOWNLOAD: {
+                            event: 'download',
+                            labels: {
+                                EN: 'Download'
+                            }
                         }
+
                     }
                 }
 
@@ -96,24 +108,30 @@ define([
         _bindEventListener: function () {
 
             $(s.OVERLAY_OPEN).on('click', _.bind(this.openOverly, this));
+
             $(s.OVERLAY_CLOSE).on('click', _.bind(this.closeOverly, this));
 
-            amplify.subscribe('fx.widget.catalog.select', _.bind(this.closeOverly, this));
+            amplify.subscribe('fx.widget.catalog.select', this, this.closeOverly);
+
+            amplify.subscribe('fx.widget.catalog.metadata', this, this.onMetadataClick);
+
+            amplify.subscribe('fx.widget.catalog.download', this, this.onDownloadClick);
         },
 
+        onMetadataClick: function (model) {
+            console.log("metadata")
+            console.log(model)
+        },
+        onDownloadClick: function (model) {
+            console.log("download")
+            console.log(model)
+        },
 
         openOverly: function () {
 
             $(s.PAGE_CONTENT).hide();
 
             $(s.OVERLAY).show();
-
-/*
-            $(s.OVERLAY).css({
-                height : '100%',
-                width : '100%'
-            });
-*/
 
             $(s.OVERLAY_CONTENT).show();
 
@@ -135,7 +153,18 @@ define([
 
             View.prototype.dispose.call(this, arguments);
         },
+
         unbindEventListeners: function () {
+
+            $(s.OVERLAY_OPEN).off();
+
+            $(s.OVERLAY_CLOSE).off();
+
+            amplify.unsubscribe('fx.widget.catalog.select', this.closeOverly, this);
+
+            amplify.unsubscribe('fx.widget.catalog.metadata', this.onMetadataClick);
+
+            amplify.unsubscribe('fx.widget.catalog.download', this.onDownloadClick);
 
         }
     });
