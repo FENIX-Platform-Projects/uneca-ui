@@ -4,7 +4,7 @@
   .close-overlay{
     height: 35px;
     width: 35px;
-    background: url("img/icons-sprite.png") no-repeat -595px 0px;
+    background: url("img/icons-sprite.png") no-repeat -595px 0;
     border: none;
     position: absolute;
     right: 0;
@@ -24,3 +24,14 @@
   right: -3px;
 }
 
+
+
+.fx-filter-modular-form-content{
+  height: 100px;
+
+}
+
+
+.fx-filter-form-module.fit {
+  width: 100%;
+}

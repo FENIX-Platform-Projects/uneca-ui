@@ -27,13 +27,6 @@ define(function () {
                         "icon": "fa fa-database fa-lg fa-fw"
                     },
                     {
-                        "module": "context",
-                        "label": {
-                            "EN": "Dissemination System"
-                        },
-                        "icon": "fa fa-database fa-lg fa-fw"
-                    },
-                    {
                         "module": "referencePeriod",
                         "label": {
                             "EN": "Reference Period"
@@ -76,6 +69,13 @@ define(function () {
 
                 },
                 "modules": [
+                    {
+                        "module": "context",
+                        "label": {
+                            "EN": "Dissemination System"
+                        },
+                        "icon": "fa fa-database fa-lg fa-fw"
+                    },
                     {
                         "module": "statusOfConfidentiality",
                         "label": {
