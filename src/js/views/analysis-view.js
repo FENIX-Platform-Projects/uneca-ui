@@ -9,8 +9,10 @@ define([
     'config/Events',
     'fx-cat-br/start',
     'fx-ana/start',
+    'FENIX_UI_METADATA_VIEWER',
+    'fx-report',
     'amplify'
-], function ($, _, View, template, i18nLabels, C, E, Catalog, Analysis) {
+], function ($, _, View, template, i18nLabels, C, E, Catalog, Analysis,MetadataViewer,Report) {
 
     'use strict';
 
@@ -22,7 +24,12 @@ define([
         OVERLAY_CONTENT: '.overlay-content',
         OVERLAY_OPEN: '.open-overlay',
         OVERLAY_CLOSE: '.close-overlay',
-        PAGE_CONTENT: "#analysis-page-content"
+        PAGE_CONTENT: "#analysis-page-content",
+        MODAL_METADATA: '#uneca-metadata-modal',
+        MODAL_METADATAVIEWER_CONTAINER: '[data-content="metadata-viewer-container"]',
+
+        BTN_EXPORT_METADATA : '.fx-md-report-btn'
+
     };
 
     var AnalysisView = View.extend({
@@ -86,6 +93,10 @@ define([
 
             }).init();
 
+            this.$modalMetadata = this.$el.find(s.MODAL_METADATA);
+
+            this.$report = new Report();
+
             this.analysis = new Analysis({
                 container: document.querySelector(s.ANALYSIS_CONTAINER),
                 listenToCatalog: {
@@ -119,9 +130,52 @@ define([
         },
 
         onMetadataClick: function (model) {
-            console.log("metadata")
-            console.log(model)
+        
+            var self = this;
+
+            this.$modalMetadata.modal('show');
+
+            var metadata = new MetadataViewer();
+
+            self.$modalMetadata.find(s.MODAL_METADATAVIEWER_CONTAINER).empty();
+
+            metadata.init({
+                lang: 'en',
+                data: model,
+                //domain: "rlm_" + request.inputs.indicator[0],
+                placeholder: self.$modalMetadata.find(s.MODAL_METADATAVIEWER_CONTAINER)
+            });
+
+
+            self._listenToExportMetadata(model);
+
         },
+        _listenToExportMetadata : function(model) {
+
+            var fileName = model.title['EN'].replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
+            var self = this;
+            $(s.BTN_EXPORT_METADATA).on('click', function(){
+
+                var payload = {
+                    input:{
+                        config:{
+                            uid: model.uid
+                        }
+                    },
+                    output: {
+                        config:{
+                            lang : 'en'.toUpperCase(),
+                            fileName: fileName+'.pdf'
+                        }
+                    }
+                };
+
+                self.$report.init('metadataExport');
+                self.$report.exportData(payload,C.MD_EXPORT_URL);
+            });
+        },
+
         onDownloadClick: function (model) {
             console.log("download")
             console.log(model)

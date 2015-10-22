@@ -12,7 +12,7 @@ require([
     './submodules/fenix-ui-dataUpload/js/paths',
 */
     './submodules/fenix-ui-metadata-editor/js/paths',
-    './submodules/fenix-ui-metadata-viewer/js/paths',
+    './submodules/fenix-ui-metadata-viewer/src/js/paths',
     './submodules/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js/paths',
     './submodules/fenix-ui-map-creator/src/js/paths',
     './submodules/fenix-ui-chart-creator/src/js/paths',
@@ -54,7 +54,7 @@ require([
     metadataEditorConfig.baseUrl = submodules_path +'fenix-ui-metadata-editor/js/';
 
     var metadataViewerConfig = MetadataViewer;
-    metadataViewerConfig.baseUrl= submodules_path +'fenix-ui-metadata-viewer/js/';
+    metadataViewerConfig.baseUrl= submodules_path +'fenix-ui-metadata-viewer/src/js/';
 
     var faostatThemeConfig = FAOSTAT_THEME;
     faostatThemeConfig.baseUrl = submodules_path + '/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js';
@@ -144,7 +144,11 @@ require([
 
                     'fx-report/config/md-export/config' : '../../config/submodules/fx-report/md-export/config',
 
-                    'fx-ds/config/config' : '../../config/submodules/fx-dashboard/config'
+                    'fx-ds/config/config' : '../../config/submodules/fx-dashboard/config',
+
+                    // METADATA VIEWER
+                    'fx-mdviewer/config/config': '../../config/submodules/fx-md-viewer/config'
+
 
                 },
 

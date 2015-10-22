@@ -32,12 +32,15 @@ define(function () {
             SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK : "home",
 
             COUNTRIES_CODE_LIST : CODELIST_PREFIX + "UNECA_ISO3",
-            CODELIST_URL : CODELIST_PREFIX
+            CODELIST_URL : CODELIST_PREFIX,
+            MD_EXPORT_URL : 'http://fenixapps2.fao.org/fenixExport'
 
 
-/*
-            CATALOG_BLANK_FILTER: "config/submodules/fx-catalog/blank-filter.json"
-*/
+
+
+            /*
+                        CATALOG_BLANK_FILTER: "config/submodules/fx-catalog/blank-filter.json"
+            */
 
         };
     });
