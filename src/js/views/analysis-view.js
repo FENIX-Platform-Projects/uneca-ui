@@ -130,7 +130,7 @@ define([
         },
 
         onMetadataClick: function (model) {
-        
+
             var self = this;
 
             this.$modalMetadata.modal('show');
@@ -150,6 +150,7 @@ define([
             self._listenToExportMetadata(model);
 
         },
+
         _listenToExportMetadata : function(model) {
 
             var fileName = model.title['EN'].replace(/[^a-z0-9]/gi, '_').toLowerCase();
@@ -179,6 +180,23 @@ define([
         onDownloadClick: function (model) {
             console.log("download")
             console.log(model)
+
+            var payload = {
+                input:{
+                    config:{
+                        uid: model.uid,
+                        environment_url : C.DATA_ENVIROMENT_URL
+                    }
+                },
+                output: {
+                    config:{
+                        lang : 'en'.toUpperCase()
+                    }
+                }
+            };
+
+            this.$report.init('tableExport');
+            this.$report.exportData(payload,C.MD_EXPORT_URL);
         },
 
         openOverly: function () {

@@ -33,7 +33,8 @@ define(function () {
 
             COUNTRIES_CODE_LIST : CODELIST_PREFIX + "UNECA_ISO3",
             CODELIST_URL : CODELIST_PREFIX,
-            MD_EXPORT_URL : 'http://fenixapps2.fao.org/fenixExport'
+            MD_EXPORT_URL : 'http://fenixapps2.fao.org/fenixExport',
+            DATA_ENVIROMENT_URL : 'http://fenixservices.fao.org'
 
 
 
