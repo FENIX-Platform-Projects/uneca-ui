@@ -443,7 +443,7 @@ define([
                 //terraMesh.position.set(0,0, 0);
 
                 // Nuvole
-                var nuvoleGeometria = new THREE.SphereGeometry(sferaGeometria.parameters.radius * 1.02, sferaGeometria.parameters.widthSegments, sferaGeometria.parameters.heightSegments);
+                var nuvoleGeometria = new THREE.SphereGeometry(sferaGeometria.parameters.radius * 1.02  , sferaGeometria.parameters.widthSegments, sferaGeometria.parameters.heightSegments);
                 nuvoleMesh = new THREE.Mesh(nuvoleGeometria, nuvoleMateriale);
 
                 scena.add(nuvoleMesh);
