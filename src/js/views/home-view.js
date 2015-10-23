@@ -264,7 +264,9 @@ define([
             $(s.CHART_TABS).on('shown.bs.tab', function (e) {
                 e.preventDefault();
 
+/*
                 console.log($(e.currentTarget).data("id"))
+*/
 
                 self.initCharts();
             });
@@ -337,10 +339,10 @@ define([
 
                 var manager = new THREE.LoadingManager();
                 manager.onProgress = function (item, loaded, total) {
-
+/*
                     console.log(item, loaded, total);
 
-                    console.log((loaded / total * 100) + '% loaded');
+                    console.log((loaded / total * 100) + '% loaded');*/
 
                     $('#preload-text').text((loaded / total * 100) + '% loaded') // For preload
 
@@ -352,7 +354,9 @@ define([
 
                 manager.onLoad = function () {
                     // All the texure are loaded
+/*
                     console.log('all Loaded');
+*/
                     $('#world-preload').removeClass('visible');
 
 
@@ -454,7 +458,9 @@ define([
                 luceDirezionale.name = "direzionale";
 
                 scena.add(luceDirezionale);
+/*
                 console.log(luceDirezionale.position);
+*/
                 luceDirezionale.position.set(50, 40, 50);
 
                 var luceAmbientale = new THREE.AmbientLight(0x666666); // Only light color
@@ -552,7 +558,9 @@ define([
             mouseX = ( event.clientX - windowHalfX ) / 8;
             //mouseY = ( event.clientY - windowHalfY ) / 4;
 
+/*
             console.log(mouseX * Math.PI / 180);
+*/
 
              var rotazione = (mouseX * Math.PI / 180) / 20;
             //var rotazioneY = (mouseY * Math.PI / 180) / 10;
