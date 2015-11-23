@@ -11,7 +11,7 @@ define([
     'config/Events',
     'text!config/profile/lateral_menu.json',
     'text!config/profile/resume_countries.json',
-    'config/profile/config',
+    'config/profile/Config',
     'handlebars',
     'amplify',
     'bootstrap-list-filter',
@@ -234,10 +234,13 @@ define([
 
             //get from PC the 'id' conf
 
-            var base = PC[id],
+            var base,
                 conf;
 
-            if (!base) {
+            try{
+                base = PC[id].dashboard;
+
+            }catch (e) {
                 alert("Impossible to load dashboard configuration for [" + id + "]");
             }
 

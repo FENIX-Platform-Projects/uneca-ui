@@ -42,6 +42,7 @@ define([
             //this.validDomaindId = !!domain;
 
             this.validDomaindId = true;
+
             this.domain = "population";
 
         },
@@ -66,8 +67,6 @@ define([
             //Pass the valid id to view if valid
             if (this.validDomaindId === true) {
                 conf.id = params.id;
-                //TODO temp
-                conf.id = "population";
 
                 conf.domain = this.domain;
             } else {

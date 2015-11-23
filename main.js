@@ -118,6 +118,7 @@ require([
                     detector: "{FENIX_CDN}/js/threejs/4.4/Detector", // TO BE REVIEWED
                     tweenMax: "{FENIX_CDN}/js/tweenmax/1.18.0/tweenmax.min", // TO BE REVIEWED
                     threejs : "{FENIX_CDN}/js/threejs/4.4/three.min",
+                    loglevel : "{FENIX_CDN}/js/loglevel/1.4.0/loglevel",
 
                     'highcharts': '{FENIX_CDN}/js/highcharts/4.1.6/js/highcharts',
 

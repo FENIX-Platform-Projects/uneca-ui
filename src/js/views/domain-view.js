@@ -13,11 +13,12 @@ define([
     'text!config/profile/resume_countries.json',
     'config/domain/Config',
     'handlebars',
+    'loglevel',
     'amplify',
     'bootstrap-list-filter',
     'jstree',
     'fenix-ui-map'
-], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars) {
+], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars, log) {
 
     'use strict';
 
@@ -67,7 +68,7 @@ define([
 
             this._initVariables();
 
-            this.id ? this._printDomainDashboard() : this._printCountryList();
+            this._printDomainDashboard();
 
         },
 
@@ -77,26 +78,11 @@ define([
 
         },
 
-        _printCountryList: function () {
-
-            var template = Handlebars.compile(listTemplate),
-                html = template({countries: this.countries});
-
-            this.$content.html(html);
-
-            //Init filter
-            $(s.COUNTRY_LIST).btsListFilter(s.SEARCH_FILTER_INPUT, {
-                itemEl: s.SEARCH_ITEM_EL,
-                itemChild: s.SEARCH_ITEM_CHILD
-            });
-
-        },
-
         _printDomainDashboard: function () {
 
             var self = this;
             var template = Handlebars.compile(dashboardTemplate),
-                html = template({domain : "Population"});
+                html = template({domain : this.id});
 
             this.$content.html(html);
 
@@ -112,19 +98,16 @@ define([
 
                         self.$lateralMenu.jstree(true).deselect_node(data.node, true);
 
-                        //self.$lateralMenu.jstree(true).toggle_node(data.node);
-
                     } else {
 
                         //TODO remove me
-                        //self._onChangeDashboard(data.selected[0]);
-                        self._onChangeDashboard('population');
+                        self._onChangeDashboard(data.selected[0]);
 
                     }
 
                 }, this));
 
-            this._printDashboard('population');
+            this._printDashboard(this.id);
 
             //this._printCountryMap();
 
@@ -236,10 +219,13 @@ define([
 
             //get from PC the 'id' conf
 
-            var base = PC[id],
+            var base,
                 conf;
 
-            if (!base) {
+            try{
+                base = PC[id].dashboard;
+
+            }catch (e) {
                 alert("Impossible to load dashboard configuration for [" + id + "]");
             }
 
