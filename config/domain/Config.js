@@ -1049,6 +1049,268 @@ define(function () {
             }
         },
 
+        "labour": {
+            dashboard:{
+                //data cube's uid
+                uid: "UNECA_Labour",
+
+                //bridge configuration
+                bridge: {
+
+                    type: "d3p"
+
+                },
+
+                /*
+                 * in case bridge is WDS this is the cube metadata.
+                 * if bridge is D3P this is ignored
+                 * */
+                metadata: {},
+
+                items: [
+
+
+                    {
+                        id: 'labour-1',
+                        type: 'map',
+                        class: "fx-map-chart",
+                        //needed if layout = injected
+                        container: "#labour-1",
+                        config: {
+                            container: "#labour-1",
+                            geoSubject: 'CountryCode',
+                            leaflet: {
+                                zoomControl: false,
+                                attributionControl: true,
+                                scrollWheelZoom: false,
+                                minZoom: 3
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: [],
+                        //forbiddenValues: {
+                        //    year: {time: [{from: 2011, to: 2011}]},
+                        //    domain: {removeFilter: true}
+                        //},
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2010,
+                                                    "to": 2010
+                                                }
+                                            ]
+                                        },
+
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "010401"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+                                                    "codes": [
+                                                        "3"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+
+
+                                        "CountryCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "ISO3",
+                                                    "codes": [
+                                                        "ETH", "ZMB", "TZA", "CMR", "MLI", "SOM", "ZAF"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "SectorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_EconomicSector",
+                                                    "codes": [
+                                                        "4"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+
+
+
+                                    }
+                                }
+                            }
+                        ]
+                    },
+
+
+                    {
+                        id: 'labour-2',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#labour-2",
+                        config: {
+                            container: "#labour-2",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'CountryCode',
+                                yDimensions: "UnitCode",
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['SectorCode']
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    }
+                                }
+                            }
+                        },
+
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": ["01040102"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "CountryCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "ISO3",
+                                                    "codes": [
+                                                        "ETH", "ZMB", "TZA", "CMR", "MLI", "SOM", "ZAF"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2005,
+                                                    "to": 2005
+                                                }
+                                            ]
+                                        }
+
+
+
+                                    }
+                                }
+                            }
+                        ]
+                    },
+
+                    {
+                        id: 'labour-3',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#labour-3",
+                        config: {
+                            container: "#labour-3",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'CountryCode',
+                                yDimensions: "UnitCode",
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['GenderCode']
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    plotOptions: {
+                                        column: {
+
+                                            stacking: "normal"
+                                        }
+
+                                    }
+                                }
+                            }
+                        },
+
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": ["01040101"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "CountryCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "ISO3",
+                                                    "codes": [
+                                                        "ETH", "ZMB", "TZA", "CMR", "MLI", "SOM", "ZAF"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2010,
+                                                    "to": 2010
+                                                }
+                                            ]
+                                        }
+
+
+
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+
+            }
+        },
 
 
         gdp: {
@@ -1296,7 +1558,252 @@ define(function () {
 
 
             }
-        }
+        },
+
+
+
+        "inflation": {
+            dashboard:{
+
+                //data cube's uid
+                uid: "UNECA_Inflation",
+
+                //bridge configuration
+                bridge: {
+
+                    type: "d3p"
+
+                },
+
+                /*
+                 * in case bridge is WDS this is the cube metadata.
+                 * if bridge is D3P this is ignored
+                 * */
+                metadata: {},
+
+                items: [
+
+                    {
+                        id: 'inflation-1',
+                        type: 'map',
+                        class: "fx-map-chart",
+                        //needed if layout = injected
+                        container: "#inflation-1",
+                        config: {
+                            container: "#inflation-1",
+                            geoSubject: 'CountryCode',
+                            leaflet: {
+                                zoomControl: false,
+                                attributionControl: true,
+                                scrollWheelZoom: false,
+                                minZoom: 3
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: [],
+                        //forbiddenValues: {
+                        //    year: {time: [{from: 2011, to: 2011}]},
+                        //    domain: {removeFilter: true}
+                        //},
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2010,
+                                                    "to": 2010
+                                                }
+                                            ]
+                                        },
+
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "02110114"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+
+
+
+                                        "CountryCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "ISO3",
+                                                    "codes": [
+                                                        "ETH", "ZMB", "TZA", "CMR", "MLI", "SOM", "ZAF"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+
+
+
+                                    }
+                                }
+                            }
+                        ]
+                    },
+
+                    {
+                        id: 'inflation-2',
+                        type: 'map',
+                        class: "fx-map-chart",
+                        //needed if layout = injected
+                        container: "#inflation-2",
+                        config: {
+                            container: "#inflation-2",
+                            geoSubject: 'CountryCode',
+                            leaflet: {
+                                zoomControl: false,
+                                attributionControl: true,
+                                scrollWheelZoom: false,
+                                minZoom: 3
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: [],
+                        //forbiddenValues: {
+                        //    year: {time: [{from: 2011, to: 2011}]},
+                        //    domain: {removeFilter: true}
+                        //},
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2010,
+                                                    "to": 2010
+                                                }
+                                            ]
+                                        },
+
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "02110115"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+
+
+
+                                        "CountryCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "ISO3",
+                                                    "codes": [
+                                                        "ETH", "ZMB", "TZA", "CMR", "MLI", "SOM", "ZAF"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+
+
+
+                                    }
+                                }
+                            }
+                        ]
+                    },
+
+
+                    {
+                        id: 'inflation-3',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#inflation-3",
+                        config: {
+                            container: "#inflation-3",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'CountryCode',
+                                yDimensions: "Unit",
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['IndicatorCode']
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    }
+                                }
+                            }
+                        },
+
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "02110103", "02110103", "02110109", "02110113", "02110110", "02110104", "02110101", "02110105", "02110106", "02110102", "02110108", "02110112", "021101", "02110107"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2010,
+                                                    "to": 2010
+                                                }
+                                            ]
+                                        },
+                                        "CountryCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "ISO3",
+                                                    "codes": [
+                                                        "ETH", "ZMB", "TZA", "CMR", "MLI", "SOM", "ZAF"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+
+                                    }
+                                }
+                            }
+                        ]
+                    }
+
+
+                ]
+
+            }
+        },
+
+
+
+
+
+
+
 
             }
 });

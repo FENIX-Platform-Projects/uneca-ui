@@ -870,9 +870,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'UnitCode',
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -914,9 +914,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: null,
+                                yDimensions: "UnitCode",
                                 valueDimensions: 'Value',
-                                seriesDimensions: ['QualifierEconomicSector']
+                                seriesDimensions: ['SectorCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -945,6 +945,72 @@ define(function () {
                                                 }
                                             ]
                                         }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+
+                    {
+                        id: 'labour-3',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#labour-3",
+                        config: {
+                            container: "#labour-3",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'Year',
+                                yDimensions: "UnitCode",
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['GenderCode']
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    plotOptions: {
+                                        column: {
+
+                                            stacking: "normal"
+                                        }
+
+                                    }
+                                }
+                            }
+                        },
+
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": ["01040101"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "SectorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_EconomicSector",
+                                                    "codes": ["4"
+
+                                                    ]
+                                                }
+                                            ]
+                                        }
+
                                     }
                                 }
                             }
