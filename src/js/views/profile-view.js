@@ -3,6 +3,7 @@ define([
     'jquery',
     'views/base/view',
     'fx-ds/start',
+    'fx-filter/start',
     'text!templates/profile/profile.hbs',
     'text!templates/profile/list.hbs',
     'text!templates/profile/dashboard.hbs',
@@ -13,11 +14,12 @@ define([
     'text!config/profile/resume_countries.json',
     'config/profile/Config',
     'handlebars',
+    'fx-filter/Fx-filter-configuration-creator',
     'amplify',
     'bootstrap-list-filter',
     'jstree',
     'fenix-ui-map'
-], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars) {
+], function ($, View, Dashboard, Filter, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars, FilterConfCreator) {
 
     'use strict';
 
@@ -29,7 +31,11 @@ define([
         SEARCH_ITEM_EL: '.country-item',
         DASHBOARD_CONTENT: "#dashboard-content",
         LATERAL_MENU: '#lateral-menu',
-        MAP_CONTAINER : "#country-map-container"
+        MAP_CONTAINER: "#country-map-container",
+        FILTER_CONTAINER : 'filter-container',
+        FILTER_SUBMIT : '#filter-submit',
+        FILTER_BLOCK : "#filter-block"
+
     };
 
     var ProfileView = View.extend({
@@ -92,13 +98,40 @@ define([
 
         },
 
+        _initDashboardVariables: function () {
+
+            this.$filterSubmit = this.$el.find(s.FILTER_SUBMIT);
+
+        },
+
+        _bindDashboardEventListeners: function () {
+
+            var self = this;
+
+            this.$filterSubmit.on('click', function (e, data) {
+
+                var values = self.filter.getValues();
+
+                // TODO: it's an array
+
+                console.log("Filtro");
+                console.log(values);
+
+                self.dashboard.filter([values]);
+            });
+        },
+
         _printCountryDashboard: function () {
 
             var self = this;
             var template = Handlebars.compile(dashboardTemplate),
-                html = template({country : this.country.title.EN});
+                html = template({country: this.country.title.EN});
 
             this.$content.html(html);
+
+            this._initDashboardVariables();
+
+            this._bindDashboardEventListeners();
 
             this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
 
@@ -108,7 +141,7 @@ define([
                 //Limit selection e select only leafs for indicators
                 .on("select_node.jstree", _.bind(function (e, data) {
 
-                    if ( !data.instance.is_leaf(data.node) ) {
+                    if (!data.instance.is_leaf(data.node)) {
 
                         self.$lateralMenu.jstree(true).deselect_node(data.node, true);
 
@@ -136,25 +169,25 @@ define([
 
         },
 
-        _printCountryMap : function () {
+        _printCountryMap: function () {
 
             try {
-                 var m = new FM.Map(s.MAP_CONTAINER, {
-                        plugins: {
-                            disclaimerfao: false,
-                            geosearch: false,
-                            mouseposition: false,
-                            controlloading : false,
-                            zoomcontrol: 'bottomright'
-                        },
-                        guiController: {
-                            overlay: false,
-                            baselayer: true,
-                            wmsLoader: false
-                        }
-                    });
+                var m = new FM.Map(s.MAP_CONTAINER, {
+                    plugins: {
+                        disclaimerfao: false,
+                        geosearch: false,
+                        mouseposition: false,
+                        controlloading: false,
+                        zoomcontrol: 'bottomright'
+                    },
+                    guiController: {
+                        overlay: false,
+                        baselayer: true,
+                        wmsLoader: false
+                    }
+                });
             }
-            catch(e) {
+            catch (e) {
                 console.log(e)
             }
 
@@ -182,13 +215,27 @@ define([
             m.zoomTo("country", "iso3", this.id);
         },
 
-        _printDashboard : function ( item ) {
+        _printDashboard: function (item) {
 
             this._printDashboardBase(item);
 
-            var conf = this._getDashboardConfig(item);
+            var conf = this._getDashboardConfig(item),
+                filterConfig = this._getFilterConfig(item);
 
             this._renderDashboard(conf);
+
+            if (filterConfig && Array.isArray(filterConfig)) {
+
+                this.$el.find(s.FILTER_BLOCK).show();
+
+                this._renderFilter(filterConfig);
+
+            } else {
+
+                this.$el.find(s.FILTER_BLOCK).hide();
+
+            }
+
         },
 
         _onChangeDashboard: function (item) {
@@ -220,7 +267,7 @@ define([
                                 {
                                     "uid": "ISO3",
                                     "codes": [
-                                       this.id
+                                        this.id
                                     ]
                                 }
                             ]
@@ -237,10 +284,10 @@ define([
             var base,
                 conf;
 
-            try{
+            try {
                 base = PC[id].dashboard;
 
-            }catch (e) {
+            } catch (e) {
                 alert("Impossible to load dashboard configuration for [" + id + "]");
             }
 
@@ -251,19 +298,80 @@ define([
             return conf;
         },
 
-        _renderDashboard: function (config) {
+        _getFilterConfig: function (id) {
 
-            if (this.unecaDashboard && this.unecaDashboard.destroy) {
-                this.unecaDashboard.destroy();
+            //get from PC the 'id' conf
+
+            var conf;
+
+            try {
+
+                conf = PC[id].filter;
+
+            } catch (e) {
+                alert("Impossible to load filter configuration for [" + id + "]");
             }
 
-            this.unecaDashboard = new Dashboard({
+            return conf;
+        },
+
+        _renderDashboard: function (config) {
+
+            if (this.dashboard && this.dashboard.destroy) {
+                this.dashboard.destroy();
+            }
+
+            this.dashboard = new Dashboard({
                 layout: "injected"
             });
 
-            this.unecaDashboard.render(config);
+            this.dashboard.render(config);
+
+        },
+
+        _renderFilter: function (config) {
+
+            var self = this;
+
+            this.filterConfCreator = new FilterConfCreator();
+
+            this.filterConfCreator.getConfiguration(config)
+                .then(function (c) {
+
+                    self.filter = new Filter();
+
+                    self.filter.init({
+                        container: s.FILTER_CONTAINER,
+                        layout: 'fluidGrid'
+                    });
+
+                    var adapterMap = {};
+
+                    self.filter.add(c, adapterMap);
+
+                });
 
         }
+
+        /* Disposition process */
+
+        /*
+        dispose: function () {
+
+            View.prototype.dispose.call(this, arguments);
+
+            //this._unbindDashboardEventListeners();
+
+        },
+
+        _unbindDashboardEventListeners: function () {
+
+            this.$filterSubmit.off();
+
+            console.log(this.$filterSubmit.length)
+
+        }
+        */
 
     });
 
