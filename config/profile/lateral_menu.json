@@ -76,6 +76,21 @@
           {
             "id": "infrastructure",
             "text": "Infrastructure"
+          },
+          {
+            "id": "production",
+            "text": "Production",
+            "children":[
+              {
+                "id": "agriculture_production",
+                "text": "Agriculture production"
+              },
+              {
+                "id": "mining_production",
+                "text": "Mining production"
+              }
+
+            ]
           }
 
         ]

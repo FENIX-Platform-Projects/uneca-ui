@@ -33,9 +33,9 @@ define(function () {
 
         "population": {
 
-            dashboard : {
+            dashboard: {
                 //data cube's uid
-                uid: "UNECA_Population",
+                uid: "Uneca_PopulationNew",
 
                 //bridge configuration
                 bridge: {
@@ -116,6 +116,15 @@ define(function () {
                                 attributionControl: true,
                                 scrollWheelZoom: false,
                                 minZoom: 2
+                            },
+
+
+                            options: {
+                                hidden_columns: ["GenderCode",
+                                    "AgeRangeCode"
+                                ]
+
+
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
@@ -191,60 +200,9 @@ define(function () {
                                                     ]
                                                 }
                                             ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
+                                        },
 
 
-                    {
-                        //Time series
-                        id: 'population-4',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#population-4",
-                        config: {
-                            container: "#population-4",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'time',
-
-
-                                yDimensions: 'item',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['GenderCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "01010101"
-                                                    ]
-                                                }
-                                            ]
-                                        }
                                     }
                                 }
                             }
@@ -265,6 +223,15 @@ define(function () {
                                 attributionControl: true,
                                 scrollWheelZoom: false,
                                 minZoom: 2
+                            },
+
+
+                            options: {
+                                hidden_columns: ["GenderCode",
+                                    "AgeRangeCode"
+                                ]
+
+
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
@@ -296,56 +263,56 @@ define(function () {
 
                     /*
                      Population Pyramid
+
+
+                     {
+                     //Time series
+                     id: 'population-6',
+                     type: 'chart',
+                     class: "fx-timeseries-ecample",
+                     //needed if layout = injected
+                     container: "#population-6",
+                     config: {
+                     container: "#population-6",
+                     adapter: {
+                     type: "standard",
+                     xDimensions: 'time',
+                     yDimensions: 'item',
+                     valueDimensions: 'value',
+                     seriesDimensions: []
+                     },
+                     template: {
+                     //"title": "Top 25..."
+                     },
+                     creator: {
+
+
+
+                     }
+                     },
+
+
+                     filter: [
+                     {
+                     "name": "filter",
+                     "parameters": {
+                     "rows": {
+                     "IndicatorCode": {
+                     "codes": [
+                     {
+                     "uid": "UNECA_ClassificationOfActivities",
+                     "codes": [
+                     "01010106"
+                     ]
+                     }
+                     ]
+                     }
+                     }
+                     }
+                     }
+                     ]
+                     },
                      */
-
-                    //{
-                    //    //Time series
-                    //    id: 'population-6',
-                    //    type: 'chart',
-                    //    class: "fx-timeseries-ecample",
-                    //    //needed if layout = injected
-                    //    container: "#population-6",
-                    //    config: {
-                    //        container: "#population-6",
-                    //        adapter: {
-                    //            type: "standard",
-                    //            xDimensions: 'time',
-                    //            yDimensions: 'item',
-                    //            valueDimensions: 'value',
-                    //            seriesDimensions: []
-                    //        },
-                    //        template: {
-                    //            //"title": "Top 25..."
-                    //        },
-                    //        creator: {
-                    //
-                    //
-                    //
-                    //        }
-                    //    },
-                    //
-                    //
-                    //    filter: [
-                    //        {
-                    //            "name": "filter",
-                    //            "parameters": {
-                    //                "rows": {
-                    //                    "IndicatorCode": {
-                    //                        "codes": [
-                    //                            {
-                    //                                "uid": "UNECA_ClassificationOfActivities",
-                    //                                "codes": [
-                    //                                    "010101"
-                    //                                ]
-                    //                            }
-                    //                        ]
-                    //                    }
-                    //                }
-                    //            }
-                    //        }
-                    //    ]
-                    //},
-
 
                     {
                         id: 'population-7',
@@ -360,8 +327,18 @@ define(function () {
                                 attributionControl: true,
                                 scrollWheelZoom: false,
                                 minZoom: 2
+                            },
+
+                            options: {
+                                hidden_columns: ["GenderCode",
+                                    "AgeRangeCode"
+                                ]
+
+
                             }
                         },
+
+
                         // for now it takes the id, TODO: add uid as well
                         allowedFilter: [],
                         filter: [
@@ -392,12 +369,11 @@ define(function () {
                 ]
             }
 
-
         },
 
-        "education": {
 
-            dashboard : {
+        "education": {
+            dashboard:{
 
                 //data cube's uid
                 uid: "UNECA_Education",
@@ -548,15 +524,14 @@ define(function () {
                         ]
                     }
                 ]
+
             }
-
-
         },
+
 
         "health": {
 
-            dashboard : {
-
+            dashboard:{
                 //data cube's uid
                 uid: "UNCEA_Health1",
 
@@ -816,13 +791,13 @@ define(function () {
                     }
 
                 ]
+
             }
-
-
         },
 
+
         "labour": {
-            dashboard : {
+            dashboard:{
                 //data cube's uid
                 uid: "UNECA_Labour",
 
@@ -940,8 +915,10 @@ define(function () {
             }
         },
 
+
         "energy": {
-            dashboard : {
+            dashboard:{
+
                 //data cube's uid
                 uid: "UNECA_Energy",
 
@@ -993,14 +970,15 @@ define(function () {
 
 
                 ]
+
             }
-
-
         },
 
-        "gdp": {
-            dashboard : {
 
+        "gdp": {
+
+
+            dashboard:{
                 //data cube's uid
                 uid: "UNECA_GDP",
 
@@ -1123,9 +1101,10 @@ define(function () {
 
         },
 
+
         "monetary_statistics": {
 
-            dashboard : {
+            dashboard:{
 
                 //data cube's uid
                 uid: "UNECA_MonetaryStatistics1",
@@ -1145,49 +1124,49 @@ define(function () {
 
                 items: [
 
-                    {
-                        //Time series
-                        id: 'monetary-1',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#monetary-1",
-                        config: {
-                            container: "#monetary-1",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
-                                valueDimensions: 'Value',
-                                seriesDimensions: []
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
-
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020905"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
+                    //{
+                    //    //Time series
+                    //    id: 'monetary-1',
+                    //    type: 'chart',
+                    //    class: "fx-timeseries-ecample",
+                    //    //needed if layout = injected
+                    //    container: "#monetary-1",
+                    //    config: {
+                    //        container: "#monetary-1",
+                    //        adapter: {
+                    //            type: "standard",
+                    //            xDimensions: 'Year',
+                    //            yDimensions: 'IndicatorCode',
+                    //            valueDimensions: 'Value',
+                    //            seriesDimensions: []
+                    //        },
+                    //        template: {
+                    //            //"title": "Top 25..."
+                    //        },
+                    //        creator: {}
+                    //    },
+                    //
+                    //
+                    //    filter: [
+                    //        {
+                    //            "name": "filter",
+                    //            "parameters": {
+                    //                "rows": {
+                    //                    "IndicatorCode": {
+                    //                        "codes": [
+                    //                            {
+                    //                                "uid": "UNECA_ClassificationOfActivities",
+                    //                                "codes": [
+                    //                                    "020905"
+                    //                                ]
+                    //                            }
+                    //                        ]
+                    //                    }
+                    //                }
+                    //            }
+                    //        }
+                    //    ]
+                    //},
 
                     {
                         id: 'monetary-2',
@@ -1211,6 +1190,13 @@ define(function () {
                                 chartObj: {
                                     chart: {
                                         type: "column"
+                                    },
+                                    plotOptions: {
+                                        column: {
+
+                                            stacking: "normal"
+                                        }
+
                                     }
                                 }
                             }
@@ -1422,13 +1408,10 @@ define(function () {
                 ]
             }
 
-
         },
-
         "public_finance": {
 
-            dashboard : {
-
+            dashboard:{
                 //data cube's uid
                 uid: "UNECA_PublicFinance1",
 
@@ -1447,49 +1430,49 @@ define(function () {
 
                 items: [
 
-                    {
-                        //Time series
-                        id: 'finance-1',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#finance-1",
-                        config: {
-                            container: "#finance-1",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
-                                valueDimensions: 'Value',
-                                seriesDimensions: []
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
-
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "021201"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
+                    //{
+                    //    //Time series
+                    //    id: 'finance-1',
+                    //    type: 'chart',
+                    //    class: "fx-timeseries-ecample",
+                    //    //needed if layout = injected
+                    //    container: "#finance-1",
+                    //    config: {
+                    //        container: "#finance-1",
+                    //        adapter: {
+                    //            type: "standard",
+                    //            xDimensions: 'Year',
+                    //            yDimensions: 'IndicatorCode',
+                    //            valueDimensions: 'Value',
+                    //            seriesDimensions: []
+                    //        },
+                    //        template: {
+                    //            //"title": "Top 25..."
+                    //        },
+                    //        creator: {}
+                    //    },
+                    //
+                    //
+                    //    filter: [
+                    //        {
+                    //            "name": "filter",
+                    //            "parameters": {
+                    //                "rows": {
+                    //                    "IndicatorCode": {
+                    //                        "codes": [
+                    //                            {
+                    //                                "uid": "UNECA_ClassificationOfActivities",
+                    //                                "codes": [
+                    //                                    "021201"
+                    //                                ]
+                    //                            }
+                    //                        ]
+                    //                    }
+                    //                }
+                    //            }
+                    //        }
+                    //    ]
+                    //},
 
                     {
                         id: 'finance-2',
@@ -1513,6 +1496,13 @@ define(function () {
                                 chartObj: {
                                     chart: {
                                         type: "column"
+                                    },
+                                    plotOptions: {
+                                        column: {
+
+                                            stacking: "normal"
+                                        }
+
                                     }
                                 }
                             }
@@ -1591,6 +1581,15 @@ define(function () {
                         container: "#finance-4",
                         config: {
                             container: "#finance-4",
+
+                            leaflet: {
+                                zoomControl: false,
+                                attributionControl: true,
+                                scrollWheelZoom: false,
+                                minZoom: 2
+                            },
+
+
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
@@ -1733,9 +1732,10 @@ define(function () {
 
         },
 
-        "debt": {
-            dashboard : {
 
+        "debt": {
+
+            dashboard:{
                 //data cube's uid
                 uid: "UNECA_Debt",
 
@@ -1894,12 +1894,12 @@ define(function () {
                 ]
             }
 
-
         },
 
-        "infrastructure": {
-            dashboard : {
 
+        "infrastructure": {
+
+            dashboard:{
                 //data cube's uid
                 uid: "UNECA_Infrastructure",
 
@@ -2056,15 +2056,14 @@ define(function () {
                     }
 
                 ]
-            }
 
+            }
         },
+
 
         "tourism": {
 
-            dashboard : {
-
-
+            dashboard:{
                 //data cube's uid
                 uid: "UNECA_Tourism",
 
@@ -2275,8 +2274,7 @@ define(function () {
         },
 
         "inflation": {
-
-            dashboard : {
+            dashboard:{
 
                 //data cube's uid
                 uid: "UNECA_Inflation",
@@ -2435,14 +2433,13 @@ define(function () {
                     }
 
                 ]
-            }
 
+            }
         },
 
+
         "financial_flows": {
-
-            dashboard : {
-
+            dashboard:{
 
                 filter: [
 
@@ -2511,11 +2508,7 @@ define(function () {
                                             "label": "Net Total Official Development assistance",
                                             "selected": false
                                         },
-                                        {
-                                            "value": "02100101",
-                                            "label": "Official Development assistance",
-                                            "selected": true
-                                        },
+                                        {"value": "02100101", "label": "Official Development assistance", "selected": true},
                                         {"value": "020502", "label": "Origin of FDI Inflows", "selected": false},
                                     ]
                                 }
@@ -2863,15 +2856,14 @@ define(function () {
                 ]
 
             }
-
         },
 
-        "balance_of_payments": {
 
-            dashboard : {
+        "balance_of_payments": {
+            dashboard:{
 
                 //data cube's uid
-                uid: "UNECA_BalanceOfPayements",
+                uid: "UNECA_BalanceOfPayements1",
 
                 //bridge configuration
                 bridge: {
@@ -2938,55 +2930,56 @@ define(function () {
 
                         ]
                     },
-                    {
-                        id: 'balanceOfPayments-2',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#balanceOfPayments-2",
-                        config: {
-                            container: "#balanceOfPayments-2",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "um",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        '020205'
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-
-
-                        ]
-                    },
+                    //{
+                    //    id: 'balanceOfPayments-2',
+                    //    type: 'chart',
+                    //    class: "fx-timeseries-ecample",
+                    //    //needed if layout = injected
+                    //    container: "#balanceOfPayments-2",
+                    //    config: {
+                    //        container: "#balanceOfPayments-2",
+                    //        adapter: {
+                    //            type: "standard",
+                    //            xDimensions: 'Year',
+                    //            yDimensions: "um",
+                    //            valueDimensions: 'Value',
+                    //            seriesDimensions: ['IndicatorCode']
+                    //        },
+                    //        template: {
+                    //            //"title": "Top 25..."
+                    //        },
+                    //        creator: {
+                    //            chartObj: {
+                    //                chart: {
+                    //                    type: "column"
+                    //                }
+                    //            }
+                    //        }
+                    //    },
+                    //
+                    //    filter: [
+                    //        {
+                    //            "name": "filter",
+                    //            "parameters": {
+                    //                "rows": {
+                    //                    "IndicatorCode": {
+                    //                        "codes": [
+                    //                            {
+                    //                                "uid": "UNECA_ClassificationOfActivities",
+                    //                                "codes": [
+                    //                                    '020205'
+                    //                                ]
+                    //                            }
+                    //                        ]
+                    //                    }
+                    //                }
+                    //            }
+                    //        }
+                    //
+                    //
+                    //
+                    //    ]
+                    //},
                     {
                         id: 'balanceOfPayments-3',
                         type: 'chart',
@@ -3009,6 +3002,13 @@ define(function () {
                                 chartObj: {
                                     chart: {
                                         type: "column"
+                                    },
+                                    plotOptions: {
+                                        column: {
+
+                                            stacking: "normal"
+                                        }
+
                                     }
                                 }
                             }
@@ -3089,6 +3089,477 @@ define(function () {
                 ]
             }
 
+        },
+
+
+        "agriculture_production": {
+            dashboard:{
+
+                //data cube's uid
+                uid: "UNECA_AgricultureProduction3",
+
+                //bridge configuration
+                bridge: {
+
+                    type: "d3p"
+
+                },
+
+                /*
+                 * in case bridge is WDS this is the cube metadata.
+                 * if bridge is D3P this is ignored
+                 * */
+                metadata: {},
+
+                items: [
+
+
+                    {
+                        id: 'agriculture_production-1',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#agriculture_production-1",
+                        config: {
+                            container: "#agriculture_production-1",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'Year',
+                                yDimensions: "UM",
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['Commodity']
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    }
+                                }
+                            }
+                        },
+
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        '0201'
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+
+
+                        ]
+                    }
+
+                    /*
+                     //{
+                     //    id: 'balanceOfPayments-2',
+                     //    type: 'chart',
+                     //    class: "fx-timeseries-ecample",
+                     //    //needed if layout = injected
+                     //    container: "#balanceOfPayments-2",
+                     //    config: {
+                     //        container: "#balanceOfPayments-2",
+                     //        adapter: {
+                     //            type: "standard",
+                     //            xDimensions: 'Year',
+                     //            yDimensions: "um",
+                     //            valueDimensions: 'Value',
+                     //            seriesDimensions: ['IndicatorCode']
+                     //        },
+                     //        template: {
+                     //            //"title": "Top 25..."
+                     //        },
+                     //        creator: {
+                     //            chartObj: {
+                     //                chart: {
+                     //                    type: "column"
+                     //                }
+                     //            }
+                     //        }
+                     //    },
+                     //
+                     //    filter: [
+                     //        {
+                     //            "name": "filter",
+                     //            "parameters": {
+                     //                "rows": {
+                     //                    "IndicatorCode": {
+                     //                        "codes": [
+                     //                            {
+                     //                                "uid": "UNECA_ClassificationOfActivities",
+                     //                                "codes": [
+                     //                                    '020205'
+                     //                                ]
+                     //                            }
+                     //                        ]
+                     //                    }
+                     //                }
+                     //            }
+                     //        }
+                     //
+                     //
+                     //
+                     //    ]
+                     //},
+                     {
+                     id: 'balanceOfPayments-3',
+                     type: 'chart',
+                     class: "fx-timeseries-ecample",
+                     //needed if layout = injected
+                     container: "#balanceOfPayments-3",
+                     config: {
+                     container: "#balanceOfPayments-3",
+                     adapter: {
+                     type: "standard",
+                     xDimensions: 'Year',
+                     yDimensions: "um",
+                     valueDimensions: 'Value',
+                     seriesDimensions: ['IndicatorCode']
+                     },
+                     template: {
+                     //"title": "Top 25..."
+                     },
+                     creator: {
+                     chartObj: {
+                     chart: {
+                     type: "column"
+                     },
+                     plotOptions: {
+                     column: {
+
+                     stacking: "normal"
+                     }
+
+                     }
+                     }
+                     }
+                     },
+
+                     filter: [
+                     {
+                     "name": "filter",
+                     "parameters": {
+                     "rows": {
+                     "IndicatorCode": {
+                     "codes": [
+                     {
+                     "uid": "UNECA_ClassificationOfActivities",
+                     "codes": [
+                     '02020501', '02020502'
+                     ]
+                     }
+                     ]
+                     }
+                     }
+                     }
+                     }
+
+
+                     ]
+                     },
+                     {
+                     id: 'balanceOfPayments-4',
+                     type: 'chart',
+                     class: "fx-timeseries-ecample",
+                     //needed if layout = injected
+                     container: "#balanceOfPayments-4",
+                     config: {
+                     container: "#balanceOfPayments-4",
+                     adapter: {
+                     type: "standard",
+                     xDimensions: 'Year',
+                     yDimensions: "um",
+                     valueDimensions: 'Value',
+                     seriesDimensions: ['IndicatorCode']
+                     },
+                     template: {
+                     //"title": "Top 25..."
+                     },
+                     creator: {
+                     chartObj: {
+                     chart: {
+                     type: "column"
+                     }
+                     }
+                     }
+                     },
+
+                     filter: [
+                     {
+                     "name": "filter",
+                     "parameters": {
+                     "rows": {
+                     "IndicatorCode": {
+                     "codes": [
+                     {
+                     "uid": "UNECA_ClassificationOfActivities",
+                     "codes": [
+                     '02020101'
+                     ]
+                     }
+                     ]
+                     }
+                     }
+                     }
+                     }
+
+
+                     ]
+                     }
+                     */
+                ]
+
+            }
+        },
+
+
+        "mining_production": {
+            dashboard: {
+
+                //data cube's uid
+                uid: "UNECA_MiningProduction4",
+
+                //bridge configuration
+                bridge: {
+
+                    type: "d3p"
+
+                },
+
+                /*
+                 * in case bridge is WDS this is the cube metadata.
+                 * if bridge is D3P this is ignored
+                 * */
+                metadata: {},
+
+                items: [
+
+
+                    {
+                        id: 'mining_production-1',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#mining_production-1",
+                        config: {
+                            container: "#mining_production-1",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'Year',
+                                yDimensions: "UM",
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['Commodity']
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    }
+                                }
+                            }
+                        },
+
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        '0208'
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+
+
+                        ]
+                    }
+
+                    /*
+                     //{
+                     //    id: 'balanceOfPayments-2',
+                     //    type: 'chart',
+                     //    class: "fx-timeseries-ecample",
+                     //    //needed if layout = injected
+                     //    container: "#balanceOfPayments-2",
+                     //    config: {
+                     //        container: "#balanceOfPayments-2",
+                     //        adapter: {
+                     //            type: "standard",
+                     //            xDimensions: 'Year',
+                     //            yDimensions: "um",
+                     //            valueDimensions: 'Value',
+                     //            seriesDimensions: ['IndicatorCode']
+                     //        },
+                     //        template: {
+                     //            //"title": "Top 25..."
+                     //        },
+                     //        creator: {
+                     //            chartObj: {
+                     //                chart: {
+                     //                    type: "column"
+                     //                }
+                     //            }
+                     //        }
+                     //    },
+                     //
+                     //    filter: [
+                     //        {
+                     //            "name": "filter",
+                     //            "parameters": {
+                     //                "rows": {
+                     //                    "IndicatorCode": {
+                     //                        "codes": [
+                     //                            {
+                     //                                "uid": "UNECA_ClassificationOfActivities",
+                     //                                "codes": [
+                     //                                    '020205'
+                     //                                ]
+                     //                            }
+                     //                        ]
+                     //                    }
+                     //                }
+                     //            }
+                     //        }
+                     //
+                     //
+                     //
+                     //    ]
+                     //},
+                     {
+                     id: 'balanceOfPayments-3',
+                     type: 'chart',
+                     class: "fx-timeseries-ecample",
+                     //needed if layout = injected
+                     container: "#balanceOfPayments-3",
+                     config: {
+                     container: "#balanceOfPayments-3",
+                     adapter: {
+                     type: "standard",
+                     xDimensions: 'Year',
+                     yDimensions: "um",
+                     valueDimensions: 'Value',
+                     seriesDimensions: ['IndicatorCode']
+                     },
+                     template: {
+                     //"title": "Top 25..."
+                     },
+                     creator: {
+                     chartObj: {
+                     chart: {
+                     type: "column"
+                     },
+                     plotOptions: {
+                     column: {
+
+                     stacking: "normal"
+                     }
+
+                     }
+                     }
+                     }
+                     },
+
+                     filter: [
+                     {
+                     "name": "filter",
+                     "parameters": {
+                     "rows": {
+                     "IndicatorCode": {
+                     "codes": [
+                     {
+                     "uid": "UNECA_ClassificationOfActivities",
+                     "codes": [
+                     '02020501', '02020502'
+                     ]
+                     }
+                     ]
+                     }
+                     }
+                     }
+                     }
+
+
+                     ]
+                     },
+                     {
+                     id: 'balanceOfPayments-4',
+                     type: 'chart',
+                     class: "fx-timeseries-ecample",
+                     //needed if layout = injected
+                     container: "#balanceOfPayments-4",
+                     config: {
+                     container: "#balanceOfPayments-4",
+                     adapter: {
+                     type: "standard",
+                     xDimensions: 'Year',
+                     yDimensions: "um",
+                     valueDimensions: 'Value',
+                     seriesDimensions: ['IndicatorCode']
+                     },
+                     template: {
+                     //"title": "Top 25..."
+                     },
+                     creator: {
+                     chartObj: {
+                     chart: {
+                     type: "column"
+                     }
+                     }
+                     }
+                     },
+
+                     filter: [
+                     {
+                     "name": "filter",
+                     "parameters": {
+                     "rows": {
+                     "IndicatorCode": {
+                     "codes": [
+                     {
+                     "uid": "UNECA_ClassificationOfActivities",
+                     "codes": [
+                     '02020101'
+                     ]
+                     }
+                     ]
+                     }
+                     }
+                     }
+                     }
+
+
+                     ]
+                     }
+                     */
+                ]
+
+
+            }
 
         }
 
