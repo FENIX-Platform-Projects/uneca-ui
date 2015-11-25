@@ -2,6 +2,7 @@
 define([
     'jquery',
     'backbone',
+    'underscore',
     'chaplin',
     'config/Config',
     'controllers/base/controller',
@@ -9,7 +10,7 @@ define([
     'text!json/methods/models.json',
     'q',
     'amplify'
-], function ($, Backbone, Chaplin, C, Controller, View, MethodsCollection, Q) {
+], function ($, Backbone, _, Chaplin, C, Controller, View, MethodsCollection, Q) {
 
     'use strict';
 
@@ -17,25 +18,24 @@ define([
 
         beforeAction: function (params) {
 
-            this.currentCountryId  =  params.id;
+            this.currentCountryId = params.id;
 
             Controller.prototype.beforeAction.call(this, arguments);
 
             //TODO cache codelist
-
-            return this.performAccessControlChecks(params).then( _.bind(this.onSuccess, this), _.bind(this.onError, this));
+            return this.performAccessControlChecks(params).then(_.bind(this.onSuccess, this), _.bind(this.onError, this));
         },
 
-        onError: function ( ) {
+        onError: function () {
 
             alert("Impossible to load country list")
         },
 
-        onSuccess: function ( countries ) {
+        onSuccess: function (countries) {
 
             this.countries = countries;
 
-            var country = _.findWhere(this.countries, { code : this.currentCountryId});
+            var country = _.findWhere(this.countries, {code: this.currentCountryId});
 
             this.validCountrydId = !!country;
 
@@ -46,7 +46,7 @@ define([
         performAccessControlChecks: function (params) {
 
             return new Q($.ajax({
-                url : C.COUNTRIES_CODE_LIST
+                url: C.COUNTRIES_CODE_LIST
             }));
         },
 
@@ -62,7 +62,7 @@ define([
                 conf.id = params.id;
                 conf.country = this.country;
             } else {
-                Backbone.history.navigate('#profile/' , {trigger: false});
+                Backbone.history.navigate('#profile/', {trigger: false});
             }
 
             this.view = new View(conf);

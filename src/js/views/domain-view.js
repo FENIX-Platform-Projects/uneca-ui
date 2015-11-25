@@ -3,6 +3,7 @@ define([
     'jquery',
     'views/base/view',
     'fx-ds/start',
+    'fx-filter/start',
     'text!templates/domains/domains.hbs',
     'text!templates/domains/list.hbs',
     'text!templates/domains/dashboard.hbs',
@@ -14,11 +15,12 @@ define([
     'config/domain/Config',
     'handlebars',
     'loglevel',
+    'fx-filter/Fx-filter-configuration-creator',
     'amplify',
     'bootstrap-list-filter',
     'jstree',
     'fenix-ui-map'
-], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars, log) {
+], function ($, View, Dashboard, Filter, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars, log, FilterConfCreator) {
 
     'use strict';
 
@@ -30,7 +32,10 @@ define([
         SEARCH_ITEM_EL: '.country-item',
         DASHBOARD_CONTENT: "#dashboard-content",
         LATERAL_MENU: '#lateral-menu',
-        MAP_CONTAINER : "#country-map-container"
+        MAP_CONTAINER : "#country-map-container",
+        FILTER_CONTAINER : 'filter-container',
+        FILTER_SUBMIT : '#filter-submit',
+        FILTER_BLOCK : "#filter-block"
     };
 
     var DomainView = View.extend({
@@ -68,13 +73,33 @@ define([
 
             this._initVariables();
 
+
             this._printDomainDashboard();
 
+        },
+
+        _bindEventListeners: function () {
+
+            var self = this;
+
+            this.$filterSubmit.on('click', function (e, data) {
+
+                var values = self.filter.getValues();
+
+                // TODO: it's an array
+
+                console.log("Filtro");
+                console.log(values);
+
+                self.dashboard.filter([values]);
+            });
         },
 
         _initVariables: function () {
 
             this.$content = this.$el.find(s.CONTENT);
+
+
 
         },
 
@@ -87,6 +112,10 @@ define([
             this.$content.html(html);
 
             this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
+
+            this.$filterSubmit = this.$el.find(s.FILTER_SUBMIT);
+
+            this._bindEventListeners();
 
             //print jstree
             this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
@@ -171,9 +200,22 @@ define([
 
             this._printDashboardBase(item);
 
-            var conf = this._getDashboardConfig(item);
+            var conf = this._getDashboardConfig(item),
+                filterConfig = this._getFilterConfig(item);
 
             this._renderDashboard(conf);
+
+            if (filterConfig && Array.isArray(filterConfig)) {
+
+                this.$el.find(s.FILTER_BLOCK).show();
+
+                this._renderFilter(filterConfig);
+
+            } else {
+
+                this.$el.find(s.FILTER_BLOCK).hide();
+
+            }
         },
 
         _onChangeDashboard: function (item) {
@@ -236,6 +278,23 @@ define([
             return conf;
         },
 
+        _getFilterConfig: function (id) {
+
+            //get from PC the 'id' conf
+
+            var conf;
+
+            try {
+
+                conf = PC[id].filter;
+
+            } catch (e) {
+                alert("Impossible to load filter configuration for [" + id + "]");
+            }
+
+            return conf;
+        },
+
         _renderDashboard: function (config) {
 
             if (this.unecaDashboard && this.unecaDashboard.destroy) {
@@ -247,6 +306,30 @@ define([
             });
 
             this.unecaDashboard.render(config);
+
+        },
+
+        _renderFilter: function (config) {
+
+            var self = this;
+
+            this.filterConfCreator = new FilterConfCreator();
+
+            this.filterConfCreator.getConfiguration(config)
+                .then(function (c) {
+
+                    self.filter = new Filter();
+
+                    self.filter.init({
+                        container: s.FILTER_CONTAINER,
+                        layout: 'fluidGrid'
+                    });
+
+                    var adapterMap = {};
+
+                    self.filter.add(c, adapterMap);
+
+                });
 
         }
 
