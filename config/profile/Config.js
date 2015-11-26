@@ -182,9 +182,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'time',
-                                yDimensions: 'item',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -239,8 +239,6 @@ define(function () {
                                 hidden_columns: ["GenderCode",
                                     "AgeRangeCode"
                                 ]
-
-
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
@@ -286,7 +284,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'time',
-                                yDimensions: 'item',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['AgeRangeCode']
                             },
@@ -522,7 +520,7 @@ define(function () {
                                 xDimensions: 'time',
                                 yDimensions: 'item',
                                 valueDimensions: 'value',
-                                seriesDimensions: []
+                                seriesDimensions: [ "IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -649,7 +647,7 @@ define(function () {
 
             dashboard:{
                 //data cube's uid
-                uid: "UNCEA_Health1",
+                uid: "UNECA_Health1",
 
                 //bridge configuration
                 bridge: {
@@ -678,7 +676,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: null,
+                                yDimensions: "Unit",
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -725,9 +723,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -773,9 +771,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -821,9 +819,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -869,9 +867,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: null,
+                                yDimensions: "Unit",
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -1361,7 +1359,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: "UMcode",
+                                yDimensions: "Unit",
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -1416,9 +1414,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ['IndicatorCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -1461,9 +1459,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ['IndicatorCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -1505,9 +1503,9 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ['IndicatorCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -1549,7 +1547,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: "UMcode",
+                                yDimensions: "Unit",
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -2488,7 +2486,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'Value',
                                 seriesDimensions: []
                             },
@@ -2533,7 +2531,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'Value',
                                 seriesDimensions: []
                             },

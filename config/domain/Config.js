@@ -878,7 +878,7 @@ define(function () {
         health: {
             dashboard: {
                 //data cube's uid
-                uid: "UNCEA_Health1",
+                uid: "UNECA_Health",
 
                 //bridge configuration
                 bridge: {
