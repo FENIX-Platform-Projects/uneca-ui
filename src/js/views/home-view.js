@@ -4,6 +4,7 @@ define([
     'config/Config',
     'config/Queries',
     'config/Events',
+    'text!json/home/data_at_glance.json',
     'text!templates/home/home.hbs',
     'i18n!nls/home',
     'handlebars',
@@ -22,12 +23,12 @@ define([
     'projector',
     'tweenMax',
     'amplify'
-], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient, chartTemplate) {
+], function (View, C, Q, E, DATA,template, i18nLabels, Handlebars, WDSClient, chartTemplate) {
 
     'use strict';
 
     var s = {
-        CHART_TABS : '#home-charts-tab a[data-toggle="tab"]'
+        CHART_TABS: '#home-charts-tab a[data-toggle="tab"]'
     }, renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene, containerWidth, containerHeight, terraMesh, nuvoleMesh;
 
     var mouseX = 0, mouseY = 0;
@@ -90,6 +91,257 @@ define([
 
         initCharts: function () {
 
+            this.data = JSON.parse(DATA);
+
+
+            var series1GDP = [5.8, 6, 5.4, 3.4, 5.7, 2.8, 6.7, 3.5, 3.9];
+            var series2GDP = [5.6, 6.9, 10.7, 9.7, 8, 9.2, 9.2, 7, 7.2];
+
+            var dataTrade = this._prepareDataForTradeCharts()
+
+            var tradeEXP_Africa = [68462.5104220494,
+                9050.6287310754,
+                4115.0177205069,
+                16013.4677062515,
+                9200.8443261552,
+                16013.4677062515,
+                11962.8622821194,
+                32107.026934404,
+                7817.6145332362,
+                513492.712089327
+            ];
+
+            var tradeEXP_AMU  = [8549.0820712788,
+                5523.6582642259,
+                359.3222079135,
+                1353.0396394817,
+                448.6223826144,
+                1353.0396394817,
+                1139.4696250704,
+                146.6742921518,
+                778.725838483,
+                143574.65932264
+            ];
+
+            var tradeEXP_CAEMC = [1768.9245073853,
+                52.2110401204,
+                635.4886141976,
+                419.9764051568,
+                754.5348933603,
+                419.9764051568,
+                770.2081692759,
+                643.1666983442,
+                134.2816411206,
+                40495.3215939978
+            ];
+
+            var tradeEXP_COMESA = [20127.030266817,
+                423.1839998335,
+                2705.5278529663,
+                11936.8401903878,
+                2929.3200448406,
+                11936.8401903878,
+                9043.9308542918,
+                4972.2696247999,
+                6337.9443900915,
+                129012.727248329
+            ]
+
+            var tradeEXP_ECCAS = [5543.0231074565,
+                60.9879597404,
+                659.6638061102,
+                393.0657007599,
+                794.0378825135,
+                448.9599476145,
+                803.8584945159,
+                4285.653781385,
+                143.756774448,
+                109809.073380668,
+            ]
+
+            var tradeEXP_ECOWAS = [20127.030266817,
+                423.1839998335,
+                2705.5278529663,
+                11936.8401903878,
+                2929.3200448406,
+                11936.8401903878,
+                9043.9308542918,
+                4960.2623594103,
+                6337.9443900915,
+                129012.727248329
+            ];
+
+            var tradeEXP_FrancZone = [9582.7106344252,
+                323.0399059275,
+                1830.4641135651,
+                6392.3649015739,
+                2072.8507605572,
+                6392.3649015739,
+                4569.8833684967,
+                977.3740234641,
+                2738.9606436977,
+                59526.9478307125
+            ];
+
+            var tradeEXP_SADC = [29334.3371368016,
+                557.1697869014,
+                296.6365162176,
+                1889.7350756463,
+                4289.5425397316,
+                1889.7350756463,
+                752.4018135932,
+                24549.2445782135,
+                436.8348595936,
+                183082.782536727
+            ];
+
+            var tradeEXP_WAEMU = [7810.1374870042,
+                270.2167212327,
+                1194.5321075021,
+                5971.7666043059,
+                1317.8724753314,
+                5971.7666043059,
+                3799.2298707138,
+                331.2206208531,
+                2604.2391519778,
+                18985.4785552384
+            ];
+
+            var tradeEXP_WORLD = [569221.298069115,
+                141779.609446006,
+                20439.955940727,
+                123931.704086158,
+                47918.8064727643,
+                106753.248023692,
+                61280.7513025198,
+                179817.059969213,
+                40656.8743238408,
+                18227586.1786803
+                ];
+
+
+            var tradeIMP_AFRICA = [69946.042288494,
+                8188.5996355991,
+                1806.185021867,
+                20981.7110758055,
+                5958.2878391665,
+                20981.7110758055,
+                4766.1382242821,
+                29733.8622994837,
+                8230.681238622,
+                563407.593824328
+            ];
+
+
+            var tradeIMP_AMU = [8672.1971005844,
+                5518.79845265,
+                51.6964806163,
+                302.0366234484,
+                61.1571265982,
+                302.0366234484,
+                191.0742899471,
+                584.6082627025,
+                139.3536230232,
+                152926.209887509
+            ];
+
+            var tradeIMP_CAEMC = [3744.7370570706,
+                395.8516836417,
+                699.8914990901,
+                2176.5183041289,
+                726.5988529588,
+                2176.5183041289,
+                2014.377312146,
+                343.9805214413,
+                1314.4640288759,
+                21725.4008538638,
+            ];
+
+            var tradeIMP_COMESA = [17308.2378096072,
+                1262.4555476581,
+                372.2630642216,
+                13120.3855609623,
+                404.6874716023,
+                13120.3855609623,
+                6922.7203281071,
+                2108.4409068757,
+                6550.2391294351,
+                143850.234412651
+            ];
+
+            var tradeIMP_ECCAS = [1444.5528911846,
+                495.002458648,
+                834.6948880192,
+                2417.1038549027,
+                878.2628188526,
+                2417.1038549027,
+                2279.2695633838,
+                4737.0342547029,
+                1444.5528911846,
+                52003.6376049377
+            ];
+
+            var tradeIMP_ECOWAS = [17308.2378096072,
+                1262.4555476581,
+                372.2630642216,
+                13120.3855609623,
+                404.6874716023,
+                13120.3855609623,
+                6922.7203281071,
+                2108.4409068757,
+                6550.2391294351,
+                139888.623031967
+            ];
+
+
+            var tradeIMP_FrancZONE = [12113.8904495556,
+                1028.2116264704,
+                848.4537697829,
+                9130.4912673116,
+                886.1226264463,
+                9130.4912673116,
+                5009.8840011638,
+                834.7427275076,
+                4161.4063168953,
+                59537.3986036757
+            ];
+
+            var tradeIMP_SADC = [32674.1406455378,
+                186.7395670035,
+                662.9535387894,
+                5277.1467967585,
+                4669.6950590901,
+                5277.1467967585,
+                837.8145188296,
+                24426.0313062133,
+                172.0415522188,
+                191870.60574347
+            ];
+
+            var tradeIMP_WAMU = [8336.468109405,
+                631.2621531594,
+                148.5465122113,
+                6953.9344376974,
+                159.508015006,
+                6953.9344376974,
+                6953.9344376974,
+                470.404671378,
+                2846.9037625341,
+                37561.4368568348
+            ];
+
+            var tradeIMP_WORLD = [609773.793457011,
+                126541.689410851,
+                43065.4246888646,
+                137783.347944203,
+                119285.643243957,
+                137783.347944203,
+                63040.3755886891,
+                237374.054658063,
+                19925.3412007829,
+                18685081.8269679
+            ]
+
             $('#chart1').highcharts($.extend(true, {}, chartTemplate, {
                 title: {
                     text: 'Gross Domestic Product'
@@ -97,7 +349,7 @@ define([
                 credits: {
                     enabled: false
                 },
-                colors: [ //Colori delle charts
+               /* colors: [ //Colori delle charts
                     '#005493',
                     '#005493',
                     '#744490',
@@ -106,14 +358,9 @@ define([
                     '#F1E300',
                     '#F7AE3C',
                     '#DF3328'
-                ],
+                ],*/
                 xAxis: {
                     categories: [
-                        '2001',
-                        '2002',
-                        '2003',
-                        '2004',
-                        '2005',
                         '2006',
                         '2007',
                         '2008',
@@ -121,7 +368,8 @@ define([
                         '2010',
                         '2011',
                         '2012',
-                        '2013'
+                        '2013',
+                        '2014'
                     ],
                     crosshair: true
                 },
@@ -134,7 +382,7 @@ define([
                 tooltip: {
                     headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                     pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
                     footerFormat: '</table>',
                     shared: true,
                     useHTML: true
@@ -145,11 +393,15 @@ define([
                         borderWidth: 0
                     }
                 },
-                series: [{
-                    name: 'UNECA',
-                    data: [379411.97, 403299.59, 456662.43, 542884.56, 663317.65, 815722.97, 947197.06, 1158580.53, 931152.67, 1050516.19, 1276025.00, 1367323.00, 1477594.25]
-
-                }]
+                series: [
+                    {
+                        name: 'GDP growth rates',
+                        data: series1GDP
+                    },
+                    {
+                        name: 'Inflation',
+                        data: series2GDP
+                    }]
             }));
 
             $('#chart2').highcharts($.extend(true, {}, chartTemplate, {
@@ -173,16 +425,17 @@ define([
                     '#DF3328'
                 ],
                 xAxis: {
-                    categories: ['2001',
-                        '2002',
-                        '2003',
-                        '2004',
-                        '2005',
-                        '2006',
-                        '2007',
-                        '2008',
-                        '2009',
-                        '2010', '2011']
+                    categories: [
+                        'AFRICA',
+                        'AMU',
+                        'CAEMC',
+                        'COMESA',
+                        'ECCAS',
+                        'ECOWAS',
+                        'FRANC ZONE',
+                        'SADC',
+                        'WAEMU',
+                        'WORLD']
                 },
                 yAxis: {
                     min: 0,
@@ -257,6 +510,26 @@ define([
             }));
         },
 
+        _prepareDataForTradeCharts : function() {
+
+            var result = {};
+
+            result['import'] = []
+            result['export'] = [];
+
+            for(var key in this.data.trade.import) {
+                result['import'].push({'name':key,'data': this.data.trade.import[key]})
+            }
+
+
+            for(var key in this.data.trade.export) {
+                result['export'].push({'name':key,'data': this.data.trade.export[key]})
+            }
+
+
+
+        },
+
         bindEventListeners: function () {
 
             var self = this;
@@ -264,9 +537,9 @@ define([
             $(s.CHART_TABS).on('shown.bs.tab', function (e) {
                 e.preventDefault();
 
-/*
-                console.log($(e.currentTarget).data("id"))
-*/
+                /*
+                 console.log($(e.currentTarget).data("id"))
+                 */
 
                 self.initCharts();
             });
@@ -288,16 +561,13 @@ define([
             // Inizialization
 
 
-
-
-
-            if( Detector.webgl ){
+            if (Detector.webgl) {
                 //console.log('nicola dapauara computer supersonic');
 
                 renderer = new THREE.WebGLRenderer({
 
 
-                    antialias       : true
+                    antialias: true
                 });
 
                 scena = new THREE.Scene();
@@ -306,7 +576,6 @@ define([
                 containerHeight = $('#container').height();
 
                 camera = new THREE.PerspectiveCamera(45, containerWidth / containerHeight, 0.1, 1000);
-
 
 
                 renderer.setClearColor(0x000000, 1.0);
@@ -339,13 +608,12 @@ define([
 
                 var manager = new THREE.LoadingManager();
                 manager.onProgress = function (item, loaded, total) {
-/*
-                    console.log(item, loaded, total);
+                    /*
+                     console.log(item, loaded, total);
 
-                    console.log((loaded / total * 100) + '% loaded');*/
+                     console.log((loaded / total * 100) + '% loaded');*/
 
                     $('#preload-text').text((loaded / total * 100) + '% loaded') // For preload
-
 
 
                 };
@@ -354,23 +622,20 @@ define([
 
                 manager.onLoad = function () {
                     // All the texure are loaded
-/*
-                    console.log('all Loaded');
-*/
+                    /*
+                     console.log('all Loaded');
+                     */
                     $('#world-preload').removeClass('visible');
 
 
-
-                    TweenMax.to(camera.position, 4, {x: 23, z:-10,y:0 , onComplete:
-                        function () {
+                    TweenMax.to(camera.position, 4, {
+                        x: 23, z: -10, y: 0, onComplete: function () {
                             self.startHomeHeader();
 
                         }
                     });
                     //TweenMax.to(terraMesh.position, 5, {x: -3, z:-7,y:0 ,fov:10});
                 };
-
-
 
 
                 var nuvoleTexture = new THREE.Texture();
@@ -447,20 +712,20 @@ define([
                 //terraMesh.position.set(0,0, 0);
 
                 // Nuvole
-                var nuvoleGeometria = new THREE.SphereGeometry(sferaGeometria.parameters.radius * 1.02  , sferaGeometria.parameters.widthSegments, sferaGeometria.parameters.heightSegments);
+                var nuvoleGeometria = new THREE.SphereGeometry(sferaGeometria.parameters.radius * 1.02, sferaGeometria.parameters.widthSegments, sferaGeometria.parameters.heightSegments);
                 nuvoleMesh = new THREE.Mesh(nuvoleGeometria, nuvoleMateriale);
 
                 scena.add(nuvoleMesh);
 
 
-                var luceDirezionale = new THREE.DirectionalLight(0xffffff,1); // Color, intensity
+                var luceDirezionale = new THREE.DirectionalLight(0xffffff, 1); // Color, intensity
 
                 luceDirezionale.name = "direzionale";
 
                 scena.add(luceDirezionale);
-/*
-                console.log(luceDirezionale.position);
-*/
+                /*
+                 console.log(luceDirezionale.position);
+                 */
                 luceDirezionale.position.set(50, 40, 50);
 
                 var luceAmbientale = new THREE.AmbientLight(0x666666); // Only light color
@@ -472,7 +737,6 @@ define([
                 camera.position.y = 16;
                 camera.position.z = 13;
                 camera.lookAt(scena.position);
-
 
 
 //        control = new function () {
@@ -502,7 +766,7 @@ define([
 
 
                 container.appendChild(renderer.domElement); //domElement is a property of WEBGLRender
-                $( window ).mousemove( this.onDocumentMouseMove);
+                $(window).mousemove(this.onDocumentMouseMove);
                 window.addEventListener('resize', this.onWindowResize, false);
                 this.renderScene();
 
@@ -511,15 +775,11 @@ define([
                 //}else{
                 //  Detector.addGetWebGLMessage();
                 //  return true;
-            }else{
+            } else {
                 //console.log('dani purciaro computer vecchio')
                 this.startHomeHeader();
                 //renderer    = new THREE.CanvasRenderer();
             }
-
-
-
-
 
 
         },
@@ -554,15 +814,14 @@ define([
         onDocumentMouseMove: function (event) {
 
 
-
             mouseX = ( event.clientX - windowHalfX ) / 8;
             //mouseY = ( event.clientY - windowHalfY ) / 4;
 
-/*
-            console.log(mouseX * Math.PI / 180);
-*/
+            /*
+             console.log(mouseX * Math.PI / 180);
+             */
 
-             var rotazione = (mouseX * Math.PI / 180) / 20;
+            var rotazione = (mouseX * Math.PI / 180) / 20;
             //var rotazioneY = (mouseY * Math.PI / 180) / 10;
 
             terraMesh.rotation.y = rotazione;
@@ -579,19 +838,18 @@ define([
             //});
 
 
-
         },
-        startHomeHeader : function(){
-        TweenMax.to($('.world-fallback'), 1, {opacity: 1});
-        TweenMax.to($('.welcome'), 1, {opacity: 1});
-        TweenMax.to($('.home-logo, .topic-container'), 2, {opacity: 1, delay:.5});
-        TweenMax.to($(' .one'), 2, {opacity: 1, delay:1.3});
-        TweenMax.to($(' .two'), 2, {opacity: 1, delay:1.7});
-        TweenMax.to($(' .three'), 2, {opacity: 1, delay:2.0});
-        TweenMax.to($(' .four'), 2, {opacity: 1, delay:2.3});
-        $('.carousel').carousel('cycle');
+        startHomeHeader: function () {
+            TweenMax.to($('.world-fallback'), 1, {opacity: 1});
+            TweenMax.to($('.welcome'), 1, {opacity: 1});
+            TweenMax.to($('.home-logo, .topic-container'), 2, {opacity: 1, delay: .5});
+            TweenMax.to($(' .one'), 2, {opacity: 1, delay: 1.3});
+            TweenMax.to($(' .two'), 2, {opacity: 1, delay: 1.7});
+            TweenMax.to($(' .three'), 2, {opacity: 1, delay: 2.0});
+            TweenMax.to($(' .four'), 2, {opacity: 1, delay: 2.3});
+            $('.carousel').carousel('cycle');
 
-    }
+        }
     });
 
 
