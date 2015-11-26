@@ -6,7 +6,6 @@ define([
     'fx-filter/start',
     'text!templates/domains/domains.hbs',
     'text!templates/domains/list.hbs',
-    'text!templates/domains/dashboard.hbs',
     'text!templates/domains/bases.hbs',
     'i18n!nls/domain',
     'config/Events',
@@ -20,22 +19,17 @@ define([
     'bootstrap-list-filter',
     'jstree',
     'fenix-ui-map'
-], function ($, View, Dashboard, Filter, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars, log, FilterConfCreator) {
+], function ($, View, Dashboard, Filter, template, listTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars, log, FilterConfCreator) {
 
     'use strict';
 
     var s = {
-        CONTENT: "#profile-content",
-        SEARCH_FILTER_INPUT: "#searchinput",
-        COUNTRY_LIST: '#list-countries',
-        SEARCH_ITEM_CHILD: 'a',
-        SEARCH_ITEM_EL: '.country-item',
-        DASHBOARD_CONTENT: "#dashboard-content",
-        LATERAL_MENU: '#lateral-menu',
-        MAP_CONTAINER : "#country-map-container",
-        FILTER_CONTAINER : 'filter-container',
-        FILTER_SUBMIT : '#filter-submit',
-        FILTER_BLOCK : "#filter-block"
+        CONTENT: "#domain-content",
+        DASHBOARD_CONTENT: "#domain-dashboard-content",
+        LATERAL_MENU: '#domain-lateral-menu',
+        FILTER_CONTAINER : 'domain-filter-container',
+        FILTER_SUBMIT : '#domain-filter-submit',
+        FILTER_BLOCK : "#domain-filter-block"
     };
 
     var DomainView = View.extend({
@@ -73,6 +67,8 @@ define([
 
             this._initVariables();
 
+            this._bindEventListeners();
+
             this._printDomainDashboard();
 
         },
@@ -98,24 +94,32 @@ define([
 
             this.$content = this.$el.find(s.CONTENT);
 
+            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
+
+            this.$filterSubmit = this.$el.find(s.FILTER_SUBMIT);
+
         },
 
         _printDomainDashboard: function () {
 
             var self = this;
-            var template = Handlebars.compile(dashboardTemplate),
-                html = template({domain : this.id});
-
-            this.$content.html(html);
-
-            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
-
-            this.$filterSubmit = this.$el.find(s.FILTER_SUBMIT);
-
-            this._bindEventListeners();
 
             //print jstree
             this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
+
+                .on(" ready.jstree", _.bind(function (e, data) {
+
+                    if (this.id) {
+
+                        self.$lateralMenu.jstree(true).select_node(this.id, true);
+
+                    } else {
+
+                        self.$lateralMenu.jstree(true).select_node('population', true);
+
+                    }
+
+                }, this))
 
                 //Limit selection e select only leafs for indicators
                 .on("select_node.jstree", _.bind(function (e, data) {
@@ -123,6 +127,7 @@ define([
                     if ( !data.instance.is_leaf(data.node) ) {
 
                         self.$lateralMenu.jstree(true).deselect_node(data.node, true);
+                        self.$lateralMenu.jstree(true).open_node(data.node, true);
 
                     } else {
 
@@ -133,64 +138,6 @@ define([
 
                 }, this));
 
-            this._printDashboard(this.id);
-
-            //this._printCountryMap();
-
-            //bind events from tree click to dashboard refresh
-            /*
-             * - destroy current dashboard
-             * - inject new template    this._printDashboardBase( jstree item selected );
-             * - render new dashboard
-             *
-             * */
-
-        },
-
-        _printCountryMap : function () {
-
-            try {
-                 var m = new FM.Map(s.MAP_CONTAINER, {
-                        plugins: {
-                            disclaimerfao: false,
-                            geosearch: false,
-                            mouseposition: false,
-                            controlloading : false,
-                            zoomcontrol: 'bottomright'
-                        },
-                        guiController: {
-                            overlay: false,
-                            baselayer: true,
-                            wmsLoader: false
-                        }
-                    });
-            }
-            catch(e) {
-                console.log(e)
-            }
-
-            m.createMap();
-
-            m.addLayer(new FM.layer({
-                layers: 'fenix:gaul0_line_3857',
-                layertitle: 'Country Boundaries',
-                urlWMS: 'http://fenix.fao.org/geoserver',
-                opacity: '0.9',
-                zindex: '500',
-                lang: 'en'
-            }));
-
-            m.addLayer(new FM.layer({
-                layers: 'fenix:gaul0_faostat_3857',
-                layertitle: '',
-                urlWMS: 'http://fenix.fao.org/geoserver',
-                style: 'highlight_polygon',
-                cql_filter: "iso3 IN ('" + this.id + "')",
-                hideLayerInControllerList: true,
-                lang: 'en'
-            }));
-
-            m.zoomTo("country", "iso3", this.id);
         },
 
         _printDashboard : function ( item ) {
@@ -226,8 +173,9 @@ define([
             //Inject HTML
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
                 template = Handlebars.compile(source.prop('outerHTML')),
-                context = JSON.parse(resumeInfo),
-                html = template(context && context[this.id] ? context[this.id] : {});
+                html = template();
+
+            console.log(this.$el.find(s.DASHBOARD_CONTENT).length)
 
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
         },

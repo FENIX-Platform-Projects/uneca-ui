@@ -145,7 +145,7 @@ define([
 
                         self.$lateralMenu.jstree(true).deselect_node(data.node, true);
 
-                        self.$lateralMenu.jstree(true).toggle_node(data.node);
+                        self.$lateralMenu.jstree(true).open_node(data.node, true);
 
                     } else {
 

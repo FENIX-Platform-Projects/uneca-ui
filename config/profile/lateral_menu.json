@@ -19,7 +19,10 @@
           },
           {
             "id": "health",
-            "text": "Health"
+            "text": "Health",
+            "state"       : {
+              "disabled"    : true
+            }
           },
           {
             "id": "labour",

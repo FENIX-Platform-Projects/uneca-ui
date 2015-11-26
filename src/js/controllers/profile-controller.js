@@ -18,6 +18,9 @@ define([
 
         beforeAction: function (params) {
 
+            console.log("Before profile")
+
+
             this.currentCountryId = params.id;
 
             Controller.prototype.beforeAction.call(this, arguments);
@@ -41,9 +44,14 @@ define([
 
             this.country = country;
 
+            console.log("On Success")
+
         },
 
         performAccessControlChecks: function (params) {
+
+            console.log("On performAccessControlChecks")
+
 
             return new Q($.ajax({
                 url: C.COUNTRIES_CODE_LIST

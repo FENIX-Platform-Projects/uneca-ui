@@ -232,7 +232,9 @@ require([
         'application',
         'routes',
         'config/Config',
-        'domReady!'
+        'domReady!',
+        'highcharts',
+        'highcharts-export'
     ], function (Application, routes, C) {
 
         var app = new Application({
