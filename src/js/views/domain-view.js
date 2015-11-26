@@ -9,7 +9,7 @@ define([
     'text!templates/domains/bases.hbs',
     'i18n!nls/domain',
     'config/Events',
-    'text!config/profile/lateral_menu.json',
+    'text!config/domain/lateral_menu.json',
     'text!config/profile/resume_countries.json',
     'config/domain/Config',
     'handlebars',
@@ -35,7 +35,7 @@ define([
     var DomainView = View.extend({
 
         initialize: function (params) {
-
+console.log(LateralMenuConfig)
             this.domains = params.domains;
 
             this.domain = params.domain;

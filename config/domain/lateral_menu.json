@@ -21,7 +21,7 @@
             "id": "health",
             "text": "Health",
             "state"       : {
-              "disabled"    : true
+
             }
           },
           {
@@ -39,7 +39,10 @@
         "children": [
           {
             "id": "balance_of_payments",
-            "text": "Balance of Payments"
+            "text": "Balance of Payments",
+            "state" : {
+              "disabled": true
+            }
           },
 
 
@@ -50,19 +53,31 @@
 
           {
             "id": "monetary_statistics",
-            "text": "Monetary Statistics"
+            "text": "Monetary Statistics",
+            "state" : {
+              "disabled": true
+            }
           },
           {
             "id": "financial_flows",
-            "text": "Financial Flows"
+            "text": "Financial Flows",
+            "state" : {
+              "disabled": true
+            }
           },
           {
             "id": "public_finance",
-            "text": "Public Finance"
+            "text": "Public Finance",
+            "state" : {
+              "disabled": true
+            }
           },
           {
             "id": "debt",
-            "text": "Debt"
+            "text": "Debt",
+            "state" : {
+              "disabled": true
+            }
           },
           {
             "id": "inflation",
@@ -70,15 +85,24 @@
           },
           {
             "id": "energy",
-            "text": "Energy"
+            "text": "Energy",
+            "state" : {
+              "disabled": true
+            }
           },
           {
             "id": "tourism",
-            "text": "Tourism"
+            "text": "Tourism",
+            "state" : {
+              "disabled": true
+            }
           },
           {
             "id": "infrastructure",
-            "text": "Infrastructure"
+            "text": "Infrastructure",
+            "state" : {
+              "disabled": true
+            }
           },
           {
             "id": "production",
@@ -86,11 +110,17 @@
             "children":[
               {
                 "id": "agriculture_production",
-                "text": "Agriculture production"
+                "text": "Agriculture production",
+                "state" : {
+                  "disabled": true
+                }
               },
               {
                 "id": "mining_production",
-                "text": "Mining production"
+                "text": "Mining production",
+                "state" : {
+                  "disabledd": true
+                }
               }
 
             ]
