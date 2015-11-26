@@ -21,7 +21,6 @@
             "id": "health",
             "text": "Health",
             "state"       : {
-              "disabled"    : true
             }
           },
           {

@@ -2391,71 +2391,30 @@ define(function () {
                 {
                     "type": "static",
                     "containerType": "baseContainer",
-                    "title": "Country",
-                    "uid": "ISO3",
+                    "title": "Commodity",
+                    "uid": "UNECA_ClassificationOfActivities",
                     "components": [
                         {
                             "type": "codelist",
-                            "uid": "ISO3",
+                            "uid": "UNECA_ClassificationOfActivities",
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
-                            "name": "CountryCode",
+                            "name": "IndicatorCode",
                             config: {
                                 "defaultsource": [
-                                    {"value": "MWI","label": "Malawi", "selected": false},
-                                    {"value": "NAM","label": "Namibia", "selected": false},
-                                    {"value": "MDG","label": "Madagascar", "selected": false},
-                                    {"value": "MLI","label": "Mali", "selected": false},
-                                    {"value": "MOZ","label": "Mozambique", "selected": false},
-                                    {"value": "MRT","label": "Mauritania", "selected": false},
-                                    {"value": "MUS","label": "Mauritius", "selected": false},
-                                    {"value": "NER","label": "Niger", "selected": false},
-                                    {"value": "NGA","label": "Nigeria", "selected": false},
-                                    {"value": "LBR","label": "Liberia", "selected": false},
-                                    {"value": "LBY","label": "Libyan Arab Jamahiriya", "selected": false},
-                                    {"value": "LSO","label": "Lesotho", "selected": false},
-                                    {"value": "BWA","label": "Botswana", "selected": false},
-                                    {"value": "CAF","label": "Central African Republic", "selected": false},
-                                    {"value": "CIV","label": "Côte d'Ivoire", "selected": false},
-                                    {"value": "CMR","label": "Cameroon", "selected": false},
-                                    {"value": "COG","label": "Congo", "selected": false},
-                                    {"value": "COM","label": "Comoros", "selected": false},
-                                    {"value": "MAR","label": "Morocco", "selected": false},
-                                    {"value": "RWA","label": "Rwanda", "selected": false},
-                                    {"value": "SDN","label": "Sudan", "selected": false},
-                                    {"value": "GIN","label": "Guinea", "selected": false},
-                                    {"value": "GMB","label": "Gambia", "selected": false},
-                                    {"value": "GNB","label": "Guinea-Bissau", "selected": false},
-                                    {"value": "GNQ","label": "Equatorial Guinea", "selected": false},
-                                    {"value": "KEN","label": "Kenya", "selected": false},
-                                    {"value": "AGO","label": "Angola", "selected": false},
-                                    {"value": "BDI","label": "Burundi", "selected": false},
-                                    {"value": "BEN","label": "Benin", "selected": false},
-                                    {"value": "BFA","label": "Burkina Faso", "selected": false},
-                                    {"value": "EGY","label": "Egypt", "selected": false},
-                                    {"value": "ERI","label": "Eritrea", "selected": false},
-                                    {"value": "ETH","label": "Ethiopia", "selected": false},
-                                    {"value": "GAB","label": "Gabon", "selected": false},
-                                    {"value": "GHA","label": "Ghana", "selected": false},
-                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
-                                    {"value": "CPV","label": "Cape Verde", "selected": false},
-                                    {"value": "DJI","label": "Djibouti", "selected": false},
-                                    {"value": "DZA","label": "Algeria", "selected": false},
-                                    {"value": "ZMB","label": "Zambia", "selected": false},
-                                    {"value": "ZWE","label": "Zimbabwe", "selected": false},
-                                    {"value": "SSD","label": "South Sudan", "selected": false},
-                                    {"value": "STP","label": "Sao Tome and Principe", "selected": false},
-                                    {"value": "SWZ","label": "Swaziland", "selected": false},
-                                    {"value": "SYC","label": "Seychelles", "selected": false},
-                                    {"value": "TCD","label": "Chad", "selected": false},
-                                    {"value": "SEN","label": "Senegal", "selected": false},
-                                    {"value": "SLE","label": "Sierra Leone", "selected": false},
-                                    {"value": "SOM","label": "Somalia", "selected": false},
-                                    {"value": "TGO","label": "Togo", "selected": false},
-                                    {"value": "TUN","label": "Tunisia", "selected": false},
-                                    {"value": "TZA","label": "Tanzania", "selected": false},
-                                    {"value": "UGA","label": "Uganda", "selected": false},
-                                    {"value": "ZAF","label": "South Africa", "selected": false}
+                                    {"value": "02110103","label": " Clothing and footwear", "selected": false},
+                                    {"value": "02110109","label": " Recreation and culture", "selected": false},
+                                    {"value": "02110113","label": " Other goods and  service", "selected": false},
+                                    {"value": "02110110","label": " Education", "selected": false},
+                                    {"value": "02110104","label": " Rent, water fuel and power", "selected": false},
+                                    {"value": "02110101","label": " Food and non-alcoholic beverage", "selected": false},
+                                    {"value": "02110105","label": " Furniture household and maintenance", "selected": false},
+                                    {"value": "02110106","label": " Medical care", "selected": false},
+                                    {"value": "02110102","label": " Alcoholic beverages and tobacco", "selected": false},
+                                    {"value": "02110108","label": " Communication", "selected": false},
+                                    {"value": "02110112","label": " Hotels, coffee-house and restaurant", "selected": false},
+                                    {"value": "021101","label": " Inflation, consumer prices", "selected": false},
+                                    {"value": "02110107","label": " Transportation", "selected": false}
                                 ],
                                 "enableMultiselection": true
                             }
@@ -2601,7 +2560,7 @@ define(function () {
                                 }
                             }
                         },
-
+                        allowedFilter: ['IndicatorCode'],
                         filter: [
                             {
                                 "name": "filter",
@@ -2901,13 +2860,16 @@ define(function () {
                         container: "#financial_flows-4",
                         config: {
                             container: "#financial_flows-4",
-                            leaflet: {
-                                zoomControl: false,
-                                attributionControl: true,
-                                scrollWheelZoom: false,
-                                minZoom: 2
+                            options: {
+                                hidden_columns: ["PartnerCode"
+                                ]
+
                             }
+
+
+
                         },
+
                         // for now it takes the id, TODO: add uid as well
                         allowedFilter: [],
                         filter: [
@@ -2927,6 +2889,7 @@ define(function () {
                                         }
                                     },
                                     "columns": ["IndicatorCode", "CountryCode", "Year", "PartnerCode", "Value", "um"]
+
 
 
                                 }
