@@ -163,7 +163,7 @@ define(function () {
                                 xDimensions: 'CountryCode',
                                 yDimensions: 'item',
                                 valueDimensions: 'value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -237,11 +237,13 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
                         //},
+
+
                         filter: [
                             {
                                 "name": "filter",
@@ -310,78 +312,78 @@ define(function () {
                         ]
                     },
 
-
-                    {
-                        id: 'population-3',
-                        type: 'chart',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#population-3",
-                        config: {
-                            container: "#population-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'time',
-                                yDimensions: 'item',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['CountryCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "CountryCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "ISO3",
-                                                    "codes": [
-                                                        "ETH", "ZMB", "TZA", "CMR"
-                                                    ]
-                                                }
-                                            ]
-                                        },
-
-                                        "Year": {
-                                            "time": [
-                                                {
-                                                    "from": 2011,
-                                                    "to": 2011
-                                                }
-                                            ]
-                                        },
-
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010103"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "columns": ["IndicatorCode", "CountryCode", "Year", "GenderCode", "AgeRangeCode", "Value"]
-
-
-                                }
-                            }
-                        ]
-                    },
+                    //
+                    //{
+                    //    id: 'population-3',
+                    //    type: 'chart',
+                    //    class: "fx-map-chart",
+                    //    //needed if layout = injected
+                    //    container: "#population-3",
+                    //    config: {
+                    //        container: "#population-3",
+                    //        adapter: {
+                    //            type: "standard",
+                    //            xDimensions: 'time',
+                    //            yDimensions: 'item',
+                    //            valueDimensions: 'value',
+                    //            seriesDimensions: ['CountryCode']
+                    //        },
+                    //        template: {
+                    //            //"title": "Top 25..."
+                    //        },
+                    //        creator: {
+                    //            chartObj: {
+                    //                chart: {
+                    //                    type: "column"
+                    //                }
+                    //            }
+                    //        }
+                    //    },
+                    //    // for now it takes the id, TODO: add uid as well
+                    //    allowedFilter: ['CountryCode', 'Year'],
+                    //    filter: [
+                    //        {
+                    //            "name": "filter",
+                    //            "parameters": {
+                    //                "rows": {
+                    //                    "CountryCode": {
+                    //                        "codes": [
+                    //                            {
+                    //                                "uid": "ISO3",
+                    //                                "codes": [
+                    //                                    "ETH", "ZMB", "TZA", "CMR"
+                    //                                ]
+                    //                            }
+                    //                        ]
+                    //                    },
+                    //
+                    //                    "Year": {
+                    //                        "time": [
+                    //                            {
+                    //                                "from": 2011,
+                    //                                "to": 2011
+                    //                            }
+                    //                        ]
+                    //                    },
+                    //
+                    //                    "IndicatorCode": {
+                    //                        "codes": [
+                    //                            {
+                    //                                "uid": "UNECA_ClassificationOfActivities",
+                    //                                "codes": [
+                    //                                    "010103"
+                    //                                ]
+                    //                            }
+                    //                        ]
+                    //                    }
+                    //                },
+                    //                "columns": ["IndicatorCode", "CountryCode", "Year", "GenderCode", "AgeRangeCode", "Value"]
+                    //
+                    //
+                    //            }
+                    //        }
+                    //    ]
+                    //},
 
 
                     {
@@ -417,7 +419,7 @@ define(function () {
 
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",
@@ -475,7 +477,7 @@ define(function () {
                                 xDimensions: 'CountryCode',
                                 yDimensions: 'item',
                                 valueDimensions: 'value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -489,7 +491,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",
@@ -540,6 +542,123 @@ define(function () {
             }
         },
         education: {
+            filter: [
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Year",
+                    "components": [
+                        {
+                            "type": "time",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "Year",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "2011", "label": "2011", "selected": true},
+                                    {"value": "2010", "label": "2010", "selected": false},
+                                    {"value": "2009", "label": "2009", "selected": false},
+                                    {"value": "2008", "label": "2008", "selected": false},
+                                    {"value": "2007", "label": "2007", "selected": false},
+                                    {"value": "2006", "label": "2006", "selected": false},
+                                    {"value": "2005", "label": "2005", "selected": false},
+                                    {"value": "2004", "label": "2004", "selected": false},
+                                    {"value": "2003", "label": "2003", "selected": false},
+                                    {"value": "2002", "label": "2002", "selected": false},
+                                    {"value": "2001", "label": "2001", "selected": false},
+                                    {"value": "2000", "label": "2000", "selected": false},
+                                    {"value": "1999", "label": "1999", "selected": false},
+                                    {"value": "1998", "label": "1998", "selected": false},
+                                    {"value": "1997", "label": "1997", "selected": false},
+                                    {"value": "1996", "label": "1996", "selected": false},
+                                    {"value": "1995", "label": "1995", "selected": false},
+                                    {"value": "1994", "label": "1994", "selected": false},
+                                    {"value": "1993", "label": "1993", "selected": false},
+                                    {"value": "1992", "label": "1992", "selected": false},
+                                    {"value": "1991", "label": "1991", "selected": false},
+                                    {"value": "1990", "label": "1990", "selected": false}
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Country",
+                    "uid": "ISO3",
+                    "components": [
+                        {
+                            "type": "codelist",
+                            "uid": "ISO3",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "CountryCode",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "MWI","label": "Malawi", "selected": false},
+                                    {"value": "NAM","label": "Namibia", "selected": false},
+                                    {"value": "MDG","label": "Madagascar", "selected": false},
+                                    {"value": "MLI","label": "Mali", "selected": false},
+                                    {"value": "MOZ","label": "Mozambique", "selected": false},
+                                    {"value": "MRT","label": "Mauritania", "selected": false},
+                                    {"value": "MUS","label": "Mauritius", "selected": false},
+                                    {"value": "NER","label": "Niger", "selected": false},
+                                    {"value": "NGA","label": "Nigeria", "selected": false},
+                                    {"value": "LBR","label": "Liberia", "selected": false},
+                                    {"value": "LBY","label": "Libyan Arab Jamahiriya", "selected": false},
+                                    {"value": "LSO","label": "Lesotho", "selected": false},
+                                    {"value": "BWA","label": "Botswana", "selected": false},
+                                    {"value": "CAF","label": "Central African Republic", "selected": false},
+                                    {"value": "CIV","label": "Côte d'Ivoire", "selected": false},
+                                    {"value": "CMR","label": "Cameroon", "selected": false},
+                                    {"value": "COG","label": "Congo", "selected": false},
+                                    {"value": "COM","label": "Comoros", "selected": false},
+                                    {"value": "MAR","label": "Morocco", "selected": false},
+                                    {"value": "RWA","label": "Rwanda", "selected": false},
+                                    {"value": "SDN","label": "Sudan", "selected": false},
+                                    {"value": "GIN","label": "Guinea", "selected": false},
+                                    {"value": "GMB","label": "Gambia", "selected": false},
+                                    {"value": "GNB","label": "Guinea-Bissau", "selected": false},
+                                    {"value": "GNQ","label": "Equatorial Guinea", "selected": false},
+                                    {"value": "KEN","label": "Kenya", "selected": false},
+                                    {"value": "AGO","label": "Angola", "selected": false},
+                                    {"value": "BDI","label": "Burundi", "selected": false},
+                                    {"value": "BEN","label": "Benin", "selected": false},
+                                    {"value": "BFA","label": "Burkina Faso", "selected": false},
+                                    {"value": "EGY","label": "Egypt", "selected": false},
+                                    {"value": "ERI","label": "Eritrea", "selected": false},
+                                    {"value": "ETH","label": "Ethiopia", "selected": false},
+                                    {"value": "GAB","label": "Gabon", "selected": false},
+                                    {"value": "GHA","label": "Ghana", "selected": false},
+                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "CPV","label": "Cape Verde", "selected": false},
+                                    {"value": "DJI","label": "Djibouti", "selected": false},
+                                    {"value": "DZA","label": "Algeria", "selected": false},
+                                    {"value": "ZMB","label": "Zambia", "selected": false},
+                                    {"value": "ZWE","label": "Zimbabwe", "selected": false},
+                                    {"value": "SSD","label": "South Sudan", "selected": false},
+                                    {"value": "STP","label": "Sao Tome and Principe", "selected": false},
+                                    {"value": "SWZ","label": "Swaziland", "selected": false},
+                                    {"value": "SYC","label": "Seychelles", "selected": false},
+                                    {"value": "TCD","label": "Chad", "selected": false},
+                                    {"value": "SEN","label": "Senegal", "selected": false},
+                                    {"value": "SLE","label": "Sierra Leone", "selected": false},
+                                    {"value": "SOM","label": "Somalia", "selected": false},
+                                    {"value": "TGO","label": "Togo", "selected": false},
+                                    {"value": "TUN","label": "Tunisia", "selected": false},
+                                    {"value": "TZA","label": "Tanzania", "selected": false},
+                                    {"value": "UGA","label": "Uganda", "selected": false},
+                                    {"value": "ZAF","label": "South Africa", "selected": false}
+                                ],
+                                "enableMultiselection": true
+                            }
+                        }
+                    ]
+                }
+            ],
+
+
             dashboard: {
                 //data cube's uid
                 uid: "UNECA_Education",
@@ -576,7 +695,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
@@ -589,8 +708,8 @@ define(function () {
                                         "Year": {
                                             "time": [
                                                 {
-                                                    "from": 2010,
-                                                    "to": 2010
+                                                    "from": 2011,
+                                                    "to": 2011
                                                 }
                                             ]
                                         },
@@ -745,7 +864,7 @@ define(function () {
                                 }
                             }
                         },
-
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",
@@ -830,7 +949,7 @@ define(function () {
                                 }
                             }
                         },
-
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",
@@ -876,9 +995,125 @@ define(function () {
 
 
         health: {
+
+            filter: [
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Year",
+                    "components": [
+                        {
+                            "type": "time",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "Year",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "2011", "label": "2011", "selected": true},
+                                    {"value": "2010", "label": "2010", "selected": false},
+                                    {"value": "2009", "label": "2009", "selected": false},
+                                    {"value": "2008", "label": "2008", "selected": false},
+                                    {"value": "2007", "label": "2007", "selected": false},
+                                    {"value": "2006", "label": "2006", "selected": false},
+                                    {"value": "2005", "label": "2005", "selected": false},
+                                    {"value": "2004", "label": "2004", "selected": false},
+                                    {"value": "2003", "label": "2003", "selected": false},
+                                    {"value": "2002", "label": "2002", "selected": false},
+                                    {"value": "2001", "label": "2001", "selected": false},
+                                    {"value": "2000", "label": "2000", "selected": false},
+                                    {"value": "1999", "label": "1999", "selected": false},
+                                    {"value": "1998", "label": "1998", "selected": false},
+                                    {"value": "1997", "label": "1997", "selected": false},
+                                    {"value": "1996", "label": "1996", "selected": false},
+                                    {"value": "1995", "label": "1995", "selected": false},
+                                    {"value": "1994", "label": "1994", "selected": false},
+                                    {"value": "1993", "label": "1993", "selected": false},
+                                    {"value": "1992", "label": "1992", "selected": false},
+                                    {"value": "1991", "label": "1991", "selected": false},
+                                    {"value": "1990", "label": "1990", "selected": false}
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Country",
+                    "uid": "ISO3",
+                    "components": [
+                        {
+                            "type": "codelist",
+                            "uid": "ISO3",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "CountryCode",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "MWI","label": "Malawi", "selected": false},
+                                    {"value": "NAM","label": "Namibia", "selected": false},
+                                    {"value": "MDG","label": "Madagascar", "selected": false},
+                                    {"value": "MLI","label": "Mali", "selected": false},
+                                    {"value": "MOZ","label": "Mozambique", "selected": false},
+                                    {"value": "MRT","label": "Mauritania", "selected": false},
+                                    {"value": "MUS","label": "Mauritius", "selected": false},
+                                    {"value": "NER","label": "Niger", "selected": false},
+                                    {"value": "NGA","label": "Nigeria", "selected": false},
+                                    {"value": "LBR","label": "Liberia", "selected": false},
+                                    {"value": "LBY","label": "Libyan Arab Jamahiriya", "selected": false},
+                                    {"value": "LSO","label": "Lesotho", "selected": false},
+                                    {"value": "BWA","label": "Botswana", "selected": false},
+                                    {"value": "CAF","label": "Central African Republic", "selected": false},
+                                    {"value": "CIV","label": "Côte d'Ivoire", "selected": false},
+                                    {"value": "CMR","label": "Cameroon", "selected": false},
+                                    {"value": "COG","label": "Congo", "selected": false},
+                                    {"value": "COM","label": "Comoros", "selected": false},
+                                    {"value": "MAR","label": "Morocco", "selected": false},
+                                    {"value": "RWA","label": "Rwanda", "selected": false},
+                                    {"value": "SDN","label": "Sudan", "selected": false},
+                                    {"value": "GIN","label": "Guinea", "selected": false},
+                                    {"value": "GMB","label": "Gambia", "selected": false},
+                                    {"value": "GNB","label": "Guinea-Bissau", "selected": false},
+                                    {"value": "GNQ","label": "Equatorial Guinea", "selected": false},
+                                    {"value": "KEN","label": "Kenya", "selected": false},
+                                    {"value": "AGO","label": "Angola", "selected": false},
+                                    {"value": "BDI","label": "Burundi", "selected": false},
+                                    {"value": "BEN","label": "Benin", "selected": false},
+                                    {"value": "BFA","label": "Burkina Faso", "selected": false},
+                                    {"value": "EGY","label": "Egypt", "selected": false},
+                                    {"value": "ERI","label": "Eritrea", "selected": false},
+                                    {"value": "ETH","label": "Ethiopia", "selected": false},
+                                    {"value": "GAB","label": "Gabon", "selected": false},
+                                    {"value": "GHA","label": "Ghana", "selected": false},
+                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "CPV","label": "Cape Verde", "selected": false},
+                                    {"value": "DJI","label": "Djibouti", "selected": false},
+                                    {"value": "DZA","label": "Algeria", "selected": false},
+                                    {"value": "ZMB","label": "Zambia", "selected": false},
+                                    {"value": "ZWE","label": "Zimbabwe", "selected": false},
+                                    {"value": "SSD","label": "South Sudan", "selected": false},
+                                    {"value": "STP","label": "Sao Tome and Principe", "selected": false},
+                                    {"value": "SWZ","label": "Swaziland", "selected": false},
+                                    {"value": "SYC","label": "Seychelles", "selected": false},
+                                    {"value": "TCD","label": "Chad", "selected": false},
+                                    {"value": "SEN","label": "Senegal", "selected": false},
+                                    {"value": "SLE","label": "Sierra Leone", "selected": false},
+                                    {"value": "SOM","label": "Somalia", "selected": false},
+                                    {"value": "TGO","label": "Togo", "selected": false},
+                                    {"value": "TUN","label": "Tunisia", "selected": false},
+                                    {"value": "TZA","label": "Tanzania", "selected": false},
+                                    {"value": "UGA","label": "Uganda", "selected": false},
+                                    {"value": "ZAF","label": "South Africa", "selected": false}
+                                ],
+                                "enableMultiselection": true
+                            }
+                        }
+                    ]
+                }
+            ],
             dashboard: {
                 //data cube's uid
-                uid: "UNECA_Health",
+                uid: "UNECA_Health1",
 
                 //bridge configuration
                 bridge: {
@@ -929,7 +1164,7 @@ define(function () {
                                 }
                             }
                         },
-
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",
@@ -989,7 +1224,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
@@ -1056,7 +1291,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
@@ -1112,6 +1347,123 @@ define(function () {
         },
 
         "labour": {
+
+
+            filter: [
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Year",
+                    "components": [
+                        {
+                            "type": "time",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "Year",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "2011", "label": "2011", "selected": true},
+                                    {"value": "2010", "label": "2010", "selected": false},
+                                    {"value": "2009", "label": "2009", "selected": false},
+                                    {"value": "2008", "label": "2008", "selected": false},
+                                    {"value": "2007", "label": "2007", "selected": false},
+                                    {"value": "2006", "label": "2006", "selected": false},
+                                    {"value": "2005", "label": "2005", "selected": false},
+                                    {"value": "2004", "label": "2004", "selected": false},
+                                    {"value": "2003", "label": "2003", "selected": false},
+                                    {"value": "2002", "label": "2002", "selected": false},
+                                    {"value": "2001", "label": "2001", "selected": false},
+                                    {"value": "2000", "label": "2000", "selected": false},
+                                    {"value": "1999", "label": "1999", "selected": false},
+                                    {"value": "1998", "label": "1998", "selected": false},
+                                    {"value": "1997", "label": "1997", "selected": false},
+                                    {"value": "1996", "label": "1996", "selected": false},
+                                    {"value": "1995", "label": "1995", "selected": false},
+                                    {"value": "1994", "label": "1994", "selected": false},
+                                    {"value": "1993", "label": "1993", "selected": false},
+                                    {"value": "1992", "label": "1992", "selected": false},
+                                    {"value": "1991", "label": "1991", "selected": false},
+                                    {"value": "1990", "label": "1990", "selected": false}
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Country",
+                    "uid": "ISO3",
+                    "components": [
+                        {
+                            "type": "codelist",
+                            "uid": "ISO3",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "CountryCode",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "MWI","label": "Malawi", "selected": false},
+                                    {"value": "NAM","label": "Namibia", "selected": false},
+                                    {"value": "MDG","label": "Madagascar", "selected": false},
+                                    {"value": "MLI","label": "Mali", "selected": false},
+                                    {"value": "MOZ","label": "Mozambique", "selected": false},
+                                    {"value": "MRT","label": "Mauritania", "selected": false},
+                                    {"value": "MUS","label": "Mauritius", "selected": false},
+                                    {"value": "NER","label": "Niger", "selected": false},
+                                    {"value": "NGA","label": "Nigeria", "selected": false},
+                                    {"value": "LBR","label": "Liberia", "selected": false},
+                                    {"value": "LBY","label": "Libyan Arab Jamahiriya", "selected": false},
+                                    {"value": "LSO","label": "Lesotho", "selected": false},
+                                    {"value": "BWA","label": "Botswana", "selected": false},
+                                    {"value": "CAF","label": "Central African Republic", "selected": false},
+                                    {"value": "CIV","label": "Côte d'Ivoire", "selected": false},
+                                    {"value": "CMR","label": "Cameroon", "selected": false},
+                                    {"value": "COG","label": "Congo", "selected": false},
+                                    {"value": "COM","label": "Comoros", "selected": false},
+                                    {"value": "MAR","label": "Morocco", "selected": false},
+                                    {"value": "RWA","label": "Rwanda", "selected": false},
+                                    {"value": "SDN","label": "Sudan", "selected": false},
+                                    {"value": "GIN","label": "Guinea", "selected": false},
+                                    {"value": "GMB","label": "Gambia", "selected": false},
+                                    {"value": "GNB","label": "Guinea-Bissau", "selected": false},
+                                    {"value": "GNQ","label": "Equatorial Guinea", "selected": false},
+                                    {"value": "KEN","label": "Kenya", "selected": false},
+                                    {"value": "AGO","label": "Angola", "selected": false},
+                                    {"value": "BDI","label": "Burundi", "selected": false},
+                                    {"value": "BEN","label": "Benin", "selected": false},
+                                    {"value": "BFA","label": "Burkina Faso", "selected": false},
+                                    {"value": "EGY","label": "Egypt", "selected": false},
+                                    {"value": "ERI","label": "Eritrea", "selected": false},
+                                    {"value": "ETH","label": "Ethiopia", "selected": false},
+                                    {"value": "GAB","label": "Gabon", "selected": false},
+                                    {"value": "GHA","label": "Ghana", "selected": false},
+                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "CPV","label": "Cape Verde", "selected": false},
+                                    {"value": "DJI","label": "Djibouti", "selected": false},
+                                    {"value": "DZA","label": "Algeria", "selected": false},
+                                    {"value": "ZMB","label": "Zambia", "selected": false},
+                                    {"value": "ZWE","label": "Zimbabwe", "selected": false},
+                                    {"value": "SSD","label": "South Sudan", "selected": false},
+                                    {"value": "STP","label": "Sao Tome and Principe", "selected": false},
+                                    {"value": "SWZ","label": "Swaziland", "selected": false},
+                                    {"value": "SYC","label": "Seychelles", "selected": false},
+                                    {"value": "TCD","label": "Chad", "selected": false},
+                                    {"value": "SEN","label": "Senegal", "selected": false},
+                                    {"value": "SLE","label": "Sierra Leone", "selected": false},
+                                    {"value": "SOM","label": "Somalia", "selected": false},
+                                    {"value": "TGO","label": "Togo", "selected": false},
+                                    {"value": "TUN","label": "Tunisia", "selected": false},
+                                    {"value": "TZA","label": "Tanzania", "selected": false},
+                                    {"value": "UGA","label": "Uganda", "selected": false},
+                                    {"value": "ZAF","label": "South Africa", "selected": false}
+                                ],
+                                "enableMultiselection": true
+                            }
+                        }
+                    ]
+                }
+            ],
             dashboard: {
                 //data cube's uid
                 uid: "UNECA_Labour",
@@ -1149,7 +1501,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
@@ -1247,7 +1599,7 @@ define(function () {
                                 }
                             }
                         },
-
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",
@@ -1323,7 +1675,7 @@ define(function () {
                                 }
                             }
                         },
-
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",
@@ -1372,6 +1724,123 @@ define(function () {
 
 
         gdp: {
+
+
+            filter: [
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Year",
+                    "components": [
+                        {
+                            "type": "time",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "Year",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "2011", "label": "2011", "selected": true},
+                                    {"value": "2010", "label": "2010", "selected": false},
+                                    {"value": "2009", "label": "2009", "selected": false},
+                                    {"value": "2008", "label": "2008", "selected": false},
+                                    {"value": "2007", "label": "2007", "selected": false},
+                                    {"value": "2006", "label": "2006", "selected": false},
+                                    {"value": "2005", "label": "2005", "selected": false},
+                                    {"value": "2004", "label": "2004", "selected": false},
+                                    {"value": "2003", "label": "2003", "selected": false},
+                                    {"value": "2002", "label": "2002", "selected": false},
+                                    {"value": "2001", "label": "2001", "selected": false},
+                                    {"value": "2000", "label": "2000", "selected": false},
+                                    {"value": "1999", "label": "1999", "selected": false},
+                                    {"value": "1998", "label": "1998", "selected": false},
+                                    {"value": "1997", "label": "1997", "selected": false},
+                                    {"value": "1996", "label": "1996", "selected": false},
+                                    {"value": "1995", "label": "1995", "selected": false},
+                                    {"value": "1994", "label": "1994", "selected": false},
+                                    {"value": "1993", "label": "1993", "selected": false},
+                                    {"value": "1992", "label": "1992", "selected": false},
+                                    {"value": "1991", "label": "1991", "selected": false},
+                                    {"value": "1990", "label": "1990", "selected": false}
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Country",
+                    "uid": "ISO3",
+                    "components": [
+                        {
+                            "type": "codelist",
+                            "uid": "ISO3",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "CountryCode",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "MWI","label": "Malawi", "selected": false},
+                                    {"value": "NAM","label": "Namibia", "selected": false},
+                                    {"value": "MDG","label": "Madagascar", "selected": false},
+                                    {"value": "MLI","label": "Mali", "selected": false},
+                                    {"value": "MOZ","label": "Mozambique", "selected": false},
+                                    {"value": "MRT","label": "Mauritania", "selected": false},
+                                    {"value": "MUS","label": "Mauritius", "selected": false},
+                                    {"value": "NER","label": "Niger", "selected": false},
+                                    {"value": "NGA","label": "Nigeria", "selected": false},
+                                    {"value": "LBR","label": "Liberia", "selected": false},
+                                    {"value": "LBY","label": "Libyan Arab Jamahiriya", "selected": false},
+                                    {"value": "LSO","label": "Lesotho", "selected": false},
+                                    {"value": "BWA","label": "Botswana", "selected": false},
+                                    {"value": "CAF","label": "Central African Republic", "selected": false},
+                                    {"value": "CIV","label": "Côte d'Ivoire", "selected": false},
+                                    {"value": "CMR","label": "Cameroon", "selected": false},
+                                    {"value": "COG","label": "Congo", "selected": false},
+                                    {"value": "COM","label": "Comoros", "selected": false},
+                                    {"value": "MAR","label": "Morocco", "selected": false},
+                                    {"value": "RWA","label": "Rwanda", "selected": false},
+                                    {"value": "SDN","label": "Sudan", "selected": false},
+                                    {"value": "GIN","label": "Guinea", "selected": false},
+                                    {"value": "GMB","label": "Gambia", "selected": false},
+                                    {"value": "GNB","label": "Guinea-Bissau", "selected": false},
+                                    {"value": "GNQ","label": "Equatorial Guinea", "selected": false},
+                                    {"value": "KEN","label": "Kenya", "selected": false},
+                                    {"value": "AGO","label": "Angola", "selected": false},
+                                    {"value": "BDI","label": "Burundi", "selected": false},
+                                    {"value": "BEN","label": "Benin", "selected": false},
+                                    {"value": "BFA","label": "Burkina Faso", "selected": false},
+                                    {"value": "EGY","label": "Egypt", "selected": false},
+                                    {"value": "ERI","label": "Eritrea", "selected": false},
+                                    {"value": "ETH","label": "Ethiopia", "selected": false},
+                                    {"value": "GAB","label": "Gabon", "selected": false},
+                                    {"value": "GHA","label": "Ghana", "selected": false},
+                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "CPV","label": "Cape Verde", "selected": false},
+                                    {"value": "DJI","label": "Djibouti", "selected": false},
+                                    {"value": "DZA","label": "Algeria", "selected": false},
+                                    {"value": "ZMB","label": "Zambia", "selected": false},
+                                    {"value": "ZWE","label": "Zimbabwe", "selected": false},
+                                    {"value": "SSD","label": "South Sudan", "selected": false},
+                                    {"value": "STP","label": "Sao Tome and Principe", "selected": false},
+                                    {"value": "SWZ","label": "Swaziland", "selected": false},
+                                    {"value": "SYC","label": "Seychelles", "selected": false},
+                                    {"value": "TCD","label": "Chad", "selected": false},
+                                    {"value": "SEN","label": "Senegal", "selected": false},
+                                    {"value": "SLE","label": "Sierra Leone", "selected": false},
+                                    {"value": "SOM","label": "Somalia", "selected": false},
+                                    {"value": "TGO","label": "Togo", "selected": false},
+                                    {"value": "TUN","label": "Tunisia", "selected": false},
+                                    {"value": "TZA","label": "Tanzania", "selected": false},
+                                    {"value": "UGA","label": "Uganda", "selected": false},
+                                    {"value": "ZAF","label": "South Africa", "selected": false}
+                                ],
+                                "enableMultiselection": true
+                            }
+                        }
+                    ]
+                }
+            ],
             dashboard: {
                 //data cube's uid
                 uid: "UNECA_GDP",
@@ -1409,7 +1878,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
@@ -1488,7 +1957,7 @@ define(function () {
 
                         },
 
-
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",
@@ -1550,7 +2019,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
@@ -1608,6 +2077,122 @@ define(function () {
 
 
         "inflation": {
+
+            filter: [
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Year",
+                    "components": [
+                        {
+                            "type": "time",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "Year",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "2011", "label": "2011", "selected": true},
+                                    {"value": "2010", "label": "2010", "selected": false},
+                                    {"value": "2009", "label": "2009", "selected": false},
+                                    {"value": "2008", "label": "2008", "selected": false},
+                                    {"value": "2007", "label": "2007", "selected": false},
+                                    {"value": "2006", "label": "2006", "selected": false},
+                                    {"value": "2005", "label": "2005", "selected": false},
+                                    {"value": "2004", "label": "2004", "selected": false},
+                                    {"value": "2003", "label": "2003", "selected": false},
+                                    {"value": "2002", "label": "2002", "selected": false},
+                                    {"value": "2001", "label": "2001", "selected": false},
+                                    {"value": "2000", "label": "2000", "selected": false},
+                                    {"value": "1999", "label": "1999", "selected": false},
+                                    {"value": "1998", "label": "1998", "selected": false},
+                                    {"value": "1997", "label": "1997", "selected": false},
+                                    {"value": "1996", "label": "1996", "selected": false},
+                                    {"value": "1995", "label": "1995", "selected": false},
+                                    {"value": "1994", "label": "1994", "selected": false},
+                                    {"value": "1993", "label": "1993", "selected": false},
+                                    {"value": "1992", "label": "1992", "selected": false},
+                                    {"value": "1991", "label": "1991", "selected": false},
+                                    {"value": "1990", "label": "1990", "selected": false}
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Country",
+                    "uid": "ISO3",
+                    "components": [
+                        {
+                            "type": "codelist",
+                            "uid": "ISO3",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "CountryCode",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "MWI","label": "Malawi", "selected": false},
+                                    {"value": "NAM","label": "Namibia", "selected": false},
+                                    {"value": "MDG","label": "Madagascar", "selected": false},
+                                    {"value": "MLI","label": "Mali", "selected": false},
+                                    {"value": "MOZ","label": "Mozambique", "selected": false},
+                                    {"value": "MRT","label": "Mauritania", "selected": false},
+                                    {"value": "MUS","label": "Mauritius", "selected": false},
+                                    {"value": "NER","label": "Niger", "selected": false},
+                                    {"value": "NGA","label": "Nigeria", "selected": false},
+                                    {"value": "LBR","label": "Liberia", "selected": false},
+                                    {"value": "LBY","label": "Libyan Arab Jamahiriya", "selected": false},
+                                    {"value": "LSO","label": "Lesotho", "selected": false},
+                                    {"value": "BWA","label": "Botswana", "selected": false},
+                                    {"value": "CAF","label": "Central African Republic", "selected": false},
+                                    {"value": "CIV","label": "Côte d'Ivoire", "selected": false},
+                                    {"value": "CMR","label": "Cameroon", "selected": false},
+                                    {"value": "COG","label": "Congo", "selected": false},
+                                    {"value": "COM","label": "Comoros", "selected": false},
+                                    {"value": "MAR","label": "Morocco", "selected": false},
+                                    {"value": "RWA","label": "Rwanda", "selected": false},
+                                    {"value": "SDN","label": "Sudan", "selected": false},
+                                    {"value": "GIN","label": "Guinea", "selected": false},
+                                    {"value": "GMB","label": "Gambia", "selected": false},
+                                    {"value": "GNB","label": "Guinea-Bissau", "selected": false},
+                                    {"value": "GNQ","label": "Equatorial Guinea", "selected": false},
+                                    {"value": "KEN","label": "Kenya", "selected": false},
+                                    {"value": "AGO","label": "Angola", "selected": false},
+                                    {"value": "BDI","label": "Burundi", "selected": false},
+                                    {"value": "BEN","label": "Benin", "selected": false},
+                                    {"value": "BFA","label": "Burkina Faso", "selected": false},
+                                    {"value": "EGY","label": "Egypt", "selected": false},
+                                    {"value": "ERI","label": "Eritrea", "selected": false},
+                                    {"value": "ETH","label": "Ethiopia", "selected": false},
+                                    {"value": "GAB","label": "Gabon", "selected": false},
+                                    {"value": "GHA","label": "Ghana", "selected": false},
+                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "CPV","label": "Cape Verde", "selected": false},
+                                    {"value": "DJI","label": "Djibouti", "selected": false},
+                                    {"value": "DZA","label": "Algeria", "selected": false},
+                                    {"value": "ZMB","label": "Zambia", "selected": false},
+                                    {"value": "ZWE","label": "Zimbabwe", "selected": false},
+                                    {"value": "SSD","label": "South Sudan", "selected": false},
+                                    {"value": "STP","label": "Sao Tome and Principe", "selected": false},
+                                    {"value": "SWZ","label": "Swaziland", "selected": false},
+                                    {"value": "SYC","label": "Seychelles", "selected": false},
+                                    {"value": "TCD","label": "Chad", "selected": false},
+                                    {"value": "SEN","label": "Senegal", "selected": false},
+                                    {"value": "SLE","label": "Sierra Leone", "selected": false},
+                                    {"value": "SOM","label": "Somalia", "selected": false},
+                                    {"value": "TGO","label": "Togo", "selected": false},
+                                    {"value": "TUN","label": "Tunisia", "selected": false},
+                                    {"value": "TZA","label": "Tanzania", "selected": false},
+                                    {"value": "UGA","label": "Uganda", "selected": false},
+                                    {"value": "ZAF","label": "South Africa", "selected": false}
+                                ],
+                                "enableMultiselection": true
+                            }
+                        }
+                    ]
+                }
+            ],
             dashboard: {
 
                 //data cube's uid
@@ -1645,7 +2230,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
@@ -1712,7 +2297,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['CountryCode', 'Year'],
                         //forbiddenValues: {
                         //    year: {time: [{from: 2011, to: 2011}]},
                         //    domain: {removeFilter: true}
@@ -1789,7 +2374,7 @@ define(function () {
                                 }
                             }
                         },
-
+                        allowedFilter: ['CountryCode', 'Year'],
                         filter: [
                             {
                                 "name": "filter",

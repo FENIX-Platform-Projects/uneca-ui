@@ -560,14 +560,20 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'time',
-                                yDimensions: 'item',
+                                yDimensions: 'Unit',
                                 valueDimensions: 'value',
-                                seriesDimensions: ['GenderCode']
+                                seriesDimensions: ['IndicatorCode']
                             },
                             template: {
                                 //"title": "Top 25..."
                             },
-                            creator: {}
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    }
+                                }
+                            }
                         },
 
                         filter: [
@@ -580,7 +586,8 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
                                                     "codes": [
-                                                        "01020301"
+
+                                                        "010201", "010202", "010203"
                                                     ]
                                                 }
                                             ]
@@ -1721,7 +1728,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
+                                yDimensions: 'Currency',
                                 valueDimensions: 'Value',
                                 seriesDimensions: []
                             },
