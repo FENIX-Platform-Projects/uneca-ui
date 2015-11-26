@@ -7465,6 +7465,9 @@ body {
 .container {
   background-color: white; }
 
+.filter-go-btns {
+  margin-top: 18px; }
+
 /* Components */
 /* BreadCrumbs */
 #breadcumb_container {

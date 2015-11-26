@@ -73,7 +73,6 @@ define([
 
             this._initVariables();
 
-
             this._printDomainDashboard();
 
         },
@@ -98,8 +97,6 @@ define([
         _initVariables: function () {
 
             this.$content = this.$el.find(s.CONTENT);
-
-
 
         },
 
@@ -297,15 +294,15 @@ define([
 
         _renderDashboard: function (config) {
 
-            if (this.unecaDashboard && this.unecaDashboard.destroy) {
-                this.unecaDashboard.destroy();
+            if (this.dashboard && this.dashboard.destroy) {
+                this.dashboard.destroy();
             }
 
-            this.unecaDashboard = new Dashboard({
+            this.dashboard = new Dashboard({
                 layout: "injected"
             });
 
-            this.unecaDashboard.render(config);
+            this.dashboard.render(config);
 
         },
 
