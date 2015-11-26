@@ -452,20 +452,22 @@ $uneca-home-padding: 15px;
 
 }
 
-$partners: fra fe unece mp ofac itto;
+$partners: afdb fe fra;
+
 
 @each $partner in $partners {
 
   [data-partner='#{$partner}'] {
 
     a {
-      background-image: url('../../src/images/partners/#{$partner}-off.png');
+      background-image: url('../../src/images/partners/#{$partner}.png');
     }
 
     &.active {
 
+
       >a {
-        background-image: url('../../src/images/partners/#{$partner}.png');
+        background-image: url('../../src/images/partners/#{$partner}.png'); // Ad "off" to have a clicked version
       }
 
     }
@@ -492,7 +494,7 @@ $partners: fra fe unece mp ofac itto;
   }
 
   .tab-pane{
-    height: 100px;
+    //height: 100px;
     padding: 0 15px;
   }
 }

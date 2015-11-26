@@ -1,10 +1,14 @@
 /* Profile Page */
 
 .country-name{
-  margin-top: 0;
-
-  font-size: 23px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 25px;
   font-weight: 500;
+}
+
+.back-profile{
+  margin-top: -40px;
 }
 
 .dl-horizontal dt{
@@ -39,3 +43,38 @@ ul[role="group"]{
 
 }
 
+.info-title{
+  font-size: 12px;
+  color: $fenix-text;
+}
+
+.country-item{
+  a{
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+}
+
+.main-information{
+  padding: 0;
+
+  li{
+    padding-left: 0;
+    width: 23%;
+
+    p{
+      font-weight: 100;
+      padding-left: 5px;
+      font-size: 25px;
+    }
+
+  }
+
+  .label{
+    color: $fx-cool-blue;
+    font-size: 100%;
+    text-transform: uppercase;
+
+
+  }
+}

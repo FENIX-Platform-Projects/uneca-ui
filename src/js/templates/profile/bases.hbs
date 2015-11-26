@@ -13,25 +13,45 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <h1>MAIN INFORMATION</h1>
-                <dl class="dl-horizontal">
+                <h1 class="info-title">MAIN INFORMATION</h1>
 
-                    <dt>Capital City</dt>
-                    <dd>{{ capital_city }}</dd>
 
-                    <dt>Flag</dt>
-                    <dd>{{ flag }}</dd>
 
-                    <dt>GAUL code</dt>
-                    <dd>{{ gaul_code }}</dd>
+                    <ul class="main-information list-inline list-unstyled">
 
-                    <dt>Area</dt>
-                    <dd>{{ area }}</dd>
+                        <li>
+                            <h4 class="label">
+                                Capital City
+                            </h4>
+                            <p>{{ capital_city }}</p>
+                        </li>
 
-                    <dt>Currency</dt>
-                    <dd>{{ currency }}</dd>
 
-                </dl>
+
+                        <li>
+                            <h4 class="label">
+                                GAUL code
+                            </h4>
+                            <p>{{ gaul_code }}</p>
+                        </li>
+
+                        <li>
+                            <h4 class="label">
+                                Area
+                            </h4>
+                            <p>{{ area }}</p>
+                        </li>
+
+                        <li>
+                            <h4 class="label">
+                                Currency
+                            </h4>
+                            <p>{{ currency }}</p>
+                        </li>
+
+
+                    </ul>
+
 
             </div>
         </div>
