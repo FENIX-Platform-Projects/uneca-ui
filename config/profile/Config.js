@@ -753,6 +753,7 @@ define(function () {
                         ]
                     },
 
+
                     {
                         id: 'health-5',
                         type: 'chart',
@@ -796,6 +797,12 @@ define(function () {
                                             ]
                                         }
                                     }
+                                }
+                            },
+                            {
+                                "name": "order",
+                                "parameters": {
+                                    "Year": "ASC"
                                 }
                             }
                         ]
