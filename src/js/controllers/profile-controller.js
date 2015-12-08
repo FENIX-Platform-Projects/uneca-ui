@@ -36,7 +36,11 @@ define([
 
         onSuccess: function (countries) {
 
-            this.countries = countries;
+            this.countries = countries.sort(function(a, b) {
+                var textA = a.title.EN.toUpperCase();
+                var textB = b.title.EN.toUpperCase();
+                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+            });
 
             var country = _.findWhere(this.countries, {code: this.currentCountryId});
 

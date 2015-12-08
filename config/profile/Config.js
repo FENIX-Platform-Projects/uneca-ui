@@ -580,6 +580,9 @@ define(function () {
                                 chartObj: {
                                     chart: {
                                         type: "column"
+                                    },
+                                    yAxis: {
+                                        max: 100
                                     }
                                 }
                             }
@@ -605,6 +608,7 @@ define(function () {
                             }
                         ]
                     },
+
                     {
                         id: 'health-2',
                         type: 'chart',
@@ -796,6 +800,7 @@ define(function () {
                             }
                         ]
                     }
+
 
                 ]
 

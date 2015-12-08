@@ -351,16 +351,18 @@ define([
 
                 });
 
-        }
+        },
 
         /* Disposition process */
 
-        /*
+/*
         dispose: function () {
 
-            View.prototype.dispose.call(this, arguments);
+            this.$lateralMenu.jstree("destroy");
 
-            //this._unbindDashboardEventListeners();
+            this._unbindDashboardEventListeners();
+
+            View.prototype.dispose.call(this, arguments);
 
         },
 
@@ -371,7 +373,8 @@ define([
             console.log(this.$filterSubmit.length)
 
         }
-        */
+*/
+
 
     });
 

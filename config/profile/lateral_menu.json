@@ -4,7 +4,7 @@
     "data": [
       {
         "id": "demographic",
-        "text": "Demographic and social stats",
+        "text": "Demographic and social statistics",
         "state"       : {
           "opened"    : true
         },
