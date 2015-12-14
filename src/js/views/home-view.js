@@ -37,7 +37,6 @@ define([
 
     var windowHalfY = window.innerHeight / 2;
 
-
     var HomeView = View.extend({
 
         autoRender: true,
