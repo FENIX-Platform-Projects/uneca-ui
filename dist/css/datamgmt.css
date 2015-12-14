@@ -7468,6 +7468,20 @@ body {
 .filter-go-btns {
   margin-top: 18px; }
 
+.fm-box-zindex input[type="radio"] + label:before {
+  content: none; }
+.fm-box-zindex .fm-checkbox-hide {
+  display: none; }
+.fm-box-zindex input[type="radio"] + label {
+  margin: 0; }
+.fm-box-zindex .ui-slider {
+  margin-top: 5px; }
+  .fm-box-zindex .ui-slider .ui-slider-handle {
+    height: 20px !important;
+    width: 20px !important;
+    background-size: contain !important;
+    top: -7px !important; }
+
 /* Components */
 /* BreadCrumbs */
 #breadcumb_container {

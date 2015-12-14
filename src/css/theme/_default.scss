@@ -63,5 +63,34 @@ body {
   margin-top: 18px;
 }
 
+//.dashboard-item{
+//  height: 480px;
+//}
 
+// Radio Button Override for Leaflet
 
+.fm-box-zindex{
+  input[type="radio"] + label:before{
+    content:none;
+  }
+
+  .fm-checkbox-hide{
+    display: none ;
+  }
+
+  input[type="radio"] + label{
+    margin: 0;
+  }
+
+  .ui-slider{
+    margin-top: 5px;
+
+    .ui-slider-handle{
+      height: 20px !important;
+      width: 20px !important;
+      background-size: contain !important;
+      top: -7px!important;
+    }
+
+  }
+}
