@@ -34,6 +34,7 @@ define([
     var mouseX = 0, mouseY = 0;
 
     var windowHalfX = window.innerWidth / 2;
+
     var windowHalfY = window.innerHeight / 2;
 
 
@@ -102,8 +103,6 @@ define([
             var series1GDP = [5.8, 6, 5.4, 3.4, 5.7, 2.8, 6.7, 3.5, 3.9];
             var series2GDP = [5.6, 6.9, 10.7, 9.7, 8, 9.2, 9.2, 7, 7.2];
 
-            var dataTrade = this._prepareDataForTradeCharts();
-
             $('#chart1').highcharts($.extend(true, {}, chartTemplate, {
                 title: {
                     text: 'Gross Domestic Product'
@@ -157,62 +156,12 @@ define([
                     }]
             }));
 
-            $('#chart4').highcharts($.extend(true, {}, chartTemplate, {
-                chart: {
-                    type: 'column'
-                },
-                title: {
-                    text: 'Import of Goods and services in Africa'
-                },
-                credits: {
-                    enabled: false
-                },
-                /*  colors: [ //Colori delle charts
-                 '#a62d3e',
-                 '#986e2e',
-                 '#744490',
-                 '#E10079',
-                 '#2D1706',
-                 '#F1E300',
-                 '#F7AE3C',
-                 '#DF3328'
-                 ],*/
-                xAxis: {
-                    categories: [
-                        'AFRICA',
-                        'AMU',
-                        'CAEMC',
-                        'COMESA',
-                        'ECCAS',
-                        'ECOWAS',
-                        'FRANC ZONE',
-                        'SADC',
-                        'WAEMU']
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: 'Millions of WSD'
-                    }
-                },
-                tooltip: {
-                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> <br/>',
-                    shared: true
-                },
-                plotOptions: {
-                    column: {
-                        stacking: 'normal'
-                    }
-                },
-                series: dataTrade.import
-            }));
-
             $('#chart2').highcharts($.extend(true, {}, chartTemplate, {
                 chart: {
                     type: 'column'
                 },
                 title: {
-                    text: 'Export of Goods and services in Africa'
+                    text: 'Export of Goods and services from Africa'
                 },
                 credits: {
                     enabled: false
@@ -229,7 +178,6 @@ define([
                  ],*/
                 xAxis: {
                     categories: [
-                        'AFRICA',
                         'AMU',
                         'CAEMC',
                         'COMESA',
@@ -254,7 +202,62 @@ define([
                         stacking: 'normal'
                     }
                 },
-                series: dataTrade.export
+                series: [{
+                    name : "Export",
+                    data : this.data.trade.import
+                }]
+            }));
+
+            $('#chart4').highcharts($.extend(true, {}, chartTemplate, {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Import of Goods and services to Africa'
+                },
+                credits: {
+                    enabled: false
+                },
+                /*  colors: [ //Colori delle charts
+                 '#a62d3e',
+                 '#986e2e',
+                 '#744490',
+                 '#E10079',
+                 '#2D1706',
+                 '#F1E300',
+                 '#F7AE3C',
+                 '#DF3328'
+                 ],*/
+                xAxis: {
+                    categories: [
+                        'AMU',
+                        'CAEMC',
+                        'COMESA',
+                        'ECCAS',
+                        'ECOWAS',
+                        'FRANC ZONE',
+                        'SADC',
+                        'WAEMU']
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Millions of WSD'
+                    }
+                },
+                tooltip: {
+                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> <br/>',
+                    shared: true
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    }
+                },
+                series: [{
+                    name : "Import",
+                    data : this.data.trade.import
+                }]
             }));
 
             $('#chart3').highcharts($.extend(true, {}, chartTemplate, {
@@ -318,16 +321,10 @@ define([
                 "SADC": 7,
                 "WAEMU": 8
             };
+
             var index = map[key];
 
             for (var field in this.data.trade[type]) {
-                if (type == 'import' && key != 'AFRICA' && field == 'AMU') {
-                    //console.log('field: ' + field + ' where origin is ' + key);
-                    //console.log('index: ' + index);
-                    //console.log(this.data.trade[type][field], 'fino a field')
-                    //console.log(this.data.trade[type][field][index], 'inex')
-                }
-
                 result.push(this.data.trade[type][field][index])
             }
 
@@ -339,11 +336,14 @@ define([
 
             var result = {};
 
-            result['import'] = []
-            result['export'] = [];
+            result['import'] = this.data.trade.import;
+            result['export'] = this.data.trade.export;
+
+
+            return result;
+
 
             var semiResult = {'export': {}, 'import': {}};
-
 
             for (var key in this.data.trade.export) {
                 semiResult['export'][key] = this._traspostMatrix(key, 'export');
@@ -353,6 +353,7 @@ define([
             //console.log(semiResult);
 
             this.data.trade = semiResult;
+
             for (var key in this.data.trade.import) {
 
                 for (var i = 0; i < this.data.trade.import[key].length; i++) {
@@ -363,13 +364,7 @@ define([
                 result['import'].push({'name': key, 'data': this.data.trade.import[key]})
             }
 
-
             for (var key in this.data.trade.export) {
-
-
-                /*
-                 this.data.trade.export[key] = this._traspostMatrix(key, 'export');
-                 */
 
                 for (var i = 0; i < this.data.trade.export[key].length; i++) {
 
@@ -378,8 +373,7 @@ define([
                 result['export'].push({'name': key, 'data': this.data.trade.export[key]})
             }
 
-            //console.log(result)
-            return result;
+
         },
 
         bindEventListeners: function () {
@@ -404,6 +398,7 @@ define([
 
             View.prototype.dispose.call(this, arguments);
         },
+
         initWorldMap: function () {
             // Inizialization
 
@@ -609,7 +604,7 @@ define([
 
 
                 container.appendChild(renderer.domElement); //domElement is a property of WEBGLRender
-                $(window).mousemove(this.onDocumentMouseMove);
+                //$(window).mousemove(this.onDocumentMouseMove);
                 window.addEventListener('resize', this.onWindowResize, false);
                 this.renderScene();
 
@@ -626,6 +621,7 @@ define([
 
 
         },
+
         renderScene: function () {
             //controlliCamera.update();
             //stats.update();
@@ -645,6 +641,7 @@ define([
             requestAnimationFrame(this.renderScene.bind(this));
 
         },
+
         onWindowResize: function () {
             containerWidth = $('#container').width();
             containerHeight = $('#container').height();
@@ -654,6 +651,7 @@ define([
             renderer.setSize(containerWidth, containerHeight);
 
         },
+
         onDocumentMouseMove: function (event) {
 
 
@@ -682,6 +680,7 @@ define([
 
 
         },
+
         startHomeHeader: function () {
             TweenMax.to($('.world-fallback'), 1, {opacity: 1});
             TweenMax.to($('.welcome'), 1, {opacity: 1});
@@ -694,7 +693,6 @@ define([
 
         }
     });
-
 
     return HomeView;
 });
