@@ -156,16 +156,24 @@ define([
             var fileName = model.title['EN'].replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
             var self = this;
+
             $(s.BTN_EXPORT_METADATA).on('click', function(){
 
+                var template = model.filter && model.filter["dsd.contextSystem"] && model.filter["dsd.contextSystem"].enumeration && [0] && model.filter["dsd.contextSystem"].enumeration[0] === 'uneca'?
+                    'uneca' : 'fao';
+
                 var payload = {
+                    resource: {
+                        metadata : {
+                            uid : model.uid
+                        },
+                        data : []
+                    },
                     input:{
-                        config:{
-                            uid: model.uid
-                        }
                     },
                     output: {
                         config:{
+                            template : template,
                             lang : 'en'.toUpperCase(),
                             fileName: fileName+'.pdf'
                         }
@@ -178,15 +186,17 @@ define([
         },
 
         onDownloadClick: function (model) {
-            console.log("download")
-            console.log(model)
 
             var payload = {
+
+                resource: {
+                    metadata : {
+                        uid : model.uid
+                    },
+                    data : []
+                },
                 input:{
-                    config:{
-                        uid: model.uid,
-                        environment_url : C.DATA_ENVIROMENT_URL
-                    }
+                    config:{}
                 },
                 output: {
                     config:{
@@ -196,6 +206,7 @@ define([
             };
 
             this.$report.init('tableExport');
+
             this.$report.exportData(payload,C.MD_EXPORT_URL);
         },
 

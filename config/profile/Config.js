@@ -99,10 +99,7 @@ define(function () {
                         ]
                     },
 
-
-                    /*
-                     //TABLE
-                     */
+                    //TABLE
 
                     {
                         id: 'population-2',
@@ -152,9 +149,7 @@ define(function () {
                         ]
                     },
 
-
                     //Mid-year population by age group
-
 
                     {
                         //Time series
@@ -198,15 +193,12 @@ define(function () {
                                                     ]
                                                 }
                                             ]
-                                        },
-
-
+                                        }
                                     }
                                 }
                             }
                         ]
                     },
-
 
                     {
                         id: 'population-5',
@@ -258,11 +250,6 @@ define(function () {
                         ]
                     },
 
-
-                    /*
-                     Population Pyramid
-
-                     */
                     {
                         //Time series
                         id: 'population-6',
@@ -274,10 +261,10 @@ define(function () {
                             container: "#population-6",
                             adapter: {
                                 type: "pyramid",
-                                xDimensions: 'time',
+                                xDimensions: 'AgeRangeCode',
                                 yDimensions: '',
                                 valueDimensions: 'value',
-                                seriesDimensions: []
+                                seriesDimensions: ['GenderCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -286,40 +273,56 @@ define(function () {
                         },
 
 
-                        filter: [
+                        filter:[
                             {
-                                "name": "filter",
-                                "parameters": {
+                                "name" : "filter",
+                                "parameters" : {
                                     "rows": {
-                                        "IndicatorCode": {
+                                        "IndicatorCode" : {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "01010106"
-                                                    ]
+                                                    "version": null,
+                                                    "codes": [ "01010106" ]
                                                 }
                                             ]
                                         },
-                                        "AgeRangeCode": {
+                                        "GenderCode" : {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+                                                    "version": null,
+                                                    "codes": [ "1", "2" ]
+                                                }
+                                            ]
+                                        },
+                                        "AgeRangeCode" : {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_AgeRange",
-                                                    "codes": [
-                                                        "AG02", "AG03", "AG05", "AG06", "AG07", "AG08", "AG09", "AG10", "AG11", "AG12", "AG13", "AG14"
-                                                    ]
+                                                    "version": null,
+                                                    "codes": [ "AG02","AG03","AG04","AG05","AG06","AG07","AG08","AG09","AG10","AG11","AG12","AG13","AG14","AG15" ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2007,
+                                                    "to": 2007
                                                 }
                                             ]
                                         }
                                     }
                                 }
+                            },
+                            {
+                                "name" : "percentage"
                             }
-
-
                         ]
                     },
 
-                    {
+                   {
                         id: 'population-7',
                         type: 'table',
                         class: "fx-map-chart",
@@ -369,7 +372,6 @@ define(function () {
                             }
                         ]
                     }
-
 
                 ]
             }
@@ -2898,12 +2900,8 @@ define(function () {
                         config: {
                             container: "#financial_flows-4",
                             options: {
-                                hidden_columns: ["PartnerCode"
-                                ]
-
+                                hidden_columns: ["PartnerCode"]
                             }
-
-
                         },
 
                         // for now it takes the id, TODO: add uid as well

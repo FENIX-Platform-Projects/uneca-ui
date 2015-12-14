@@ -156,6 +156,8 @@ define([
 
         _onChangeDashboard: function (item) {
 
+            console.log(item)
+
             this._printDashboard(item);
 
         },

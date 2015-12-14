@@ -104,7 +104,7 @@ define([
 
             $('#chart1').highcharts($.extend(true, {}, chartTemplate, {
                 title: {
-                    text: 'Gross Domestic Product'
+                    text: 'Gross Domestic Product of Africa'
                 },
                 credits: {
                     enabled: false
@@ -261,7 +261,7 @@ define([
 
             $('#chart3').highcharts($.extend(true, {}, chartTemplate, {
                 title: {
-                    text: 'Gender parity index'
+                    text: 'Gender parity index in Africa'
                 },
                 credits: {
                     enabled: false
