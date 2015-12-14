@@ -151,8 +151,7 @@ define(function () {
             },
             "component": {
                 "source": {
-                    "uid": "GAUL0",
-                    "version": "2014"
+                    "uid": "UNECA_ISO3"
                 }
             }
         }
