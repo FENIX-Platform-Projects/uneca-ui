@@ -93,20 +93,16 @@ define([
 
             this.data = JSON.parse(DATA);
 
-            for(var k in this.data['import']) {
+            for (var k in this.data['import']) {
                 this.data['import'][k].length = 9;
                 this.data['export'][k].length = 9;
 
-            };
+            }
 
             var series1GDP = [5.8, 6, 5.4, 3.4, 5.7, 2.8, 6.7, 3.5, 3.9];
             var series2GDP = [5.6, 6.9, 10.7, 9.7, 8, 9.2, 9.2, 7, 7.2];
 
             var dataTrade = this._prepareDataForTradeCharts();
-            console.warn('***************************************')
-
-            console.warn(dataTrade, 'DATAAA');
-            console.warn('***************************************')
 
             $('#chart1').highcharts($.extend(true, {}, chartTemplate, {
                 title: {
@@ -282,7 +278,7 @@ define([
                 crosshair: true,
 
                 yAxis: {
-                    min: 0,
+                    min: 0.75,
                     max: 1
                 },
                 tooltip: {
@@ -325,21 +321,17 @@ define([
             var index = map[key];
 
             for (var field in this.data.trade[type]) {
-                if(type == 'import' && key != 'AFRICA' && field == 'AMU') {
-                    console.log('field: ' + field + ' where origin is ' + key);
-
-
-                    console.log('index: ' + index);
-
-
-                    console.log(this.data.trade[type][field], 'fino a field')
-                    console.log(this.data.trade[type][field][index], 'inex')
+                if (type == 'import' && key != 'AFRICA' && field == 'AMU') {
+                    //console.log('field: ' + field + ' where origin is ' + key);
+                    //console.log('index: ' + index);
+                    //console.log(this.data.trade[type][field], 'fino a field')
+                    //console.log(this.data.trade[type][field][index], 'inex')
                 }
 
                 result.push(this.data.trade[type][field][index])
             }
 
-           return result;
+            return result;
 
         },
 
@@ -350,24 +342,18 @@ define([
             result['import'] = []
             result['export'] = [];
 
-            var semiResult = {'export':{},'import':{}};
+            var semiResult = {'export': {}, 'import': {}};
 
 
-            for(var key in this.data.trade.export) {
+            for (var key in this.data.trade.export) {
                 semiResult['export'][key] = this._traspostMatrix(key, 'export');
                 semiResult['import'][key] = this._traspostMatrix(key, 'import');
             }
 
-            console.log(semiResult);
-
+            //console.log(semiResult);
 
             this.data.trade = semiResult;
             for (var key in this.data.trade.import) {
-
-/*
-                this.data.trade.import[key] = this._traspostMatrix(key, 'import');
-*/
-
 
                 for (var i = 0; i < this.data.trade.import[key].length; i++) {
 
@@ -381,9 +367,9 @@ define([
             for (var key in this.data.trade.export) {
 
 
-/*
-                this.data.trade.export[key] = this._traspostMatrix(key, 'export');
-*/
+                /*
+                 this.data.trade.export[key] = this._traspostMatrix(key, 'export');
+                 */
 
                 for (var i = 0; i < this.data.trade.export[key].length; i++) {
 
@@ -392,11 +378,8 @@ define([
                 result['export'].push({'name': key, 'data': this.data.trade.export[key]})
             }
 
-
-            console.log(result)
+            //console.log(result)
             return result;
-
-
         },
 
         bindEventListeners: function () {
@@ -405,11 +388,6 @@ define([
 
             $(s.CHART_TABS).on('shown.bs.tab', function (e) {
                 e.preventDefault();
-
-                /*
-                 console.log($(e.currentTarget).data("id"))
-                 */
-
                 self.initCharts();
             });
 
@@ -431,11 +409,8 @@ define([
 
 
             if (Detector.webgl) {
-                //console.log('nicola dapauara computer supersonic');
 
                 renderer = new THREE.WebGLRenderer({
-
-
                     antialias: true
                 });
 
@@ -451,7 +426,6 @@ define([
                 renderer.setSize(containerWidth, containerHeight);
                 renderer.shadowMapEnabled = true;
 
-
                 cameraSfondo = new THREE.OrthographicCamera(
                     -window.innerWidth // LEFT This property defines the border for the leftmost position to be rendered.
                     , window.innerWidth // RIGHT This property defines the border for the rightmost position to be rendered.
@@ -459,6 +433,7 @@ define([
                     , -window.innerHeight // BOTTOM This property defines the border for the bottommost position to be rendered.
                     , -10000, 10000 //This property defines the point, based on the position of the camera, from where the scene will be rendered. , This property defines the point, based on position of the camera, to whic the scene will be rendered
                 );
+
                 cameraSfondo.position.z = 50;
 
                 sfondoScena = new THREE.Scene();
@@ -472,18 +447,17 @@ define([
                 sfondoBG.scale.set(window.innerWidth * 2, window.innerHeight * 2, 1); // LOOK AT THE SCALE!!!!!
                 sfondoScena.add(sfondoBG);
 
-
                 // texture
 
                 var manager = new THREE.LoadingManager();
                 manager.onProgress = function (item, loaded, total) {
+
                     /*
                      console.log(item, loaded, total);
+                     console.log((loaded / total * 100) + '% loaded');
+                     */
 
-                     console.log((loaded / total * 100) + '% loaded');*/
-
-                    $('#preload-text').text((loaded / total * 100) + '% loaded') // For preload
-
+                    $('#preload-text').text((loaded / total * 100) + '% loaded'); // For preload
 
                 };
 

@@ -5,8 +5,8 @@
       {
         "id": "demographic",
         "text": "Demographic and social statistics",
-        "state"       : {
-          "opened"    : true
+        "state": {
+          "opened": true
         },
         "children": [
           {
@@ -20,7 +20,7 @@
           {
             "id": "health",
             "text": "Health",
-            "state"       : {
+            "state": {
             }
           },
           {
@@ -32,21 +32,18 @@
       {
         "id": "economics",
         "text": "Economic statistics",
-        "state" : {
-          "opened" : true
+        "state": {
+          "opened": true
         },
         "children": [
           {
             "id": "balance_of_payments",
             "text": "Balance of Payments"
           },
-
-
           {
             "id": "gdp",
             "text": "GDP"
           },
-
           {
             "id": "monetary_statistics",
             "text": "Monetary Statistics"
@@ -82,7 +79,7 @@
           {
             "id": "production",
             "text": "Production",
-            "children":[
+            "children": [
               {
                 "id": "agriculture_production",
                 "text": "Agriculture production"
@@ -91,17 +88,16 @@
                 "id": "mining_production",
                 "text": "Mining production"
               }
-
             ]
           }
-
         ]
       }
     ]
   },
+  "state" : {
+    "ttl" : 1
+  },
   "plugins": [
-    "checkbox",
-    "state",
     "wholerow"
   ]
 }

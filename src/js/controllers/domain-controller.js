@@ -17,8 +17,6 @@ define([
 
         beforeAction: function (params) {
 
-            console.log("Before Domain")
-
             this.currentDomainId  =  params.id;
 
             Controller.prototype.beforeAction.call(this, arguments);

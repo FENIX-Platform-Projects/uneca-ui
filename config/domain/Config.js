@@ -1153,14 +1153,10 @@ define(function () {
                                 chartObj: {
                                     chart: {
                                         type: "column"
+                                    },
+                                    yAxis: {
+                                        max: 100
                                     }
-                                    //plotOptions: {
-                                    //    column: {
-                                    //
-                                    //        stacking: "normal"
-                                    //    }
-                                    //
-                                    //}
                                 }
                             }
                         },

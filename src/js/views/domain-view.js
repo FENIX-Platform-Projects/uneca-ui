@@ -35,7 +35,7 @@ define([
     var DomainView = View.extend({
 
         initialize: function (params) {
-console.log(LateralMenuConfig)
+
             this.domains = params.domains;
 
             this.domain = params.domain;
@@ -73,23 +73,6 @@ console.log(LateralMenuConfig)
 
         },
 
-        _bindEventListeners: function () {
-
-            var self = this;
-
-            this.$filterSubmit.on('click', function (e, data) {
-
-                var values = self.filter.getValues();
-
-                // TODO: it's an array
-
-                console.log("Filtro");
-                console.log(values);
-
-                self.dashboard.filter([values]);
-            });
-        },
-
         _initVariables: function () {
 
             this.$content = this.$el.find(s.CONTENT);
@@ -100,6 +83,16 @@ console.log(LateralMenuConfig)
 
         },
 
+        _bindEventListeners: function () {
+
+            var self = this;
+
+            this.$filterSubmit.on('click', function (e, data) {
+                var values = self.filter.getValues();
+                self.dashboard.filter([values]);
+            });
+        },
+
         _printDomainDashboard: function () {
 
             var self = this;
@@ -107,7 +100,7 @@ console.log(LateralMenuConfig)
             //print jstree
             this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
 
-                .on(" ready.jstree", _.bind(function (e, data) {
+                .on("ready.jstree", _.bind(function (e, data) {
 
                     if (this.id) {
 
@@ -127,17 +120,16 @@ console.log(LateralMenuConfig)
                     if ( !data.instance.is_leaf(data.node) ) {
 
                         self.$lateralMenu.jstree(true).deselect_node(data.node, true);
+
                         self.$lateralMenu.jstree(true).open_node(data.node, true);
 
                     } else {
 
                         //TODO remove me
                         self._onChangeDashboard(data.selected[0]);
-
                     }
 
                 }, this));
-
         },
 
         _printDashboard : function ( item ) {
@@ -174,8 +166,6 @@ console.log(LateralMenuConfig)
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
                 template = Handlebars.compile(source.prop('outerHTML')),
                 html = template();
-
-            console.log(this.$el.find(s.DASHBOARD_CONTENT).length)
 
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
         },

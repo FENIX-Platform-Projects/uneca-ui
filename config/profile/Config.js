@@ -8,7 +8,7 @@ define(function () {
 
         "resume": {
 
-            dashboard : {
+            dashboard: {
                 //data cube's uid
                 uid: "FLUDE_TOPIC_1",
 
@@ -34,7 +34,6 @@ define(function () {
         "population": {
 
 
-
             dashboard: {
                 //data cube's uid
                 uid: "Uneca_PopulationNew",
@@ -54,8 +53,8 @@ define(function () {
 
                 items: [
 
-                    /* Mid-year population
-                     */
+                    // Mid-year population
+
                     {
                         //Time series
                         id: 'population-1',
@@ -70,7 +69,7 @@ define(function () {
                                 xDimensions: 'time',
                                 yDimensions: 'Unit',
                                 valueDimensions: 'value',
-                                seriesDimensions: ["IndicatorCode"]
+                                seriesDimensions: []
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -102,7 +101,7 @@ define(function () {
 
 
                     /*
-                     TABLE
+                     //TABLE
                      */
 
                     {
@@ -154,9 +153,8 @@ define(function () {
                     },
 
 
-                    /*
-                     Mid-year population by age group
-                     */
+                    //Mid-year population by age group
+
 
                     {
                         //Time series
@@ -264,55 +262,62 @@ define(function () {
                     /*
                      Population Pyramid
 
-
-                     {
-                     //Time series
-                     id: 'population-6',
-                     type: 'chart',
-                     class: "fx-timeseries-ecample",
-                     //needed if layout = injected
-                     container: "#population-6",
-                     config: {
-                     container: "#population-6",
-                     adapter: {
-                     type: "standard",
-                     xDimensions: 'time',
-                     yDimensions: 'item',
-                     valueDimensions: 'value',
-                     seriesDimensions: []
-                     },
-                     template: {
-                     //"title": "Top 25..."
-                     },
-                     creator: {
-
-
-
-                     }
-                     },
-
-
-                     filter: [
-                     {
-                     "name": "filter",
-                     "parameters": {
-                     "rows": {
-                     "IndicatorCode": {
-                     "codes": [
-                     {
-                     "uid": "UNECA_ClassificationOfActivities",
-                     "codes": [
-                     "01010106"
-                     ]
-                     }
-                     ]
-                     }
-                     }
-                     }
-                     }
-                     ]
-                     },
                      */
+                    {
+                        //Time series
+                        id: 'population-6',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#population-6",
+                        config: {
+                            container: "#population-6",
+                            adapter: {
+                                type: "pyramid",
+                                xDimensions: 'time',
+                                yDimensions: '',
+                                valueDimensions: 'value',
+                                seriesDimensions: []
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {}
+                        },
+
+
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "01010106"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "AgeRangeCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_AgeRange",
+                                                    "codes": [
+                                                        "AG02", "AG03", "AG05", "AG06", "AG07", "AG08", "AG09", "AG10", "AG11", "AG12", "AG13", "AG14"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+
+
+                        ]
+                    },
 
                     {
                         id: 'population-7',
@@ -373,7 +378,7 @@ define(function () {
 
 
         "education": {
-            dashboard:{
+            dashboard: {
 
                 //data cube's uid
                 uid: "UNECA_Education",
@@ -406,7 +411,7 @@ define(function () {
                                 xDimensions: 'time',
                                 yDimensions: 'item',
                                 valueDimensions: 'value',
-                                seriesDimensions: [ "IndicatorCode"]
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -538,7 +543,7 @@ define(function () {
 
         "health": {
 
-            dashboard:{
+            dashboard: {
                 //data cube's uid
                 uid: "UNECA_Health1",
 
@@ -816,7 +821,7 @@ define(function () {
 
 
         "labour": {
-            dashboard:{
+            dashboard: {
                 //data cube's uid
                 uid: "UNECA_Labour",
 
@@ -1002,7 +1007,7 @@ define(function () {
 
 
         "energy": {
-            dashboard:{
+            dashboard: {
 
                 //data cube's uid
                 uid: "UNECA_Energy",
@@ -1063,7 +1068,7 @@ define(function () {
         "gdp": {
 
 
-            dashboard:{
+            dashboard: {
                 //data cube's uid
                 uid: "UNECA_GDP",
 
@@ -1189,7 +1194,7 @@ define(function () {
 
         "monetary_statistics": {
 
-            dashboard:{
+            dashboard: {
 
                 //data cube's uid
                 uid: "UNECA_MonetaryStatistics1",
@@ -1496,7 +1501,7 @@ define(function () {
         },
         "public_finance": {
 
-            dashboard:{
+            dashboard: {
                 //data cube's uid
                 uid: "UNECA_PublicFinance1",
 
@@ -1820,7 +1825,7 @@ define(function () {
 
         "debt": {
 
-            dashboard:{
+            dashboard: {
                 //data cube's uid
                 uid: "UNECA_Debt",
 
@@ -1984,7 +1989,7 @@ define(function () {
 
         "infrastructure": {
 
-            dashboard:{
+            dashboard: {
                 //data cube's uid
                 uid: "UNECA_Infrastructure",
 
@@ -2148,7 +2153,7 @@ define(function () {
 
         "tourism": {
 
-            dashboard:{
+            dashboard: {
                 //data cube's uid
                 uid: "UNECA_Tourism",
 
@@ -2414,19 +2419,35 @@ define(function () {
                             "name": "IndicatorCode",
                             config: {
                                 "defaultsource": [
-                                    {"value": "02110103","label": " Clothing and footwear", "selected": false},
-                                    {"value": "02110109","label": " Recreation and culture", "selected": false},
-                                    {"value": "02110113","label": " Other goods and  service", "selected": false},
-                                    {"value": "02110110","label": " Education", "selected": false},
-                                    {"value": "02110104","label": " Rent, water fuel and power", "selected": false},
-                                    {"value": "02110101","label": " Food and non-alcoholic beverage", "selected": false},
-                                    {"value": "02110105","label": " Furniture household and maintenance", "selected": false},
-                                    {"value": "02110106","label": " Medical care", "selected": false},
-                                    {"value": "02110102","label": " Alcoholic beverages and tobacco", "selected": false},
-                                    {"value": "02110108","label": " Communication", "selected": false},
-                                    {"value": "02110112","label": " Hotels, coffee-house and restaurant", "selected": false},
-                                    {"value": "021101","label": " Inflation, consumer prices", "selected": false},
-                                    {"value": "02110107","label": " Transportation", "selected": false}
+                                    {"value": "02110103", "label": " Clothing and footwear", "selected": false},
+                                    {"value": "02110109", "label": " Recreation and culture", "selected": false},
+                                    {"value": "02110113", "label": " Other goods and  service", "selected": false},
+                                    {"value": "02110110", "label": " Education", "selected": false},
+                                    {"value": "02110104", "label": " Rent, water fuel and power", "selected": false},
+                                    {
+                                        "value": "02110101",
+                                        "label": " Food and non-alcoholic beverage",
+                                        "selected": false
+                                    },
+                                    {
+                                        "value": "02110105",
+                                        "label": " Furniture household and maintenance",
+                                        "selected": false
+                                    },
+                                    {"value": "02110106", "label": " Medical care", "selected": false},
+                                    {
+                                        "value": "02110102",
+                                        "label": " Alcoholic beverages and tobacco",
+                                        "selected": false
+                                    },
+                                    {"value": "02110108", "label": " Communication", "selected": false},
+                                    {
+                                        "value": "02110112",
+                                        "label": " Hotels, coffee-house and restaurant",
+                                        "selected": false
+                                    },
+                                    {"value": "021101", "label": " Inflation, consumer prices", "selected": false},
+                                    {"value": "02110107", "label": " Transportation", "selected": false}
                                 ],
                                 "enableMultiselection": true
                             }
@@ -2436,7 +2457,7 @@ define(function () {
             ],
 
 
-            dashboard:{
+            dashboard: {
 
                 //data cube's uid
                 uid: "UNECA_Inflation",
@@ -2601,7 +2622,7 @@ define(function () {
 
 
         "financial_flows": {
-            dashboard:{
+            dashboard: {
 
                 filter: [
 
@@ -2670,7 +2691,11 @@ define(function () {
                                             "label": "Net Total Official Development assistance",
                                             "selected": false
                                         },
-                                        {"value": "02100101", "label": "Official Development assistance", "selected": true},
+                                        {
+                                            "value": "02100101",
+                                            "label": "Official Development assistance",
+                                            "selected": true
+                                        },
                                         {"value": "020502", "label": "Origin of FDI Inflows", "selected": false},
                                     ]
                                 }
@@ -2879,7 +2904,6 @@ define(function () {
                             }
 
 
-
                         },
 
                         // for now it takes the id, TODO: add uid as well
@@ -2901,7 +2925,6 @@ define(function () {
                                         }
                                     },
                                     "columns": ["IndicatorCode", "CountryCode", "Year", "PartnerCode", "Value", "um"]
-
 
 
                                 }
@@ -3026,7 +3049,7 @@ define(function () {
 
 
         "balance_of_payments": {
-            dashboard:{
+            dashboard: {
 
                 //data cube's uid
                 uid: "UNECA_BalanceOfPayements1",
@@ -3259,7 +3282,7 @@ define(function () {
 
 
         "agriculture_production": {
-            dashboard:{
+            dashboard: {
 
                 //data cube's uid
                 uid: "UNECA_AgricultureProduction3",

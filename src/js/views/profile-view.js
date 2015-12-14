@@ -73,6 +73,8 @@ define([
 
             this._initVariables();
 
+            console.log("Attach " + this.id)
+
             this.id ? this._printCountryDashboard() : this._printCountryList();
 
         },
@@ -111,12 +113,7 @@ define([
             this.$filterSubmit.on('click', function (e, data) {
 
                 var values = self.filter.getValues();
-
-                // TODO: it's an array
-
-                console.log("Filtro");
-                console.log(values);
-
+                                       //
                 self.dashboard.filter([values]);
             });
         },
@@ -140,6 +137,8 @@ define([
 
                 //Limit selection e select only leafs for indicators
                 .on("select_node.jstree", _.bind(function (e, data) {
+
+                    console.log("Select node profile")
 
                     if (!data.instance.is_leaf(data.node)) {
 
