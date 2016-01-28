@@ -1,0 +1,133 @@
+{
+  "core": {
+    "multiple": false,
+    "data": [
+      {
+        "id": "demographic",
+        "text": "Demographic and social stats",
+        "state": {
+          "opened": true
+        },
+        "children": [
+          {
+            "id": "population",
+            "text": "Population"
+          },
+          {
+            "id": "education",
+            "text": "Education"
+          },
+          {
+            "id": "health",
+            "text": "Health",
+            "state": {
+            }
+          },
+          {
+            "id": "labour",
+            "text": "Labour"
+          }
+        ]
+      },
+      {
+        "id": "economics",
+        "text": "Economic statistics",
+        "state": {
+          "opened": true
+        },
+        "children": [
+          {
+            "id": "balance_of_payments",
+            "text": "Balance of Payments",
+            "state": {
+              "disabled": true
+            }
+          },
+          {
+            "id": "gdp",
+            "text": "GDP"
+          },
+          {
+            "id": "monetary_statistics",
+            "text": "Monetary Statistics",
+            "state": {
+              "disabled": true
+            }
+          },
+          {
+            "id": "financial_flows",
+            "text": "Financial Flows",
+            "state": {
+              "disabled": true
+            }
+          },
+          {
+            "id": "public_finance",
+            "text": "Public Finance",
+            "state": {
+              "disabled": true
+            }
+          },
+          {
+            "id": "debt",
+            "text": "Debt",
+            "state": {
+              "disabled": true
+            }
+          },
+          {
+            "id": "inflation",
+            "text": "Inflation"
+          },
+          {
+            "id": "energy",
+            "text": "Energy",
+            "state": {
+              "disabled": true
+            }
+          },
+          {
+            "id": "tourism",
+            "text": "Tourism",
+            "state": {
+              "disabled": true
+            }
+          },
+          {
+            "id": "infrastructure",
+            "text": "Infrastructure",
+            "state": {
+              "disabled": true
+            }
+          },
+          {
+            "id": "production",
+            "text": "Production",
+            "state": {
+              "disabled": true
+            },
+            "children": [
+              {
+                "id": "agriculture_production",
+                "text": "Agriculture production",
+                "state": {
+                  "disabled": true
+                }
+              },
+              {
+                "id": "mining_production",
+                "text": "Mining production",
+                "state": {
+                  "disabled": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "plugins": [
+    "wholerow"
+  ]
+}

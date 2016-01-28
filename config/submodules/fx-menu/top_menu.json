@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "attrs": {
+        "id": "home",
+        "class": "home-menu-item"
+      },
+      "target": "#home",
+      "label": {
+        "EN": "Home"
+      }
+    },
+    {
+      "attrs": {
+        "id": "profile"
+      },
+      "target": "#profile",
+      "label": {
+        "EN": "Country Profile"
+      }
+    },
+    {
+      "attrs": {
+        "id": "datamgmt"
+      },
+      "a_attrs": {
+        "rel": "external"
+      },
+      "target": "datamgmt.html",
+      "label": {
+        "EN": "Data Management"
+      }
+    },
+    {
+      "attrs": {
+        "id": "analysis"
+      },
+      "target": "#analysis",
+      "label": {
+        "EN": "Analysis & Download"
+      }
+    },
+    {
+      "attrs": {
+        "id": "domains"
+      },
+      "target": "#domains",
+      "label": {
+        "EN": "Browse by Domain"
+      }
+    },
+    {
+      "attrs": {
+        "id": "methods"
+      },
+      "target": "#methods",
+      "label": {
+        "EN": "Methods and Standards"
+      }
+    },
+    {
+      "attrs": {
+        "id": "modules"
+      },
+      "target": "#modules",
+      "label": {
+        "EN": "Thematic Modules"
+      }
+    }
+  ],
+  "rightItems": [
+    {
+      "attrs": {
+        "id": "login"
+      },
+      "label": {
+        "EN": "LOGIN"
+      }
+    },
+    {
+      "attrs": {
+        "id": "logout"
+      },
+      "label": {
+        "EN": "LOGOUT"
+      }
+    }
+  ],
+  "type": "static-top"
+
+}
