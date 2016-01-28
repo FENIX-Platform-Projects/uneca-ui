@@ -9,7 +9,7 @@ define([
     'config/Events',
     'fx-cat-br/start',
     'fx-ana/start',
-    'FENIX_UI_METADATA_VIEWER',
+    'fx-md-v/start',
     'fx-report',
     'amplify'
 ], function ($, _, View, template, i18nLabels, C, E, Catalog, Analysis,MetadataViewer,Report) {

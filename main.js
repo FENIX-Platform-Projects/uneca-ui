@@ -13,9 +13,6 @@ require([
 */
     './submodules/fenix-ui-metadata-editor/js/paths',
     './submodules/fenix-ui-metadata-viewer/src/js/paths',
-/*
-    './submodules/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js/paths',
-*/
     './submodules/fenix-ui-map-creator/src/js/paths',
     './submodules/fenix-ui-chart-creator/src/js/paths',
     './submodules/fenix-ui-table-creator/src/js/paths',
@@ -24,7 +21,7 @@ require([
     './submodules/fenix-ui-filter/src/js/paths'
 
 ], function (Compiler, Common, Menu, Analysis, Catalog,
-             DataEditor, DSDEditor, /*DataUpload,*/MetadataEditor, MetadataViewer,/*FAOSTAT_THEME,*/
+             DataEditor, DSDEditor, /*DataUpload,*/MetadataEditor, MetadataViewer,
              MapCreator,ChartCreator, TableCreator, FenixReport, Dashboard, Filter  ) {
 
     'use strict';
@@ -48,18 +45,12 @@ require([
 
     var dsdEditorConfig = DSDEditor;
     dsdEditorConfig.baseUrl = submodules_path +'fenix-ui-DSDEditor/js/';
-/*
-    var dataUploadConfig = DataUpload;
-    dataUploadConfig.baseUrl = submodules_path + 'fenix-ui-dataUpload/js/';*/
 
     var metadataEditorConfig = MetadataEditor;
     metadataEditorConfig.baseUrl = submodules_path +'fenix-ui-metadata-editor/js/';
 
     var metadataViewerConfig = MetadataViewer;
     metadataViewerConfig.baseUrl= submodules_path +'fenix-ui-metadata-viewer/src/js/';
-
-/*    var faostatThemeConfig = FAOSTAT_THEME;
-    faostatThemeConfig.baseUrl = submodules_path + '/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js';*/
 
     var mapCreatorConfig = MapCreator;
     mapCreatorConfig.baseUrl= submodules_path +'fenix-ui-map-creator/src/js/';
@@ -150,7 +141,7 @@ require([
                     'fx-ds/config/config' : '../../config/submodules/fx-dashboard/config',
 
                     // METADATA VIEWER
-                    'fx-mdviewer/config/config': '../../config/submodules/fx-md-viewer/config'
+                    'fx-md-v/config/config': '../../config/submodules/fx-md-viewer/config'
 
 
                 },
