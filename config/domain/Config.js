@@ -97,7 +97,7 @@ define(function () {
                                     {"value": "ETH","label": "Ethiopia", "selected": false},
                                     {"value": "GAB","label": "Gabon", "selected": false},
                                     {"value": "GHA","label": "Ghana", "selected": true},
-                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "COD","label": "Congo, Dem. Republic", "selected": false},
                                     {"value": "CPV","label": "Cape Verde", "selected": false},
                                     {"value": "DJI","label": "Djibouti", "selected": false},
                                     {"value": "DZA","label": "Algeria", "selected": false},
@@ -126,7 +126,7 @@ define(function () {
 
             dashboard: {
                 //data cube's uid
-                uid: "Uneca_PopulationNew",
+                uid: "UNECA_Population",
 
                 //bridge configuration
                 bridge: {
@@ -208,6 +208,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "010101"
                                                     ]
@@ -263,6 +264,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010103"
                                                     ]
@@ -447,6 +449,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010108"
                                                     ]
@@ -529,6 +532,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010102"
                                                     ]
@@ -639,7 +643,7 @@ define(function () {
                                     {"value": "ETH","label": "Ethiopia", "selected": true},
                                     {"value": "GAB","label": "Gabon", "selected": false},
                                     {"value": "GHA","label": "Ghana", "selected": false},
-                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "COD","label": "Congo, Dem. Republic", "selected": false},
                                     {"value": "CPV","label": "Cape Verde", "selected": false},
                                     {"value": "DJI","label": "Djibouti", "selected": false},
                                     {"value": "DZA","label": "Algeria", "selected": false},
@@ -1108,7 +1112,7 @@ define(function () {
                                     {"value": "ETH","label": "Ethiopia", "selected": false},
                                     {"value": "GAB","label": "Gabon", "selected": false},
                                     {"value": "GHA","label": "Ghana", "selected": true},
-                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "COD","label": "Congo, Dem. Republic", "selected": false},
                                     {"value": "CPV","label": "Cape Verde", "selected": false},
                                     {"value": "DJI","label": "Djibouti", "selected": false},
                                     {"value": "DZA","label": "Algeria", "selected": false},
@@ -1460,7 +1464,7 @@ define(function () {
                                     {"value": "ETH","label": "Ethiopia", "selected": true},
                                     {"value": "GAB","label": "Gabon", "selected": false},
                                     {"value": "GHA","label": "Ghana", "selected": false},
-                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "COD","label": "Congo, Dem. Republic", "selected": false},
                                     {"value": "CPV","label": "Cape Verde", "selected": false},
                                     {"value": "DJI","label": "Djibouti", "selected": false},
                                     {"value": "DZA","label": "Algeria", "selected": false},
@@ -1891,7 +1895,7 @@ define(function () {
                                     {"value": "ETH","label": "Ethiopia", "selected": true},
                                     {"value": "GAB","label": "Gabon", "selected": false},
                                     {"value": "GHA","label": "Ghana", "selected": false},
-                                    {"value": "ZAR","label": "Congo, Dem. Republic", "selected": false},
+                                    {"value": "COD","label": "Congo, Dem. Republic", "selected": false},
                                     {"value": "CPV","label": "Cape Verde", "selected": false},
                                     {"value": "DJI","label": "Djibouti", "selected": false},
                                     {"value": "DZA","label": "Algeria", "selected": false},

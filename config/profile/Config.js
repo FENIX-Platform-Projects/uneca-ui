@@ -2898,7 +2898,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: "Unit",
+                                yDimensions: "UnitCode",
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -3014,8 +3014,7 @@ define(function () {
                         config: {
                             container: "#financial_flows-4",
                             options: {
-                                hidden_columns: ["PartnerCode"
-                                ]
+                                hidden_columns: ["PartnerCode"]
 
                             }
 
@@ -3041,7 +3040,7 @@ define(function () {
                                             ]
                                         }
                                     },
-                                    "columns": ["IndicatorCode", "CountryCode", "Year", "PartnerCode", "Value", "um"]
+                                    "columns": ["IndicatorCode", "CountryCode", "Year", "PartnerCode", "Value", "UnitCode"]
 
 
                                 }
@@ -3152,7 +3151,7 @@ define(function () {
                                             ]
                                         }
                                     },
-                                    "columns": ["IndicatorCode", "CountryCode", "Year", "PartnerCode", "Value", "um"]
+                                    "columns": ["IndicatorCode", "CountryCode", "Year", "PartnerCode", "Value", "UnitCode"]
 
 
                                 }
