@@ -18,11 +18,12 @@ require([
     './submodules/fenix-ui-table-creator/src/js/paths',
     './submodules/fenix-ui-reports/src/js/paths',
     './submodules/fenix-ui-dashboard/src/js/paths',
-    './submodules/fenix-ui-filter/src/js/paths'
+    './submodules/fenix-ui-filter/src/js/paths',
+    './submodules/fenix-ui-olap/js/paths',
 
 ], function (Compiler, Common, Menu, Analysis, Catalog,
              DataEditor, DSDEditor, /*DataUpload,*/MetadataEditor, MetadataViewer,
-             MapCreator,ChartCreator, TableCreator, FenixReport, Dashboard, Filter  ) {
+             MapCreator,ChartCreator, TableCreator, FenixReport, Dashboard, Filter, Olap  ) {
 
     'use strict';
 
@@ -70,9 +71,12 @@ require([
     var filterConfig = Filter;
     filterConfig.baseUrl =  submodules_path +'fenix-ui-filter/';
 
+    var olapConfig = Olap;
+    olapConfig.baseUrl =  submodules_path +'fenix-ui-olap/js';
+
     Compiler.resolve([commonConfig, menuConfig, analysisConfig,catalogConfig,
             dataEditorConfig,dsdEditorConfig,/*dataUploadConfig,*/metadataEditorConfig,metadataViewerConfig,/*faostatThemeConfig,*/
-            mapCreatorConfig,chartCreatorConfig,tableCreatorConfig,fenixReportConfig,filterConfig, dashboardConfig],
+            mapCreatorConfig,chartCreatorConfig,tableCreatorConfig,fenixReportConfig,filterConfig, dashboardConfig, olapConfig],
         {
             placeholders: {"FENIX_CDN": "http://fenixrepo.fao.org/cdn"},
 
