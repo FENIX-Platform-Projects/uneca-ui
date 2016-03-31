@@ -7,12 +7,22 @@
     "subject": "geo"
   },
   {
+    "val": "UNECA_Energy",
+    "text": {
+      "EN": "UNECA Kind of energy"
+    },
+    "subject": "item"
+  },
+  {
     "val": "UNECA_AgeRange",
     "text": {
       "EN": "UNECA AgeRange"
     },
     "subject": "item"
   },
+
+
+
   {
     "val": "UNECA_ClassificationOfActivities",
     "text": {
@@ -20,6 +30,23 @@
     },
     "subject": "item"
   },
+
+  {
+    "val": "UNECA_ClassificationOfActivities|2.0",
+    "text": {
+      "EN": "UNECA Class. of activities 2.0"
+    },
+    "subject": "item"
+  },
+
+  {
+    "val": "UNECA_ClassificationOfActivities",
+    "text": {
+      "EN": "UNECA Class. of activities"
+    },
+    "subject": "item"
+  },
+
   {
     "val": "UNECA_Partner",
     "text": {

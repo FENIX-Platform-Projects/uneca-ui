@@ -36,7 +36,7 @@ define(function () {
 
             dashboard: {
                 //data cube's uid
-                uid: "Uneca_PopulationNew",
+                uid: "UNECA_Population",
 
                 //bridge configuration
                 bridge: {
@@ -87,8 +87,32 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010101"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+
+                                                    "codes": [
+                                                        "3"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "AgeRangeCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_AgeRange",
+
+                                                    "codes": [
+                                                        "AGT"
                                                     ]
                                                 }
                                             ]
@@ -137,6 +161,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010103"
                                                     ]
@@ -193,12 +218,13 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "01010104"
                                                     ]
                                                 }
                                             ]
-                                        },
+                                        }
 
 
                                     }
@@ -243,6 +269,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010108"
                                                     ]
@@ -295,6 +322,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "01010106"
                                                     ]
@@ -355,6 +383,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010102"
                                                     ]
@@ -428,8 +457,20 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010201"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+
+                                                    "codes": [
+                                                        "3"
                                                     ]
                                                 }
                                             ]
@@ -476,6 +517,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
 
                                                         "010201", "010202", "010203"
@@ -524,8 +566,19 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
-                                                        "01020401"
+                                                        "010206"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+                                                    "codes": [
+                                                        "1","2"
                                                     ]
                                                 }
                                             ]
@@ -545,7 +598,7 @@ define(function () {
 
             dashboard: {
                 //data cube's uid
-                uid: "UNECA_Health1",
+                uid: "UNECA_Health",
 
                 //bridge configuration
                 bridge: {
@@ -602,6 +655,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010307", "010308", "010309", "010310"
                                                     ]
@@ -650,6 +704,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010301"
                                                     ]
@@ -698,6 +753,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010302"
                                                     ]
@@ -746,6 +802,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010303", "010304"
                                                     ]
@@ -795,6 +852,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "010313", "010314", "010315"
                                                     ]
@@ -853,7 +911,7 @@ define(function () {
                                 type: "standard",
                                 xDimensions: 'Year',
                                 yDimensions: 'UnitCode',
-                                valueDimensions: 'Value',
+                                valueDimensions: 'VALUE',
                                 seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
@@ -872,6 +930,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version" :"2.0",
                                                     "codes": [
                                                         "010401"
                                                     ]
@@ -897,7 +956,7 @@ define(function () {
                                 type: "standard",
                                 xDimensions: 'Year',
                                 yDimensions: "UnitCode",
-                                valueDimensions: 'Value',
+                                valueDimensions: 'VALUE',
                                 seriesDimensions: ['SectorCode']
                             },
                             template: {
@@ -921,7 +980,28 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": ["01040102"
+                                                    "version" :"2.0",
+                                                    "codes": ["010401"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "SectorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_EconomicSector",
+                                                    "codes": ["1","2","3"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+                                                    "codes": ["3"
 
                                                     ]
                                                 }
@@ -945,7 +1025,7 @@ define(function () {
                                 type: "standard",
                                 xDimensions: 'Year',
                                 yDimensions: "UnitCode",
-                                valueDimensions: 'Value',
+                                valueDimensions: 'VALUE',
                                 seriesDimensions: ['GenderCode']
                             },
                             template: {
@@ -976,7 +1056,8 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": ["01040101"
+                                                    "version" :"2.0",
+                                                    "codes": ["010401"
 
                                                     ]
                                                 }
@@ -987,6 +1068,16 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_EconomicSector",
                                                     "codes": ["4"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+                                                    "codes": ["1","2"
 
                                                     ]
                                                 }
@@ -1127,8 +1218,9 @@ define(function () {
                                         "codes": [
                                             {
                                                 "uid": "UNECA_ClassificationOfActivities",
+                                                "version":"2.0",
                                                 "codes": [
-                                                    "0207801"
+                                                    "020705"
                                                 ]
                                             }
                                         ]
@@ -1171,8 +1263,10 @@ define(function () {
                                         "codes": [
                                             {
                                                 "uid": "UNECA_ClassificationOfActivities",
+                                                "version":"2.0",
+
                                                 "codes": [
-                                                    "0207802"
+                                                    "020706"
                                                 ]
                                             }
                                         ]
@@ -1197,7 +1291,7 @@ define(function () {
             dashboard: {
 
                 //data cube's uid
-                uid: "UNECA_MonetaryStatistics1",
+                uid: "UNECA_MonetaryStatistics",
 
                 //bridge configuration
                 bridge: {
@@ -1269,7 +1363,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: "Unit",
+                                yDimensions: "UnitCode",
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -1301,6 +1395,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "02090501", "02090502"
                                                     ]
@@ -1324,7 +1419,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'Unit',
+                                yDimensions: 'UnitCode',
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -1344,6 +1439,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "020904"
                                                     ]
@@ -1369,7 +1465,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'Unit',
+                                yDimensions: 'UnitCode',
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -1389,6 +1485,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "020906"
                                                     ]
@@ -1413,7 +1510,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: 'Unit',
+                                yDimensions: 'UnitCode',
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -1433,6 +1530,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "020901"
                                                     ]
@@ -1457,7 +1555,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
-                                yDimensions: "Unit",
+                                yDimensions: "UnitCode",
                                 valueDimensions: 'Value',
                                 seriesDimensions: ['IndicatorCode']
                             },
@@ -1482,6 +1580,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "020903", "02090301"
                                                     ]
@@ -1503,7 +1602,7 @@ define(function () {
 
             dashboard: {
                 //data cube's uid
-                uid: "UNECA_PublicFinance1",
+                uid: "UNECA_PublicFinance",
 
                 //bridge configuration
                 bridge: {
@@ -1607,6 +1706,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "021202", "02120101", "02120102"
                                                     ]
@@ -1651,6 +1751,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "021203"
                                                     ]
@@ -1708,6 +1809,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "02120301", "02120302"
                                                     ]
@@ -1755,6 +1857,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "02120301", "0212030101"
                                                     ]
@@ -1804,6 +1907,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "021204"
                                                     ]
@@ -1876,6 +1980,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "020308"
                                                     ]
@@ -1920,6 +2025,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "020305"
                                                     ]
@@ -1969,6 +2075,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "02030501", "02030502"
                                                     ]
@@ -1979,7 +2086,7 @@ define(function () {
                                 }
                             }
                         ]
-                    },
+                    }
 
                 ]
             }
@@ -2209,6 +2316,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "021304", "021303"
                                                     ]
@@ -2258,6 +2366,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "021305"
                                                     ]
@@ -2305,6 +2414,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "021307"
                                                     ]
@@ -2343,8 +2453,9 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
-                                                        "021302"
+                                                        "021301"
                                                     ]
                                                 }
                                             ]
@@ -2603,6 +2714,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+
                                                     "codes": [
                                                         "02110103", "02110103", "02110109", "02110113", "02110110", "02110104", "02110101", "02110105", "02110106", "02110102", "02110108", "02110112", "021101", "02110107"
                                                     ]
@@ -2664,7 +2776,7 @@ define(function () {
 
                     {
                         "type": "static",
-                        "column": "IdicatorCode",
+                        "column": "IndicatorCode",
                         "containerType": "baseContainer",
                         "title": "Indicator",
                         "defaultCodes": ["02100101"],
@@ -2674,6 +2786,7 @@ define(function () {
                                 "componentType": "dropDownList-FENIX",
                                 "lang": "EN",
                                 "uid": "UNECA_ClassificationOfActivities",
+                                "version": "2.0",
 
                                 "title": {"EN": "Distinct"},
                                 // name is the ID output in tehe filter getValues()
@@ -2696,7 +2809,7 @@ define(function () {
                                             "label": "Official Development assistance",
                                             "selected": true
                                         },
-                                        {"value": "020502", "label": "Origin of FDI Inflows", "selected": false},
+                                        {"value": "020502", "label": "Origin of FDI Inflows", "selected": false}
                                     ]
                                 }
 
@@ -2762,6 +2875,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         '021001'
                                                     ]
@@ -2809,6 +2923,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "020501"
                                                     ]
@@ -2863,8 +2978,9 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
-                                                        "02100101"
+                                                        "020502"
                                                     ]
                                                 }
                                             ]
@@ -2917,6 +3033,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "020501"
                                                     ]
@@ -2974,6 +3091,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "020502"
                                                     ]
@@ -3026,6 +3144,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "020502"
                                                     ]
@@ -3052,7 +3171,7 @@ define(function () {
             dashboard: {
 
                 //data cube's uid
-                uid: "UNECA_BalanceOfPayements1",
+                uid: "UNECA_BalanceOfPayments",
 
                 //bridge configuration
                 bridge: {
@@ -3106,6 +3225,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         '020204'
                                                     ]
@@ -3155,6 +3275,7 @@ define(function () {
                     //                        "codes": [
                     //                            {
                     //                                "uid": "UNECA_ClassificationOfActivities",
+
                     //                                "codes": [
                     //                                    '020205'
                     //                                ]
@@ -3212,6 +3333,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         '02020501', '02020502'
                                                     ]
@@ -3261,6 +3383,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         '02020101'
                                                     ]
