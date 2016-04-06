@@ -1,9 +1,10 @@
 /*global define, requirejs*/
 define([
+    'require',
     'handlebars',
     'underscore',
     'chaplin'
-], function (Handlebars, _, Chaplin) {
+], function (requirejs, Handlebars, _, Chaplin) {
 
     'use strict';
 
@@ -34,11 +35,16 @@ define([
 
     Handlebars.registerHelper('i18n', function (keyword) {
 
-        var lang = requirejs.s.contexts._.config.i18n.locale;
+        var lang;
+
+        try {
+            lang = requirejs.s.contexts._.config.i18n.locale;
+        } catch(e) {
+            lang = "EN";
+        }
 
         return keyword[lang.toUpperCase()];
     });
-
 
     Handlebars.registerHelper("each_with_index_1", function (array, fn) {
 
