@@ -14,6 +14,14 @@
     "subject": "item"
   },
   {
+    "val": "ISIC_REV4",
+    "text": {
+      "EN": "ISIC"
+    },
+    "subject": "item"
+  },
+
+  {
     "val": "UNECA_AgeRange",
     "text": {
       "EN": "UNECA AgeRange"
@@ -27,6 +35,15 @@
     "val": "UNECA_ClassificationOfActivities",
     "text": {
       "EN": "UNECA Class. of activities"
+    },
+    "subject": "item"
+  },
+
+
+  {
+    "val": "UNECA_KindOfCommodity",
+    "text": {
+      "EN": "UNECA Kind of commodity"
     },
     "subject": "item"
   },

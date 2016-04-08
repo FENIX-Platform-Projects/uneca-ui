@@ -38,10 +38,8 @@
         "children": [
           {
             "id": "balance_of_payments",
-            "text": "Balance of Payments",
-            "state": {
-              "disabled": true
-            }
+            "text": "Balance of Payments"
+
           },
           {
             "id": "gdp",
@@ -56,10 +54,8 @@
           },
           {
             "id": "financial_flows",
-            "text": "Financial Flows",
-            "state": {
-              "disabled": true
-            }
+            "text": "Financial Flows"
+
           },
           {
             "id": "public_finance",
