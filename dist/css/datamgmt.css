@@ -3,6 +3,7 @@
 /* Variables */
 /* Fenix Utils*/
 /* Fenix Style No Variables */
+/* Boostrap Queries */
 /* Utils */
 /* Base */
 /* Fenix Fonts Import */
@@ -5675,7 +5676,9 @@ fieldset {
   height: 15px;
   width: 15px;
   display: inline-block;
-  background: url("../../submodules/fenix-ui-common//css/img/fenix-catalog-sprite-small.svg") 150px 30px no-repeat; }
+  background-image: url("../../submodules/fenix-ui-common//css/img/fenix-catalog-sprite-small.svg");
+  background-repeat: no-repeat;
+  background-size: 150px 30px; }
 
 .fx-icon-close {
   background-position: 0 -15px; }
