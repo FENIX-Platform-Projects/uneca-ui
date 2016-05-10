@@ -69,7 +69,7 @@ define(function () {
                                 xDimensions: 'time',
                                 yDimensions: 'Unit',
                                 valueDimensions: 'value',
-                                seriesDimensions: []
+                                seriesDimensions: ["IndicatorCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -190,7 +190,31 @@ define(function () {
                                                     "uid": "UNECA_ClassificationOfActivities",
                                                     "version": "2.0",
                                                     "codes": [
-                                                        "010103"
+                                                        "010101"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "AgeRangeCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_AgeRange",
+
+                                                    "codes": [
+                                                        "AG00",
+                                                        "AG01",
+                                                        "AG15"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+
+                                                    "codes": [
+                                                        "3"
                                                     ]
                                                 }
                                             ]
@@ -220,8 +244,8 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'time',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'value',
+                                yDimensions: 'UnitCode',
+                                valueDimensions: 'Value',
                                 seriesDimensions: ['AgeRangeCode']
                             },
                             template: {
@@ -247,7 +271,32 @@ define(function () {
                                                     "uid": "UNECA_ClassificationOfActivities",
                                                     "version": "2.0",
                                                     "codes": [
-                                                        "01010104"
+                                                        "010101"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "AgeRangeCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_AgeRange",
+
+                                                    "codes": [
+                                                        "AG00",
+                                                        "AG15",
+                                                        "AG01"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+
+                                                    "codes": [
+                                                        "3"
                                                     ]
                                                 }
                                             ]
@@ -551,6 +600,18 @@ define(function () {
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+
+                                                    "codes": [
+
+                                                        "3"
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     }
                                 }
@@ -660,17 +721,17 @@ define(function () {
                             },
                             template: {
                                 //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    yAxis: {
-                                        max: 100
-                                    }
-                                }
                             }
+                            //creator: {
+                            //    chartObj: {
+                            //        chart: {
+                            //            type: "column"
+                            //        },
+                            //        yAxis: {
+                            //            max: 100
+                            //        }
+                            //    }
+                            //}
                         },
 
                         filter: [
@@ -960,6 +1021,29 @@ define(function () {
                                                     "version" :"2.0",
                                                     "codes": [
                                                         "010401"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "SectorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_EconomicSector",
+
+                                                    "codes": [
+                                                        "4"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+
+                                                    "codes": [
+                                                        "3"
                                                     ]
                                                 }
                                             ]
@@ -2647,6 +2731,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "02110114"
                                                     ]
@@ -2692,6 +2777,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "02110115"
                                                     ]
@@ -2741,7 +2827,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "02110103", "02110103", "02110109", "02110113", "02110110", "02110104", "02110101", "02110105", "02110106", "02110102", "02110108", "02110112", "021101", "02110107"
                                                     ]
@@ -3192,6 +3278,284 @@ define(function () {
             }
         },
 
+
+        //"tradeWorld": {
+        //    dashboard: {
+        //
+        //        filter: [
+        //
+        //            {
+        //                "type": "static",
+        //                "containerType": "baseContainer",
+        //                "title": "Year",
+        //                "components": [
+        //                    {
+        //                        "type": "time",
+        //                        "componentType": "dropDownList-FENIX",
+        //                        "lang": "EN",
+        //                        "name": "Year",
+        //                        config: {
+        //                            "enableMultiselection": true,
+        //                            "defaultsource": [
+        //
+        //                                {"value": "2013", "label": "2013", "selected": true},
+        //                                {"value": "2012", "label": "2012", "selected": false},
+        //                                {"value": "2011", "label": "2011", "selected": false},
+        //                                {"value": "2010", "label": "2010", "selected": false},
+        //                                {"value": "2009", "label": "2009", "selected": false},
+        //                                {"value": "2008", "label": "2008", "selected": false},
+        //                                {"value": "2007", "label": "2007", "selected": false},
+        //                                {"value": "2006", "label": "2006", "selected": false},
+        //                                {"value": "2005", "label": "2005", "selected": false},
+        //                                {"value": "2004", "label": "2004", "selected": false},
+        //                                {"value": "2003", "label": "2003", "selected": false},
+        //                                {"value": "2002", "label": "2002", "selected": false},
+        //                                {"value": "2001", "label": "2001", "selected": false},
+        //                                {"value": "2000", "label": "2000", "selected": false}
+        //
+        //                            ]
+        //                        }
+        //                    }
+        //                ]
+        //            },
+        //
+        //
+        //            {
+        //                "type": "static",
+        //                "column": "IndicatorCode",
+        //                "containerType": "baseContainer",
+        //                "title": "Indicator",
+        //                "defaultCodes": ["02100101"],
+        //                "components": [
+        //                    {
+        //                        "type": "distinct",
+        //                        "componentType": "dropDownList-FENIX",
+        //                        "lang": "EN",
+        //                        "uid": "UNECA_ClassificationOfActivities",
+        //                        "version": "2.0",
+        //
+        //                        "title": {"EN": "Distinct"},
+        //                        // name is the ID output in tehe filter getValues()
+        //                        "name": "IndicatorCode",
+        //                        "config": {
+        //                            "enableMultiselection": true,
+        //                            "defaultsource": [
+        //                                {
+        //                                    "value": "020501",
+        //                                    "label": "Net Foreign Direct Investment Inflows",
+        //                                    "selected": false
+        //                                },
+        //                                {
+        //                                    "value": "021001",
+        //                                    "label": "Net Total Official Development assistance",
+        //                                    "selected": false
+        //                                },
+        //                                {
+        //                                    "value": "02100101",
+        //                                    "label": "Official Development assistance",
+        //                                    "selected": true
+        //                                },
+        //                                {"value": "020502", "label": "Origin of FDI Inflows", "selected": false}
+        //                            ]
+        //                        }
+        //
+        //                    }
+        //                ]
+        //            }
+        //
+        //
+        //        ],
+        //
+        //
+        //        //data cube's uid
+        //        uid: "UNECA_TradeWorld",
+        //
+        //        //bridge configuration
+        //        bridge: {
+        //
+        //            type: "d3p"
+        //
+        //        },
+        //
+        //        /*
+        //         * in case bridge is WDS this is the cube metadata.
+        //         * if bridge is D3P this is ignored
+        //         * */
+        //        metadata: {},
+        //
+        //        items: [
+        //
+        //            {
+        //                id: 'tradeWorld-1',
+        //                type: 'chart',
+        //                class: "fx-timeseries-ecample",
+        //                //needed if layout = injected
+        //                container: "#financial_flows-1",
+        //                config: {
+        //                    container: "#financial_flows-1",
+        //                    adapter: {
+        //                        type: "standard",
+        //                        xDimensions: 'Year',
+        //                        yDimensions: "IndicatorCode",
+        //                        valueDimensions: 'Value',
+        //                        seriesDimensions: ['IndicatorCode']
+        //                    },
+        //                    template: {
+        //                        //"title": "Top 25..."
+        //                    },
+        //                    creator: {
+        //                        chartObj: {
+        //                            chart: {
+        //                                type: "column"
+        //                            }
+        //                        }
+        //                    }
+        //                },
+        //
+        //                filter: [
+        //                    {
+        //                        "name": "filter",
+        //                        "parameters": {
+        //                            "rows": {
+        //                                "IndicatorCode": {
+        //                                    "codes": [
+        //                                        {
+        //                                            "uid": "UNECA_ClassificationOfActivities",
+        //                                            "version": "2.0",
+        //                                            "codes": [
+        //                                                '021001'
+        //                                            ]
+        //                                        }
+        //                                    ]
+        //                                }
+        //                            }
+        //                        }
+        //                    }
+        //                ]
+        //            },
+        //            {
+        //                id: 'tradeWorld-2',
+        //                type: 'chart',
+        //                class: "fx-timeseries-ecample",
+        //                //needed if layout = injected
+        //                container: "#financial_flows-2",
+        //                config: {
+        //                    container: "#financial_flows-2",
+        //                    adapter: {
+        //                        type: "standard",
+        //                        xDimensions: 'Year',
+        //                        yDimensions: "UnitCode",
+        //                        valueDimensions: 'Value',
+        //                        seriesDimensions: ['IndicatorCode']
+        //                    },
+        //                    template: {
+        //                        //"title": "Top 25..."
+        //                    },
+        //                    creator: {
+        //                        chartObj: {
+        //                            chart: {
+        //                                type: "column"
+        //                            }
+        //                        }
+        //                    }
+        //                },
+        //
+        //                filter: [
+        //                    {
+        //                        "name": "filter",
+        //                        "parameters": {
+        //                            "rows": {
+        //                                "IndicatorCode": {
+        //                                    "codes": [
+        //                                        {
+        //                                            "uid": "UNECA_ClassificationOfActivities",
+        //                                            "version": "2.0",
+        //                                            "codes": [
+        //                                                "020501"
+        //                                            ]
+        //                                        }
+        //                                    ]
+        //                                }
+        //                            }
+        //                        }
+        //                    }
+        //                ]
+        //            },
+        //
+        //
+        //            {
+        //                id: 'tradeWorld-3',
+        //                type: 'map',
+        //                class: "fx-map-chart",
+        //                //needed if layout = injected
+        //                container: "#financial_flows-3",
+        //                config: {
+        //                    container: "#financial_flows-3",
+        //                    geoSubject: 'PartnerCode',
+        //                    leaflet: {
+        //                        zoomControl: false,
+        //                        attributionControl: true,
+        //                        scrollWheelZoom: false,
+        //                        minZoom: 2
+        //                    }
+        //                },
+        //                // for now it takes the id, TODO: add uid as well
+        //                allowedFilter: [],
+        //                forbiddenValues: {
+        //                    year: {time: [{from: 2013, to: 2013}]},
+        //                    domain: {removeFilter: true}
+        //                },
+        //                filter: [
+        //                    {
+        //                        "name": "filter",
+        //                        "parameters": {
+        //                            "rows": {
+        //                                "Year": {
+        //                                    "time": [
+        //                                        {
+        //                                            "from": 2012,
+        //                                            "to": 2012
+        //                                        }
+        //                                    ]
+        //                                },
+        //
+        //
+        //                                "IndicatorCode": {
+        //                                    "codes": [
+        //                                        {
+        //                                            "uid": "UNECA_ClassificationOfActivities",
+        //                                            "version": "2.0",
+        //                                            "codes": [
+        //                                                "020502"
+        //                                            ]
+        //                                        }
+        //                                    ]
+        //                                },
+        //
+        //
+        //                                "PartnerCode": {
+        //                                    "codes": [
+        //                                        {
+        //                                            "uid": "UNECA_Partner",
+        //                                            "codes": [
+        //                                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
+        //                                            ]
+        //                                        }
+        //                                    ]
+        //                                }
+        //
+        //
+        //                            }
+        //                        }
+        //                    }
+        //                ]
+        //            }
+        //
+        //
+        //        ]
+        //
+        //    }
+        //},
 
         "balance_of_payments": {
             dashboard: {

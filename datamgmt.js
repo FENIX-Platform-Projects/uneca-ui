@@ -14,8 +14,11 @@ require([
 
     'use strict';
 
+
     var commonsConfig = Commons;
     commonsConfig.baseUrl = './submodules/fenix-ui-common/js';
+
+    console.log(commonsConfig)
 
     var dataEditorConfig = DataEditor;
     dataEditorConfig.baseUrl = './submodules/fenix-ui-DataEditor/js';
@@ -55,6 +58,8 @@ require([
                     rsvp: '{FENIX_CDN}/js/rsvp/3.0.17/rsvp',
                     pnotify: '{FENIX_CDN}/js/pnotify/2.0.1/pnotify.custom.min',
                     datetimepicker: 'FENIX_CDN}/js/bootstrap-datetimepicker/4.14.30/src/js/bootstrap-datetimepicker',
+                    packery: '{FENIX_CDN}/js/packery/1.4.1/dist/packery.pkgd.min',
+
 
                     'fx-d-m/templates/site' : "./src/js/templates/site.hbs",
                     'fx-d-m/config/config' : "./config/submodules/fx-data-mng/Config",

@@ -41,6 +41,10 @@
             "text": "Balance of Payments"
           },
           {
+            "id": "tradeWorld",
+            "text": "Trade"
+          },
+          {
             "id": "gdp",
             "text": "GDP"
           },

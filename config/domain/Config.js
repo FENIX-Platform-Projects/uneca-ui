@@ -198,8 +198,8 @@ define(function () {
                                         "Year": {
                                             "time": [
                                                 {
-                                                    "from": 2011,
-                                                    "to": 2011
+                                                    "from": 2010,
+                                                    "to": 2010
                                                 }
                                             ]
                                         },
@@ -211,6 +211,29 @@ define(function () {
                                                     "version":"2.0",
                                                     "codes": [
                                                         "010101"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "GenderCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Gender",
+
+                                                    "codes": [
+                                                        "3"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "AgeRangeCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_AgeRange",
+
+                                                    "codes": [
+                                                        "AGT"
                                                     ]
                                                 }
                                             ]
@@ -2280,7 +2303,7 @@ define(function () {
             ],
             dashboard: {
                 //data cube's uid
-                uid: "UNECA_GDP",
+                uid: "UNECA_GDP_USD",
 
                 //bridge configuration
                 bridge: {
