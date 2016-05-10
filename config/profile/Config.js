@@ -6,380 +6,82 @@ define(function () {
 
     return {
 
-        "resume": {
-
-            dashboard: {
-                //data cube's uid
-                uid: "FLUDE_TOPIC_1",
-
-                //bridge configuration
-                bridge: {
-
-                    type: "d3p"
-
-                },
-
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
-
-                items: []
-            }
-
-
-        },
+        "resume": {},
 
         "population": {
 
-
             dashboard: {
-                //data cube's uid
-                uid: "Uneca_PopulationNew",
 
-                //bridge configuration
-                bridge: {
+                uid: "UNECA_Health",
+                //version: "",
+                //preProcess : {} //D3P process
+                //postProcess : {} //D3P process
+                //filter : {} //FX-filter format
+                items: [
+                    {
+                        id: "population-1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+                            CountryCode: ["AGO"],//column id and values to include,
+                            IndicatorCode: ["010307", "010308", "010309", "010310"]
+                        },
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    }
+                ]
+            },
 
-                    type: "d3p"
+            filter: {
 
+                checkbox: {
+
+                    selector: {
+                        id: "input",
+                        type: "checkbox",
+                        source: [
+                            {value: "item_1", label: "Item 1"},
+                            {value: "item_2", label: "Item 2"}
+                        ]
+                    },
+
+                    template: {
+                        title: "Checkbox",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
                 },
 
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
+                radio: {
 
-                items: [
-
-                    // Mid-year population
-
-                    {
-                        //Time series
-                        id: 'population-1',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#population-1",
-                        config: {
-                            container: "#population-1",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'time',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'value',
-                                seriesDimensions: []
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
-
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010101"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                    selector: {
+                        id: "input",
+                        type: "radio",
+                        source: [
+                            {value: "item_1", label: "Item 1"},
+                            {value: "item_2", label: "Item 2"}
+                        ],
+                        default: ["item_1"]
                     },
 
-                    //TABLE
-
-                    {
-                        id: 'population-2',
-                        type: 'table',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#population-2",
-                        config: {
-                            container: "#population-2",
-                            leaflet: {
-                                zoomControl: false,
-                                attributionControl: true,
-                                scrollWheelZoom: false,
-                                minZoom: 2
-                            },
-
-
-                            options: {
-                                hidden_columns: ["GenderCode",
-                                    "AgeRangeCode"
-                                ]
-                            }
-                        },
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010103"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "columns": ["IndicatorCode", "CountryCode", "Year", "GenderCode", "AgeRangeCode", "Value"]
-
-
-                                }
-                            }
-                        ]
-                    },
-
-                    //Mid-year population by age group
-
-                    {
-                        //Time series
-                        id: 'population-3',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#population-3",
-                        config: {
-                            container: "#population-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'time',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['AgeRangeCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "area"
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "01010104"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
-
-                    {
-                        id: 'population-5',
-                        type: 'table',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#population-5",
-                        config: {
-                            container: "#population-5",
-                            leaflet: {
-                                zoomControl: false,
-                                attributionControl: true,
-                                scrollWheelZoom: false,
-                                minZoom: 2
-                            },
-
-
-                            options: {
-                                hidden_columns: ["GenderCode",
-                                    "AgeRangeCode"
-                                ]
-
-
-                            }
-                        },
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010108"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "columns": ["IndicatorCode", "CountryCode", "Year", "GenderCode", "AgeRangeCode", "Value"]
-
-
-                                }
-                            }
-                        ]
-                    },
-
-                    {
-                        //Time series
-                        id: 'population-6',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#population-6",
-                        config: {
-                            container: "#population-6",
-                            adapter: {
-                                type: "pyramid",
-                                xDimensions: 'AgeRangeCode',
-                                yDimensions: '',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['GenderCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
-
-
-                        filter:[
-                            {
-                                "name" : "filter",
-                                "parameters" : {
-                                    "rows": {
-                                        "IndicatorCode" : {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "version": null,
-                                                    "codes": [ "01010106" ]
-                                                }
-                                            ]
-                                        },
-                                        "GenderCode" : {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_Gender",
-                                                    "version": null,
-                                                    "codes": [ "1", "2" ]
-                                                }
-                                            ]
-                                        },
-                                        "AgeRangeCode" : {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_AgeRange",
-                                                    "version": null,
-                                                    "codes": [ "AG02","AG03","AG04","AG05","AG06","AG07","AG08","AG09","AG10","AG11","AG12","AG13","AG14","AG15" ]
-                                                }
-                                            ]
-                                        },
-                                        "Year": {
-                                            "time": [
-                                                {
-                                                    "from": 2007,
-                                                    "to": 2007
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "name" : "percentage"
-                            }
-                        ]
-                    },
-
-                   {
-                        id: 'population-7',
-                        type: 'table',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#population-7",
-                        config: {
-                            container: "#population-7",
-                            leaflet: {
-                                zoomControl: false,
-                                attributionControl: true,
-                                scrollWheelZoom: false,
-                                minZoom: 2
-                            },
-
-                            options: {
-                                hidden_columns: ["GenderCode",
-                                    "AgeRangeCode"
-                                ]
-
-
-                            }
-                        },
-
-
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010102"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "columns": ["IndicatorCode", "CountryCode", "Year", "GenderCode", "AgeRangeCode", "Value"]
-
-
-                                }
-                            }
-                        ]
+                    template: {
+                        title: "Radio",
+                        hideSwitch: false,
+                        hideRemoveButton: false
                     }
-
-                ]
+                },
             }
 
         },
 
 
         "education": {
+
             dashboard: {
 
                 //data cube's uid
@@ -541,7 +243,6 @@ define(function () {
 
             }
         },
-
 
         "health": {
 
@@ -821,7 +522,6 @@ define(function () {
             }
         },
 
-
         "labour": {
             dashboard: {
                 //data cube's uid
@@ -1007,7 +707,6 @@ define(function () {
             }
         },
 
-
         "energy": {
             dashboard: {
 
@@ -1065,7 +764,6 @@ define(function () {
 
             }
         },
-
 
         "gdp": {
 
@@ -1192,7 +890,6 @@ define(function () {
             }
 
         },
-
 
         "monetary_statistics": {
 
@@ -1501,6 +1198,7 @@ define(function () {
             }
 
         },
+
         "public_finance": {
 
             dashboard: {
@@ -1824,7 +1522,6 @@ define(function () {
 
         },
 
-
         "debt": {
 
             dashboard: {
@@ -1988,7 +1685,6 @@ define(function () {
 
         },
 
-
         "infrastructure": {
 
             dashboard: {
@@ -2151,7 +1847,6 @@ define(function () {
 
             }
         },
-
 
         "tourism": {
 
@@ -2458,7 +2153,6 @@ define(function () {
                 }
             ],
 
-
             dashboard: {
 
                 //data cube's uid
@@ -2622,8 +2316,8 @@ define(function () {
             }
         },
 
-
         "financial_flows": {
+
             dashboard: {
 
                 filter: [
@@ -3043,10 +2737,11 @@ define(function () {
                 ]
 
             }
+
         },
 
-
         "balance_of_payments": {
+
             dashboard: {
 
                 //data cube's uid
@@ -3278,8 +2973,8 @@ define(function () {
 
         },
 
-
         "agriculture_production": {
+
             dashboard: {
 
                 //data cube's uid
@@ -3511,10 +3206,11 @@ define(function () {
                 ]
 
             }
+
         },
 
-
         "mining_production": {
+
             dashboard: {
 
                 //data cube's uid

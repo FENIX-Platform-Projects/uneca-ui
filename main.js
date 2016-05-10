@@ -205,11 +205,15 @@ require([
 
     // Bootstrap the application
     require([
+        'loglevel',
         'application',
         'routes',
         'config/Config',
         'domReady!'
-    ], function (Application, routes, C) {
+    ], function (log, Application, routes, C) {
+
+        //trace, debug, info, warn, error, silent
+        log.setLevel('trace');
 
         var app = new Application({
             routes: routes,

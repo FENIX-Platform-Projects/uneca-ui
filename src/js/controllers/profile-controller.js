@@ -13,7 +13,7 @@ define([
 
     'use strict';
 
-    var ProfileController = Controller.extend({
+    var CountryController = Controller.extend({
 
         beforeAction: function (params) {
 
@@ -75,5 +75,5 @@ define([
 
     });
 
-    return ProfileController;
+    return CountryController;
 });

@@ -17,8 +17,6 @@ define([
 
         beforeAction: function (params) {
 
-            this.currentCountryId = params.id;
-
             Controller.prototype.beforeAction.call(this, arguments);
 
             return this.performAccessControlChecks(params).then(_.bind(this.onSuccess, this), _.bind(this.onError, this));
@@ -37,20 +35,14 @@ define([
                 return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
             });
 
-            var country = _.findWhere(this.countries, {code: this.currentCountryId});
-
-            this.validCountrydId = !!country;
-
-            this.country = country;
-
         },
 
         performAccessControlChecks: function (params) {
 
             return Bridge.getCodeList({
                 body: {
-                    uid : "UNECA_ISO3",
-                    level : 2
+                    uid: "UNECA_ISO3",
+                    level: 2
                 }
             });
         },
@@ -61,14 +53,6 @@ define([
                 region: 'main',
                 countries: this.countries
             };
-
-            //Pass the valid id to view if valid
-            if (this.validCountrydId === true) {
-                conf.id = params.id;
-                conf.country = this.country;
-            } else {
-                Backbone.history.navigate('#profile/', {trigger: false});
-            }
 
             this.view = new View(conf);
         }

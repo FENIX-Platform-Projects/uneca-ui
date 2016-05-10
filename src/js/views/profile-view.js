@@ -9,7 +9,6 @@ define([
     'fx-filter/start',
     'i18n!nls/profile',
     'text!templates/profile/profile.hbs',
-    'text!templates/profile/list.hbs',
     'text!templates/profile/dashboard.hbs',
     'text!templates/profile/bases.hbs',
     'text!config/profile/lateral_menu.json',
@@ -20,20 +19,17 @@ define([
     'bootstrap-list-filter',
     'jstree',
     'fenix-ui-map'
-], function ($, _, View, EVT, PC, Dashboard, Filter, i18nLabels, template, listTemplate, dashboardTemplate, basesTemplate, LateralMenuConfig, resumeInfo, Handlebars) {
+], function ($, _, View, EVT, PC, Dashboard, Filter, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, resumeInfo, Handlebars) {
 
     'use strict';
 
     var s = {
         CONTENT: "#profile-content",
         SEARCH_FILTER_INPUT: "#searchinput",
-        COUNTRY_LIST: '#list-countries',
-        SEARCH_ITEM_CHILD: 'a',
-        SEARCH_ITEM_EL: '.country-item',
         DASHBOARD_CONTENT: "#dashboard-content",
         LATERAL_MENU: '#lateral-menu',
         MAP_CONTAINER: "#country-map-container",
-        FILTER_CONTAINER: 'filter-container',
+        FILTER_CONTAINER: '#filter-container',
         FILTER_SUBMIT: '#filter-submit',
         FILTER_BLOCK: "#filter-block"
 
@@ -70,30 +66,13 @@ define([
 
             this._initVariables();
 
-            this.id ? this._printCountryDashboard() : this._printCountryList();
+            this._printCountryDashboard();
 
         },
 
         _initVariables: function () {
 
             this.$content = this.$el.find(s.CONTENT);
-
-        },
-
-        //country list
-
-        _printCountryList: function () {
-
-            var tmpl = Handlebars.compile(listTemplate),
-                html = tmpl({countries: this.countries});
-
-            this.$content.html(html);
-
-            //Init filter
-            $(s.COUNTRY_LIST).btsListFilter(s.SEARCH_FILTER_INPUT, {
-                itemEl: s.SEARCH_ITEM_EL,
-                itemChild: s.SEARCH_ITEM_CHILD
-            });
 
         },
 
@@ -111,9 +90,7 @@ define([
 
             this._bindDashboardEventListeners();
 
-            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
-
-            //print jstree
+            //print lateral menu
             this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
 
                 //Limit selection e select only leafs for indicators
@@ -163,52 +140,57 @@ define([
 
             this.$filterSubmit = this.$el.find(s.FILTER_SUBMIT);
 
+            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
+
         },
 
         _printCountryMap: function () {
 
-            try {
-                var m = new FM.Map(s.MAP_CONTAINER, {
-                    plugins: {
-                        disclaimerfao: false,
-                        geosearch: false,
-                        mouseposition: false,
-                        controlloading: false,
-                        zoomcontrol: 'bottomright'
-                    },
-                    guiController: {
-                        overlay: false,
-                        baselayer: true,
-                        wmsLoader: false
-                    }
-                });
-            }
-            catch (e) {
-                console.log(e)
-            }
+            /* TODO
 
-            m.createMap();
 
-            m.addLayer(new FM.layer({
-                layers: 'fenix:gaul0_line_3857',
-                layertitle: 'Country Boundaries',
-                urlWMS: 'http://fenix.fao.org/geoserver',
-                opacity: '0.9',
-                zindex: '500',
-                lang: 'en'
-            }));
+             try {
+             var m = new FM.Map(s.MAP_CONTAINER, {
+             plugins: {
+             disclaimerfao: false,
+             geosearch: false,
+             mouseposition: false,
+             controlloading: false,
+             zoomcontrol: 'bottomright'
+             },
+             guiController: {
+             overlay: false,
+             baselayer: true,
+             wmsLoader: false
+             }
+             });
+             }
+             catch (e) {
+             console.log(e)
+             }
 
-            m.addLayer(new FM.layer({
-                layers: 'fenix:gaul0_faostat_3857',
-                layertitle: '',
-                urlWMS: 'http://fenix.fao.org/geoserver',
-                style: 'highlight_polygon',
-                cql_filter: "iso3 IN ('" + this.id + "')",
-                hideLayerInControllerList: true,
-                lang: 'en'
-            }));
+             m.createMap();
 
-            m.zoomTo("country", "iso3", this.id);
+             m.addLayer(new FM.layer({
+             layers: 'fenix:gaul0_line_3857',
+             layertitle: 'Country Boundaries',
+             urlWMS: 'http://fenix.fao.org/geoserver',
+             opacity: '0.9',
+             zindex: '500',
+             lang: 'en'
+             }));
+
+             m.addLayer(new FM.layer({
+             layers: 'fenix:gaul0_faostat_3857',
+             layertitle: '',
+             urlWMS: 'http://fenix.fao.org/geoserver',
+             style: 'highlight_polygon',
+             cql_filter: "iso3 IN ('" + this.id + "')",
+             hideLayerInControllerList: true,
+             lang: 'en'
+             }));
+
+             m.zoomTo("country", "iso3", this.id);*/
         },
 
         _printDashboard: function (item) {
@@ -218,18 +200,18 @@ define([
             var conf = this._getDashboardConfig(item),
                 filterConfig = this._getFilterConfig(item);
 
-            this._renderDashboard(conf);
+            if (conf) {
 
-            if (filterConfig && Array.isArray(filterConfig)) {
+                this._renderDashboard(conf);
+            }
+
+            if (filterConfig) {
 
                 this.$el.find(s.FILTER_BLOCK).show();
-
                 this._renderFilter(filterConfig);
 
             } else {
-
                 this.$el.find(s.FILTER_BLOCK).hide();
-
             }
 
         },
@@ -254,102 +236,55 @@ define([
         _createCountryFilter: function () {
 
             //create country filter
-            return {
-                "name": "filter",
-                "parameters": {
-                    "rows": {
-                        "CountryCode": {
-                            "codes": [
-                                {
-                                    "uid": "ISO3",
-                                    "codes": [
-                                        this.id
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            };
+
+            return {"CountryCode": [this.id]};
         },
 
         _getDashboardConfig: function (id) {
 
             //get from PC the 'id' conf
 
-            var base,
-                conf;
+            var conf = PC[id].dashboard;
 
-            try {
-                base = PC[id].dashboard;
-
-            } catch (e) {
-                alert("Impossible to load dashboard configuration for [" + id + "]");
+            if (conf) {
+                conf.filter = [this._createCountryFilter()];
             }
 
-            conf = $.extend(true, {}, base);
-
-            conf.filter = [this._createCountryFilter()];
-
             return conf;
+
         },
 
         _getFilterConfig: function (id) {
 
-            //get from PC the 'id' conf
-
-            var conf;
-
-            try {
-
-                conf = PC[id].filter;
-
-            } catch (e) {
-                alert("Impossible to load filter configuration for [" + id + "]");
-            }
+            var conf = PC[id].filter;
 
             return conf;
         },
 
         _renderDashboard: function (config) {
 
-            if (this.dashboard && this.dashboard.destroy) {
-                this.dashboard.destroy();
+            if (this.dashboard && $.isFunction(this.dashboard.dispose)) {
+                this.dashboard.dispose();
             }
 
-            this.dashboard = new Dashboard({
-                layout: "injected"
-            });
-
-            this.dashboard.render(config);
+            this.dashboard = new Dashboard(config);
 
         },
 
         _renderFilter: function (config) {
 
-            var self = this;
+            if (this.filter && $.isFunction(this.dashboard.dispose)) {
+                this.filter.dispose();
+            }
 
-            this.filterConfCreator = new FilterConfCreator();
-
-            this.filterConfCreator.getConfiguration(config)
-                .then(function (c) {
-
-                    self.filter = new Filter();
-
-                    self.filter.init({
-                        container: s.FILTER_CONTAINER,
-                        layout: 'fluidGrid'
-                    });
-
-                    var adapterMap = {};
-
-                    self.filter.add(c, adapterMap);
-
-                });
+            this.filter = new Filter({
+                el: s.FILTER_CONTAINER,
+                items: config
+            });
 
         },
 
-        /* Disposition process */
+        //Disposition process
 
         dispose: function () {
 
@@ -368,6 +303,8 @@ define([
             if (this.$filterSubmit && this.$filterSubmit.length > 0) {
                 this.$filterSubmit.off();
             }
+
+
         }
 
     });
