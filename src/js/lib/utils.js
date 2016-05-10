@@ -50,7 +50,7 @@ define([
 
         var result = '';
         var lang = requirejs.s.contexts._.config.i18n.locale;
-        var index = array.data.index + 1
+        var index = array.data.index + 1;
 
         if (index === 1 || index % 4 === 1) {
 
@@ -64,7 +64,8 @@ define([
     Handlebars.registerHelper("list_countries_creator", function (array, fn) {
 
         var countries = array.data.root.countries;
-        var lang = requirejs.s.contexts._.config.i18n.locale;
+        //var lang = requirejs.s.contexts._.config.i18n.locale;
+        var lang = 'en';
         lang = lang.toUpperCase();
         var result = '';
 
@@ -76,18 +77,18 @@ define([
             if (i === 0 || i % 3 === 0) {
                 //result+= '<div>';
                 result += '<div class="col-md-4 country-item">' +
-                    '<a href="profile/' + countries[i].code + '">'
+                    '<a href="#profile/' + countries[i].code + '">'
                     + countries[i].title[lang] + '</a></div>';
                 firstDone = true;
             } else if (i === 1 || firstDone) {
                 result += '<div class="col-md-4 country-item">' +
-                    '<a href="profile/' + countries[i].code + '">'
+                    '<a href="#profile/' + countries[i].code + '">'
                     + countries[i].title[lang] + '</a></div>';
                 firstDone = false;
                 secondDone = true;
             } else if (i === 2 || secondDone) {
                 result += '<div class="col-md-4 country-item">' +
-                    '<a href="profile/' + countries[i].code + '">'
+                    '<a href="#profile/' + countries[i].code + '">'
                     + countries[i].title[lang] + '</a></div>';
                 //result+= '</div>';
                 secondDone = false;

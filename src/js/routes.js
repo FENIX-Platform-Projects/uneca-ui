@@ -7,8 +7,10 @@ define(function () {
     return function (match) {
         match('', 'home#show');
         match('home', 'home#show');
-        match('profile', 'profile#show');
+        match('countries', 'countries#show');
         match('profile/:id', 'profile#show');
+
+        //TODO to check
         match('domains', 'domain#show');
         match('domains/:id', 'domain#show');
         match('analysis', 'analysis#show');

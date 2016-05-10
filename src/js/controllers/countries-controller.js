@@ -6,14 +6,14 @@ define([
     'chaplin',
     'config/Config',
     'controllers/base/controller',
-    'views/profile-view',
+    'views/countries-view',
     'fx-common/bridge',
     'amplify'
 ], function ($, Backbone, _, Chaplin, C, Controller, View, Bridge) {
 
     'use strict';
 
-    var ProfileController = Controller.extend({
+    var CountriesController = Controller.extend({
 
         beforeAction: function (params) {
 
@@ -75,5 +75,5 @@ define([
 
     });
 
-    return ProfileController;
+    return CountriesController;
 });
