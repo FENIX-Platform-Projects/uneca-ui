@@ -2,8 +2,8 @@
 define([
     'jquery',
     'views/base/view',
-    'config/Config',
-    'config/Events',
+    'config/config',
+    'config/events',
     'text!json/home/data_at_glance.json',
     'text!templates/home/home.hbs',
     'i18n!nls/home',

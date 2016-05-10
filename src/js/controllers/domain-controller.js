@@ -2,14 +2,12 @@
 define([
     'jquery',
     'backbone',
-    'chaplin',
-    'config/Config',
     'controllers/base/controller',
     'views/domain-view',
     'text!json/methods/models.json',
     'q',
     'amplify'
-], function ($, Backbone, Chaplin, C, Controller, View, MethodsCollection, Q) {
+], function ($, Backbone,  Controller, View, MethodsCollection, Q) {
 
     'use strict';
 

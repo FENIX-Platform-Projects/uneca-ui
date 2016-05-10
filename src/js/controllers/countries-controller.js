@@ -2,14 +2,12 @@
 define([
     'jquery',
     'backbone',
-    'underscore',
-    'chaplin',
-    'config/Config',
+    'underscore', ,
     'controllers/base/controller',
     'views/countries-view',
     'fx-common/bridge',
     'amplify'
-], function ($, Backbone, _, Chaplin, C, Controller, View, Bridge) {
+], function ($, Backbone, _, Controller, View, Bridge) {
 
     'use strict';
 

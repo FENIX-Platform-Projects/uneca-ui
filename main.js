@@ -208,7 +208,7 @@ require([
         'loglevel',
         'application',
         'routes',
-        'config/Config',
+        'config/config',
         'domReady!'
     ], function (log, Application, routes, C) {
 

@@ -3,7 +3,7 @@ define([
     'views/base/view',
     'text!templates/modules/modules.hbs',
     'i18n!nls/modules',
-    'config/Events',
+    'config/events',
     'amplify'
 ], function (View, template, i18nLabels,E) {
 
