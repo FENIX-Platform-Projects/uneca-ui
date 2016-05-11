@@ -24,7 +24,7 @@ define(function () {
                         config: {
                             type: "column",
                             columns: ["Year"], //x axis and series
-                            rows: ["IndicatorCode"], //Y dimension
+                            rows: ["IndicatorCode_EN"], //Y dimension
                             values: ["Value"],
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
@@ -39,42 +39,22 @@ define(function () {
 
             filter: {
 
-                checkbox: {
+                IndicatorCode: {
+
+                    cl : {
+                        uid: "UNECA_ClassificationOfActivities",
+                        version: "2.0"
+                    },
 
                     selector: {
-                        id: "input",
-                        type: "checkbox",
-                        source: [
-                            {value: "item_1", label: "Item 1"},
-                            {value: "item_2", label: "Item 2"}
-                        ]
+                        id: "dropdown"
                     },
 
                     template: {
-                        title: "Checkbox",
-                        hideSwitch: false,
-                        hideRemoveButton: false
+                        title: "Indicator"
                     }
-                },
+                }
 
-                radio: {
-
-                    selector: {
-                        id: "input",
-                        type: "radio",
-                        source: [
-                            {value: "item_1", label: "Item 1"},
-                            {value: "item_2", label: "Item 2"}
-                        ],
-                        default: ["item_1"]
-                    },
-
-                    template: {
-                        title: "Radio",
-                        hideSwitch: false,
-                        hideRemoveButton: false
-                    }
-                },
             }
 
         },

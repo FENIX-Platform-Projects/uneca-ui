@@ -2,7 +2,7 @@
 define([
     'jquery',
     'backbone',
-    'underscore', ,
+    'underscore',
     'controllers/base/controller',
     'views/countries-view',
     'fx-common/bridge',

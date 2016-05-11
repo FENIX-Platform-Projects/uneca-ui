@@ -7,6 +7,7 @@ define([
     'config/profile/config',
     'fx-dashboard/start',
     'fx-filter/start',
+    'fx-common/utils',
     'i18n!nls/profile',
     'text!templates/profile/profile.hbs',
     'text!templates/profile/dashboard.hbs',
@@ -18,7 +19,7 @@ define([
     'bootstrap-list-filter',
     'jstree',
     'fenix-ui-map'
-], function ($, _, View, EVT, PC, Dashboard, Filter, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, resumeInfo, Handlebars) {
+], function ($, _, View, EVT, PC, Dashboard, Filter, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, resumeInfo, Handlebars) {
 
     'use strict';
 
@@ -31,7 +32,6 @@ define([
         FILTER_CONTAINER: '#filter-container',
         FILTER_SUBMIT: '#filter-submit',
         FILTER_BLOCK: "#filter-block"
-
     };
 
     var ProfileView = View.extend({
@@ -72,6 +72,8 @@ define([
         _initVariables: function () {
 
             this.$content = this.$el.find(s.CONTENT);
+
+            this.filterValues = {};
 
         },
 
@@ -125,14 +127,7 @@ define([
 
         _bindDashboardEventListeners: function () {
 
-            var self = this;
-
-            this.$filterSubmit.on('click', function (e, data) {
-
-                var values = self.filter.getValues();
-
-                self.dashboard.filter([values]);
-            });
+            this.$filterSubmit.on('click', _.bind(this._onFilterClick, this));
         },
 
         _initDashboardVariables: function () {
@@ -217,8 +212,20 @@ define([
 
         _onChangeDashboard: function (item) {
 
-            this._printDashboard(item);
+            if (this.currentDashboard !== item) {
+                this.currentDashboard = item;
+                this._printDashboard(item);
+            }
 
+        },
+
+        _onFilterClick: function () {
+
+            var values = this.filter.getValues();
+
+            this.filterValues[this.currentDashboard] = values;
+
+            this.dashboard.refresh(values);
         },
 
         _printDashboardBase: function (id) {
@@ -241,12 +248,15 @@ define([
 
         _getDashboardConfig: function (id) {
 
-            //get from PC the 'id' conf
-
-            var conf = PC[id].dashboard;
+            var conf = $.extend(true, {}, PC[id].dashboard);
 
             if (conf) {
-                conf.filter = [this._createCountryFilter()];
+                var filterValues = this.filterValues[this.currentDashboard] || {};
+                conf.filter = $.extend(conf.filter, this._createCountryFilter());
+
+                _.each(conf.items, _.bind(function (item) {
+                    item.filter = $.extend(item.filter, filterValues.values);
+                }))
             }
 
             return conf;
@@ -255,9 +265,10 @@ define([
 
         _getFilterConfig: function (id) {
 
-            var conf = PC[id].filter;
+            var conf = $.extend(true, {}, PC[id].filter),
+                values = this.filterValues[id] || {};
 
-            return conf;
+            return Utils.mergeConfigurations(conf, values);
         },
 
         _renderDashboard: function (config) {
@@ -278,7 +289,13 @@ define([
 
             this.filter = new Filter({
                 el: s.FILTER_CONTAINER,
-                items: config
+                items: config,
+                common: {
+                    template: {
+                        hideSwitch: true,
+                        hideRemoveButton: true
+                    }
+                }
             });
 
         },
@@ -293,6 +310,9 @@ define([
 
             this._unbindDashboardEventListeners();
 
+            this.currentDashboard = {};
+            this.filterValues = {};
+
             View.prototype.dispose.call(this, arguments);
 
         },
@@ -302,8 +322,6 @@ define([
             if (this.$filterSubmit && this.$filterSubmit.length > 0) {
                 this.$filterSubmit.off();
             }
-
-
         }
 
     });

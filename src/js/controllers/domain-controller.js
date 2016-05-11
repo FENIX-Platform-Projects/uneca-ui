@@ -48,9 +48,7 @@ define([
         performAccessControlChecks: function (parmas) {
 
             return new Q.Promise(function (fulfilled, rejected) {
-
                 fulfilled();
-
             });
 
         },
@@ -65,7 +63,6 @@ define([
             //Pass the valid id to view if valid
             if (this.validDomaindId === true) {
                 conf.id = params.id;
-
                 conf.domain = this.domain;
             } else {
                 Backbone.history.navigate('#domains/' , {trigger: false});
