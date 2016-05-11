@@ -140,8 +140,9 @@ require([
                     'fx-ds/config/config': '../../config/submodules/fx-dashboard/config',
 
                     // METADATA VIEWER
-                    'fx-md-v/config/config': '../../config/submodules/fx-md-viewer/config'
+                    'fx-md-v/config/config': '../../config/submodules/fx-md-viewer/config',
 
+                    'fx-common/config/config' : '../../config/submodules/fx-common/config'
 
                 },
 
