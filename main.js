@@ -2,7 +2,7 @@
 require([
     './submodules/fenix-ui-common/js/Compiler',
     './submodules/fenix-ui-common/js/paths',
-    './submodules/fenix-ui-menu/js/paths',
+    './submodules/fenix-ui-menu/src/js/paths',
     './submodules/fenix-ui-analysis/src/js/paths',
     './submodules/fenix-ui-catalog/src/js/paths',
     './submodules/fenix-ui-DataEditor/js/paths',
@@ -15,7 +15,7 @@ require([
     './submodules/fenix-ui-reports/src/js/paths',
     './submodules/fenix-ui-dashboard/src/js/paths',
     './submodules/fenix-ui-filter/src/js/paths',
-    'submodules/fenix-ui-olap/src/js/paths'
+    './submodules/fenix-ui-olap/src/js/paths'
 ], function (Compiler, Common, Menu, Analysis, Catalog,
              DataEditor, DSDEditor, MetadataEditor, MetadataViewer,
              MapCreator, ChartCreator, TableCreator, FenixReport, Dashboard, Filter, Olap) {
@@ -28,13 +28,13 @@ require([
     commonConfig.baseUrl = submodules_path + 'fenix-ui-common/js';
 
     var menuConfig = Menu;
-    menuConfig.baseUrl = submodules_path + '/fenix-ui-menu/js';
+    menuConfig.baseUrl = submodules_path + '/fenix-ui-menu/src/js';
 
     var analysisConfig = Analysis;
-    analysisConfig.baseUrl = submodules_path + 'fenix-ui-analysis/js/';
+    analysisConfig.baseUrl = submodules_path + 'fenix-ui-analysis/src/js/';
 
     var catalogConfig = Catalog;
-    catalogConfig.baseUrl = submodules_path + 'fenix-ui-catalog/js/';
+    catalogConfig.baseUrl = submodules_path + 'fenix-ui-catalog/src/js/';
 
     var dataEditorConfig = DataEditor;
     dataEditorConfig.baseUrl = submodules_path + 'fenix-ui-DataEditor/js/';
@@ -67,7 +67,7 @@ require([
     filterConfig.baseUrl = submodules_path + 'fenix-ui-filter/src/js';
 
     var olapConfig = Olap;
-    olapConfig.baseUrl = submodules_path + 'fenix-ui-olap/js';
+    olapConfig.baseUrl = submodules_path + 'fenix-ui-olap/src/js';
 
     Compiler.resolve([commonConfig, menuConfig, analysisConfig, catalogConfig,
             dataEditorConfig, dsdEditorConfig, /*dataUploadConfig,*/metadataEditorConfig, metadataViewerConfig, /*faostatThemeConfig,*/

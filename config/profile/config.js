@@ -10,7 +10,7 @@ define(function () {
 
         "population": {
 
-            dashboard: {
+            dashboard: [{
 
                 uid: "UNECA_Health",
                 //version: "",
@@ -23,9 +23,9 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            columns: ["Year"], //x axis and series
-                            rows: ["IndicatorCode_EN"], //Y dimension
-                            values: ["Value"],
+                            x: ["Year"], //x axis and series
+                            y: ["Value"],
+                            series: ["IndicatorCode_EN"], //Y dimension
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
                         filter: { //FX-filter format
@@ -35,28 +35,22 @@ define(function () {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
                 ]
-            },
+            }],
 
             filter: {
 
                 IndicatorCode: {
-
                     cl : {
                         uid: "UNECA_ClassificationOfActivities",
                         version: "2.0"
                     },
 
                     selector: {
-                        id: "dropdown"
-                    },
-
-                    template: {
-                        title: "Indicator"
+                        id: "dropdown",
+                        default : ["010307", "010308", "010309", "010310"]
                     }
                 }
-
             }
-
         },
 
 

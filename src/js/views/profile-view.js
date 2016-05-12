@@ -8,18 +8,19 @@ define([
     'fx-dashboard/start',
     'fx-filter/start',
     'fx-common/utils',
+    'lib/utils',
     'i18n!nls/profile',
     'text!templates/profile/profile.hbs',
     'text!templates/profile/dashboard.hbs',
     'text!templates/profile/bases.hbs',
-    'text!config/profile/lateral_menu.json',
-    'text!config/profile/resume_countries.json',
+    'config/profile/lateral_menu',
+    'config/profile/countries_summary',
     'handlebars',
     'amplify',
     'bootstrap-list-filter',
     'jstree',
     'fenix-ui-map'
-], function ($, _, View, EVT, PC, Dashboard, Filter, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, resumeInfo, Handlebars) {
+], function ($, _, View, EVT, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, CountrySummary, Handlebars) {
 
     'use strict';
 
@@ -31,12 +32,14 @@ define([
         MAP_CONTAINER: "#country-map-container",
         FILTER_CONTAINER: '#filter-container',
         FILTER_SUBMIT: '#filter-submit',
-        FILTER_BLOCK: "#filter-block"
+        FILTER_BLOCK: "[data-role='filter-block']"
     };
 
     var ProfileView = View.extend({
 
         initialize: function (params) {
+
+            this.lang = Utils.getLang().toUpperCase();
 
             this.countries = params.countries;
 
@@ -75,6 +78,8 @@ define([
 
             this.filterValues = {};
 
+            this.dashboards = [];
+
         },
 
         //country dashboard
@@ -83,7 +88,7 @@ define([
 
             var self = this,
                 template = Handlebars.compile(dashboardTemplate),
-                html = template({country: this.country.title.EN});
+                html = template({country: this.country.title[this.lang]});
 
             this.$content.html(html);
 
@@ -92,9 +97,9 @@ define([
             this._bindDashboardEventListeners();
 
             //print lateral menu
-            this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
+            this.$lateralMenu.jstree(Utils.setI18nToJsTreeConfig(LateralMenuConfig, i18nLabels))
 
-                //Limit selection e select only leafs for indicators
+            //Limit selection e select only leafs for indicators
                 .on("select_node.jstree", _.bind(function (e, data) {
 
                     if (!data.instance.is_leaf(data.node)) {
@@ -104,9 +109,7 @@ define([
                         self.$lateralMenu.jstree(true).open_node(data.node, true);
 
                     } else {
-
                         self._onChangeDashboard(data.selected[0]);
-
                     }
 
                 }, this));
@@ -114,15 +117,6 @@ define([
             this._printDashboard('resume');
 
             this._printCountryMap();
-
-            //bind events from tree click to dashboard refresh
-            /*
-             * - destroy current dashboard
-             * - inject new template    this._printDashboardBase( jstree item selected );
-             * - render new dashboard
-             *
-             * */
-
         },
 
         _bindDashboardEventListeners: function () {
@@ -194,16 +188,13 @@ define([
             var conf = this._getDashboardConfig(item),
                 filterConfig = this._getFilterConfig(item);
 
-            if (conf) {
-
+            if (!_.isEmpty(conf)) {
                 this._renderDashboard(conf);
             }
 
-            if (filterConfig) {
-
+            if (!_.isEmpty(filterConfig)) {
                 this.$el.find(s.FILTER_BLOCK).show();
                 this._renderFilter(filterConfig);
-
             } else {
                 this.$el.find(s.FILTER_BLOCK).hide();
             }
@@ -225,7 +216,12 @@ define([
 
             this.filterValues[this.currentDashboard] = values;
 
-            this.dashboard.refresh(values);
+            _.each( this.dashboards, _.bind(function (dashboard) {
+                if (dashboard && $.isFunction(dashboard.refresh)) {
+                    dashboard.refresh(values);
+                }
+            }, this));
+
         },
 
         _printDashboardBase: function (id) {
@@ -233,7 +229,7 @@ define([
             //Inject HTML
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
                 template = Handlebars.compile(source.prop('outerHTML')),
-                context = JSON.parse(resumeInfo),
+                context = Utils.setI18nToCountriesSummary(CountrySummary, i18nLabels),
                 html = template(context && context[this.id] ? context[this.id] : {});
 
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
@@ -266,24 +262,48 @@ define([
         _getFilterConfig: function (id) {
 
             var conf = $.extend(true, {}, PC[id].filter),
-                values = this.filterValues[id] || {};
+                values = this.filterValues[id] || {},
+                result = FxUtils.mergeConfigurations(conf, values);
 
-            return Utils.mergeConfigurations(conf, values);
+            _.each(result, _.bind(function (obj, key) {
+
+                if (!obj.template) {
+                    obj.template = {};
+                }
+                //Add i18n label
+                obj.template.title = Utils.getI18nLabel( key, i18nLabels, "filter_");
+
+            }, this));
+
+            return result;
         },
 
         _renderDashboard: function (config) {
 
-            if (this.dashboard && $.isFunction(this.dashboard.dispose)) {
-                this.dashboard.dispose();
-            }
+            this._disposeDashboards();
 
-            this.dashboard = new Dashboard(config);
+            _.each(config, _.bind(function (c) {
 
+                this.dashboards.push(new Dashboard(c));
+
+            }, this));
+
+        },
+
+        _disposeDashboards : function () {
+
+            _.each( this.dashboards, _.bind(function (dashboard) {
+                if (dashboard && $.isFunction(dashboard.dispose)) {
+                    dashboard.dispose();
+                }
+            }, this));
+
+            this.dashboards = [];
         },
 
         _renderFilter: function (config) {
 
-            if (this.filter && $.isFunction(this.dashboard.dispose)) {
+            if (this.filter && $.isFunction(this.filter.dispose)) {
                 this.filter.dispose();
             }
 
@@ -308,6 +328,8 @@ define([
                 this.$lateralMenu.jstree(true).destroy();
             }
 
+            this._disposeDashboards();
+
             this._unbindDashboardEventListeners();
 
             this.currentDashboard = {};
@@ -322,6 +344,7 @@ define([
             if (this.$filterSubmit && this.$filterSubmit.length > 0) {
                 this.$filterSubmit.off();
             }
+
         }
 
     });

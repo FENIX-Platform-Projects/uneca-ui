@@ -8,7 +8,7 @@ require([
     './submodules/fenix-ui-DSDEditor/js/paths',
     './submodules/fenix-ui-metadata-editor/js/paths',
     './submodules/fenix-ui-catalog/js/paths',
-    './submodules/fenix-ui-menu/js/paths',
+    'submodules/fenix-ui-menu/src/js/paths',
     './submodules/fenix-ui-data-management/src/js/paths'
 ], function (Compiler, Commons, DataEditor, DataUpload, DSDEditor, MetadataEditor, Catalog, Menu, DataMng) {
 

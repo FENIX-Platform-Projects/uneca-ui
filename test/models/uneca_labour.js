@@ -22,13 +22,12 @@ define(function () {
                 type: "chart", //chart || map || olap,
                 config: {
                     type: "line",
-                    columns: ["Year"], //x axis and series
-                    rows: ["IndicatorCode_EN"], //Y dimension
-                    values: ["Value"],
+                    x: ["Year"], //x axis and series
+                    y: ["Value"],
+                    series: ["IndicatorCode_EN"], //Y dimension
                     aggregationFn: {"Value": "sum"}
                 }, // :type-creator config
                 filter: { //FX-filter format
-
                     IndicatorCode: ["010401"],
                     SectorCode : ["4"],
                     GenderCode: ["3"],
@@ -43,9 +42,9 @@ define(function () {
                 type: "chart", //chart || map || olap,
                 config: {
                     type: "column",
-                    columns: ["Year"], //x axis and series
-                    rows: ["SectorCode"], //Y dimension
-                    values: ["Value"],
+                    x: ["Year"], //x axis and series
+                    y: ["Value"],
+                    series: ["SectorCode"], //Y dimension
                     aggregationFn: {"Value": "sum"}
                 }, // :type-creator config
                 filter: { //FX-filter format
@@ -63,9 +62,9 @@ define(function () {
                 type: "chart", //chart || map || olap,
                 config: {
                     type: "column",
-                    columns: ["Year"], //x axis and series
-                    rows: ["GenderCode_EN"], //Y dimension
-                    values: ["Value"],
+                    x: ["Year"], //x axis and series
+                    y: ["Value"],
+                    series: ["GenderCode_EN"], //Y dimension
                     aggregationFn: {"Value": "sum"}
                 }, // :type-creator config
                 filter: { //FX-filter format

@@ -8,14 +8,12 @@ define([
     'i18n!nls/profile',
     'text!templates/profile/profile.hbs',
     'text!templates/profile/list.hbs',
-    'text!config/profile/lateral_menu.json',
-    'text!config/profile/resume_countries.json',
     'handlebars',
     'lib/utils',
     'amplify',
     'bootstrap-list-filter',
     'jstree'
-], function ($, _, View, EVT, PC, i18nLabels, template, listTemplate, LateralMenuConfig, resumeInfo, Handlebars) {
+], function ($, _, View, EVT, PC, i18nLabels, template, listTemplate, Handlebars) {
 
     'use strict';
 

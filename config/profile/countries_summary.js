@@ -1,4 +1,5 @@
-{
+/*global define*/
+define({
   "DZA": {
     "title": "Algeria",
     "flag": "",
@@ -143,4 +144,4 @@
     "capital_city": "Bangui",
     "currency": "CFA Franc"
   }
-}
+});
