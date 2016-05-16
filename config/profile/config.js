@@ -128,81 +128,77 @@ define(function () {
             }]
         },
 
-
         "education": {
 
-           dashboard : {
-               uid: "UNECA_Education",
-               //version: "",
-               //preProcess : {} //D3P process
-               //postProcess : {} //D3P process
-               items: [
-                   {
-                       id: "edu_1", //ref [data-item=':id']
-                       type: "chart", //chart || map || olap,
-                       config: {
-                           type: "line",
-                           columns: ["Year"], //x axis and series
-                           rows: ["IndicatorCode_EN"], //Y dimension
-                           values: ["Value"],
-                           aggregationFn: {"Value": "sum"}
-                       }, // :type-creator config
-                       filter: { //FX-filter format
+            dashboard: {
 
-                           IndicatorCode: ["010201"],
-                           GenderCode: ["3"]
-                       }
-                       //filterFor: ["Year"], // allowed dimension ids to filter,
-                   },
+                uid: "UNECA_Education",
+                //version: "",
+                //preProcess : {} //D3P process
+                //postProcess : {} //D3P process
+                items: [
+                    {
+                        id: "edu_1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-
-
-
-                   {
-                       id: "edu_2", //ref [data-item=':id']
-                       type: "chart", //chart || map || olap,
-                       config: {
-                           type: "column",
-                           columns: ["Year"], //x axis and series
-                           rows: ["IndicatorCode_EN"], //Y dimension
-                           values: ["Value"],
-                           aggregationFn: {"Value": "sum"}
-                       }, // :type-creator config
-                       filter: { //FX-filter format
-
-                           IndicatorCode: ["010201", "010202", "010203"]
-                       }
-                       //filterFor: ["Year"], // allowed dimension ids to filter,
-                   },
-
-                   {
-                       id: "edu_3", //ref [data-item=':id']
-                       type: "chart", //chart || map || olap,
-                       config: {
-                           type: "column",
-                           columns: ["Year"], //x axis and series
-                           rows: ["GenderCode_EN"], //Y dimension
-                           values: ["Value"],
-                           aggregationFn: {"Value": "sum"}
-                       }, // :type-creator config
-                       filter: { //FX-filter format
-
-                           IndicatorCode: ["010206"],
-                           GenderCode:["1","2"]
-                       }
-                       //filterFor: ["Year"], // allowed dimension ids to filter,
-                   }
-               ]
+                            IndicatorCode: ["010201"],
+                            GenderCode: ["3"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
 
 
+                    {
+                        id: "edu_2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-           }
+                            IndicatorCode: ["010201", "010202", "010203"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+
+                    {
+                        id: "edu_3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["GenderCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010206"],
+                            GenderCode: ["1", "2"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    }
+                ]
+
+
+            }
         },
 
         "health": {
 
             dashboard: {
-
 
                 uid: "UNECA_Health",
                 //version: "",
@@ -270,7 +266,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["010303","010304"]
+                            IndicatorCode: ["010303", "010304"]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
@@ -286,7 +282,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["010313","010314","010315"]
+                            IndicatorCode: ["010313", "010314", "010315"]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
@@ -299,67 +295,68 @@ define(function () {
 
             dashboard: [
                 {
-                uid: "ILO_Labour",
-                //version: "",
-                //preProcess : {} //D3P process
-                //postProcess : {} //D3P process
-                items: [
-                    {
-                        id: "labour-4", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["GenderCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010401"]
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
+                    uid: "ILO_Labour",
+                    //version: "",
+                    //preProcess : {} //D3P process
+                    //postProcess : {} //D3P process
+                    items: [
+                        {
+                            id: "labour-4", //ref [data-item=':id']
+                            type: "chart", //chart || map || olap,
+                            config: {
+                                type: "line",
+                                x: ["Year"], //x axis and series
+                                series: ["GenderCode_EN"], //Y dimension
+                                y: ["Value"],
+                                aggregationFn: {"Value": "sum"}
+                            }, // :type-creator config
+                            filter: { //FX-filter format
+                                IndicatorCode: ["010401"]
+                            }
+                            //filterFor: ["Year"], // allowed dimension ids to filter,
+                        },
 
-                    {
-                        id: "labour-5", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["GenderCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010402"],
-                            GenderCode: ["3"]
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
+                        {
+                            id: "labour-5", //ref [data-item=':id']
+                            type: "chart", //chart || map || olap,
+                            config: {
+                                type: "column",
+                                x: ["Year"], //x axis and series
+                                series: ["GenderCode_EN"], //Y dimension
+                                y: ["Value"],
+                                aggregationFn: {"Value": "sum"}
+                            }, // :type-creator config
+                            filter: { //FX-filter format
+                                IndicatorCode: ["010402"],
+                                GenderCode: ["3"]
+                            }
+                            //filterFor: ["Year"], // allowed dimension ids to filter,
+                        },
 
 
-                    {
-                        id: "labour-6", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["GenderCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010402"],
-                            GenderCode: ["1","2"]
+                        {
+                            id: "labour-6", //ref [data-item=':id']
+                            type: "chart", //chart || map || olap,
+                            config: {
+                                type: "column",
+                                x: ["Year"], //x axis and series
+                                series: ["GenderCode_EN"], //Y dimension
+                                y: ["Value"],
+                                aggregationFn: {"Value": "sum"}
+                            }, // :type-creator config
+                            filter: { //FX-filter format
+                                IndicatorCode: ["010402"],
+                                GenderCode: ["1", "2"]
+                            }
+                            //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    }
-                ]
-            }
-]
+                    ]
+                }
+            ]
         },
 
-        "energy": {            dashboard: {
+        "energy": {
+            dashboard: {
 
                 //data cube's uid
                 uid: "UNECA_Energy",
@@ -417,7 +414,6 @@ define(function () {
         },
 
         "gdp": {
-
 
             dashboard: {
                 //data cube's uid
@@ -562,7 +558,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "02090501", "02090502"]
+                            IndicatorCode: ["02090501", "02090502"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -580,7 +576,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "020904"]
+                            IndicatorCode: ["020904"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -597,7 +593,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "020906"]
+                            IndicatorCode: ["020906"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -615,7 +611,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "020901"]
+                            IndicatorCode: ["020901"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -634,7 +630,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "020903", "02090301"]
+                            IndicatorCode: ["020903", "02090301"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -666,7 +662,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [  "021202", "02120101", "02120102"]
+                            IndicatorCode: ["021202", "02120101", "02120102"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -684,7 +680,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "02120301", "02120302"]
+                            IndicatorCode: ["02120301", "02120302"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -702,7 +698,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "02120301", "02120302"]
+                            IndicatorCode: ["02120301", "02120302"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -720,7 +716,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [  "02120301", "0212030101"]
+                            IndicatorCode: ["02120301", "0212030101"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -738,7 +734,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [  "021204"]
+                            IndicatorCode: ["021204"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -770,7 +766,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "020308"]
+                            IndicatorCode: ["020308"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -788,7 +784,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "020305"]
+                            IndicatorCode: ["020305"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -807,7 +803,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: [ "02030501", "02030502"]
+                            IndicatorCode: ["02030501", "02030502"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -1794,7 +1790,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
                             CountryCode: ["AGO"],//column id and values to include,
-                            IndicatorCode: ["02020501","02020501"]
+                            IndicatorCode: ["02020501", "02020501"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -1820,7 +1816,7 @@ define(function () {
                     }
 
 
-]
+                ]
 
             }
 

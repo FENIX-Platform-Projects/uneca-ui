@@ -188,7 +188,7 @@ define([
             var conf = this._getDashboardConfig(item),
                 filterConfig = this._getFilterConfig(item);
 
-            if (!_.isEmpty(conf)) {
+            if (conf && !_.isEmpty(conf) ) {
                 this._renderDashboard(conf);
             }
 
@@ -244,16 +244,24 @@ define([
 
         _getDashboardConfig: function (id) {
 
-            var conf = $.extend(true, {}, PC[id].dashboard);
+            var conf = PC[id].dashboard,
+                filterValues = this.filterValues[this.currentDashboard] || {};
 
-            if (conf) {
-                var filterValues = this.filterValues[this.currentDashboard] || {};
-                conf.filter = $.extend(conf.filter, this._createCountryFilter());
-
-                _.each(conf.items, _.bind(function (item) {
-                    item.filter = $.extend(item.filter, filterValues.values);
-                }))
+            if (!Array.isArray(conf)){
+                conf = Utils.cleanArray([conf]);
             }
+
+            _.each(conf, _.bind(function ( c ) {
+
+                if (!_.isEmpty(c)) {
+                    c.filter = $.extend(c.filter, this._createCountryFilter());
+
+                    _.each(c.items, _.bind(function (item) {
+                        item.filter = $.extend(item.filter, filterValues.values);
+                    }))
+                }
+
+            }, this));
 
             return conf;
 
@@ -282,11 +290,7 @@ define([
 
             this._disposeDashboards();
 
-            if (!Array.isArray(config)){
-                config = [config];
-            }
-
-            _.each(config, _.bind(function (c) {
+          _.each(config, _.bind(function (c) {
 
                 this.dashboards.push(new Dashboard(c));
 
