@@ -12,7 +12,7 @@ define(function () {
 
             dashboard: [{
 
-                uid: "UNECA_Health",
+                uid: "UNECA_Population",
                 //version: "",
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
@@ -22,6 +22,27 @@ define(function () {
                         id: "population-1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
+                            type: "line",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010101"],
+                            "GenderCode": ["3"],
+                            "AgeRangeCode": ["AGT"]
+
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+
+                    {
+                        id: "population-2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
                             type: "column",
                             x: ["Year"], //x axis and series
                             y: ["Value"],
@@ -29,660 +50,316 @@ define(function () {
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
                         filter: { //FX-filter format
-                            CountryCode: ["AGO"],//column id and values to include,
-                            IndicatorCode: ["010307", "010308", "010309", "010310"]
-                        },
+
+                            IndicatorCode: ["010103"],
+                            "GenderCode": ["3"],
+                            "AgeRangeCode": ["AGT"]
+
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+
+
+                    {
+                        id: "population-3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            columns: ["Year"], //x axis and series
+                            rows: ["AgeRangeCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010101"],
+                            "GenderCode": ["3"],
+                            "AgeRangeCode": ["AG01", "AG02", "AG15"]
+
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+
+                    {
+                        id: "population-4", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010108"],
+                            "GenderCode": ["3"],
+                            "AgeRangeCode": ["AGT"]
+
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+
+
+                    {
+                        id: "population-6", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010102"],
+                            "GenderCode": ["3"],
+                            "AgeRangeCode": ["AGT"]
+
+
+                        }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
                 ]
-            }],
-
-            filter: {
-
-                IndicatorCode: {
-                    cl : {
-                        uid: "UNECA_ClassificationOfActivities",
-                        version: "2.0"
-                    },
-
-                    selector: {
-                        id: "dropdown",
-                        default : ["010307", "010308", "010309", "010310"]
-                    }
-                }
-            }
+            }]
         },
 
 
         "education": {
 
-            dashboard: {
+           dashboard : {
+               uid: "UNECA_Education",
+               //version: "",
+               //preProcess : {} //D3P process
+               //postProcess : {} //D3P process
+               items: [
+                   {
+                       id: "edu_1", //ref [data-item=':id']
+                       type: "chart", //chart || map || olap,
+                       config: {
+                           type: "line",
+                           columns: ["Year"], //x axis and series
+                           rows: ["IndicatorCode_EN"], //Y dimension
+                           values: ["Value"],
+                           aggregationFn: {"Value": "sum"}
+                       }, // :type-creator config
+                       filter: { //FX-filter format
 
-                //data cube's uid
-                uid: "UNECA_Education",
+                           IndicatorCode: ["010201"],
+                           GenderCode: ["3"]
+                       }
+                       //filterFor: ["Year"], // allowed dimension ids to filter,
+                   },
 
-                //bridge configuration
-                bridge: {
 
-                    type: "d3p"
 
-                },
 
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
+                   {
+                       id: "edu_2", //ref [data-item=':id']
+                       type: "chart", //chart || map || olap,
+                       config: {
+                           type: "column",
+                           columns: ["Year"], //x axis and series
+                           rows: ["IndicatorCode_EN"], //Y dimension
+                           values: ["Value"],
+                           aggregationFn: {"Value": "sum"}
+                       }, // :type-creator config
+                       filter: { //FX-filter format
 
-                items: [
-                    {
-                        //Time series
-                        id: 'item-1',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#education-1",
-                        config: {
-                            container: "#education-1",
-                            adapter: {
-                                type: "timeserie",
-                                xDimensions: 'time',
-                                yDimensions: 'item',
-                                valueDimensions: 'value',
-                                seriesDimensions: ["IndicatorCode"]
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
+                           IndicatorCode: ["010201", "010202", "010203"]
+                       }
+                       //filterFor: ["Year"], // allowed dimension ids to filter,
+                   },
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010201"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        //Time series
-                        id: 'item-2',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#education-2",
-                        config: {
-                            container: "#education-2",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'time',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
+                   {
+                       id: "edu_3", //ref [data-item=':id']
+                       type: "chart", //chart || map || olap,
+                       config: {
+                           type: "column",
+                           columns: ["Year"], //x axis and series
+                           rows: ["GenderCode_EN"], //Y dimension
+                           values: ["Value"],
+                           aggregationFn: {"Value": "sum"}
+                       }, // :type-creator config
+                       filter: { //FX-filter format
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
+                           IndicatorCode: ["010206"],
+                           GenderCode:["1","2"]
+                       }
+                       //filterFor: ["Year"], // allowed dimension ids to filter,
+                   }
+               ]
 
-                                                        "010201", "010202", "010203"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        id: 'item-3',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#education-3",
-                        config: {
-                            container: "#education-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'time',
-                                yDimensions: 'item',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['GenderCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "01020401"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                ]
 
-            }
+           }
         },
 
         "health": {
 
             dashboard: {
-                //data cube's uid
-                uid: "UNECA_Health1",
 
-                //bridge configuration
-                bridge: {
 
-                    type: "d3p"
-
-                },
-
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
-
+                uid: "UNECA_Health",
+                //version: "",
+                //preProcess : {} //D3P process
+                //postProcess : {} //D3P process
                 items: [
-
-
                     {
-                        id: 'health-1',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#health-1",
+                        id: "health-1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#health-1",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "Unit",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    yAxis: {
-                                        max: 100
-                                    }
-                                }
-                            }
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010307", "010308", "010309", "010310"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                            IndicatorCode: ["010307", "010308", "010309", "010310"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
-
                     {
-                        id: 'health-2',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#health-1",
+                        id: "health-2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#health-2",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ["IndicatorCode"]
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010301"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+                            IndicatorCode: ["010301"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
-
                     {
-                        id: 'health-3',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#health-3",
+                        id: "health-3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#health-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ["IndicatorCode"]
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010302"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
-
-                    {
-                        id: 'health-4',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#health-4",
-                        config: {
-                            container: "#health-4",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ["IndicatorCode"]
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010303", "010304"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                            IndicatorCode: ["010302"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
 
                     {
-                        id: 'health-5',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#health-5",
+                        id: "health-4", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#health-5",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "Unit",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ["IndicatorCode"]
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010313", "010314", "010315"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "name": "order",
-                                "parameters": {
-                                    "Year": "ASC"
-                                }
-                            }
-                        ]
+                            IndicatorCode: ["010303","010304"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+                    {
+                        id: "health-5", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010313","010314","010315"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
 
-
                 ]
-
             }
         },
 
         "labour": {
-            dashboard: {
-                //data cube's uid
-                uid: "UNECA_Labour",
 
-                //bridge configuration
-                bridge: {
-
-                    type: "d3p"
-
-                },
-
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
-
+            dashboard: [
+                {
+                uid: "ILO_Labour",
+                //version: "",
+                //preProcess : {} //D3P process
+                //postProcess : {} //D3P process
                 items: [
+                    {
+                        id: "labour-4", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            x: ["Year"], //x axis and series
+                            series: ["GenderCode_EN"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+                            IndicatorCode: ["010401"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
 
                     {
-                        //Time series
-                        id: 'labour-1',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#labour-1",
+                        id: "labour-5", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#labour-1",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'UnitCode',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ["IndicatorCode"]
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
-
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "010401"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                            type: "column",
+                            x: ["Year"], //x axis and series
+                            series: ["GenderCode_EN"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+                            IndicatorCode: ["010402"],
+                            GenderCode: ["3"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
 
                     {
-                        id: 'labour-2',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#labour-2",
+                        id: "labour-6", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#labour-2",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "UnitCode",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['SectorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": ["01040102"
-
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
-
-                    {
-                        id: 'labour-3',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#labour-3",
-                        config: {
-                            container: "#labour-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "UnitCode",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['GenderCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    plotOptions: {
-                                        column: {
-
-                                            stacking: "normal"
-                                        }
-
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": ["01040101"
-
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        "SectorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_EconomicSector",
-                                                    "codes": ["4"
-
-                                                    ]
-                                                }
-                                            ]
-                                        }
-
-                                    }
-                                }
-                            }
-                        ]
+                            type: "column",
+                            x: ["Year"], //x axis and series
+                            series: ["GenderCode_EN"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+                            IndicatorCode: ["010402"],
+                            GenderCode: ["1","2"]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
-
-
                 ]
-
             }
+]
         },
 
-        "energy": {
-            dashboard: {
+        "energy": {            dashboard: {
 
                 //data cube's uid
                 uid: "UNECA_Energy",
@@ -869,302 +546,98 @@ define(function () {
 
             dashboard: {
 
-                //data cube's uid
-                uid: "UNECA_MonetaryStatistics1",
+                uid: "UNECA_MonetaryStatistics",
 
-                //bridge configuration
-                bridge: {
-
-                    type: "d3p"
-
-                },
-
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
 
                 items: [
+                    {
+                        id: "monetary-1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                    //{
-                    //    //Time series
-                    //    id: 'monetary-1',
-                    //    type: 'chart',
-                    //    class: "fx-timeseries-ecample",
-                    //    //needed if layout = injected
-                    //    container: "#monetary-1",
-                    //    config: {
-                    //        container: "#monetary-1",
-                    //        adapter: {
-                    //            type: "standard",
-                    //            xDimensions: 'Year',
-                    //            yDimensions: 'IndicatorCode',
-                    //            valueDimensions: 'Value',
-                    //            seriesDimensions: []
-                    //        },
-                    //        template: {
-                    //            //"title": "Top 25..."
-                    //        },
-                    //        creator: {}
-                    //    },
-                    //
-                    //
-                    //    filter: [
-                    //        {
-                    //            "name": "filter",
-                    //            "parameters": {
-                    //                "rows": {
-                    //                    "IndicatorCode": {
-                    //                        "codes": [
-                    //                            {
-                    //                                "uid": "UNECA_ClassificationOfActivities",
-                    //                                "codes": [
-                    //                                    "020905"
-                    //                                ]
-                    //                            }
-                    //                        ]
-                    //                    }
-                    //                }
-                    //            }
-                    //        }
-                    //    ]
-                    //},
+                            IndicatorCode: [ "02090501", "02090502"]
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
 
                     {
-                        id: 'monetary-2',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#monetary-2",
+                        id: "monetary-2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#monetary-2",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "Unit",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    plotOptions: {
-                                        column: {
+                            type: "line",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                                            stacking: "normal"
-                                        }
+                            IndicatorCode: [ "020904"]
 
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "02090501", "02090502"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
-                        //Time series
-                        id: 'monetary-3',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#monetary-3",
+                        id: "monetary-3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#monetary-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
+                            type: "line",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
+                            IndicatorCode: [ "020906"]
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020904"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+
+                    {
+                        id: "monetary-4", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: [ "020901"]
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
 
                     {
-                        //Time series
-                        id: 'monetary-4',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#monetary-4",
+                        id: "monetary-5", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#monetary-4",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
+                            IndicatorCode: [ "020903", "02090301"]
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020906"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
-
-                    {
-                        //Time series
-                        id: 'monetary-5',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#monetary-5",
-                        config: {
-                            container: "#monetary-5",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'Unit',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
-
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020901"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
-
-
-                    {
-                        id: 'monetary-6',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#monetary-6",
-                        config: {
-                            container: "#monetary-6",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "Unit",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020903", "02090301"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
 
 
@@ -1177,317 +650,98 @@ define(function () {
 
             dashboard: {
                 //data cube's uid
-                uid: "UNECA_PublicFinance1",
-
-                //bridge configuration
-                bridge: {
-
-                    type: "d3p"
-
-                },
-
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
-
+                uid: "UNECA_PublicFinance",
                 items: [
 
-                    //{
-                    //    //Time series
-                    //    id: 'finance-1',
-                    //    type: 'chart',
-                    //    class: "fx-timeseries-ecample",
-                    //    //needed if layout = injected
-                    //    container: "#finance-1",
-                    //    config: {
-                    //        container: "#finance-1",
-                    //        adapter: {
-                    //            type: "standard",
-                    //            xDimensions: 'Year',
-                    //            yDimensions: 'IndicatorCode',
-                    //            valueDimensions: 'Value',
-                    //            seriesDimensions: []
-                    //        },
-                    //        template: {
-                    //            //"title": "Top 25..."
-                    //        },
-                    //        creator: {}
-                    //    },
-                    //
-                    //
-                    //    filter: [
-                    //        {
-                    //            "name": "filter",
-                    //            "parameters": {
-                    //                "rows": {
-                    //                    "IndicatorCode": {
-                    //                        "codes": [
-                    //                            {
-                    //                                "uid": "UNECA_ClassificationOfActivities",
-                    //                                "codes": [
-                    //                                    "021201"
-                    //                                ]
-                    //                            }
-                    //                        ]
-                    //                    }
-                    //                }
-                    //            }
-                    //        }
-                    //    ]
-                    //},
 
                     {
-                        id: 'finance-2',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#finance-2",
+                        id: "finance-1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#finance-2",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "Currency",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    plotOptions: {
-                                        column: {
+                            type: "stackedColumn",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                                            stacking: "normal"
-                                        }
+                            IndicatorCode: [  "021202", "02120101", "02120102"]
 
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "021202", "02120101", "02120102"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
                     {
-                        //Time series
-                        id: 'finance-3',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#finance-3",
+                        id: "finance-2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#finance-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'Currency',
-                                valueDimensions: 'Value',
-                                seriesDimensions: []
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
+                            IndicatorCode: [ "02120301", "02120302"]
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "021203"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
                     {
-                        id: 'finance-4',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#finance-4",
+                        id: "finance-3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#finance-4",
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                            leaflet: {
-                                zoomControl: false,
-                                attributionControl: true,
-                                scrollWheelZoom: false,
-                                minZoom: 2
-                            },
+                            IndicatorCode: [ "02120301", "02120302"]
 
-
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "Currency",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "02120301", "02120302"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        id: 'finance-5',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#finance-5",
-                        config: {
-                            container: "#finance-5",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "Currency",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "02120301", "0212030101"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
+                    {
+                        id: "finance-4", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: [  "02120301", "0212030101"]
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
 
                     {
-                        id: 'finance-6',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#finance-6",
+                        id: "finance-5", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#finance-6",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "Currency",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "021204"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                            IndicatorCode: [  "021204"]
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
 
 
@@ -1499,160 +753,66 @@ define(function () {
         "debt": {
 
             dashboard: {
-                //data cube's uid
+
                 uid: "UNECA_Debt",
-
-                //bridge configuration
-                bridge: {
-
-                    type: "d3p"
-
-                },
-
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
 
                 items: [
 
                     {
-                        //Time series
-                        id: 'debt-1',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#debt-1",
+                        id: "debt-1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#debt-1",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
-                                valueDimensions: 'Value',
-                                seriesDimensions: []
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
+                            type: "line",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
+                            IndicatorCode: [ "020308"]
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020308"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
                     {
-                        //Time series
-                        id: 'debt-2',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#debt-2",
+                        id: "debt-2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#debt-2",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: 'IndicatorCode',
-                                valueDimensions: 'Value',
-                                seriesDimensions: []
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {}
-                        },
+                            type: "line",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
+                            IndicatorCode: [ "020305"]
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020305"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
 
                     {
-                        id: 'debt-3',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#debt-3",
+                        id: "debt-3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#debt-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "UMcurrency",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "02030501", "02030502"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
+                            IndicatorCode: [ "02030501", "02030502"]
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    }
+
 
                 ]
             }
@@ -2495,9 +1655,7 @@ define(function () {
                     {
                         id: 'financial_flows-3',
                         type: 'map',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#financial_flows-3",
+
                         config: {
                             container: "#financial_flows-3",
                             geoSubject: 'PartnerCode',
@@ -2508,105 +1666,23 @@ define(function () {
                                 minZoom: 2
                             }
                         },
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
-                        forbiddenValues: {
-                            year: {time: [{from: 2013, to: 2013}]},
-                            domain: {removeFilter: true}
-                        },
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "Year": {
-                                            "time": [
-                                                {
-                                                    "from": 2012,
-                                                    "to": 2012
-                                                }
-                                            ]
-                                        },
 
-
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "02100101"
-                                                    ]
-                                                }
-                                            ]
-                                        },
-
-
-                                        "PartnerCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_Partner",
-                                                    "codes": [
-                                                        "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-
-
-                                    }
-                                }
-                            }
-                        ]
+                        filter: {
+                            "Year": [2012],
+                            "IndicatorCode": ["02100101"],
+                            "PartnerCode": [
+                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
+                            ]
+                        }
                     },
+
 
                     {
                         id: 'financial_flows-4',
-                        type: 'table',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#financial_flows-4",
-                        config: {
-                            container: "#financial_flows-4",
-                            options: {
-                                hidden_columns: ["PartnerCode"]
-                            }
-                        },
-
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020501"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "columns": ["IndicatorCode", "CountryCode", "Year", "PartnerCode", "Value", "um"]
-
-
-                                }
-                            }
-                        ]
-                    },
-
-
-                    {
-                        id: 'financial_flows-5',
                         type: 'map',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#financial_flows-5",
+
                         config: {
-                            container: "#financial_flows-5",
+                            container: "#financial_flows-3",
                             geoSubject: 'PartnerCode',
                             leaflet: {
                                 zoomControl: false,
@@ -2615,65 +1691,23 @@ define(function () {
                                 minZoom: 2
                             }
                         },
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
-                        forbiddenValues: {
-                            year: {time: [{from: 2013, to: 2013}]},
-                            domain: {removeFilter: true}
-                        },
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "Year": {
-                                            "time": [
-                                                {
-                                                    "from": 2012,
-                                                    "to": 2012
-                                                }
-                                            ]
-                                        },
 
-
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020502"
-                                                    ]
-                                                }
-                                            ]
-                                        },
-
-
-                                        "PartnerCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_Partner",
-                                                    "codes": [
-                                                        "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-
-
-                                    }
-                                }
-                            }
-                        ]
+                        filter: {
+                            "Year": [2012],
+                            "IndicatorCode": ["020501"],
+                            "PartnerCode": [
+                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
+                            ]
+                        }
                     },
 
                     {
-                        id: 'financial_flows-6',
-                        type: 'table',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#financial_flows-6",
+                        id: 'financial_flows-5',
+                        type: 'map',
+
                         config: {
-                            container: "#financial_flows-6",
+                            container: "#financial_flows-3",
+                            geoSubject: 'PartnerCode',
                             leaflet: {
                                 zoomControl: false,
                                 attributionControl: true,
@@ -2681,30 +1715,38 @@ define(function () {
                                 minZoom: 2
                             }
                         },
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        "020502"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "columns": ["IndicatorCode", "CountryCode", "Year", "PartnerCode", "Value", "um"]
 
+                        filter: {
+                            "Year": [2012],
+                            "IndicatorCode": ["020502"],
+                            "PartnerCode": [
+                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
+                            ]
+                        }
+                    },
 
-                                }
+                    {
+                        id: 'financial_flows-6',
+                        type: 'map',
+
+                        config: {
+                            container: "#financial_flows-3",
+                            geoSubject: 'PartnerCode',
+                            leaflet: {
+                                zoomControl: false,
+                                attributionControl: true,
+                                scrollWheelZoom: false,
+                                minZoom: 2
                             }
-                        ]
+                        },
+
+                        filter: {
+                            "Year": [2012],
+                            "IndicatorCode": ["020502"],
+                            "PartnerCode": [
+                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
+                            ]
+                        }
                     }
 
 
@@ -2716,233 +1758,70 @@ define(function () {
 
         "balance_of_payments": {
 
+
             dashboard: {
-
-                //data cube's uid
-                uid: "UNECA_BalanceOfPayements1",
-
-                //bridge configuration
-                bridge: {
-
-                    type: "d3p"
-
-                },
-
-                /*
-                 * in case bridge is WDS this is the cube metadata.
-                 * if bridge is D3P this is ignored
-                 * */
-                metadata: {},
-
+                uid: "UNECA_BalanceOfPayments",
+                //version: "",
+                //preProcess : {} //D3P process
+                //postProcess : {} //D3P process
                 items: [
-
-
                     {
-                        id: 'balanceOfPayments-1',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#balanceOfPayments-1",
+                        id: "BOP-1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#balanceOfPayments-1",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "um",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+                            CountryCode: ["AGO"],//column id and values to include,
+                            IndicatorCode: ["020204"]
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        '020204'
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-
-
-                        ]
-                    },
-                    //{
-                    //    id: 'balanceOfPayments-2',
-                    //    type: 'chart',
-                    //    class: "fx-timeseries-ecample",
-                    //    //needed if layout = injected
-                    //    container: "#balanceOfPayments-2",
-                    //    config: {
-                    //        container: "#balanceOfPayments-2",
-                    //        adapter: {
-                    //            type: "standard",
-                    //            xDimensions: 'Year',
-                    //            yDimensions: "um",
-                    //            valueDimensions: 'Value',
-                    //            seriesDimensions: ['IndicatorCode']
-                    //        },
-                    //        template: {
-                    //            //"title": "Top 25..."
-                    //        },
-                    //        creator: {
-                    //            chartObj: {
-                    //                chart: {
-                    //                    type: "column"
-                    //                }
-                    //            }
-                    //        }
-                    //    },
-                    //
-                    //    filter: [
-                    //        {
-                    //            "name": "filter",
-                    //            "parameters": {
-                    //                "rows": {
-                    //                    "IndicatorCode": {
-                    //                        "codes": [
-                    //                            {
-                    //                                "uid": "UNECA_ClassificationOfActivities",
-                    //                                "codes": [
-                    //                                    '020205'
-                    //                                ]
-                    //                            }
-                    //                        ]
-                    //                    }
-                    //                }
-                    //            }
-                    //        }
-                    //
-                    //
-                    //
-                    //    ]
-                    //},
-                    {
-                        id: 'balanceOfPayments-3',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#balanceOfPayments-3",
-                        config: {
-                            container: "#balanceOfPayments-3",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "um",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    plotOptions: {
-                                        column: {
-
-                                            stacking: "normal"
-                                        }
-
-                                    }
-                                }
-                            }
-                        },
-
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        '02020501', '02020502'
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-
-
-                        ]
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
-                        id: 'balanceOfPayments-4',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#balanceOfPayments-4",
+                        id: "BOP-2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
                         config: {
-                            container: "#balanceOfPayments-4",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "um",
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['IndicatorCode']
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    }
-                                }
-                            }
-                        },
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+                            CountryCode: ["AGO"],//column id and values to include,
+                            IndicatorCode: ["02020501","02020501"]
 
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "codes": [
-                                                        '02020101'
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
 
 
-                        ]
+                    {
+                        id: "BOP-3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            columns: ["Year"], //x axis and series
+                            rows: ["IndicatorCode_EN"], //Y dimension
+                            values: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+                            CountryCode: ["AGO"],//column id and values to include,
+                            IndicatorCode: ["02020101"]
+
+                        }
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
 
-                ]
+
+]
+
             }
 
         },

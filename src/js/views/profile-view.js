@@ -282,6 +282,10 @@ define([
 
             this._disposeDashboards();
 
+            if (!Array.isArray(config)){
+                config = [config];
+            }
+
             _.each(config, _.bind(function (c) {
 
                 this.dashboards.push(new Dashboard(c));
