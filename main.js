@@ -5,9 +5,6 @@ require([
     './submodules/fenix-ui-menu/src/js/paths',
     './submodules/fenix-ui-analysis/src/js/paths',
     './submodules/fenix-ui-catalog/src/js/paths',
-    './submodules/fenix-ui-DataEditor/js/paths',
-    './submodules/fenix-ui-DSDEditor/js/paths',
-    './submodules/fenix-ui-metadata-editor/js/paths',
     './submodules/fenix-ui-metadata-viewer/src/js/paths',
     './submodules/fenix-ui-map-creator/src/js/paths',
     './submodules/fenix-ui-chart-creator/src/js/paths',
@@ -16,8 +13,7 @@ require([
     './submodules/fenix-ui-dashboard/src/js/paths',
     './submodules/fenix-ui-filter/src/js/paths',
     './submodules/fenix-ui-olap/src/js/paths'
-], function (Compiler, Common, Menu, Analysis, Catalog,
-             DataEditor, DSDEditor, MetadataEditor, MetadataViewer,
+], function (Compiler, Common, Menu, Analysis, Catalog, MetadataViewer,
              MapCreator, ChartCreator, TableCreator, FenixReport, Dashboard, Filter, Olap) {
 
     'use strict';
@@ -35,15 +31,6 @@ require([
 
     var catalogConfig = Catalog;
     catalogConfig.baseUrl = submodules_path + 'fenix-ui-catalog/src/js/';
-
-    var dataEditorConfig = DataEditor;
-    dataEditorConfig.baseUrl = submodules_path + 'fenix-ui-DataEditor/js/';
-
-    var dsdEditorConfig = DSDEditor;
-    dsdEditorConfig.baseUrl = submodules_path + 'fenix-ui-DSDEditor/js/';
-
-    var metadataEditorConfig = MetadataEditor;
-    metadataEditorConfig.baseUrl = submodules_path + 'fenix-ui-metadata-editor/js/';
 
     var metadataViewerConfig = MetadataViewer;
     metadataViewerConfig.baseUrl = submodules_path + 'fenix-ui-metadata-viewer/src/js/';
@@ -69,8 +56,7 @@ require([
     var olapConfig = Olap;
     olapConfig.baseUrl = submodules_path + 'fenix-ui-olap/src/js';
 
-    Compiler.resolve([commonConfig, menuConfig, analysisConfig, catalogConfig,
-            dataEditorConfig, dsdEditorConfig, /*dataUploadConfig,*/metadataEditorConfig, metadataViewerConfig, /*faostatThemeConfig,*/
+    Compiler.resolve([commonConfig, menuConfig, analysisConfig, catalogConfig, metadataViewerConfig,
             mapCreatorConfig, chartCreatorConfig, tableCreatorConfig, fenixReportConfig, filterConfig, dashboardConfig, olapConfig],
         {
             placeholders: {"FENIX_CDN": "http://fenixrepo.fao.org/cdn"},
