@@ -248,7 +248,7 @@ define([
                 filterValues = this.filterValues[this.currentDashboard] || {};
 
             if (!Array.isArray(conf)){
-                conf = Utils.cleanArray([conf]);
+                conf = FxUtils.cleanArray([conf]);
             }
 
             _.each(conf, _.bind(function ( c ) {
