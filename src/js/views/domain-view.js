@@ -248,6 +248,8 @@ define([
 
             this.dashboard.render(config);*/
 
+            //TODO REFACTOR USING NEW DASHBOARD
+
             var dashboard = this.createDashboard(Model1);
 
             $(s.REFRESH_BTN).on("click", function () {
