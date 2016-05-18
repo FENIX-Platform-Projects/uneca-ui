@@ -10,7 +10,7 @@ define([
     'i18n!nls/domain',
     'config/events',
     'text!config/domain/lateral_menu.json',
-    'text!config/profile/resume_countries.json',
+    //'text!config/profile/resume_countries.json',
     'config/domain/config',
     'handlebars',
     'loglevel',
@@ -19,7 +19,11 @@ define([
     'bootstrap-list-filter',
     'jstree',
     'fenix-ui-map'
-], function ($, View, Dashboard, Filter, template, listTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars, log, FilterConfCreator) {
+], function ($, View, Dashboard, Filter, template, listTemplate, basesTemplate, i18nLabels, E,
+    LateralMenuConfig, 
+    //resumeInfo,
+    PC,
+    Handlebars, log, FilterConfCreator) {
 
     'use strict';
 
@@ -234,7 +238,7 @@ define([
 
         _renderDashboard: function (config) {
 
-            if (this.dashboard && this.dashboard.destroy) {
+            /*if (this.dashboard && this.dashboard.destroy) {
                 this.dashboard.destroy();
             }
 
@@ -242,7 +246,16 @@ define([
                 layout: "injected"
             });
 
-            this.dashboard.render(config);
+            this.dashboard.render(config);*/
+
+            var dashboard = this.createDashboard(Model1);
+
+            $(s.REFRESH_BTN).on("click", function () {
+                
+                dashboard.refresh({
+                    countrycode : ["1099"]
+                });
+            })
 
         },
 
