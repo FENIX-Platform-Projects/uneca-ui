@@ -75,6 +75,7 @@ require([
                 paths: {
                     bootstrap: "{FENIX_CDN}/js/bootstrap/3.3.4/js/bootstrap.min",
                     underscore: "{FENIX_CDN}/js/underscore/1.7.0/underscore.min",
+                    underscoreString: "{FENIX_CDN}/js/underscore.string/3.2.2/dist/underscore.string.min",
                     backbone: "{FENIX_CDN}/js/backbone/1.1.2/backbone.min",
                     handlebars: "{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
                     chaplin: "{FENIX_CDN}/js/chaplin/1.1.1/chaplin.min",
@@ -171,6 +172,9 @@ require([
                     },
                     underscore: {
                         exports: '_'
+                    },
+                    underscoreString: {
+                        deps: 'underscore'
                     },
                     backbone: {
                         deps: ['underscore', 'jquery'],
