@@ -51,7 +51,7 @@ require([
     dashboardConfig.baseUrl = submodules_path + 'fenix-ui-dashboard/src/js/';
 
     var filterConfig = Filter;
-    filterConfig.baseUrl = submodules_path + 'fenix-ui-filter/src/js';
+    filterConfig.baseUrl = submodules_path + 'fenix-ui-filter/';
 
     var olapConfig = Olap;
     olapConfig.baseUrl = submodules_path + 'fenix-ui-olap/src/js';

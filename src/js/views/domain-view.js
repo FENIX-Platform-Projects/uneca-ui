@@ -14,7 +14,7 @@ define([
     'config/domain/config',
     'handlebars',
     'loglevel',
-    'fx-filter/Fx-filter-configuration-creator',
+    'fx-filter/componentcreator',
     'amplify',
     'bootstrap-list-filter',
     'jstree',
