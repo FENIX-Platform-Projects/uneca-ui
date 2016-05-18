@@ -2,7 +2,7 @@
 define([
     'jquery',
     'views/base/view',
-    'fx-ds/start',
+    'fx-dashboard/start',
     'fx-filter/start',
     'text!templates/domains/domains.hbs',
     'text!templates/domains/list.hbs',

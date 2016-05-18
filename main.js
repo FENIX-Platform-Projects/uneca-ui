@@ -124,7 +124,7 @@ require([
 
                     'fx-report/config/md-export/config': '../../config/submodules/fx-report/md-export/config',
 
-                    'fx-ds/config/config': '../../config/submodules/fx-dashboard/config',
+                    'fx-dashboard/config/config': '../../config/submodules/fx-dashboard/config',
 
                     // METADATA VIEWER
                     'fx-md-v/config/config': '../../config/submodules/fx-md-viewer/config',
