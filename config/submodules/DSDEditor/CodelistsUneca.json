@@ -13,6 +13,14 @@
     },
     "subject": "item"
   },
+
+  {
+    "val": "FAOSTAT_Items",
+    "text": {
+      "EN": "FAOSTAT Commodity List"
+    },
+    "subject": "item"
+  },
   {
     "val": "UNECA_ClassificationOfActivities",
     "text": {

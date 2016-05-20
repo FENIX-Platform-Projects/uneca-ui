@@ -226,7 +226,7 @@
             <div class="col-xs-12">
                 <h1>Economically active population</h1>
 
-                <div id="labour-1"></div>
+                <div data-item="labour-1"></div>
             </div>
         </div>
 
@@ -235,7 +235,7 @@
             <div class="col-xs-12">
                 <h1>Economically active population by sector</h1>
 
-                <div id="labour-2"></div>
+                <div data-item="labour-2"></div>
             </div>
 
         </div>
@@ -245,7 +245,7 @@
             <div class="col-xs-12">
                 <h1>Economically active population by gender</h1>
 
-                <div id="labour-3"></div>
+                <div data-item="labour-3"></div>
             </div>
         </div>
 
@@ -420,20 +420,86 @@
             <div class="col-xs-12">
                 <h1>Production of electricity</h1>
 
-                <div id="labour-1"></div>
+                <div data-item="energy-1"></div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Production of electricity</h1>
+
+                <div data-item="energy-2"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Production of electricity</h1>
+
+                <div data-item="energy-3"></div>
+            </div>
+        </div>
+
 
     </section>
 
 
+
+    <section data-dashboard="poverty">
+        <div class="column">
+            <div class="col-xs-6">
+                <h1>Share of income Held by Poorest 10 %</h1>
+
+                <div data-item="poverty-1"></div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="col-xs-6">
+                <h1>Share of income Held by Poorest 10 %</h1>
+
+                <div data-item="poverty-2"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Population below 2$ (PPP) per day </h1>
+
+                <div data-item="poverty-3"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Human poverty index</h1>
+
+                <div data-item="poverty-4"></div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
     <section data-dashboard="gdp">
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>GDP (Current prices) </h1>
+
+                <div data-item="gdp-1"></div>
+            </div>
+        </div>
+
 
         <div class="row">
             <div class="col-xs-12">
                 <h1>GDP growth (annual %)</h1>
 
-                <div id="gdp-1"></div>
+                <div data-item="gdp-2"></div>
             </div>
         </div>
 
@@ -441,11 +507,106 @@
             <div class="col-xs-12">
                 <h1>GDP per capita</h1>
 
-                <div id="gdp-2"></div>
+                <div data-item="gdp-3"></div>
             </div>
         </div>
 
     </section>
+
+
+    <section data-dashboard="expenditure_gdp">
+        <h1>General governement final consumption expenditure</h1>
+ <div class="row">
+        <div class="column">
+            <div class="col-xs-6">
+                   <div data-item="expenditure-1"></div>
+
+                <p>Current prices</p>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div class="col-xs-6">
+
+                <div data-item="expenditure-5"></div>
+                <p>Constant prices</p>
+            </div>
+        </div>
+    </div>
+
+
+        <h1>Individual consumption expenditure</h1>
+        <div class="row">
+        <div class="column">
+            <div class="col-xs-6">
+
+
+                <div data-item="expenditure-2"></div>
+
+                <p>Current prices</p>
+            </div>
+        </div>
+
+            <div class="column">
+                <div class="col-xs-6">
+
+
+                    <div data-item="expenditure-6"></div>
+                    <p>Constant prices</p>
+                </div>
+            </div>
+        </div>
+
+
+        <h1>Gross fixed capital formation</h1>
+        <div class="row">
+
+
+        <div class="column">
+            <div class="col-xs-6">
+
+
+                <div data-item="expenditure-3"></div>
+
+                <p>Current prices</p>
+            </div>
+        </div>
+            <div class="column">
+                <div class="col-xs-6">
+
+                    <div data-item="expenditure-7"></div>
+                    <p>Constant prices</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <h1>Changes in inventories</h1>
+            <div class="row">
+        <div class="column">
+            <div class="col-xs-6">
+
+                <div data-item="expenditure-4"></div>
+                <p>Current prices</p>
+            </div>
+        </div>
+                <div class="column">
+                    <div class="col-xs-6">
+                        <div data-item="expenditure-8"></div>
+                        <p>Constant prices</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    </section>
+
+
 
 
     <section data-dashboard="imports">
@@ -459,7 +620,7 @@
             <div class="col-xs-12">
                 <h1>Net total official development assistance</h1>
 
-                <div id="financial_flows-1"></div>
+                <div data-item="financial_flows-1"></div>
             </div>
         </div>
 
@@ -467,7 +628,7 @@
             <div class="col-xs-12">
                 <h1>Net foreign direct investment inflows</h1>
 
-                <div id="financial_flows-2"></div>
+                <div data-item="financial_flows-2"></div>
             </div>
         </div>
 
@@ -476,7 +637,7 @@
                 <h1>Distribution of net foreign direct investment inflows by country</h1>
 
                 <div class="obj-box">
-                    <div id="financial_flows-3"></div>
+                    <div data-item="financial_flows-3"></div>
                     <p>Note: Last year available (2012)</p>
                 </div>
 
@@ -488,7 +649,7 @@
             <div class="col-xs-12">
                 <h1>Net foreign direct investment inflows by year</h1>
 
-                <div id="financial_flows-4"></div>
+                <div data-item="financial_flows-4"></div>
             </div>
         </div>
 
@@ -497,7 +658,7 @@
                 <h1>Distribution of origin of FDI Inflows by country</h1>
 
                 <div class="obj-box">
-                    <div id="financial_flows-5"></div>
+                    <div data-item="financial_flows-5"></div>
                     <p>Note: Last year available (2012)</p>
                 </div>
 
@@ -508,7 +669,7 @@
             <div class="col-xs-12">
                 <h1>Origin of FDI Inflows by year</h1>
 
-                <div id="financial_flows-6"></div>
+                <div data-item="financial_flows-6"></div>
             </div>
         </div>
 
@@ -577,7 +738,7 @@
             <div class="col-xs-12">
                 <h1>Inflation, consumer prices (annual %) </h1>
 
-                <div id="inflation-1"></div>
+                <div data-item="inflation-1"></div>
             </div>
         </div>
 
@@ -585,7 +746,16 @@
             <div class="col-xs-12">
                 <h1>Inflation, GDP deflator (annual%)</h1>
 
-                <div id="inflation-2"></div>
+                <div data-item="inflation-2"></div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Inflation by kind of commodity</h1>
+
+                <div data-item="inflation-3"></div>
             </div>
         </div>
 
@@ -593,7 +763,7 @@
             <div class="col-xs-12">
                 <h1>Inflation by kind of commodity</h1>
 
-                <div id="inflation-3"></div>
+                <div data-item="inflation-4"></div>
             </div>
         </div>
 
