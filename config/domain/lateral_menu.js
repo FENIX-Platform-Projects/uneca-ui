@@ -35,10 +35,6 @@ define({
           {
             "id": "gdp"
           },
-
-          {
-            "id": "expenditure_gdp"
-          },
           {
             "id": "monetary_statistics"
           },
@@ -62,10 +58,6 @@ define({
           },
           {
             "id": "infrastructure"
-          },
-
-          {
-            "id": "poverty"
           },
           {
             "id": "production",

@@ -1,64 +1,54 @@
 /*global define, amplify*/
 define([
     'jquery',
+    'underscore',
     'views/base/view',
+    'config/events',
+    'config/domain/config',
     'fx-dashboard/start',
     'fx-filter/start',
-    'text!templates/domains/domains.hbs',
-    'text!templates/domains/list.hbs',
-    'text!templates/domains/bases.hbs',
+    'fx-common/utils',
+    'lib/utils',
     'i18n!nls/domain',
-    'config/events',
-    'text!config/domain/lateral_menu.json',
-    //'text!config/profile/resume_countries.json',
-    'config/domain/config',
+    'text!templates/domain/domain.hbs',
+    'text!templates/domain/dashboard.hbs',
+    'text!templates/domain/bases.hbs',
+    'config/domain/lateral_menu',
     'handlebars',
-    'loglevel',
-    'fx-filter/componentcreator',
     'amplify',
-    'bootstrap-list-filter',
-    'jstree',
-    'fenix-ui-map'
-], function ($, View, Dashboard, Filter, template, listTemplate, basesTemplate, i18nLabels, E,
-    LateralMenuConfig, 
-    //resumeInfo,
-    PC,
-    Handlebars, log, FilterConfCreator) {
+    'jstree'
+], function ($, _, View, EVT, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, Handlebars) {
 
     'use strict';
 
     var s = {
         CONTENT: "#domain-content",
-        DASHBOARD_CONTENT: "#domain-dashboard-content",
-        LATERAL_MENU: '#domain-lateral-menu',
-        FILTER_CONTAINER : 'domain-filter-container',
-        FILTER_SUBMIT : '#domain-filter-submit',
-        FILTER_BLOCK : "#domain-filter-block"
+        SEARCH_FILTER_INPUT: "#searchinput",
+        DASHBOARD_CONTENT: "#dashboard-content",
+        LATERAL_MENU: '#lateral-menu',
+        MAP_CONTAINER: "#country-map-container",
+        FILTER_CONTAINER: '#filter-container',
+        FILTER_SUBMIT: '#filter-submit',
+        FILTER_BLOCK: "[data-role='filter-block']"
     };
 
     var DomainView = View.extend({
 
         initialize: function (params) {
 
-            this.domains = params.domains;
-
-            this.domain = params.domain;
+            this.lang = Utils.getLang().toUpperCase();
 
             View.prototype.initialize.call(this, arguments);
-
         },
 
-        // Automatically render after initialize
         autoRender: true,
 
-        className: 'domains',
+        className: 'domain',
 
-        // Save the template string in a prototype property.
-        // This is overwritten with the compiled template function.
-        // In the end you might want to used precompiled templates.
         template: template,
 
         getTemplateData: function () {
+
             return i18nLabels;
         },
 
@@ -67,13 +57,45 @@ define([
             View.prototype.attach.call(this, arguments);
 
             //update State
-            amplify.publish(E.STATE_CHANGE, {menu: 'domains'});
+            amplify.publish(EVT.STATE_CHANGE, {menu: 'domain'});
 
             this._initVariables();
 
-            this._bindEventListeners();
-
             this._printDomainDashboard();
+
+        },
+
+        _printDomainDashboard: function () {
+
+            var self = this,
+                template = Handlebars.compile(dashboardTemplate),
+                html = template();
+
+            this.$content.html(html);
+
+            this._initDashboardVariables();
+
+            this._bindDashboardEventListeners();
+
+            //print lateral menu
+            this.$lateralMenu.jstree(Utils.setI18nToJsTreeConfig(LateralMenuConfig, i18nLabels))
+
+            //Limit selection e select only leafs for indicators
+                .on("select_node.jstree", _.bind(function (e, data) {
+
+                    if (!data.instance.is_leaf(data.node)) {
+
+                        self.$lateralMenu.jstree(true).deselect_node(data.node, true);
+
+                        self.$lateralMenu.jstree(true).open_node(data.node, true);
+
+                    } else {
+                        self._onChangeDashboard(data.selected[0]);
+                    }
+
+                }, this));
+
+            this._printDashboard('population');
 
         },
 
@@ -81,88 +103,44 @@ define([
 
             this.$content = this.$el.find(s.CONTENT);
 
-            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
+            this.filterValues = {};
+
+            this.dashboards = [];
+
+        },
+
+        //country dashboard
+
+        _bindDashboardEventListeners: function () {
+
+            this.$filterSubmit.on('click', _.bind(this._onFilterClick, this));
+        },
+
+        _initDashboardVariables: function () {
 
             this.$filterSubmit = this.$el.find(s.FILTER_SUBMIT);
 
+            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
+
         },
 
-        _bindEventListeners: function () {
-
-            var self = this;
-
-            this.$filterSubmit.on('click', function (e, data) {
-                var values = self.filter.getValues();
-                self.dashboard.filter([values]);
-            });
-        },
-
-        _printDomainDashboard: function () {
-
-            var self = this;
-
-            //print jstree
-            this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
-
-                .on("ready.jstree", _.bind(function (e, data) {
-
-                    if (this.id) {
-
-                        self.$lateralMenu.jstree(true).select_node(this.id, true);
-
-                    } else {
-
-                        self.$lateralMenu.jstree(true).select_node('population', true);
-
-                    }
-
-                }, this))
-
-                //Limit selection e select only leafs for indicators
-                .on("select_node.jstree", _.bind(function (e, data) {
-
-                    if ( !data.instance.is_leaf(data.node) ) {
-
-                        self.$lateralMenu.jstree(true).deselect_node(data.node, true);
-
-                        self.$lateralMenu.jstree(true).open_node(data.node, true);
-
-                    } else {
-
-                        //TODO remove me
-                        self._onChangeDashboard(data.selected[0]);
-                    }
-
-                }, this));
-        },
-
-        _printDashboard : function ( item ) {
+        _printDashboard: function (item) {
 
             this._printDashboardBase(item);
 
             var conf = this._getDashboardConfig(item),
                 filterConfig = this._getFilterConfig(item);
 
-            this._renderDashboard(conf);
-
-            if (filterConfig && Array.isArray(filterConfig)) {
-
-                this.$el.find(s.FILTER_BLOCK).show();
-
-                this._renderFilter(filterConfig);
-
-            } else {
-
-                this.$el.find(s.FILTER_BLOCK).hide();
-
+            if (conf && !_.isEmpty(conf) ) {
+                this._renderDashboard(conf);
             }
-        },
 
-        _onChangeDashboard: function (item) {
-
-            console.log(item)
-
-            this._printDashboard(item);
+            if (!_.isEmpty(filterConfig)) {
+                this.$el.find(s.FILTER_BLOCK).show();
+                this._renderFilter(filterConfig);
+            } else {
+                this.$el.find(s.FILTER_BLOCK).hide();
+            }
 
         },
 
@@ -171,117 +149,139 @@ define([
             //Inject HTML
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
                 template = Handlebars.compile(source.prop('outerHTML')),
-                html = template();
+                html = template(i18nLabels);
 
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
+        },
+
+        _onChangeDashboard: function (item) {
+
+            if (this.currentDashboard !== item) {
+                this.currentDashboard = item;
+                this._printDashboard(item);
+            }
+
+        },
+
+        _onFilterClick: function () {
+
+            var values = this.filter.getValues();
+
+            this.filterValues[this.currentDashboard] = values;
+
+            _.each( this.dashboards, _.bind(function (dashboard) {
+                if (dashboard && $.isFunction(dashboard.refresh)) {
+                    dashboard.refresh(values);
+                }
+            }, this));
+
         },
 
         _createCountryFilter: function () {
 
             //create country filter
-            return {
-                "name": "filter",
-                "parameters": {
-                    "rows": {
-                        "CountryCode": {
-                            "codes": [
-                                {
-                                    "uid": "ISO3",
-                                    "codes": [
-                                       this.id
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            };
+
+            return {"CountryCode": [this.id]};
         },
 
         _getDashboardConfig: function (id) {
 
-            //get from PC the 'id' conf
+            var conf = PC[id].dashboard,
+                filterValues = this.filterValues[this.currentDashboard] || {};
 
-            var base,
-                conf;
-
-            try{
-                base = PC[id].dashboard;
-
-            }catch (e) {
-                alert("Impossible to load dashboard configuration for [" + id + "]");
+            if (!Array.isArray(conf)){
+                conf = FxUtils.cleanArray([conf]);
             }
 
-            conf = $.extend(true, {}, base);
-
-            //conf.filter = [this._createCountryFilter()];
-
             return conf;
+
         },
 
         _getFilterConfig: function (id) {
 
-            //get from PC the 'id' conf
+            var conf = $.extend(true, {}, PC[id].filter),
+                values = this.filterValues[id] || {},
+                result = FxUtils.mergeConfigurations(conf, values);
 
-            var conf;
+            _.each(result, _.bind(function (obj, key) {
 
-            try {
+                if (!obj.template) {
+                    obj.template = {};
+                }
+                //Add i18n label
+                obj.template.title = Utils.getI18nLabel( key, i18nLabels, "filter_");
 
-                conf = PC[id].filter;
+            }, this));
 
-            } catch (e) {
-                alert("Impossible to load filter configuration for [" + id + "]");
-            }
-
-            return conf;
+            return result;
         },
 
         _renderDashboard: function (config) {
 
-            /*if (this.dashboard && this.dashboard.destroy) {
-                this.dashboard.destroy();
-            }
+            this._disposeDashboards();
 
-            this.dashboard = new Dashboard({
-                layout: "injected"
-            });
+            _.each(config, _.bind(function (c) {
 
-            this.dashboard.render(config);*/
+                this.dashboards.push(new Dashboard(c));
 
-            //TODO REFACTOR USING NEW DASHBOARD
+            }, this));
 
-            var dashboard = this.createDashboard(Model1);
+        },
 
-            $(s.REFRESH_BTN).on("click", function () {
-                
-                dashboard.refresh({
-                    countrycode : ["1099"]
-                });
-            })
+        _disposeDashboards : function () {
 
+            _.each( this.dashboards, _.bind(function (dashboard) {
+                if (dashboard && $.isFunction(dashboard.dispose)) {
+                    dashboard.dispose();
+                }
+            }, this));
+
+            this.dashboards = [];
         },
 
         _renderFilter: function (config) {
 
-            var self = this;
+            if (this.filter && $.isFunction(this.filter.dispose)) {
+                this.filter.dispose();
+            }
 
-            this.filterConfCreator = new FilterConfCreator();
+            this.filter = new Filter({
+                el: s.FILTER_CONTAINER,
+                items: config,
+                common: {
+                    template: {
+                        hideSwitch: true,
+                        hideRemoveButton: true
+                    }
+                }
+            });
 
-            this.filterConfCreator.getConfiguration(config)
-                .then(function (c) {
+        },
 
-                    self.filter = new Filter();
+        //Disposition process
 
-                    self.filter.init({
-                        container: s.FILTER_CONTAINER,
-                        layout: 'fluidGrid'
-                    });
+        dispose: function () {
 
-                    var adapterMap = {};
+            if (this.$lateralMenu && this.$lateralMenu.length > 0) {
+                this.$lateralMenu.jstree(true).destroy();
+            }
 
-                    self.filter.add(c, adapterMap);
+            this._disposeDashboards();
 
-                });
+            this._unbindDashboardEventListeners();
+
+            this.currentDashboard = {};
+            this.filterValues = {};
+
+            View.prototype.dispose.call(this, arguments);
+
+        },
+
+        _unbindDashboardEventListeners: function () {
+
+            if (this.$filterSubmit && this.$filterSubmit.length > 0) {
+                this.$filterSubmit.off();
+            }
 
         }
 

@@ -1,6 +1,6 @@
 /*global define*/
 define({
-    "title": "Country Profile",
+    "title": "Browse by domain",
 
     //Dashboard filter's selector titles
     "filter_IndicatorCode" : "Indicator",
@@ -25,6 +25,8 @@ define({
     "menu_production" : "Production",
     "menu_agriculture_production" : "Agriculture production",
     "menu_mining_production" : "Mining production",
+    "menu_expenditure_gdp" : "Expenditure on GDP",
+    "menu_poverty" : "Poverty",
 
     //Country names
     "DZA": "Algeria",
