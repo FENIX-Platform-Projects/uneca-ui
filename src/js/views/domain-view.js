@@ -9,7 +9,7 @@ define([
     'fx-filter/start',
     'fx-common/utils',
     'lib/utils',
-    'i18n!nls/domain',
+    'i18n!nls/labels',
     'text!templates/domain/domain.hbs',
     'text!templates/domain/dashboard.hbs',
     'text!templates/domain/bases.hbs',
@@ -131,7 +131,7 @@ define([
             var conf = this._getDashboardConfig(item),
                 filterConfig = this._getFilterConfig(item);
 
-            if (conf && !_.isEmpty(conf) ) {
+            if (conf && !_.isEmpty(conf)) {
                 this._renderDashboard(conf);
             }
 
@@ -169,7 +169,7 @@ define([
 
             this.filterValues[this.currentDashboard] = values;
 
-            _.each( this.dashboards, _.bind(function (dashboard) {
+            _.each(this.dashboards, _.bind(function (dashboard) {
                 if (dashboard && $.isFunction(dashboard.refresh)) {
                     dashboard.refresh(values);
                 }
@@ -189,7 +189,7 @@ define([
             var conf = PC[id].dashboard,
                 filterValues = this.filterValues[this.currentDashboard] || {};
 
-            if (!Array.isArray(conf)){
+            if (!Array.isArray(conf)) {
                 conf = FxUtils.cleanArray([conf]);
             }
 
@@ -209,7 +209,7 @@ define([
                     obj.template = {};
                 }
                 //Add i18n label
-                obj.template.title = Utils.getI18nLabel( key, i18nLabels, "filter_");
+                obj.template.title = Utils.getI18nLabel(key, i18nLabels, "filter_");
 
             }, this));
 
@@ -228,9 +228,9 @@ define([
 
         },
 
-        _disposeDashboards : function () {
+        _disposeDashboards: function () {
 
-            _.each( this.dashboards, _.bind(function (dashboard) {
+            _.each(this.dashboards, _.bind(function (dashboard) {
                 if (dashboard && $.isFunction(dashboard.dispose)) {
                     dashboard.dispose();
                 }

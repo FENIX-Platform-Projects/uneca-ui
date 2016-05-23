@@ -59,8 +59,6 @@ require([
     Compiler.resolve([commonConfig, menuConfig, analysisConfig, catalogConfig, metadataViewerConfig,
             mapCreatorConfig, chartCreatorConfig, tableCreatorConfig, fenixReportConfig, filterConfig, dashboardConfig, olapConfig],
         {
-            placeholders: {"FENIX_CDN": "http://fenixrepo.fao.org/cdn"},
-
             config: {
 
                 //Set the config for the i18n

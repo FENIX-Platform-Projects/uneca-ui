@@ -42,29 +42,11 @@
     },
     {
       "attrs": {
-        "id": "domains"
+        "id": "domain"
       },
       "target": "#domains",
       "label": {
         "EN": "Browse by Domain"
-      }
-    },
-    {
-      "attrs": {
-        "id": "methods"
-      },
-      "target": "#methods",
-      "label": {
-        "EN": "Methods and Standards"
-      }
-    },
-    {
-      "attrs": {
-        "id": "modules"
-      },
-      "target": "#modules",
-      "label": {
-        "EN": "Thematic Modules"
       }
     }
   ],

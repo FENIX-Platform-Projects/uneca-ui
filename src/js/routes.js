@@ -7,17 +7,16 @@ define(function () {
     return function (match) {
         match('', 'home#show');
         match('home', 'home#show');
-        //match('countries', 'countries#show');
-        match('profile/:id', 'profile#show');
         match('profile', 'countries#show');
-
-        //TODO to check
+        match('profile/:id', 'profile#show');
         match('domains', 'domain#show');
         match('domains/:id', 'domain#show');
         match('analysis', 'analysis#show');
-        match('methods', 'methods#show');
-        match('methods/:id', 'methods#show');
-        match('modules', 'modules#show');
+
+        //TODO to check
+        //match('methods', 'methods#show');
+        //match('methods/:id', 'methods#show');
+        //match('modules', 'modules#show');
         match('*anything', '404#show');
     };
 });

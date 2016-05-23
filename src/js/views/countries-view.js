@@ -5,7 +5,7 @@ define([
     'views/base/view',
     'config/events',
     'config/profile/config',
-    'i18n!nls/profile',
+    'i18n!nls/labels',
     'text!templates/profile/profile.hbs',
     'text!templates/profile/list.hbs',
     'handlebars',

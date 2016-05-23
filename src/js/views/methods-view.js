@@ -4,7 +4,7 @@ define([
     'backbone',
     'views/base/view',
     'text!templates/methods/methods.hbs',
-    'i18n!nls/methods',
+    'i18n!nls/labels',
     'handlebars',
     'lib/utils',
     'config/config',

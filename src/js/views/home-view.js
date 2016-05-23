@@ -6,7 +6,7 @@ define([
     'config/events',
     'text!json/home/data_at_glance.json',
     'text!templates/home/home.hbs',
-    'i18n!nls/home',
+    'i18n!nls/labels',
     'handlebars',
     'fx-chart/config/renderers/highcharts_shared',
     'copyShader',

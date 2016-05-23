@@ -9,7 +9,7 @@ define([
     'views/base/view',
     'fx-menu/start',
     'globals/AuthManager',
-    'i18n!nls/site',
+    'i18n!nls/labels',
     'text!templates/site.hbs'
 ], function ($, Chaplin, _, C, E, State, View, Menu, AuthManager, i18nLabels, template) {
 

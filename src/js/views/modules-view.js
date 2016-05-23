@@ -2,7 +2,7 @@
 define([
     'views/base/view',
     'text!templates/modules/modules.hbs',
-    'i18n!nls/modules',
+    'i18n!nls/labels',
     'config/events',
     'amplify'
 ], function (View, template, i18nLabels,E) {

@@ -4,7 +4,7 @@ define([
     'underscore',
     'views/base/view',
     'text!templates/analysis/analysis.hbs',
-    'i18n!nls/analysis',
+    'i18n!nls/labels',
     'config/config',
     'config/events',
     'fx-cat-br/start',

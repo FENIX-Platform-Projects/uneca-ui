@@ -9,7 +9,7 @@ define([
     'fx-filter/start',
     'fx-common/utils',
     'lib/utils',
-    'i18n!nls/profile',
+    'i18n!nls/labels',
     'text!templates/profile/profile.hbs',
     'text!templates/profile/dashboard.hbs',
     'text!templates/profile/bases.hbs',
@@ -115,7 +115,6 @@ define([
 
             this._printDashboard('resume');
 
-            this._printCountryMap();
         },
 
         _bindDashboardEventListeners: function () {
@@ -180,7 +179,8 @@ define([
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
                 template = Handlebars.compile(source.prop('outerHTML')),
                 context = Utils.setI18nToCountriesSummary(CountrySummary, i18nLabels),
-                html = template(context && context[this.id] ? context[this.id] : {});
+                model = context && context[this.id] ? context[this.id] : {},
+                html = template($.extend(true, {}, model, i18nLabels));
 
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
         },
@@ -294,7 +294,6 @@ define([
             this.filterValues = {};
 
             View.prototype.dispose.call(this, arguments);
-
         },
 
         _unbindDashboardEventListeners: function () {
