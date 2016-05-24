@@ -36,6 +36,7 @@ define(function () {
 
 
                         }
+
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -103,6 +104,47 @@ define(function () {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
+                    {
+                        id: "population-5", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "pyramide",
+                            inputFormat:"fenixtool",
+                            x : ["GenderCode_EN"], //x axis and series
+                            series: ["AgeRangeCode_EN"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010101"],
+                            GenderCode: ["1","2"],
+                            AgeRangeCode: [
+                                "AG02",
+                                "AG03",
+                                "AG04",
+                                "AG05",
+                                "AG06",
+                                "AG07",
+                                "AG08",
+                                "AG09",
+                                "AG10",
+                                "AG11",
+                                "AG12",
+                                "AG13",
+                                "AG14",
+                                "AG15"
+                            ],
+                            Year: ["2008"]
+
+
+                        },
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+
+                        postProcess : [{"name" : "percentage"}]
+
+                    },
+
 
                     {
                         id: "population-6", //ref [data-item=':id']
@@ -117,8 +159,8 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["010102"],
-                            "GenderCode": ["3"],
-                            "AgeRangeCode": ["AGT"]
+                            GenderCode: ["3"],
+                            AgeRangeCode: ["AGT"]
 
 
                         }
@@ -1052,7 +1094,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["030305","030304"],
+                            IndicatorCode: ["030305","030304"]
 
 
                         }
@@ -1356,7 +1398,7 @@ filter:{
         },
 
         cl: {
-            uid: "UNECA_KindOfCommodity",
+            uid: "UNECA_KindOfCommodity"
 
 
         }
