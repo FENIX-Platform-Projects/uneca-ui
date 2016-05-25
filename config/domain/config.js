@@ -516,6 +516,66 @@ define(function () {
         },
 
         "labour": {
+            filter:{
+
+
+                CountryCode :{
+                    selector: {
+                        id : "dropdown"
+                    },
+
+                    cl: {
+                        uid: "UNECA_ISO3"
+
+                    },
+                    template: {
+                        title: "Multiple selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+
+
+
+
+                },
+
+
+                Year : {
+
+                    selector: {
+                        id: "tree",
+                        source: [
+
+                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2010", "label": "2010", "selected": false},
+                            {"value": "2009", "label": "2009", "selected": false},
+                            {"value": "2008", "label": "2008", "selected": false},
+                            {"value": "2007", "label": "2007", "selected": false},
+                            {"value": "2006", "label": "2006", "selected": false},
+                            {"value": "2005", "label": "2005", "selected": false},
+                            {"value": "2004", "label": "2004", "selected": false},
+                            {"value": "2003", "label": "2003", "selected": false},
+                            {"value": "2002", "label": "2002", "selected": false},
+                            {"value": "2001", "label": "2001", "selected": false},
+                            {"value": "2000", "label": "2000", "selected": false}
+
+                        ],
+                        default: ["item_1"],
+                        config: {
+                            core: {
+                                multiple: false
+                            }
+                        }
+                    },
+
+                    template: {
+                        title: "Single selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                }
+
+            },
 
             dashboard: [
                 {
@@ -524,32 +584,16 @@ define(function () {
                     //preProcess : {} //D3P process
                     //postProcess : {} //D3P process
                     items: [
-                        {
-                            id: "labour-1", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["010401"],
-                                GenderCode :["3"],
-                                SectorCode: ["4"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
+
 
                         {
                             id: "labour-2", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["SectorCode"], //Y dimension
-                                y: ["Value"],
+                                x: ["CountryCode_EN"], //x axis and series
+                                series: ["SectorCode_EN"], //Y dimension
+                                y: ["VALUE"],
                                 aggregationFn: {"Value": "sum"}
                             }, // :type-creator config
                             filter: { //FX-filter format
@@ -564,10 +608,10 @@ define(function () {
                             id: "labour-3", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
+                                type: "column",
+                                x: ["CountryCode_EN"], //x axis and series
                                 series: ["GenderCode_EN"], //Y dimension
-                                y: ["Value"],
+                                y: ["VALUE"],
                                 aggregationFn: {"Value": "sum"}
                             }, // :type-creator config
                             filter: { //FX-filter format
@@ -590,7 +634,7 @@ define(function () {
                             config: {
                                 type: "column_stacked",
                                 x: ["CountryCode_EN"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
+                                series: ["GenderCode_EN"], //Y dimension
                                 y: ["Value"],
                                 aggregationFn: {"Value": "sum"}
                             }, // :type-creator config
@@ -602,6 +646,8 @@ define(function () {
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
 
+
+                        //sarebbe meglio mappa
                         {
                             id: "labour-5", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
@@ -646,6 +692,8 @@ define(function () {
 
 
         },
+
+
 
 
 
@@ -1019,7 +1067,66 @@ define(function () {
         },
 
         "public_finance": {
+            filter:{
 
+
+                CountryCode :{
+                    selector: {
+                        id : "dropdown"
+                    },
+
+                    cl: {
+                        uid: "UNECA_ISO3"
+
+                    },
+                    template: {
+                        title: "Multiple selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+
+
+
+
+                },
+
+
+                Year : {
+
+                    selector: {
+                        id: "tree",
+                        source: [
+
+                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2010", "label": "2010", "selected": false},
+                            {"value": "2009", "label": "2009", "selected": false},
+                            {"value": "2008", "label": "2008", "selected": false},
+                            {"value": "2007", "label": "2007", "selected": false},
+                            {"value": "2006", "label": "2006", "selected": false},
+                            {"value": "2005", "label": "2005", "selected": false},
+                            {"value": "2004", "label": "2004", "selected": false},
+                            {"value": "2003", "label": "2003", "selected": false},
+                            {"value": "2002", "label": "2002", "selected": false},
+                            {"value": "2001", "label": "2001", "selected": false},
+                            {"value": "2000", "label": "2000", "selected": false}
+
+                        ],
+                        default: ["item_1"],
+                        config: {
+                            core: {
+                                multiple: false
+                            }
+                        }
+                    },
+
+                    template: {
+                        title: "Single selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                }
+
+            },
             dashboard: {
                 //data cube's uid
                 uid: "UNECA_PublicFinance",
@@ -1031,7 +1138,7 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column_stacked",
-                            x: ["Year"], //x axis and series
+                            x: ["CountryCode_EN"], //x axis and series
                             series: ["IndicatorCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
@@ -1048,15 +1155,15 @@ define(function () {
                         id: "finance-2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
+                            type: "column_stacked",
+                            x: ["CountryCode_EN"], //x axis and series
                             series: ["IndicatorCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["02120301", "02120302"]
+                            IndicatorCode: ["02120301", "02120302", "02120302"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -1067,43 +1174,7 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["02120301", "02120302"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-                    {
-                        id: "finance-4", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["02120301", "0212030101"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-                    {
-                        id: "finance-5", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
+                            x: ["CountryCode_EN"], //x axis and series
                             series: ["IndicatorCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
@@ -1115,6 +1186,8 @@ define(function () {
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
+
+
 
 
                 ]
@@ -1504,6 +1577,88 @@ define(function () {
 
         "balance_of_payments": {
 
+            filter:{
+
+
+                CountryCode :{
+                    selector: {
+                        id : "dropdown"
+                    },
+
+                    cl: {
+                        uid: "UNECA_ISO3"
+
+                    },
+                    template: {
+                        title: "Multiple selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+
+
+
+
+                },
+
+
+                Year : {
+
+                    selector: {
+                        id: "tree",
+                        source: [
+
+                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2010", "label": "2010", "selected": false},
+                            {"value": "2009", "label": "2009", "selected": false},
+                            {"value": "2008", "label": "2008", "selected": false},
+                            {"value": "2007", "label": "2007", "selected": false},
+                            {"value": "2006", "label": "2006", "selected": false},
+                            {"value": "2005", "label": "2005", "selected": false},
+                            {"value": "2004", "label": "2004", "selected": false},
+                            {"value": "2003", "label": "2003", "selected": false},
+                            {"value": "2002", "label": "2002", "selected": false},
+                            {"value": "2001", "label": "2001", "selected": false},
+                            {"value": "2000", "label": "2000", "selected": false}
+
+                        ],
+                        default: ["item_1"],
+                        config: {
+                            core: {
+                                multiple: false
+                            }
+                        }
+                    },
+
+                    template: {
+                        title: "Single selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                },
+
+
+
+
+
+                um: {
+
+                    selector: {
+                        id: "input",
+                        type: "radio",
+                        source: [
+                            {value: "NC", label: "national currency"},
+                            {value: "USD", label: "US dollars"}
+                        ]
+                    },
+
+                    template: {
+                        title: "Radio",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                }
+
+            },
 
             dashboard: {
                 uid: "UNECA_BalanceOfPayments",
@@ -1511,59 +1666,63 @@ define(function () {
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
                 items: [
-                    {
-                        id: "BOP-1", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["020204"]
 
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
+                    //MAP 020207
+                    //{
+                    //    id: "BOP-1", //ref [data-item=':id']
+                    //    type: "chart", //chart || map || olap,
+                    //    config: {
+                    //        type: "column",
+                    //        x: ["Year"], //x axis and series
+                    //        series: ["IndicatorCode_EN"], //Y dimension
+                    //        y: ["Value"],
+                    //        aggregationFn: {"Value": "sum"}
+                    //    }, // :type-creator config
+                    //    filter: { //FX-filter format
+                    //
+                    //        IndicatorCode: ["020204"]
+                    //
+                    //    }
+                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
+                    //},
                     {
                         id: "BOP-2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["Year"], //x axis and series
+                            x: ["CountryCode_EN"], //x axis and series
                             series: ["IndicatorCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["02020501", "02020501"]
+                            IndicatorCode: ["020207"]
 
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
+
+                        },
+                        filterFor: ["CountryCode","IndicatorCode"] // allowed dimension ids to filter,
                     },
 
-
-                    {
-                        id: "BOP-3", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["02020101"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    }
+                    //map indicator 020204
+                    //{
+                    //    id: "BOP-3", //ref [data-item=':id']
+                    //    type: "chart", //chart || map || olap,
+                    //    config: {
+                    //        type: "column",
+                    //        x: ["CountryCode_EN"], //x axis and series
+                    //        series: ["IndicatorCode_EN"], //Y dimension
+                    //        y: ["Value"],
+                    //        aggregationFn: {"Value": "sum"}
+                    //    }, // :type-creator config
+                    //    filter: { //FX-filter format
+                    //
+                    //        IndicatorCode: ["020204"]
+                    //
+                    //    }
+                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
+                    //}
 
 
                 ]

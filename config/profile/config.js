@@ -110,8 +110,8 @@ define(function () {
                         config: {
                             type: "pyramide",
                             inputFormat:"fenixtool",
-                            x : ["GenderCode_EN"], //x axis and series
-                            series: ["AgeRangeCode_EN"], //Y dimension
+                            x : ["GenderCode"], //x axis and series
+                            series: ["AgeRangeCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
@@ -138,10 +138,10 @@ define(function () {
                             Year: ["2008"]
 
 
-                        },
+                        }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
 
-                        postProcess : [{"name" : "percentage"}]
+
 
                     },
 
@@ -349,7 +349,7 @@ define(function () {
                                 type: "line",
                                 x: ["Year"], //x axis and series
                                 series: ["IndicatorCode"], //Y dimension
-                                y: ["Value"],
+                                y: ["VALUE"],
                                 aggregationFn: {"Value": "sum"}
                             }, // :type-creator config
                             filter: { //FX-filter format
@@ -366,8 +366,8 @@ define(function () {
                             config: {
                                 type: "column",
                                 x: ["Year"], //x axis and series
-                                series: ["SectorCode"], //Y dimension
-                                y: ["Value"],
+                                series: ["SectorCode_EN"], //Y dimension
+                                y: ["VALUE"],
                                 aggregationFn: {"Value": "sum"}
                             }, // :type-creator config
                             filter: { //FX-filter format
@@ -382,10 +382,10 @@ define(function () {
                             id: "labour-3", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
-                                type: "line",
+                                type: "column",
                                 x: ["Year"], //x axis and series
                                 series: ["GenderCode_EN"], //Y dimension
-                                y: ["Value"],
+                                y: ["VALUE"],
                                 aggregationFn: {"Value": "sum"}
                             }, // :type-creator config
                             filter: { //FX-filter format
