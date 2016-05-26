@@ -6,8 +6,9 @@ define([
     'controllers/base/controller',
     'views/countries-view',
     'fx-common/bridge',
+    'config/config',
     'amplify'
-], function ($, Backbone, _, Controller, View, Bridge) {
+], function ($, Backbone, _, Controller, View, Bridge, C) {
 
     'use strict';
 
@@ -37,7 +38,9 @@ define([
 
         performAccessControlChecks: function (params) {
 
-            return Bridge.getCodeList({
+            return new Bridge({
+                environment : C.ENVIRONMENT
+            }).getCodeList({
                 body: {
                     uid: "UNECA_ISO3",
                     level: 2
