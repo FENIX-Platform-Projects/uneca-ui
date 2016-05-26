@@ -164,6 +164,36 @@ define(function () {
                     //    filterFor: ["IndicatorCode", "GenderCode", "AgeRangeCode"] // allowed dimension ids to filter,
                     //},
 
+                    {
+                        id: "population-2", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010103"],
+                            "GenderCode": ["3"],
+                            "AgeRangeCode": ["AGT"],
+                            "CountryCode": ["MWI"]
+                        }
+                    },
+
+
 
 
 
