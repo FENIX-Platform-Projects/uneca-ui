@@ -1,74 +1,118 @@
 /*global require*/
+
+var pathProjectRoot = "./";
+var projectRoot = "./";
+var submoduleRoot = './submodules/';
+
+require.config({
+    config: {
+        text: {
+            useXhr: function (url, protocol, hostname, port) {
+                return true;
+            }
+        }
+    },
+    paths: {
+        compilerPaths: pathProjectRoot + 'submodules/fenix-ui-common/js/Compiler',
+        commonPaths: pathProjectRoot + 'submodules/fenix-ui-common/js/paths',
+        menuPaths: pathProjectRoot + 'submodules/fenix-ui-menu/src/js/paths',
+        dashboardPaths: pathProjectRoot + 'submodules/fenix-ui-dashboard/src/js/paths',
+        chartPaths: pathProjectRoot + 'submodules/fenix-ui-chart-creator/src/js/paths',
+        mapPaths: pathProjectRoot + 'submodules/fenix-ui-map-creator/src/js/paths',
+        tablePaths: pathProjectRoot + 'submodules/fenix-ui-table-creator/src/js/paths',
+        filterPaths: pathProjectRoot + 'submodules/fenix-ui-filter/src/js/paths',
+        analysisPaths: pathProjectRoot + 'submodules/fenix-ui-analysis/src/js/paths',
+        olapPaths: pathProjectRoot + 'submodules/fenix-ui-olap/src/js/paths',
+        reportPaths: pathProjectRoot + 'submodules/fenix-ui-reports/src/js/paths',
+        visualizationPaths: pathProjectRoot + 'submodules/fenix-ui-visualization-box/src/js/paths',
+        dataEditorPaths: pathProjectRoot + 'submodules/fenix-ui-DataEditor/js/paths',
+        dsdEditorPaths: pathProjectRoot + 'submodules/fenix-ui-DSDEditor/js/paths',
+        metadataEditorPaths: pathProjectRoot + 'submodules/fenix-ui-metadata-editor/js/paths',
+        metadataViewerPaths: pathProjectRoot + 'submodules/fenix-ui-metadata-viewer/src/js/paths',
+        catalogPaths: pathProjectRoot + 'submodules/fenix-ui-catalog/src/js/paths',
+        dataManagementPaths: pathProjectRoot + 'submodules/fenix-ui-data-management/src/js/paths',
+        fenixMap: pathProjectRoot + 'submodules/fenix-ui-map/src/paths'
+    }
+});
+
 require([
-    './submodules/fenix-ui-common/js/Compiler',
-    './submodules/fenix-ui-common/js/paths',
-    './submodules/fenix-ui-menu/src/js/paths',
-    './submodules/fenix-ui-analysis/src/js/paths',
-    './submodules/fenix-ui-catalog/src/js/paths',
-    './submodules/fenix-ui-metadata-viewer/src/js/paths',
-    './submodules/fenix-ui-map-creator/src/js/paths',
-    './submodules/fenix-ui-chart-creator/src/js/paths',
-    './submodules/fenix-ui-table-creator/src/js/paths',
-    './submodules/fenix-ui-reports/src/js/paths',
-    './submodules/fenix-ui-dashboard/src/js/paths',
-    './submodules/fenix-ui-filter/src/js/paths',
-    './submodules/fenix-ui-olap/src/js/paths'
-], function (Compiler, Common, Menu, Analysis, Catalog, MetadataViewer,
-             MapCreator, ChartCreator, TableCreator, FenixReport, Dashboard, Filter, Olap) {
+    "compilerPaths",
+    "commonPaths",
+    "menuPaths",
+    "filterPaths",
+    "analysisPaths",
+    "catalogPaths",
+    "visualizationPaths",
+    "olapPaths",
+    "metadataViewerPaths",
+    "chartPaths",
+    "mapPaths",
+    "reportPaths",
+    "fenixMap",
+    "dashboardPaths"
+], function (Compiler, Common, Menu, Filter, Analysis, Catalog, Box, Olap, MetadataViewer, ChartCreator, MapCreator, Report, Map, Dashboard) {
 
     'use strict';
 
-    var submodules_path = '../../submodules/';
+    var submodules_path = projectRoot + '../../submodules/';
 
     var commonConfig = Common;
     commonConfig.baseUrl = submodules_path + 'fenix-ui-common/js';
+
+    var catalogConfig = Catalog;
+    catalogConfig.baseUrl = submodules_path + 'fenix-ui-catalog/src/js';
 
     var menuConfig = Menu;
     menuConfig.baseUrl = submodules_path + '/fenix-ui-menu/src/js';
 
     var analysisConfig = Analysis;
-    analysisConfig.baseUrl = submodules_path + 'fenix-ui-analysis/src/js/';
+    analysisConfig.baseUrl = submodules_path + 'fenix-ui-analysis/src/js';
 
-    var catalogConfig = Catalog;
-    catalogConfig.baseUrl = submodules_path + 'fenix-ui-catalog/src/js/';
-
-    var metadataViewerConfig = MetadataViewer;
-    metadataViewerConfig.baseUrl = submodules_path + 'fenix-ui-metadata-viewer/src/js/';
-
-    var mapCreatorConfig = MapCreator;
-    mapCreatorConfig.baseUrl = submodules_path + 'fenix-ui-map-creator/src/js/';
-
-    var chartCreatorConfig = ChartCreator;
-    chartCreatorConfig.baseUrl = submodules_path + 'fenix-ui-chart-creator/src/js/';
-
-    var tableCreatorConfig = TableCreator;
-    tableCreatorConfig.baseUrl = submodules_path + 'fenix-ui-table-creator/src/js/';
-
-    var fenixReportConfig = FenixReport;
-    fenixReportConfig.baseUrl = submodules_path + 'fenix-ui-reports/src/js/';
-
-    var dashboardConfig = Dashboard;
-    dashboardConfig.baseUrl = submodules_path + 'fenix-ui-dashboard/src/js/';
+    var boxConfig = Box;
+    boxConfig.baseUrl = submodules_path + 'fenix-ui-visualization-box/src/js';
 
     var filterConfig = Filter;
-    filterConfig.baseUrl = submodules_path + 'fenix-ui-filter/src/js/';
+    filterConfig.baseUrl = submodules_path + 'fenix-ui-filter/src/js';
 
     var olapConfig = Olap;
     olapConfig.baseUrl = submodules_path + 'fenix-ui-olap/src/js';
 
-    Compiler.resolve([commonConfig, menuConfig, analysisConfig, catalogConfig, metadataViewerConfig,
-            mapCreatorConfig, chartCreatorConfig, tableCreatorConfig, fenixReportConfig, filterConfig, dashboardConfig, olapConfig],
+    var metadataViewerConfig = MetadataViewer;
+    metadataViewerConfig.baseUrl = submodules_path + 'fenix-ui-metadata-viewer/src/js';
+
+    var chartConfig = ChartCreator;
+    chartConfig.baseUrl = submodules_path + 'fenix-ui-chart-creator/src/js';
+
+    var mapCreatorConfig = MapCreator;
+    mapCreatorConfig.baseUrl = submodules_path + 'fenix-ui-map-creator/src/js';
+
+    var reportConfig = Report;
+    reportConfig.baseUrl = submodules_path + 'fenix-ui-reports/src/js';
+
+    var mapConfig = Map;
+    mapConfig.baseUrl = submodules_path + 'fenix-ui-map';
+
+    var dashboardConfig = Dashboard;
+    dashboardConfig.baseUrl = submodules_path + 'fenix-ui-dashboard/src/js';
+
+    Compiler.resolve([commonConfig, catalogConfig, menuConfig, filterConfig, analysisConfig, boxConfig, olapConfig, metadataViewerConfig, chartConfig, mapCreatorConfig, reportConfig, mapConfig, dashboardConfig],
         {
+            placeholders: {"FENIX_CDN": "http://fenixrepo.fao.org/cdn"},
+
             config: {
 
-                //Set the config for the i18n
-                i18n: {
-                    locale: 'en'
+                config: {
+
+                    //Set the config for the i18n
+                    i18n: {
+                        locale: 'en'
+                    }
                 },
 
                 // The path where your JavaScripts are located
-                baseUrl: './src/js',
+                baseUrl: pathProjectRoot + '/src/js',
 
+                // Specify the paths of vendor libraries
                 // Specify the paths of vendor libraries
                 paths: {
                     bootstrap: "{FENIX_CDN}/js/bootstrap/3.3.4/js/bootstrap.min",
@@ -127,7 +171,7 @@ require([
                     // METADATA VIEWER
                     'fx-md-v/config/config': '../../config/submodules/fx-md-viewer/config',
 
-                    'fx-common/config/config' : '../../config/submodules/fx-common/config'
+                    'fx-common/config/config': '../../config/submodules/fx-common/config'
 
                 },
 
@@ -181,8 +225,8 @@ require([
                     handlebars: {
                         exports: 'Handlebars'
                     },
-                    threejs : {
-                        deps: ['underscore', 'jquery'], 
+                    threejs: {
+                        deps: ['underscore', 'jquery'],
                     }
                 },
                 waitSeconds: 15
@@ -211,5 +255,6 @@ require([
             pushState: C.CHAPLINJS_PUSH_STATE,
             scrollTo: C.CHAPLINJS_SCROLL_TO
         });
+
     });
 });
