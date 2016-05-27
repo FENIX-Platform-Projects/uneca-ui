@@ -189,7 +189,8 @@ define(function () {
                             IndicatorCode: ["010103"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["MWI"]
+                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
                         }
                     },
 
@@ -218,27 +219,36 @@ define(function () {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
-                    // map 010102
-                    //{
-                    //    id: "population-4", //ref [data-item=':id']
-                    //    type: "chart", //chart || map || olap,
-                    //    config: {
-                    //        type: "column",
-                    //        x: ["Year"], //x axis and series
-                    //        series: ["IndicatorCode_EN"], //Y dimension
-                    //        y: ["Value"],
-                    //        aggregationFn: {"Value": "sum"}
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //
-                    //        IndicatorCode: ["010102"],
-                    //        "GenderCode": ["3"],
-                    //        "AgeRangeCode": ["AGT"]
-                    //
-                    //
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //}
+
+                    {
+                        id: "population-4", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010102"],
+                            "GenderCode": ["3"],
+                            "AgeRangeCode": ["AGT"],
+                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                        }
+                    }
                 ]
             }]
         },
@@ -333,7 +343,34 @@ define(function () {
                     //    }
                     //    //filterFor: ["Year"], // allowed dimension ids to filter,
                     //},
+                    {
+                        id: "edu_1", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
 
+                            IndicatorCode: ["010201"],
+                            "GenderCode": ["3"],
+                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                        }
+                    },
 
 
                     {
@@ -355,7 +392,34 @@ define(function () {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
+                    {
+                        id: "edu_3", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
 
+                            IndicatorCode: ["010206"],
+                            "GenderCode": ["3"],
+                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                        }
+                    },
 
                     //Map 010206
                     //{
@@ -493,9 +557,63 @@ define(function () {
                     },
 
 
+                    {
+                        id: "health-2", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
 
+                            IndicatorCode: ["010302"],
 
+                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                        }
+                    },
 
+                    {
+                        id: "health-3", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["010301"],
+
+                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                        }
+                    },
                     //map 010301
                     //{
                     //    id: "health-2", //ref [data-item=':id']
@@ -677,23 +795,59 @@ define(function () {
                         },
 
 
-                        //sarebbe meglio mappa
+                        //sarebbe meglio mappa 010402
+
+
                         {
                             id: "labour-5", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
+                            type: "map", //chart || map || olap,
                             config: {
-                                type: "column",
-                                x: ["CountryCode_EN"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
+                                fenix_ui_map: {
+                                    guiController: {
+                                        overlay: false,
+                                        baselayer: false,
+                                        wmsLoader: false
+                                    },
+                                    baselayers: {
+                                        "cartodb": {
+                                            title_en: "Baselayer",
+                                            url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                            subdomains: 'abcd',
+                                            maxZoom: 19
+                                        }
+                                    }
+                                }
+                            },
                             filter: { //FX-filter format
+
                                 IndicatorCode: ["010402"],
-                                GenderCode: ["3"]
+                                "GenderCode": ["3"],
+                                "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                    "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
                             }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
+
+
+
+
+
+
+                        //{
+                        //    id: "labour-5", //ref [data-item=':id']
+                        //    type: "chart", //chart || map || olap,
+                        //    config: {
+                        //        type: "column",
+                        //        x: ["CountryCode_EN"], //x axis and series
+                        //        series: ["IndicatorCode_EN"], //Y dimension
+                        //        y: ["Value"],
+                        //        aggregationFn: {"Value": "sum"}
+                        //    }, // :type-creator config
+                        //    filter: { //FX-filter format
+                        //        IndicatorCode: ["010402"],
+                        //        GenderCode: ["3"]
+                        //    }
+                        //    //filterFor: ["Year"], // allowed dimension ids to filter,
+                        //},
 
 
                         {
@@ -728,32 +882,67 @@ define(function () {
 
 
         "gdp": {
+            filter:{
 
-            dashboard: [
+
+                CountryCode :{
+                    selector: {
+                        id : "dropdown"
+                    },
+
+                    cl: {
+                        uid: "UNECA_ISO3"
+
+                    },
+                    template: {
+                        title: "Multiple selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
 
 
-                { uid: "UNECA_GDP_NC",
-                    items :  [
-                        {
-                            id: "gdp-1", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["020707"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
 
-                    ]
 
                 },
 
+
+                Year : {
+
+                    selector: {
+                        id: "tree",
+                        source: [
+
+                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2010", "label": "2010", "selected": false},
+                            {"value": "2009", "label": "2009", "selected": false},
+                            {"value": "2008", "label": "2008", "selected": false},
+                            {"value": "2007", "label": "2007", "selected": false},
+                            {"value": "2006", "label": "2006", "selected": false},
+                            {"value": "2005", "label": "2005", "selected": false},
+                            {"value": "2004", "label": "2004", "selected": false},
+                            {"value": "2003", "label": "2003", "selected": false},
+                            {"value": "2002", "label": "2002", "selected": false},
+                            {"value": "2001", "label": "2001", "selected": false},
+                            {"value": "2000", "label": "2000", "selected": false}
+
+                        ],
+                        default: ["item_1"],
+                        config: {
+                            core: {
+                                multiple: false
+                            }
+                        }
+                    },
+
+                    template: {
+                        title: "Single selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                }
+
+            },
+            dashboard: [
 
                 {
                     uid: "UNECA_GDP",
@@ -762,49 +951,67 @@ define(function () {
                     //postProcess : {} //D3P process
                     items: [
                         {
-                            id: "gdp-2", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
+                            id: "gdp-1", //ref [data-item=':id']
+                            type: "map", //chart || map || olap,
                             config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
+                                fenix_ui_map: {
+                                    guiController: {
+                                        overlay: false,
+                                        baselayer: false,
+                                        wmsLoader: false
+                                    },
+                                    baselayers: {
+                                        "cartodb": {
+                                            title_en: "Baselayer",
+                                            url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                            subdomains: 'abcd',
+                                            maxZoom: 19
+                                        }
+                                    }
+                                }
+                            },
                             filter: { //FX-filter format
-                                IndicatorCode: ["020705"]
+
+                                IndicatorCode: ["020705"],
+
+                                "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                    "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
                             }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
 
 
                         {
-                            id: "gdp-3", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
+                            id: "gdp-2", //ref [data-item=':id']
+                            type: "map", //chart || map || olap,
                             config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
+                                fenix_ui_map: {
+                                    guiController: {
+                                        overlay: false,
+                                        baselayer: false,
+                                        wmsLoader: false
+                                    },
+                                    baselayers: {
+                                        "cartodb": {
+                                            title_en: "Baselayer",
+                                            url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                            subdomains: 'abcd',
+                                            maxZoom: 19
+                                        }
+                                    }
+                                }
+                            },
                             filter: { //FX-filter format
-                                IndicatorCode: ["020706"]
 
+                                IndicatorCode: ["020706"],
+
+                                "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                    "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
                             }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
-
-
-
 
                     ]
 
                 }
-
-
-
-
 
             ]
 
@@ -1698,24 +1905,41 @@ define(function () {
                 items: [
 
 
-                    //MAP 020207
-                    //{
-                    //    id: "BOP-1", //ref [data-item=':id']
-                    //    type: "chart", //chart || map || olap,
-                    //    config: {
-                    //        type: "column",
-                    //        x: ["Year"], //x axis and series
-                    //        series: ["IndicatorCode_EN"], //Y dimension
-                    //        y: ["Value"],
-                    //        aggregationFn: {"Value": "sum"}
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //
-                    //        IndicatorCode: ["020204"]
-                    //
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //},
+
+                    {
+                        id: "BOP-1", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["020207"],
+
+                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                        }
+
+
+                    },
+
+
+
+
                     {
                         id: "BOP-2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
@@ -1732,28 +1956,87 @@ define(function () {
 
 
                         },
+
+                        postProcess : [{  "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "020207"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"}],
+
+
+
                         filterFor: ["CountryCode","IndicatorCode"] // allowed dimension ids to filter,
                     },
 
-                    //map indicator 020204
-                    //{
-                    //    id: "BOP-3", //ref [data-item=':id']
-                    //    type: "chart", //chart || map || olap,
-                    //    config: {
-                    //        type: "column",
-                    //        x: ["CountryCode_EN"], //x axis and series
-                    //        series: ["IndicatorCode_EN"], //Y dimension
-                    //        y: ["Value"],
-                    //        aggregationFn: {"Value": "sum"}
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //
-                    //        IndicatorCode: ["020204"]
-                    //
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //}
 
+
+                    {
+                        id: "BOP-3", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["020204"],
+
+                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
+                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                        },
+
+
+
+                        postProcess : [{
+                            "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "020204"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"
+                            }]
+
+                    }
 
                 ]
 

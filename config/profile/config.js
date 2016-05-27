@@ -138,10 +138,10 @@ define(function () {
                             Year: ["2008"]
 
 
-                        }
+                        },
                         //filterFor: ["Year"], // allowed dimension ids to filter,
 
-
+                        postProcess : [{"name": "percentage"}]
 
                     },
 
@@ -430,7 +430,9 @@ define(function () {
                             }, // :type-creator config
                             filter: { //FX-filter format
                                 IndicatorCode: ["010402"],
-                                GenderCode: ["3"]
+                                GenderCode: ["3"],
+                                Year :_.range(1990,2015)
+
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
@@ -448,7 +450,8 @@ define(function () {
                             }, // :type-creator config
                             filter: { //FX-filter format
                                 IndicatorCode: ["010402"],
-                                GenderCode: ["1", "2"]
+                                GenderCode: ["1", "2"],
+                                Year :_.range(1990,2015)
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
@@ -1210,56 +1213,100 @@ define(function () {
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
+
+
+
+
+
+
                     {
-                        id: "financial_flows-3", //ref [data-item=':id']
+                        id: "gdp-1", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
-                            container: "#financial_flows-3",
-                            geoSubject: 'PartnerCode',
-                            leaflet: {
-                                zoomControl: false,
-                                attributionControl: true,
-                                scrollWheelZoom: false,
-                                minZoom: 2
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
                             }
-
-                        }, // :type-creator config
+                        },
                         filter: { //FX-filter format
 
-                            "Year": [2012],
-                            "IndicatorCode": ["02100101"],
-                            "PartnerCode": [
+                            Year: [2012],
+                            IndicatorCode: ["02100101"],
+                            PartnerCode: [
                                 "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
                             ]
-
                         }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
-                    {
-                        id: "financial_flows-4", //ref [data-item=':id']
-                        type: "map", //chart || map || olap,
-                        config: {
-                            container: "#financial_flows-3",
-                            geoSubject: 'PartnerCode',
-                            leaflet: {
-                                zoomControl: false,
-                                attributionControl: true,
-                                scrollWheelZoom: false,
-                                minZoom: 2
-                            }
 
-                        }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            "Year": [2012],
-                            "IndicatorCode": ["020501"],
-                            "PartnerCode": [
-                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                            ]
 
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    }
+
+
+
+
+
+
+                    //{
+                    //    id: "financial_flows-3", //ref [data-item=':id']
+                    //    type: "map", //chart || map || olap,
+                    //    config: {
+                    //        container: "#financial_flows-3",
+                    //        geoSubject: 'PartnerCode',
+                    //        leaflet: {
+                    //            zoomControl: false,
+                    //            attributionControl: true,
+                    //            scrollWheelZoom: false,
+                    //            minZoom: 2
+                    //        }
+                    //
+                    //    }, // :type-creator config
+                    //    filter: { //FX-filter format
+                    //
+                    //        "Year": [2012],
+                    //        "IndicatorCode": ["02100101"],
+                    //        "PartnerCode": [
+                    //            "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
+                    //        ]
+                    //
+                    //    }
+                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
+                    //},
+                    //{
+                    //    id: "financial_flows-4", //ref [data-item=':id']
+                    //    type: "map", //chart || map || olap,
+                    //    config: {
+                    //        container: "#financial_flows-3",
+                    //        geoSubject: 'PartnerCode',
+                    //        leaflet: {
+                    //            zoomControl: false,
+                    //            attributionControl: true,
+                    //            scrollWheelZoom: false,
+                    //            minZoom: 2
+                    //        }
+                    //
+                    //    }, // :type-creator config
+                    //    filter: { //FX-filter format
+                    //
+                    //        "Year": [2012],
+                    //        "IndicatorCode": ["020501"],
+                    //        "PartnerCode": [
+                    //            "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
+                    //        ]
+                    //
+                    //    }
+                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
+                    //}
 
 
 
