@@ -16,7 +16,7 @@ define(function () {
 
                 CountryCode :{
                     selector: {
-                        id : "dropdown"
+                        id : "tree"
                     },
 
                     cl: {
@@ -250,7 +250,7 @@ define(function () {
 
                 CountryCode :{
                     selector: {
-                        id : "dropdown"
+                        id : "tree"
                     },
 
                     cl: {
@@ -411,7 +411,7 @@ define(function () {
 
                 CountryCode :{
                     selector: {
-                        id : "dropdown"
+                        id : "tree"
                     },
 
                     cl: {
@@ -551,7 +551,7 @@ define(function () {
 
                 CountryCode :{
                     selector: {
-                        id : "dropdown"
+                        id : "tree"
                     },
 
                     cl: {
@@ -1102,7 +1102,7 @@ define(function () {
 
                 CountryCode :{
                     selector: {
-                        id : "dropdown"
+                        id : "tree"
                     },
 
                     cl: {
@@ -1612,7 +1612,7 @@ define(function () {
 
                 CountryCode :{
                     selector: {
-                        id : "dropdown"
+                        id : "tree"
                     },
 
                     cl: {
