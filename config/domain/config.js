@@ -96,48 +96,13 @@ define(function () {
                             IndicatorCode: ["010101"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA",
-                                "SDN",
-                                "GIN",
-                                "GMB",
-                                "GNB",
-                                "GNQ",
-                                "KEN",
-                                "AGO",
-                                "BDI",
-                                "BEN",
-                                "BFA",
-                                "EGY",
-                                "ERI",
-                                "ETH",
-                                "GAB",
-                                "GHA",
-                                "ZAR",
-                                "CPV",
-                                "DJI",
-                                "DZA",
-                                "ZMB",
-                                "ZWE",
-                                "SSD",
-                                "STP",
-                                "SWZ",
-                                "SYC",
-                                "TCD",
-                                "SEN",
-                                "SLE",
-                                "SOM",
-                                "TGO",
-                                "TUN",
-                                "TZA",
-                                "UGA",
-                                "ZAF"
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
                             ]
 
 
                         },
 
-                        filterFor: ["IndicatorCode", "GenderCode", "AgeRangeCode"] // allowed dimension ids to filter,
+                        filterFor: ["IndicatorCode", "GenderCode", "AgeRangeCode","CountryCode"] // allowed dimension ids to filter,
                     },
 
 
@@ -189,8 +154,8 @@ define(function () {
                             IndicatorCode: ["010103"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                     },
 
@@ -212,7 +177,9 @@ define(function () {
 
                             IndicatorCode: ["010108"],
                             "GenderCode": ["3"],
-                            "AgeRangeCode": ["AGT"]
+                            "AgeRangeCode": ["AGT"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
 
 
                         }
@@ -245,8 +212,8 @@ define(function () {
                             IndicatorCode: ["010102"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                     }
                 ]
@@ -367,8 +334,8 @@ define(function () {
 
                             IndicatorCode: ["010201"],
                             "GenderCode": ["3"],
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                     },
 
@@ -387,7 +354,9 @@ define(function () {
 
                             IndicatorCode: ["010206"],
                             GenderCode : ["1","2"],
-                            Year: ["2011"]
+                            Year: ["2011"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
@@ -416,8 +385,8 @@ define(function () {
 
                             IndicatorCode: ["010206"],
                             "GenderCode": ["3"],
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                     },
 
@@ -455,7 +424,9 @@ define(function () {
 
                             IndicatorCode:   ["010201", "010202", "010203"],
                             GenderCode : ["3"],
-                            Year: ["2010"]
+                            Year: ["2010"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
@@ -551,7 +522,9 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["010307", "010308", "010309", "010310"],
-                            Year: ["2010"]
+                            Year: ["2010"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
@@ -581,8 +554,8 @@ define(function () {
 
                             IndicatorCode: ["010302"],
 
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                     },
 
@@ -610,8 +583,8 @@ define(function () {
 
                             IndicatorCode: ["010301"],
 
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
                     },
                     //map 010301
@@ -747,7 +720,9 @@ define(function () {
                             filter: { //FX-filter format
                                 IndicatorCode: ["010401"],
                                 SectorCode : ["1","2","3"],
-                                GenderCode : ["3"]
+                                GenderCode : ["3"],
+                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                ]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
@@ -765,7 +740,9 @@ define(function () {
                             filter: { //FX-filter format
                                 IndicatorCode: ["010401"],
                                 SectorCode : ["4"],
-                                GenderCode : ["1","2"]
+                                GenderCode : ["1","2"],
+                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                ]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
@@ -789,7 +766,9 @@ define(function () {
                             filter: { //FX-filter format
                                 IndicatorCode: ["010404"],
                                 Year : ["2010"] ,
-                            GenderCode: ["1","2"]
+                            GenderCode: ["1","2"],
+                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                ]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
@@ -822,8 +801,8 @@ define(function () {
 
                                 IndicatorCode: ["010402"],
                                 "GenderCode": ["3"],
-                                "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                    "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                ]
                             }
                         },
 
@@ -862,7 +841,9 @@ define(function () {
                             }, // :type-creator config
                             filter: { //FX-filter format
                                 IndicatorCode: ["010402"],
-                                GenderCode: ["1", "2"]
+                                GenderCode: ["1", "2"],
+                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                ]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
@@ -974,8 +955,8 @@ define(function () {
 
                                 IndicatorCode: ["020705"],
 
-                                "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                    "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                ]
                             }
                         },
 
@@ -1004,8 +985,8 @@ define(function () {
 
                                 IndicatorCode: ["020706"],
 
-                                "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                    "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                ]
                             }
                         }
 
@@ -1380,11 +1361,41 @@ define(function () {
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
+
+                        postProcess : [{  "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "021202", "02120101", "02120102"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"}],
+
+
+
+
+
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["021202", "02120101", "02120102"]
+                            IndicatorCode: ["021202", "02120101", "02120102"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
 
                         }
+
+
+
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -1400,9 +1411,34 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["02120301", "02120302", "02120302"]
+                            IndicatorCode: ["02120301", "02120302", "02120302"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
 
-                        }
+                        },
+
+
+                        postProcess : [{  "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "02120301", "02120302", "02120302"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"}]
+
+
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -1418,9 +1454,32 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["021204"]
+                            IndicatorCode: ["021204"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
 
-                        }
+                        },
+
+                        postProcess : [{  "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "021204"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"}]
+
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
 
@@ -1930,8 +1989,8 @@ define(function () {
 
                             IndicatorCode: ["020207"],
 
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         }
 
 
@@ -1952,7 +2011,10 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["020207"]
+                            IndicatorCode: ["020207"],
+
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
 
 
                         },
@@ -2008,8 +2070,8 @@ define(function () {
 
                             IndicatorCode: ["020204"],
 
-                            "CountryCode": ["MWI","NAM","MDG","MLI", "MOZ", "MRT", "MUS", "NER","NGA","LBR", "LBY", "LSO",
-                                "BWA","CAF","CIV", "CMR","COG", "COM","MAR","RWA"]
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
                         },
 
 

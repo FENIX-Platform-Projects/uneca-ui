@@ -1220,10 +1220,12 @@ define(function () {
 
 
                     {
-                        id: "gdp-1", //ref [data-item=':id']
+                        id: "financial_flows-3", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
+                            geoSubject: 'PartnerCode',
                             fenix_ui_map: {
+
                                 guiController: {
                                     overlay: false,
                                     baselayer: false,
@@ -1247,7 +1249,7 @@ define(function () {
                                 "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
                             ]
                         }
-                    },
+                    }
 
 
 
