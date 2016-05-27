@@ -90,7 +90,7 @@ require([
     reportConfig.baseUrl = submodules_path + 'fenix-ui-reports/src/js';
 
     var mapConfig = Map;
-    mapConfig.baseUrl = submodules_path + 'fenix-ui-map';
+    mapConfig.baseUrl = submodules_path + 'fenix-ui-map/src/js';
 
     var dashboardConfig = Dashboard;
     dashboardConfig.baseUrl = submodules_path + 'fenix-ui-dashboard/src/js';
@@ -246,7 +246,7 @@ require([
     ], function (log, Application, routes, C) {
 
         //trace, debug, info, warn, error, silent
-        log.setLevel('trace');
+        log.setLevel('silent');
 
         var app = new Application({
             routes: routes,
