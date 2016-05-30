@@ -184,7 +184,7 @@ define({
 
     //expenditure_gdp
 
-    expenditure1_title: "General governement final consumption expenditure",
+    expenditure1_title: "General government final consumption expenditure",
     expenditure2_title:        "Individual consumption expenditure",
     expenditure3_title:     "Gross fixed capital formation",
     expenditure4_title:     "Changes in inventories",

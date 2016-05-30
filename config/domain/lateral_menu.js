@@ -46,7 +46,8 @@ define({
             "id": "public_finance"
           },
           {
-            "id": "debt"
+            "id": "debt",
+            "state": {"disabled": true}
           },
           {
             "id": "inflation",

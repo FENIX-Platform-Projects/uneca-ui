@@ -26,8 +26,11 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
-                    }
+                        hideRemoveButton: true
+                    },
+
+
+                   // default: []
 
 
 
@@ -57,7 +60,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2013"],
                         config: {
                             core: {
                                 multiple: false
@@ -68,7 +71,7 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
 
@@ -100,7 +103,7 @@ define(function () {
                             "AgeRangeCode": ["AGT"],
                             "CountryCode":["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
                                 "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : [2013]
+                            "Year" : ["2013"]
 
 
                         },
@@ -159,7 +162,7 @@ define(function () {
                             "AgeRangeCode": ["AGT"],
                             "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
                                 "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : [2013]
+                            "Year" : ["2013"]
                         }
                     },
 
@@ -184,7 +187,7 @@ define(function () {
                             "AgeRangeCode": ["AGT"],
                             "CountryCode":["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
                                 "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : [2013]
+                            "Year" : ["2013"]
 
 
                         }
@@ -219,7 +222,7 @@ define(function () {
                             "AgeRangeCode": ["AGT"],
                             "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
                                 "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : [2013]
+                            "Year" : ["2013"]
                         }
                     }
                 ]
@@ -243,7 +246,7 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
 
 
@@ -274,7 +277,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2010"],
                         config: {
                             core: {
                                 multiple: false
@@ -285,7 +288,7 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
 
@@ -325,9 +328,9 @@ define(function () {
 
                             IndicatorCode: ["010201"],
                             "GenderCode": ["3"],
-                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
-                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : ["2012"]
+                            "CountryCode": ["NAM","MWI","MLI","MOZ"
+                            ],
+                            "Year" : ["2010"]
                         }
                     },
 
@@ -346,9 +349,9 @@ define(function () {
 
                             IndicatorCode: ["010206"],
                             GenderCode : ["1","2"],
-                            Year: ["2012"],
-                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
-                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"]
+                            "CountryCode": ["NAM","MWI","MLI","MOZ"
+                            ],
+                            "Year" : ["2010"]
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                     }},
 
@@ -376,9 +379,9 @@ define(function () {
 
                             IndicatorCode: ["010206"],
                             "GenderCode": ["3"],
-                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
-                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : ["2012"]
+                            "CountryCode": ["NAM","MWI","MLI","MOZ"
+                            ],
+                            "Year" : ["2010"]
                         }
                     },
 
@@ -397,9 +400,9 @@ define(function () {
 
                             IndicatorCode:   ["010201", "010202", "010203"],
                             GenderCode : ["3"],
-                            Year: ["2012"],
-                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
-                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"]
+                            "CountryCode": ["NAM","MWI","MLI","MOZ"
+                            ],
+                            "Year" : ["2010"]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
@@ -429,7 +432,7 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
 
 
@@ -459,7 +462,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2010"],
                         config: {
                             core: {
                                 multiple: false
@@ -470,7 +473,7 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
 
@@ -587,7 +590,7 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
 
 
@@ -616,7 +619,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2010"],
                         config: {
                             core: {
                                 multiple: false
@@ -627,7 +630,7 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
 
@@ -642,26 +645,26 @@ define(function () {
                     items: [
 
 
-                        {
-                            id: "labour-2", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["CountryCode_EN"], //x axis and series
-                                series: ["SectorCode_EN"], //Y dimension
-                                y: ["VALUE"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["010401"],
-                                SectorCode : ["1","2","3"],
-                                GenderCode : ["3"],
-                                "CountryCode": ["KEN","TZA","ZMB","ETH"
-                                ],
-                                Year: ["2012"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
+                        //{
+                        //    id: "labour-2", //ref [data-item=':id']
+                        //    type: "chart", //chart || map || olap,
+                        //    config: {
+                        //        type: "column",
+                        //        x: ["CountryCode_EN"], //x axis and series
+                        //        series: ["SectorCode_EN"], //Y dimension
+                        //        y: ["VALUE"],
+                        //        aggregationFn: {"Value": "sum"}
+                        //    }, // :type-creator config
+                        //    filter: { //FX-filter format
+                        //        IndicatorCode: ["010401"],
+                        //        SectorCode : ["1","2","3"],
+                        //        GenderCode : ["3"],
+                        //        "CountryCode": ["KEN","TZA","ZMB","ETH"
+                        //        ],
+                        //        Year: ["2010"]
+                        //    }
+                        //    //filterFor: ["Year"], // allowed dimension ids to filter,
+                        //},
 
                         {
                             id: "labour-3", //ref [data-item=':id']
@@ -679,7 +682,7 @@ define(function () {
                                 GenderCode : ["1","2"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
                                 ],
-                                Year: ["2012"]
+                                Year: ["2010"]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
@@ -702,7 +705,7 @@ define(function () {
                             }, // :type-creator config
                             filter: { //FX-filter format
                                 IndicatorCode: ["010404"],
-                                Year : ["2012"] ,
+                                Year : ["2010"] ,
                             GenderCode: ["1","2"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
                                 ]
@@ -741,7 +744,7 @@ define(function () {
                                 "GenderCode": ["3"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
                                 ],
-                                Year: ["2012"]
+                                Year: ["2010"]
                             }
                         },
 
@@ -783,7 +786,7 @@ define(function () {
                                 GenderCode: ["1", "2"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
                                 ],
-                                Year: ["2012"]
+                                Year: ["2010"]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
@@ -815,7 +818,7 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
 
 
@@ -829,8 +832,10 @@ define(function () {
                     selector: {
                         id: "tree",
                         source: [
+                            {"value": "2013", "label": "2013", "selected": false},
+                            {"value": "2012", "label": "2012", "selected": false},
 
-                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2011", "label": "2011", "selected": false},
                             {"value": "2010", "label": "2010", "selected": false},
                             {"value": "2009", "label": "2009", "selected": false},
                             {"value": "2008", "label": "2008", "selected": false},
@@ -844,7 +849,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2012"],
                         config: {
                             core: {
                                 multiple: false
@@ -855,7 +860,7 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 },
 
@@ -869,7 +874,7 @@ define(function () {
                         id: "input",
                         type: "radio",
                         source: [
-                            {value: "NC", label: "national currency"},
+                            {value: "NC", label: "National currency"},
                             {value: "USD", label: "US dollars"}
                         ]
                     },
@@ -877,7 +882,7 @@ define(function () {
                     template: {
                         title: "Radio",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
 
@@ -917,7 +922,9 @@ define(function () {
                             IndicatorCode: ["020207"],
 
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            ],
+
+                            "Year": ["2012"]
                         }
 
 
@@ -941,7 +948,8 @@ define(function () {
                             IndicatorCode: ["020207"],
 
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            ],
+                            "Year": ["2012"]
 
 
                         },
@@ -998,7 +1006,8 @@ define(function () {
                             IndicatorCode: ["020204"],
 
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            ],
+                            "Year": ["2012"]
                         },
 
 
@@ -1051,7 +1060,7 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
 
 
@@ -1065,8 +1074,9 @@ define(function () {
                     selector: {
                         id: "tree",
                         source: [
+                            {"value": "2012", "label": "2013", "selected": false},
 
-                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2011", "label": "2011", "selected": false},
                             {"value": "2010", "label": "2010", "selected": false},
                             {"value": "2009", "label": "2009", "selected": false},
                             {"value": "2008", "label": "2008", "selected": false},
@@ -1080,7 +1090,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2012"],
                         config: {
                             core: {
                                 multiple: false
@@ -1091,31 +1101,11 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
-                    }
-                },
-
-
-
-
-
-                um: {
-
-                    selector: {
-                        id: "input",
-                        type: "radio",
-                        source: [
-                            {value: "NC", label: "national currency"},
-                            {value: "USD", label: "US dollars"}
-                        ]
-                    },
-
-                    template: {
-                        title: "Radio",
-                        hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
+
+
 
             },
 
@@ -1153,7 +1143,7 @@ define(function () {
 
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
                                 ],
-                                "Year" : [2013]
+                                "Year" : ["2012"]
                             }
                         },
 
@@ -1184,7 +1174,7 @@ define(function () {
 
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
                                 ],
-                                "Year" : [2013]
+                                "Year" : ["2012"]
                             }
                         }
 
@@ -1395,7 +1385,7 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
 
 
@@ -1409,8 +1399,9 @@ define(function () {
                     selector: {
                         id: "tree",
                         source: [
-
-                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2013", "label": "2013", "selected": false},
+                            {"value": "2012", "label": "2012", "selected": false},
+                            {"value": "2011", "label": "2011", "selected": false},
                             {"value": "2010", "label": "2010", "selected": false},
                             {"value": "2009", "label": "2009", "selected": false},
                             {"value": "2008", "label": "2008", "selected": false},
@@ -1424,7 +1415,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2012"],
                         config: {
                             core: {
                                 multiple: false
@@ -1435,31 +1426,10 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
-                    }
-                },
-
-
-
-
-
-                um: {
-
-                    selector: {
-                        id: "input",
-                        type: "radio",
-                        source: [
-                            {value: "NC", label: "national currency"},
-                            {value: "USD", label: "US dollars"}
-                        ]
-                    },
-
-                    template: {
-                        title: "Radio",
-                        hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
+
 
             },
 
@@ -1496,7 +1466,7 @@ define(function () {
 
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
                             ],
-                            "Year" : ["2013"]
+                            "Year" : ["2012"]
                         }
                     },
                     {
@@ -1525,7 +1495,7 @@ define(function () {
 
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
                             ],
-                            "Year" : ["2013"]
+                            "Year" : ["2012"]
                         }
                     },
                     {
@@ -1554,7 +1524,7 @@ define(function () {
 
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
                             ],
-                            "Year" : ["2013"]
+                            "Year" : ["2012"]
                         }
                     }
 
@@ -1582,7 +1552,7 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
 
 
@@ -1612,7 +1582,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2013"],
                         config: {
                             core: {
                                 multiple: false
@@ -1623,7 +1593,7 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
 
@@ -1654,25 +1624,25 @@ define(function () {
 
                         },
 
-                        postProcess : [{  "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "version": "2.0",
-                                                "codes": [
-                                                    "021202", "02120101", "02120102"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        },
-                            {
-                                "name": "unecaPercentageGDP"}]
+                        //postProcess : [{  "name": "filter",
+                        //    "parameters": {
+                        //        "rows": {
+                        //            "IndicatorCode": {
+                        //                "codes": [
+                        //                    {
+                        //                        "uid": "UNECA_ClassificationOfActivities",
+                        //                        "version": "2.0",
+                        //                        "codes": [
+                        //                            "021202", "02120101", "02120102"
+                        //                        ]
+                        //                    }
+                        //                ]
+                        //            }
+                        //        }
+                        //    }
+                        //},
+                        //    {
+                        //        "name": "unecaPercentageGDP"}]
 
 
 
@@ -1702,25 +1672,25 @@ define(function () {
                         },
 
 
-                        postProcess : [{  "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "version": "2.0",
-                                                "codes": [
-                                                    "02120301", "02120302", "02120302"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        },
-                            {
-                                "name": "unecaPercentageGDP"}]
+                        //postProcess : [{  "name": "filter",
+                        //    "parameters": {
+                        //        "rows": {
+                        //            "IndicatorCode": {
+                        //                "codes": [
+                        //                    {
+                        //                        "uid": "UNECA_ClassificationOfActivities",
+                        //                        "version": "2.0",
+                        //                        "codes": [
+                        //                            "02120301", "02120302", "02120302"
+                        //                        ]
+                        //                    }
+                        //                ]
+                        //            }
+                        //        }
+                        //    }
+                        //},
+                      //      {
+                        //        "name": "unecaPercentageGDP"}]
 
 
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -1745,25 +1715,25 @@ define(function () {
 
                         },
 
-                        postProcess : [{  "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "version": "2.0",
-                                                "codes": [
-                                                    "021204"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        },
-                            {
-                                "name": "unecaPercentageGDP"}]
+                        //postProcess : [{  "name": "filter",
+                        //    "parameters": {
+                        //        "rows": {
+                        //            "IndicatorCode": {
+                        //                "codes": [
+                        //                    {
+                        //                        "uid": "UNECA_ClassificationOfActivities",
+                        //                        "version": "2.0",
+                        //                        "codes": [
+                        //                            "021204"
+                        //                        ]
+                        //                    }
+                        //                ]
+                        //            }
+                        //        }
+                        //    }
+                        //},
+                    //        {
+                      //          "name": "unecaPercentageGDP"}]
 
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
@@ -1792,7 +1762,7 @@ define(function () {
                     template: {
                         title: "Multiple selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
 
 
@@ -1806,8 +1776,10 @@ define(function () {
                     selector: {
                         id: "tree",
                         source: [
+                            {"value": "2013", "label": "2013", "selected": false},
+                            {"value": "2012", "label": "2012", "selected": false},
 
-                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2011", "label": "2011", "selected": false},
                             {"value": "2010", "label": "2010", "selected": false},
                             {"value": "2009", "label": "2009", "selected": false},
                             {"value": "2008", "label": "2008", "selected": false},
@@ -1821,7 +1793,7 @@ define(function () {
                             {"value": "2000", "label": "2000", "selected": false}
 
                         ],
-                        default: ["item_1"],
+                        default: ["2013"],
                         config: {
                             core: {
                                 multiple: false
@@ -1832,7 +1804,7 @@ define(function () {
                     template: {
                         title: "Single selection",
                         hideSwitch: false,
-                        hideRemoveButton: false
+                        hideRemoveButton: true
                     }
                 }
 
@@ -1869,7 +1841,7 @@ define(function () {
 
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
                             ],
-                            "Year" : [2013]
+                            "Year" : ["2013"]
                         }
 
 
@@ -1911,7 +1883,7 @@ define(function () {
 
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
                             ],
-                            "Year" : [2013]
+                            "Year" : ["2013"]
 
 
                         }
