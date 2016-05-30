@@ -147,25 +147,6 @@ require([
 
                     'fx-common/config/auth_users': '../../config/auth_users.json',
 
-                    "fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/fx-catalog/blankFilter',
-                    "fx-cat-br/config/fx-catalog-collapsible-menu-config": '../../config/submodules/fx-catalog/fx-catalog-collapsible-menu-config',
-                    "fx-cat-br/config/fx-catalog-filter-mapping": '../../config/submodules/fx-catalog/fx-catalog-filter-mapping',
-                    "fx-cat-br/config/fx-catalog-modular-form-config": '../../config/submodules/fx-catalog/fx-catalog-modular-form-config',
-
-                    'fx-ana/config/services': '../../config/submodules/fx-analysis/Config',
-
-                    'fx-filter/config/config': '../../config/submodules/fx-filter/Config',
-
-                    'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi',
-
-                    'fx-report/config/md-export/config': '../../config/submodules/fx-report/md-export/config',
-
-                    'fx-dashboard/config/config': '../../config/submodules/fx-dashboard/config',
-
-                    // METADATA VIEWER
-                    'fx-md-v/config/config': '../../config/submodules/fx-md-viewer/config',
-
-                    'fx-common/config/config': '../../config/submodules/fx-common/config'
 
                 },
 

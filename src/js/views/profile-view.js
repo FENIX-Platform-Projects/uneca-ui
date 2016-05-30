@@ -79,6 +79,8 @@ define([
 
             this.dashboards = [];
 
+            this.environment = 'develop';
+
         },
 
         //country dashboard
@@ -196,8 +198,7 @@ define([
 
         _getDashboardConfig: function (id) {
 
-            var self = this,
-                conf = PC[id].dashboard,
+            var conf = PC[id].dashboard,
                 filterValues = this.filterValues[this.currentDashboard] || {};
 
             if (!Array.isArray(conf)){
@@ -251,7 +252,9 @@ define([
 
           _.each(config, _.bind(function (c) {
 
-                this.dashboards.push(new Dashboard(c));
+                this.dashboards.push(new Dashboard($.extend(true, {
+                    environment: this.environment
+                }, c)));
 
             }, this));
 
@@ -276,6 +279,7 @@ define([
 
             this.filter = new Filter({
                 el: s.FILTER_CONTAINER,
+                environment : this.environment,
                 items: config,
                 common: {
                     template: {
