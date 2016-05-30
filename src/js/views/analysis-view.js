@@ -4,8 +4,8 @@ define([
     'underscore',
     'views/base/view',
     'text!templates/analysis/analysis.hbs',
-    'config/Config',
-    'config/Events',
+    'config/config',
+    'config/events',
     'fx-analysis/start',
     'amplify'
 ], function ($, _, View, template, C, E, Analysis) {
