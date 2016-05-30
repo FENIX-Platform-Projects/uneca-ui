@@ -138,6 +138,8 @@ define([
                 filterConfig = this._getFilterConfig(item);
 
             if (conf && !_.isEmpty(conf) ) {
+
+
                 this._renderDashboard(conf);
             }
 
@@ -194,7 +196,8 @@ define([
 
         _getDashboardConfig: function (id) {
 
-            var conf = PC[id].dashboard,
+            var self = this,
+                conf = PC[id].dashboard,
                 filterValues = this.filterValues[this.currentDashboard] || {};
 
             if (!Array.isArray(conf)){
@@ -206,8 +209,14 @@ define([
                 if (!_.isEmpty(c)) {
                     c.filter = $.extend(c.filter, this._createCountryFilter());
 
+                    var countrySel = c.filter.CountryCode;
+
                     _.each(c.items, _.bind(function (item) {
                         item.filter = $.extend(item.filter, filterValues.values);
+
+                        if(item.id === 'country-map-container'){
+                            item.config.fenix_ui_map.zoomToCountry = countrySel;
+                        }
                     }))
                 }
 

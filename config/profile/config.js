@@ -24,19 +24,13 @@ define(function () {
                                 baselayers: {
                                     "cartodb": {
                                         title_en: "Baselayer",
-                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                                         subdomains: 'abcd',
                                         maxZoom: 19
                                     }
                                 },
-
-                                //TODO GET CURRENT COUNTRY
-
-                                highlightCountries: []
+                                zoomToCountry: ["DZA"]
                             }
-                        },
-                        filter: { //FX-filter format
-                            "CountryCode": ["ITA"]
                         }
                     }
                 ]      
