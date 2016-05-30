@@ -33,14 +33,8 @@ define(['jquery', 'fx-submodules/config/baseConfig'],
         cfg.TOP_MENU= {
             container : '#top-menu-container',
             url: 'config/submodules/fx-menu/top_menu_data_mng.json',
-            template: 'fx-menu/templates/blank-fluid.html',
+        //    template: 'fx-menu/templates/blank-fluid.html',
             active: "datamgmt"
-        };
-
-
-        cfg.SECONDARY_MENU = {
-            url: './submodules/fenix-ui-data-management/config/secondary_menu.json',
-            disable: ['delete', 'close', 'data', 'dsd']
         };
 
         cfg.FAKE_AUTHENTICATION = false;
