@@ -6,7 +6,42 @@ define(function () {
 
     return {
 
-        "resume": {},
+        "resume": {
+            dashboard: [{
+
+                uid: "UNECA_CountryResume",
+                items: [
+                    {
+                        id: "country-map-container", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                },
+
+                                //TODO GET CURRENT COUNTRY
+
+                                highlightCountries: []
+                            }
+                        },
+                        filter: { //FX-filter format
+                            "CountryCode": ["ITA"]
+                        }
+                    }
+                ]      
+            }]
+        },
 
         "population": {
 
@@ -18,6 +53,32 @@ define(function () {
                 //postProcess : {} //D3P process
                 //filter : {} //FX-filter format
                 items: [
+
+                    {
+                        id: "country-map-container", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+                            "CountryCode": ["KEN"]
+                        }
+                    },
+
                     {
                         id: "population-1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
