@@ -39,7 +39,8 @@ define({
             "id": "monetary_statistics"
           },
           {
-            "id": "financial_flows"
+            "id": "financial_flows",
+            "state": {"disabled": true}
           },
           {
             "id": "public_finance"
@@ -48,16 +49,21 @@ define({
             "id": "debt"
           },
           {
-            "id": "inflation"
+            "id": "inflation",
+            "state": {"disabled": true}
           },
           {
-            "id": "energy"
+            "id": "energy",
+            "state": {"disabled": true}
+
           },
           {
-            "id": "tourism"
+            "id": "tourism",
+            "state": {"disabled": true}
           },
           {
-            "id": "infrastructure"
+            "id": "infrastructure",
+            "state": {"disabled": true}
           },
           {
             "id": "production",
@@ -68,7 +74,8 @@ define({
               {
                 "id": "mining_production"
               }
-            ]
+            ],
+            "state": {"disabled": true}
           }
         ]
       }

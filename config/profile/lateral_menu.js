@@ -43,7 +43,8 @@ define({
             "id": "monetary_statistics"
           },
           {
-            "id": "financial_flows"
+            "id": "financial_flows",
+            "state": {"disabled": true}
           },
           {
             "id": "public_finance"
@@ -58,10 +59,12 @@ define({
             "id": "energy"
           },
           {
-            "id": "tourism"
+            "id": "tourism",
+            "state": {"disabled": true}
           },
           {
-            "id": "infrastructure"
+            "id": "infrastructure",
+            "state": {"disabled": true}
           },
 
           {
@@ -69,6 +72,7 @@ define({
           },
           {
             "id": "production",
+            "state": {"disabled": true},
             "children": [
               {
                 "id": "agriculture_production"

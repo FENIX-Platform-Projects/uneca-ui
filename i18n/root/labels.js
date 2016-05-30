@@ -16,7 +16,7 @@ define({
     
     //Lateral menu labels
     "menu_demographic" : "Demographic and social statistics",
-    "menu_population" : "Demographic",
+    "menu_population" : "Population",
     "menu_education" : "Education",
     "menu_health" : "Health",
     "menu_labour" : "Labour",
@@ -166,9 +166,9 @@ define({
     BOP3_title:  "Trade balance",
 
     //energy
-    energy1_title: "Production of electricity",
-    energy2_title:"Production of electricity",
-    energy3_title:"Production of electricity",
+    energy1_title: "Production of electricity, total",
+    energy2_title:"Production of electricity, public",
+    energy3_title:"Electricity gross production, public and self-produced",
 
     //poverty
     poverty1_title: "Share of income Held by Poorest 10 %",
@@ -210,21 +210,70 @@ define({
     debt3_title:"Total external debt - Public/Private",
 
     //inflation
-    inflation1_title:  "Inflation, consumer prices (annual %)",
-    inflation2_title: "Inflation, GDP deflator (annual%)",
-    inflation3_title: "Inflation by kind of commodity",
-    inflation4_title: "Inflation by kind of commodity",
+
+    inflation1_title: "Inflation by kind of commodity",
+    inflation2_title:  "Inflation, consumer prices",
+    inflation3_title: "Inflation, GDP deflator (annual%)",
+
+
 
 
    //tourism
     tourism1_title:  "Total contribution to GDP and employment",
     tourism2_title: "International tourism, number of arrivals",
     tourism3_title: "International tourism, receipts",
-    tourism4_title: "Rooms in hotel and similar establishments"
+    tourism4_title: "Rooms in hotel and similar establishments",
 
 
 
 
+
+    //Browse by domain
+
+    //Population
+    //  population1_title: "Mid-year population",
+    //  population2_title:"Average growth rate",
+    //  population4_title: "Life expectancy",
+
+    //  population6_title:"Urbanization rate",
+
+    //education
+
+    edu1_title_domain :"Gross enrolment rate",
+    //edu3_title :"Literacy rate by gender",
+    edu3_title_domain: "Overall literacy rate",
+    //edu2_title :"Enrolment primary, secondary, tertiary school",
+
+    // health
+
+    //health1_title:"Percentage of children provided the vaccines",
+    //health2_title:"Percentage of underweight children (under-five)",
+    //health3_title:"Prevalence of undernourishment",
+
+
+    //Labour
+
+    // labour2_title:"Economically active population by sector",
+    // labour3_title:"Economically active population by gender",
+    labour4_title_domain:"Percentage of female active population",
+    // labour5_title:"Unemployment rate",
+    // labour6_title: "Unemployment rate by gender",
+
+
+    //Balance of payment
+    BOP1_title_Domain: "Overall balance of payments of African countries (% GDP)",
+    BOP2_title_Domain: "Overall balance of payments over time (% GDP)",
+    BOP3_title_Domain: "Current account balance"
+
+
+
+
+
+
+    //gdp
+
+    //gdp2_title:"GDP growth (annual %)",
+    //gdp3_title:"GDP per capita",
 
 
 

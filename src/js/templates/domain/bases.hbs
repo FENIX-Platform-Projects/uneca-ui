@@ -64,7 +64,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Mid-year population</h2>
+                <h2> {{population1_title}} </h2>
                 <div data-item="population-1"></div>
 
             </div>
@@ -72,7 +72,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Average growth rate</h2>
+                <h2>{{population2_title}}</h2>
                 <div data-item="population-2" style="height:400px"></div>
 
             </div>
@@ -80,7 +80,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Life expectancy</h2>
+                <h2>{{population4_title}}</h2>
                 <div data-item="population-3"></div>
 
             </div>
@@ -90,7 +90,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Urbanization rate</h2>
+                <h2>{{ population6_title}}</h2>
                 <div data-item="population-4" style="height:400px"></div>
 
             </div>
@@ -127,7 +127,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Gross enrolment rate</h2>
+                <h2>{{edu1_title_domain}}</h2>
                 <div data-item="edu_1" style="height:400px"></div>
 
             </div>
@@ -136,7 +136,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Literacy rate by gender</h2>
+                <h2>{{edu3_title}}</h2>
                 <div data-item="edu_2"></div>
 
             </div>
@@ -146,7 +146,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Overall literacy rate</h2>
+                <h2>{{edu3_title_domain}}</h2>
                 <div data-item="edu_3" style="height:400px"></div>
 
             </div>
@@ -154,7 +154,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Enrolment primary, secondary, tertiary school</h2>
+                <h2>{{edu2_title}}</h2>
                 <div data-item="edu_4"></div>
 
             </div>
@@ -168,7 +168,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Percentage of children provided the vaccines</h2>
+                <h2>{{health1_title}}</h2>
                 <div data-item="health-1"></div>
 
             </div>
@@ -176,7 +176,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Prevalence of undernourishment</h2>
+                <h2>{{health3_title}}</h2>
                 <div data-item="health-2" style="height:400px"></div>
 
             </div>
@@ -185,7 +185,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Percentage of underweight children (under-five)</h2>
+                <h2>{{health2_title}}</h2>
                 <div data-item="health-3" style="height:400px"></div>
 
             </div>
@@ -204,7 +204,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Economically active population by sector</h1>
+                <h1>{{labour2_title}}</h1>
 
                 <div data-item="labour-2"></div>
             </div>
@@ -214,7 +214,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Economically active population by gender</h1>
+                <h1>{{labour3_title}}</h1>
 
                 <div data-item="labour-3"></div>
             </div>
@@ -222,7 +222,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Economically active population</h2>
+                <h2>{{labour4_title_domain}}</h2>
                 <div data-item="labour-4"></div>
 
             </div>
@@ -231,7 +231,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Unemployment rate</h2>
+                <h2>{{labour5_title}}</h2>
                 <div data-item="labour-5" style="height:400px"></div>
 
             </div>
@@ -239,7 +239,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>Unemployment rate by gender</h2>
+                <h2>{{labour6_title}}</h2>
                 <div data-item="labour-6"></div>
 
             </div>
@@ -251,15 +251,63 @@
 
     <!-- Economic statistics-->
 
+    <section data-dashboard="balance_of_payments">
 
-    <section data-dashboard="gdp_constant">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>{{ BOP1_title_Domain}}</h2>
+                <div data-item="BOP-1" style="height:400px"></div>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>{{BOP2_title_Domain}}</h2>
+                <div data-item="BOP-2"></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>{{BOP3_title_Domain}}</h2>
+                <div data-item="BOP-3" style="height:400px"></div>
+
+            </div>
+        </div>
 
     </section>
 
 
-    <section data-dashboard="gdp_current">
+    <section data-dashboard="gdp">
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>{{gdp2_title}} </h1>
+
+                <div data-item="gdp-1" style="height:400px"></div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>{{gdp3_title}}</h1>
+
+                <div data-item="gdp-2" style="height:400px"></div>
+            </div>
+        </div>
+
+
 
     </section>
+
+
+
+
 
     <section data-dashboard="monetary_statistics">
 
@@ -269,16 +317,7 @@
             <div class="col-xs-12">
                 <h1>Domestic credit</h1>
 
-                <div data-item="monetary-1"></div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Net foreign assets</h1>
-
-                <div data-item="monetary-2"></div>
+                <div data-item="monetary-1"  style="height:400px"></div>
             </div>
         </div>
 
@@ -287,16 +326,7 @@
             <div class="col-xs-12">
                 <h1>International reserves</h1>
 
-                <div data-item="monetary-3"></div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Money supply (M1)</h1>
-
-                <div data-item="monetary-4"></div>
+                <div data-item="monetary-2"  style="height:400px"></div>
             </div>
         </div>
 
@@ -305,9 +335,11 @@
             <div class="col-xs-12">
                 <h1>Quasi-money</h1>
 
-                <div data-item="monetary-5"></div>
+                <div data-item="monetary-3"  style="height:400px"></div>
             </div>
         </div>
+
+
 
     </section>
 
@@ -341,34 +373,7 @@
 
     </section>
 
-    <section data-dashboard="balance_of_payments">
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Overall balance of payments of African countries (% GDP)</h2>
-                <div data-item="BOP-1" style="height:400px"></div>
-
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Overall balance of payments over time (% GDP)</h2>
-                <div data-item="BOP-2"></div>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Current account balance</h2>
-                <div data-item="BOP-3" style="height:400px"></div>
-
-            </div>
-        </div>
-
-    </section>
 
 
     <section data-dashboard="energy">
@@ -440,29 +445,6 @@
 
 
 
-    <section data-dashboard="gdp">
-
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>GDP (Current prices) </h1>
-
-                <div data-item="gdp-1" style="height:400px"></div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>GDP growth (annual %)</h1>
-
-                <div data-item="gdp-2" style="height:400px"></div>
-            </div>
-        </div>
-
-
-
-    </section>
 
 
     <section data-dashboard="expenditure_gdp">
@@ -632,7 +614,7 @@
             <div class="col-xs-12">
                 <h1>Total government domestic debt</h1>
 
-                <div data-item="debt-1"></div>
+                <div data-item="debt-1"  style="height:400px"></div>
             </div>
         </div>
 

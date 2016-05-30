@@ -41,7 +41,9 @@ define(function () {
                         id: "tree",
                         source: [
 
-                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2013", "label": "2013", "selected": false},
+                            {"value": "2012", "label": "2012", "selected": false},
+                            {"value": "2011", "label": "2011", "selected": false},
                             {"value": "2010", "label": "2010", "selected": false},
                             {"value": "2009", "label": "2009", "selected": false},
                             {"value": "2008", "label": "2008", "selected": false},
@@ -96,8 +98,9 @@ define(function () {
                             IndicatorCode: ["010101"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            "CountryCode":["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
+                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
+                            "Year" : [2013]
 
 
                         },
@@ -154,8 +157,9 @@ define(function () {
                             IndicatorCode: ["010103"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
+                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
+                            "Year" : [2013]
                         }
                     },
 
@@ -178,8 +182,9 @@ define(function () {
                             IndicatorCode: ["010108"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            "CountryCode":["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
+                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
+                            "Year" : [2013]
 
 
                         }
@@ -212,8 +217,9 @@ define(function () {
                             IndicatorCode: ["010102"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
+                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
+                            "Year" : [2013]
                         }
                     }
                 ]
@@ -251,8 +257,10 @@ define(function () {
                     selector: {
                         id: "tree",
                         source: [
+                            {"value": "2013", "label": "2013", "selected": false},
+                            {"value": "2012", "label": "2012", "selected": false},
 
-                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2011", "label": "2011", "selected": false},
                             {"value": "2010", "label": "2010", "selected": false},
                             {"value": "2009", "label": "2009", "selected": false},
                             {"value": "2008", "label": "2008", "selected": false},
@@ -292,24 +300,7 @@ define(function () {
                 //postProcess : {} //D3P process
                 items: [
 
-                    //map 010201
-                    //{
-                    //    id: "edu_1", //ref [data-item=':id']
-                    //    type: "chart", //chart || map || olap,
-                    //    config: {
-                    //        type: "line",
-                    //        x: ["Year"], //x axis and series
-                    //        series: ["IndicatorCode_EN"], //Y dimension
-                    //        y: ["Value"],
-                    //        aggregationFn: {"Value": "sum"}
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //
-                    //        IndicatorCode: ["010201"],
-                    //        GenderCode: ["3"]
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //},
+
                     {
                         id: "edu_1", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
@@ -334,8 +325,9 @@ define(function () {
 
                             IndicatorCode: ["010201"],
                             "GenderCode": ["3"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
+                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
+                            "Year" : ["2012"]
                         }
                     },
 
@@ -354,12 +346,11 @@ define(function () {
 
                             IndicatorCode: ["010206"],
                             GenderCode : ["1","2"],
-                            Year: ["2011"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
+                            Year: ["2012"],
+                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
+                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"]
+                            //filterFor: ["Year"], // allowed dimension ids to filter,
+                    }},
 
                     {
                         id: "edu_3", //ref [data-item=':id']
@@ -385,29 +376,11 @@ define(function () {
 
                             IndicatorCode: ["010206"],
                             "GenderCode": ["3"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
+                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
+                            "Year" : ["2012"]
                         }
                     },
-
-                    //Map 010206
-                    //{
-                    //    id: "edu_3", //ref [data-item=':id']
-                    //    type: "chart", //chart || map || olap,
-                    //    config: {
-                    //        type: "column",
-                    //        x: ["Year"], //x axis and series
-                    //        series: ["GenderCode_EN"], //Y dimension
-                    //        y: ["Value"],
-                    //        aggregationFn: {"Value": "sum"}
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //
-                    //        IndicatorCode: ["010206"],
-                    //        GenderCode: ["3"]
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //}
 
 
                     {
@@ -424,9 +397,9 @@ define(function () {
 
                             IndicatorCode:   ["010201", "010202", "010203"],
                             GenderCode : ["3"],
-                            Year: ["2010"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
+                            Year: ["2012"],
+                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
+                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
@@ -470,8 +443,9 @@ define(function () {
                     selector: {
                         id: "tree",
                         source: [
-
-                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2013", "label": "2013", "selected": false},
+                            {"value": "2012", "label": "2012", "selected": false},
+                            {"value": "2011", "label": "2011", "selected": false},
                             {"value": "2010", "label": "2010", "selected": false},
                             {"value": "2009", "label": "2009", "selected": false},
                             {"value": "2008", "label": "2008", "selected": false},
@@ -553,7 +527,7 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["010302"],
-
+                            Year: ["2010"],
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
                             ]
                         }
@@ -582,55 +556,16 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["010301"],
-
+                            Year: ["2010"],
                             "CountryCode": ["KEN","TZA","ZMB","ETH"
                             ]
                         }
-                    },
-                    //map 010301
-                    //{
-                    //    id: "health-2", //ref [data-item=':id']
-                    //    type: "chart", //chart || map || olap,
-                    //    config: {
-                    //        type: "column",
-                    //        x: ["Year"], //x axis and series
-                    //        series: ["IndicatorCode_EN"], //Y dimension
-                    //        y: ["Value"],
-                    //        aggregationFn: {"Value": "sum"}
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //        IndicatorCode: ["010302"]
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //},
+                    }
 
 
 
 
 
-
-
-
-
-
-
-
-                    //map 010301
-                    //{
-                    //    id: "health-3", //ref [data-item=':id']
-                    //    type: "chart", //chart || map || olap,
-                    //    config: {
-                    //        type: "column",
-                    //        x: ["Year"], //x axis and series
-                    //        series: ["IndicatorCode_EN"], //Y dimension
-                    //        y: ["Value"],
-                    //        aggregationFn: {"Value": "sum"}
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //        IndicatorCode: ["010301"]
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //},
 
                 ]
             }
@@ -722,7 +657,8 @@ define(function () {
                                 SectorCode : ["1","2","3"],
                                 GenderCode : ["3"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
-                                ]
+                                ],
+                                Year: ["2012"]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
@@ -742,7 +678,8 @@ define(function () {
                                 SectorCode : ["4"],
                                 GenderCode : ["1","2"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
-                                ]
+                                ],
+                                Year: ["2012"]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
@@ -765,10 +702,11 @@ define(function () {
                             }, // :type-creator config
                             filter: { //FX-filter format
                                 IndicatorCode: ["010404"],
-                                Year : ["2010"] ,
+                                Year : ["2012"] ,
                             GenderCode: ["1","2"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
                                 ]
+
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
@@ -802,7 +740,8 @@ define(function () {
                                 IndicatorCode: ["010402"],
                                 "GenderCode": ["3"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
-                                ]
+                                ],
+                                Year: ["2012"]
                             }
                         },
 
@@ -843,7 +782,8 @@ define(function () {
                                 IndicatorCode: ["010402"],
                                 GenderCode: ["1", "2"],
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
-                                ]
+                                ],
+                                Year: ["2012"]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
@@ -858,17 +798,14 @@ define(function () {
 
         },
 
+        "balance_of_payments": {
 
-
-
-
-        "gdp": {
             filter:{
 
 
                 CountryCode :{
                     selector: {
-                        id : "dropdown"
+                        id : "tree"
                     },
 
                     cl: {
@@ -920,9 +857,268 @@ define(function () {
                         hideSwitch: false,
                         hideRemoveButton: false
                     }
+                },
+
+
+
+
+
+                um: {
+
+                    selector: {
+                        id: "input",
+                        type: "radio",
+                        source: [
+                            {value: "NC", label: "national currency"},
+                            {value: "USD", label: "US dollars"}
+                        ]
+                    },
+
+                    template: {
+                        title: "Radio",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
                 }
 
             },
+
+            dashboard: {
+                uid: "UNECA_BalanceOfPayments",
+                //version: "",
+                //preProcess : {} //D3P process
+                //postProcess : {} //D3P process
+                items: [
+
+
+
+                    {
+                        id: "BOP-1", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["020207"],
+
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
+                        }
+
+
+                    },
+
+
+
+
+                    {
+                        id: "BOP-2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            x: ["CountryCode_EN"], //x axis and series
+                            series: ["IndicatorCode_EN"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["020207"],
+
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
+
+
+                        },
+
+                        postProcess : [{  "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "020207"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"}],
+
+
+
+                        filterFor: ["CountryCode","IndicatorCode"] // allowed dimension ids to filter,
+                    },
+
+
+
+                    {
+                        id: "BOP-3", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["020204"],
+
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ]
+                        },
+
+
+
+                        postProcess : [{
+                            "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "020204"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"
+                            }]
+
+                    }
+
+                ]
+
+            }
+
+        },
+
+
+
+        "gdp": {
+            filter:{
+
+
+                CountryCode :{
+                    selector: {
+                        id : "tree"
+                    },
+
+                    cl: {
+                        uid: "UNECA_ISO3"
+
+                    },
+                    template: {
+                        title: "Multiple selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+
+
+
+
+                },
+
+
+                Year : {
+
+                    selector: {
+                        id: "tree",
+                        source: [
+
+                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2010", "label": "2010", "selected": false},
+                            {"value": "2009", "label": "2009", "selected": false},
+                            {"value": "2008", "label": "2008", "selected": false},
+                            {"value": "2007", "label": "2007", "selected": false},
+                            {"value": "2006", "label": "2006", "selected": false},
+                            {"value": "2005", "label": "2005", "selected": false},
+                            {"value": "2004", "label": "2004", "selected": false},
+                            {"value": "2003", "label": "2003", "selected": false},
+                            {"value": "2002", "label": "2002", "selected": false},
+                            {"value": "2001", "label": "2001", "selected": false},
+                            {"value": "2000", "label": "2000", "selected": false}
+
+                        ],
+                        default: ["item_1"],
+                        config: {
+                            core: {
+                                multiple: false
+                            }
+                        }
+                    },
+
+                    template: {
+                        title: "Single selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                },
+
+
+
+
+
+                um: {
+
+                    selector: {
+                        id: "input",
+                        type: "radio",
+                        source: [
+                            {value: "NC", label: "national currency"},
+                            {value: "USD", label: "US dollars"}
+                        ]
+                    },
+
+                    template: {
+                        title: "Radio",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                }
+
+            },
+
             dashboard: [
 
                 {
@@ -956,7 +1152,8 @@ define(function () {
                                 IndicatorCode: ["020705"],
 
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
-                                ]
+                                ],
+                                "Year" : [2013]
                             }
                         },
 
@@ -986,7 +1183,8 @@ define(function () {
                                 IndicatorCode: ["020706"],
 
                                 "CountryCode": ["KEN","TZA","ZMB","ETH"
-                                ]
+                                ],
+                                "Year" : [2013]
                             }
                         }
 
@@ -999,188 +1197,271 @@ define(function () {
 
         },
 
-        "expenditure_gdp": {
+        //"expenditure_gdp": {
+        //
+        //    dashboard: [
+        //
+        //
+        //        { uid: "UNECA_ExpenditureGDPCurrent",
+        //            items: [
+        //                {
+        //                    id: "expenditure-1", //ref [data-item=':id']
+        //                    type: "chart", //chart || map || olap,
+        //                    config: {
+        //                        type: "column",
+        //                        x: ["Year"], //x axis and series
+        //                        series: ["IndicatorCode_EN"], //Y dimension
+        //                        y: ["Value"],
+        //                        aggregationFn: {"Value": "sum"}
+        //                    }, // :type-creator config
+        //                    filter: { //FX-filter format
+        //                        IndicatorCode: ["0207020103"]
+        //                    }
+        //                    //filterFor: ["Year"], // allowed dimension ids to filter,
+        //                },
+        //
+        //
+        //
+        //
+        //
+        //                {
+        //                    id: "expenditure-2", //ref [data-item=':id']
+        //                    type: "chart", //chart || map || olap,
+        //                    config: {
+        //                        type: "column",
+        //                        x: ["Year"], //x axis and series
+        //                        series: ["IndicatorCode_EN"], //Y dimension
+        //                        y: ["Value"],
+        //                        aggregationFn: {"Value": "sum"}
+        //                    }, // :type-creator config
+        //                    filter: { //FX-filter format
+        //                        IndicatorCode: ["020702010301"]
+        //                    }
+        //                    //filterFor: ["Year"], // allowed dimension ids to filter,
+        //                },
+        //
+        //
+        //                {
+        //                    id: "expenditure-3", //ref [data-item=':id']
+        //                    type: "chart", //chart || map || olap,
+        //                    config: {
+        //                        type: "line",
+        //                        x: ["Year"], //x axis and series
+        //                        series: ["IndicatorCode_EN"], //Y dimension
+        //                        y: ["Value"],
+        //                        aggregationFn: {"Value": "sum"}
+        //                    }, // :type-creator config
+        //                    filter: { //FX-filter format
+        //                        IndicatorCode: ["02070207"]
+        //
+        //                    }
+        //                    //filterFor: ["Year"], // allowed dimension ids to filter,
+        //                },
+        //                {
+        //                    id: "expenditure-4", //ref [data-item=':id']
+        //                    type: "chart", //chart || map || olap,
+        //                    config: {
+        //                        type: "line",
+        //                        x: ["Year"], //x axis and series
+        //                        series: ["IndicatorCode_EN"], //Y dimension
+        //                        y: ["Value"],
+        //                        aggregationFn: {"Value": "sum"}
+        //                    }, // :type-creator config
+        //                    filter: { //FX-filter format
+        //                        IndicatorCode: ["02070208"]
+        //
+        //                    }
+        //                    //filterFor: ["Year"], // allowed dimension ids to filter,
+        //                }
+        //
+        //
+        //
+        //
+        //            ]
+        //
+        //
+        //        },
+        //
+        //
+        //        {
+        //            uid: "UNECA_ExpenditureGDPCostant",
+        //            //version: "",
+        //            //preProcess : {} //D3P process
+        //            //postProcess : {} //D3P process
+        //            items: [
+        //                {
+        //                    id: "expenditure-5", //ref [data-item=':id']
+        //                    type: "chart", //chart || map || olap,
+        //                    config: {
+        //                        type: "column",
+        //                        x: ["Year"], //x axis and series
+        //                        series: ["IndicatorCode_EN"], //Y dimension
+        //                        y: ["Value"],
+        //                        aggregationFn: {"Value": "sum"}
+        //                    }, // :type-creator config
+        //                    filter: { //FX-filter format
+        //                        IndicatorCode: ["0207010103"]
+        //                    }
+        //                    //filterFor: ["Year"], // allowed dimension ids to filter,
+        //                },
+        //
+        //
+        //
+        //
+        //
+        //                {
+        //                    id: "expenditure-6", //ref [data-item=':id']
+        //                    type: "chart", //chart || map || olap,
+        //                    config: {
+        //                        type: "column",
+        //                        x: ["Year"], //x axis and series
+        //                        series: ["IndicatorCode_EN"], //Y dimension
+        //                        y: ["Value"],
+        //                        aggregationFn: {"Value": "sum"}
+        //                    }, // :type-creator config
+        //                    filter: { //FX-filter format
+        //                        IndicatorCode: ["020701010301"]
+        //                    }
+        //                    //filterFor: ["Year"], // allowed dimension ids to filter,
+        //                },
+        //
+        //
+        //                {
+        //                    id: "expenditure-7", //ref [data-item=':id']
+        //                    type: "chart", //chart || map || olap,
+        //                    config: {
+        //                        type: "line",
+        //                        x: ["Year"], //x axis and series
+        //                        series: ["IndicatorCode_EN"], //Y dimension
+        //                        y: ["Value"],
+        //                        aggregationFn: {"Value": "sum"}
+        //                    }, // :type-creator config
+        //                    filter: { //FX-filter format
+        //                        IndicatorCode: ["02070107"]
+        //
+        //                    }
+        //                    //filterFor: ["Year"], // allowed dimension ids to filter,
+        //                },
+        //                {
+        //                    id: "expenditure-8", //ref [data-item=':id']
+        //                    type: "chart", //chart || map || olap,
+        //                    config: {
+        //                        type: "line",
+        //                        x: ["Year"], //x axis and series
+        //                        series: ["IndicatorCode_EN"], //Y dimension
+        //                        y: ["Value"],
+        //                        aggregationFn: {"Value": "sum"}
+        //                    }, // :type-creator config
+        //                    filter: { //FX-filter format
+        //                        IndicatorCode: ["02070108"]
+        //
+        //                    }
+        //                    //filterFor: ["Year"], // allowed dimension ids to filter,
+        //                }
+        //
+        //
+        //
+        //
+        //
+        //            ]
+        //
+        //        }
+        //
+        //
+        //
+        //
+        //
+        //    ]
+        //
+        //
+        //},
 
-            dashboard: [
 
 
-                { uid: "UNECA_ExpenditureGDPCurrent",
-                    items: [
-                        {
-                            id: "expenditure-1", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["0207020103"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
+        "monetary_statistics": {
+
+            filter:{
 
 
+                CountryCode :{
+                    selector: {
+                        id : "tree"
+                    },
+
+                    cl: {
+                        uid: "UNECA_ISO3"
+
+                    },
+                    template: {
+                        title: "Multiple selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
 
 
-
-                        {
-                            id: "expenditure-2", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["020702010301"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-                        {
-                            id: "expenditure-3", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070207"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-                        {
-                            id: "expenditure-4", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070208"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
-
-
-
-
-                    ]
 
 
                 },
 
 
-                {
-                    uid: "UNECA_ExpenditureGDPCostant",
-                    //version: "",
-                    //preProcess : {} //D3P process
-                    //postProcess : {} //D3P process
-                    items: [
-                        {
-                            id: "expenditure-5", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["0207010103"]
+                Year : {
+
+                    selector: {
+                        id: "tree",
+                        source: [
+
+                            {"value": "2011", "label": "2011", "selected": true},
+                            {"value": "2010", "label": "2010", "selected": false},
+                            {"value": "2009", "label": "2009", "selected": false},
+                            {"value": "2008", "label": "2008", "selected": false},
+                            {"value": "2007", "label": "2007", "selected": false},
+                            {"value": "2006", "label": "2006", "selected": false},
+                            {"value": "2005", "label": "2005", "selected": false},
+                            {"value": "2004", "label": "2004", "selected": false},
+                            {"value": "2003", "label": "2003", "selected": false},
+                            {"value": "2002", "label": "2002", "selected": false},
+                            {"value": "2001", "label": "2001", "selected": false},
+                            {"value": "2000", "label": "2000", "selected": false}
+
+                        ],
+                        default: ["item_1"],
+                        config: {
+                            core: {
+                                multiple: false
                             }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-
-
-
-                        {
-                            id: "expenditure-6", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["020701010301"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-                        {
-                            id: "expenditure-7", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070107"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-                        {
-                            id: "expenditure-8", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070108"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
+                    },
+
+                    template: {
+                        title: "Single selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                },
 
 
 
 
 
-                    ]
+                um: {
 
+                    selector: {
+                        id: "input",
+                        type: "radio",
+                        source: [
+                            {value: "NC", label: "national currency"},
+                            {value: "USD", label: "US dollars"}
+                        ]
+                    },
+
+                    template: {
+                        title: "Radio",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
                 }
 
-
-
-
-
-            ]
-
-
-        },
-
-
-
-        "monetary_statistics": {
+            },
 
             dashboard: {
 
@@ -1188,95 +1469,96 @@ define(function () {
 
 
                 items: [
+
                     {
                         id: "monetary-1", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
+                        type: "map", //chart || map || olap,
                         config: {
-                            type: "column_stacked",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["02090501", "02090502"]
+                            IndicatorCode: ["020905"],
 
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ],
+                            "Year" : ["2013"]
                         }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
-
                     {
                         id: "monetary-2", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
+                        type: "map", //chart || map || olap,
                         config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["020904"]
+                            IndicatorCode: ["020906"],
 
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ],
+                            "Year" : ["2013"]
                         }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
                         id: "monetary-3", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
+                        type: "map", //chart || map || olap,
                         config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["020906"]
+                            IndicatorCode: ["020903"],
 
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ],
+                            "Year" : ["2013"]
                         }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-                    {
-                        id: "monetary-4", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020901"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-
-                    {
-                        id: "monetary-5", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020903", "02090301"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
+
+
 
 
                 ]
@@ -1285,6 +1567,216 @@ define(function () {
         },
 
         "public_finance": {
+            filter:{
+
+
+                CountryCode :{
+                    selector: {
+                        id : "tree"
+                    },
+
+                    cl: {
+                        uid: "UNECA_ISO3"
+
+                    },
+                    template: {
+                        title: "Multiple selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+
+
+
+
+                },
+
+
+                Year : {
+
+                    selector: {
+                        id: "tree",
+                        source: [
+                            {"value": "2013", "label": "2013", "selected": false},
+                            {"value": "2012", "label": "2012", "selected": false},
+                            {"value": "2011", "label": "2011", "selected": false},
+                            {"value": "2010", "label": "2010", "selected": false},
+                            {"value": "2009", "label": "2009", "selected": false},
+                            {"value": "2008", "label": "2008", "selected": false},
+                            {"value": "2007", "label": "2007", "selected": false},
+                            {"value": "2006", "label": "2006", "selected": false},
+                            {"value": "2005", "label": "2005", "selected": false},
+                            {"value": "2004", "label": "2004", "selected": false},
+                            {"value": "2003", "label": "2003", "selected": false},
+                            {"value": "2002", "label": "2002", "selected": false},
+                            {"value": "2001", "label": "2001", "selected": false},
+                            {"value": "2000", "label": "2000", "selected": false}
+
+                        ],
+                        default: ["item_1"],
+                        config: {
+                            core: {
+                                multiple: false
+                            }
+                        }
+                    },
+
+                    template: {
+                        title: "Single selection",
+                        hideSwitch: false,
+                        hideRemoveButton: false
+                    }
+                }
+
+            },
+            dashboard: {
+                //data cube's uid
+                uid: "UNECA_PublicFinance",
+                items: [
+
+
+                    {
+                        id: "finance-1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column_stacked",
+                            x: ["CountryCode_EN"], //x axis and series
+                            series: ["IndicatorCode_EN"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["021202", "02120101", "02120102"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ],
+                            "Year" : ["2013"]
+
+                        },
+
+                        postProcess : [{  "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "021202", "02120101", "02120102"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"}]
+
+
+
+
+
+
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+
+                    {
+                        id: "finance-2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column_stacked",
+                            x: ["CountryCode_EN"], //x axis and series
+                            series: ["IndicatorCode_EN"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["02120301", "02120302", "02120302"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ],
+                            "Year" : ["2013"]
+
+                        },
+
+
+                        postProcess : [{  "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "02120301", "02120302", "02120302"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"}]
+
+
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    },
+
+                    {
+                        id: "finance-3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            x: ["CountryCode_EN"], //x axis and series
+                            series: ["IndicatorCode_EN"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"}
+                        }, // :type-creator config
+                        filter: { //FX-filter format
+
+                            IndicatorCode: ["021204"],
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ],
+                            "Year" : ["2013"]
+
+                        },
+
+                        postProcess : [{  "name": "filter",
+                            "parameters": {
+                                "rows": {
+                                    "IndicatorCode": {
+                                        "codes": [
+                                            {
+                                                "uid": "UNECA_ClassificationOfActivities",
+                                                "version": "2.0",
+                                                "codes": [
+                                                    "021204"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                            {
+                                "name": "unecaPercentageGDP"}]
+
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                    }
+
+
+
+
+                ]
+            }
+
+        },
+
+        "debt": {
             filter:{
 
 
@@ -1346,154 +1838,6 @@ define(function () {
 
             },
             dashboard: {
-                //data cube's uid
-                uid: "UNECA_PublicFinance",
-                items: [
-
-
-                    {
-                        id: "finance-1", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column_stacked",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-
-                        postProcess : [{  "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "version": "2.0",
-                                                "codes": [
-                                                    "021202", "02120101", "02120102"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        },
-                            {
-                                "name": "unecaPercentageGDP"}],
-
-
-
-
-
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["021202", "02120101", "02120102"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
-
-                        }
-
-
-
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-                    {
-                        id: "finance-2", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column_stacked",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["02120301", "02120302", "02120302"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
-
-                        },
-
-
-                        postProcess : [{  "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "version": "2.0",
-                                                "codes": [
-                                                    "02120301", "02120302", "02120302"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        },
-                            {
-                                "name": "unecaPercentageGDP"}]
-
-
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-                    {
-                        id: "finance-3", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["021204"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
-
-                        },
-
-                        postProcess : [{  "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "version": "2.0",
-                                                "codes": [
-                                                    "021204"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        },
-                            {
-                                "name": "unecaPercentageGDP"}]
-
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    }
-
-
-
-
-                ]
-            }
-
-        },
-
-        "debt": {
-
-            dashboard: {
 
                 uid: "UNECA_Debt",
 
@@ -1501,57 +1845,79 @@ define(function () {
 
                     {
                         id: "debt-1", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
+                        type: "map", //chart || map || olap,
                         config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
+                            fenix_ui_map: {
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["020308"]
+                            IndicatorCode: ["020305"],
 
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ],
+                            "Year" : [2013]
                         }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
+
+
+                        //postProcess : [{  "name": "filter",
+                        //    "parameters": {
+                        //        "rows": {
+                        //            "IndicatorCode": {
+                        //                "codes": [
+                        //                    {
+                        //                        "uid": "UNECA_ClassificationOfActivities",
+                        //                        "version": "2.0",
+                        //                        "codes": [
+                        //                            "020305"
+                        //                        ]
+                        //                    }
+                        //                ]
+                        //            }
+                        //        }
+                        //    }
+                        //},
+                        //    {
+                        //        "name": "unecaPercentageGDP"}]
                     },
+
 
                     {
                         id: "debt-2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
+                            type: "column_stacked",
+                            x : ["CountryCode_EN"], //x axis and series
                             series: ["IndicatorCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["020305"]
+                            IndicatorCode: ["02030501", "02030502"],
+
+                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            ],
+                            "Year" : [2013]
+
 
                         }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
 
-
-                    {
-                        id: "debt-3", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["02030501", "02030502"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                        //  filterFor: ["IndicatorCode", "CountryCode","Year"]
+                        // allowed dimension ids to filter,
                     }
 
 
@@ -1871,240 +2237,7 @@ define(function () {
 
         },
 
-        "balance_of_payments": {
 
-            filter:{
-
-
-                CountryCode :{
-                    selector: {
-                        id : "tree"
-                    },
-
-                    cl: {
-                        uid: "UNECA_ISO3"
-
-                    },
-                    template: {
-                        title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: false
-                    }
-
-
-
-
-                },
-
-
-                Year : {
-
-                    selector: {
-                        id: "tree",
-                        source: [
-
-                            {"value": "2011", "label": "2011", "selected": true},
-                            {"value": "2010", "label": "2010", "selected": false},
-                            {"value": "2009", "label": "2009", "selected": false},
-                            {"value": "2008", "label": "2008", "selected": false},
-                            {"value": "2007", "label": "2007", "selected": false},
-                            {"value": "2006", "label": "2006", "selected": false},
-                            {"value": "2005", "label": "2005", "selected": false},
-                            {"value": "2004", "label": "2004", "selected": false},
-                            {"value": "2003", "label": "2003", "selected": false},
-                            {"value": "2002", "label": "2002", "selected": false},
-                            {"value": "2001", "label": "2001", "selected": false},
-                            {"value": "2000", "label": "2000", "selected": false}
-
-                        ],
-                        default: ["item_1"],
-                        config: {
-                            core: {
-                                multiple: false
-                            }
-                        }
-                    },
-
-                    template: {
-                        title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: false
-                    }
-                },
-
-
-
-
-
-                um: {
-
-                    selector: {
-                        id: "input",
-                        type: "radio",
-                        source: [
-                            {value: "NC", label: "national currency"},
-                            {value: "USD", label: "US dollars"}
-                        ]
-                    },
-
-                    template: {
-                        title: "Radio",
-                        hideSwitch: false,
-                        hideRemoveButton: false
-                    }
-                }
-
-            },
-
-            dashboard: {
-                uid: "UNECA_BalanceOfPayments",
-                //version: "",
-                //preProcess : {} //D3P process
-                //postProcess : {} //D3P process
-                items: [
-
-
-
-                    {
-                        id: "BOP-1", //ref [data-item=':id']
-                        type: "map", //chart || map || olap,
-                        config: {
-                            fenix_ui_map: {
-                                guiController: {
-                                    overlay: false,
-                                    baselayer: false,
-                                    wmsLoader: false
-                                },
-                                baselayers: {
-                                    "cartodb": {
-                                        title_en: "Baselayer",
-                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                                        subdomains: 'abcd',
-                                        maxZoom: 19
-                                    }
-                                }
-                            }
-                        },
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020207"],
-
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
-                        }
-
-
-                    },
-
-
-
-
-                    {
-                        id: "BOP-2", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020207"],
-
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
-
-
-                        },
-
-                        postProcess : [{  "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "version": "2.0",
-                                                "codes": [
-                                                    "020207"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        },
-                            {
-                                "name": "unecaPercentageGDP"}],
-
-
-
-                        filterFor: ["CountryCode","IndicatorCode"] // allowed dimension ids to filter,
-                    },
-
-
-
-                    {
-                        id: "BOP-3", //ref [data-item=':id']
-                        type: "map", //chart || map || olap,
-                        config: {
-                            fenix_ui_map: {
-                                guiController: {
-                                    overlay: false,
-                                    baselayer: false,
-                                    wmsLoader: false
-                                },
-                                baselayers: {
-                                    "cartodb": {
-                                        title_en: "Baselayer",
-                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                                        subdomains: 'abcd',
-                                        maxZoom: 19
-                                    }
-                                }
-                            }
-                        },
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020204"],
-
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
-                            ]
-                        },
-
-
-
-                        postProcess : [{
-                            "name": "filter",
-                            "parameters": {
-                                "rows": {
-                                    "IndicatorCode": {
-                                        "codes": [
-                                            {
-                                                "uid": "UNECA_ClassificationOfActivities",
-                                                "version": "2.0",
-                                                "codes": [
-                                                    "020204"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        },
-                            {
-                                "name": "unecaPercentageGDP"
-                            }]
-
-                    }
-
-                ]
-
-            }
-
-        },
 
         "inflation" : {
 

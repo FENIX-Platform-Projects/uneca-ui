@@ -76,7 +76,8 @@ define(function () {
 
                             IndicatorCode: ["010101"],
                             "GenderCode": ["3"],
-                            "AgeRangeCode": ["AG01", "AG02", "AG15"]
+                            "AgeRangeCode": ["AG00", "AG01", "AG15"],
+                            Year :_.range(2000,2015)
 
 
                         }
@@ -348,7 +349,7 @@ define(function () {
                             config: {
                                 type: "line",
                                 x: ["Year"], //x axis and series
-                                series: ["IndicatorCode"], //Y dimension
+                                series: ["IndicatorCode_EN"], //Y dimension
                                 y: ["VALUE"],
                                 aggregationFn: {"Value": "sum"}
                             }, // :type-creator config
@@ -1249,7 +1250,40 @@ define(function () {
                                 "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
                             ]
                         }
+                    },
+
+                    {
+                        id: "financial_flows-4", //ref [data-item=':id']
+                        type: "map", //chart || map || olap,
+                        config: {
+                            geoSubject: 'PartnerCode',
+                            fenix_ui_map: {
+
+                                guiController: {
+                                    overlay: false,
+                                    baselayer: false,
+                                    wmsLoader: false
+                                },
+                                baselayers: {
+                                    "cartodb": {
+                                        title_en: "Baselayer",
+                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                        subdomains: 'abcd',
+                                        maxZoom: 19
+                                    }
+                                }
+                            }
+                        },
+                        filter: { //FX-filter format
+
+                            Year: [2012],
+                            IndicatorCode: ["020501"],
+                            PartnerCode: [
+                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
+                            ]
+                        }
                     }
+
 
 
 
@@ -1464,23 +1498,26 @@ filter:{
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
                 items: [
+
                     {
                         id: "inflation-1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["CommodityCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["021101"]
+                            IndicatorCode: ["021102"]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
+
+
                     {
                         id: "inflation-2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
@@ -1493,10 +1530,10 @@ filter:{
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["02110114"]
+                            IndicatorCode: ["021101"]
 
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
+                        },
+                        filterFor: ["IndicatorCode"] // allowed dimension ids to filter,
                     },
 
 
@@ -1514,27 +1551,12 @@ filter:{
 
                             IndicatorCode: ["02110115"]
 
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
+                        },
+                        filterFor: ["IndicatorCode"]
 
-                    {
-                        id: "inflation-4", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["CommodityCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["021102"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
+
+
 
 
                 ]
