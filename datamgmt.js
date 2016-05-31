@@ -1,16 +1,17 @@
 /*global require*/
 // relative or absolute path of Components' main.js
 require([
-    './submodules/fenix-ui-common-dm/js/Compiler',
-    './submodules/fenix-ui-common-dm/js/paths',
+    './submodules/fenix-ui-common/js/Compiler',
+    './submodules/fenix-ui-common/js/paths',
     './submodules/fenix-ui-datamanagement-commons/js/paths',
     './submodules/fenix-ui-DataEditor/js/paths',
     './submodules/fenix-ui-DSDEditor/js/paths',
     './submodules/fenix-ui-metadata-editor/js/paths',
-    './submodules/fenix-ui-catalog-dm/js/paths',
+    './submodules/fenix-ui-catalog/src/js/paths',
     './submodules/fenix-ui-menu/src/js/paths',
-    './submodules/fenix-ui-data-management/src/js/paths'
-], function (Compiler, FenixCommons, DataMngCommons, DataEditor, DSDEditor, MetadataEditor, Catalog, Menu, DataMng) {
+    './submodules/fenix-ui-data-management/src/js/paths',
+    './submodules/fenix-ui-filter/src/js/paths'
+], function (Compiler, FenixCommons, DataMngCommons, DataEditor, DSDEditor, MetadataEditor, Catalog, Menu, DataMng, Filter) {
 
     'use strict';
 
@@ -27,7 +28,7 @@ require([
     metadataEditorConfig.baseUrl = './submodules/fenix-ui-metadata-editor/js/';
 
     var catalogConfig = Catalog;
-    catalogConfig.baseUrl = './submodules/fenix-ui-catalog-dm/js/';
+    catalogConfig.baseUrl = './submodules/fenix-ui-catalog/src/js/';
 
     var menuConfig = Menu;
     menuConfig.baseUrl = './submodules/fenix-ui-menu/src/js';
@@ -36,9 +37,12 @@ require([
     dataMngConfig.baseUrl = './submodules/fenix-ui-data-management/src/js';
 
     var fenixCommonConfig = FenixCommons;
-    fenixCommonConfig.baseUrl = './submodules/fenix-ui-common-dm/js';
+    fenixCommonConfig.baseUrl = './submodules/fenix-ui-common/js';
 
-    Compiler.resolve([dataEditorConfig, dataMngCommonsConfig, dsdEditorConfig, metadataEditorConfig, catalogConfig, menuConfig, dataMngConfig, fenixCommonConfig],
+    var filterConfig = Filter;
+    filterConfig.baseUrl = './submodules/fenix-ui-filter/src/js/';
+
+    Compiler.resolve([dataEditorConfig, dataMngCommonsConfig, dsdEditorConfig, metadataEditorConfig, catalogConfig, menuConfig, dataMngConfig, fenixCommonConfig, filterConfig],
         {
             placeholders: {"FENIX_CDN": "//fenixrepo.fao.org/cdn"},
             config: {
@@ -60,7 +64,7 @@ require([
                     'fx-d-m/templates/site' : "./src/js/templates/site.hbs",
                     'fx-d-m/config/config' : "./config/submodules/fx-data-mng/Config",
                     'fx-d-m/i18n/nls/site' : "./i18n/site",
-                    'fx-cat-br/config/config': './config/submodules/fx-catalog/config',
+                    //'fx-cat-br/config/config': './config/submodules/fx-catalog/config',
 
                     //'fx-menu/config/config': './config/submodules/fx-catalog/config',
 
