@@ -27,15 +27,6 @@
     },
     {
       "attrs": {
-        "id": "datamgmt"
-      },
-      "target": "#",
-      "label": {
-        "EN": "Data Management"
-      }
-    },
-    {
-      "attrs": {
         "id": "analysis"
       },
       "a_attrs": {
@@ -44,6 +35,24 @@
       "target": "./index.html#analysis",
       "label": {
         "EN": "Analysis"
+      }
+    },
+    {
+      "attrs": {
+        "id": "domain"
+      },
+      "target": "#domains",
+      "label": {
+        "EN": "Browse by Domain"
+      }
+    },
+    {
+      "attrs": {
+        "id": "datamgmt"
+      },
+      "target": "#",
+      "label": {
+        "EN": "Data Management"
       }
     }
   ],

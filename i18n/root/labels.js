@@ -264,20 +264,10 @@ define({
     BOP1_title_Domain: "Overall balance of payments of African countries (% GDP)",
     BOP2_title_Domain: "Overall balance of payments over time (% GDP)",
     BOP3_title_Domain: "Current account balance"
-
-
-
-
-
-
     //gdp
 
     //gdp2_title:"GDP growth (annual %)",
     //gdp3_title:"GDP per capita",
-
-
-
-
 
 
 });

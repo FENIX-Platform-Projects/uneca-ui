@@ -7,8 +7,9 @@ define([
     'config/config',
     'config/events',
     'fx-analysis/start',
+    'loglevel',
     'amplify'
-], function ($, _, View, template, C, E, Analysis) {
+], function ($, _, View, template, C, E, Analysis, log) {
 
     'use strict';
 
@@ -42,6 +43,8 @@ define([
 
         attach: function () {
 
+            log.setLevel('trace');
+
             View.prototype.attach.call(this, arguments);
 
             //Init
@@ -53,7 +56,7 @@ define([
 
             this.analysis = new Analysis({
                 $el: document.querySelector(s.ANALYSIS_CONTAINER),
-                environment : "develop"
+                environment : "distribution"
             });
 
         }

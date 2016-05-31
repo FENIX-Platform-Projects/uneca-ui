@@ -135,6 +135,8 @@ define([
                 this._renderDashboard(conf);
             }
 
+            console.log(filterConfig)
+
             if (!_.isEmpty(filterConfig)) {
                 this.$el.find(s.FILTER_BLOCK).show();
                 this._renderFilter(filterConfig);

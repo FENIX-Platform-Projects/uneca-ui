@@ -36,7 +36,8 @@ define({
             "id": "gdp"
           },
           {
-            "id": "monetary_statistics"
+            "id": "monetary_statistics",
+            "state": {"disabled": true}
           },
           {
             "id": "financial_flows",
@@ -70,10 +71,12 @@ define({
             "id": "production",
             "children": [
               {
-                "id": "agriculture_production"
+                "id": "agriculture_production",
+                "state": {"disabled": true}
               },
               {
-                "id": "mining_production"
+                "id": "mining_production",
+                "state": {"disabled": true}
               }
             ],
             "state": {"disabled": true}

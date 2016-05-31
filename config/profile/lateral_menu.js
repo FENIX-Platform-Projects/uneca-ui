@@ -10,7 +10,8 @@ define({
         },
         "children": [
           {
-            "id": "population"
+            "id": "population",
+            "state": {"disabled": true}
           },
           {
             "id": "education"
@@ -75,10 +76,12 @@ define({
             "state": {"disabled": true},
             "children": [
               {
-                "id": "agriculture_production"
+                "id": "agriculture_production",
+                "state": {"disabled": true}
               },
               {
-                "id": "mining_production"
+                "id": "mining_production",
+                "state": {"disabled": true}
               }
             ]
           }

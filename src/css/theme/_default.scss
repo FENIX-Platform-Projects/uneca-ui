@@ -56,7 +56,6 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
 }
 
 
-
 #main-container{
   position: relative;
 }
@@ -75,12 +74,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
   background-color: white;
 }
 
-.truncate {
-  min-width: 250px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+
 
 .upper{
   text-transform: uppercase;
@@ -112,9 +106,8 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
   background-color: white;
 }
 
-.filter-go-btns {
-  margin-top: 18px;
-}
+
+
 
 //.dashboard-item{
 //  height: 480px;

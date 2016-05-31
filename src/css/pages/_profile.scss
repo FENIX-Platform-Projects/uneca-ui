@@ -1,5 +1,33 @@
 /* Profile Page */
 
+.profiles, .domain  {
+
+
+
+  .jstree-node[aria-disabled="true"]{
+    opacity: 0.5;
+    cursor: no-drop !important;
+  }
+
+}
+
+
+.domain-filter-container{
+
+  border: 1px solid $fenix-light-hr;
+  padding: 15px;
+
+
+
+  .filter-title{
+
+    margin-top: 0;
+
+  }
+
+}
+
+
 .country-name{
   margin-top: 20px;
   margin-bottom: 15px;
@@ -27,6 +55,7 @@
 
 .lat-men{
   position: relative;
+  //background-color:$fenix-light-bg;
 }
 
 .lateral-menu-container{

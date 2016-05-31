@@ -79,7 +79,7 @@ define([
 
             this.dashboards = [];
 
-            this.environment = 'develop';
+            this.environment = 'distribution';
 
         },
 
@@ -140,8 +140,6 @@ define([
                 filterConfig = this._getFilterConfig(item);
 
             if (conf && !_.isEmpty(conf) ) {
-
-
                 this._renderDashboard(conf);
             }
 

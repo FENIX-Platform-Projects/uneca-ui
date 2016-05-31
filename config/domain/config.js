@@ -11,12 +11,14 @@ define(function () {
         "population": {
 
 
-            filter:{
+            filter: {
 
+                CountryCode: {
 
-                CountryCode :{
+                    className: 'col-md-6',
+
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -24,21 +26,15 @@ define(function () {
 
                     },
                     template: {
-                        title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
-                    },
-
-
-                   // default: []
-
-
-
+                        hideHeader : true
+                    }
 
                 },
 
 
-                Year : {
+                Year: {
+
+                    className: 'col-md-6',
 
                     selector: {
                         id: "tree",
@@ -70,8 +66,7 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
 
@@ -91,7 +86,7 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
-                            x : ["Year"], //x axis and series
+                            x: ["Year"], //x axis and series
                             series: ["CountryCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
@@ -101,14 +96,14 @@ define(function () {
                             IndicatorCode: ["010101"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode":["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
-                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : ["2013"]
+                            "CountryCode": ["BEN", "BFA", "CAF", "COM", "DJI", "ERI", "GHA", "GNB", "KEN", "LBR",
+                                "LBY", "MRT", "NER", "NGA", "STP", "SEN", "SLE", "SOM", "SDN", "TGO", "TUN"],
+                            "Year": ["2013"]
 
 
                         },
 
-                        filterFor: ["IndicatorCode", "GenderCode", "AgeRangeCode","CountryCode"] // allowed dimension ids to filter,
+                        filterFor: ["IndicatorCode", "GenderCode", "AgeRangeCode", "CountryCode"] // allowed dimension ids to filter,
                     },
 
 
@@ -160,14 +155,12 @@ define(function () {
                             IndicatorCode: ["010103"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
-                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : ["2013"]
-                        }
+                            "CountryCode": ["BEN", "BFA", "CAF", "COM", "DJI", "ERI", "GHA", "GNB", "KEN", "LBR",
+                                "LBY", "MRT", "NER", "NGA", "STP", "SEN", "SLE", "SOM", "SDN", "TGO", "TUN"],
+                            "Year": ["2013"]
+                        },
+                        filterFor : ["none"]
                     },
-
-
-
 
 
                     {
@@ -175,7 +168,7 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x : ["CountryCode_EN"], //x axis and series
+                            x: ["CountryCode_EN"], //x axis and series
                             series: ["IndicatorCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
@@ -185,9 +178,9 @@ define(function () {
                             IndicatorCode: ["010108"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode":["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
-                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : ["2013"]
+                            "CountryCode": ["BEN", "BFA", "CAF", "COM", "DJI", "ERI", "GHA", "GNB", "KEN", "LBR",
+                                "LBY", "MRT", "NER", "NGA", "STP", "SEN", "SLE", "SOM", "SDN", "TGO", "TUN"],
+                            "Year": ["2013"]
 
 
                         }
@@ -220,9 +213,9 @@ define(function () {
                             IndicatorCode: ["010102"],
                             "GenderCode": ["3"],
                             "AgeRangeCode": ["AGT"],
-                            "CountryCode": ["BEN","BFA","CAF","COM","DJI","ERI","GHA","GNB","KEN","LBR",
-                                "LBY","MRT","NER","NGA","STP","SEN","SLE","SOM","SDN","TGO","TUN"],
-                            "Year" : ["2013"]
+                            "CountryCode": ["BEN", "BFA", "CAF", "COM", "DJI", "ERI", "GHA", "GNB", "KEN", "LBR",
+                                "LBY", "MRT", "NER", "NGA", "STP", "SEN", "SLE", "SOM", "SDN", "TGO", "TUN"],
+                            "Year": ["2013"]
                         }
                     }
                 ]
@@ -231,31 +224,31 @@ define(function () {
 
         "education": {
 
-            filter:{
+            filter: {
 
 
-                CountryCode :{
+                CountryCode: {
+                    className: 'col-md-6',
                     selector: {
-                        id : "tree"
+                        id: "tree"
+
                     },
 
                     cl: {
-                        uid: "UNECA_ISO3"
+                        uid: "UNECA_ISO3",
 
                     },
                     template: {
-                        title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
-
-
 
 
                 },
 
 
-                Year : {
+                Year: {
+
+                    className: 'col-md-6',
 
                     selector: {
                         id: "tree",
@@ -287,8 +280,7 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
 
@@ -328,9 +320,9 @@ define(function () {
 
                             IndicatorCode: ["010201"],
                             "GenderCode": ["3"],
-                            "CountryCode": ["NAM","MWI","MLI","MOZ"
+                            "CountryCode": ["NAM", "MWI", "MLI", "MOZ"
                             ],
-                            "Year" : ["2010"]
+                            "Year": ["2010"]
                         }
                     },
 
@@ -348,12 +340,13 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["010206"],
-                            GenderCode : ["1","2"],
-                            "CountryCode": ["NAM","MWI","MLI","MOZ"
+                            GenderCode: ["1", "2"],
+                            "CountryCode": ["NAM", "MWI", "MLI", "MOZ"
                             ],
-                            "Year" : ["2010"]
+                            "Year": ["2010"]
                             //filterFor: ["Year"], // allowed dimension ids to filter,
-                    }},
+                        }
+                    },
 
                     {
                         id: "edu_3", //ref [data-item=':id']
@@ -379,9 +372,9 @@ define(function () {
 
                             IndicatorCode: ["010206"],
                             "GenderCode": ["3"],
-                            "CountryCode": ["NAM","MWI","MLI","MOZ"
+                            "CountryCode": ["NAM", "MWI", "MLI", "MOZ"
                             ],
-                            "Year" : ["2010"]
+                            "Year": ["2010"]
                         }
                     },
 
@@ -398,15 +391,14 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode:   ["010201", "010202", "010203"],
-                            GenderCode : ["3"],
-                            "CountryCode": ["NAM","MWI","MLI","MOZ"
+                            IndicatorCode: ["010201", "010202", "010203"],
+                            GenderCode: ["3"],
+                            "CountryCode": ["NAM", "MWI", "MLI", "MOZ"
                             ],
-                            "Year" : ["2010"]
+                            "Year": ["2010"]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
-
 
 
                 ]
@@ -417,12 +409,13 @@ define(function () {
 
         "health": {
 
-            filter:{
+            filter: {
 
 
-                CountryCode :{
+                CountryCode: {
+                    className: 'col-md-6',
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -431,17 +424,15 @@ define(function () {
                     },
                     template: {
                         title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
-
-
 
 
                 },
 
 
-                Year : {
+                Year: {
+                    className: 'col-md-6',
 
                     selector: {
                         id: "tree",
@@ -472,8 +463,7 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
 
@@ -500,7 +490,7 @@ define(function () {
 
                             IndicatorCode: ["010307", "010308", "010309", "010310"],
                             Year: ["2010"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -531,7 +521,7 @@ define(function () {
 
                             IndicatorCode: ["010302"],
                             Year: ["2010"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ]
                         }
                     },
@@ -560,14 +550,10 @@ define(function () {
 
                             IndicatorCode: ["010301"],
                             Year: ["2010"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ]
                         }
                     }
-
-
-
-
 
 
                 ]
@@ -575,12 +561,13 @@ define(function () {
         },
 
         "labour": {
-            filter:{
+            filter: {
 
 
-                CountryCode :{
+                CountryCode: {
+                    className: 'col-md-6',
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -589,17 +576,15 @@ define(function () {
                     },
                     template: {
                         title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
-
-
 
 
                 },
 
 
-                Year : {
+                Year: {
+                    className: 'col-md-6',
 
                     selector: {
                         id: "tree",
@@ -629,8 +614,7 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
 
@@ -678,9 +662,9 @@ define(function () {
                             }, // :type-creator config
                             filter: { //FX-filter format
                                 IndicatorCode: ["010401"],
-                                SectorCode : ["4"],
-                                GenderCode : ["1","2"],
-                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                SectorCode: ["4"],
+                                GenderCode: ["1", "2"],
+                                "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                                 ],
                                 Year: ["2010"]
                             }
@@ -691,8 +675,9 @@ define(function () {
                 },
 
 
-                { uid: "ILO_Labour",
-                    items :  [
+                {
+                    uid: "ILO_Labour",
+                    items: [
                         {
                             id: "labour-4", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
@@ -705,9 +690,9 @@ define(function () {
                             }, // :type-creator config
                             filter: { //FX-filter format
                                 IndicatorCode: ["010404"],
-                                Year : ["2010"] ,
-                            GenderCode: ["1","2"],
-                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                Year: ["2010"],
+                                GenderCode: ["1", "2"],
+                                "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                                 ]
 
                             }
@@ -742,15 +727,11 @@ define(function () {
 
                                 IndicatorCode: ["010402"],
                                 "GenderCode": ["3"],
-                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                                 ],
                                 Year: ["2010"]
                             }
                         },
-
-
-
-
 
 
                         //{
@@ -784,7 +765,7 @@ define(function () {
                             filter: { //FX-filter format
                                 IndicatorCode: ["010402"],
                                 GenderCode: ["1", "2"],
-                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                                 ],
                                 Year: ["2010"]
                             }
@@ -803,12 +784,13 @@ define(function () {
 
         "balance_of_payments": {
 
-            filter:{
+            filter: {
 
 
-                CountryCode :{
+                CountryCode: {
+                    className: 'col-md-4',
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -817,17 +799,15 @@ define(function () {
                     },
                     template: {
                         title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
-
-
 
 
                 },
 
 
-                Year : {
+                Year: {
+                    className: 'col-md-4',
 
                     selector: {
                         id: "tree",
@@ -859,17 +839,11 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 },
-
-
-
-
-
                 um: {
-
+                    className: 'col-md-4',
                     selector: {
                         id: "input",
                         type: "radio",
@@ -881,8 +855,7 @@ define(function () {
 
                     template: {
                         title: "Radio",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
 
@@ -894,7 +867,6 @@ define(function () {
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
                 items: [
-
 
 
                     {
@@ -921,7 +893,7 @@ define(function () {
 
                             IndicatorCode: ["020207"],
 
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
 
                             "Year": ["2012"]
@@ -929,8 +901,6 @@ define(function () {
 
 
                     },
-
-
 
 
                     {
@@ -947,14 +917,15 @@ define(function () {
 
                             IndicatorCode: ["020207"],
 
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
                             "Year": ["2012"]
 
 
                         },
 
-                        postProcess : [{  "name": "filter",
+                        postProcess: [{
+                            "name": "filter",
                             "parameters": {
                                 "rows": {
                                     "IndicatorCode": {
@@ -972,13 +943,12 @@ define(function () {
                             }
                         },
                             {
-                                "name": "unecaPercentageGDP"}],
+                                "name": "unecaPercentageGDP"
+                            }],
 
 
-
-                        filterFor: ["CountryCode","IndicatorCode"] // allowed dimension ids to filter,
+                        filterFor: ["CountryCode", "IndicatorCode"] // allowed dimension ids to filter,
                     },
-
 
 
                     {
@@ -1005,14 +975,13 @@ define(function () {
 
                             IndicatorCode: ["020204"],
 
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
                             "Year": ["2012"]
                         },
 
 
-
-                        postProcess : [{
+                        postProcess: [{
                             "name": "filter",
                             "parameters": {
                                 "rows": {
@@ -1043,14 +1012,14 @@ define(function () {
         },
 
 
-
         "gdp": {
-            filter:{
+            filter: {
 
 
-                CountryCode :{
+                CountryCode: {
+                    className: 'col-md-6',
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -1059,18 +1028,15 @@ define(function () {
                     },
                     template: {
                         title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
-
-
 
 
                 },
 
 
-                Year : {
-
+                Year: {
+                    className: 'col-md-6',
                     selector: {
                         id: "tree",
                         source: [
@@ -1100,11 +1066,9 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
-
 
 
             },
@@ -1141,9 +1105,9 @@ define(function () {
 
                                 IndicatorCode: ["020705"],
 
-                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                                 ],
-                                "Year" : ["2012"]
+                                "Year": ["2012"]
                             }
                         },
 
@@ -1172,9 +1136,9 @@ define(function () {
 
                                 IndicatorCode: ["020706"],
 
-                                "CountryCode": ["KEN","TZA","ZMB","ETH"
+                                "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                                 ],
-                                "Year" : ["2012"]
+                                "Year": ["2012"]
                             }
                         }
 
@@ -1366,16 +1330,15 @@ define(function () {
         //
         //},
 
-
-
         "monetary_statistics": {
 
-            filter:{
+            filter: {
 
+                className: 'col-md-6',
 
-                CountryCode :{
+                CountryCode: {
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -1384,18 +1347,16 @@ define(function () {
                     },
                     template: {
                         title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
-
-
 
 
                 },
 
 
-                Year : {
+                Year: {
 
+                    className: 'col-md-6',
                     selector: {
                         id: "tree",
                         source: [
@@ -1425,8 +1386,7 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
 
@@ -1464,9 +1424,9 @@ define(function () {
 
                             IndicatorCode: ["020905"],
 
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
-                            "Year" : ["2012"]
+                            "Year": ["2012"]
                         }
                     },
                     {
@@ -1493,9 +1453,9 @@ define(function () {
 
                             IndicatorCode: ["020906"],
 
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
-                            "Year" : ["2012"]
+                            "Year": ["2012"]
                         }
                     },
                     {
@@ -1522,13 +1482,11 @@ define(function () {
 
                             IndicatorCode: ["020903"],
 
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
-                            "Year" : ["2012"]
+                            "Year": ["2012"]
                         }
                     }
-
-
 
 
                 ]
@@ -1537,12 +1495,13 @@ define(function () {
         },
 
         "public_finance": {
-            filter:{
+            filter: {
 
 
-                CountryCode :{
+                CountryCode: {
+                    className: 'col-md-6',
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -1551,17 +1510,15 @@ define(function () {
                     },
                     template: {
                         title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
-
-
 
 
                 },
 
 
-                Year : {
+                Year: {
+                    className: 'col-md-6',
 
                     selector: {
                         id: "tree",
@@ -1592,8 +1549,7 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
 
@@ -1618,9 +1574,9 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["021202", "02120101", "02120102"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
-                            "Year" : ["2013"]
+                            "Year": ["2013"]
 
                         },
 
@@ -1645,10 +1601,6 @@ define(function () {
                         //        "name": "unecaPercentageGDP"}]
 
 
-
-
-
-
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -1665,9 +1617,9 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["02120301", "02120302", "02120302"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
-                            "Year" : ["2013"]
+                            "Year": ["2013"]
 
                         },
 
@@ -1689,7 +1641,7 @@ define(function () {
                         //        }
                         //    }
                         //},
-                      //      {
+                        //      {
                         //        "name": "unecaPercentageGDP"}]
 
 
@@ -1709,9 +1661,9 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["021204"],
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
-                            "Year" : ["2013"]
+                            "Year": ["2013"]
 
                         },
 
@@ -1732,13 +1684,11 @@ define(function () {
                         //        }
                         //    }
                         //},
-                    //        {
-                      //          "name": "unecaPercentageGDP"}]
+                        //        {
+                        //          "name": "unecaPercentageGDP"}]
 
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
-
-
 
 
                 ]
@@ -1747,12 +1697,13 @@ define(function () {
         },
 
         "debt": {
-            filter:{
+            filter: {
 
 
-                CountryCode :{
+                CountryCode: {
+                    className: 'col-md-6',
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -1761,17 +1712,15 @@ define(function () {
                     },
                     template: {
                         title: "Multiple selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
-
-
 
 
                 },
 
 
-                Year : {
+                Year: {
+                    className: 'col-md-6',
 
                     selector: {
                         id: "tree",
@@ -1803,8 +1752,7 @@ define(function () {
 
                     template: {
                         title: "Single selection",
-                        hideSwitch: false,
-                        hideRemoveButton: true
+                        hideHeader : true
                     }
                 }
 
@@ -1839,9 +1787,9 @@ define(function () {
 
                             IndicatorCode: ["020305"],
 
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
-                            "Year" : ["2013"]
+                            "Year": ["2013"]
                         }
 
 
@@ -1872,7 +1820,7 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column_stacked",
-                            x : ["CountryCode_EN"], //x axis and series
+                            x: ["CountryCode_EN"], //x axis and series
                             series: ["IndicatorCode_EN"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
@@ -1881,9 +1829,9 @@ define(function () {
 
                             IndicatorCode: ["02030501", "02030502"],
 
-                            "CountryCode": ["KEN","TZA","ZMB","ETH"
+                            "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
                             ],
-                            "Year" : ["2013"]
+                            "Year": ["2013"]
 
 
                         }
@@ -1985,7 +1933,7 @@ define(function () {
                         }, // :type-creator config
                         filter: { //FX-filter format
 
-                            IndicatorCode: ["030305","030304"],
+                            IndicatorCode: ["030305", "030304"],
 
 
                         }
@@ -2005,7 +1953,7 @@ define(function () {
                         filter: { //FX-filter format
 
                             IndicatorCode: ["030304"],
-                            Year : [2013]
+                            Year: [2013]
 
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -2059,10 +2007,8 @@ define(function () {
             dashboard: [{
 
 
-
                 //data cube's uid
                 uid: "UNECA_FinancialFlows",
-
 
 
                 items: [
@@ -2210,14 +2156,14 @@ define(function () {
         },
 
 
+        "inflation": {
 
-        "inflation" : {
+            filter: {
 
-            filter:{
-
-                CommodityCode :{
+                CommodityCode: {
+                    className: 'col-md-12',
                     selector: {
-                        id : "tree"
+                        id: "tree"
                     },
 
                     cl: {
@@ -2229,7 +2175,6 @@ define(function () {
 
                 }
             },
-
 
 
             dashboard: {
