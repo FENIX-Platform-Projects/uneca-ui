@@ -214,8 +214,9 @@ define([
                     _.each(c.items, _.bind(function (item) {
                         item.filter = $.extend(item.filter, filterValues.values);
 
-                        if(item.id === 'country-map-container'){
+                        if(item.id === 'country-map-container') {
                             item.config.fenix_ui_map.zoomToCountry = countrySel;
+                            item.config.fenix_ui_map.highlightCountry = countrySel;
                         }
                     }))
                 }

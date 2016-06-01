@@ -30,7 +30,7 @@ define(function () {
                                     }
                                 },
                                 zoomToCountry: ["DZA"],
-                                highlightCountry: "DZA"
+                                highlightCountry: ["DZA"]
                             }
                         }
                     }
