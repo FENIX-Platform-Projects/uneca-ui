@@ -4,6 +4,7 @@ define([
     'underscore',
     'views/base/view',
     'config/events',
+    'config/config',
     'config/domain/config',
     'fx-dashboard/start',
     'fx-filter/start',
@@ -17,7 +18,7 @@ define([
     'handlebars',
     'amplify',
     'jstree'
-], function ($, _, View, EVT, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, Handlebars) {
+], function ($, _, View, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, Handlebars) {
 
     'use strict';
 
@@ -107,6 +108,8 @@ define([
 
             this.dashboards = [];
 
+            this.environment = C.ENVIRONMENT;
+
         },
 
         //country dashboard
@@ -134,8 +137,6 @@ define([
             if (conf && !_.isEmpty(conf)) {
                 this._renderDashboard(conf);
             }
-
-            console.log(filterConfig)
 
             if (!_.isEmpty(filterConfig)) {
                 this.$el.find(s.FILTER_BLOCK).show();
@@ -224,7 +225,9 @@ define([
 
             _.each(config, _.bind(function (c) {
 
-                this.dashboards.push(new Dashboard(c));
+                this.dashboards.push(new Dashboard($.extend(true, {
+                    environment : this.environment
+                }, c)));
 
             }, this));
 

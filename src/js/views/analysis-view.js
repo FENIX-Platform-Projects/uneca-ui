@@ -27,8 +27,7 @@ define([
 
         BTN_EXPORT_METADATA : '.fx-md-report-btn'
 
-    },
-        environment = "production";
+    }
 
     var AnalysisView = View.extend({
 
@@ -44,8 +43,6 @@ define([
 
         attach: function () {
 
-            log.setLevel('trace');
-
             View.prototype.attach.call(this, arguments);
 
             //Init
@@ -57,7 +54,7 @@ define([
 
             this.analysis = new Analysis({
                 $el: document.querySelector(s.ANALYSIS_CONTAINER),
-                environment : environment,
+                environment : C.ENVIRONMENT,
                 catalog_default_selectors : ['contextSystem', "dataDomain","resourceType" ],
                 catalog_selectors_registry : {
                     contextSystem : {

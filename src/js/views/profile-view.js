@@ -4,6 +4,7 @@ define([
     'underscore',
     'views/base/view',
     'config/events',
+    'config/config',
     'config/profile/config',
     'fx-dashboard/start',
     'fx-filter/start',
@@ -19,7 +20,7 @@ define([
     'amplify',
     'bootstrap-list-filter',
     'jstree'
-], function ($, _, View, EVT, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, CountrySummary, Handlebars) {
+], function ($, _, View, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, CountrySummary, Handlebars) {
 
     'use strict';
 
@@ -79,7 +80,7 @@ define([
 
             this.dashboards = [];
 
-            this.environment = 'distribution';
+            this.environment = C.ENVIRONMENT;
 
         },
 

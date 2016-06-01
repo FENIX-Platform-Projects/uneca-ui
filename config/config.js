@@ -23,7 +23,7 @@ define(function () {
 
         SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK: "home",
 
-        ENVIRONMENT : "develop"
+        ENVIRONMENT : "production"
 
     };
 });
