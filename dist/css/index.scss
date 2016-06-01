@@ -60,20 +60,20 @@ $fx-ui-common: '../../submodules/fenix-ui-common/';
 /* Third parties */
 
 /* Pages */
-@import '../../src/css/pages/home';
-@import '../../src/css/pages/profile';
 @import '../../src/css/pages/analysis';
 @import '../../src/css/pages/datamgmt';
+@import '../../src/css/pages/home';
 @import '../../src/css/pages/methods';
 @import '../../src/css/pages/modules';
+@import '../../src/css/pages/profile-domain';
 
-
-
-#fx-catalog-results{
-  height: 5000px !important;
-
-}
-
+//
+//
+//#fx-catalog-results{
+//  height: 5000px !important;
+//
+//}
+//
 
 
 

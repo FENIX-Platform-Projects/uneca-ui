@@ -1,6 +1,6 @@
-/* Profile Page */
+/* Profile - Domain Page */
 
-.profiles{
+.profiles, .domain{
 
   li[role="treeitem"]:nth-child(odd){
     background-color: transparent !important;
@@ -12,6 +12,44 @@
   }
 
   ul[role="group"]{
+
+  }
+
+}
+
+.dash-title{
+  margin-bottom: 15px ;
+  font-size: 90%;
+  font-weight: normal;
+  display: inline-block;
+  padding: 4px;
+}
+
+.dash-box{
+  padding: 10px 15px;
+  margin-top: 45px;
+
+  h2{
+    margin-top: 10px;
+  }
+
+
+  .fm-map-box{
+    
+  }
+
+}
+
+.domain-filter-container{
+
+  border: 1px solid $fenix-light-hr;
+  padding: 15px;
+
+
+
+  .filter-title{
+
+    margin-top: 0;
 
   }
 
@@ -80,20 +118,33 @@ ul[role="group"]{
 
   li{
     margin-bottom: 25px;
-
+    border-bottom: 1px solid $fenix-light-hr;
+    position: relative;
 
     p{
       font-weight: 100;
-      font-size: 25px;
+      font-size: 23px;
     }
 
   }
 
-  .label{
+  .dash-info-title{
     color: $fx-cool-blue;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     padding-left: 0;
+    margin: 0;
 
   }
+
+  .dash-info-ico{
+    font-size: 32px;
+    color: $fenix-light-hr;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+  }
+
+
+
 }

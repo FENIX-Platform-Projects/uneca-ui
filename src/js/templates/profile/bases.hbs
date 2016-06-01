@@ -5,20 +5,23 @@
         <div class="row">
             <div class="col-md-6">
 
-                <h1 class="info-title">{{ summary_info }}</h1>
+                <span class="label label-default dash-title">{{ summary_geo_info }}</span>
 
                 <div data-item="country-map-container" id="country-map-container" style="	height: 400px; width: 100%;"></div>
 
             </div>
             <div class="col-md-6">
 
+                    <span class="label label-default dash-title">{{ summary_info }}</span>
 
-                    <h1 class="info-title">{{ summary_info }}</h1>
 
                     <ul class="main-information list-unstyled">
 
                         <li>
-                            <h4 class="label">
+                            <span class="dash-info-ico icojam_government"></span>
+                            <h4 class="dash-info-title">
+
+
                                 {{capital_city_header}}
                             </h4>
 
@@ -26,7 +29,9 @@
                         </li>
 
                         <li>
-                            <h4 class="label">
+
+                            <span class="dash-info-ico icojam_html_code"></span>
+                            <h4 class="dash-info-title">
                                 {{GAUL_code_text}}
                             </h4>
 
@@ -34,7 +39,9 @@
                         </li>
 
                         <li>
-                            <h4 class="label">
+
+                            <span class="dash-info-ico icojam_wafer_3"></span>
+                            <h4 class="dash-info-title">
                                 {{area_sq}}
                             </h4>
 
@@ -42,7 +49,9 @@
                         </li>
 
                         <li>
-                            <h4 class="label">
+                            <span class="dash-info-ico icojam_moneys_3"></span>
+
+                            <h4 class="dash-info-title">
                                 {{currency_label}}
                             </h4>
 

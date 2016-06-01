@@ -104,6 +104,7 @@ define({
     FAO_HEADER_PARTNERSHIPS_LINK : '',
 
     //Dashboard profile
+    summary_geo_info : "Geographical position",
     summary_info : "Main information",
     capital_city_header : "Capital city",
     GAUL_code_text:"Country code (GAUL)",
