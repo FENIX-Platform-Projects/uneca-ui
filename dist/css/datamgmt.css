@@ -7755,4 +7755,14 @@ ul[role="group"] {
   background-color: transparent;
   border: 1px solid #e1e1e1; }
 
+.catalog-dm {
+  position: static;
+  display: block;
+  opacity: 1;
+  overflow: visible; }
+  .catalog-dm .modal-dialog {
+    -ms-transform: none !important;
+    -webkit-transform: none !important;
+    transform: none !important; }
+
 /*# sourceMappingURL=datamgmt.css.map */

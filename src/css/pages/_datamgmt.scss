@@ -15,3 +15,16 @@
   background-color: transparent;
   border: 1px solid $fenix-light-hr;
 }
+
+.catalog-dm{
+  position: static;
+  display: block;
+  opacity: 1;
+  overflow: visible;
+
+  .modal-dialog{
+    @include fx-transfor-me(none !important);
+
+  }
+
+}
