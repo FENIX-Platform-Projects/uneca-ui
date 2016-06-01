@@ -17,24 +17,9 @@
       "attrs": {
         "id": "profile"
       },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "./index.html#profile",
+      "target": "#profile",
       "label": {
-        "EN": "Country Profile"
-      }
-    },
-    {
-      "attrs": {
-        "id": "analysis"
-      },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "./index.html#analysis",
-      "label": {
-        "EN": "Analysis"
+        "EN": "Browse by Country"
       }
     },
     {
@@ -44,6 +29,15 @@
       "target": "#domains",
       "label": {
         "EN": "Browse by Domain"
+      }
+    },
+    {
+      "attrs": {
+        "id": "analysis"
+      },
+      "target": "#analysis",
+      "label": {
+        "EN": "Analysis & Download"
       }
     },
     {

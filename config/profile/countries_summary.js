@@ -4,7 +4,7 @@ define({
     "title": "Algeria",
     "flag": "",
     "gaul_code": "4",
-    "area": "2381741",
+    "area": "2.381.741",
     "capital_city": "Algiers",
     "currency": "Algerian Dinar"
   },
@@ -12,7 +12,7 @@ define({
     "title": "Angola",
     "flag": "",
     "gaul_code": "8",
-    "area": "1246700",
+    "area": "1.246.700",
     "capital_city": "Luanda",
     "currency": "Angola Kwanza"
   },
@@ -20,7 +20,7 @@ define({
     "title": "Benin",
     "flag": "",
     "gaul_code": "29",
-    "area": "114763",
+    "area": "114.763",
     "capital_city": "Porto Novo",
     "currency": "CFA Franc"
   },
@@ -28,7 +28,7 @@ define({
     "title": "Botswana",
     "flag": "",
     "gaul_code": "35",
-    "area": "581730",
+    "area": "581.730",
     "capital_city": "Gaborone",
     "currency": "Botswana Pula"
   },
@@ -36,7 +36,7 @@ define({
     "title": "Burkina Faso",
     "flag": "",
     "gaul_code": "42",
-    "area": "274000",
+    "area": "274.000",
     "capital_city": "Ouagadougou",
     "currency": "CFA Franc"
   },
@@ -44,7 +44,7 @@ define({
     "title": "Congo, Dem. Republic",
     "flag": "",
     "gaul_code": "68",
-    "area": "2345409",
+    "area": "2.345.409",
     "capital_city": "Kinshasa",
     "currency": "Congolese Franc"
   },
@@ -52,7 +52,7 @@ define({
     "title": "Egypt",
     "flag": "",
     "gaul_code": "40765",
-    "area": "1001449",
+    "area": "1.001.449",
     "capital_city": "Cairo ",
     "currency": "Egyptian Pound"
   },
@@ -60,7 +60,7 @@ define({
     "title": "Kenya",
     "flag": "",
     "gaul_code": "133",
-    "area": "610000",
+    "area": "610.000",
     "capital_city": "Nairobi",
     "currency": "Kenyan Shilling"
   },
@@ -68,7 +68,7 @@ define({
     "title": "Senegal",
     "flag": "",
     "gaul_code": "217",
-    "area": "196722",
+    "area": "196.722",
     "capital_city": "Dakar",
     "currency": "CFA Franc"
   },
@@ -76,7 +76,7 @@ define({
     "title": "Ethiopia",
     "flag": "",
     "gaul_code": "79",
-    "area": "1104300",
+    "area": "1.104.300",
     "capital_city": "Addis Ababa",
     "currency": "Ethiopian Birr"
   },
@@ -84,7 +84,7 @@ define({
     "title": "Tanzania",
     "flag": "",
     "gaul_code": "257",
-    "area": "945090",
+    "area": "945.090",
     "capital_city": "Dar es Salaam",
     "currency": "Tanzanian Shilling"
   },
@@ -92,7 +92,7 @@ define({
     "title": "Uganda",
     "flag": "",
     "gaul_code": "253",
-    "area": "241550.7",
+    "area": "241.550",
     "capital_city": "Kampala",
     "currency": "Uganda Shilling"
   },
@@ -100,7 +100,7 @@ define({
     "title": "Nigeria",
     "flag": "",
     "gaul_code": "182",
-    "area": "923768",
+    "area": "923.768",
     "capital_city": "Abuja",
     "currency": "Naira"
   },
@@ -108,7 +108,7 @@ define({
     "title": "Congo",
     "flag": "",
     "gaul_code": "59",
-    "area": "342000",
+    "area": "342.000",
     "capital_city": "Brazzaville",
     "currency": "CFA Franc"
   },
@@ -116,7 +116,7 @@ define({
     "title": "Burundi",
     "flag": "",
     "gaul_code": "43",
-    "area": "27834",
+    "area": "27.834",
     "capital_city": "Bujumbura",
     "currency": "Burundi Franc"
   },
@@ -124,7 +124,7 @@ define({
     "title": "Cameroon",
     "flag": "",
     "gaul_code": "45",
-    "area": "475650",
+    "area": "475.650",
     "capital_city": "Yaounde",
     "currency": "CFA Franc"
   },
@@ -132,7 +132,7 @@ define({
     "title": "Cabo Verde",
     "flag": "",
     "gaul_code": "47",
-    "area": "4033",
+    "area": "4.033",
     "capital_city": "Praia",
     "currency": "Escudo"
   },
@@ -140,7 +140,7 @@ define({
     "title": "Central African Republic",
     "flag": "",
     "gaul_code": "49",
-    "area": "622984",
+    "area": "622.984",
     "capital_city": "Bangui",
     "currency": "CFA Franc"
   }

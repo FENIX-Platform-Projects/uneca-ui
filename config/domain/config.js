@@ -255,7 +255,6 @@ define(function () {
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
-
                             {"value": "2011", "label": "2011", "selected": false},
                             {"value": "2010", "label": "2010", "selected": false},
                             {"value": "2009", "label": "2009", "selected": false},
@@ -331,7 +330,7 @@ define(function () {
                         id: "edu_2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
-                            type: "column_stacked",
+                            type: "column",
                             x: ["CountryCode_EN"], //x axis and series
                             series: ["GenderCode_EN"], //Y dimension
                             y: ["Value"],

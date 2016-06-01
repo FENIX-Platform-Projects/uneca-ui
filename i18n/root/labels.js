@@ -106,9 +106,9 @@ define({
     //Dashboard profile
     summary_info : "Main information",
     capital_city_header : "Capital city",
-    GAUL_code_text:"GAUL code",
+    GAUL_code_text:"Country code (GAUL)",
     area_sq: "Area in sq. km",
-    currency: "Currency",
+    currency_label: "Currency",
 
     //population
 

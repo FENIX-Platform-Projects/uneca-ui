@@ -27,7 +27,8 @@ define([
 
         BTN_EXPORT_METADATA : '.fx-md-report-btn'
 
-    };
+    },
+        environment = "production";
 
     var AnalysisView = View.extend({
 
@@ -56,7 +57,30 @@ define([
 
             this.analysis = new Analysis({
                 $el: document.querySelector(s.ANALYSIS_CONTAINER),
-                environment : "distribution"
+                environment : environment,
+                catalog_default_selectors : ['contextSystem', "dataDomain","resourceType" ],
+                catalog_selectors_registry : {
+                    contextSystem : {
+                        selector : {
+                            id : "dropdown",
+                            source : [
+                                {value : "uneca", label : "UNECA"},
+                                {value : "FAOSTAT", label : "FAOSTAT"}
+                            ],
+                            default : ["uneca"],
+                            hideSummary : true
+                        },
+
+                        template : {
+                            hideRemoveButton : false
+                        },
+
+                        format : {
+                            output : "enumeration",
+                            metadataAttribute: "dsd.contextSystem"
+                        }
+                    }
+                }
             });
 
         }

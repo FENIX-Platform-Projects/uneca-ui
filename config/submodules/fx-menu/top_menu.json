@@ -16,16 +16,7 @@
       },
       "target": "#profile",
       "label": {
-        "EN": "Country Profile"
-      }
-    },
-    {
-      "attrs": {
-        "id": "analysis"
-      },
-      "target": "#analysis",
-      "label": {
-        "EN": "Analysis & Download"
+        "EN": "Browse by Country"
       }
     },
     {
@@ -35,6 +26,15 @@
       "target": "#domains",
       "label": {
         "EN": "Browse by Domain"
+      }
+    },
+    {
+      "attrs": {
+        "id": "analysis"
+      },
+      "target": "#analysis",
+      "label": {
+        "EN": "Analysis & Download"
       }
     },
     {
