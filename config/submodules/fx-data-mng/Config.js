@@ -24,7 +24,8 @@ define(['jquery', 'fx-submodules/config/baseConfig'],
         cfg.DSD_EDITOR_CODELISTS = "config/submodules/DSDEditor/CodelistsUneca.json";
         //cfg.DSD_EDITOR_CONTEXT_SYSTEM = "UNECA";
         cfg.DSD_EDITOR_CONTEXT_SYSTEM = "uneca";
-        cfg.DSD_EDITOR_LABEL = "UNECA"
+        cfg.DSD_EDITOR_LABEL = "UNECA";
+        cfg.DATAMANAGEMENT_ENVIRONMENT = config_base.ENVIRONMENT;
 
 
         //cfg.METADATA_EDITOR_AJAX_EVENT_CALL = "config/submodules/metadataEditor/fx-editor-ajax-config_DEMO.json";
