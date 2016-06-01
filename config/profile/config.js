@@ -29,7 +29,8 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"]
+                                zoomToCountry: ["DZA"],
+                                highlightCountry: "DZA"
                             }
                         }
                     }
