@@ -1,0 +1,30 @@
+/* Domain Page */
+
+.domain  {
+
+  li[role="treeitem"]:nth-child(odd){
+    background-color: transparent !important;
+  }
+
+  .jstree-node[aria-disabled="true"]{
+    opacity: 0.5;
+    cursor: no-drop !important;
+  }
+
+}
+
+
+.domain-filter-container{
+
+  border: 1px solid $fenix-light-hr;
+  padding: 15px;
+
+
+
+  .filter-title{
+
+    margin-top: 0;
+
+  }
+
+}
