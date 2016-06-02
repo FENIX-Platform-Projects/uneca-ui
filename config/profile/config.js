@@ -1540,6 +1540,9 @@ filter:{
             uid: "UNECA_KindOfCommodity"
 
 
+        },
+        template: {
+            hideHeader : true
         }
 
 

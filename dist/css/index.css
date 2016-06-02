@@ -15139,6 +15139,14 @@ hr {
   .dash-box h2, .dash-box h1 {
     margin-top: 10px; }
 
+.profiles #dashboard-content section .row:first-child .dash-box {
+  margin-top: 0; }
+.profiles .domain-filter-container {
+  margin-bottom: 45px; }
+.profiles [data-dashboard="expenditure_gdp"] .dash-box, .profiles [data-dashboard="poverty"] .dash-box {
+  margin-top: 0;
+  margin-bottom: 45px; }
+
 .domain-filter-container {
   border: 1px solid #e1e1e1;
   padding: 15px; }
