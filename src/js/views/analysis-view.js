@@ -77,6 +77,9 @@ define([
                             metadataAttribute: "dsd.contextSystem"
                         }
                     }
+                },
+                box_config : {
+                    hideMinimizeButton : true
                 }
             });
 
