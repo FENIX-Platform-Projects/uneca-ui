@@ -73,6 +73,17 @@
 
     .col-sm-6 {
 
+      &.disabled{
+        pointer-events: none !important;
+
+        *{
+          pointer-events: none !important;
+        }
+
+      }
+
+
+
       .home-btn {
         border: 1px solid white;
         line-height: 100%;

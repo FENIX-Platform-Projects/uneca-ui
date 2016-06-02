@@ -676,7 +676,7 @@ define([
             TweenMax.to($(' .one'), 2, {opacity: 1, delay: 1.3});
             TweenMax.to($(' .two'), 2, {opacity: 1, delay: 1.7});
             TweenMax.to($(' .three'), 2, {opacity: 1, delay: 2.0});
-            TweenMax.to($(' .four'), 2, {opacity: 1, delay: 2.3});
+            TweenMax.to($(' .four'), 2, {opacity: 0.2, delay: 2.3});
             $('.carousel').carousel('cycle');
 
         }

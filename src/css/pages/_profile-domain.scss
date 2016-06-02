@@ -153,9 +153,26 @@ ul[role="group"]{
 }
 
 .country-item{
+  padding: 15px 0;
+  position: relative;
+
+  &:after{
+
+    content: '';
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: lighten($fenix-light-hr, 5%);
+    position: absolute;
+    bottom: 0;
+    
+  }
+
+
   a{
-    margin-bottom: 5px;
+
     display: inline-block;
+
   }
 }
 
