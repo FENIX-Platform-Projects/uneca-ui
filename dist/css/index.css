@@ -5417,6 +5417,13 @@ input[type="button"]::-moz-focus-inner {
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%); }
 
+/* Fenix Color Reference */
+.color-main {
+  background-color: #337ab7; }
+
+.color-main-light-10 {
+  background-color: #4f93ce; }
+
 /* Fenix Datepicker - Components */
 .datepicker {
   font-size: 12px; }
@@ -12728,6 +12735,13 @@ button_new_2:before {
 
 .fa-database:before {
   content: ""; }
+
+/* Fenix Color Reference */
+.color-main {
+  background-color: #337ab7; }
+
+.color-main-light-10 {
+  background-color: #4f93ce; }
 
 /* Tabs component */
 .fx-tabs .nav-tabs {
