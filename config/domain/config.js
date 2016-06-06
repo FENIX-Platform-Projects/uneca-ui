@@ -87,7 +87,7 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"}
                         }, // :type-creator config
@@ -171,7 +171,10 @@ define(function () {
                             x: ["CountryCode_EN"], //x axis and series
                             series: ["IndicatorCode_EN"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            config : {
+                                
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
