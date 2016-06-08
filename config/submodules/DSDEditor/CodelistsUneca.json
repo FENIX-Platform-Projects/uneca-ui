@@ -1,13 +1,13 @@
 [
   {
-    "val": "ISO3",
+    "value": "UNECA_ISO3",
     "text": {
-      "EN": "ISO-3"
+      "EN": "UNECA ISO-3"
     },
     "subject": "geo"
   },
   {
-    "val": "UNECA_AgeRange",
+    "value": "UNECA_AgeRange",
     "text": {
       "EN": "UNECA AgeRange"
     },
@@ -15,28 +15,28 @@
   },
 
   {
-    "val": "FAOSTAT_Items",
+    "value": "FAOSTAT_Items",
     "text": {
       "EN": "FAOSTAT Commodity List"
     },
     "subject": "item"
   },
   {
-    "val": "UNECA_ClassificationOfActivities",
+    "value": "UNECA_ClassificationOfActivities",
     "text": {
       "EN": "UNECA Class. of activities"
     },
     "subject": "item"
   },
   {
-    "val": "UNECA_Partner",
+    "value": "UNECA_Partner",
     "text": {
       "EN": "UNECA Partner"
     },
     "subject": "item"
   },
   {
-    "val": "UNECA_Gender",
+    "value": "UNECA_Gender",
     "text": {
       "EN": "UNECA Gender"
     },
@@ -44,24 +44,31 @@
   },
 
   {
-    "val": "UNECA_Currencies",
+    "value": "UNECA_Currencies",
     "text": {
       "EN": "UNECA Currencies"
     },
     "subject": "um"
   },
   {
-    "val": "UNECA_UnitMeasure",
+    "value": "UNECA_UnitMeasure",
     "text": {
       "EN": "UNECA Unit of Measure"
     },
     "subject": "um"
   },
   {
-    "val": "UNECA_EconomicSector",
+    "value": "UNECA_EconomicSector",
     "text": {
       "EN": "UNECA Economic Sector"
     },
     "subject": "item"
+  },
+  {
+    "value": "UNECA_ClassificationOfActivities|2.0",
+    "text": {
+      "EN": "UNECA Class. of activities"
+    },
+    "subject": "indicator"
   }
 ]
