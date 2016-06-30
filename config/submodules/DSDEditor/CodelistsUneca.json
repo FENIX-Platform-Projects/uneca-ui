@@ -2,18 +2,17 @@
   {
     "value": "UNECA_ISO3",
     "text": {
-      "EN": "UNECA ISO-3"
+      "EN": "UNECA Country Codes"
     },
     "subject": "geo"
   },
   {
     "value": "UNECA_AgeRange",
     "text": {
-      "EN": "UNECA AgeRange"
+      "EN": "UNECA Age-range"
     },
     "subject": "item"
   },
-
   {
     "value": "FAOSTAT_Items",
     "text": {
@@ -22,53 +21,73 @@
     "subject": "item"
   },
   {
-    "value": "UNECA_ClassificationOfActivities",
+    "value": "UNECA_ClassificationOfActivities|2.0",
     "text": {
-      "EN": "UNECA Class. of activities"
+      "EN": "UNECA Classification of Activities -Domains, topics and indicators (V2.0)"
     },
-    "subject": "item"
+    "subject": "indicator"
   },
   {
     "value": "UNECA_Partner",
     "text": {
-      "EN": "UNECA Partner"
+      "EN": "UNECA - Partner countries and institutions"
     },
     "subject": "item"
   },
   {
     "value": "UNECA_Gender",
     "text": {
-      "EN": "UNECA Gender"
+      "EN": "UNECA - Gender"
     },
-    "subject": "item"
+    "subject": "gender"
   },
-
   {
     "value": "UNECA_Currencies",
     "text": {
-      "EN": "UNECA Currencies"
+      "EN": "UNECA - Currencies"
     },
     "subject": "um"
   },
   {
     "value": "UNECA_UnitMeasure",
     "text": {
-      "EN": "UNECA Unit of Measure"
+      "EN": "UNECA - Unit of Measure"
     },
     "subject": "um"
   },
   {
     "value": "UNECA_EconomicSector",
     "text": {
-      "EN": "UNECA Economic Sector"
+      "EN": "UNECA - Economic Sector"
+    },
+    "subject": "sector"
+  },
+  {
+    "value": "UNECA_ClassificationOfActivities",
+    "text": {
+      "EN": "UNECA Classification of Activities -Domains, topics and indicators (OLD VERSION)"
+    },
+    "subject": "indicator"
+  },
+  {
+    "value": "UNECA_KindOfCommodity",
+    "text": {
+      "EN": "UNECA Kind of commodity"
     },
     "subject": "item"
   },
   {
-    "value": "UNECA_ClassificationOfActivities|2.0",
+    "value": "ISIC_REV4",
     "text": {
-      "EN": "UNECA Class. of activities"
+      "EN": "ISIC"
     },
-    "subject": "indicator"
+    "subject": "sector"
+  },
+  {
+    "value": "UNECA_Energy",
+    "text": {
+      "EN": "UNECA kind of energy"
+    },
+    "subject": "item"
   }
 ]
