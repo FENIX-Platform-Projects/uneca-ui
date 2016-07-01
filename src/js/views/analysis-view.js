@@ -53,7 +53,7 @@ define([
             amplify.publish(E.STATE_CHANGE, {menu: 'analysis'});
 
             this.analysis = new Analysis({
-                $el: document.querySelector(s.ANALYSIS_CONTAINER),
+                el: document.querySelector(s.ANALYSIS_CONTAINER),
                 environment : C.ENVIRONMENT,
                 catalog_default_selectors : ['contextSystem', "dataDomain","resourceType" ],
                 catalog_selectors_registry : {
