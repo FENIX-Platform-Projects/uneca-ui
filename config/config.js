@@ -23,7 +23,39 @@ define(function () {
 
         SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK: "home",
 
-        ENVIRONMENT : "production"
+        ENVIRONMENT : "production",
+
+        catalog : {
+            defaultSelectors : ['contextSystem', "dataDomain","resourceType" ],
+            pluginRegistry : {
+                contextSystem : {
+                    selector : {
+                        id : "dropdown",
+                        source : [
+                            {value : "uneca", label : "UNECA"},
+                            {value : "FAOSTAT", label : "FAOSTAT"}
+                        ],
+                        default : ["uneca"],
+                        hideSummary : true
+                    },
+
+                    template : {
+                        hideRemoveButton : false
+                    },
+
+                    format : {
+                        output : "enumeration",
+                        metadataAttribute: "dsd.contextSystem"
+                    }
+                }
+            },
+        },
+        
+        box: {
+            config : {
+                hideMinimizeButton : true
+            }
+        }
 
     };
 });

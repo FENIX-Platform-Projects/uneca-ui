@@ -64,9 +64,8 @@ require([
                     'fx-d-m/templates/site' : "./src/js/templates/site.hbs",
                     'fx-d-m/config/config' : "./config/submodules/fx-data-mng/Config",
                     'fx-d-m/i18n/nls/site' : "./i18n/site",
-                    //'fx-cat-br/config/config': './config/submodules/fx-catalog/config',
-
-                    //'fx-menu/config/config': './config/submodules/fx-catalog/config',
+                    
+                    'config' : "./config/",
 
                     'fx-submodules/config/baseConfig': './config/submodules/config_base'
 
@@ -103,10 +102,9 @@ require([
         'fx-common/AuthManager'
     ], function (Application, routes, AuthManager) {
 
-
         var authMAnager = new AuthManager();
-        if(authMAnager.isLogged()) {
 
+        if(authMAnager.isLogged()) {
 
             var app = new Application({
                 routes: routes,
