@@ -14,6 +14,14 @@ define(function () {
                     {
                         id: "country-map-container", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
+
+                        /*
+                        geoSubject: 'gaul0',
+                        colorRamp: 'GnBu',  //Blues, Greens,
+                            //colorRamp values: http://fenixrepo.fao.org/cdn/fenix/fenix-ui-map-datasets/colorramp.png
+                        legendtitle: 'ODA',
+                        */
+
                         config: {
                             fenix_ui_map: {
                                 guiController: {
