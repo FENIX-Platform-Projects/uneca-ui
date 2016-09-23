@@ -49,8 +49,9 @@ require([
     "mapPaths",
     "reportPaths",
     "fenixMap",
-    "dashboardPaths"
-], function (Compiler, Common, Menu, Filter, Analysis, Catalog, Box, Olap, MetadataViewer, ChartCreator, MapCreator, Report, Map, Dashboard) {
+    "dashboardPaths",
+    "tablePaths"
+], function (Compiler, Common, Menu, Filter, Analysis, Catalog, Box, Olap, MetadataViewer, ChartCreator, MapCreator, Report, Map, Dashboard, Table) {
 
     'use strict';
 
@@ -95,7 +96,10 @@ require([
     var dashboardConfig = Dashboard;
     dashboardConfig.baseUrl = submodules_path + 'fenix-ui-dashboard/src/js';
 
-    Compiler.resolve([commonConfig, catalogConfig, menuConfig, filterConfig, analysisConfig, boxConfig, olapConfig, metadataViewerConfig, chartConfig, mapCreatorConfig, reportConfig, mapConfig, dashboardConfig],
+    var tableConfig = Table;
+    tableConfig.baseUrl = submodules_path + 'fenix-ui-table-creator/src/js';
+
+    Compiler.resolve([tableConfig, commonConfig, catalogConfig, menuConfig, filterConfig, analysisConfig, boxConfig, olapConfig, metadataViewerConfig, chartConfig, mapCreatorConfig, reportConfig, mapConfig, dashboardConfig],
         {
             placeholders: {"FENIX_CDN": "http://fenixrepo.fao.org/cdn"},
 

@@ -23,7 +23,6 @@ $fx-ui-common: '../../submodules/fenix-ui-common/';
 @import '../../submodules/fenix-ui-common/css/components/fx-preload';
 
 
-@import '../../submodules/fenix-ui-common/css/base/fx-typography';
 @import '../../submodules/fenix-ui-common/css/base/fx-fonts-import';
 
 
@@ -43,10 +42,6 @@ $fx-ui-common: '../../submodules/fenix-ui-common/';
 @import '../../submodules/fenix-ui-map/src/css/fx_map';
 @import '../../submodules/fenix-ui-olap/src/css/olap';
 @import '../../submodules/fenix-ui-visualization-box/src/css/visualization-box';
-
-
-
-@import '../../submodules/fenix-ui-common/css/themes/fx-bootstrap-queries';
 
 
 /* Base */
