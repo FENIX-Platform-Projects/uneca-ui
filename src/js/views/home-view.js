@@ -1,15 +1,14 @@
 /*global define, _:false, $, console, amplify, FM, THREE*/
 define([
+    'jquery',
     'views/base/view',
-    'config/Config',
-    'config/Queries',
-    'config/Events',
+    'config/config',
+    'config/events',
     'text!json/home/data_at_glance.json',
     'text!templates/home/home.hbs',
-    'i18n!nls/home',
+    'i18n!nls/labels',
     'handlebars',
-    'fx-common/WDSClient',
-    'fx-c-c/config/creators/highcharts_template',
+    'fx-chart/config/renderers/highcharts_shared',
     'copyShader',
     'effectComposer',
     'maskPass',
@@ -19,23 +18,28 @@ define([
     'threejs',
     'detector',
     'canvasRender',
-    "highcharts",
+    'highcharts',
     'projector',
     'tweenMax',
     'amplify'
-], function (View, C, Q, E, DATA, template, i18nLabels, Handlebars, WDSClient, chartTemplate) {
+], function ($, View, C, EVT, DATA, template, i18nLabels, Handlebars, chartTemplate) {
 
     'use strict';
 
     var s = {
-        CHART_TABS: '#home-charts-tab a[data-toggle="tab"]'
+        CHART_ONE: "#chart1",
+        CHART_TWO: "#chart2",
+        CHART_THREE: "#chart3",
+        CHART_FOUR: "#chart4",
+        CHART_TABS: '#home-charts-tab a[data-toggle="tab"]',
+        ANIMATION_CONTAINER: "#animation-container"
     }, renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer, renderScene, containerWidth, containerHeight, terraMesh, nuvoleMesh;
 
-    var mouseX = 0, mouseY = 0;
+    var mouseX = 0,
+        mouseY = 0;
 
-    var windowHalfX = window.innerWidth / 2;
-
-    var windowHalfY = window.innerHeight / 2;
+    var windowHalfX = window.innerWidth / 2,
+        indowHalfY = window.innerHeight / 2;
 
     var HomeView = View.extend({
 
@@ -56,11 +60,9 @@ define([
             this.initWorldMap();
 
             //update State
-            amplify.publish(E.STATE_CHANGE, {menu: 'home'});
+            amplify.publish(EVT.STATE_CHANGE, {menu: 'home'});
 
             this.initVariables();
-
-            this.initComponents();
 
             this.bindEventListeners();
 
@@ -70,23 +72,9 @@ define([
         initVariables: function () {
         },
 
-        initComponents: function () {
-
-            this.WDSClient = new WDSClient({
-                serviceUrl: C.WDS_URL,
-                datasource: C.DB_NAME,
-                outputType: C.WDS_OUTPUT_TYPE
-            });
-        },
-
         configurePage: function () {
 
             this.initCharts();
-
-            //$(document).off('click.bs.tab.data-api', '[data-hover="tab"]');
-            //$(document).on('mouseenter.bs.tab.data-api', '[data-toggle="tab"], [data-hover="tab"]', function () {
-            //    $(this).tab('show');
-            //});
         },
 
         initCharts: function () {
@@ -94,15 +82,16 @@ define([
             this.data = JSON.parse(DATA);
 
             for (var k in this.data['import']) {
-                this.data['import'][k].length = 9;
-                this.data['export'][k].length = 9;
-
+                if (this.data['import'].hasOwnProperty(k)) {
+                    this.data['import'][k].length = 9;
+                    this.data['export'][k].length = 9;
+                }
             }
 
-            var series1GDP = [5.8, 6, 5.4, 3.4, 5.7, 2.8, 6.7, 3.5, 3.9];
-            var series2GDP = [5.6, 6.9, 10.7, 9.7, 8, 9.2, 9.2, 7, 7.2];
+            var series1GDP = [5.8, 6, 5.4, 3.4, 5.7, 2.8, 6.7, 3.5, 3.9],
+                series2GDP = [5.6, 6.9, 10.7, 9.7, 8, 9.2, 9.2, 7, 7.2];
 
-            $('#chart1').highcharts($.extend(true, {}, chartTemplate, {
+            $(s.CHART_ONE).highcharts($.extend(true, {}, chartTemplate, {
                 title: {
                     text: 'Gross Domestic Product of Africa'
                 },
@@ -155,7 +144,7 @@ define([
                     }]
             }));
 
-            $('#chart2').highcharts($.extend(true, {}, chartTemplate, {
+            $(s.CHART_TWO).highcharts($.extend(true, {}, chartTemplate, {
                 chart: {
                     type: 'column'
                 },
@@ -202,12 +191,57 @@ define([
                     }
                 },
                 series: [{
-                    name : "Export",
-                    data : this.data.trade.import
+                    name: "Export",
+                    data: this.data.trade.import
                 }]
             }));
 
-            $('#chart4').highcharts($.extend(true, {}, chartTemplate, {
+            $(s.CHART_THREE).highcharts($.extend(true, {}, chartTemplate, {
+                title: {
+                    text: 'Gender parity index in Africa'
+                },
+                credits: {
+                    enabled: false
+                },
+
+                xAxis: {
+                    categories: ['2006',
+                        '2007',
+                        '2008',
+                        '2009',
+                        '2010',
+                        '2011',
+                        '2012',
+                        '2013']
+                },
+                crosshair: true,
+
+                yAxis: {
+                    min: 0.75,
+                    max: 1
+                },
+                tooltip: {
+                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+                    shared: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Gender parity index in primary',
+                    data: this.data.education.primary
+                },
+                    {
+                        name: 'Gender parity index in secondary',
+                        data: this.data.education.secondary
+                    }
+                ]
+            }));
+
+            $(s.CHART_FOUR).highcharts($.extend(true, {}, chartTemplate, {
                 chart: {
                     type: 'column'
                 },
@@ -254,55 +288,11 @@ define([
                     }
                 },
                 series: [{
-                    name : "Import",
-                    data : this.data.trade.import
+                    name: "Import",
+                    data: this.data.trade.import
                 }]
             }));
 
-            $('#chart3').highcharts($.extend(true, {}, chartTemplate, {
-                title: {
-                    text: 'Gender parity index in Africa'
-                },
-                credits: {
-                    enabled: false
-                },
-
-                xAxis: {
-                    categories: ['2006',
-                        '2007',
-                        '2008',
-                        '2009',
-                        '2010',
-                        '2011',
-                        '2012',
-                        '2013']
-                },
-                crosshair: true,
-
-                yAxis: {
-                    min: 0.75,
-                    max: 1
-                },
-                tooltip: {
-                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
-                    shared: true
-                },
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0
-                    }
-                },
-                series: [{
-                    name: 'Gender parity index in primary',
-                    data: this.data.education.primary
-                },
-                    {
-                        name: 'Gender parity index in secondary',
-                        data: this.data.education.secondary
-                    }
-                ]
-            }));
         },
 
         _traspostMatrix: function (key, type) {
@@ -387,6 +377,7 @@ define([
         },
 
         unbindEventListeners: function () {
+
             $(s.CHART_TABS).off('shown.bs.tab');
 
         },
@@ -401,7 +392,6 @@ define([
         initWorldMap: function () {
             // Inizialization
 
-
             if (Detector.webgl) {
 
                 renderer = new THREE.WebGLRenderer({
@@ -414,7 +404,6 @@ define([
                 containerHeight = $('#container').height();
 
                 camera = new THREE.PerspectiveCamera(45, containerWidth / containerHeight, 0.1, 1000);
-
 
                 renderer.setClearColor(0x000000, 1.0);
                 renderer.setSize(containerWidth, containerHeight);
@@ -444,6 +433,7 @@ define([
                 // texture
 
                 var manager = new THREE.LoadingManager();
+
                 manager.onProgress = function (item, loaded, total) {
 
                     /*
@@ -618,7 +608,6 @@ define([
                 //renderer    = new THREE.CanvasRenderer();
             }
 
-
         },
 
         renderScene: function () {
@@ -687,7 +676,7 @@ define([
             TweenMax.to($(' .one'), 2, {opacity: 1, delay: 1.3});
             TweenMax.to($(' .two'), 2, {opacity: 1, delay: 1.7});
             TweenMax.to($(' .three'), 2, {opacity: 1, delay: 2.0});
-            TweenMax.to($(' .four'), 2, {opacity: 1, delay: 2.3});
+            TweenMax.to($(' .four'), 2, {opacity: 0.2, delay: 2.3});
             $('.carousel').carousel('cycle');
 
         }

@@ -17,12 +17,27 @@
       "attrs": {
         "id": "profile"
       },
-      "a_attrs": {
-        "rel": "external"
-      },
       "target": "./index.html#profile",
       "label": {
-        "EN": "Country Profile"
+        "EN": "Browse by Country"
+      }
+    },
+    {
+      "attrs": {
+        "id": "domain"
+      },
+      "target": "./index.html#domains",
+      "label": {
+        "EN": "Browse by Domain"
+      }
+    },
+    {
+      "attrs": {
+        "id": "analysis"
+      },
+      "target": "./index.html#analysis",
+      "label": {
+        "EN": "Analysis & Download"
       }
     },
     {
@@ -32,42 +47,6 @@
       "target": "#",
       "label": {
         "EN": "Data Management"
-      }
-    },
-    {
-      "attrs": {
-        "id": "analysis"
-      },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "./index.html#analysis",
-      "label": {
-        "EN": "Analysis"
-      }
-    },
-    {
-      "attrs": {
-        "id": "methods"
-      },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "./index.html#methods",
-      "label": {
-        "EN": "Methods and Standards"
-      }
-    },
-    {
-      "attrs": {
-        "id": "modules"
-      },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "./index.html#modules",
-      "label": {
-        "EN": "Thematic Modules"
       }
     }
   ],

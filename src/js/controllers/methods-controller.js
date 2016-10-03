@@ -1,13 +1,12 @@
 /*global define*/
 define([
     'backbone',
-    'chaplin',
     'controllers/base/controller',
     'views/methods-view',
     'text!json/methods/models.json',
     'q',
     'amplify'
-], function (Backbone,Chaplin,Controller, View, MethodsCollection, Q) {
+], function (Backbone, Controller, View, MethodsCollection, Q) {
 
     'use strict';
 
@@ -17,7 +16,7 @@ define([
 
             Controller.prototype.beforeAction.call(this, arguments);
 
-            return this.performAccessControlChecks(params).then( _.bind(this.allowAccess, this), _.bind(this.denyAccess, this));
+            return this.performAccessControlChecks(params).then(_.bind(this.allowAccess, this), _.bind(this.denyAccess, this));
         },
 
         denyAccess: function () {
@@ -53,7 +52,7 @@ define([
         show: function (params) {
 
             if (this.validMethodId === false) {
-                Chaplin.utils.redirectTo({controller: 'methods', action: 'show'});
+                Backbone.history.navigate('#methods/', {trigger: false});
             }
 
             var conf = {
@@ -65,7 +64,7 @@ define([
             if (this.validstandardId === true) {
                 conf.id = params.id;
             } else {
-                Backbone.history.navigate('#methods/' , {trigger: false});
+                Backbone.history.navigate('#methods/', {trigger: false});
             }
 
             this.view = new View(conf);

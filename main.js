@@ -1,117 +1,143 @@
 /*global require*/
 
-require([
-    './submodules/fenix-ui-common/js/Compiler',
-    './submodules/fenix-ui-common/js/paths',
-    './submodules/fenix-ui-menu/js/paths',
-    './submodules/fenix-ui-analysis/js/paths',
-    './submodules/fenix-ui-catalog/js/paths',
-    './submodules/fenix-ui-DataEditor/js/paths',
-    './submodules/fenix-ui-DSDEditor/js/paths',
-/*
-    './submodules/fenix-ui-dataUpload/js/paths',
-*/
-    './submodules/fenix-ui-metadata-editor/js/paths',
-    './submodules/fenix-ui-metadata-viewer/src/js/paths',
-    './submodules/fenix-ui-map-creator/src/js/paths',
-    './submodules/fenix-ui-chart-creator/src/js/paths',
-    './submodules/fenix-ui-table-creator/src/js/paths',
-    './submodules/fenix-ui-reports/src/js/paths',
-    './submodules/fenix-ui-dashboard/src/js/paths',
-    './submodules/fenix-ui-filter/src/js/paths'
+var pathProjectRoot = "./";
+var projectRoot = "./";
+var submoduleRoot = './submodules/';
 
-], function (Compiler, Common, Menu, Analysis, Catalog,
-             DataEditor, DSDEditor, /*DataUpload,*/MetadataEditor, MetadataViewer,
-             MapCreator,ChartCreator, TableCreator, FenixReport, Dashboard, Filter  ) {
+require.config({
+    config: {
+        text: {
+            useXhr: function (url, protocol, hostname, port) {
+                return true;
+            }
+        }
+    },
+    paths: {
+        compilerPaths: pathProjectRoot + 'submodules/fenix-ui-common/js/Compiler',
+        commonPaths: pathProjectRoot + 'submodules/fenix-ui-common/js/paths',
+        menuPaths: pathProjectRoot + 'submodules/fenix-ui-menu/src/js/paths',
+        dashboardPaths: pathProjectRoot + 'submodules/fenix-ui-dashboard/src/js/paths',
+        chartPaths: pathProjectRoot + 'submodules/fenix-ui-chart-creator/src/js/paths',
+        mapPaths: pathProjectRoot + 'submodules/fenix-ui-map-creator/src/js/paths',
+        tablePaths: pathProjectRoot + 'submodules/fenix-ui-table-creator/src/js/paths',
+        filterPaths: pathProjectRoot + 'submodules/fenix-ui-filter/src/js/paths',
+        analysisPaths: pathProjectRoot + 'submodules/fenix-ui-analysis/src/js/paths',
+        olapPaths: pathProjectRoot + 'submodules/fenix-ui-olap/src/js/paths',
+        reportPaths: pathProjectRoot + 'submodules/fenix-ui-reports/src/js/paths',
+        visualizationPaths: pathProjectRoot + 'submodules/fenix-ui-visualization-box/src/js/paths',
+        dataEditorPaths: pathProjectRoot + 'submodules/fenix-ui-DataEditor/js/paths',
+        dsdEditorPaths: pathProjectRoot + 'submodules/fenix-ui-DSDEditor/js/paths',
+        metadataEditorPaths: pathProjectRoot + 'submodules/fenix-ui-metadata-editor/js/paths',
+        metadataViewerPaths: pathProjectRoot + 'submodules/fenix-ui-metadata-viewer/src/js/paths',
+        catalogPaths: pathProjectRoot + 'submodules/fenix-ui-catalog/src/js/paths',
+        dataManagementPaths: pathProjectRoot + 'submodules/fenix-ui-data-management/src/js/paths',
+        fenixMap: pathProjectRoot + 'submodules/fenix-ui-map/src/paths'
+    }
+});
+
+require([
+    "compilerPaths",
+    "commonPaths",
+    "menuPaths",
+    "filterPaths",
+    "analysisPaths",
+    "catalogPaths",
+    "visualizationPaths",
+    "olapPaths",
+    "metadataViewerPaths",
+    "chartPaths",
+    "mapPaths",
+    "reportPaths",
+    "fenixMap",
+    "dashboardPaths",
+    "tablePaths"
+], function (Compiler, Common, Menu, Filter, Analysis, Catalog, Box, Olap, MetadataViewer, ChartCreator, MapCreator, Report, Map, Dashboard, Table) {
 
     'use strict';
 
-    var submodules_path = '../../submodules/';
+    var submodules_path = projectRoot + '../../submodules/';
 
     var commonConfig = Common;
     commonConfig.baseUrl = submodules_path + 'fenix-ui-common/js';
 
+    var catalogConfig = Catalog;
+    catalogConfig.baseUrl = submodules_path + 'fenix-ui-catalog/src/js';
+
     var menuConfig = Menu;
-    menuConfig.baseUrl = submodules_path + '/fenix-ui-menu/js';
+    menuConfig.baseUrl = submodules_path + '/fenix-ui-menu/src/js';
 
     var analysisConfig = Analysis;
-    analysisConfig.baseUrl = submodules_path +'fenix-ui-analysis/js/';
+    analysisConfig.baseUrl = submodules_path + 'fenix-ui-analysis/src/js';
 
-    var catalogConfig = Catalog;
-    catalogConfig.baseUrl = submodules_path +'fenix-ui-catalog/js/';
-
-    var dataEditorConfig = DataEditor;
-    dataEditorConfig.baseUrl = submodules_path +'fenix-ui-DataEditor/js/';
-
-    var dsdEditorConfig = DSDEditor;
-    dsdEditorConfig.baseUrl = submodules_path +'fenix-ui-DSDEditor/js/';
-
-    var metadataEditorConfig = MetadataEditor;
-    metadataEditorConfig.baseUrl = submodules_path +'fenix-ui-metadata-editor/js/';
-
-    var metadataViewerConfig = MetadataViewer;
-    metadataViewerConfig.baseUrl= submodules_path +'fenix-ui-metadata-viewer/src/js/';
-
-    var mapCreatorConfig = MapCreator;
-    mapCreatorConfig.baseUrl= submodules_path +'fenix-ui-map-creator/src/js/';
-
-    var chartCreatorConfig = ChartCreator;
-    chartCreatorConfig.baseUrl= submodules_path +'fenix-ui-chart-creator/src/js/';
-
-    var tableCreatorConfig = TableCreator;
-    tableCreatorConfig.baseUrl= submodules_path +'fenix-ui-table-creator/src/js/';
-
-    var fenixReportConfig = FenixReport;
-    fenixReportConfig.baseUrl= submodules_path +'fenix-ui-reports/src/js/';
-
-    var dashboardConfig = Dashboard;
-    dashboardConfig.baseUrl= submodules_path +'fenix-ui-dashboard/src/js/';
+    var boxConfig = Box;
+    boxConfig.baseUrl = submodules_path + 'fenix-ui-visualization-box/src/js';
 
     var filterConfig = Filter;
-    filterConfig.baseUrl =  submodules_path +'fenix-ui-filter/';
+    filterConfig.baseUrl = submodules_path + 'fenix-ui-filter/src/js';
 
-    Compiler.resolve([commonConfig, menuConfig, analysisConfig,catalogConfig,
-            dataEditorConfig,dsdEditorConfig,/*dataUploadConfig,*/metadataEditorConfig,metadataViewerConfig,/*faostatThemeConfig,*/
-            mapCreatorConfig,chartCreatorConfig,tableCreatorConfig,fenixReportConfig,filterConfig, dashboardConfig],
+    var olapConfig = Olap;
+    olapConfig.baseUrl = submodules_path + 'fenix-ui-olap/src/js';
+
+    var metadataViewerConfig = MetadataViewer;
+    metadataViewerConfig.baseUrl = submodules_path + 'fenix-ui-metadata-viewer/src/js';
+
+    var chartConfig = ChartCreator;
+    chartConfig.baseUrl = submodules_path + 'fenix-ui-chart-creator/src/js';
+
+    var mapCreatorConfig = MapCreator;
+    mapCreatorConfig.baseUrl = submodules_path + 'fenix-ui-map-creator/src/js';
+
+    var reportConfig = Report;
+    reportConfig.baseUrl = submodules_path + 'fenix-ui-reports/src/js';
+
+    var mapConfig = Map;
+    mapConfig.baseUrl = submodules_path + 'fenix-ui-map/src/js';
+
+    var dashboardConfig = Dashboard;
+    dashboardConfig.baseUrl = submodules_path + 'fenix-ui-dashboard/src/js';
+
+    var tableConfig = Table;
+    tableConfig.baseUrl = submodules_path + 'fenix-ui-table-creator/src/js';
+
+    Compiler.resolve([tableConfig, commonConfig, catalogConfig, menuConfig, filterConfig, analysisConfig, boxConfig, olapConfig, metadataViewerConfig, chartConfig, mapCreatorConfig, reportConfig, mapConfig, dashboardConfig],
         {
             placeholders: {"FENIX_CDN": "http://fenixrepo.fao.org/cdn"},
 
             config: {
 
-                //Set the config for the i18n
-                i18n: {
-                    locale: 'en'
-                },
+                locale: 'en',
 
                 // The path where your JavaScripts are located
-                baseUrl: './src/js',
+                baseUrl: pathProjectRoot + '/src/js',
 
+                // Specify the paths of vendor libraries
                 // Specify the paths of vendor libraries
                 paths: {
                     bootstrap: "{FENIX_CDN}/js/bootstrap/3.3.4/js/bootstrap.min",
                     underscore: "{FENIX_CDN}/js/underscore/1.7.0/underscore.min",
+                    underscoreString: "{FENIX_CDN}/js/underscore.string/3.2.2/underscore.string.min",
                     backbone: "{FENIX_CDN}/js/backbone/1.1.2/backbone.min",
                     handlebars: "{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
-                    chaplin: "{FENIX_CDN}/js/chaplin/1.0.1/chaplin.min",
+                    chaplin: "{FENIX_CDN}/js/chaplin/1.1.1/chaplin.min",
                     domReady: "{FENIX_CDN}/js/requirejs/plugins/domready/2.0.1/domReady",
                     i18n: "{FENIX_CDN}/js/requirejs/plugins/i18n/2.0.4/i18n",
                     text: '{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text',
                     rsvp: '{FENIX_CDN}/js/rsvp/3.0.17/rsvp',
-                    "bootstrap-list-filter" :'{FENIX_CDN}/js/bootstrap-list-filter/0.2.1/bootstrap-list-filter.min',
+                    "bootstrap-list-filter": '{FENIX_CDN}/js/bootstrap-list-filter/0.2.1/bootstrap-list-filter.min',
 
                     //Threejs
-                    copyShader : "{FENIX_CDN}/js/threejs/4.4/CopyShader",
-                    effectComposer : "{FENIX_CDN}/js/threejs/4.4/EffectComposer",
-                    maskPass : "{FENIX_CDN}/js/threejs/4.4/MaskPass",
-                    orbitControls : "{FENIX_CDN}/js/threejs/4.4/OrbitControls",
-                    projector : "{FENIX_CDN}/js/threejs/4.4/Projector",
-                    renderPass : "{FENIX_CDN}/js/threejs/4.4/RenderPass",
-                    shaderPass : "{FENIX_CDN}/js/threejs/4.4/ShaderPass",
+                    copyShader: "{FENIX_CDN}/js/threejs/4.4/CopyShader",
+                    effectComposer: "{FENIX_CDN}/js/threejs/4.4/EffectComposer",
+                    maskPass: "{FENIX_CDN}/js/threejs/4.4/MaskPass",
+                    orbitControls: "{FENIX_CDN}/js/threejs/4.4/OrbitControls",
+                    projector: "{FENIX_CDN}/js/threejs/4.4/Projector",
+                    renderPass: "{FENIX_CDN}/js/threejs/4.4/RenderPass",
+                    shaderPass: "{FENIX_CDN}/js/threejs/4.4/ShaderPass",
                     canvasRender: "{FENIX_CDN}/js/threejs/4.4/CanvasRenderer", // TO BE REVIEWED
                     detector: "{FENIX_CDN}/js/threejs/4.4/Detector", // TO BE REVIEWED
                     tweenMax: "{FENIX_CDN}/js/tweenmax/1.18.0/tweenmax.min", // TO BE REVIEWED
-                    threejs : "{FENIX_CDN}/js/threejs/4.4/three.min",
-                    loglevel : "{FENIX_CDN}/js/loglevel/1.4.0/loglevel",
+                    threejs: "{FENIX_CDN}/js/threejs/4.4/three.min",
+                    loglevel: "{FENIX_CDN}/js/loglevel/1.4.0/loglevel",
 
                     'highcharts': '{FENIX_CDN}/js/highcharts/4.1.6/js/highcharts',
 
@@ -121,27 +147,9 @@ require([
                     config: "../../config",
                     json: "../../json",
 
-                    'webix' : 'http://fenixrepo.fao.org/cdn/js/webix/2.2.1/js/webix',
+                    'webix': 'http://fenixrepo.fao.org/cdn/js/webix/2.2.1/js/webix',
 
-                    'fx-common/config/auth_users' : '../../config/auth_users.json',
-
-                    "fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/fx-catalog/blankFilter',
-                    "fx-cat-br/config/fx-catalog-collapsible-menu-config": '../../config/submodules/fx-catalog/fx-catalog-collapsible-menu-config',
-                    "fx-cat-br/config/fx-catalog-filter-mapping": '../../config/submodules/fx-catalog/fx-catalog-filter-mapping',
-                    "fx-cat-br/config/fx-catalog-modular-form-config": '../../config/submodules/fx-catalog/fx-catalog-modular-form-config',
-
-                    'fx-ana/config/services' : '../../config/submodules/fx-analysis/Config',
-
-                    'fx-filter/config/config' : '../../config/submodules/fx-filter/Config',
-
-                    'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi',
-
-                    'fx-report/config/md-export/config' : '../../config/submodules/fx-report/md-export/config',
-
-                    'fx-ds/config/config' : '../../config/submodules/fx-dashboard/config',
-
-                    // METADATA VIEWER
-                    'fx-md-v/config/config': '../../config/submodules/fx-md-viewer/config'
+                    'fx-common/config/auth_users': '../../config/auth_users.json',
 
 
                 },
@@ -155,7 +163,7 @@ require([
                     detector: {
                         deps: ["threejs"]
                     },
-                    projector:{
+                    projector: {
                         deps: ["threejs"]
                     },
                     copyShader: {
@@ -176,8 +184,7 @@ require([
                     shaderPass: {
                         deps: ["threejs"]
                     },
-
-                    "highcharts": {
+                    highcharts: {
                         "exports": "Highcharts",
                         "deps": ["jquery"]
                     },
@@ -187,46 +194,36 @@ require([
                     underscore: {
                         exports: '_'
                     },
+                    underscoreString: ['underscore'],
                     backbone: {
                         deps: ['underscore', 'jquery'],
                         exports: 'Backbone'
                     },
                     handlebars: {
                         exports: 'Handlebars'
+                    },
+                    threejs: {
+                        deps: ['underscore', 'jquery'],
                     }
                 },
-                waitSeconds : 15
+                waitSeconds: 15
                 // For easier development, disable browser caching
                 // Of course, this should be removed in a production environment
                 //, urlArgs: 'bust=' +  (new Date()).getTime()
             }
         });
 
-    /*
-    var paths = requirejs.s.contexts._.config.paths,
-        keys = Object.keys(paths),
-        rs = "";
-
-    for (var i = 0 ; i < keys.length ; i++) {
-        if (paths[keys[i]].indexOf("http://fenixrepo") === 0) {
-            rs = rs +(paths[keys[i]]) + '.js' + '\n';
-        }
-    }
-
-    console.log(rs)
-
-    */
-
-
     // Bootstrap the application
     require([
+        'loglevel',
         'application',
         'routes',
-        'config/Config',
-        'domReady!',
-        'highcharts',
-        'highcharts-export'
-    ], function (Application, routes, C) {
+        'config/config',
+        'domReady!'
+    ], function (log, Application, routes, C) {
+
+        //trace, debug, info, warn, error, silent
+        log.setLevel('trace');
 
         var app = new Application({
             routes: routes,
@@ -235,5 +232,6 @@ require([
             pushState: C.CHAPLINJS_PUSH_STATE,
             scrollTo: C.CHAPLINJS_SCROLL_TO
         });
+
     });
 });

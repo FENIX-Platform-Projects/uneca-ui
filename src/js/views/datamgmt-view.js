@@ -3,7 +3,7 @@ define([
     'views/base/view',
     'text!templates/datamgmt/datamgmt.hbs',
     'i18n!nls/datamgmt',
-    'config/Events',
+    'config/events',
     'amplify'
 ], function (View, template, i18nLabels, E) {
 

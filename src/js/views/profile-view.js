@@ -1,66 +1,61 @@
 /*global define, amplify*/
 define([
     'jquery',
+    'underscore',
     'views/base/view',
-    'fx-ds/start',
+    'config/events',
+    'config/config',
+    'config/profile/config',
+    'fx-dashboard/start',
     'fx-filter/start',
+    'fx-common/utils',
+    'lib/utils',
+    'i18n!nls/labels',
     'text!templates/profile/profile.hbs',
-    'text!templates/profile/list.hbs',
     'text!templates/profile/dashboard.hbs',
     'text!templates/profile/bases.hbs',
-    'i18n!nls/profile',
-    'config/Events',
-    'text!config/profile/lateral_menu.json',
-    'text!config/profile/resume_countries.json',
-    'config/profile/Config',
+    'config/profile/lateral_menu',
+    'config/profile/countries_summary',
     'handlebars',
-    'fx-filter/Fx-filter-configuration-creator',
     'amplify',
     'bootstrap-list-filter',
-    'jstree',
-    'fenix-ui-map'
-], function ($, View, Dashboard, Filter, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars, FilterConfCreator) {
+    'jstree'
+], function ($, _, View, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, CountrySummary, Handlebars) {
 
     'use strict';
 
     var s = {
         CONTENT: "#profile-content",
         SEARCH_FILTER_INPUT: "#searchinput",
-        COUNTRY_LIST: '#list-countries',
-        SEARCH_ITEM_CHILD: 'a',
-        SEARCH_ITEM_EL: '.country-item',
         DASHBOARD_CONTENT: "#dashboard-content",
         LATERAL_MENU: '#lateral-menu',
         MAP_CONTAINER: "#country-map-container",
-        FILTER_CONTAINER : 'filter-container',
-        FILTER_SUBMIT : '#filter-submit',
-        FILTER_BLOCK : "#filter-block"
-
+        FILTER_CONTAINER: '#filter-container',
+        FILTER_SUBMIT: '#filter-submit',
+        FILTER_BLOCK: "[data-role='filter-block']"
     };
 
     var ProfileView = View.extend({
 
         initialize: function (params) {
 
+            this.lang = Utils.getLang().toUpperCase();
+
             this.countries = params.countries;
 
             this.country = params.country;
 
             View.prototype.initialize.call(this, arguments);
-
         },
 
-        // Automatically render after initialize
         autoRender: true,
 
         className: 'profiles',
 
-        // Save the template string in a prototype property.
-        // This is overwritten with the compiled template function.
-        // In the end you might want to used precompiled templates.
         template: template,
 
         getTemplateData: function () {
+
             return i18nLabels;
         },
 
@@ -69,11 +64,11 @@ define([
             View.prototype.attach.call(this, arguments);
 
             //update State
-            amplify.publish(E.STATE_CHANGE, {menu: 'profile'});
+            amplify.publish(EVT.STATE_CHANGE, {menu: 'profile'});
 
             this._initVariables();
 
-            this.id ? this._printCountryDashboard() : this._printCountryList();
+            this._printCountryDashboard();
 
         },
 
@@ -81,46 +76,21 @@ define([
 
             this.$content = this.$el.find(s.CONTENT);
 
-        },
+            this.filterValues = {};
 
-        _printCountryList: function () {
+            this.dashboards = [];
 
-            var template = Handlebars.compile(listTemplate),
-                html = template({countries: this.countries});
-
-            this.$content.html(html);
-
-            //Init filter
-            $(s.COUNTRY_LIST).btsListFilter(s.SEARCH_FILTER_INPUT, {
-                itemEl: s.SEARCH_ITEM_EL,
-                itemChild: s.SEARCH_ITEM_CHILD
-            });
+            this.environment = C.ENVIRONMENT;
 
         },
 
-        _initDashboardVariables: function () {
-
-            this.$filterSubmit = this.$el.find(s.FILTER_SUBMIT);
-
-        },
-
-        _bindDashboardEventListeners: function () {
-
-            var self = this;
-
-            this.$filterSubmit.on('click', function (e, data) {
-
-                var values = self.filter.getValues();
-                                       //
-                self.dashboard.filter([values]);
-            });
-        },
+        //country dashboard
 
         _printCountryDashboard: function () {
 
-            var self = this;
-            var template = Handlebars.compile(dashboardTemplate),
-                html = template({country: this.country.title.EN});
+            var self = this,
+                template = Handlebars.compile(dashboardTemplate),
+                html = template({country: this.country.title[this.lang]});
 
             this.$content.html(html);
 
@@ -128,12 +98,10 @@ define([
 
             this._bindDashboardEventListeners();
 
-            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
+            //print lateral menu
+            this.$lateralMenu.jstree(Utils.setI18nToJsTreeConfig(LateralMenuConfig, i18nLabels))
 
-            //print jstree
-            this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
-
-                //Limit selection e select only leafs for indicators
+            //Limit selection e select only leafs for indicators
                 .on("select_node.jstree", _.bind(function (e, data) {
 
                     if (!data.instance.is_leaf(data.node)) {
@@ -143,71 +111,26 @@ define([
                         self.$lateralMenu.jstree(true).open_node(data.node, true);
 
                     } else {
-
                         self._onChangeDashboard(data.selected[0]);
-
                     }
 
                 }, this));
 
             this._printDashboard('resume');
 
-            this._printCountryMap();
-
-            //bind events from tree click to dashboard refresh
-            /*
-             * - destroy current dashboard
-             * - inject new template    this._printDashboardBase( jstree item selected );
-             * - render new dashboard
-             *
-             * */
-
         },
 
-        _printCountryMap: function () {
+        _bindDashboardEventListeners: function () {
 
-            try {
-                var m = new FM.Map(s.MAP_CONTAINER, {
-                    plugins: {
-                        disclaimerfao: false,
-                        geosearch: false,
-                        mouseposition: false,
-                        controlloading: false,
-                        zoomcontrol: 'bottomright'
-                    },
-                    guiController: {
-                        overlay: false,
-                        baselayer: true,
-                        wmsLoader: false
-                    }
-                });
-            }
-            catch (e) {
-                console.log(e)
-            }
+            this.$filterSubmit.on('click', _.bind(this._onFilterClick, this));
+        },
 
-            m.createMap();
+        _initDashboardVariables: function () {
 
-            m.addLayer(new FM.layer({
-                layers: 'fenix:gaul0_line_3857',
-                layertitle: 'Country Boundaries',
-                urlWMS: 'http://fenix.fao.org/geoserver',
-                opacity: '0.9',
-                zindex: '500',
-                lang: 'en'
-            }));
+            this.$filterSubmit = this.$el.find(s.FILTER_SUBMIT);
 
-            m.addLayer(new FM.layer({
-                layers: 'fenix:gaul0_faostat_3857',
-                layertitle: '',
-                urlWMS: 'http://fenix.fao.org/geoserver',
-                style: 'highlight_polygon',
-                cql_filter: "iso3 IN ('" + this.id + "')",
-                hideLayerInControllerList: true,
-                lang: 'en'
-            }));
+            this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
 
-            m.zoomTo("country", "iso3", this.id);
         },
 
         _printDashboard: function (item) {
@@ -217,25 +140,39 @@ define([
             var conf = this._getDashboardConfig(item),
                 filterConfig = this._getFilterConfig(item);
 
-            this._renderDashboard(conf);
+            if (conf && !_.isEmpty(conf) ) {
+                this._renderDashboard(conf);
+            }
 
-            if (filterConfig && Array.isArray(filterConfig)) {
-
+            if (!_.isEmpty(filterConfig)) {
                 this.$el.find(s.FILTER_BLOCK).show();
-
                 this._renderFilter(filterConfig);
-
             } else {
-
                 this.$el.find(s.FILTER_BLOCK).hide();
-
             }
 
         },
 
         _onChangeDashboard: function (item) {
 
-            this._printDashboard(item);
+            if (this.currentDashboard !== item) {
+                this.currentDashboard = item;
+                this._printDashboard(item);
+            }
+
+        },
+
+        _onFilterClick: function () {
+
+            var values = this.filter.getValues();
+
+            this.filterValues[this.currentDashboard] = values;
+
+            _.each( this.dashboards, _.bind(function (dashboard) {
+                if (dashboard && $.isFunction(dashboard.refresh)) {
+                    dashboard.refresh(values);
+                }
+            }, this));
 
         },
 
@@ -244,8 +181,9 @@ define([
             //Inject HTML
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
                 template = Handlebars.compile(source.prop('outerHTML')),
-                context = JSON.parse(resumeInfo),
-                html = template(context && context[this.id] ? context[this.id] : {});
+                context = Utils.setI18nToCountriesSummary(CountrySummary, i18nLabels),
+                model = context && context[this.id] ? context[this.id] : {},
+                html = template($.extend(true, {}, model, i18nLabels));
 
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
         },
@@ -253,123 +191,131 @@ define([
         _createCountryFilter: function () {
 
             //create country filter
-            return {
-                "name": "filter",
-                "parameters": {
-                    "rows": {
-                        "CountryCode": {
-                            "codes": [
-                                {
-                                    "uid": "ISO3",
-                                    "codes": [
-                                        this.id
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            };
+
+            return {"CountryCode": [this.id]};
         },
 
         _getDashboardConfig: function (id) {
 
-            //get from PC the 'id' conf
+            var conf = PC[id].dashboard,
+                filterValues = this.filterValues[this.currentDashboard] || {};
 
-            var base,
-                conf;
-
-            try {
-                base = PC[id].dashboard;
-
-            } catch (e) {
-                alert("Impossible to load dashboard configuration for [" + id + "]");
+            if (!Array.isArray(conf)){
+                conf = FxUtils.cleanArray([conf]);
             }
 
-            conf = $.extend(true, {}, base);
+            _.each(conf, _.bind(function ( c ) {
 
-            conf.filter = [this._createCountryFilter()];
+                if (!_.isEmpty(c)) {
+                    c.filter = $.extend(c.filter, this._createCountryFilter());
+
+                    var countrySel = c.filter.CountryCode;
+
+                    _.each(c.items, _.bind(function (item) {
+                        item.filter = $.extend(item.filter, filterValues.values);
+
+                        if(item.id === 'country-map-container') {
+                            item.config.fenix_ui_map.zoomToCountry = countrySel;
+                            item.config.fenix_ui_map.highlightCountry = countrySel;
+                        }
+                    }))
+                }
+
+            }, this));
 
             return conf;
+
         },
 
         _getFilterConfig: function (id) {
 
-            //get from PC the 'id' conf
+            var conf = $.extend(true, {}, PC[id].filter),
+                values = this.filterValues[id] || {},
+                result = FxUtils.mergeConfigurations(conf, values);
 
-            var conf;
+            _.each(result, _.bind(function (obj, key) {
 
-            try {
+                if (!obj.template) {
+                    obj.template = {};
+                }
+                //Add i18n label
+                obj.template.title = Utils.getI18nLabel( key, i18nLabels, "filter_");
 
-                conf = PC[id].filter;
+            }, this));
 
-            } catch (e) {
-                alert("Impossible to load filter configuration for [" + id + "]");
-            }
-
-            return conf;
+            return result;
         },
 
         _renderDashboard: function (config) {
 
-            if (this.dashboard && this.dashboard.destroy) {
-                this.dashboard.destroy();
-            }
+            this._disposeDashboards();
 
-            this.dashboard = new Dashboard({
-                layout: "injected"
-            });
+          _.each(config, _.bind(function (c) {
 
-            this.dashboard.render(config);
+                this.dashboards.push(new Dashboard($.extend(true, {
+                    environment: this.environment
+                }, c)));
 
+            }, this));
+
+        },
+
+        _disposeDashboards : function () {
+
+            _.each( this.dashboards, _.bind(function (dashboard) {
+                if (dashboard && $.isFunction(dashboard.dispose)) {
+                    dashboard.dispose();
+                }
+            }, this));
+
+            this.dashboards = [];
         },
 
         _renderFilter: function (config) {
 
-            var self = this;
+            if (this.filter && $.isFunction(this.filter.dispose)) {
+                this.filter.dispose();
+            }
 
-            this.filterConfCreator = new FilterConfCreator();
-
-            this.filterConfCreator.getConfiguration(config)
-                .then(function (c) {
-
-                    self.filter = new Filter();
-
-                    self.filter.init({
-                        container: s.FILTER_CONTAINER,
-                        layout: 'fluidGrid'
-                    });
-
-                    var adapterMap = {};
-
-                    self.filter.add(c, adapterMap);
-
-                });
+            this.filter = new Filter({
+                el: s.FILTER_CONTAINER,
+                environment : this.environment,
+                items: config,
+                common: {
+                    template: {
+                        hideSwitch: true,
+                        hideRemoveButton: true
+                    }
+                }
+            });
 
         },
 
-        /* Disposition process */
+        //Disposition process
 
-/*
         dispose: function () {
 
-            this.$lateralMenu.jstree("destroy");
+            if (this.$lateralMenu && this.$lateralMenu.length > 0) {
+                this.$lateralMenu.jstree(true).destroy();
+            }
+
+            this._disposeDashboards();
 
             this._unbindDashboardEventListeners();
 
-            View.prototype.dispose.call(this, arguments);
+            this.currentDashboard = {};
+            this.filterValues = {};
 
+            View.prototype.dispose.call(this, arguments);
         },
 
         _unbindDashboardEventListeners: function () {
 
-            this.$filterSubmit.off();
-
-            console.log(this.$filterSubmit.length)
+            if (this.$filterSubmit && this.$filterSubmit.length > 0) {
+                this.$filterSubmit.off();
+            }
 
         }
-*/
-
 
     });
 

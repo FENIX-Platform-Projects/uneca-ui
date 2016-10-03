@@ -26,8 +26,9 @@ $fx-text-smalltitle-bold: normal normal 700 10px/normal 'Roboto';
 
 // Fenix Colors
 $fenix-standard-blue: rgba(53, 166, 220, 1);
-$fx-cool-blue: #005493;
+$fx-cool-blue: #337ab7;
 $fx-cool-alt: #51b5ff;
+
 
 $fx-secondary-color: desaturate( $fx-cool-blue, 50% );
 
@@ -81,3 +82,5 @@ $custom-color8: #ec6e00; // Fao Orange
 $fx-main-color-light: #ced8df;  // Ideal for selection
 $fx-main-color-lighter: #ced8df ;// Ideal for hovers
 $fx-main-color-darker: #ced8df; // Ideal for hovers
+
+$summary-bg:#efefef;

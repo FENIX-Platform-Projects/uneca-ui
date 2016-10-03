@@ -16,19 +16,16 @@
       },
       "target": "#profile",
       "label": {
-        "EN": "Country Profile"
+        "EN": "Browse by Country"
       }
     },
     {
       "attrs": {
-        "id": "datamgmt"
+        "id": "domain"
       },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "datamgmt.html",
+      "target": "#domains",
       "label": {
-        "EN": "Data Management"
+        "EN": "Browse by Domain"
       }
     },
     {
@@ -42,29 +39,14 @@
     },
     {
       "attrs": {
-        "id": "domains"
+        "id": "datamgmt"
       },
-      "target": "#domains",
-      "label": {
-        "EN": "Browse by Domain"
-      }
-    },
-    {
-      "attrs": {
-        "id": "methods"
+      "a_attrs": {
+        "rel": "external"
       },
-      "target": "#methods",
+      "target": "datamgmt.html",
       "label": {
-        "EN": "Methods and Standards"
-      }
-    },
-    {
-      "attrs": {
-        "id": "modules"
-      },
-      "target": "#modules",
-      "label": {
-        "EN": "Thematic Modules"
+        "EN": "Data Management"
       }
     }
   ],

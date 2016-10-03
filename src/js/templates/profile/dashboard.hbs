@@ -1,19 +1,8 @@
 <div class="row">
 
-    <div class="col-md-3">
-
-
-
-
-
-    </div>
-
-    <div class="col-md-9">
+    <div class="col-offset-md-3 col-md-9">
         <h1 class="country-name">{{country}}</h1>
-        <a class="btn btn-default pull-right back-profile" href="profile" role="button">back</a>
-
     </div>
-
 
 </div>
 
@@ -25,25 +14,28 @@
 
             <div id="lateral-menu"></div>
 
-            <div class="lateral-menu-container"></div>
-
         </div>
 
         <div class="col-md-9 col-md-height col-top">
-            <div id="filter-block">
+
+            <div data-role='filter-block' class="domain-filter-container">
+
+                <h2 class="filter-title">Filter Selection</h2>
 
                 <div class="row">
-                    <div class="col-xs-10">
+
+                    <div class="col-xs-10 domain-filter-holder">
                         <div id="filter-container"></div>
                     </div>
 
                     <div class="col-xs-2">
-                        <button id="filter-submit" class="btn btn-default pull-right filter-go-btns">Filter</button>
+                        <button id="filter-submit" class="btn btn-primary btn-block pull-right filter-go-btns">Filter</button>
                     </div>
                 </div>
 
-
             </div>
+
+
 
             <div id="dashboard-content"></div>
 

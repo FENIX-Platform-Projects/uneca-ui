@@ -3,49 +3,57 @@
     <section data-dashboard="resume">
 
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-md-6">
 
-                <div id="country-map-container" style="	height: 400px; width: 100%;"></div>
+                <span class="label label-default dash-title">{{ summary_geo_info }}</span>
+
+                <div data-item="country-map-container" id="country-map-container"
+                     style="	height: 400px; width: 100%;"></div>
 
             </div>
-        </div>
+            <div class="col-md-6">
 
-        <div class="row">
-            <div class="col-xs-12">
-
-                <h1 class="info-title">MAIN INFORMATION</h1>
+                <span class="label label-default dash-title">{{ summary_info }}</span>
 
 
-                <ul class="main-information list-inline list-unstyled">
+                <ul class="main-information list-unstyled">
 
                     <li>
-                        <h4 class="label">
-                            <!--<span class="fx-widget-icons icojam_ancient_building"></span>-->
-                            Capital City
+                        <span class="dash-info-ico icojam_government"></span>
+                        <h4 class="dash-info-title">
+
+
+                            {{capital_city_header}}
                         </h4>
 
                         <p>{{ capital_city }}</p>
                     </li>
 
                     <li>
-                        <h4 class="label">
-                            GAUL code
+
+                        <span class="dash-info-ico icojam_html_code"></span>
+                        <h4 class="dash-info-title">
+                            {{GAUL_code_text}}
                         </h4>
 
                         <p>{{ gaul_code }}</p>
                     </li>
 
                     <li>
-                        <h4 class="label">
-                            Area in sq. km
+
+                        <span class="dash-info-ico icojam_wafer_3"></span>
+                        <h4 class="dash-info-title">
+                            {{area_sq}}
                         </h4>
 
                         <p>{{ area }}</p>
                     </li>
 
                     <li>
-                        <h4 class="label">
-                            Currency
+                        <span class="dash-info-ico icojam_moneys_3"></span>
+
+                        <h4 class="dash-info-title">
+                            {{currency_label}}
                         </h4>
 
                         <p>{{ currency }}</p>
@@ -56,6 +64,7 @@
 
 
             </div>
+
         </div>
 
     </section>
@@ -64,58 +73,91 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Mid-year population</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="population-1"></div>
+                    <h2>{{population1_title}}</h2>
+
+                    <div data-item="population-1"></div>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Average growth rate</h1>
 
-                <div id="population-2"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{population2_title}}</h2>
+
+                    <div data-item="population-2"></div>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Mid-year population by age group</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="population-3"></div>
+                    <h2>{{population3_title}}</h2>
+
+                    <div data-item="population-3"></div>
+                </div>
             </div>
         </div>
-
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Life expectancy</h1>
 
-                <div id="population-5"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{population4_title}}</h2>
+
+                    <div data-item="population-4"></div>
+                </div>
             </div>
         </div>
-
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Population pyramid</h1>
 
-                <div id="population-6"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{population5_title}}</h2>
 
-<!--
-                <img src="img/profile/eth/PopulationPyramid.jpg" class="img-responsive" alt="Responsive image">
--->
+                    <div data-item="population-5"></div>
+                </div>
             </div>
         </div>
-
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Urbanization rate</h1>
 
-                <div id="population-7"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{population6_title}}</h2>
+
+                    <div data-item="population-6"></div>
+                </div>
             </div>
         </div>
+
+
+        <!--
+
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>Population pyramid</h1>
+
+                        <div id="population-6"></div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>Urbanization rate</h1>
+
+                        <div id="population-7"></div>
+                    </div>
+                </div>-->
 
 
     </section>
@@ -124,25 +166,36 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Enrolment primary school</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="education-1"></div>
+                    <h2>{{edu1_title}}</h2>
+
+                    <div data-item="edu_1"></div>
+                </div>
             </div>
         </div>
 
+
         <div class="row">
             <div class="col-xs-12">
-                <h1>Enrolment primary, secondary, tertiary school</h1>
 
-                <div id="education-2"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{edu2_title}}</h2>
+
+                    <div data-item="edu_2"></div>
+                </div>
             </div>
         </div>
 
+
         <div class="row">
             <div class="col-xs-12">
-                <h1>Literacy rate by gender</h1>
 
-                <div id="education-3"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{edu3_title}}</h2>
+
+                    <div data-item="edu_3"></div>
+                </div>
             </div>
         </div>
 
@@ -151,53 +204,60 @@
 
     <section data-dashboard="health">
 
-
         <div class="row">
             <div class="col-xs-12">
-                <h1>Percentage of children provided the vaccines</h1>
 
-                <div id="health-1"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{health1_title}}</h2>
+
+                    <div data-item="health-1"></div>
+                </div>
             </div>
         </div>
 
-
         <div class="row">
             <div class="col-xs-12">
-                <h1>Prevalence of undernourishment</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="health-2"></div>
-            </div>
+                    <h2>{{health2_title}}</h2>
 
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Percentage of underweight children (under-five) </h1>
-
-                <div id="health-3"></div>
+                    <div data-item="health-2"></div>
+                </div>
             </div>
         </div>
 
-
         <div class="row">
             <div class="col-xs-12">
-                <h1>Infant mortality rate</h1>
 
-                <div id="health-4"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{health3_title}}</h2>
+
+                    <div data-item="health-3"></div>
+                </div>
             </div>
         </div>
 
-
         <div class="row">
             <div class="col-xs-12">
-                <h1>Medical staff and infrastructure</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="health-5"></div>
+                    <h2>{{health4_title}}</h2>
+
+                    <div data-item="health-4"></div>
+                </div>
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="z-depth-1 hoverable dash-box">
 
+                    <h2>{{health5_title}}</h2>
+
+                    <div data-item="health-5"></div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
@@ -206,18 +266,26 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Economically active population</h1>
 
-                <div id="labour-1"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{labour1_title}}</h1>
+
+                    <div data-item="labour-1"></div>
+
+                </div>
             </div>
         </div>
 
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Economically active population by sector</h1>
 
-                <div id="labour-2"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{labour2_title}}</h1>
+
+                    <div data-item="labour-2"></div>
+
+                </div>
             </div>
 
         </div>
@@ -225,9 +293,48 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Economically active population by gender</h1>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{labour3_title}}</h1>
 
-                <div id="labour-3"></div>
+                    <div data-item="labour-3"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{labour4_title}}</h2>
+
+                    <div data-item="labour-4"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{labour5_title}}</h2>
+
+                    <div data-item="labour-5"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="z-depth-1 hoverable dash-box">
+
+                    <h2>{{labour6_title}}</h2>
+
+                    <div data-item="labour-6"></div>
+
+                </div>
+
             </div>
         </div>
 
@@ -249,47 +356,68 @@
 
     <section data-dashboard="monetary_statistics">
 
+
         <div class="row">
             <div class="col-xs-12">
-                <h1>Domestic credit</h1>
 
-                <div id="monetary-2"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{monetary1_title}}</h1>
+
+                    <div data-item="monetary-1"></div>
+
+                </div>
             </div>
         </div>
 
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Net foreign assets</h1>
 
-                <div id="monetary-3"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{monetary2_title}}</h1>
+
+                    <div data-item="monetary-2"></div>
+
+                </div>
             </div>
         </div>
 
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>International reserves</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="monetary-4"></div>
+                    <h1>{{monetary3_title}}</h1>
+
+                    <div data-item="monetary-3"></div>
+
+                </div>
             </div>
         </div>
 
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Money supply (M1)</h1>
 
-                <div id="monetary-5"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{monetary4_title}}</h1>
+
+                    <div data-item="monetary-4"></div>
+
+                </div>
             </div>
         </div>
 
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Quasi-money</h1>
 
-                <div id="monetary-6"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{monetary5_title}}</h1>
+
+                    <div data-item="monetary-5"></div>
+
+                </div>
             </div>
         </div>
 
@@ -299,41 +427,61 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Components of total revenues and grants </h1>
 
-                <div id="finance-2"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{finance1_title}} </h1>
+
+                    <div data-item="finance-1"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Total expenditures and net lending</h1>
 
-                <div id="finance-3"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{finance2_title}}</h1>
+
+                    <div data-item="finance-2"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Total expenditures and net lending (current and capital expenditure)</h1>
 
-                <div id="finance-4"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{finance3_title}}</h1>
+
+                    <div data-item="finance-3"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Current expenditure</h1>
 
-                <div id="finance-5"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{finance4_title}}</h1>
+
+                    <div data-item="finance-4"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Fiscal balance</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="finance-6"></div>
+                    <h1>{{finance5_title}}</h1>
+
+                    <div data-item="finance-5"></div>
+
+                </div>
             </div>
         </div>
 
@@ -342,27 +490,36 @@
     <section data-dashboard="balance_of_payments">
 
         <div class="row">
-
             <div class="col-xs-12">
-                <h1>Current account balance</h1>
 
-                <div id="balanceOfPayments-1"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{BOP1_title}}</h2>
+
+                    <div data-item="BOP-1"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="z-depth-1 hoverable dash-box">
+
+                    <h2>{{BOP2_title}}</h2>
+
+                    <div data-item="BOP-2"></div>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Capital and financial account</h1>
 
-                <div id="balanceOfPayments-3"></div>
-            </div>
-        </div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h2>{{BOP3_title}}</h2>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Trade balance</h1>
-
-                <div id="balanceOfPayments-4"></div>
+                    <div data-item="BOP-3"></div>
+                </div>
             </div>
         </div>
 
@@ -373,32 +530,243 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Production of electricity</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="labour-1"></div>
+                    <h1>{{energy1_title}}</h1>
+
+                    <div data-item="energy-1"></div>
+
+                </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="z-depth-1 hoverable dash-box">
+
+                    <h1>{{energy2_title}}</h1>
+
+                    <div data-item="energy-2"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="z-depth-1 hoverable dash-box">
+
+                    <h1>{{energy3_title}}</h1>
+
+                    <div data-item="energy-3"></div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section data-dashboard="poverty">
+        <div class="row">
+            <div class="col-xs-6">
+
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{poverty1_title}}</h1>
+
+                    <div data-item="poverty-1"></div>
+
+                </div>
+            </div>
+            <div class="col-xs-6">
+
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{poverty2_title}}</h1>
+
+                    <div data-item="poverty-2"></div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{poverty3_title}}</h1>
+
+                    <div data-item="poverty-3"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{poverty4_title}}</h1>
+
+                    <div data-item="poverty-4"></div>
+                </div>
+            </div>
+        </div>
+
 
     </section>
 
 
     <section data-dashboard="gdp">
 
+
         <div class="row">
             <div class="col-xs-12">
-                <h1>GDP growth (annual %)</h1>
 
-                <div id="gdp-1"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{gdp1_title}}</h1>
+
+                    <div data-item="gdp-1"></div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{gdp2_title}}</h1>
+
+                    <div data-item="gdp-2"></div>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>GDP per capita</h1>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{gdp3_title}}</h1>
 
-                <div id="gdp-2"></div>
+                    <div data-item="gdp-3"></div>
+                </div>
             </div>
         </div>
+
+    </section>
+
+
+    <section data-dashboard="expenditure_gdp">
+
+
+        <div class="row">
+            <div class="column">
+                <div class="col-xs-6">
+                    <div class="z-depth-1 hoverable dash-box">
+                        <h1>{{expenditure1_title}}</h1>
+                        <div data-item="expenditure-1"></div>
+
+                        <p>{{current_title}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="col-xs-6">
+                    <div class="z-depth-1 hoverable dash-box">
+                        <h1>{{expenditure1_title}}</h1>
+                        <div data-item="expenditure-5"></div>
+                        <p>{{constant_title}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="column">
+                <div class="col-xs-6">
+
+                    <div class="z-depth-1 hoverable dash-box">
+                        <h1>{{expenditure2_title}}</h1>
+                        <div data-item="expenditure-2"></div>
+
+                        <p>{{current_title}}</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="col-xs-6">
+                    <div class="z-depth-1 hoverable dash-box">
+                        <h1>{{expenditure2_title}}</h1>
+                        <div data-item="expenditure-6"></div>
+                        <p>{{constant_title}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+
+
+            <div class="column">
+                <div class="col-xs-6">
+
+                    <div class="z-depth-1 hoverable dash-box">
+                        <h1>{{expenditure3_title}}</h1>
+                        <div data-item="expenditure-3"></div>
+                        <p>{{current_title}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="col-xs-6">
+                    <div class="z-depth-1 hoverable dash-box">
+                        <h1>{{expenditure3_title}}</h1>
+                        <div data-item="expenditure-7"></div>
+                        <p>{{constant_title}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="column">
+                <div class="col-xs-6">
+                    <div class="z-depth-1 hoverable dash-box">
+                        <h1>{{expenditure4_title}}</h1>
+                        <div data-item="expenditure-4"></div>
+                        <p>{{current_title}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="col-xs-6">
+                    <div class="z-depth-1 hoverable dash-box">
+                        <h1>{{expenditure4_title}}</h1>
+                        <div data-item="expenditure-8"></div>
+                        <p>{{constant_title}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </section>
 
@@ -412,48 +780,38 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Net total official development assistance</h1>
 
-                <div id="financial_flows-1"></div>
-            </div>
-        </div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{financial_flows1_title}}</h1>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Net foreign direct investment inflows</h1>
+                    <div data-item="financial_flows-1"></div>
 
-                <div id="financial_flows-2"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Distribution of net foreign direct investment inflows by country</h1>
-
-                <div class="obj-box">
-                    <div id="financial_flows-3"></div>
-                    <p>Note: Last year available (2012)</p>
                 </div>
-
-
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Net foreign direct investment inflows by year</h1>
 
-                <div id="financial_flows-4"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{financial_flows2_title}}</h1>
+
+                    <div data-item="financial_flows-2"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Distribution of origin of FDI Inflows by country</h1>
 
-                <div class="obj-box">
-                    <div id="financial_flows-5"></div>
-                    <p>Note: Last year available (2012)</p>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{financial_flows3_title}}</h1>
+
+                    <div class="obj-box">
+                        <div data-item="financial_flows-3" style="height:400px"></div>
+                        <p>{{financial_flows_note1}}</p>
+                    </div>
                 </div>
 
             </div>
@@ -461,11 +819,35 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Origin of FDI Inflows by year</h1>
 
-                <div id="financial_flows-6"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{financial_flows4_title}}</h1>
+
+                    <div data-item="financial_flows-4" style="height:400px"></div>
+
+                </div>
             </div>
         </div>
+
+        <!--<div class="row">-->
+        <!--<div class="col-xs-12">-->
+        <!--<h1>{{financial_flows5_title}}</h1>-->
+
+        <!--<div class="obj-box">-->
+        <!--<div data-item="financial_flows-5"></div>-->
+        <!--<p>{{financial_flows_note2}}</p>-->
+        <!--</div>-->
+
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="row">-->
+        <!--<div class="col-xs-12">-->
+        <!--<h1>{{financial_flows6_title}}</h1>-->
+
+        <!--<div data-item="financial_flows-6"></div>-->
+        <!--</div>-->
+        <!--</div>-->
 
     </section>
 
@@ -473,25 +855,36 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Total government domestic debt</h1>
 
-                <div id="debt-1"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{debt1_title}}</h1>
+
+                    <div data-item="debt-1"></div>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Total external debt</h1>
 
-                <div id="debt-2"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{debt2_title}}</h1>
+
+                    <div data-item="debt-2"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Total external debt - Public/Private </h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="debt-3"></div>
+                    <h1>{{debt3_title}}</h1>
+
+                    <div data-item="debt-3"></div>
+
+                </div>
             </div>
         </div>
 
@@ -502,55 +895,77 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Roads, total network</h1>
 
-                <div id="infrastructure-1"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>Roads, total network</h1>
+
+                    <div id="infrastructure-1"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Paved roads, percentage of total network</h1>
 
-                <div id="infrastructure-2"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>Paved roads, percentage of total network</h1>
+
+                    <div id="infrastructure-2"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Mobile-cellular and fixed-telephone subscriptions</h1>
 
-                <div id="infrastructure-3"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>Mobile-cellular and fixed-telephone subscriptions</h1>
+
+                    <div id="infrastructure-3"></div>
+                </div>
             </div>
         </div>
 
     </section>
 
     <section data-dashboard="inflation">
-
         <div class="row">
             <div class="col-xs-12">
-                <h1>Inflation, consumer prices (annual %) </h1>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{inflation1_title}}</h1>
 
-                <div id="inflation-1"></div>
+                    <div data-item="inflation-1"></div>
+                </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Inflation, GDP deflator (annual%)</h1>
-
-                <div id="inflation-2"></div>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Inflation by kind of commodity</h1>
+                <div class="z-depth-1 hoverable dash-box">
 
-                <div id="inflation-3"></div>
+                    <h1>{{inflation2_title}}</h1>
+
+                    <div data-item="inflation-2"></div>
+                </div>
             </div>
         </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{inflation3_title}}</h1>
+
+                    <div data-item="inflation-3"></div>
+
+                </div>
+            </div>
+        </div>
+
 
     </section>
 
@@ -558,33 +973,47 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Total contribution to GDP and employment</h1>
 
-                <div id="tourism-1"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{tourism1_title}}</h1>
+
+                    <div id="tourism-1"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>International tourism, number of arrivals</h1>
 
-                <div id="tourism-2"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{tourism2_title}}</h1>
+
+                    <div id="tourism-2"></div>
+
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>International tourism, receipts</h1>
 
-                <div id="tourism-3"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{tourism3_title}}</h1>
+
+                    <div id="tourism-3"></div>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Rooms in hotel and similar establishments </h1>
 
-                <div id="tourism-4"></div>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>{{tourism4_title}}</h1>
+
+                    <div id="tourism-4"></div>
+                </div>
             </div>
         </div>
 
@@ -594,9 +1023,11 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Agriculture production</h1>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>Agriculture production</h1>
 
-                <div id="agriculture_production-1"></div>
+                    <div id="agriculture_production-1"></div>
+                </div>
             </div>
         </div>
 
@@ -607,9 +1038,11 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h1>Mining production</h1>
+                <div class="z-depth-1 hoverable dash-box">
+                    <h1>Mining production</h1>
 
-                <div id="mining_production-1"></div>
+                    <div id="mining_production-1"></div>
+                </div>
             </div>
         </div>
 

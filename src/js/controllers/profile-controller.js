@@ -3,18 +3,16 @@ define([
     'jquery',
     'backbone',
     'underscore',
-    'chaplin',
-    'config/Config',
     'controllers/base/controller',
     'views/profile-view',
-    'text!json/methods/models.json',
-    'q',
+    'fx-common/bridge',
+    'config/config',
     'amplify'
-], function ($, Backbone, _, Chaplin, C, Controller, View, MethodsCollection, Q) {
+], function ($, Backbone, _, Controller, View, Bridge, C) {
 
     'use strict';
 
-    var ProfileController = Controller.extend({
+    var CountryController = Controller.extend({
 
         beforeAction: function (params) {
 
@@ -22,7 +20,6 @@ define([
 
             Controller.prototype.beforeAction.call(this, arguments);
 
-            //TODO cache codelist
             return this.performAccessControlChecks(params).then(_.bind(this.onSuccess, this), _.bind(this.onError, this));
         },
 
@@ -33,7 +30,7 @@ define([
 
         onSuccess: function (countries) {
 
-            this.countries = countries.sort(function(a, b) {
+            this.countries = countries.sort(function (a, b) {
                 var textA = a.title.EN.toUpperCase();
                 var textB = b.title.EN.toUpperCase();
                 return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -49,9 +46,14 @@ define([
 
         performAccessControlChecks: function (params) {
 
-            return new Q($.ajax({
-                url: C.COUNTRIES_CODE_LIST
-            }));
+            return new Bridge({
+                environment: C.ENVIRONMENT
+            }).getCodeList({
+                body: {
+                    uid: "UNECA_ISO3",
+                    level: 2
+                }
+            });
         },
 
         show: function (params) {
@@ -74,5 +76,5 @@ define([
 
     });
 
-    return ProfileController;
+    return CountryController;
 });
