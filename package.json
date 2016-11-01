@@ -1,0 +1,59 @@
+{
+  "name": "uneca-ui",
+  "version": "1.0.0",
+  "description": "Repo for uneca site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "echo \"Error: please specify a valid section to develop [e.g. npm run dev:browse_by_country]\" && exit 1",
+    "dev:browse_by_country": "SECTIONS=browse_by_country NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "dev:browse_by_domain": "SECTIONS=browse_by_domain NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "dev:analysis_download": "SECTIONS=analysis_download NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "w-dev:browse_by_country" : "SET NODE_ENV=production&&SET SECTION=browse_by_country&&webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "build": "SECTIONS=browse_by_country,browse_by_domain,analysis_download NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FENIX-Platform-Projects/uneca-ui.git"
+  },
+  "author": "Barbara Cintoli <barbara.cintoli@fao.org> (http://fenix.fao.org/) and Tanzila Mohammad <tanzila.mohammad@fao.org> (http://fenix.fao.org/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FENIX-Platform-Projects/uneca-ui/issues"
+  },
+  "dependencies": {
+    "bootstrap-table": "^1.11.0",
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "bootstrap-loader": "^2.0.0-beta.11",
+    "bootstrap-sass": "^3.3.7",
+    "chai": "^3.5.0",
+    "clean-webpack-plugin": "^0.1.10",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "handlebars": "^4.0.5",
+    "handlebars-loader": "^1.4.0",
+    "html-webpack-plugin": "^2.22.0",
+    "image-webpack-loader": "^2.0.0",
+    "imports-loader": "^0.6.5",
+    "jshint": "^2.9.3",
+    "jshint-loader": "^0.8.3",
+    "json-loader": "^0.5.4",
+    "karma": "^1.2.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.1.1",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.0.2",
+    "node-sass": "^3.10.0",
+    "resolve-url-loader": "^1.6.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.15.1"
+  }
+}
