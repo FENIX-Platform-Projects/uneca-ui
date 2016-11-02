@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "echo \"Error: please specify a valid section to develop [e.g. npm run dev:browse_by_country]\" && exit 1",
-    "dev:browse_by_country": "SECTIONS=browse_by_country NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "dev:browse_by_country_entryPoint": "SECTIONS=browse_by_country_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "dev:browse_by_domain": "SECTIONS=browse_by_domain NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "dev:analysis_download": "SECTIONS=analysis_download NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "w-dev:browse_by_country" : "SET NODE_ENV=production&&SET SECTION=browse_by_country&&webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "build": "SECTIONS=browse_by_country,browse_by_domain,analysis_download NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
+    "w-dev:browse_by_country": "SET NODE_ENV=production&&SET SECTION=browse_by_country&&webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "build": "SECTIONS=browse_by_country_entryPoint,browse_by_domain,analysis_download NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,14 @@
     "url": "https://github.com/FENIX-Platform-Projects/uneca-ui/issues"
   },
   "dependencies": {
+    "amplify-pubsub": "0.0.1",
+    "bootstrap-list-filter": "^0.3.2",
     "bootstrap-table": "^1.11.0",
-    "jquery": "^3.1.0"
+    "extract-text-webpack-plugin": "^1.0.1",
+    "fenix-ui-bridge": "^1.0.0-beta.6",
+    "jquery": "^3.1.0",
+    "jstree": "^3.3.3",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "bootstrap-loader": "^2.0.0-beta.11",

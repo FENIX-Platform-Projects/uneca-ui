@@ -27,6 +27,11 @@ module.exports = sections.map(function (section) {
             root: Path.resolve(__dirname),
             alias: {
                 'bootstrap-table': Path.join(__dirname, 'node_modules/bootstrap-table/dist/bootstrap-table.min.js'),
+                'nls': Path.join(__dirname, 'src/nls'),
+                'config': Path.join(__dirname, 'src/config'),
+                'html': Path.join(__dirname, 'src/html'),
+                'js': Path.join(__dirname, 'src/js'),
+                'lib': Path.join(__dirname, 'src/lib'),
                 handlebars: Path.join(__dirname, 'node_modules/handlebars/dist/handlebars.js'),
                 jquery: Path.join(__dirname, 'node_modules/jquery/dist/jquery')
             }
@@ -38,7 +43,12 @@ module.exports = sections.map(function (section) {
                     {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
                     {test: /\.css$/, loader: "style-loader!css-loader"}
                 ),
-                {test: /\.hbs$/, loader: "handlebars-loader"},
+                { test: /\.hbs$/,
+                    loader: 'handlebars-loader',
+                    query: {
+                        helperDirs: [
+                            Path.join(__dirname, 'src/html/helpers')
+                        ]}},
                 {test: /\.json/, loader: "json-loader"},
                 {test: /\.png$/, loader: "url-loader?limit=100000"},
                 {test: /\.jpg$/, loader: "file-loader?name=[name].[ext]&limit=100000"},
