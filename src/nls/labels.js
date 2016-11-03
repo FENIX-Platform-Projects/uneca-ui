@@ -1,5 +1,5 @@
 define([
-        "./en/labels"
+        "./EN/labels"
     ],
     function (i18nEn) {
 
@@ -7,7 +7,7 @@ define([
 
         return {
 
-            en: i18nEn
+            EN: i18nEn
 
         }
 });

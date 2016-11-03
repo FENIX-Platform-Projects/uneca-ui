@@ -15,9 +15,6 @@ define([
         this._importThirdPartyCss();
         //s.url = window.location.href;
         console.log(s.url)
-        console.log("///////////////////////////////////////////////////////////////")
-        console.log($("html").attr("lang"))
-
         if((s.lang!=null)&&(typeof s.lang!="undefined")){
             s.lang = $("html").attr("lang");
             s.lang = s.lang.toUpperCase();
@@ -34,8 +31,7 @@ define([
 
     Analysis_Download.prototype._analysis_downloadInit = function (COUNTRY_CODE) {
 
-        console.log(COUNTRY_CODE)
-        var config = AnalysisConfig[COUNTRY_CODE];
+       // var config = AnalysisConfig[COUNTRY_CODE];
 
         console.log(config)
         // var analysis = new FenixAnalysis($.extend(true, {
@@ -45,12 +41,12 @@ define([
         //     lang : s.lang
         // }, config));
 
-        console.log($.extend(true, {
-            el : s.CONTAINER,
-            cache : s.cache,
-            environment : s.environment,
-            lang : s.lang
-        }, config))
+        // console.log($.extend(true, {
+        //     el : s.CONTAINER,
+        //     cache : s.cache,
+        //     environment : s.environment,
+        //     lang : s.lang
+        // }, config))
     };
 
     //style

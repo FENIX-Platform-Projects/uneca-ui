@@ -1,3 +1,4 @@
+/*global define*/
 define([
     'loglevel',
     'jquery',
@@ -15,8 +16,6 @@ define([
 
     function BrowseByCountry_EntryPoint() {
         console.clear();
-        console.log('START!!!!')
-        console.log(BrowseByCountry)
 
         this._importThirdPartyCss();
 
@@ -38,9 +37,6 @@ define([
     };
 
     BrowseByCountry_EntryPoint.prototype.start = function () {
-
-        log.trace("Start");
-
         return this.performAccessControlChecks().then(_.bind(this.onSuccess, this), _.bind(this.onError, this));
 
     };
@@ -63,15 +59,12 @@ define([
     },
 
     BrowseByCountry_EntryPoint.prototype._createBrowseByView = function () {
-
-        log.trace(this.countries)
-
         if((s.lang!=null)&&(typeof s.lang!="undefined")){
             s.lang = $("html").attr("lang");
-            s.lang = s.lang.toLowerCase();
+            s.lang = s.lang.toUpperCase();
         }
         else{
-            s.lang = 'en';
+            s.lang = 'EN';
         }
 
         var conf = {
@@ -80,24 +73,10 @@ define([
             lang: s.lang
         };
 
-        log.trace(BrowseByCountry, conf)
+        //var view = new BrowseByCountry(conf);
 
-        var view = new BrowseByCountry(conf);
-
-        return view;
-    };
-
-
-    BrowseByCountry_EntryPoint.prototype.createCountryView= function (param) {
-
-        log.trace(param)
-       /* var conf = {
-            el: $('#main'),
-            countries: this.countries
-        };
-
-        log.trace(BrowseByCountry, conf)
-        var view = new BrowseByCountry(conf);*/
+        return BrowseByCountry.init(conf);
+        //return view;
     };
 
     BrowseByCountry_EntryPoint.prototype._importThirdPartyCss = function () {

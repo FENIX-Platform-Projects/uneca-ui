@@ -3,18 +3,15 @@ define([
     'handlebars'
 ], function (log, Handlebars) {
 
-    module.exports = function (countries_list, context, options) {
+    module.exports = function (data, context, options) {
 
-        console.log("IN")
-        console.log(countries_list)
-        console.log(context)
-        var lang = 'en';
-        lang = lang.toUpperCase();
         var result = '';
 
         var firstDone = false;
         var secondDone = false;
 
+        var lang = data.lang;
+        var countries_list = data.countries;
 
         for (var i = 0, length = countries_list.length; i < length; i++) {
             // first
@@ -38,7 +35,6 @@ define([
                 secondDone = false;
             }
         }
-        console.log(result)
         return new Handlebars.SafeString(result);
     };
 }
