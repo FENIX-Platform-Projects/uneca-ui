@@ -81,6 +81,7 @@ define([
         };
 
         log.trace(BrowseByCountry, conf)
+
         var view = new BrowseByCountry(conf);
 
         return view;

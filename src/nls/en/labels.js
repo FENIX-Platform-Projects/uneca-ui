@@ -116,12 +116,12 @@ define(function () {
 
                //population
 
-               population1_title: "Mid-year population",
-               population2_title:"Average growth rate",
-               population3_title:"Mid-year population by age group",
-               population4_title: "Life expectancy",
-               population5_title: "Population pyramid",
-               population6_title:"Urbanization rate",
+               population1_title: "Mid-year Population",
+               population2_title:"Average annual growth rate",
+               population3_title:"Crude birth rate per 1,000 population",
+               population4_title: "Crude death rate per 1,000 population",
+               population5_title: "Total fertility",
+               population6_title:"Life expectancy (years)",
 
                //education
 
@@ -131,11 +131,10 @@ define(function () {
 
                // health
 
-               health1_title:"Percentage of children provided the vaccines",
-               health2_title:"Percentage of underweight children (under-five)",
-               health3_title:"Prevalence of undernourishment",
-               health4_title: "Infant mortality rate",
-               health5_title:  "Medical staff and infrastructure",
+               health1_title:"Infant mortality rate (both sexes) per 1,000",
+               health2_title:"Under five mortality rate (both sexes) per 1,000",
+               health3_title:"Number of doctors per 10,000 population",
+               health4_title: "Number of nurses and Midwives per 10,000 population",
 
                //Labour
                labour1_title: "Economically active population",
@@ -147,27 +146,23 @@ define(function () {
 
 
                //monetary statistics
-               monetary1_title: "Domestic credit",
+               monetary1_title: "Money supply (M1)",
                monetary2_title: "Net foreign assets",
                monetary3_title:"International reserves",
-               monetary4_title:"Money supply (M1)",
-               monetary5_title: "Quasi-money",
 
 
                //public_finance
 
 
-               finance1_title:"Components of total revenues and grants",
+               finance1_title:"Fiscal balance",
                finance2_title:"Total expenditures and net lending",
-               finance3_title: "Total expenditures and net lending",
-               finance4_title:"Current expenditure",
-               finance5_title:"Fiscal balance",
+               finance3_title: "Total revenues and grants",
 
                //balance_of_payments
 
-               BOP1_title: "Current account balance",
-               BOP2_title: "Capital and financial account",
-               BOP3_title:  "Trade balance",
+               BOP1_title: "Current account balance (BoP)",
+               BOP2_title: "Capital account balance (BoP)",
+               BOP3_title:  "Financial account balance (BoP)",
 
                //energy
                energy1_title: "Production of electricity, total",
@@ -175,15 +170,15 @@ define(function () {
                energy3_title:"Electricity gross production, public and self-produced",
 
                //poverty
-               poverty1_title: "Share of income Held by Poorest 10 %",
-               poverty2_title:  "Share of income Held by Poorest 10 %",
-               poverty3_title: "Population below 2$ (PPP) per day",
-               poverty4_title: "Human poverty index",
+               poverty1_title: "GNI Per Capita (US$)",
+               poverty2_title:  "Population below $2 (PPP) per day",
 
                //gdp
                gdp1_title:"GDP (Current prices)",
-               gdp2_title:"GDP growth (annual %)",
-               gdp3_title:"GDP per capita",
+               gdp2_title:"Exports of goods and services at current prices",
+               gdp3_title:"Import of goods and services",
+               gdp4_title:"GDP Growth rate",
+               gdp5_title:"GDP per capita",
 
 
                //expenditure_gdp
@@ -215,18 +210,15 @@ define(function () {
 
                //inflation
 
-               inflation1_title: "Inflation by kind of commodity",
-               inflation2_title:  "Inflation, consumer prices",
-               inflation3_title: "Inflation, GDP deflator (annual%)",
+               inflation1_title: "Inflation, consumer prices (annual %)",
+
 
 
 
 
               //tourism
-               tourism1_title:  "Total contribution to GDP and employment",
-               tourism2_title: "International tourism, number of arrivals",
-               tourism3_title: "International tourism, receipts",
-               tourism4_title: "Rooms in hotel and similar establishments",
+               tourism1_title:  "International tourism, number of arrivals",
+               tourism2_title: "Rooms in hotels and similar establishments",
 
 
 
