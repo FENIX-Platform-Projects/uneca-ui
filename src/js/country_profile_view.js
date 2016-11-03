@@ -247,7 +247,7 @@ define([
         this.filter = new Filter({
             el: s.FILTER_CONTAINER,
             environment : this.environment,
-            items: config,
+            selectors: config,
             common: {
                 template: {
                     hideSwitch: true,

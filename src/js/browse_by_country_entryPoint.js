@@ -107,12 +107,13 @@ define([
         require("node_modules/leaflet/dist/leaflet.css");
         require("node_modules/fenix-ui-map/dist/fenix-ui-map.min.css");
         //dropdown selector
-        // require("node_modules/selectize/dist/css/selectize.bootstrap3.css");
-        // // fenix-ui-filter
-        // require("node_modules/fenix-ui-filter/dist/fenix-ui-filter.min.css");
+        require("node_modules/selectize/dist/css/selectize.bootstrap3.css");
+        // fenix-ui-filter
+        require("node_modules/fenix-ui-filter/dist/fenix-ui-filter.min.css");
 
         // INDEX
         //require("dist/css/index.css");
+        require("node_modules/jstree/dist/themes/default/style.min.css");
 
     };
 
