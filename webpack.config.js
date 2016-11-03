@@ -32,6 +32,8 @@ module.exports = sections.map(function (section) {
                 'html': Path.join(__dirname, 'src/html'),
                 'js': Path.join(__dirname, 'src/js'),
                 'lib': Path.join(__dirname, 'src/lib'),
+                'node_modules': Path.join(__dirname, 'node_modules'),
+                'dist': Path.join(__dirname, 'dist'),
                 handlebars: Path.join(__dirname, 'node_modules/handlebars/dist/handlebars.js'),
                 jquery: Path.join(__dirname, 'node_modules/jquery/dist/jquery')
             }

@@ -16,6 +16,7 @@ define([
     function BrowseByCountry_EntryPoint() {
         console.clear();
         console.log('START!!!!')
+        console.log(BrowseByCountry)
 
         this._importThirdPartyCss();
 
@@ -102,6 +103,8 @@ define([
         //Bootstrap
         require("bootstrap-loader");
 
+        require("node_modules/leaflet/dist/leaflet.css");
+        require("node_modules/fenix-ui-map/dist/fenix-ui-map.min.css");
         //dropdown selector
         // require("node_modules/selectize/dist/css/selectize.bootstrap3.css");
         // // fenix-ui-filter

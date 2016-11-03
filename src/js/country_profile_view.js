@@ -40,6 +40,10 @@ define([
     function ProfileView(params) {
 
         log.trace("In ProfileView")
+        log.trace(BrowseByCountry)
+        log.trace(Utils)
+        this._dispose();
+
         //TO DO
         this.lang = params.lang;
 
@@ -57,7 +61,6 @@ define([
         this._printCountryDashboard();
 
         return this;
-
     }
 
     ProfileView.prototype._attach = function () {
@@ -75,22 +78,22 @@ define([
         this.environment = C.ENVIRONMENT;
         var self = this;
 
-        // $(s.BROWSE_BY_COUNTRY_BACK).on('click', function(){
-        //     console.log("HERE ONCLICK ");
-        //     //$(s.BROWSE_BY_COUNTRY_BACK).addClass('collapse');
-        //
-        //     var conf = {
-        //         el: $(self.el),
-        //         countries: this.countries,
-        //         lang: self.lang
-        //     };
-        //
-        //     log.trace(BrowseByCountry, conf)
-        //     var view = new BrowseByCountry(conf);
-        //     return view;
-        //
-        //     //return BrowseByCountryEntryPoint()._createBrowseByView();
-        // });
+        $(s.BROWSE_BY_COUNTRY_BACK).on('click', function(){
+            console.log("HERE ONCLICK in Profile ");
+            //$(s.BROWSE_BY_COUNTRY_BACK).addClass('collapse');
+
+            var conf = {
+                el: $(self.el),
+                countries: this.countries,
+                lang: self.lang
+            };
+
+            log.trace(BrowseByCountry, conf)
+            var view = new BrowseByCountry(conf);
+            return view;
+
+            //return BrowseByCountryEntryPoint()._createBrowseByView();
+        });
     };
 
     ProfileView.prototype._printCountryDashboard = function () {
@@ -235,6 +238,26 @@ define([
         return result;
     };
 
+    ProfileView.prototype._renderFilter= function (config) {
+
+        if (this.filter && $.isFunction(this.filter.dispose)) {
+            this.filter.dispose();
+        }
+
+        this.filter = new Filter({
+            el: s.FILTER_CONTAINER,
+            environment : this.environment,
+            items: config,
+            common: {
+                template: {
+                    hideSwitch: true,
+                    hideRemoveButton: true
+                }
+            }
+        });
+
+    };
+
     ProfileView.prototype._createCountryFilter = function () {
 
         //create country filter
@@ -293,6 +316,32 @@ define([
 
         this.dashboards = [];
     };
+
+    ProfileView.prototype._dispose= function () {
+
+        if (this.$lateralMenu && this.$lateralMenu.length > 0) {
+            this.$lateralMenu.jstree(true).destroy();
+        }
+
+        this._disposeDashboards();
+
+        this._unbindDashboardEventListeners();
+
+        this.currentDashboard = {};
+        this.filterValues = {};
+
+    };
+
+    ProfileView.prototype._unbindDashboardEventListeners= function () {
+
+        if (this.$filterSubmit && this.$filterSubmit.length > 0) {
+            this.$filterSubmit.off();
+        }
+
+        $(s.BROWSE_BY_COUNTRY_BACK).off();
+
+    };
+
 
     // var ProfileView = View.extend({
     //
