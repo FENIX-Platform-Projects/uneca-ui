@@ -8,9 +8,10 @@ define([
     'nls/labels',
     'html/profile/profile.hbs',
     'html/profile/list.hbs',
+    'js/country_profile_view',
     'bootstrap-list-filter',
     'jstree'
-], function ($, log, _, EVT, PC, i18nLabels, template, listTemplate) {
+], function ($, log, _, EVT, PC, i18nLabels, template, listTemplate, countryProfileView) {
 
     'use strict';
 
@@ -27,11 +28,9 @@ define([
 
     log.trace("In ProfileView")
         //TO DO
-        this.lang = 'en';
+        this.lang = params.lang;
 
         $.extend(true, this, params);
-        log.trace(params)
-
         this.template = template(i18nLabels[this.lang]);
         this.$el = params.el;
 
@@ -47,7 +46,7 @@ define([
 
     ProfileView.prototype._attach = function () {
 
-        log.trace(this.el)
+        log.trace(this.$el)
         this.$el.append(this.template);
     };
 
@@ -58,10 +57,37 @@ define([
     ProfileView.prototype._printCountryList = function () {
         var tmpl = listTemplate,
                         html = tmpl({countries: this.countries});
-        log.trace(this.el)
             this.$content.html(html);
 
-        log.trace(this.$content)
+        var self = this;
+
+        //Creation of the onclick event
+        var divs = this.$content.find('.country-item');
+        _.each(divs, function(item){
+            var div = $(item).find('div');
+            _.each(div, function(x){
+                var country_code = $(x).attr("data-country_code");
+                var country_title = $(x).attr("data-country_title");
+
+               $(x).on('click', function(){
+                   console.log("HERE ONCLICK ");
+
+                   var countryObj = {};
+                   countryObj.title = {};
+                   countryObj.title[self.lang] = country_title;
+                   countryObj.code = country_code;
+
+                   return new countryProfileView({ lang: self.lang, el: '#main', country: countryObj});
+                });
+            })
+
+            /*$(item).find('div').click(function(){
+                alert("test!!!")
+            });*/
+        })
+
+        //$('#myLink').click(function(){ MyFunction(); return false; });
+
             //Init filter
             $(s.COUNTRY_LIST).btsListFilter(s.SEARCH_FILTER_INPUT, {
                 itemEl: s.SEARCH_ITEM_EL,

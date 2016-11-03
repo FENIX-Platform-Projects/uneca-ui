@@ -9,6 +9,10 @@ define([
 
     'use strict';
 
+    var s = {
+      lang: ''
+    };
+
     function BrowseByCountry_EntryPoint() {
         console.clear();
         console.log('START!!!!')
@@ -60,15 +64,38 @@ define([
     BrowseByCountry_EntryPoint.prototype._createBrowseByView = function () {
 
         log.trace(this.countries)
+
+        if((s.lang!=null)&&(typeof s.lang!="undefined")){
+            s.lang = $("html").attr("lang");
+            s.lang = s.lang.toLowerCase();
+        }
+        else{
+            s.lang = 'en';
+        }
+
         var conf = {
             el: $('#main'),
-            countries: this.countries
+            countries: this.countries,
+            lang: s.lang
         };
 
         log.trace(BrowseByCountry, conf)
         var view = new BrowseByCountry(conf);
 
         return view;
+    };
+
+
+    BrowseByCountry_EntryPoint.prototype.createCountryView= function (param) {
+
+        log.trace(param)
+       /* var conf = {
+            el: $('#main'),
+            countries: this.countries
+        };
+
+        log.trace(BrowseByCountry, conf)
+        var view = new BrowseByCountry(conf);*/
     };
 
     BrowseByCountry_EntryPoint.prototype._importThirdPartyCss = function () {
