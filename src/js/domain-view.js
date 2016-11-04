@@ -95,8 +95,8 @@ define([
 
             }, this));
 
-       // this._printDashboard('population');
-        this._printDashboard('tourism');
+        this._printDashboard('population');
+        //this._printDashboard('tourism');
 
     };
 
