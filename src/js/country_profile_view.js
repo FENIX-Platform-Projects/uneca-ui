@@ -40,6 +40,8 @@ define([
     function CountryProfileView(params){
         this._dispose();
 
+        log.info("IN CountryProfileView ");
+
         //TO DO
         this.lang = params.lang;
 
@@ -50,6 +52,12 @@ define([
 
         this.template = template(i18nLabels[this.lang]);
         this.$el = $(params.el);
+
+        this.browseCountry = new BrowseByCountry();
+
+        log.info("this.browseByCountry ");
+        log.info(this.browseCountry)
+
         this._attach();
 
         this._initVariables();
@@ -82,7 +90,8 @@ define([
             };
             //return CountryProfileView.init({ lang: self.lang, el: '#main', country: countryObj});
 
-            BrowseByCountry.init(conf);
+            this.browseCountry.init();
+            //BrowseByCountry.init(conf);
             // log.trace(BrowseByCountry, conf)
             // var view = new BrowseByCountry(conf);
             // return view;

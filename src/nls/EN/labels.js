@@ -122,6 +122,7 @@ define(function () {
                population4_title: "Crude death rate per 1,000 population",
                population5_title: "Total fertility",
                population6_title:"Life expectancy (years)",
+               population7_title:"Urbanization rate (per cent)",
 
                //education
 
@@ -133,8 +134,11 @@ define(function () {
 
                health1_title:"Infant mortality rate (both sexes) per 1,000",
                health2_title:"Under five mortality rate (both sexes) per 1,000",
-               health3_title:"Number of doctors per 10,000 population",
-               health4_title: "Number of nurses and Midwives per 10,000 population",
+               health3_title:"Number of doctors, nurses and midwives per 10,000 population",
+               health4_title: "Percentage of mothers provided at least one antenatal care",
+               health5_title: "Percentage of deliveries attended by skilled health personnel",
+               health6_title: "Percentage of children provided the vaccines (BCG, DPT3, measles, polio)",
+               health7_title: "Percentage of children under-five and underweight",
 
                //Labour
                labour1_title: "Economically active population",
@@ -219,6 +223,7 @@ define(function () {
               //tourism
                tourism1_title:  "International tourism, number of arrivals",
                tourism2_title: "Rooms in hotels and similar establishments",
+               tourism3_title: "Tourism contribution to GDP",
 
 
 

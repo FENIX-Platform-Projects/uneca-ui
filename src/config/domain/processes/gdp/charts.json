@@ -1,0 +1,55 @@
+[
+  {
+  "name": "filter",
+  "sid": [
+    {
+      "uid": "UNECA_GDP_USD"
+    }
+  ],
+  "parameters": {
+    "columns": [
+      "IndicatorCode",
+      "Year",
+      "Value",
+      "UnitCode"
+    ],
+    "rows": {
+
+      "IndicatorCode": {
+        "codes": [
+          {
+            "uid": "UNECA_ClassificationOfActivities",
+            "version":"2.0",
+            "codes": [
+              "020706"
+
+            ]
+          }
+        ]
+      },
+
+      "CountryCode": {
+        "codes": [
+          {
+            "uid": "UNECA_ISO3",
+            "codes": [
+              "AGO"
+            ]
+          }
+        ]
+      },
+      "Year": {
+        "time": [
+          {
+            "from": 2000,
+            "to": 2013
+          }
+        ]
+      }
+    }
+  }
+}
+]
+// 020707:   GROSS DOMESTIC PRODUCT (current prices)
+// 020705:   GDP growth (annual %)
+// 020706:   GDP per capita (constant 2005 US$)
