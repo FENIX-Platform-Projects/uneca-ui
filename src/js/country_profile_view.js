@@ -9,7 +9,6 @@ define([
     'fenix-ui-dashboard',
     'fenix-ui-filter',
     'fenix-ui-filter-utils',
-    '../js/browse_by_country',
     '../lib/utils',
     '../nls/labels',
     '../html/profile/profile.hbs',
@@ -21,7 +20,7 @@ define([
     'amplify-pubsub',
     'bootstrap-list-filter',
     'jstree'
-], function ($, log, _, EVT, C, PC, Dashboard, Filter, FxUtils, BrowseByCountry, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, CountrySummary, Handlebars) {
+], function ($, log, _, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, CountrySummary, Handlebars) {
 
     'use strict';
 
@@ -37,9 +36,7 @@ define([
         BROWSE_BY_COUNTRY_BACK: "#browse-by-country-back"
     };
 
-    function CountryProfileView(params){
-        console.log(Utils)
-        this._dispose();
+    function CountryProfileView(params) {
 
         log.info("IN CountryProfileView ");
 
@@ -50,14 +47,9 @@ define([
 
         this.country = params.country;
         this.id = params.country.code;
+        this.channels = {};
 
-        this.template = template(i18nLabels[this.lang]);
         this.$el = $(params.el);
-
-        //this.browseCountry = new BrowseByCountry();
-
-        log.info("this.browseByCountry ");
-        log.info(this.browseCountry)
 
         this._attach();
 
@@ -69,36 +61,15 @@ define([
     }
 
     CountryProfileView.prototype._attach = function () {
-        this.$el.html(this.template);
+
+        this.$el.html(template(i18nLabels[this.lang]));
     };
 
     CountryProfileView.prototype._initVariables = function () {
-        $(s.BROWSE_BY_COUNTRY_BACK).removeClass('collapse');
         this.$content = this.$el.find(s.CONTENT);
         this.filterValues = {};
         this.dashboards = [];
         this.environment = C.ENVIRONMENT;
-        var self = this;
-
-        $(s.BROWSE_BY_COUNTRY_BACK).on('click', _.bind(function(){
-            console.log("HERE ONCLICK in Profile ");
-            //$(s.BROWSE_BY_COUNTRY_BACK).addClass('collapse');
-
-            var conf = {
-                el: $(self.el),
-                countries: this.countries,
-                lang: self.lang
-            };
-            //return CountryProfileView.init({ lang: self.lang, el: '#main', country: countryObj});
-
-            new BrowseByCountry().init();
-            //BrowseByCountry.init(conf);
-            // log.trace(BrowseByCountry, conf)
-            // var view = new BrowseByCountry(conf);
-            // return view;
-
-            //return BrowseByCountryEntryPoint()._createBrowseByView();
-        }, this));
     };
 
     CountryProfileView.prototype._printCountryDashboard = function () {
@@ -149,7 +120,7 @@ define([
     };
 
 
-    CountryProfileView.prototype._onChangeDashboard =function (item) {
+    CountryProfileView.prototype._onChangeDashboard = function (item) {
 
         if (this.currentDashboard !== item) {
             this.currentDashboard = item;
@@ -164,7 +135,7 @@ define([
 
         this.filterValues[this.currentDashboard] = values;
 
-        _.each( this.dashboards, _.bind(function (dashboard) {
+        _.each(this.dashboards, _.bind(function (dashboard) {
             if (dashboard && $.isFunction(dashboard.refresh)) {
                 dashboard.refresh(values);
             }
@@ -179,7 +150,7 @@ define([
         var conf = this._getDashboardConfig(item),
             filterConfig = this._getFilterConfig(item);
 
-        if (conf && !_.isEmpty(conf) ) {
+        if (conf && !_.isEmpty(conf)) {
             this._renderDashboard(conf);
         }
 
@@ -197,11 +168,11 @@ define([
         var conf = PC[id].dashboard,
             filterValues = this.filterValues[this.currentDashboard] || {};
 
-        if (!Array.isArray(conf)){
+        if (!Array.isArray(conf)) {
             conf = FxUtils.cleanArray([conf]);
         }
 
-        _.each(conf, _.bind(function ( c ) {
+        _.each(conf, _.bind(function (c) {
 
             if (!_.isEmpty(c)) {
                 c.filter = $.extend(c.filter, this._createCountryFilter());
@@ -211,7 +182,7 @@ define([
                 _.each(c.items, _.bind(function (item) {
                     item.filter = $.extend(item.filter, filterValues.values);
 
-                    if(item.id === 'country-map-container') {
+                    if (item.id === 'country-map-container') {
                         item.config.fenix_ui_map.zoomToCountry = countrySel;
                         item.config.fenix_ui_map.highlightCountry = countrySel;
                     }
@@ -224,7 +195,7 @@ define([
 
     };
 
-    CountryProfileView.prototype._getFilterConfig =function (id) {
+    CountryProfileView.prototype._getFilterConfig = function (id) {
 
         var conf = $.extend(true, {}, PC[id].filter),
             values = this.filterValues[id] || {},
@@ -236,22 +207,25 @@ define([
                 obj.template = {};
             }
             //Add i18n label
-            obj.template.title = Utils.getI18nLabel( key, i18nLabels[this.lang], "filter_");
+            obj.template.title = Utils.getI18nLabel(key, i18nLabels[this.lang], "filter_");
 
         }, this));
 
         return result;
     };
 
-    CountryProfileView.prototype._renderFilter= function (config) {
+    CountryProfileView.prototype._renderFilter = function (config) {
 
         if (this.filter && $.isFunction(this.filter.dispose)) {
             this.filter.dispose();
         }
 
+        var $div = $("<div></div>");
+        $(s.FILTER_CONTAINER).html($div);
+
         this.filter = new Filter({
-            el: s.FILTER_CONTAINER,
-            environment : this.environment,
+            el: $div,
+            environment: this.environment,
             selectors: config,
             common: {
                 template: {
@@ -282,7 +256,7 @@ define([
         this.$el.find(s.DASHBOARD_CONTENT).html(source);
     };
 
-    CountryProfileView.prototype._renderDashboard= function (config) {
+    CountryProfileView.prototype._renderDashboard = function (config) {
 
         this._disposeDashboards();
 
@@ -298,7 +272,7 @@ define([
 
     CountryProfileView.prototype._disposeDashboards = function () {
 
-        _.each( this.dashboards, _.bind(function (dashboard) {
+        _.each(this.dashboards, _.bind(function (dashboard) {
             if (dashboard && $.isFunction(dashboard.dispose)) {
                 dashboard.dispose();
             }
@@ -307,7 +281,7 @@ define([
         this.dashboards = [];
     };
 
-    CountryProfileView.prototype._dispose= function () {
+    CountryProfileView.prototype._dispose = function () {
 
         if (this.$lateralMenu && this.$lateralMenu.length > 0) {
             this.$lateralMenu.jstree(true).destroy();
@@ -322,7 +296,12 @@ define([
 
     };
 
-    CountryProfileView.prototype._unbindDashboardEventListeners= function () {
+    CountryProfileView.prototype.dispose = function () {
+
+        return this._dispose();
+    };
+
+    CountryProfileView.prototype._unbindDashboardEventListeners = function () {
 
         if (this.$filterSubmit && this.$filterSubmit.length > 0) {
             this.$filterSubmit.off();
@@ -330,6 +309,29 @@ define([
 
         $(s.BROWSE_BY_COUNTRY_BACK).off();
 
+    };
+
+    CountryProfileView.prototype.on = function (channel, fn, context) {
+        var _context = context || this;
+        if (!this.channels[channel]) {
+            this.channels[channel] = [];
+        }
+        this.channels[channel].push({context: _context, callback: fn});
+        return this;
+    };
+
+    CountryProfileView.prototype._trigger = function (channel) {
+
+        if (!this.channels[channel]) {
+            return false;
+        }
+        var args = Array.prototype.slice.call(arguments, 1);
+        for (var i = 0, l = this.channels[channel].length; i < l; i++) {
+            var subscription = this.channels[channel][i];
+            subscription.callback.apply(subscription.context, args);
+        }
+
+        return this;
     };
 
     return CountryProfileView;

@@ -8,10 +8,9 @@ define([
     '../nls/labels',
     '../html/profile/profile.hbs',
     '../html/profile/list.hbs',
-    '../js/country_profile_view',
     'bootstrap-list-filter',
     'jstree'
-], function ($, log, _, EVT, PC, i18nLabels, template, listTemplate, CountryProfileView) {
+], function ($, log, _, EVT, PC, i18nLabels, template, listTemplate) {
 
     'use strict';
 
@@ -24,22 +23,17 @@ define([
         LATERAL_MENU: '#lateral-menu'
     };
 
-    function ProfileView() {
-
-
-
-        console.log(CountryProfileView)
-
+    function ListView() {
         return this;
     }
 
-    ProfileView.prototype.init = function (params) {
+    ListView.prototype.init = function (params) {
         //TO DO
         this.lang = params.lang;
 
         $.extend(true, this, params);
         this.template = template(i18nLabels[this.lang]);
-        this.$el = params.el;
+        this.$el = $(params.el);
 
         this._attach();
 
@@ -49,47 +43,76 @@ define([
 
         return this;
 
-    }
+    };
 
-    ProfileView.prototype._attach = function () {
+    ListView.prototype._attach = function () {
+
         this.$el.append(this.template);
     };
 
-    ProfileView.prototype._initVariables = function () {
+    ListView.prototype._initVariables = function () {
         this.$content = this.$el.find(s.CONTENT);
+
+        this.channels = {};
     };
 
-    ProfileView.prototype._printCountryList = function () {
-        var tmpl = listTemplate,
-                        html = tmpl({data:{countries: this.countries, lang : this.lang}});
-            this.$content.html(html);
+    ListView.prototype._printCountryList = function () {
+        var html = listTemplate({data: {countries: this.countries, lang: this.lang}});
+
+        this.$content.html(html);
 
         var self = this;
 
         //Creation of the onclick event
-        var divs = this.$content.find('.country-item');
-        _.each(divs, function(item){
+        var $divs = this.$content.find('.country-item');
+
+        _.each($divs, function (item) {
             var div = $(item).find('div');
-            _.each(div, function(x){
+            _.each(div, function (x) {
                 var country_code = $(x).attr("data-country_code");
                 var country_title = $(x).attr("data-country_title");
 
-               $(x).on('click', function(){
-                   var countryObj = {};
-                   countryObj.title = {};
-                   countryObj.title[self.lang] = country_title;
-                   countryObj.code = country_code;
+                $(x).on('click', function () {
+                    var countryObj = {};
+                    countryObj.title = {};
+                    countryObj.title[self.lang] = country_title;
+                    countryObj.code = country_code;
 
-                   return new CountryProfileView({ lang: self.lang, el: '#main', country: countryObj});
+                    self._trigger("profile.show", {country: countryObj})
+
                 });
             })
-        })
+        });
+
         //Init filter
-        $(s.COUNTRY_LIST).btsListFilter(s.SEARCH_FILTER_INPUT, {
+        this.$el.find(s.COUNTRY_LIST).btsListFilter(s.SEARCH_FILTER_INPUT, {
             itemEl: s.SEARCH_ITEM_EL,
             itemChild: s.SEARCH_ITEM_CHILD
         });
     };
 
-    return ProfileView;
+    ListView.prototype.on = function (channel, fn, context) {
+        var _context = context || this;
+        if (!this.channels[channel]) {
+            this.channels[channel] = [];
+        }
+        this.channels[channel].push({context: _context, callback: fn});
+        return this;
+    };
+
+    ListView.prototype._trigger = function (channel) {
+
+        if (!this.channels[channel]) {
+            return false;
+        }
+        var args = Array.prototype.slice.call(arguments, 1);
+        for (var i = 0, l = this.channels[channel].length; i < l; i++) {
+            var subscription = this.channels[channel][i];
+            subscription.callback.apply(subscription.context, args);
+        }
+
+        return this;
+    };
+
+    return ListView;
 });

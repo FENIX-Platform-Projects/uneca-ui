@@ -44,7 +44,7 @@ define([
 
     BrowseByDomain_EntryPoint.prototype._importThirdPartyCss = function () {
         //Bootstrap
-        require("bootstrap-loader");
+        require('bootstrap/dist/css/bootstrap.css');
 
         require("../../node_modules/leaflet/dist/leaflet.css");
         require("../../node_modules/fenix-ui-map/dist/fenix-ui-map.min.css");
