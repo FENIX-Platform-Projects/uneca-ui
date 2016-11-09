@@ -3,12 +3,12 @@ define([
     'jquery',
     'loglevel',
     'underscore',
-    'config/events',
-    'config/profile/config',
-    'nls/labels',
-    'html/profile/profile.hbs',
-    'html/profile/list.hbs',
-    'js/country_profile_view',
+    '../config/events',
+    '../config/profile/config',
+    '../nls/labels',
+    '../html/profile/profile.hbs',
+    '../html/profile/list.hbs',
+    '../js/country_profile_view',
     'bootstrap-list-filter',
     'jstree'
 ], function ($, log, _, EVT, PC, i18nLabels, template, listTemplate, CountryProfileView) {
@@ -25,6 +25,11 @@ define([
     };
 
     function ProfileView() {
+
+
+
+        console.log(CountryProfileView)
+
         return this;
     }
 
@@ -86,5 +91,5 @@ define([
         });
     };
 
-    return new ProfileView;
+    return ProfileView;
 });

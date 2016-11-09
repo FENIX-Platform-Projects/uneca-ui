@@ -3,20 +3,20 @@ define([
     'jquery',
     'loglevel',
     'underscore',
-    'config/events',
-    'config/config',
-    'config/profile/config',
+    '../config/events',
+    '../config/config',
+    '../config/profile/config',
     'fenix-ui-dashboard',
     'fenix-ui-filter',
     'fenix-ui-filter-utils',
-    'js/browse_by_country',
-    'lib/utils',
-    'nls/labels',
-    'html/profile/profile.hbs',
-    'html/profile/dashboard.hbs',
-    'html/profile/bases.hbs',
-    'config/profile/lateral_menu',
-    'config/profile/countries_summary',
+    '../js/browse_by_country',
+    '../lib/utils',
+    '../nls/labels',
+    '../html/profile/profile.hbs',
+    '../html/profile/dashboard.hbs',
+    '../html/profile/bases.hbs',
+    '../config/profile/lateral_menu',
+    '../config/profile/countries_summary',
     'handlebars',
     'amplify-pubsub',
     'bootstrap-list-filter',
@@ -38,6 +38,7 @@ define([
     };
 
     function CountryProfileView(params){
+        console.log(Utils)
         this._dispose();
 
         log.info("IN CountryProfileView ");
@@ -53,7 +54,7 @@ define([
         this.template = template(i18nLabels[this.lang]);
         this.$el = $(params.el);
 
-        this.browseCountry = new BrowseByCountry();
+        //this.browseCountry = new BrowseByCountry();
 
         log.info("this.browseByCountry ");
         log.info(this.browseCountry)
@@ -79,7 +80,7 @@ define([
         this.environment = C.ENVIRONMENT;
         var self = this;
 
-        $(s.BROWSE_BY_COUNTRY_BACK).on('click', function(){
+        $(s.BROWSE_BY_COUNTRY_BACK).on('click', _.bind(function(){
             console.log("HERE ONCLICK in Profile ");
             //$(s.BROWSE_BY_COUNTRY_BACK).addClass('collapse');
 
@@ -90,14 +91,14 @@ define([
             };
             //return CountryProfileView.init({ lang: self.lang, el: '#main', country: countryObj});
 
-            this.browseCountry.init();
+            new BrowseByCountry().init();
             //BrowseByCountry.init(conf);
             // log.trace(BrowseByCountry, conf)
             // var view = new BrowseByCountry(conf);
             // return view;
 
             //return BrowseByCountryEntryPoint()._createBrowseByView();
-        });
+        }, this));
     };
 
     CountryProfileView.prototype._printCountryDashboard = function () {

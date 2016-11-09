@@ -3,18 +3,18 @@ define([
     'jquery',
     'loglevel',
     'underscore',
-    'config/events',
-    'config/config',
-    'config/domain/config',
+    '../config/events',
+    '../config/config',
+    '../config/domain/config',
     'fenix-ui-dashboard',
     'fenix-ui-filter',
     'fenix-ui-filter-utils',
-    'lib/utils',
-    'nls/labels',
-    'html/domain/domain.hbs',
-    'html/domain/dashboard.hbs',
-    'html/domain/bases.hbs',
-    'config/domain/lateral_menu',
+    '../lib/utils',
+    '../nls/labels',
+    '../html/domain/domain.hbs',
+    '../html/domain/dashboard.hbs',
+    '../html/domain/bases.hbs',
+    '../config/domain/lateral_menu',
     'jstree'
 ], function ($, log, _, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig) {
 
@@ -131,12 +131,15 @@ define([
 
         var values = this.filter.getValues();
 
-        console.log(" ================= "+values);
+        console.log(" ================= ",values);
 
 
         this.filterValues[this.currentDashboard] = values;
 
+        console.log(this.currentDashboard);
+        console.log(this.dashboards);
         _.each(this.dashboards, _.bind(function (dashboard) {
+            console.log(dashboard);
             if (dashboard && $.isFunction(dashboard.refresh)) {
                 dashboard.refresh(values);
             }

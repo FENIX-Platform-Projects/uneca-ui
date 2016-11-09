@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "echo \"Error: please specify a valid section to develop [e.g. npm run dev:browse_by_country]\" && exit 1",
     "dev:browse_by_country_entryPoint": "cross-env SECTIONS=browse_by_country_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "dev:browse_by_domain": "SECTIONS=browse_by_domain NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "dev:browse_by_domain_entryPoint": "SECTIONS=browse_by_domain_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "dev:analysis_download": "SECTIONS=analysis_download NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "w-dev:browse_by_country": "SET NODE_ENV=production&&SET SECTION=browse_by_country&&webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "build": "SECTIONS=browse_by_country_entryPoint,browse_by_domain,analysis_download NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
+    "build": "SECTIONS=browse_by_country_entryPoint,browse_by_domain_entryPoint,analysis_download NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
   },
   "repository": {
     "type": "git",

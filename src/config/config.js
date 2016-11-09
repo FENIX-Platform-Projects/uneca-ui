@@ -13,8 +13,8 @@ define(function () {
         CHAPLINJS_APPLICATION_TITLE: "UNECA Data Portal",
 
         //Top Menu configuration
-        TOP_MENU_CONFIG: 'config/submodules/fx-menu/top_menu.json',
-        TOP_MENU_TEMPLATE: 'fx-menu/html/blank-fluid.html',
+        // TOP_MENU_CONFIG: 'config/submodules/fx-menu/top_menu.json',
+        // TOP_MENU_TEMPLATE: 'fx-menu/html/blank-fluid.html',
         TOP_MENU_SHOW_BREADCRUMB: true,
         TOP_MENU_SHOW_BREADCRUMB_HOME: true,
         TOP_MENU_SHOW_FOOTER: false,

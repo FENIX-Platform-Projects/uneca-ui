@@ -18,18 +18,19 @@ define(function () {
                     className: 'col-md-6',
 
                     selector: {
-                        id: "tree"
+                        id: "tree",
+                        default: ["DZA"]
                     },
 
                     cl: {
-                        uid: "UNECA_ISO3"
+                        uid: "ISO3"
 
                     },
                     template: {
                         hideHeader : true
-                    },
-                    default: [ "AGO",
-                        "BFA"]
+                    }
+                    // default: [ "DZA",
+                    //     "BFA"]AMU
 
                 },
 
@@ -138,8 +139,7 @@ define(function () {
                                                 {
                                                     "uid": "ISO3",
                                                     "codes": [
-                                                        "AGO",
-                                                        "BFA"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -264,8 +264,7 @@ define(function () {
                                                 {
                                                     "uid": "ISO3",
                                                     "codes": [
-                                                        "AGO",
-                                                        "BFA"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -410,8 +409,7 @@ define(function () {
                                                 {
                                                     "uid": "ISO3",
                                                     "codes": [
-                                                        "AGO",
-                                                        "BFA"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -556,8 +554,7 @@ define(function () {
                                                 {
                                                     "uid": "ISO3",
                                                     "codes": [
-                                                        "AGO",
-                                                        "BFA"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -702,8 +699,7 @@ define(function () {
                                                 {
                                                     "uid": "ISO3",
                                                     "codes": [
-                                                        "AGO",
-                                                        "BFA"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -795,8 +791,7 @@ define(function () {
                                                 {
                                                     "uid": "ISO3",
                                                     "codes": [
-                                                        "AGO",
-                                                        "BFA"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -921,8 +916,7 @@ define(function () {
                                                 {
                                                     "uid": "ISO3",
                                                     "codes": [
-                                                        "AGO",
-                                                        "BFA"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -1330,7 +1324,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -1401,7 +1395,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -1471,7 +1465,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -1515,7 +1509,7 @@ define(function () {
                         filter: { //FX-filter format
                             IndicatorCode: ["010311"],
                             Year: ["2013"],
-                            "CountryCode": ["AGO"
+                            "CountryCode": ["DZA"
                             ]
                         },
 
@@ -1544,7 +1538,7 @@ define(function () {
                         filter: { //FX-filter format
                             IndicatorCode: ["010312"],
                             Year: ["2013"],
-                            "CountryCode": ["AGO"
+                            "CountryCode": ["DZA"
                             ]
                         },
 
@@ -1597,7 +1591,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -1641,7 +1635,7 @@ define(function () {
                         filter: { //FX-filter format
                             IndicatorCode: ["010301"],
                             Year: ["2013"],
-                            "CountryCode": ["AGO"
+                            "CountryCode": ["DZA"
                             ]
                         },
 
@@ -2060,7 +2054,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -2147,7 +2141,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -2234,7 +2228,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -2497,7 +2491,7 @@ define(function () {
                                                     {
                                                         "uid": "UNECA_ISO3",
                                                         "codes": [
-                                                            "AGO"
+                                                            "DZA"
                                                         ]
                                                     }
                                                 ]
@@ -2566,7 +2560,7 @@ define(function () {
                                                     {
                                                         "uid": "UNECA_ISO3",
                                                         "codes": [
-                                                            "AGO"
+                                                            "DZA"
                                                         ]
                                                     }
                                                 ]
@@ -2635,7 +2629,7 @@ define(function () {
                                                     {
                                                         "uid": "UNECA_ISO3",
                                                         "codes": [
-                                                            "AGO"
+                                                            "DZA"
                                                         ]
                                                     }
                                                 ]
@@ -2862,8 +2856,7 @@ define(function () {
                     template: {
                         hideHeader : true
                     },
-                    default: [ "AGO",
-                        "BFA"]
+                    default: [ "DZA"]
 
                 },
 
@@ -3053,7 +3046,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -3124,7 +3117,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -3195,7 +3188,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -3239,8 +3232,7 @@ define(function () {
                     template: {
                         hideHeader : true
                     },
-                    default: [ "AGO",
-                        "BFA"]
+                    default: [ "DZA"]
 
                 },
 
@@ -3341,7 +3333,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -3412,7 +3404,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -3483,7 +3475,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -3987,8 +3979,7 @@ define(function () {
                     template: {
                         hideHeader : true
                     },
-                    default: [ "AGO",
-                        "BFA"]
+                    default: [ "DZA"]
 
                 },
 
@@ -4089,7 +4080,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -4133,8 +4124,7 @@ define(function () {
                     template: {
                         hideHeader : true
                     },
-                    default: [ "AGO",
-                        "BFA"]
+                    default: [ "DZA"]
 
                 },
 
@@ -4234,7 +4224,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -4304,7 +4294,7 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "AGO"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
@@ -4348,7 +4338,7 @@ define(function () {
                         filter: { //FX-filter format
                             IndicatorCode: ["021303"],
                             Year: ["2013"],
-                            "CountryCode": ["AGO"
+                            "CountryCode": ["DZA"
                             ]
                         },
 

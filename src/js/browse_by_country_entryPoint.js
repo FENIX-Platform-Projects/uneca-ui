@@ -3,9 +3,9 @@ define([
     'loglevel',
     'jquery',
     'underscore',
-    'js/browse_by_country',
+    '../js/browse_by_country',
     'fenix-ui-bridge',
-    'config/config'
+    '../config/config'
 ], function (log, $, _, BrowseByCountry, Bridge, C) {
 
     'use strict';
@@ -75,7 +75,8 @@ define([
 
         //var view = new BrowseByCountry(conf);
 
-        return BrowseByCountry.init(conf);
+        console.log(BrowseByCountry)
+        return new BrowseByCountry().init(conf);
         //return view;
     };
 
@@ -83,16 +84,16 @@ define([
         //Bootstrap
         require("bootstrap-loader");
 
-        require("node_modules/leaflet/dist/leaflet.css");
-        require("node_modules/fenix-ui-map/dist/fenix-ui-map.min.css");
+        require("../../node_modules/leaflet/dist/leaflet.css");
+        require("../../node_modules/fenix-ui-map/dist/fenix-ui-map.min.css");
         //dropdown selector
-        require("node_modules/selectize/dist/css/selectize.bootstrap3.css");
+        require("../../node_modules/selectize/dist/css/selectize.bootstrap3.css");
         // fenix-ui-filter
-        require("node_modules/fenix-ui-filter/dist/fenix-ui-filter.min.css");
+        require("../../node_modules/fenix-ui-filter/dist/fenix-ui-filter.min.css");
 
         // INDEX
         //require("dist/css/index.css");
-        require("node_modules/jstree/dist/themes/default/style.min.css");
+        require("../../node_modules/jstree/dist/themes/default/style.min.css");
 
     };
 

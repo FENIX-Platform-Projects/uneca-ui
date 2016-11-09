@@ -27,13 +27,13 @@ module.exports = sections.map(function (section) {
             root: Path.resolve(__dirname),
             alias: {
                 'bootstrap-table': Path.join(__dirname, 'node_modules/bootstrap-table/dist/bootstrap-table.min.js'),
-                'nls': Path.join(__dirname, 'src/nls'),
-                'config': Path.join(__dirname, 'src/config'),
-                'html': Path.join(__dirname, 'src/html'),
-                'js': Path.join(__dirname, 'src/js'),
-                'lib': Path.join(__dirname, 'src/lib'),
-                'node_modules': Path.join(__dirname, 'node_modules'),
-                'dist': Path.join(__dirname, 'dist'),
+                // 'nls': Path.join(__dirname, 'src/nls'),
+                // 'config': Path.join(__dirname, 'src/config'),
+                // 'html': Path.join(__dirname, 'src/html'),
+                //'js': Path.join(__dirname, 'src/js'),
+                // 'lib': Path.join(__dirname, 'src/lib'),
+                // 'node_modules': Path.join(__dirname, 'node_modules'),
+                // 'dist': Path.join(__dirname, 'dist'),
                 handlebars: Path.join(__dirname, 'node_modules/handlebars/dist/handlebars.js'),
                 jquery: Path.join(__dirname, 'node_modules/jquery/dist/jquery')
             }
