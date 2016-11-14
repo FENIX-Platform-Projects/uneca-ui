@@ -11,7 +11,7 @@ define(function () {
                 uid: "UNECA_hp_indicators",
                 items: [
                     {
-                        id: "chart1", //ref [data-item=':id']
+                        id: "gdp_ppp", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -19,7 +19,8 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true//,//,// || default raw else fenixtool
+
                         }, // :type-creator config
 
                         postProcess: [
@@ -54,7 +55,7 @@ define(function () {
                 uid: "UNECA_hp_indicators",
                 items: [
                     {
-                        id: "chart1", //ref [data-item=':id']
+                        id: "gdp_capita", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -97,7 +98,7 @@ define(function () {
                 uid: "UNECA_hp_indicators",
                 items: [
                     {
-                        id: "chart1", //ref [data-item=':id']
+                        id: "gdp_growth", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -134,6 +135,222 @@ define(function () {
                     }
                 ]
             }]
+        },
+        "inflation": {
+            dashboard: [{
+                uid: "UNECA_hp_indicators",
+                items: [
+                    {
+                        id: "inflation", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            x: ["year"], //x axis and series
+                            series: ["indicator"], //Y dimension
+                            y: ["value"],
+                            aggregationFn: {"value": "sum"},
+                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                        }, // :type-creator config
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [ { "uid": "UNECA_hp_indicators" } ],
+                                "parameters": {
+                                    "columns": [
+                                        "year",
+                                        "value",
+                                        "indicator"
+                                    ],
+                                    "rows": {
+                                        "indicator": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Indicators",
+                                                    "codes": [ "inflation" ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }]
+        },
+        "investment": {
+            dashboard: [{
+                uid: "UNECA_hp_indicators",
+                items: [
+                    {
+                        id: "investment", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            x: ["year"], //x axis and series
+                            series: ["indicator"], //Y dimension
+                            y: ["value"],
+                            aggregationFn: {"value": "sum"},
+                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                        }, // :type-creator config
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [ { "uid": "UNECA_hp_indicators" } ],
+                                "parameters": {
+                                    "columns": [
+                                        "year",
+                                        "value",
+                                        "indicator"
+                                    ],
+                                    "rows": {
+                                        "indicator": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Indicators",
+                                                    "codes": [ "investment" ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }]
+        },
+        "export_growth": {
+            dashboard: [{
+                uid: "UNECA_hp_indicators",
+                items: [
+                    {
+                        id: "export_growth", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            x: ["year"], //x axis and series
+                            series: ["indicator"], //Y dimension
+                            y: ["value"],
+                            aggregationFn: {"value": "sum"},
+                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                        }, // :type-creator config
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [ { "uid": "UNECA_hp_indicators" } ],
+                                "parameters": {
+                                    "columns": [
+                                        "year",
+                                        "value",
+                                        "indicator"
+                                    ],
+                                    "rows": {
+                                        "indicator": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Indicators",
+                                                    "codes": [ "export_growth" ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }]
+        },
+        "fdi": {
+            dashboard: [{
+                uid: "UNECA_hp_indicators",
+                items: [
+                    {
+                        id: "fdi", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            x: ["year"], //x axis and series
+                            series: ["indicator"], //Y dimension
+                            y: ["value"],
+                            aggregationFn: {"value": "sum"},
+                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                        }, // :type-creator config
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [ { "uid": "UNECA_hp_indicators" } ],
+                                "parameters": {
+                                    "columns": [
+                                        "year",
+                                        "value",
+                                        "indicator"
+                                    ],
+                                    "rows": {
+                                        "indicator": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Indicators",
+                                                    "codes": [ "fdi_inward", "fdi_outward" ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }]
+        },
+        "life_expectancy": {
+            dashboard: [{
+                uid: "UNECA_hp_indicators",
+                items: [
+                    {
+                        id: "life_expectancy", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "column",
+                            x: ["year"], //x axis and series
+                            series: ["indicator"], //Y dimension
+                            y: ["value"],
+                            aggregationFn: {"value": "sum"},
+                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                        }, // :type-creator config
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [ { "uid": "UNECA_hp_indicators" } ],
+                                "parameters": {
+                                    "columns": [
+                                        "year",
+                                        "value",
+                                        "indicator"
+                                    ],
+                                    "rows": {
+                                        "indicator": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Indicators",
+                                                    "codes": [ "life_expectancy" ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }]
         }
+
     }
 });
