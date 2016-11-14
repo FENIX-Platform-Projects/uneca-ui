@@ -10,14 +10,16 @@ define([
     '../html/home/home.hbs',
     '../html/home/bases.hbs',
     '../nls/labels',
-    '../nls/home'
-], function ($, _, C, EVT, HC, Dashboard, FxUtils, template, basesTemplate, i18nLabels, i18nLabelsHome) {
+    '../nls/home',
+    '../config/submodules/fenix-ui-chart-creator/highcharts_template'
+], function ($, _, C, EVT, HC, Dashboard, FxUtils, template, basesTemplate, i18nLabels, i18nLabelsHome, HighchartsTemplate) {
 
     'use strict';
 
     var s = {
         CHART_TABS: '#home-charts-tab a[data-toggle="tab"]',
-        DASHBOARD_CONTENT: "#dashboard-content"
+        DASHBOARD_CONTENT: "#dashboard-content",
+        CHART: "chart"
     };
 
     function HomeView(params){
@@ -146,6 +148,24 @@ define([
         if (!Array.isArray(conf)) {
             conf = FxUtils.cleanArray([conf]);
         }
+
+        // Sets Highchart config for each chart
+        _.each(conf[0].items, _.bind(function (item) {
+            if (!_.isEmpty(item)) {
+                if (item.type == s.CHART) {
+                    if (item.config.config) {
+                        item.config.config = $.extend(true, {}, HighchartsTemplate, item.config.config);
+                        item.config.config.title.text = i18nLabelsHome[this.lang][item.id+'_chart_title'];
+
+                    } else {
+                        item.config.config = $.extend(true, {}, HighchartsTemplate);
+                        item.config.config.title.text = i18nLabelsHome[this.lang][item.id+'_chart_title'];
+
+                    }
+                }
+            }
+
+        }, this));
 
         return conf;
 
