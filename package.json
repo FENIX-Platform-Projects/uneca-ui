@@ -9,8 +9,9 @@
     "dev:browse_by_country_entryPoint": "cross-env SECTIONS=browse_by_country_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "dev:browse_by_domain_entryPoint": "SECTIONS=browse_by_domain_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "dev:analysis_download": "SECTIONS=analysis_download NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "dev:home_entryPoint": "cross-env SECTIONS=home_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "w-dev:browse_by_country": "SET NODE_ENV=production&&SET SECTION=browse_by_country&&webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "build": "SECTIONS=browse_by_country_entryPoint,browse_by_domain_entryPoint,analysis_download NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
+    "build": "SECTIONS=browse_by_country_entryPoint,browse_by_domain_entryPoint,analysis_download,home_entryPoint NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
   },
   "repository": {
     "type": "git",
