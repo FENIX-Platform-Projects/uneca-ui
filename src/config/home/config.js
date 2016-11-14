@@ -63,7 +63,10 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true,// || default raw else fenixtool
+                            config: {
+                                series: [{color: 'orange'}] //orange
+                            }
                         }, // :type-creator config
 
                         postProcess: [
@@ -106,7 +109,10 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true,// || default raw else fenixtool
+                            config: {
+                                series: [{color: 'gray'}]
+                            }
                         }, // :type-creator config
 
                         postProcess: [
@@ -149,7 +155,10 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true,// || default raw else fenixtool
+                            config: {
+                                series: [{color: '#FFC009'}] // yellow
+                            }
                         }, // :type-creator config
 
                         postProcess: [
@@ -192,7 +201,10 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true,// || default raw else fenixtool
+                            config: {
+                                series: [{color: 'DarkRed'}]
+                            }
                         }, // :type-creator config
 
                         postProcess: [
@@ -281,7 +293,10 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true,// || default raw else fenixtool
+                            config: {
+                                series: [{color: 'DarkBlue'}, {color: 'DarkRed'}]
+                            }
                         }, // :type-creator config
 
                         postProcess: [
@@ -324,7 +339,10 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true,// || default raw else fenixtool
+                            config: {
+                                series: [{color: 'CornflowerBlue'}]
+                            }
                         }, // :type-creator config
 
                         postProcess: [
