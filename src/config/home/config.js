@@ -19,7 +19,7 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true//,//,// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true// || default raw else fenixtool
 
                         }, // :type-creator config
 
@@ -235,7 +235,10 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
+                            useDimensionLabelsIfExist: true,// || default raw else fenixtool
+                            config: {
+                                series: [{color: 'green'}]
+                            }
                         }, // :type-creator config
 
                         postProcess: [

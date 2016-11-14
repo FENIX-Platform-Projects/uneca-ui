@@ -30,6 +30,12 @@ define([], function () {
         title: {
             text: null,
             align: 'center'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            y:40
         }
     };
 });
