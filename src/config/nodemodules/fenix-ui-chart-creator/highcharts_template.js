@@ -16,7 +16,7 @@ define([], function () {
                             labels: {
                                 style: {
                                     width: '50px',
-                                    fontSize: '7px'
+                                    fontSize: '8px'
                                 },
                                 step: 1
                             }
@@ -31,7 +31,7 @@ define([], function () {
                                         dataLabels: {
                                             enabled: true,
                                             style: {
-                                                fontSize: '7px'
+                                                fontSize: '8px'
                                             }
                                         }
                                     })
@@ -102,7 +102,7 @@ define([], function () {
                     labels: {
                         y: 15,
                         style: {
-                            fontSize: '7px',
+                            fontSize: '8px',
                             fontWeight: 'bold'
                         }
                     }
@@ -115,7 +115,7 @@ define([], function () {
                     },
                     labels: {
                         style: {
-                            fontSize: '7px'
+                            fontSize: '8px'
                         }
                     }
                 },
