@@ -231,24 +231,11 @@ define([
             this.filter.dispose();
         }
 
-        // var $div = $("<div></div>");
-        // $(s.FILTER_CONTAINER).html($div);
+        var $cointainerContent = $('<div id="filter-container"><div class="row"><div class="col-xs-6"><div data-selector="CountryCode"></div></div><div class="col-xs-6"><div data-selector="Year"></div></div></div></div>');
 
-        //var $cointainerContent = $('<div id="filter-container"><div class="row"><div class="col-xs-6"><div data-selector="CountryCode"></div></div><div class="col-xs-6"><div data-selector="Year"></div></div></div></div>');
-        //var $cointainerContent =$("<div></div>");
-        //  alert("before")
-        //  console.log($(s.FILTER_CONTAINER_DOMAIN).length)
-
-        // if(!$(s.FILTER_CONTAINER_DOMAIN).length>0){
-        //    // alert("in")
-        //     //$(s.FILTER_CONTAINER_DOMAIN).html($cointainerContent);
-        //     $(s.FILTER_CONTAINER_DOMAIN).html($cointainerContent);
-        // }
-        // if(!$(s.FILTER_CONTAINER_DOMAIN).length>0){
-        //     alert("in")
-        //     $(s.FILTER_CONTAINER_DOMAIN).html($cointainerContent);
-        //     $(s.FILTER_CONTAINER).html($cointainerContent);
-        // }
+        if($(s.FILTER_CONTAINER).length === 0){
+            $(s.FILTER_CONTAINER_DOMAIN).html($cointainerContent);
+        }
 
         this.filter = new Filter({
             el: s.FILTER_CONTAINER,
