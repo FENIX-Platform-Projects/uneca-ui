@@ -3,16 +3,14 @@ define([
     'jquery',
     'underscore',
     '../config/config',
-    '../config/events',
     '../config/home/config',
     'fenix-ui-dashboard',
     'fenix-ui-filter-utils',
     '../html/home/home.hbs',
     '../html/home/bases.hbs',
-    '../nls/labels',
     '../nls/home',
     '../config/nodemodules/fenix-ui-chart-creator/highcharts_template'
-], function ($, _, C, EVT, HC, Dashboard, FxUtils, template, basesTemplate, i18nLabels, i18nLabelsHome, HighchartsTemplate) {
+], function ($, _, C, HC, Dashboard, FxUtils, template, basesTemplate, i18nLabelsHome, HighchartsTemplate) {
 
     'use strict';
 
