@@ -19,7 +19,7 @@ define([
     var s = {
         CHART_TABS: '#home-charts-tab a[data-toggle="tab"]',
         DASHBOARD_CONTENT: "#dashboard-content",
-        CHART: "chart"
+        CHART_TYPE: "chart"
     };
 
     function HomeView(params){
@@ -48,7 +48,6 @@ define([
         this._disposeDashboards();
 
         this.currentDashboard = {};
-        this.filterValues = {};
 
     };
 
@@ -152,7 +151,7 @@ define([
         // Sets Highchart config for each chart
         _.each(conf[0].items, _.bind(function (item) {
             if (!_.isEmpty(item)) {
-                if (item.type == s.CHART) {
+                if (item.type == s.CHART_TYPE) {
                     if (item.config.config) {
                         item.config.config = $.extend(true, {}, HighchartsTemplate, item.config.config);
                         item.config.config.title.text = i18nLabelsHome[this.lang][item.id+'_chart_title'];
