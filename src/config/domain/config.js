@@ -15,8 +15,6 @@ define(function () {
 
                 CountryCode: {
 
-                    className: 'col-md-6',
-
                     selector: {
                         id: "tree",
                         default: ["DZA"]
@@ -34,10 +32,7 @@ define(function () {
 
                 },
 
-
                 Year: {
-
-                    className: 'col-md-6',
 
                     selector: {
                         id: "tree",
