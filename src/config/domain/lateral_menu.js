@@ -48,22 +48,10 @@ define({
             "id": "tourism"
           },
           {
-            "id": "infrastructure",
-            "state": {"disabled": true}
+            "id": "infrastructure"
           },
           {
-            "id": "production",
-            "children": [
-              {
-                "id": "agriculture_production",
-                "state": {"disabled": true}
-              },
-              {
-                "id": "mining_production",
-                "state": {"disabled": true}
-              }
-            ],
-            "state": {"disabled": true}
+            "id": "poverty"
           }
         ]
       }

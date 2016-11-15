@@ -27,6 +27,7 @@ define([
         LATERAL_MENU: '#lateral-menu',
         MAP_CONTAINER: "#country-map-container",
         FILTER_CONTAINER: '#filter-container',
+        FILTER_CONTAINER_DOMAIN: '#domain-filter-holder',
         FILTER_SUBMIT: '#filter-submit',
         FILTER_BLOCK: "[data-role='filter-block']"
     };
@@ -229,6 +230,25 @@ define([
         if (this.filter && $.isFunction(this.filter.dispose)) {
             this.filter.dispose();
         }
+
+        // var $div = $("<div></div>");
+        // $(s.FILTER_CONTAINER).html($div);
+
+        //var $cointainerContent = $('<div id="filter-container"><div class="row"><div class="col-xs-6"><div data-selector="CountryCode"></div></div><div class="col-xs-6"><div data-selector="Year"></div></div></div></div>');
+        //var $cointainerContent =$("<div></div>");
+        //  alert("before")
+        //  console.log($(s.FILTER_CONTAINER_DOMAIN).length)
+
+        // if(!$(s.FILTER_CONTAINER_DOMAIN).length>0){
+        //    // alert("in")
+        //     //$(s.FILTER_CONTAINER_DOMAIN).html($cointainerContent);
+        //     $(s.FILTER_CONTAINER_DOMAIN).html($cointainerContent);
+        // }
+        // if(!$(s.FILTER_CONTAINER_DOMAIN).length>0){
+        //     alert("in")
+        //     $(s.FILTER_CONTAINER_DOMAIN).html($cointainerContent);
+        //     $(s.FILTER_CONTAINER).html($cointainerContent);
+        // }
 
         this.filter = new Filter({
             el: s.FILTER_CONTAINER,
