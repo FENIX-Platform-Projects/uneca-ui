@@ -20,7 +20,6 @@ define(function () {
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
-                       //     showUnit: true,
                             config: {
                                 plotOptions: {
                                     line: {
@@ -34,7 +33,7 @@ define(function () {
                                     valueSuffix:" billion"
                                 }
                             }
-                        }, // :type-creator config
+                        },
 
                         postProcess: [
                             {
@@ -79,7 +78,7 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
-                                series: [{color: 'orange'}], //orange
+                                series: [{color: 'orange'}],
                                 plotOptions: {
                                     line: {
                                         dataLabels: {
@@ -91,7 +90,7 @@ define(function () {
                                     valuePrefix:"$"
                                 }
                             }
-                        }, // :type-creator config
+                        },
 
                         postProcess: [
                             {
@@ -148,7 +147,7 @@ define(function () {
                                     valueSuffix:"%"
                                 }
                             }
-                        }, // :type-creator config
+                        },
 
                         postProcess: [
                             {
@@ -205,7 +204,7 @@ define(function () {
                                     valueSuffix:"%"
                                 }
                             }
-                        }, // :type-creator config
+                        },
 
                         postProcess: [
                             {
@@ -262,7 +261,7 @@ define(function () {
                                     valueSuffix:"%"
                                 }
                             }
-                        }, // :type-creator config
+                        },
 
                         postProcess: [
                             {
@@ -319,7 +318,7 @@ define(function () {
                                     valueSuffix:"%"
                                 }
                             }
-                        }, // :type-creator config
+                        },
 
                         postProcess: [
                             {
@@ -376,7 +375,7 @@ define(function () {
                                     valueSuffix:" USD million"
                                 }
                             }
-                        }, // :type-creator config
+                        },
 
                         postProcess: [
                             {
@@ -433,7 +432,7 @@ define(function () {
                                     valueSuffix:" years"
                                 }
                             }
-                        }, // :type-creator config
+                        },
 
                         postProcess: [
                             {

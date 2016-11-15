@@ -5,9 +5,9 @@ define([], function () {
 
     return {
         chart: {
-           spacing: [15, 10, 27, 10], // was [10, 10, 15, 10]
-           events: {
-               load: function () {
+            spacing: [15, 10, 27, 10],
+            events: {
+                load: function () {
                     var showLegend = false;
 
                     if (this.options.chart.forExport) {
@@ -24,17 +24,17 @@ define([], function () {
 
 
                         $.each(this.series, function (i, serie) {
-                                    serie.update({
-                                        marker : {
-                                            radius: 2
-                                        },
-                                        dataLabels: {
-                                            enabled: true,
-                                            style: {
-                                                fontSize: '8px'
-                                            }
-                                        }
-                                    })
+                            serie.update({
+                                marker : {
+                                    radius: 2
+                                },
+                                dataLabels: {
+                                    enabled: true,
+                                    style: {
+                                        fontSize: '8px'
+                                    }
+                                }
+                            })
 
                         });
 
@@ -47,27 +47,27 @@ define([], function () {
                     }
 
                     $.each(this.series, function (i, serie) {
-                       serie.update({
-                         showInLegend: showLegend
-                       })
+                        serie.update({
+                            showInLegend: showLegend
+                        })
                     });
 
                     this.redraw();
 
                 },
-               beforePrint: function (event) {
-                   var $chart = $(this.renderTo);
-                   //Hide buttons and legend title
-                   $chart.find('.highcharts-button').hide();
-                   $chart.find('.highcharts-legend-title').hide();
-               },
-               afterPrint: function (event) {
-                   var $chart = $(this.renderTo);
+                beforePrint: function (event) {
+                    var $chart = $(this.renderTo);
+                    //Hide buttons and legend title
+                    $chart.find('.highcharts-button').hide();
+                    $chart.find('.highcharts-legend-title').hide();
+                },
+                afterPrint: function (event) {
+                    var $chart = $(this.renderTo);
 
-                   //Re-show buttons and legend title
-                   $chart.find('.highcharts-button').show();
-                   $chart.find('.highcharts-legend-title').show();
-               }
+                    //Re-show buttons and legend title
+                    $chart.find('.highcharts-button').show();
+                    $chart.find('.highcharts-legend-title').show();
+                }
 
             }
 

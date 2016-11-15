@@ -39,7 +39,7 @@ define([
         return this;
     }
 
-   HomeView.prototype._dispose = function () {
+    HomeView.prototype._dispose = function () {
 
         if (this.$chartTabs && this.$chartTabs.length > 0) {
             this.$chartTabs.off();
