@@ -19,8 +19,21 @@ define(function () {
                             series: ["indicator"], //Y dimension
                             y: ["value"],
                             aggregationFn: {"value": "sum"},
-                            useDimensionLabelsIfExist: true// || default raw else fenixtool
-
+                            useDimensionLabelsIfExist: true,// || default raw else fenixtool
+                       //     showUnit: true,
+                            config: {
+                                plotOptions: {
+                                    line: {
+                                        dataLabels: {
+                                            enabled: true
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    valuePrefix:"$",
+                                    valueSuffix:" billion"
+                                }
+                            }
                         }, // :type-creator config
 
                         postProcess: [
@@ -31,7 +44,8 @@ define(function () {
                                     "columns": [
                                         "year",
                                         "value",
-                                        "indicator"
+                                        "indicator",
+                                        "um"
                                     ],
                                     "rows": {
                                         "indicator": {
@@ -65,7 +79,17 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
-                                series: [{color: 'orange'}] //orange
+                                series: [{color: 'orange'}], //orange
+                                plotOptions: {
+                                    line: {
+                                        dataLabels: {
+                                            enabled: true
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    valuePrefix:"$"
+                                }
                             }
                         }, // :type-creator config
 
@@ -77,7 +101,8 @@ define(function () {
                                     "columns": [
                                         "year",
                                         "value",
-                                        "indicator"
+                                        "indicator",
+                                        "um"
                                     ],
                                     "rows": {
                                         "indicator": {
@@ -111,7 +136,17 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
-                                series: [{color: 'gray'}]
+                                series: [{color: 'gray'}],
+                                plotOptions: {
+                                    line: {
+                                        dataLabels: {
+                                            enabled: true
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    valueSuffix:"%"
+                                }
                             }
                         }, // :type-creator config
 
@@ -123,7 +158,8 @@ define(function () {
                                     "columns": [
                                         "year",
                                         "value",
-                                        "indicator"
+                                        "indicator",
+                                        "um"
                                     ],
                                     "rows": {
                                         "indicator": {
@@ -157,7 +193,17 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
-                                series: [{color: '#FFC009'}] // yellow
+                                series: [{color: '#FFC009'}], // yellow
+                                plotOptions: {
+                                    column: {
+                                        dataLabels: {
+                                            enabled: true
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    valueSuffix:"%"
+                                }
                             }
                         }, // :type-creator config
 
@@ -169,7 +215,8 @@ define(function () {
                                     "columns": [
                                         "year",
                                         "value",
-                                        "indicator"
+                                        "indicator",
+                                        "um"
                                     ],
                                     "rows": {
                                         "indicator": {
@@ -203,7 +250,17 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
-                                series: [{color: 'DarkRed'}]
+                                series: [{color: 'DarkRed'}],
+                                plotOptions: {
+                                    line: {
+                                        dataLabels: {
+                                            enabled: true
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    valueSuffix:"%"
+                                }
                             }
                         }, // :type-creator config
 
@@ -215,7 +272,8 @@ define(function () {
                                     "columns": [
                                         "year",
                                         "value",
-                                        "indicator"
+                                        "indicator",
+                                        "um"
                                     ],
                                     "rows": {
                                         "indicator": {
@@ -249,7 +307,17 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
-                                series: [{color: 'green'}]
+                                series: [{color: 'green'}],
+                                plotOptions: {
+                                    column: {
+                                        dataLabels: {
+                                            enabled: true
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    valueSuffix:"%"
+                                }
                             }
                         }, // :type-creator config
 
@@ -261,7 +329,8 @@ define(function () {
                                     "columns": [
                                         "year",
                                         "value",
-                                        "indicator"
+                                        "indicator",
+                                        "um"
                                     ],
                                     "rows": {
                                         "indicator": {
@@ -295,7 +364,17 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
-                                series: [{color: 'DarkBlue'}, {color: 'DarkRed'}]
+                                series: [{color: 'DarkBlue'}, {color: 'DarkRed'}],
+                                plotOptions: {
+                                    line: {
+                                        dataLabels: {
+                                            enabled: true
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    valueSuffix:" USD million"
+                                }
                             }
                         }, // :type-creator config
 
@@ -307,7 +386,8 @@ define(function () {
                                     "columns": [
                                         "year",
                                         "value",
-                                        "indicator"
+                                        "indicator",
+                                        "um"
                                     ],
                                     "rows": {
                                         "indicator": {
@@ -341,7 +421,17 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
-                                series: [{color: 'CornflowerBlue'}]
+                                series: [{color: 'CornflowerBlue'}],
+                                plotOptions: {
+                                    column: {
+                                        dataLabels: {
+                                            enabled: true
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    valueSuffix:" years"
+                                }
                             }
                         }, // :type-creator config
 
@@ -353,7 +443,8 @@ define(function () {
                                     "columns": [
                                         "year",
                                         "value",
-                                        "indicator"
+                                        "indicator",
+                                        "um"
                                     ],
                                     "rows": {
                                         "indicator": {
@@ -372,6 +463,5 @@ define(function () {
                 ]
             }]
         }
-
     }
 });
