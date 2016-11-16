@@ -26,7 +26,7 @@ define([], function () {
                         $.each(this.series, function (i, serie) {
                             serie.update({
                                 marker : {
-                                    radius: 2
+                                    radius: 3
                                 },
                                 dataLabels: {
                                     enabled: true,
