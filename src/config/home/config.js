@@ -372,7 +372,8 @@ define(function () {
                                     }
                                 },
                                 tooltip: {
-                                    valueSuffix:" USD million"
+                                    valueSuffix:" USD million",
+                                    shared:true
                                 }
                             }
                         },
