@@ -136,6 +136,8 @@ define([
 
 
         this.filterValues[this.currentDashboard] = values;
+        this._setDashboardConfig()
+
 
         console.log(this.currentDashboard);
         console.log(this.dashboards);
@@ -147,6 +149,40 @@ define([
         }, this));
 
     };
+
+
+    DomainView.prototype._setDashboardConfig = function (id) {
+
+        var conf = PC[id].dashboard,
+            filterValues = this.filterValues[this.currentDashboard] || {};
+
+        if (!Array.isArray(conf)) {
+            conf = FxUtils.cleanArray([conf]);
+        }
+
+        _.each(conf, _.bind(function (c) {
+
+            if (!_.isEmpty(c)) {
+                c.filter = $.extend(c.filter, this._createCountryFilter());
+
+                var countrySel = c.filter.CountryCode;
+
+                _.each(c.items, _.bind(function (item) {
+                    item.filter = $.extend(item.filter, filterValues.values);
+
+                    if (item.id === 'country-map-container') {
+                        item.config.fenix_ui_map.zoomToCountry = countrySel;
+                        item.config.fenix_ui_map.highlightCountry = countrySel;
+                    }
+                }))
+            }
+
+        }, this));
+
+        return conf;
+
+    };
+
 
     DomainView.prototype._printDashboard = function (item) {
 
@@ -202,6 +238,33 @@ define([
             conf = FxUtils.cleanArray([conf]);
         }
 
+        console.log("ID ", id)
+        console.log(filterValues)
+        console.log(conf)
+
+        // _.each(conf, _.bind(function (c) {
+        //
+        //     console.log(c)
+        //     if (!_.isEmpty(c)) {
+        //         console.log("IN IF!!!")
+        //         c.filter = $.extend(c.filter, this._createCountryFilter());
+        //
+        //         var countrySel = c.filter.CountryCode;
+        //
+        //         _.each(c.items, _.bind(function (item) {
+        //             item.filter = $.extend(item.filter, filterValues.values);
+        //             if (item.id === 'country-map-container') {//[""]ISO3 "DZA" [3,4,5]//GAUL
+        //                 item.config.fenix_ui_map.zoomToCountry = countrySel;
+        //                 item.config.fenix_ui_map.highlightCountry = countrySel;
+        //             }
+        //         }))
+        //     }
+        //     else{
+        //         console.log("IN ELSE!!!")
+        //     }
+        //
+        // }, this));
+
         return conf;
 
     };
@@ -248,6 +311,14 @@ define([
             }
         });
 
+    };
+
+    DomainView.prototype._createCountryFilter = function () {
+
+        //create country filter
+
+        console.log(this.id)
+        return {"CountryCode": [this.id]};
     };
 
     //Disposition process

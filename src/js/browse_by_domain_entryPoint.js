@@ -21,7 +21,7 @@ define([
 
         this._importThirdPartyCss();
 
-        log.setLevel('trace');
+        log.setLevel('silent');
 
         this._createBrowseByDomainView();
     }
