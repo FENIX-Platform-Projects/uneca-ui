@@ -240,7 +240,6 @@ define([
         if (!_.isEmpty(conf)) {
 
             _.each(conf.items, _.bind(function (item) {
-                console.log(i18nLabels[self.lang][item.id+'_title'])
 
                 if (item.type == s.CHART_TYPE) {
                     if (item.config.config) {

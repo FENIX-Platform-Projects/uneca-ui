@@ -58,7 +58,7 @@ define(['underscore'],function (_) {
                 items: [
 
                     {
-                        id: "population-1", //ref [data-item=':id']
+                        id: "population1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -74,7 +74,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "population-2", //ref [data-item=':id']
+                        id: "population2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -90,7 +90,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "population-3", //ref [data-item=':id']
+                        id: "population3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -106,7 +106,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "population-4", //ref [data-item=':id']
+                        id: "population4", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -122,7 +122,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "population-5", //ref [data-item=':id']
+                        id: "population5", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -138,7 +138,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "population-6", //ref [data-item=':id']
+                        id: "population6", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -167,7 +167,7 @@ define(['underscore'],function (_) {
                 //postProcess : {} //D3P process
                 items: [
                     {
-                        id: "edu_1", //ref [data-item=':id']
+                        id: "edu1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -186,7 +186,7 @@ define(['underscore'],function (_) {
 
 
                     {
-                        id: "edu_2", //ref [data-item=':id']
+                        id: "edu2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -203,7 +203,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "edu_3", //ref [data-item=':id']
+                        id: "edu3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -235,7 +235,7 @@ define(['underscore'],function (_) {
                 //postProcess : {} //D3P process
                 items: [
                     {
-                        id: "health-1", //ref [data-item=':id']
+                        id: "health1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -251,7 +251,7 @@ define(['underscore'],function (_) {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
-                        id: "health-2", //ref [data-item=':id']
+                        id: "health2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -267,7 +267,7 @@ define(['underscore'],function (_) {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
-                        id: "health-3", //ref [data-item=':id']
+                        id: "health3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -285,7 +285,7 @@ define(['underscore'],function (_) {
 
 
                     {
-                        id: "health-4", //ref [data-item=':id']
+                        id: "health4", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -314,7 +314,7 @@ define(['underscore'],function (_) {
                 //postProcess : {} //D3P process
                 items: [
                         {
-                            id: "labour-1", //ref [data-item=':id']
+                            id: "labour1", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -332,7 +332,7 @@ define(['underscore'],function (_) {
                         },
 
                         {
-                            id: "labour-2", //ref [data-item=':id']
+                            id: "labour2", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
@@ -350,7 +350,7 @@ define(['underscore'],function (_) {
                         },
 
                         {
-                            id: "labour-3", //ref [data-item=':id']
+                            id: "labour3", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
@@ -374,7 +374,7 @@ define(['underscore'],function (_) {
                 { uid: "ILO_Labour",
                       items :  [
                         {
-                            id: "labour-4", //ref [data-item=':id']
+                            id: "labour4", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -390,7 +390,7 @@ define(['underscore'],function (_) {
                         },
 
                         {
-                            id: "labour-5", //ref [data-item=':id']
+                            id: "labour5", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
@@ -410,7 +410,7 @@ define(['underscore'],function (_) {
 
 
                         {
-                            id: "labour-6", //ref [data-item=':id']
+                            id: "labour6", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
@@ -447,7 +447,7 @@ define(['underscore'],function (_) {
                 { uid: "UNECA_GDP_NC",
                     items :  [
                         {
-                            id: "gdp-1", //ref [data-item=':id']
+                            id: "gdp1", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -469,7 +469,7 @@ define(['underscore'],function (_) {
                 { uid: "UNECA_GDP_NC",
                     items :  [
                         {
-                            id: "gdp-2", //ref [data-item=':id']
+                            id: "gdp2", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -484,7 +484,7 @@ define(['underscore'],function (_) {
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
                         {
-                            id: "gdp-3", //ref [data-item=':id']
+                            id: "gdp3", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -571,7 +571,7 @@ define(['underscore'],function (_) {
                 { uid: "UNECA_ExpenditureGDPCurrent",
                     items: [
                         {
-                            id: "expenditure-1", //ref [data-item=':id']
+                            id: "expenditure1", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
@@ -591,7 +591,7 @@ define(['underscore'],function (_) {
 
 
                         {
-                            id: "expenditure-2", //ref [data-item=':id']
+                            id: "expenditure2", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
@@ -608,7 +608,7 @@ define(['underscore'],function (_) {
 
 
                         {
-                            id: "expenditure-3", //ref [data-item=':id']
+                            id: "expenditure3", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -624,7 +624,7 @@ define(['underscore'],function (_) {
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
                         {
-                            id: "expenditure-4", //ref [data-item=':id']
+                            id: "expenditure4", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -656,7 +656,7 @@ define(['underscore'],function (_) {
                     //postProcess : {} //D3P process
                     items: [
                         {
-                            id: "expenditure-5", //ref [data-item=':id']
+                            id: "expenditure5", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
@@ -676,7 +676,7 @@ define(['underscore'],function (_) {
 
 
                         {
-                            id: "expenditure-6", //ref [data-item=':id']
+                            id: "expenditure6", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "column",
@@ -693,7 +693,7 @@ define(['underscore'],function (_) {
 
 
                         {
-                            id: "expenditure-7", //ref [data-item=':id']
+                            id: "expenditure7", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -709,7 +709,7 @@ define(['underscore'],function (_) {
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         },
                         {
-                            id: "expenditure-8", //ref [data-item=':id']
+                            id: "expenditure8", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -753,7 +753,7 @@ define(['underscore'],function (_) {
 
                 items: [
                     {
-                        id: "monetary-1", //ref [data-item=':id']
+                        id: "monetary1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -771,7 +771,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "monetary-2", //ref [data-item=':id']
+                        id: "monetary2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -788,7 +788,7 @@ define(['underscore'],function (_) {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
-                        id: "monetary-3", //ref [data-item=':id']
+                        id: "monetary3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -819,7 +819,7 @@ define(['underscore'],function (_) {
 
 
                     {
-                        id: "finance-1", //ref [data-item=':id']
+                        id: "finance1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -837,7 +837,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "finance-2", //ref [data-item=':id']
+                        id: "finance2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -855,7 +855,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "finance-3", //ref [data-item=':id']
+                        id: "finance3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -887,7 +887,7 @@ define(['underscore'],function (_) {
                 items: [
 
                     {
-                        id: "debt-1", //ref [data-item=':id']
+                        id: "debt1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -905,7 +905,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "debt-2", //ref [data-item=':id']
+                        id: "debt2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -924,7 +924,7 @@ define(['underscore'],function (_) {
 
 
                     {
-                        id: "debt-3", //ref [data-item=':id']
+                        id: "debt3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -955,7 +955,7 @@ define(['underscore'],function (_) {
                 items: [
 
                     {
-                        id: "energy-1", //ref [data-item=':id']
+                        id: "energy1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -973,7 +973,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "energy-2", //ref [data-item=':id']
+                        id: "energy2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -992,7 +992,7 @@ define(['underscore'],function (_) {
 
 
                     {
-                        id: "energy-3", //ref [data-item=':id']
+                        id: "energy3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1023,7 +1023,7 @@ define(['underscore'],function (_) {
                 items: [
 
                     {
-                        id: "poverty-1", //ref [data-item=':id']
+                        id: "poverty1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1040,7 +1040,7 @@ define(['underscore'],function (_) {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
-                        id: "poverty-2", //ref [data-item=':id']
+                        id: "poverty2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1075,7 +1075,7 @@ define(['underscore'],function (_) {
                 items: [
 
                     {
-                        id: "financial_flows-1", //ref [data-item=':id']
+                        id: "financial_flows1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1092,7 +1092,7 @@ define(['underscore'],function (_) {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
-                        id: "financial_flows-2", //ref [data-item=':id']
+                        id: "financial_flows2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1115,7 +1115,7 @@ define(['underscore'],function (_) {
 
 
                     {
-                        id: "financial_flows-3", //ref [data-item=':id']
+                        id: "financial_flows3", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             geoSubject: 'PartnerCode',
@@ -1147,7 +1147,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "financial_flows-4", //ref [data-item=':id']
+                        id: "financial_flows4", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             geoSubject: 'PartnerCode',
@@ -1307,7 +1307,7 @@ define(['underscore'],function (_) {
                 items: [
 
                     {
-                        id: "tourism-1", //ref [data-item=':id']
+                        id: "tourism1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -1323,7 +1323,7 @@ define(['underscore'],function (_) {
                     },
 
                     {
-                        id: "tourism-2", //ref [data-item=':id']
+                        id: "tourism2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -1351,7 +1351,7 @@ define(['underscore'],function (_) {
                 //postProcess : {} //D3P process
                 items: [
                     {
-                        id: "BOP-1", //ref [data-item=':id']
+                        id: "BOP1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1368,7 +1368,7 @@ define(['underscore'],function (_) {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
-                        id: "BOP-2", //ref [data-item=':id']
+                        id: "BOP2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1387,7 +1387,7 @@ define(['underscore'],function (_) {
 
 
                     {
-                        id: "BOP-3", //ref [data-item=':id']
+                        id: "BOP3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1443,7 +1443,7 @@ filter:{
                 items: [
 
                     {
-                        id: "inflation-1", //ref [data-item=':id']
+                        id: "inflation1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",

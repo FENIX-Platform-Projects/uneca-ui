@@ -16,11 +16,12 @@ define([
     '../html/profile/bases.hbs',
     '../config/profile/lateral_menu',
     '../config/profile/countries_summary',
+    '../config/nodemodules/fenix-ui-chart-creator/highcharts_template',
     'handlebars',
     'amplify-pubsub',
     'bootstrap-list-filter',
     'jstree'
-], function ($, log, _, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, CountrySummary, Handlebars) {
+], function ($, log, _, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, CountrySummary, HighchartsTemplate,  Handlebars) {
 
     'use strict';
 
@@ -33,7 +34,8 @@ define([
         FILTER_CONTAINER: '#filter-container',
         FILTER_SUBMIT: '#filter-submit',
         FILTER_BLOCK: "[data-role='filter-block']",
-        BROWSE_BY_COUNTRY_BACK: "#browse-by-country-back"
+        BROWSE_BY_COUNTRY_BACK: "#browse-by-country-back",
+        CHART_TYPE: "chart"
     };
 
     function CountryProfileView(params) {
@@ -171,6 +173,7 @@ define([
         if (!Array.isArray(conf)) {
             conf = FxUtils.cleanArray([conf]);
         }
+        var self = this;
 
         _.each(conf, _.bind(function (c) {
 
@@ -185,6 +188,16 @@ define([
                     if (item.id === 'country-map-container') {
                         item.config.fenix_ui_map.zoomToCountry = countrySel;
                         item.config.fenix_ui_map.highlightCountry = countrySel;
+                    }
+
+                    if (item.type == s.CHART_TYPE) {
+                        if (item.config.config) {
+                            item.config.config = $.extend(true, {}, HighchartsTemplate, item.config.config);
+                            item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
+                        } else {
+                            item.config.config = $.extend(true, {}, HighchartsTemplate);
+                            item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
+                        }
                     }
                 }))
             }
