@@ -15,8 +15,9 @@ define([
     '../html/domain/dashboard.hbs',
     '../html/domain/bases.hbs',
     '../config/domain/lateral_menu',
+    '../config/nodemodules/fenix-ui-chart-creator/highcharts_template',
     'jstree'
-], function ($, log, _, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig) {
+], function ($, log, _, EVT, C, PC, Dashboard, Filter, FxUtils, Utils, i18nLabels, template, dashboardTemplate, basesTemplate, LateralMenuConfig, HighchartsTemplate) {
 
     'use strict';
 
@@ -29,7 +30,8 @@ define([
         FILTER_CONTAINER: '#filter-container',
         FILTER_CONTAINER_DOMAIN: '#domain-filter-holder',
         FILTER_SUBMIT: '#filter-submit',
-        FILTER_BLOCK: "[data-role='filter-block']"
+        FILTER_BLOCK: "[data-role='filter-block']",
+        CHART_TYPE: "chart"
     };
 
     function DomainView(params){
@@ -97,10 +99,8 @@ define([
             }, this));
 
         var id = 'population';
-        this._printDashboard(id);
         this.currentDashboard = id;
-        //this._printDashboard('tourism');
-
+        this._printDashboard(id);
     };
 
     DomainView.prototype._initDashboardVariables = function () {
@@ -133,11 +133,9 @@ define([
 
         this.filterValues[this.currentDashboard] = values;
         var conf = this.dashboardConfig[this.currentDashboard];
-
         //If the dashboard contains a map return it
         var map = _.find(conf.dashboard.items, function(it){
             return it.type == 'map'});
-
         if(map){
             var updatedconf = this._updateDashboardConfig(conf, values);
             this.dashboardConfig[this.currentDashboard] = updatedconf;
@@ -155,26 +153,25 @@ define([
 
     DomainView.prototype._updateDashboardConfig = function (conf, filterValues) {
 
-        _.each(conf.dashboard.items, _.bind(function (c) {
+        var c= conf.dashboard;
 
-            if (!_.isEmpty(c)) {
-                c.filter = $.extend(c.filter, filterValues);
 
-                var countrySel = c.filter.values.CountryCode;
 
-                _.each(c.items, _.bind(function (item) {
+        if (!_.isEmpty(c)) {
+            c.filter = $.extend(c.filter, filterValues);
 
-                   if (item.type === 'map') {
-                        item.config.fenix_ui_map.zoomToCountry = countrySel;
-                       item.config.fenix_ui_map.highlightCountry = countrySel;
-                   }
-                }))
-            }
+            var countrySel = c.filter.values.CountryCode;
 
-        }, this));
+            _.each(c.items, _.bind(function (item) {
+
+                if (item.type === 'map') {
+                    item.config.fenix_ui_map.zoomToCountry = countrySel;
+                    item.config.fenix_ui_map.highlightCountry = countrySel;
+                }
+            }))
+        }
 
         return conf;
-
     };
 
 
@@ -182,8 +179,11 @@ define([
 
         var conf = this._getDashboardConfig(item),
         filterConfig = this._getFilterConfig(item);
+        console.log(conf)
+
 
         this.dashboardConfig[item] = PC[item];
+        console.log(conf)
 
         if (!_.isEmpty(filterConfig)) {
             this.$el.find(s.FILTER_BLOCK).show();
@@ -191,9 +191,11 @@ define([
         } else {
             this.$el.find(s.FILTER_BLOCK).hide();
         }
+        console.log(conf)
 
         this._printDashboardBase(item);
 
+        console.log(conf)
         if (conf && !_.isEmpty(conf)) {
            this._renderDashboard(conf);
         }
@@ -205,13 +207,9 @@ define([
 
         this._disposeDashboards();
 
-        _.each(config, _.bind(function (c) {
-
-            this.dashboards.push(new Dashboard($.extend(true, {
-                environment : this.environment
-            }, c)));
-
-        }, this));
+        this.dashboards.push(new Dashboard($.extend(true, {
+            environment : this.environment
+        }, config)));
 
     };
 
@@ -229,9 +227,26 @@ define([
 
         var conf = PC[id].dashboard,
             filterValues = this.filterValues[this.currentDashboard] || {};
-
         if (!Array.isArray(conf)) {
             conf = FxUtils.cleanArray([conf]);
+            conf = conf[0];
+        }
+
+        if (!_.isEmpty(conf)) {
+
+            _.each(conf.items, _.bind(function (item) {
+                if (item.type == s.CHART_TYPE) {
+                    if (item.config.config) {
+                        item.config.config = $.extend(true, {}, HighchartsTemplate, item.config.config);
+                        //item.config.config.title.text = i18nLabelsHome[this.lang][item.id+'_chart_title'];
+
+                    } else {
+                        item.config.config = $.extend(true, {}, HighchartsTemplate);
+                        //item.config.config.title.text = i18nLabelsHome[this.lang][item.id+'_chart_title'];
+
+                    }
+                }
+            }))
         }
 
         return conf;

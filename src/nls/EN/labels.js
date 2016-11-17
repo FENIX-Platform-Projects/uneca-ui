@@ -117,12 +117,12 @@ define(function () {
                //population
 
                population1_title: "Mid-year Population",
-               population2_title:"Average annual growth rate",
-               population3_title:"Crude birth rate per 1,000 population",
-               population4_title: "Crude death rate per 1,000 population",
-               population5_title: "Total fertility",
+               population2_title:"Average annual growth rate (Latest year only)",
+               population3_title:"Crude birth rate per 1,000 population (Latest year only)",
+               population4_title: "Crude death rate per 1,000 population (Latest year only)",
+               population5_title: "Total fertility (Latest year only)",
                population6_title:"Life expectancy (years)",
-               population7_title:"Urbanization rate (per cent)",
+               population7_title:"Urbanization rate (per cent) (Latest year only)",
 
                //education
 

@@ -23,34 +23,34 @@ define([], function () {
                         }, false);
 
 
-                        $.each(this.series, function (i, serie) {
-                            serie.update({
-                                marker : {
-                                    radius: 3
-                                },
-                                dataLabels: {
-                                    enabled: true,
-                                    style: {
-                                        fontSize: '8px'
-                                    }
-                                }
-                            })
-
-                        });
+                        // $.each(this.series, function (i, serie) {
+                        //     serie.update({
+                        //         marker : {
+                        //             radius: 3
+                        //         },
+                        //         dataLabels: {
+                        //             enabled: true,
+                        //             style: {
+                        //                 fontSize: '8px'
+                        //             }
+                        //         }
+                        //     })
+                        //
+                        // });
 
 
                         this.redraw();
                     }
 
-                    if(this.series.length > 1){
-                        showLegend = true;
-                    }
-
-                    $.each(this.series, function (i, serie) {
-                        serie.update({
-                            showInLegend: showLegend
-                        })
-                    });
+                    // if(this.series.length > 1){
+                    //     showLegend = true;
+                    // }
+                    //
+                    // $.each(this.series, function (i, serie) {
+                    //     serie.update({
+                    //         showInLegend: showLegend
+                    //     })
+                    // });
 
                     this.redraw();
 
@@ -81,12 +81,12 @@ define([], function () {
                 paddingBottom: '20px'
             }
         },
-        legend: {
-            layout: 'vertical',
+       /* legend: {
+           layout: 'vertical',
             align: 'right',
             verticalAlign: 'top',
             y:40
-        },
+        },*/
         tooltip: {
             pointFormat:"<tr><td style='color:{series.color};padding:0'>{series.name}: </td><td style='padding:0'><b>{point.y} </b></td></tr>"
         },
