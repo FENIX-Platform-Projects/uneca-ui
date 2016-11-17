@@ -21,36 +21,8 @@ define([], function () {
                                 step: 1
                             }
                         }, false);
-
-
-                        // $.each(this.series, function (i, serie) {
-                        //     serie.update({
-                        //         marker : {
-                        //             radius: 3
-                        //         },
-                        //         dataLabels: {
-                        //             enabled: true,
-                        //             style: {
-                        //                 fontSize: '8px'
-                        //             }
-                        //         }
-                        //     })
-                        //
-                        // });
-
-
                         this.redraw();
                     }
-
-                    // if(this.series.length > 1){
-                    //     showLegend = true;
-                    // }
-                    //
-                    // $.each(this.series, function (i, serie) {
-                    //     serie.update({
-                    //         showInLegend: showLegend
-                    //     })
-                    // });
 
                     this.redraw();
 
@@ -68,9 +40,7 @@ define([], function () {
                     $chart.find('.highcharts-button').show();
                     $chart.find('.highcharts-legend-title').show();
                 }
-
             }
-
         },
         title: {
             text: null,
@@ -81,12 +51,6 @@ define([], function () {
                 paddingBottom: '20px'
             }
         },
-       /* legend: {
-           layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top',
-            y:40
-        },*/
         tooltip: {
             pointFormat:"<tr><td style='color:{series.color};padding:0'>{series.name}: </td><td style='padding:0'><b>{point.y} </b></td></tr>"
         },

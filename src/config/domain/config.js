@@ -61,7 +61,6 @@ define(function () {
 
             },
 
-
             dashboard: {
 
                 uid: "Uneca_PopulationNew",
@@ -72,7 +71,7 @@ define(function () {
                 items: [
                    {
                        //Mid-year Population 010101
-                        id: "population-1", //ref [data-item=':id']
+                        id: "population1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -149,7 +148,7 @@ define(function () {
                     },
                     {
                         //Average annual growth rate 010103
-                        id: "population-2", //ref [data-item=':id'] // 010103  Average annual growth rate
+                        id: "population2", //ref [data-item=':id'] // 010103  Average annual growth rate
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -309,7 +308,7 @@ define(function () {
                     },
                     {
                         //Crude birth rate per 1,000 population 010104
-                        id: "population-3", //ref [data-item=':id'] // 010104  Crude birth rate per 1,000 population
+                        id: "population3", //ref [data-item=':id'] // 010104  Crude birth rate per 1,000 population
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -469,7 +468,7 @@ define(function () {
                     },
                     {
                         //Crude death rate per 1,000 population 010105
-                        id: "population-4", //ref [data-item=':id'] // 010103  Average annual growth rate
+                        id: "population4", //ref [data-item=':id'] // 010103  Average annual growth rate
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -628,7 +627,7 @@ define(function () {
                     },
                     {
                         //Total fertility 010106
-                        id: "population-5", //ref [data-item=':id'] // 010103  Average annual growth rate
+                        id: "population5", //ref [data-item=':id'] // 010103  Average annual growth rate
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -790,7 +789,7 @@ define(function () {
 
                     {
                         //Life expectancy (years) 010108
-                        id: "population-6", //ref [data-item=':id']
+                        id: "population6", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -863,7 +862,7 @@ define(function () {
 
                     {
                         //Urbanization rate (per cent) 010102
-                        id: "population-7", //ref [data-item=':id']
+                        id: "population7", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {

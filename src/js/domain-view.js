@@ -21,6 +21,9 @@ define([
 
     'use strict';
 
+    // font: normal normal 300 16px/normal "Roboto";
+    // color: #567794;
+
     var s = {
         CONTENT: "#domain-content",
         SEARCH_FILTER_INPUT: "#searchinput",
@@ -231,18 +234,22 @@ define([
             conf = FxUtils.cleanArray([conf]);
             conf = conf[0];
         }
+        var self = this;
+
 
         if (!_.isEmpty(conf)) {
 
             _.each(conf.items, _.bind(function (item) {
+                console.log(i18nLabels[self.lang][item.id+'_title'])
+
                 if (item.type == s.CHART_TYPE) {
                     if (item.config.config) {
                         item.config.config = $.extend(true, {}, HighchartsTemplate, item.config.config);
-                        //item.config.config.title.text = i18nLabelsHome[this.lang][item.id+'_chart_title'];
+                        item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
 
                     } else {
                         item.config.config = $.extend(true, {}, HighchartsTemplate);
-                        //item.config.config.title.text = i18nLabelsHome[this.lang][item.id+'_chart_title'];
+                        item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
 
                     }
                 }
