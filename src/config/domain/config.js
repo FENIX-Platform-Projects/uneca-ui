@@ -70,7 +70,7 @@ define(function () {
             },
 
 
-            dashboard: [{
+            dashboard: {
 
                 uid: "Uneca_PopulationNew",
                 //version: "",
@@ -1050,7 +1050,7 @@ define(function () {
                          ]
                      }
                 ]
-            }]
+            }
         },
 
         "education": {

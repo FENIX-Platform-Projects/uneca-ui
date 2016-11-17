@@ -129,14 +129,13 @@ define([
 
     DomainView.prototype._onFilterClick = function () {
 
-
         var values = this.filter.getValues();
 
         this.filterValues[this.currentDashboard] = values;
         var conf = this.dashboardConfig[this.currentDashboard];
 
         //If the dashboard contains a map return it
-        var map = _.find(conf.dashboard[0].items, function(it){
+        var map = _.find(conf.dashboard.items, function(it){
             return it.type == 'map'});
 
         if(map){
@@ -156,7 +155,7 @@ define([
 
     DomainView.prototype._updateDashboardConfig = function (conf, filterValues) {
 
-        _.each(conf.dashboard, _.bind(function (c) {
+        _.each(conf.dashboard.items, _.bind(function (c) {
 
             if (!_.isEmpty(c)) {
                 c.filter = $.extend(c.filter, filterValues);
