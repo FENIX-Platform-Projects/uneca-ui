@@ -21,6 +21,44 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
+                                chart: {
+                                    events: {
+                                        load: function () {
+                                            if (this.options.chart.forExport) {
+                                                this.xAxis[0].update({
+                                                    categories: this.xAxis[0].categories,
+                                                    labels: {
+                                                        style: {
+                                                            width: '50px',
+                                                            fontSize: '8px'
+                                                        },
+                                                        step: 1
+                                                    }
+                                                }, false);
+
+
+                                                $.each(this.series, function (i, serie) {
+                                                    serie.update({
+                                                        marker : {
+                                                            radius: 3
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                fontSize: '8px'
+                                                            }
+                                                        }
+                                                    })
+
+                                                });
+
+
+                                                this.redraw();
+                                            }
+
+                                        }
+                                    }
+                                },
                                 plotOptions: {
                                     line: {
                                         dataLabels: {
@@ -31,6 +69,9 @@ define(function () {
                                 tooltip: {
                                     valuePrefix:"$",
                                     valueSuffix:" billion"
+                                },
+                                legend: {
+                                   enabled:false
                                 }
                             }
                         },
@@ -78,6 +119,44 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
+                                chart: {
+                                    events: {
+                                        load: function () {
+                                            if (this.options.chart.forExport) {
+                                                this.xAxis[0].update({
+                                                    categories: this.xAxis[0].categories,
+                                                    labels: {
+                                                        style: {
+                                                            width: '50px',
+                                                            fontSize: '8px'
+                                                        },
+                                                        step: 1
+                                                    }
+                                                }, false);
+
+
+                                                $.each(this.series, function (i, serie) {
+                                                    serie.update({
+                                                        marker : {
+                                                            radius: 3
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                fontSize: '8px'
+                                                            }
+                                                        }
+                                                    })
+
+                                                });
+
+
+                                                this.redraw();
+                                            }
+
+                                        }
+                                    }
+                                },
                                 series: [{color: 'orange'}],
                                 plotOptions: {
                                     line: {
@@ -88,6 +167,9 @@ define(function () {
                                 },
                                 tooltip: {
                                     valuePrefix:"$"
+                                },
+                                legend: {
+                                    enabled:false
                                 }
                             }
                         },
@@ -135,6 +217,44 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
+                                chart: {
+                                    events: {
+                                        load: function () {
+                                            if (this.options.chart.forExport) {
+                                                this.xAxis[0].update({
+                                                    categories: this.xAxis[0].categories,
+                                                    labels: {
+                                                        style: {
+                                                            width: '50px',
+                                                            fontSize: '8px'
+                                                        },
+                                                        step: 1
+                                                    }
+                                                }, false);
+
+
+                                                $.each(this.series, function (i, serie) {
+                                                    serie.update({
+                                                        marker : {
+                                                            radius: 3
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                fontSize: '8px'
+                                                            }
+                                                        }
+                                                    })
+
+                                                });
+
+
+                                                this.redraw();
+                                            }
+
+                                        }
+                                    }
+                                },
                                 series: [{color: 'gray'}],
                                 plotOptions: {
                                     line: {
@@ -145,6 +265,9 @@ define(function () {
                                 },
                                 tooltip: {
                                     valueSuffix:"%"
+                                },
+                                legend: {
+                                    enabled:false
                                 }
                             }
                         },
@@ -192,6 +315,44 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
+                                chart: {
+                                    events: {
+                                        load: function () {
+                                            if (this.options.chart.forExport) {
+                                                this.xAxis[0].update({
+                                                    categories: this.xAxis[0].categories,
+                                                    labels: {
+                                                        style: {
+                                                            width: '50px',
+                                                            fontSize: '8px'
+                                                        },
+                                                        step: 1
+                                                    }
+                                                }, false);
+
+
+                                                $.each(this.series, function (i, serie) {
+                                                    serie.update({
+                                                        marker : {
+                                                            radius: 3
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                fontSize: '8px'
+                                                            }
+                                                        }
+                                                    })
+
+                                                });
+
+
+                                                this.redraw();
+                                            }
+
+                                        }
+                                    }
+                                },
                                 series: [{color: '#FFC009'}], // yellow
                                 plotOptions: {
                                     column: {
@@ -202,6 +363,9 @@ define(function () {
                                 },
                                 tooltip: {
                                     valueSuffix:"%"
+                                },
+                                legend: {
+                                    enabled:false
                                 }
                             }
                         },
@@ -249,6 +413,44 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
+                                chart: {
+                                    events: {
+                                        load: function () {
+                                            if (this.options.chart.forExport) {
+                                                this.xAxis[0].update({
+                                                    categories: this.xAxis[0].categories,
+                                                    labels: {
+                                                        style: {
+                                                            width: '50px',
+                                                            fontSize: '8px'
+                                                        },
+                                                        step: 1
+                                                    }
+                                                }, false);
+
+
+                                                $.each(this.series, function (i, serie) {
+                                                    serie.update({
+                                                        marker : {
+                                                            radius: 3
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                fontSize: '8px'
+                                                            }
+                                                        }
+                                                    })
+
+                                                });
+
+
+                                                this.redraw();
+                                            }
+
+                                        }
+                                    }
+                                },
                                 series: [{color: 'DarkRed'}],
                                 plotOptions: {
                                     line: {
@@ -259,6 +461,9 @@ define(function () {
                                 },
                                 tooltip: {
                                     valueSuffix:"%"
+                                },
+                                legend: {
+                                    enabled:false
                                 }
                             }
                         },
@@ -306,6 +511,44 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
+                                chart: {
+                                    events: {
+                                        load: function () {
+                                            if (this.options.chart.forExport) {
+                                                this.xAxis[0].update({
+                                                    categories: this.xAxis[0].categories,
+                                                    labels: {
+                                                        style: {
+                                                            width: '50px',
+                                                            fontSize: '8px'
+                                                        },
+                                                        step: 1
+                                                    }
+                                                }, false);
+
+
+                                                $.each(this.series, function (i, serie) {
+                                                    serie.update({
+                                                        marker : {
+                                                            radius: 3
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                fontSize: '8px'
+                                                            }
+                                                        }
+                                                    })
+
+                                                });
+
+
+                                                this.redraw();
+                                            }
+
+                                        }
+                                    }
+                                },
                                 series: [{color: 'green'}],
                                 plotOptions: {
                                     column: {
@@ -316,6 +559,9 @@ define(function () {
                                 },
                                 tooltip: {
                                     valueSuffix:"%"
+                                },
+                                legend: {
+                                    enabled:false
                                 }
                             }
                         },
@@ -363,6 +609,44 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
+                                chart: {
+                                    events: {
+                                        load: function () {
+                                            if (this.options.chart.forExport) {
+                                                this.xAxis[0].update({
+                                                    categories: this.xAxis[0].categories,
+                                                    labels: {
+                                                        style: {
+                                                            width: '50px',
+                                                            fontSize: '8px'
+                                                        },
+                                                        step: 1
+                                                    }
+                                                }, false);
+
+
+                                                $.each(this.series, function (i, serie) {
+                                                    serie.update({
+                                                        marker : {
+                                                            radius: 3
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                fontSize: '8px'
+                                                            }
+                                                        }
+                                                    })
+
+                                                });
+
+
+                                                this.redraw();
+                                            }
+
+                                        }
+                                    }
+                                },
                                 series: [{color: 'DarkBlue'}, {color: 'DarkRed'}],
                                 plotOptions: {
                                     line: {
@@ -374,7 +658,13 @@ define(function () {
                                 tooltip: {
                                     valueSuffix:" USD million",
                                     shared:true
-                                }
+                                },
+                                legend: {
+                                    layout: 'vertical',
+                                    align: 'right',
+                                    verticalAlign: 'top',
+                                    y:40
+                                 }
                             }
                         },
 
@@ -421,6 +711,44 @@ define(function () {
                             aggregationFn: {"value": "sum"},
                             useDimensionLabelsIfExist: true,// || default raw else fenixtool
                             config: {
+                                chart: {
+                                    events: {
+                                        load: function () {
+                                            if (this.options.chart.forExport) {
+                                                this.xAxis[0].update({
+                                                    categories: this.xAxis[0].categories,
+                                                    labels: {
+                                                        style: {
+                                                            width: '50px',
+                                                            fontSize: '8px'
+                                                        },
+                                                        step: 1
+                                                    }
+                                                }, false);
+
+
+                                                $.each(this.series, function (i, serie) {
+                                                    serie.update({
+                                                        marker : {
+                                                            radius: 3
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                fontSize: '8px'
+                                                            }
+                                                        }
+                                                    })
+
+                                                });
+
+
+                                                this.redraw();
+                                            }
+
+                                        }
+                                    }
+                                },
                                 series: [{color: 'CornflowerBlue'}],
                                 plotOptions: {
                                     column: {
@@ -431,6 +759,9 @@ define(function () {
                                 },
                                 tooltip: {
                                     valueSuffix:" years"
+                                },
+                                legend: {
+                                    enabled:false
                                 }
                             }
                         },
