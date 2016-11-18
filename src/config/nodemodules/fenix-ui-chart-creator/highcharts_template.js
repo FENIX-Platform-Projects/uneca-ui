@@ -42,14 +42,30 @@ define([], function () {
                 }
             }
         },
+        // title: {
+        //     text: null,
+        //     align: 'center',
+        //     style: {
+        //         fontWeight: 'bold',
+        //         fontFamily: 'Helvetica',
+        //         paddingBottom: '20px'
+        //     }
+        //
+        //     // font: normal normal 300 16px/normal "Roboto";
+        //     // color: #567794;
+        // },
         title: {
             text: null,
-            align: 'center',
+            align: 'left',
+            x: "20px",
             style: {
                 fontWeight: 'bold',
-                fontFamily: 'Helvetica',
-                paddingBottom: '20px'
+                fontFamily: 'Roboto',
+                fontSize: "16px/normal",
+                color: "#567794"
             }
+            // font: normal normal 300 16px/normal "Roboto";
+            // color: #567794;
         },
         tooltip: {
             pointFormat:"<tr><td style='color:{series.color};padding:0'>{series.name}: </td><td style='padding:0'><b>{point.y} </b></td></tr>"
