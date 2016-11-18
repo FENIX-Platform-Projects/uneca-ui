@@ -1085,7 +1085,7 @@ define(function () {
                 items: [
                     {
                         //Infant mortality rate (both sexes) per 1,000  010304
-                        id: "health-1", //ref [data-item=':id']
+                        id: "health1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -1157,7 +1157,7 @@ define(function () {
                     },
                     {
                         //Under five mortality rate (both sexes) per 1,000  010303
-                        id: "health-2", //ref [data-item=':id']
+                        id: "health2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -1229,7 +1229,7 @@ define(function () {
                     },
                     {
                         //Number of doctors per 10,000 population 010313, Number of nurses and Midwives per 10,000 population 010314
-                        id: "health-3", //ref [data-item=':id']
+                        id: "health3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1300,7 +1300,7 @@ define(function () {
                     },
                     {
                         //Percentage of mothers provided at least one antenatal care 010311
-                        id: "health-4", //ref [data-item=':id']
+                        id: "health4", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -1461,7 +1461,7 @@ define(function () {
                     },
                     {
                         //Percentage of deliveries attended by skilled health personnel  010312
-                        id: "health-5", //ref [data-item=':id']
+                        id: "health5", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -1609,7 +1609,7 @@ define(function () {
             },
                     {
                         //Percentage of children provided the vaccines (BCG, DPT3, measles, polio)
-                        id: "health-6", //ref [data-item=':id']
+                        id: "health6", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -1678,7 +1678,7 @@ define(function () {
                     },
                     {
                         //Percentage of children under-five and underweight  010301
-                        id: "health-7", //ref [data-item=':id']
+                        id: "health7", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -1938,7 +1938,7 @@ define(function () {
 
                     {
                         //Current account balance (BoP)  020204
-                        id: "BOP-1", //ref [data-item=':id']
+                        id: "BOP1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -2032,7 +2032,7 @@ define(function () {
                     },
                     {
                         //Capital account balance (BoP)   02020501
-                        id: "BOP-2", //ref [data-item=':id']
+                        id: "BOP2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -2130,7 +2130,7 @@ define(function () {
                     },
                     {
                         //Financial account balance (BoP)  02020502
-                        id: "BOP-3", //ref [data-item=':id']
+                        id: "BOP3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -2342,8 +2342,7 @@ define(function () {
 
             },
 
-            dashboard: [
-
+            dashboard:
                 {
                     uid: "UNECA_GDP_USD",
                     //version: "",
@@ -2411,7 +2410,7 @@ define(function () {
 */
                         {
                             //GROSS DOMESTIC PRODUCT (current prices)   020707
-                            id: "gdp-1", //ref [data-item=':id']
+                            id: "gdp1", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -2481,7 +2480,7 @@ define(function () {
                         },
                         {
                             //Exports of goods and services at current prices   02070202
-                            id: "gdp-2", //ref [data-item=':id']
+                            id: "gdp2", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -2551,7 +2550,7 @@ define(function () {
                         },
                         {
                             //Import of goods and services   02070203
-                            id: "gdp-3", //ref [data-item=':id']
+                            id: "gdp3", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
@@ -2759,12 +2758,7 @@ define(function () {
                         // }
 
                     ]
-
                 }
-
-            ]
-
-
         },
 
         "monetary_statistics": {
@@ -2823,7 +2817,7 @@ define(function () {
             },
 
 
-            dashboard: [{
+            dashboard: {
 
                 uid: "UNECA_MonetaryStatistics",
                 items: [
@@ -2919,7 +2913,7 @@ define(function () {
 
                     {
                         //Money supply (M1) 020901
-                        id: "monetary-1", //ref [data-item=':id']
+                        id: "monetary1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -2991,7 +2985,7 @@ define(function () {
                     },
                     {
                         //Net foreign assets 020904
-                        id: "monetary-2", //ref [data-item=':id']
+                        id: "monetary2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -3063,7 +3057,7 @@ define(function () {
                     },
                     {
                         //International reserves  020906
-                        id: "monetary-3", //ref [data-item=':id']
+                        id: "monetary3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -3134,7 +3128,7 @@ define(function () {
                         ]
                     }
                 ]
-            }]
+            }
         },
 
         "public_finance": {
@@ -3196,13 +3190,13 @@ define(function () {
             },
 
 
-            dashboard: [{
+            dashboard: {
 
                 uid: "UNECA_PublicFinance",
                 items: [
                     {
                         //Fiscal balance 021204
-                        id: "finance-1", //ref [data-item=':id']
+                        id: "finance1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -3274,7 +3268,7 @@ define(function () {
                     },
                     {
                         //Total expenditures and net lending   021203
-                        id: "finance-2", //ref [data-item=':id']
+                        id: "finance2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -3346,7 +3340,7 @@ define(function () {
                     },
                     {
                         //Total revenues and grants  021201
-                        id: "finance-3", //ref [data-item=':id']
+                        id: "finance3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -3417,7 +3411,7 @@ define(function () {
                         ]
                     }
                 ]
-            }]
+            }
         },
 
         "poverty": {
@@ -3483,7 +3477,7 @@ define(function () {
                 items: [
                     {
                         //Gini index 030306
-                        id: "poverty-1", //ref [data-item=':id']
+                        id: "poverty1", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -3650,7 +3644,7 @@ define(function () {
                     },
                     {
                         //GNI Per Capita (US$) 030301
-                        id: "poverty-2", //ref [data-item=':id']
+                        id: "poverty2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -3719,7 +3713,7 @@ define(function () {
                     },
                     {
                         //Population below $2 (PPP) per day  010114
-                        id: "poverty-3", //ref [data-item=':id']
+                        id: "poverty3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
@@ -3847,13 +3841,13 @@ define(function () {
             },
 
 
-            dashboard: [{
+            dashboard: {
 
                 uid: "UNECA_Inflation",
                 items: [
                     {
                         //Inflation, consumer prices (annual %)   02110114
-                        id: "inflation-1", //ref [data-item=':id']
+                        id: "inflation1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -3924,7 +3918,7 @@ define(function () {
                         ]
                     }
                 ]
-            }]
+            }
         },
 
         "tourism": {
@@ -3984,13 +3978,13 @@ define(function () {
             },
 
 
-            dashboard: [{
+            dashboard: {
 
                 uid: "UNECA_Tourism",
                 items: [
                     {
                         //International tourism, number of arrivals  021305
-                        id: "tourism-1", //ref [data-item=':id']
+                        id: "tourism1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -4061,7 +4055,7 @@ define(function () {
                     },
                     {
                         //Rooms in hotels and similar establishments  021301
-                        id: "tourism-2", //ref [data-item=':id']
+                        id: "tourism2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
@@ -4132,7 +4126,7 @@ define(function () {
                     },
                     {
                         //Tourism contribution to GDP  021303
-                        id: "tourism-3", //ref [data-item=':id']
+                        id: "tourism3", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -4284,12 +4278,11 @@ define(function () {
                         // ]
                     }
                 ]
-            }]
+            }
         },
         "infrastructure": {
 
             filter: {
-
 
                 CountryCode: {
                     className: 'col-md-6',
@@ -4306,10 +4299,7 @@ define(function () {
                         title: "Multiple selection",
                         hideHeader : true
                     }
-
-
                 },
-
 
                 Year: {
                     className: 'col-md-6',
@@ -4351,7 +4341,7 @@ define(function () {
                 items: [
                     {
                         //Mobile-cellular subscriptions per 1000 inhabitants  030202
-                        id: "infrastructure-1", //ref [data-item=':id']
+                        id: "infrastructure1", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {
@@ -4503,7 +4493,7 @@ define(function () {
                                            },
                     {
                         //Roads, paved (% of total roads)   021423
-                        id: "infrastructure-2", //ref [data-item=':id']
+                        id: "infrastructure2", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
                             fenix_ui_map: {

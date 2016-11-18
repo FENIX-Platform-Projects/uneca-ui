@@ -199,9 +199,10 @@ define(function () {
         energy2_title: "Production of electricity, public",
         energy3_title: "Electricity gross production, public and self-produced",
 
-        //poverty
-        poverty1_title: "GNI Per Capita (US$)",
-        poverty2_title: "Population below $2 (PPP) per day",
+      //poverty
+      poverty1_title: "Gini index",
+      poverty2_title:  "GNI Per Capita (US$)",
+      poverty3_title:  "Population below $2 (PPP) per day",
 
         poverty1_country_title: "GNI Per Capita (US$)",
         poverty2_country_title: "Population below $2 (PPP) per day",
@@ -251,6 +252,10 @@ define(function () {
         inflation1_title: "Inflation, consumer prices (annual %)",
         inflation1_country_title: "Inflation, consumer prices (annual %)",
 
+
+       //infrastructure
+        infrastructure1_title: "Mobile-cellular subscriptions per 1000 inhabitants",
+        infrastructure2_title: "Roads, paved (% of total roads)",
 
         //tourism
         tourism1_title: "International tourism, number of arrivals",

@@ -40,6 +40,7 @@ define([
     function DomainView(params){
        // log.info("DomainView Start");
 
+        console.log(PC)
         this._dispose();
 
         this._parseInput(params);
@@ -127,7 +128,6 @@ define([
             this.currentDashboard = item;
             this._printDashboard(item);
         }
-
     };
 
     DomainView.prototype._onFilterClick = function () {
@@ -158,8 +158,6 @@ define([
 
         var c= conf.dashboard;
 
-
-
         if (!_.isEmpty(c)) {
             c.filter = $.extend(c.filter, filterValues);
 
@@ -179,6 +177,8 @@ define([
 
 
     DomainView.prototype._printDashboard = function (item) {
+
+        console.log("Print dashboard", item)
 
         var conf = this._getDashboardConfig(item),
         filterConfig = this._getFilterConfig(item);
