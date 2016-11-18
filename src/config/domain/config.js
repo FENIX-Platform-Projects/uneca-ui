@@ -1083,7 +1083,7 @@ define(function () {
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
                 items: [
-                   /* {
+                  {
                         //Infant mortality rate (both sexes) per 1,000  010304
                         id: "health1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
@@ -1297,7 +1297,7 @@ define(function () {
                                 "rid":{"uid":"filter_doctors"}
                             }
                         ]
-                    }*/
+                    },
                    {
                         //Percentage of mothers provided at least one antenatal care 010311
                         id: "health4", //ref [data-item=':id']
@@ -1317,7 +1317,7 @@ define(function () {
                                        maxZoom: 19
                                    }
                                },
-                               zoomToCountry : ["DZA"]//,
+                               zoomToCountry : ["DZA"],
                               // highlightCountry : ["DZA"]
                            }
                        },
@@ -1462,146 +1462,171 @@ define(function () {
                             }
 
                         ]
-                    }//,
-                    /*  {
+                    },
+                   {
                         //Percentage of deliveries attended by skilled health personnel  010312
                         id: "health5", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
-                        config: {
-                            fenix_ui_map: {
-                                guiController: {
-                                    overlay: false,
-                                    baselayer: false,
-                                    wmsLoader: false
-                                },
-                                baselayers: {
-                                    "cartodb": {
-                                        title_en: "Baselayer",
-                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                                        subdomains: 'abcd',
-                                        maxZoom: 19
-                                    }
-                                },
-                                zoomToCountry : ["DZA"],
-                                highlightCountry : ["DZA"]
-                            }
-                        },
-                        filterFor: {
-                            "filtered_ds": ['CountryCode']
-                        },
-                        postProcess:[
-                            {
-                                "name": "join",
-                                "sid": [
-                                    {
-                                        "uid": "filtered_ds"
-                                    },
-                                    {
-                                        "uid": "last_year_country"
-                                    }
-                                ],
-                                "parameters": {
-                                    "joins": [
-                                        [
-                                            {
-                                                "type": "id",
-                                                "value": "CountryCode"
-                                            },
-                                            {
-                                                "type": "id",
-                                                "value": "Year"
-                                            }
+                       config: {
+                           fenix_ui_map: {
+                               guiController: {
+                                   overlay: true,
+                                   baselayer: false,
+                                   wmsLoader: false
+                               },
+                               baselayers: {
+                                   "cartodb": {
+                                       title_en: "Baselayer",
+                                       url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                       subdomains: 'abcd',
+                                       maxZoom: 19
+                                   }
+                               },
+                               zoomToCountry : ["DZA"],
+                               // highlightCountry : ["DZA"]
+                           }
+                       },
 
-                                        ],
-                                        [
-                                            {
-                                                "type": "id",
-                                                "value": "CountryCode"
-                                            },
-                                            {
-                                                "type": "id",
-                                                "value": "Year"
-                                            }
+                       filterFor: {
+                           "filtered_ds": ['CountryCode']
+                       },
+                       postProcess:[
+                           {
+                               "name": "join",
+                               "sid": [
+                                   {
+                                       "uid": "filtered_ds"
+                                   },
+                                   {
+                                       "uid": "last_year_country"
+                                   }
+                               ],
+                               "parameters": {
+                                   "joins": [
+                                       [
+                                           {
+                                               "type": "id",
+                                               "value": "CountryCode"
+                                           },
+                                           {
+                                               "type": "id",
+                                               "value": "Year"
+                                           }
 
-                                        ]
-                                    ],
-                                    "values": [
-                                    ]
-                                }
-                            },
+                                       ],
+                                       [
+                                           {
+                                               "type": "id",
+                                               "value": "CountryCode"
+                                           },
+                                           {
+                                               "type": "id",
+                                               "value": "Year"
+                                           }
 
-                            {
-                                "name": "filter",
-                                "sid": [
-                                    {
-                                        "uid": "UNECA_Health"
-                                    }
-                                ],
-                                "parameters": {
-                                    "columns": [
-                                        "CountryCode",
-                                        "Year",
-                                        "Value",
-                                        "Unit"
-                                    ],
-                                    "rows": {
+                                       ]
+                                   ],
+                                   "values": [
+                                   ]
+                               },
+                               "rid": {
+                                   "uid": "joined_ds"
+                               }
+                           },
 
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "version":"2.0",
-                                                    "codes": [
-                                                        "010312"
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        "CountryCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ISO3",
-                                                    "codes": [
-                                                        "DZA"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                },
-                                "rid": {
-                                    "uid": "filtered_ds"
-                                }
-                            },
+                           {
+                               "name": "filter",
+                               "sid": [
+                                   {
+                                       "uid": "UNECA_Health"
+                                   }
+                               ],
+                               "parameters": {
+                                   "columns": [
+                                       "CountryCode",
+                                       "Year",
+                                       "Value"
+                                   ],
+                                   "rows": {
 
-                            {
-                                "name": "group",
-                                "sid": [
-                                    {
-                                        "uid": "filtered_ds"
-                                    }
-                                ],
-                                "parameters": {
-                                    "by": [
-                                        "CountryCode"
+                                       "IndicatorCode": {
+                                           "codes": [
+                                               {
+                                                   "uid": "UNECA_ClassificationOfActivities",
+                                                   "version":"2.0",
+                                                   "codes": [
+                                                       "010312"
+                                                   ]
+                                               }
+                                           ]
+                                       },
+                                       "CountryCode": {
+                                           "codes": [
+                                               {
+                                                   "uid": "UNECA_ISO3",
+                                                   "codes": [
+                                                       "DZA"
+                                                   ]
+                                               }
+                                           ]
+                                       }
+                                   }
+                               },
+                               "rid": {
+                                   "uid": "filtered_ds"
+                               }
+                           },
 
-                                    ],
-                                    "aggregations": [
-                                        {
-                                            "columns": [
-                                                "Year"
-                                            ],
-                                            "rule": "max"
-                                        }
-                                    ]
-                                },
-                                "rid": {
-                                    "uid": "last_year_country"
-                                }
-                            }
+                           {
+                               "name": "group",
+                               "sid": [
+                                   {
+                                       "uid": "filtered_ds"
+                                   }
+                               ],
+                               "parameters": {
+                                   "by": [
+                                       "CountryCode"
 
-                        ]
+                                   ],
+                                   "aggregations": [
+                                       {
+                                           "columns": [
+                                               "Year"
+                                           ],
+                                           "rule": "max"
+                                       }
+                                   ]
+                               },
+                               "rid": {
+                                   "uid": "last_year_country"
+                               }
+                           },
 
+                           {
+                               "name": "group",
+                               "sid": [
+                                   {
+                                       "uid": "joined_ds"
+                                   }
+                               ],
+                               "parameters": {
+                                   "by": [
+                                       "CountryCode",
+                                       "Year"
+                                   ],
+                                   "aggregations": [
+                                       {
+                                           "columns": [
+                                               "filtered_ds_Value"
+                                           ],
+                                           "rule": "max"
+                                       }
+                                   ]
+                               }
+                           }
+
+                       ]
             },
                     {
                         //Percentage of children provided the vaccines (BCG, DPT3, measles, polio)
@@ -1679,7 +1704,7 @@ define(function () {
                         config: {
                             fenix_ui_map: {
                                 guiController: {
-                                    overlay: false,
+                                    overlay: true,
                                     baselayer: false,
                                     wmsLoader: false
                                 },
@@ -1692,9 +1717,10 @@ define(function () {
                                     }
                                 },
                                 zoomToCountry : ["DZA"],
-                                highlightCountry : ["DZA"]
+                                // highlightCountry : ["DZA"]
                             }
                         },
+
                         filterFor: {
                             "filtered_ds": ['CountryCode']
                         },
@@ -1738,7 +1764,7 @@ define(function () {
                                     ]
                                 },
                                 "rid": {
-                                    "uid": "filtered_join"
+                                    "uid": "joined_ds"
                                 }
                             },
 
@@ -1761,6 +1787,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "010301"
                                                     ]
@@ -1770,7 +1797,7 @@ define(function () {
                                         "CountryCode": {
                                             "codes": [
                                                 {
-                                                    "uid": "ISO3",
+                                                    "uid": "UNECA_ISO3",
                                                     "codes": [
                                                         "DZA"
                                                     ]
@@ -1792,8 +1819,9 @@ define(function () {
                                     }
                                 ],
                                 "parameters": {
-                                    "by": [                   //
+                                    "by": [
                                         "CountryCode"
+
                                     ],
                                     "aggregations": [
                                         {
@@ -1808,16 +1836,18 @@ define(function () {
                                     "uid": "last_year_country"
                                 }
                             },
+
                             {
                                 "name": "group",
                                 "sid": [
                                     {
-                                        "uid": "filtered_join"
+                                        "uid": "joined_ds"
                                     }
                                 ],
                                 "parameters": {
                                     "by": [
-                                        "CountryCode"
+                                        "CountryCode",
+                                        "Year"
                                     ],
                                     "aggregations": [
                                         {
@@ -1831,7 +1861,7 @@ define(function () {
                             }
 
                         ]
-                    }*/
+                    }
                 ]
             }
         },
