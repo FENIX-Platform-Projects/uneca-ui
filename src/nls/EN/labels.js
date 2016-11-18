@@ -115,7 +115,6 @@ define(function () {
         currency_label: "Currency",
 
         //population
-
         population1_title: "Mid-year Population",
         population2_title: "Average annual growth rate (Latest year only)",
         population3_title: "Crude birth rate per 1,000 population (Latest year only)",
@@ -134,13 +133,11 @@ define(function () {
 
 
         //education
-
         edu1_title: "Enrolment primary school",
         edu2_title: "Enrolment primary, secondary, tertiary school",
         edu3_title: "Literacy rate by gender",
 
         // health
-
         health1_title: "Infant mortality rate (both sexes) per 1,000",
         health2_title: "Under five mortality rate (both sexes) per 1,000",
         health3_title: "Number of doctors, nurses and midwives per 10,000 population",

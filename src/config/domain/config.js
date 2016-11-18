@@ -1899,9 +1899,6 @@ define(function () {
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
                 items: [
-
-
-
               /*      {
                         id: "BOP-1", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
