@@ -141,10 +141,10 @@ define(function () {
         health1_title: "Infant mortality rate (both sexes) per 1,000",
         health2_title: "Under five mortality rate (both sexes) per 1,000",
         health3_title: "Number of doctors, nurses and midwives per 10,000 population",
-        health4_title: "Percentage of mothers provided at least one antenatal care",
-        health5_title: "Percentage of deliveries attended by skilled health personnel",
+        health4_title: "Percentage of mothers provided at least one antenatal care (Latest year only)",
+        health5_title: "Percentage of deliveries attended by skilled health personnel (Latest year only)",
         health6_title: "Percentage of children provided the vaccines (BCG, DPT3, measles, polio)",
-        health7_title: "Percentage of children under-five and underweight",
+        health7_title: "Percentage of children under-five and underweight (Latest year only)",
 
         health1_country_title: "Infant mortality rate (both sexes) per 1,000",
         health2_country_title: "Under five mortality rate (both sexes) per 1,000",
