@@ -58,14 +58,21 @@ define(['underscore'],function (_) {
                 items: [
 
                     {
+                        //Mid-year Population  010101
                         id: "population1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                            x : ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
                             IndicatorCode: ["010101"]
@@ -74,14 +81,21 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Average annual growth rate  010103
                         id: "population2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x : ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
                             IndicatorCode: ["010103"]
@@ -90,14 +104,21 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Crude birth rate per 1,000 population  010104
                         id: "population3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x : ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
                             IndicatorCode: ["010104"]
@@ -106,14 +127,21 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Crude death rate per 1,000 population  010105
                         id: "population4", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x : ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
                             IndicatorCode: ["010105"]
@@ -122,14 +150,21 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Total fertility  010106
                         id: "population5", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x : ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
                             IndicatorCode: ["010106"]
@@ -138,14 +173,22 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Life expectancy (years)  010108
                         id: "population6", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
                            x : ["Year"], //x axis and series
-                          series: ["IndicatorCode_EN"], //Y dimension
+                          series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
+
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -155,74 +198,6 @@ define(['underscore'],function (_) {
                     }
                 ]
             }]
-        },
-
-        "education": {
-
-            dashboard: {
-
-                uid: "UNECA_Education",
-                //version: "",
-                //preProcess : {} //D3P process
-                //postProcess : {} //D3P process
-                items: [
-                    {
-                        id: "edu1", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["010201"],
-                            GenderCode: ["3"]
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-
-                    {
-                        id: "edu2", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["010201", "010202", "010203"]
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-                    {
-                        id: "edu3", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["GenderCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["010206"],
-                            GenderCode: ["1", "2"]
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    }
-                ]
-
-
-            }
         },
 
         "health": {
@@ -235,68 +210,68 @@ define(['underscore'],function (_) {
                 //postProcess : {} //D3P process
                 items: [
                     {
+                        //Infant mortality rate (both sexes) per 1,000  010304
                         id: "health1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
-
                             IndicatorCode: ["010304"]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
+                        //Under five mortality rate (both sexes) per 1,000  010303
                         id: "health2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
-
                             IndicatorCode: ["010303"]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
+                        //Number of doctors per 10,000 population  010313;  Number of nurses and midwives per 10,000 population 010314
                         id: "health3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
-
-                            IndicatorCode: ["010313"]
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-
-                    {
-                        id: "health4", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["010314"]
+                            IndicatorCode: ["010313", "010314"]
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
@@ -304,157 +279,31 @@ define(['underscore'],function (_) {
             }
         },
 
-        "labour": {
-
-            dashboard: [
-            {
-                uid: "UNECA_Labour",
-                //version: "",
-                //preProcess : {} //D3P process
-                //postProcess : {} //D3P process
-                items: [
-                        {
-                            id: "labour1", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["VALUE"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["010401"],
-                                GenderCode :["3"],
-                                SectorCode: ["4"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-                        {
-                            id: "labour2", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["SectorCode_EN"], //Y dimension
-                                y: ["VALUE"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["010401"],
-                                SectorCode : ["1","2","3"],
-                                GenderCode : ["3"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-                        {
-                            id: "labour3", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["GenderCode_EN"], //Y dimension
-                                y: ["VALUE"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["010401"],
-                                SectorCode : ["4"],
-                                GenderCode : ["1","2"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
-                      ]
-
-                },
-
-
-                { uid: "ILO_Labour",
-                      items :  [
-                        {
-                            id: "labour4", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["GenderCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["010404"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-                        {
-                            id: "labour5", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["GenderCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["010402"],
-                                GenderCode: ["3"],
-                                Year :_.range(1990,2015)
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-                        {
-                            id: "labour6", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["GenderCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["010402"],
-                                GenderCode: ["1", "2"],
-                                Year :_.range(1990,2015)
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
-
-                          ]
-
-                }
-
-
-                ]
-
-
-        },
-
-
-
         "gdp": {
 
             dashboard: [
 
-
                 { uid: "UNECA_GDP_NC",
                     items :  [
                         {
+                            //GDP (Current prices)  020707
                             id: "gdp1", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
                                 x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
+                                series: ["IndicatorCode"], //Y dimension
                                 y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
+                                aggregationFn: {"Value": "sum"},
+                                useDimensionLabelsIfExist: true,
+                                config: {
+                                    legend: {
+                                        enabled:false
+                                    },
+                                    tooltip: {
+                                        valueSuffix:" NC"
+                                    }
+                                }
                             }, // :type-creator config
                             filter: { //FX-filter format
                                 IndicatorCode: ["020707"]
@@ -469,280 +318,36 @@ define(['underscore'],function (_) {
                 { uid: "UNECA_GDP_NC",
                     items :  [
                         {
+                            //Exports of goods and services at current prices  02070202; Import of goods and services 02070203
                             id: "gdp2", //ref [data-item=':id']
                             type: "chart", //chart || map || olap,
                             config: {
                                 type: "line",
                                 x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
+                                series: ["IndicatorCode"], //Y dimension
                                 y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
+                                aggregationFn: {"Value": "sum"},
+                                useDimensionLabelsIfExist: true,
+                                config: {
+                                    legend: {
+                                        enabled:false
+                                    }
+                                }
                             }, // :type-creator config
                             filter: { //FX-filter format
-                                IndicatorCode: ["02070202"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-                        {
-                            id: "gdp3", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070203"]
+                                IndicatorCode: ["02070202", "02070203"]
                             }
                             //filterFor: ["Year"], // allowed dimension ids to filter,
                         }
-
-
-                    ]
-
-                }/*,
-
-
-
-
-                {
-                    uid: "UNECA_GDP",
-                    //version: "",
-                    //preProcess : {} //D3P process
-                    //postProcess : {} //D3P process
-                    items: [
-                        {
-                            id: "gdp-4", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["020705"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-                        {
-                            id: "gdp-5", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["020706"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
-
-
-
-
-                    ]
-
-                }
-*/
-
-
-
-
-            ]
-
-
-        },
-
-        "expenditure_gdp": {
-
-            dashboard: [
-
-
-                { uid: "UNECA_ExpenditureGDPCurrent",
-                    items: [
-                        {
-                            id: "expenditure1", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["0207020103"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-
-
-
-                        {
-                            id: "expenditure2", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["020702010301"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-                        {
-                            id: "expenditure3", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070207"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-                        {
-                            id: "expenditure4", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070208"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
-
-
-
-
-                    ]
-
-
-                },
-
-
-                {
-                    uid: "UNECA_ExpenditureGDPCostant",
-                    //version: "",
-                    //preProcess : {} //D3P process
-                    //postProcess : {} //D3P process
-                    items: [
-                        {
-                            id: "expenditure5", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["0207010103"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-
-
-
-                        {
-                            id: "expenditure6", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "column",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["020701010301"]
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-
-
-                        {
-                            id: "expenditure7", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070107"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        },
-                        {
-                            id: "expenditure8", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
-                            config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode_EN"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"}
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070108"]
-
-                            }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
-
-
-
-
 
                     ]
 
                 }
 
-
-
-
-
             ]
 
 
         },
-
-
 
         "monetary_statistics": {
 
@@ -753,14 +358,21 @@ define(['underscore'],function (_) {
 
                 items: [
                     {
+                        //Money supply (M1)  020901
                         id: "monetary1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -771,14 +383,21 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Net foreign assets  020904
                         id: "monetary2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -788,14 +407,21 @@ define(['underscore'],function (_) {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
+                        //International reserves  020906
                         id: "monetary3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -819,14 +445,21 @@ define(['underscore'],function (_) {
 
 
                     {
+                        //Fiscal balance 021204
                         id: "finance1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -837,14 +470,21 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Total expenditures and net lending 021203
                         id: "finance2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -855,14 +495,21 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Total revenues and grants 021201
                         id: "finance3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -878,142 +525,6 @@ define(['underscore'],function (_) {
 
         },
 
-        "debt": {
-
-            dashboard: {
-
-                uid: "UNECA_Debt",
-
-                items: [
-
-                    {
-                        id: "debt1", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020308"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-                    {
-                        id: "debt2", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020305"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-
-                    {
-                        id: "debt3", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["02030501", "02030502"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    }
-
-
-                ]
-            }
-
-        },
-        "energy": {
-
-            dashboard: {
-
-                uid: "UNSD_EnergyData",
-
-                items: [
-
-                    {
-                        id: "energy1", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["EnergyCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020402"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-                    {
-                        id: "energy2", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["EnergyCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["02040203"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-
-                    {
-                        id: "energy3", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["EnergyCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["02040204"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    }
-
-
-                ]
-            }
-
-        },
         "poverty": {
 
             dashboard: {
@@ -1023,14 +534,21 @@ define(['underscore'],function (_) {
                 items: [
 
                     {
+                        //GNI Per Capita (US$) 030301
                         id: "poverty1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -1040,14 +558,21 @@ define(['underscore'],function (_) {
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
+                        //Population below $2 (PPP) per day 010114
                         id: "poverty2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
 
@@ -1058,240 +583,6 @@ define(['underscore'],function (_) {
                     }
                 ]
             }
-
-        },
-
-        "financial_flows": {
-
-            dashboard: [{
-
-
-
-                //data cube's uid
-                uid: "UNECA_FinancialFlows",
-
-
-
-                items: [
-
-                    {
-                        id: "financial_flows1", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["021001"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-                    {
-                        id: "financial_flows2", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "column",
-                            x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
-                        }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020501"]
-
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
-                    },
-
-
-
-
-
-
-                    {
-                        id: "financial_flows3", //ref [data-item=':id']
-                        type: "map", //chart || map || olap,
-                        config: {
-                            geoSubject: 'PartnerCode',
-                            fenix_ui_map: {
-
-                                guiController: {
-                                    overlay: false,
-                                    baselayer: false,
-                                    wmsLoader: false
-                                },
-                                baselayers: {
-                                    "cartodb": {
-                                        title_en: "Baselayer",
-                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                                        subdomains: 'abcd',
-                                        maxZoom: 19
-                                    }
-                                }
-                            }
-                        },
-                        filter: { //FX-filter format
-
-                            Year: [2012],
-                            IndicatorCode: ["02100101"],
-                            PartnerCode: [
-                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                            ]
-                        }
-                    },
-
-                    {
-                        id: "financial_flows4", //ref [data-item=':id']
-                        type: "map", //chart || map || olap,
-                        config: {
-                            geoSubject: 'PartnerCode',
-                            fenix_ui_map: {
-
-                                guiController: {
-                                    overlay: false,
-                                    baselayer: false,
-                                    wmsLoader: false
-                                },
-                                baselayers: {
-                                    "cartodb": {
-                                        title_en: "Baselayer",
-                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                                        subdomains: 'abcd',
-                                        maxZoom: 19
-                                    }
-                                }
-                            }
-                        },
-                        filter: { //FX-filter format
-
-                            Year: [2012],
-                            IndicatorCode: ["020501"],
-                            PartnerCode: [
-                                "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                            ]
-                        }
-                    }
-
-
-
-
-
-
-
-
-
-
-                    //{
-                    //    id: "financial_flows-3", //ref [data-item=':id']
-                    //    type: "map", //chart || map || olap,
-                    //    config: {
-                    //        container: "#financial_flows-3",
-                    //        geoSubject: 'PartnerCode',
-                    //        leaflet: {
-                    //            zoomControl: false,
-                    //            attributionControl: true,
-                    //            scrollWheelZoom: false,
-                    //            minZoom: 2
-                    //        }
-                    //
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //
-                    //        "Year": [2012],
-                    //        "IndicatorCode": ["02100101"],
-                    //        "PartnerCode": [
-                    //            "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                    //        ]
-                    //
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //},
-                    //{
-                    //    id: "financial_flows-4", //ref [data-item=':id']
-                    //    type: "map", //chart || map || olap,
-                    //    config: {
-                    //        container: "#financial_flows-3",
-                    //        geoSubject: 'PartnerCode',
-                    //        leaflet: {
-                    //            zoomControl: false,
-                    //            attributionControl: true,
-                    //            scrollWheelZoom: false,
-                    //            minZoom: 2
-                    //        }
-                    //
-                    //    }, // :type-creator config
-                    //    filter: { //FX-filter format
-                    //
-                    //        "Year": [2012],
-                    //        "IndicatorCode": ["020501"],
-                    //        "PartnerCode": [
-                    //            "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                    //        ]
-                    //
-                    //    }
-                    //    //filterFor: ["Year"], // allowed dimension ids to filter,
-                    //}
-
-
-
-                    /// {
-                    //    id: 'financial_flows-5',
-                    //    type: 'map',
-                    //
-                    //    config: {
-                    //        container: "#financial_flows-3",
-                    //        geoSubject: 'PartnerCode',
-                    //        leaflet: {
-                    //            zoomControl: false,
-                    //            attributionControl: true,
-                    //            scrollWheelZoom: false,
-                    //            minZoom: 2
-                    //        }
-                    //    },
-                    //
-                    //    filter: {
-                    //        "Year": [2012],
-                    //        "IndicatorCode": ["020502"],
-                    //        "PartnerCode": [
-                    //            "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                    //        ]
-                    //    }
-                    //},
-
-                    //{
-                    //    id: 'financial_flows-6',
-                    //    type: 'map',
-                    //
-                    //    config: {
-                    //        container: "#financial_flows-3",
-                    //        geoSubject: 'PartnerCode',
-                    //        leaflet: {
-                    //            zoomControl: false,
-                    //            attributionControl: true,
-                    //            scrollWheelZoom: false,
-                    //            minZoom: 2
-                    //        }
-                    //    },
-                    //
-                    //    filter: {
-                    //        "Year": [2012],
-                    //        "IndicatorCode": ["020502"],
-                    //        "PartnerCode": [
-                    //            "DEU", "FRA", "AUT", "CAN", "USA", "NLD", "GBR", "ITA", "ESP", "JPN", "LUX", "DNK", "KOR", "NOR", "TUR", "SVN", "IRL", "POL", "CHL", "SWE", "CZE", "HUN", "PRT", "ARE", "BEL", "CHE", "AUS", "SVK", "POL", "GRC"
-                    //        ]
-                    //    }
-                    //}
-
-
-                ]
-
-            }]
 
         },
 
@@ -1306,15 +597,22 @@ define(['underscore'],function (_) {
                 //filter : {} //FX-filter format
                 items: [
 
-                    {
+                  {
+                        //International tourism, number of arrivals 021305
                         id: "tourism1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x : ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
                             IndicatorCode: ["021305"]
@@ -1323,14 +621,21 @@ define(['underscore'],function (_) {
                     },
 
                     {
+                        //Rooms in hotels and similar establishments 021301
                         id: "tourism2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x : ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
                             IndicatorCode: ["021301"]
@@ -1351,60 +656,244 @@ define(['underscore'],function (_) {
                 //postProcess : {} //D3P process
                 items: [
                     {
+                        //Current account balance (BoP) 020204
                         id: "BOP1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                },
+                                tooltip: {
+                                    valueSuffix:" NC"
+                                }
+                            }
+
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["020204"]
+                        filterFor: {
+                            "filter_current": ['CountryCode']
+                        },
 
-                        }
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_BalanceOfPayments"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
+                                                    "codes": [
+                                                        "020204"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        },
+                                        "um": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Currencies",
+                                                    "codes": [
+                                                        "NC"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid":{"uid":"filter_current"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
+                        //Capital account balance (BoP) 02020501
                         id: "BOP2", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                },
+                                tooltip: {
+                                    valueSuffix:" NC"
+                                }
+                            }
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["02020501"]
+                        filterFor: {
+                            "filter_capital": ['CountryCode']
+                        },
 
-                        }
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_BalanceOfPayments"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
+                                                    "codes": [
+                                                        "02020501"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        },
+                                        "um": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Currencies",
+                                                    "codes": [
+                                                        "NC"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid":{"uid":"filter_capital"}
+                            }
+                        ]
+
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
-
-
                     {
+                        //Financial account balance (BoP) 02020502
                         id: "BOP3", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                },
+                                tooltip: {
+                                    valueSuffix:" NC"
+                                }
+                            }
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["02020502"]
+                        filterFor: {
+                            "filter_financial": ['CountryCode']
+                        },
 
-                        }
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_BalanceOfPayments"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
+                                                    "codes": [
+                                                        "02020502"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        },
+                                        "um": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_Currencies",
+                                                    "codes": [
+                                                        "NC"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid":{"uid":"filter_financial"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
-
-
                 ]
 
             }
@@ -1433,8 +922,6 @@ filter:{
     }
 },
 
-
-
             dashboard: {
                 uid: "UNECA_Inflation",
                 //version: "",
@@ -1443,19 +930,24 @@ filter:{
                 items: [
 
                     {
+                        //Inflation, consumer prices (annual %) 02110114
                         id: "inflation1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled:false
+                                }
+                            }
                         }, // :type-creator config
                         filter: { //FX-filter format
-
                             IndicatorCode: ["02110114"]
-
                         }
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }

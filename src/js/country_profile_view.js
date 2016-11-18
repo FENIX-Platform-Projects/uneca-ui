@@ -193,10 +193,10 @@ define([
                     if (item.type == s.CHART_TYPE) {
                         if (item.config.config) {
                             item.config.config = $.extend(true, {}, HighchartsTemplate, item.config.config);
-                            item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
+                            item.config.config.title.text = i18nLabels[self.lang][item.id+'_country_title'];
                         } else {
                             item.config.config = $.extend(true, {}, HighchartsTemplate);
-                            item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
+                            item.config.config.title.text = i18nLabels[self.lang][item.id+'_country_title'];
                         }
                     }
                 }))
