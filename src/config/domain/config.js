@@ -1083,7 +1083,7 @@ define(function () {
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
                 items: [
-                    {
+                   /* {
                         //Infant mortality rate (both sexes) per 1,000  010304
                         id: "health1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
@@ -1297,35 +1297,35 @@ define(function () {
                                 "rid":{"uid":"filter_doctors"}
                             }
                         ]
-                    },
-                    {
+                    }*/
+                   {
                         //Percentage of mothers provided at least one antenatal care 010311
                         id: "health4", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
                         config: {
-                            fenix_ui_map: {
-                                guiController: {
-                                    overlay: false,
-                                    baselayer: false,
-                                    wmsLoader: false
-                                },
-                                baselayers: {
-                                    "cartodb": {
-                                        title_en: "Baselayer",
-                                        url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                                        subdomains: 'abcd',
-                                        maxZoom: 19
-                                    }
-                                },
-                                zoomToCountry : ["DZA"],
-                                highlightCountry : ["DZA"]
-                            }
-                        },
+                           fenix_ui_map: {
+                               guiController: {
+                                   overlay: true,
+                                   baselayer: false,
+                                   wmsLoader: false
+                               },
+                               baselayers: {
+                                   "cartodb": {
+                                       title_en: "Baselayer",
+                                       url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                                       subdomains: 'abcd',
+                                       maxZoom: 19
+                                   }
+                               },
+                               zoomToCountry : ["DZA"]//,
+                              // highlightCountry : ["DZA"]
+                           }
+                       },
 
                         filterFor: {
                             "filtered_ds": ['CountryCode']
                         },
-                        postProcess: [
+                        postProcess:[
                             {
                                 "name": "join",
                                 "sid": [
@@ -1365,7 +1365,7 @@ define(function () {
                                     ]
                                 },
                                 "rid": {
-                                    "uid": "filtered_join"
+                                    "uid": "joined_ds"
                                 }
                             },
 
@@ -1373,7 +1373,7 @@ define(function () {
                                 "name": "filter",
                                 "sid": [
                                     {
-                                        "uid": "Uneca_PopulationNew"
+                                        "uid": "UNECA_Health"
                                     }
                                 ],
                                 "parameters": {
@@ -1388,6 +1388,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
                                                     "codes": [
                                                         "010311"
                                                     ]
@@ -1397,7 +1398,7 @@ define(function () {
                                         "CountryCode": {
                                             "codes": [
                                                 {
-                                                    "uid": "ISO3",
+                                                    "uid": "UNECA_ISO3",
                                                     "codes": [
                                                         "DZA"
                                                     ]
@@ -1419,8 +1420,9 @@ define(function () {
                                     }
                                 ],
                                 "parameters": {
-                                    "by": [                   //
+                                    "by": [
                                         "CountryCode"
+
                                     ],
                                     "aggregations": [
                                         {
@@ -1435,16 +1437,18 @@ define(function () {
                                     "uid": "last_year_country"
                                 }
                             },
+
                             {
                                 "name": "group",
                                 "sid": [
                                     {
-                                        "uid": "filtered_join"
+                                        "uid": "joined_ds"
                                     }
                                 ],
                                 "parameters": {
                                     "by": [
-                                        "CountryCode"
+                                        "CountryCode",
+                                        "Year"
                                     ],
                                     "aggregations": [
                                         {
@@ -1458,8 +1462,8 @@ define(function () {
                             }
 
                         ]
-                    },
-                    {
+                    }//,
+                    /*  {
                         //Percentage of deliveries attended by skilled health personnel  010312
                         id: "health5", //ref [data-item=':id']
                         type: "map", //chart || map || olap,
@@ -1482,129 +1486,121 @@ define(function () {
                                 highlightCountry : ["DZA"]
                             }
                         },
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010312"],
-                            Year: ["2013"],
-                            "CountryCode": ["DZA"
-                            ]
+                        filterFor: {
+                            "filtered_ds": ['CountryCode']
                         },
+                        postProcess:[
+                            {
+                                "name": "join",
+                                "sid": [
+                                    {
+                                        "uid": "filtered_ds"
+                                    },
+                                    {
+                                        "uid": "last_year_country"
+                                    }
+                                ],
+                                "parameters": {
+                                    "joins": [
+                                        [
+                                            {
+                                                "type": "id",
+                                                "value": "CountryCode"
+                                            },
+                                            {
+                                                "type": "id",
+                                                "value": "Year"
+                                            }
 
-                        filterFor: ["CountryCode"],
-                //         postProcess: [
-                //         {
-                //             "name": "join",
-                //             "sid": [
-                //                 {
-                //                     "uid": "filtered_ds"
-                //                 },
-                //                 {
-                //                     "uid": "last_year_country"
-                //                 }
-                //             ],
-                //             "parameters": {
-                //                 "joins": [
-                //                     [
-                //                         {
-                //                             "type": "id",
-                //                             "value": "CountryCode"
-                //                         },
-                //                         {
-                //                             "type": "id",
-                //                             "value": "Year"
-                //                         }
-                //
-                //                     ],
-                //                     [
-                //                         {
-                //                             "type": "id",
-                //                             "value": "CountryCode"
-                //                         },
-                //                         {
-                //                             "type": "id",
-                //                             "value": "Year"
-                //                         }
-                //
-                //                     ]
-                //                 ],
-                //                 "values": [
-                //                 ]
-                //             }
-                //         },
-                //
-                //     {
-                //         "name": "filter",
-                //         "sid": [
-                //             {
-                //                 "uid": "UNECA_Health"
-                //             }
-                //         ],
-                //         "parameters": {
-                //             "columns": [
-                //                 "CountryCode",
-                //                 "Year",
-                //                 "Value",
-                //                 "Unit"
-                //             ],
-                //             "rows": {
-                //
-                //                 "IndicatorCode": {
-                //                     "codes": [
-                //                         {
-                //                             "uid": "UNECA_ClassificationOfActivities",
-                //                             "version":"2.0",
-                //                             "codes": [
-                //                                 "010312"
-                //                             ]
-                //                         }
-                //                     ]
-                //                 },
-                //                 "CountryCode": {
-                //                     "codes": [
-                //                         {
-                //                             "uid": "UNECA_ISO3",
-                //                             "codes": [
-                //                                 "DZA"
-                //                             ]
-                //                         }
-                //                     ]
-                //                 }
-                //             }
-                //         },
-                //         "rid": {
-                //             "uid": "filtered_ds"
-                //         }
-                //     },
-                //
-                //     {
-                //         "name": "group",
-                //         "sid": [
-                //             {
-                //                 "uid": "filtered_ds"
-                //             }
-                //         ],
-                //         "parameters": {
-                //             "by": [
-                //                 "CountryCode"
-                //
-                //             ],
-                //             "aggregations": [
-                //                 {
-                //                     "columns": [
-                //                         "Year"
-                //                     ],
-                //                     "rule": "max"
-                //                 }
-                //             ]
-                //         },
-                //         "rid": {
-                //             "uid": "last_year_country"
-                //         }
-                //     }
-                //
-                // ]
-// 010311 : Percentage of mothers provided at least one antenatal care
-// 010312 : Percentage of deliveries attended by skilled health personnel
-// 010301 : Percentage of children under-five and underweight
+                                        ],
+                                        [
+                                            {
+                                                "type": "id",
+                                                "value": "CountryCode"
+                                            },
+                                            {
+                                                "type": "id",
+                                                "value": "Year"
+                                            }
+
+                                        ]
+                                    ],
+                                    "values": [
+                                    ]
+                                }
+                            },
+
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Health"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "Unit"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version":"2.0",
+                                                    "codes": [
+                                                        "010312"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "CountryCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ISO3",
+                                                    "codes": [
+                                                        "DZA"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {
+                                    "uid": "filtered_ds"
+                                }
+                            },
+
+                            {
+                                "name": "group",
+                                "sid": [
+                                    {
+                                        "uid": "filtered_ds"
+                                    }
+                                ],
+                                "parameters": {
+                                    "by": [
+                                        "CountryCode"
+
+                                    ],
+                                    "aggregations": [
+                                        {
+                                            "columns": [
+                                                "Year"
+                                            ],
+                                            "rule": "max"
+                                        }
+                                    ]
+                                },
+                                "rid": {
+                                    "uid": "last_year_country"
+                                }
+                            }
+
+                        ]
 
             },
                     {
@@ -1699,127 +1695,143 @@ define(function () {
                                 highlightCountry : ["DZA"]
                             }
                         },
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010301"],
-                            Year: ["2013"],
-                            "CountryCode": ["DZA"
-                            ]
+                        filterFor: {
+                            "filtered_ds": ['CountryCode']
                         },
+                        postProcess:[
+                            {
+                                "name": "join",
+                                "sid": [
+                                    {
+                                        "uid": "filtered_ds"
+                                    },
+                                    {
+                                        "uid": "last_year_country"
+                                    }
+                                ],
+                                "parameters": {
+                                    "joins": [
+                                        [
+                                            {
+                                                "type": "id",
+                                                "value": "CountryCode"
+                                            },
+                                            {
+                                                "type": "id",
+                                                "value": "Year"
+                                            }
 
-                        filterFor: ["CountryCode"],
-                        // postProcess: [
-                        //     {
-                        //         "name": "join",
-                        //         "sid": [
-                        //             {
-                        //                 "uid": "filtered_ds"
-                        //             },
-                        //             {
-                        //                 "uid": "last_year_country"
-                        //             }
-                        //         ],
-                        //         "parameters": {
-                        //             "joins": [
-                        //                 [
-                        //                     {
-                        //                         "type": "id",
-                        //                         "value": "CountryCode"
-                        //                     },
-                        //                     {
-                        //                         "type": "id",
-                        //                         "value": "Year"
-                        //                     }
-                        //
-                        //                 ],
-                        //                 [
-                        //                     {
-                        //                         "type": "id",
-                        //                         "value": "CountryCode"
-                        //                     },
-                        //                     {
-                        //                         "type": "id",
-                        //                         "value": "Year"
-                        //                     }
-                        //
-                        //                 ]
-                        //             ],
-                        //             "values": [
-                        //             ]
-                        //         }
-                        //     },
-                        //
-                        //     {
-                        //         "name": "filter",
-                        //         "sid": [
-                        //             {
-                        //                 "uid": "UNECA_Health"
-                        //             }
-                        //         ],
-                        //         "parameters": {
-                        //             "columns": [
-                        //                 "CountryCode",
-                        //                 "Year",
-                        //                 "Value",
-                        //                 "Unit"
-                        //             ],
-                        //             "rows": {
-                        //
-                        //                 "IndicatorCode": {
-                        //                     "codes": [
-                        //                         {
-                        //                             "uid": "UNECA_ClassificationOfActivities",
-                        //                             "version":"2.0",
-                        //                             "codes": [
-                        //                                 "010312"
-                        //                             ]
-                        //                         }
-                        //                     ]
-                        //                 },
-                        //                 "CountryCode": {
-                        //                     "codes": [
-                        //                         {
-                        //                             "uid": "UNECA_ISO3",
-                        //                             "codes": [
-                        //                                 "DZA"
-                        //                             ]
-                        //                         }
-                        //                     ]
-                        //                 }
-                        //             }
-                        //         },
-                        //         "rid": {
-                        //             "uid": "filtered_ds"
-                        //         }
-                        //     },
-                        //
-                        //     {
-                        //         "name": "group",
-                        //         "sid": [
-                        //             {
-                        //                 "uid": "filtered_ds"
-                        //             }
-                        //         ],
-                        //         "parameters": {
-                        //             "by": [
-                        //                 "CountryCode"
-                        //
-                        //             ],
-                        //             "aggregations": [
-                        //                 {
-                        //                     "columns": [
-                        //                         "Year"
-                        //                     ],
-                        //                     "rule": "max"
-                        //                 }
-                        //             ]
-                        //         },
-                        //         "rid": {
-                        //             "uid": "last_year_country"
-                        //         }
-                        //     }
-                        //
-                        // ]
-                    }
+                                        ],
+                                        [
+                                            {
+                                                "type": "id",
+                                                "value": "CountryCode"
+                                            },
+                                            {
+                                                "type": "id",
+                                                "value": "Year"
+                                            }
+
+                                        ]
+                                    ],
+                                    "values": [
+                                    ]
+                                },
+                                "rid": {
+                                    "uid": "filtered_join"
+                                }
+                            },
+
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Health"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "CountryCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "010301"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "CountryCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "ISO3",
+                                                    "codes": [
+                                                        "DZA"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {
+                                    "uid": "filtered_ds"
+                                }
+                            },
+
+                            {
+                                "name": "group",
+                                "sid": [
+                                    {
+                                        "uid": "filtered_ds"
+                                    }
+                                ],
+                                "parameters": {
+                                    "by": [                   //
+                                        "CountryCode"
+                                    ],
+                                    "aggregations": [
+                                        {
+                                            "columns": [
+                                                "Year"
+                                            ],
+                                            "rule": "max"
+                                        }
+                                    ]
+                                },
+                                "rid": {
+                                    "uid": "last_year_country"
+                                }
+                            },
+                            {
+                                "name": "group",
+                                "sid": [
+                                    {
+                                        "uid": "filtered_join"
+                                    }
+                                ],
+                                "parameters": {
+                                    "by": [
+                                        "CountryCode"
+                                    ],
+                                    "aggregations": [
+                                        {
+                                            "columns": [
+                                                "filtered_ds_Value"
+                                            ],
+                                            "rule": "max"
+                                        }
+                                    ]
+                                }
+                            }
+
+                        ]
+                    }*/
                 ]
             }
         },
