@@ -1,6 +1,6 @@
 /*global define*/
 
-define(['underscore'],function (_) {
+define(['underscore'], function (_) {
 
     'use strict';
 
@@ -16,11 +16,11 @@ define(['underscore'],function (_) {
                         type: "map", //chart || map || olap,
 
                         /*
-                        geoSubject: 'gaul0',
-                        colorRamp: 'GnBu',  //Blues, Greens,
-                            //colorRamp values: http://fenixrepo.fao.org/cdn/fenix/fenix-ui-map-datasets/colorramp.png
-                        legendtitle: 'ODA',
-                        */
+                         geoSubject: 'gaul0',
+                         colorRamp: 'GnBu',  //Blues, Greens,
+                         //colorRamp values: http://fenixrepo.fao.org/cdn/fenix/fenix-ui-map-datasets/colorramp.png
+                         legendtitle: 'ODA',
+                         */
 
                         config: {
                             fenix_ui_map: {
@@ -42,7 +42,7 @@ define(['underscore'],function (_) {
                             }
                         }
                     }
-                ]      
+                ]
             }]
         },
 
@@ -56,28 +56,71 @@ define(['underscore'],function (_) {
                 //postProcess : {} //D3P process
                 //filter : {} //FX-filter format
                 items: [
-
                     {
                         //Mid-year Population  010101
                         id: "population1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
-                           x : ["Year"], //x axis and series
+                            x: ["Year"], //x axis and series
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010101"]
-                        }
-                        //filterFor: ["Year"], // allowed dimension ids to filter,
+
+                        filterFor: {
+                            "filter_mid": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "Uneca_PopulationNew"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "GenderCode",
+                                        "AgeRangeCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "010101"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_mid"}
+
+                            }
+                        ]
                     },
 
                     {
@@ -86,20 +129,66 @@ define(['underscore'],function (_) {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
-                            x : ["Year"], //x axis and series
+                            x: ["Year"], //x axis and series
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010103"]
-                        }
+
+                        filterFor: {
+                            "filter_growth": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "Uneca_PopulationNew"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "GenderCode",
+                                        "AgeRangeCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "010103"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+
+                                "rid": {"uid": "filter_growth"}
+
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -109,20 +198,66 @@ define(['underscore'],function (_) {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
-                            x : ["Year"], //x axis and series
+                            x: ["Year"], //x axis and series
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010104"]
-                        }
+
+                        filterFor: {
+                            "filter_birth": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "Uneca_PopulationNew"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "GenderCode",
+                                        "AgeRangeCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "010104"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+
+                                "rid": {"uid": "filter_birth"}
+
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -132,20 +267,66 @@ define(['underscore'],function (_) {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
-                            x : ["Year"], //x axis and series
+                            x: ["Year"], //x axis and series
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010105"]
-                        }
+
+                        filterFor: {
+                            "filter_death": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "Uneca_PopulationNew"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "GenderCode",
+                                        "AgeRangeCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "010105"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+
+                                "rid": {"uid": "filter_death"}
+
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -155,20 +336,66 @@ define(['underscore'],function (_) {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
-                            x : ["Year"], //x axis and series
+                            x: ["Year"], //x axis and series
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010106"]
-                        }
+
+                        filterFor: {
+                            "filter_fertility": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "Uneca_PopulationNew"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "GenderCode",
+                                        "AgeRangeCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "010106"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+
+                                "rid": {"uid": "filter_fertility"}
+
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -178,22 +405,67 @@ define(['underscore'],function (_) {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                           x : ["Year"], //x axis and series
-                          series: ["IndicatorCode"], //Y dimension
+                            x: ["Year"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
 
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["010108"]
-                        }
+                        filterFor: {
+                            "filter_life": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "Uneca_PopulationNew"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "GenderCode",
+                                        "AgeRangeCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "codes": [
+                                                        "010108"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+
+                                "rid": {"uid": "filter_life"}
+
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
                 ]
@@ -222,13 +494,56 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010304"]
-                        }
+                        filterFor: {
+                            "filter_infant": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Health"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "Unit"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "010304"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_infant"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
@@ -244,13 +559,58 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010303"]
-                        }
+
+                        filterFor: {
+                            "filter_five": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Health"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "Unit"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "010303"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_five"}
+                            }
+                        ]
+
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
@@ -266,13 +626,56 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["010313", "010314"]
-                        }
+                        filterFor: {
+                            "filter_doc": ['CountryCode']
+                        },
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Health"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "Unit"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "010313", "010314"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_doc"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
                 ]
@@ -280,73 +683,213 @@ define(['underscore'],function (_) {
         },
 
         "gdp": {
-
-            dashboard: [
-
-                { uid: "UNECA_GDP_NC",
-                    items :  [
-                        {
-                            //GDP (Current prices)  020707
-                            id: "gdp1", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
+            dashboard: {
+                uid: "UNECA_GDP_USD",
+                items: [
+                    {
+                        //GDP (Current prices)  020707
+                        id: "gdp1", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            x: ["Year"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
                             config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"},
-                                useDimensionLabelsIfExist: true,
-                                config: {
-                                    legend: {
-                                        enabled:false
-                                    },
-                                    tooltip: {
-                                        valueSuffix:" NC"
-                                    }
+                                legend: {
+                                    enabled: false
+                                },
+                                tooltip: {
+                                    valueSuffix: " US$"
                                 }
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["020707"]
                             }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
+                        }, // :type-creator config
 
-                    ]
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
 
-                },
+                        filterFor: {
+                            "filter_gdp": ['CountryCode']
+                        },
 
-                { uid: "UNECA_GDP_NC",
-                    items :  [
-                        {
-                            //Exports of goods and services at current prices  02070202; Import of goods and services 02070203
-                            id: "gdp2", //ref [data-item=':id']
-                            type: "chart", //chart || map || olap,
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_GDP_USD"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "020707"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_gdp"}
+                            }
+                        ]
+                    },
+                    {
+                        //GDP growth  020705
+                        id: "gdp2", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            x: ["Year"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
                             config: {
-                                type: "line",
-                                x: ["Year"], //x axis and series
-                                series: ["IndicatorCode"], //Y dimension
-                                y: ["Value"],
-                                aggregationFn: {"Value": "sum"},
-                                useDimensionLabelsIfExist: true,
-                                config: {
-                                    legend: {
-                                        enabled:false
-                                    }
+                                legend: {
+                                    enabled: false
                                 }
-                            }, // :type-creator config
-                            filter: { //FX-filter format
-                                IndicatorCode: ["02070202", "02070203"]
                             }
-                            //filterFor: ["Year"], // allowed dimension ids to filter,
-                        }
+                        }, // :type-creator config
 
-                    ]
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
 
-                }
+                        filterFor: {
+                            "filter_growth": ['CountryCode']
+                        },
 
-            ]
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_GDP_USD"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
 
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "020705"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_growth"}
+                            }
+                        ]
+                    },
+                    {
+                        //GDP per capita  020706
+                        id: "gdp3", //ref [data-item=':id']
+                        type: "chart", //chart || map || olap,
+                        config: {
+                            type: "line",
+                            x: ["Year"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
+                            y: ["Value"],
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled: false
+                                }
+                            }
+                        }, // :type-creator config
 
+                        //filterFor: ["Year"], // allowed dimension ids to filter,
+
+                        filterFor: {
+                            "filter_capita": ['CountryCode']
+                        },
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_GDP_USD"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "020706"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_capita"}
+                            }
+                        ]
+                    }
+
+                ]
+            }
         },
 
         "monetary_statistics": {
@@ -370,15 +913,57 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
+                        filterFor: {
+                            "filter_supply": ['CountryCode']
+                        },
 
-                            IndicatorCode: ["020901"]
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_MonetaryStatistics"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
 
-                        }
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "020901"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_supply"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -395,15 +980,57 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
+                        filterFor: {
+                            "filter_fa": ['CountryCode']
+                        },
 
-                            IndicatorCode: ["020904"]
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_MonetaryStatistics"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
 
-                        }
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "020904"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_fa"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
@@ -419,15 +1046,57 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
+                        filterFor: {
+                            "filter_reserves": ['CountryCode']
+                        },
 
-                            IndicatorCode: ["020906"]
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_MonetaryStatistics"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
 
-                        }
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "020906"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_reserves"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
 
@@ -457,15 +1126,59 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["021204"]
+                        filterFor: {
+                            "filter_fiscal": ['CountryCode']
+                        },
 
-                        }
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_PublicFinance"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "021204"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_fiscal"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -482,15 +1195,59 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["021203"]
+                        filterFor: {
+                            "filter_total": ['CountryCode']
+                        },
 
-                        }
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_PublicFinance"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "021203"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_total"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -507,15 +1264,59 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["021201"]
+                        filterFor: {
+                            "filter_rev": ['CountryCode']
+                        },
 
-                        }
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_PublicFinance"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "021201"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_rev"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
 
@@ -546,15 +1347,58 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["030301"]
+                        filterFor: {
+                            "filter_gni": ['CountryCode']
+                        },
 
-                        }
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Poverty"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "030301"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_gni"}
+                            }
+                        ]
+
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
                     {
@@ -570,15 +1414,57 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
 
-                            IndicatorCode: ["010114"]
+                        filterFor: {
+                            "filter_below": ['CountryCode']
+                        },
 
-                        }
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Poverty"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "010114"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_below"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
                 ]
@@ -597,26 +1483,70 @@ define(['underscore'],function (_) {
                 //filter : {} //FX-filter format
                 items: [
 
-                  {
+                    {
                         //International tourism, number of arrivals 021305
                         id: "tourism1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
-                            x : ["Year"], //x axis and series
+                            x: ["Year"], //x axis and series
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["021305"]
-                        }
+
+                        filterFor: {
+                            "filter_arrivals": ['CountryCode']
+                        },
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Tourism"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "021305"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_arrivals"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     },
 
@@ -626,20 +1556,64 @@ define(['underscore'],function (_) {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "line",
-                            x : ["Year"], //x axis and series
+                            x: ["Year"], //x axis and series
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["021301"]
-                        }
+
+                        filterFor: {
+                            "filter_rooms": ['CountryCode']
+                        },
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Tourism"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "021301"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_rooms"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
                 ]
@@ -668,10 +1642,10 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 },
                                 tooltip: {
-                                    valueSuffix:" NC"
+                                    valueSuffix: " NC"
                                 }
                             }
 
@@ -702,7 +1676,7 @@ define(['underscore'],function (_) {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-                                                    "version":"2.0",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "020204"
 
@@ -730,7 +1704,7 @@ define(['underscore'],function (_) {
                                         }
                                     }
                                 },
-                                "rid":{"uid":"filter_current"}
+                                "rid": {"uid": "filter_current"}
                             }
                         ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -748,10 +1722,10 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 },
                                 tooltip: {
-                                    valueSuffix:" NC"
+                                    valueSuffix: " NC"
                                 }
                             }
                         }, // :type-creator config
@@ -781,7 +1755,7 @@ define(['underscore'],function (_) {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-                                                    "version":"2.0",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "02020501"
 
@@ -809,7 +1783,7 @@ define(['underscore'],function (_) {
                                         }
                                     }
                                 },
-                                "rid":{"uid":"filter_capital"}
+                                "rid": {"uid": "filter_capital"}
                             }
                         ]
 
@@ -828,10 +1802,10 @@ define(['underscore'],function (_) {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 },
                                 tooltip: {
-                                    valueSuffix:" NC"
+                                    valueSuffix: " NC"
                                 }
                             }
                         }, // :type-creator config
@@ -861,7 +1835,7 @@ define(['underscore'],function (_) {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-                                                    "version":"2.0",
+                                                    "version": "2.0",
                                                     "codes": [
                                                         "02020502"
 
@@ -889,7 +1863,7 @@ define(['underscore'],function (_) {
                                         }
                                     }
                                 },
-                                "rid":{"uid":"filter_financial"}
+                                "rid": {"uid": "filter_financial"}
                             }
                         ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
@@ -900,27 +1874,7 @@ define(['underscore'],function (_) {
 
         },
 
-        "inflation" : {
-
-filter:{
-
-    CommodityCode :{
-        selector: {
-            id : "tree"
-        },
-
-        cl: {
-            uid: "UNECA_KindOfCommodity"
-
-
-        },
-        template: {
-            hideHeader : true
-        }
-
-
-    }
-},
+        "inflation": {
 
             dashboard: {
                 uid: "UNECA_Inflation",
@@ -942,13 +1896,59 @@ filter:{
                             useDimensionLabelsIfExist: true,
                             config: {
                                 legend: {
-                                    enabled:false
+                                    enabled: false
                                 }
                             }
                         }, // :type-creator config
-                        filter: { //FX-filter format
-                            IndicatorCode: ["02110114"]
-                        }
+
+                        filterFor: {
+                            "filter_inflation": ['CountryCode']
+                        },
+
+                        postProcess: [
+                            {
+                                "name": "filter",
+                                "sid": [
+                                    {
+                                        "uid": "UNECA_Inflation"
+                                    }
+                                ],
+                                "parameters": {
+                                    "columns": [
+                                        "IndicatorCode",
+                                        "CountryCode",
+                                        "Year",
+                                        "Value",
+                                        "UnitCode"
+                                    ],
+                                    "rows": {
+
+                                        "IndicatorCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UNECA_ClassificationOfActivities",
+                                                    "version": "2.0",
+                                                    "codes": [
+                                                        "02110114"
+
+                                                    ]
+                                                }
+                                            ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2000,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "rid": {"uid": "filter_inflation"}
+                            }
+                        ]
                         //filterFor: ["Year"], // allowed dimension ids to filter,
                     }
 
