@@ -31,8 +31,10 @@ define(function () {
         ENVIROMENT_DEVELOP : "develop",
         ENVIROMENT_PROD : "production",
 
+        //forceLang : "FR",
+        country : 'TRAINING',
+
         DATA_MNG_CONTENT : "#data-mng",
-        ANALYSIS_CONTENT : "#fx-analysis-container",
 
         catalog : {
             defaultSelectors : ['contextSystem', "dataDomain","resourceType" ],
