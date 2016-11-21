@@ -53,14 +53,11 @@ define([
         this.bridge = new Bridge({
             environment: C.ENVIRONMENT
         });
+        
+        s.lang= C.forceLang || $("html").attr("lang") || C.LANG,
 
-        if ((s.lang != null) && (typeof s.lang != "undefined")) {
-            s.lang = $("html").attr("lang");
-            s.lang = s.lang.toUpperCase();
-        }
-        else {
-            s.lang = 'EN';
-        }
+        // force to be string and uppercase
+        s.lang = String(s.lang).toUpperCase();
 
         this.lang = s.lang;
 

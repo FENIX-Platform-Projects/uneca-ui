@@ -16,9 +16,6 @@ define([
     function BrowseByDomain_EntryPoint() {
         console.clear();
 
-
-
-
         this._importThirdPartyCss();
 
         log.setLevel('silent');
@@ -34,6 +31,11 @@ define([
         else{
             s.lang = 'EN';
         }
+
+        s.lang= C.forceLang || $("html").attr("lang") || C.LANG,
+
+        // force to be string and uppercase
+        s.lang = String(s.lang).toUpperCase();
 
         var conf = {
             el: $('#main'),
