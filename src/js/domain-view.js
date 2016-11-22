@@ -25,6 +25,7 @@ define([
     // color: #567794;
 
     var s = {
+        DEFAULT_DOMAIN: 'infrastructure',
         CONTENT: "#domain-content",
         SEARCH_FILTER_INPUT: "#searchinput",
         DASHBOARD_CONTENT: "#dashboard-content",
@@ -102,7 +103,7 @@ define([
 
             }, this));
 
-        var id = 'population';
+        var id = s.DEFAULT_DOMAIN;
         this.currentDashboard = id;
         this._printDashboard(id);
     };
@@ -237,12 +238,16 @@ define([
 
     DomainView.prototype._printDashboardBase = function (id, filterConfig) {
 
-        var yearSelector = filterConfig["Year"].selector.source;
+        var maxYear = '';
 
-        var maxYear = Math.max.apply(Math,yearSelector.map(function(o){return o.value;}));
+        if(filterConfig["Year"]){
+            var yearSelector = filterConfig["Year"].selector.source;
+            maxYear = Math.max.apply(Math,yearSelector.map(function(o){return o.value;}));
+        } else {
+           // find map items and get the first max value
+        }
 
         var data = $.extend(true, {maxYear: maxYear}, i18nLabels[this.lang]);
-
         var html = basesTemplate(data);
 
         //Inject HTML
