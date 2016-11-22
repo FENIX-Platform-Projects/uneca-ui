@@ -25,7 +25,7 @@ define([
     // color: #567794;
 
     var s = {
-        DEFAULT_DOMAIN: 'infrastructure',
+        DEFAULT_DOMAIN: 'poverty',
         CONTENT: "#domain-content",
         SEARCH_FILTER_INPUT: "#searchinput",
         DASHBOARD_CONTENT: "#dashboard-content",
@@ -238,7 +238,7 @@ define([
 
     DomainView.prototype._printDashboardBase = function (id, filterConfig) {
 
-        var maxYear = '';
+       /* var maxYear = '';
 
         if(filterConfig["Year"]){
             var yearSelector = filterConfig["Year"].selector.source;
@@ -247,8 +247,9 @@ define([
            // find map items and get the first max value
         }
 
-        var data = $.extend(true, {maxYear: maxYear}, i18nLabels[this.lang]);
-        var html = basesTemplate(data);
+        var data = $.extend(true, {maxYear: maxYear}, i18nLabels[this.lang]);*/
+
+        var html = basesTemplate(i18nLabels[this.lang]);
 
         //Inject HTML
         var source = $(html).find("[data-dashboard='" + id + "']");
@@ -314,9 +315,8 @@ define([
 
         var self = this;
 
-        if (this.filter && $.isFunction(this.filter.dispose)) {
-            this.filter.dispose();
-        }
+        this._disposeFilter();
+
 
         var $cointainerContent = $('<div id="filter-container"><div class="row"><div class="col-xs-6"><div data-selector="CountryCode"></div></div><div class="col-xs-6"><div data-selector="Year"></div></div></div></div>');
 
@@ -363,6 +363,8 @@ define([
             this.$lateralMenu.jstree(true).destroy();
         }
 
+        this._disposeFilter();
+
         this._disposeDashboards();
 
         this._unbindDashboardEventListeners();
@@ -379,6 +381,14 @@ define([
         }
 
     };
+
+
+    DomainView.prototype._disposeFilter = function () {
+        if (this.filter && $.isFunction(this.filter.dispose)) {
+            this.filter.dispose();
+        }
+    };
+
 
     DomainView.prototype._disposeDashboards = function () {
 

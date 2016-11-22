@@ -35,7 +35,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
-                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -167,7 +167,7 @@ define(function () {
                                     }
                                 },
                                 zoomToCountry: ["DZA"]//,
-                               // highlightCountry: ["DZA"]
+                                // highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -485,7 +485,7 @@ define(function () {
                                     }
                                 },
                                 zoomToCountry: ["DZA"]//,
-                               // highlightCountry: ["DZA"]
+                                // highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -644,7 +644,7 @@ define(function () {
                                     }
                                 },
                                 zoomToCountry: ["DZA"]//,
-                               // highlightCountry: ["DZA"]
+                                // highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -879,7 +879,7 @@ define(function () {
                                     }
                                 },
                                 zoomToCountry: ["DZA"]//,
-                               // highlightCountry: ["DZA"]
+                                // highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -1048,7 +1048,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
-                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -1319,7 +1319,7 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
+                                zoomToCountry: ["DZA"]//,
                                 // highlightCountry : ["DZA"]
                             }
                         },
@@ -1483,7 +1483,7 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
+                                zoomToCountry: ["DZA"]//,
                                 // highlightCountry : ["DZA"]
                             }
                         },
@@ -1717,7 +1717,7 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
+                                zoomToCountry: ["DZA"]//,
                                 // highlightCountry : ["DZA"]
                             }
                         },
@@ -1892,7 +1892,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
-                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -2252,7 +2252,6 @@ define(function () {
                     }
 
 
-
                 ]
 
             }
@@ -2286,7 +2285,7 @@ define(function () {
                     className: 'col-md-6',
                     selector: {
                         id: "tree",
-                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -2320,7 +2319,7 @@ define(function () {
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
                 items: [
-                   {
+                    {
                         //GROSS DOMESTIC PRODUCT (current prices)   020707;
                         id: "gdp1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
@@ -2391,77 +2390,77 @@ define(function () {
                             }
                         ]
                     },
-                 /*   {
-                        //Exports of goods and services at current prices   02070202; Import of goods and services   02070203
-                        id: "gdp2", //ref [data-item=':id']
-                        type: "chart", //chart || map || olap,
-                        config: {
-                            type: "line",
-                            x: ["Year"], //x axis and series
-                            series: ["CountryCode"], //Y dimension
-                            y: ["Value"],
-                            aggregationFn: {"Value": "sum"},
-                            useDimensionLabelsIfExist: true
-                        }, // :type-creator config
+                    /*   {
+                     //Exports of goods and services at current prices   02070202; Import of goods and services   02070203
+                     id: "gdp2", //ref [data-item=':id']
+                     type: "chart", //chart || map || olap,
+                     config: {
+                     type: "line",
+                     x: ["Year"], //x axis and series
+                     series: ["CountryCode"], //Y dimension
+                     y: ["Value"],
+                     aggregationFn: {"Value": "sum"},
+                     useDimensionLabelsIfExist: true
+                     }, // :type-creator config
 
-                        filterFor: {
-                            "filter_current": ['CountryCode', 'Year']
-                        },
+                     filterFor: {
+                     "filter_current": ['CountryCode', 'Year']
+                     },
 
-                        postProcess: [
-                            {
-                                "name": "filter",
-                                "sid": [
-                                    {
-                                        "uid": "UNECA_GDP_USD"
-                                    }
-                                ],
-                                "parameters": {
-                                    "columns": [
-                                        "IndicatorCode",
-                                        "CountryCode",
-                                        "Year",
-                                        "Value",
-                                        "UnitCode"
-                                    ],
-                                    "rows": {
+                     postProcess: [
+                     {
+                     "name": "filter",
+                     "sid": [
+                     {
+                     "uid": "UNECA_GDP_USD"
+                     }
+                     ],
+                     "parameters": {
+                     "columns": [
+                     "IndicatorCode",
+                     "CountryCode",
+                     "Year",
+                     "Value",
+                     "UnitCode"
+                     ],
+                     "rows": {
 
-                                        "IndicatorCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ClassificationOfActivities",
-                                                    "version": "2.0",
-                                                    "codes": [
-                                                        "02070202", "02070203"
-                                                    ]
-                                                }
-                                            ]
-                                        },
+                     "IndicatorCode": {
+                     "codes": [
+                     {
+                     "uid": "UNECA_ClassificationOfActivities",
+                     "version": "2.0",
+                     "codes": [
+                     "02070202", "02070203"
+                     ]
+                     }
+                     ]
+                     },
 
-                                        "CountryCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UNECA_ISO3",
-                                                    "codes": [
-                                                        "DZA"
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        "Year": {
-                                            "time": [
-                                                {
-                                                    "from": 2000,
-                                                    "to": 2013
-                                                }
-                                            ]
-                                        }
-                                    }
-                                },
-                                "rid": {"uid": "filter_current"}
-                            }
-                        ]
-                    },*/
+                     "CountryCode": {
+                     "codes": [
+                     {
+                     "uid": "UNECA_ISO3",
+                     "codes": [
+                     "DZA"
+                     ]
+                     }
+                     ]
+                     },
+                     "Year": {
+                     "time": [
+                     {
+                     "from": 2000,
+                     "to": 2013
+                     }
+                     ]
+                     }
+                     }
+                     },
+                     "rid": {"uid": "filter_current"}
+                     }
+                     ]
+                     },*/
                     {
                         //020705:   GDP growth (annual %)
                         id: "gdp4", //ref [data-item=':id']
@@ -2475,8 +2474,8 @@ define(function () {
                             useDimensionLabelsIfExist: true,
                             config: {
                                 tooltip: {
-                                    formatter: function() {
-                                        return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>, in series '+ this.series.name;
+                                    formatter: function () {
+                                        return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>, in series ' + this.series.name;
                                     }
                                 }
                             }
@@ -2644,7 +2643,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
-                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -2931,7 +2930,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
-                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -3216,6 +3215,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
 
                             {"value": "2013", "label": "2013", "selected": false},
@@ -3254,7 +3254,7 @@ define(function () {
                         config: {
                             fenix_ui_map: {
                                 guiController: {
-                                    overlay: false,
+                                    overlay: true,
                                     baselayer: false,
                                     wmsLoader: false
                                 },
@@ -3266,18 +3266,13 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
-                                highlightCountry: ["DZA"]
+                                zoomToCountry: ["DZA"]//,
+                                // highlightCountry : ["DZA"]
                             }
                         },
-                        // filter: { //FX-filter format
-                        //     IndicatorCode: ["030306"],
-                        //     Year: ["2013"],
-                        //     "CountryCode": ["DZA"]
-                        // },
 
                         filterFor: {
-                            "filtered_ds": ["CountryCode"]
+                            "filtered_ds": ['CountryCode']
                         },
                         postProcess: [
                             {
@@ -3318,7 +3313,7 @@ define(function () {
                                     "values": []
                                 },
                                 "rid": {
-                                    "uid": "filtered_join"
+                                    "uid": "joined_ds"
                                 }
                             },
 
@@ -3353,10 +3348,11 @@ define(function () {
                                                 {
                                                     "uid": "UNECA_ISO3",
                                                     "codes": [
-                                                        "LBY"
+                                                        "DZA"
                                                     ]
                                                 }
                                             ]
+
                                         }
                                     }
                                 },
@@ -3373,8 +3369,9 @@ define(function () {
                                     }
                                 ],
                                 "parameters": {
-                                    "by": [                   //
+                                    "by": [
                                         "CountryCode"
+
                                     ],
                                     "aggregations": [
                                         {
@@ -3389,16 +3386,18 @@ define(function () {
                                     "uid": "last_year_country"
                                 }
                             },
+
                             {
                                 "name": "group",
                                 "sid": [
                                     {
-                                        "uid": "filtered_join"
+                                        "uid": "joined_ds"
                                     }
                                 ],
                                 "parameters": {
                                     "by": [
-                                        "CountryCode"
+                                        "CountryCode",
+                                        "Year"
                                     ],
                                     "aggregations": [
                                         {
@@ -3423,10 +3422,15 @@ define(function () {
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
-                            useDimensionLabelsIfExist: true
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled: false
+                                }
+                            }
                         }, // :type-creator config
                         filterFor: {
-                            "filter_poverty": ['CountryCode', 'Year']
+                            "filter_capita": ['CountryCode', 'Year']
                         },
                         postProcess: [
                             {
@@ -3479,7 +3483,7 @@ define(function () {
                                         }
                                     }
                                 },
-                                "rid": {"uid": "filter_poverty"}
+                                "rid": {"uid": "filter_capita"}
                             }
                         ]
                     },
@@ -3586,7 +3590,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
-                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -3724,7 +3728,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
-                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
+                        default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
                         source: [
 
                             {"value": "2013", "label": "2013", "selected": false},
@@ -3920,7 +3924,7 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
+                                zoomToCountry: ["DZA"]//,
                                 // highlightCountry : ["DZA"]
                             }
                         },
@@ -4089,36 +4093,36 @@ define(function () {
                     }
                 }/*,
 
-                Year: {
-                    className: 'col-md-6',
+                 Year: {
+                 className: 'col-md-6',
 
-                    selector: {
-                        id: "tree",
+                 selector: {
+                 id: "tree",
                  default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
 
                  source: [
-                            {"value": "2013", "label": "2013", "selected": false},
-                            {"value": "2012", "label": "2012", "selected": false},
-                            {"value": "2011", "label": "2011", "selected": false},
-                            {"value": "2010", "label": "2010", "selected": false},
-                            {"value": "2009", "label": "2009", "selected": false},
-                            {"value": "2008", "label": "2008", "selected": false},
-                            {"value": "2007", "label": "2007", "selected": false},
-                            {"value": "2006", "label": "2006", "selected": false},
-                            {"value": "2005", "label": "2005", "selected": false},
-                            {"value": "2004", "label": "2004", "selected": false},
-                            {"value": "2003", "label": "2003", "selected": false},
-                            {"value": "2002", "label": "2002", "selected": false},
-                            {"value": "2001", "label": "2001", "selected": false},
-                            {"value": "2000", "label": "2000", "selected": false}
+                 {"value": "2013", "label": "2013", "selected": false},
+                 {"value": "2012", "label": "2012", "selected": false},
+                 {"value": "2011", "label": "2011", "selected": false},
+                 {"value": "2010", "label": "2010", "selected": false},
+                 {"value": "2009", "label": "2009", "selected": false},
+                 {"value": "2008", "label": "2008", "selected": false},
+                 {"value": "2007", "label": "2007", "selected": false},
+                 {"value": "2006", "label": "2006", "selected": false},
+                 {"value": "2005", "label": "2005", "selected": false},
+                 {"value": "2004", "label": "2004", "selected": false},
+                 {"value": "2003", "label": "2003", "selected": false},
+                 {"value": "2002", "label": "2002", "selected": false},
+                 {"value": "2001", "label": "2001", "selected": false},
+                 {"value": "2000", "label": "2000", "selected": false}
 
-                        ]
-                    },
+                 ]
+                 },
 
-                    template: {
-                        hideHeader: true
-                    }
-                }*/
+                 template: {
+                 hideHeader: true
+                 }
+                 }*/
 
             },
 
@@ -4148,7 +4152,7 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
+                                zoomToCountry: ["DZA"]//,
                                 // highlightCountry : ["DZA"]
                             }
                         },
@@ -4218,7 +4222,6 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-                                                    "version": "2.0",
                                                     "codes": [
                                                         "030202"
                                                     ]
@@ -4228,7 +4231,7 @@ define(function () {
                                         "CountryCode": {
                                             "codes": [
                                                 {
-                                                    "uid": "UNECA_ISO3",
+                                                    "uid": "ISO3",
                                                     "codes": [
                                                         "DZA"
                                                     ]
@@ -4312,7 +4315,7 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
+                                zoomToCountry: ["DZA"]//,
                                 // highlightCountry : ["DZA"]
                             }
                         },
@@ -4377,12 +4380,10 @@ define(function () {
                                         "Value"
                                     ],
                                     "rows": {
-
                                         "IndicatorCode": {
                                             "codes": [
                                                 {
                                                     "uid": "UNECA_ClassificationOfActivities",
-                                                    "version": "2.0",
                                                     "codes": [
                                                         "021423"
                                                     ]
@@ -4392,7 +4393,7 @@ define(function () {
                                         "CountryCode": {
                                             "codes": [
                                                 {
-                                                    "uid": "UNECA_ISO3",
+                                                    "uid": "ISO3",
                                                     "codes": [
                                                         "DZA"
                                                     ]
