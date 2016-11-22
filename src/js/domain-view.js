@@ -25,7 +25,7 @@ define([
     // color: #567794;
 
     var s = {
-        DEFAULT_DOMAIN: 'poverty',
+        DEFAULT_DOMAIN: 'population',
         CONTENT: "#domain-content",
         SEARCH_FILTER_INPUT: "#searchinput",
         DASHBOARD_CONTENT: "#dashboard-content",
