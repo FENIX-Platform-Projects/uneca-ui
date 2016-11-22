@@ -3497,7 +3497,12 @@ define(function () {
                             series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
-                            useDimensionLabelsIfExist: true
+                            useDimensionLabelsIfExist: true,
+                            config: {
+                                legend: {
+                                    enabled: false
+                                }
+                            }
                         }, // :type-creator config
                         filterFor: {
                             "filter_poverty": ['CountryCode', 'Year']
