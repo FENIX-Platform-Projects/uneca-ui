@@ -9,23 +9,17 @@ define([
     var s = {
         CONTAINER : Config.ANALYSIS_CONTENT,
         cache : Config.CACHE,
-        environment : Config.ENVIRONMENT,
-        default_lang : Config.LANG,
+        environment : Config.ENVIRONMENT
     };
 
     function Analysis_Download(){
-        //var COUNTRY_CODE = 'MDG'; //Congo implement controller
 
         this._importThirdPartyCss();
-        //s.url = window.location.href;
-        console.log(s.url)
-        if((s.lang!=null)&&(typeof s.lang!="undefined")){
-            s.lang = $("html").attr("lang");
-            s.lang = s.lang.toUpperCase();
-        }
-        else{
-            s.lang = 'EN';
-        }
+
+        s.lang = Config.forceLang || $("html").attr("lang") || Config.LANG;
+
+        // force to be string and uppercase
+        s.lang = String(s.lang).toUpperCase();
 
         this._analysis_downloadInit();
     }

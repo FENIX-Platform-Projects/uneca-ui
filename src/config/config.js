@@ -35,6 +35,7 @@ define(function () {
         country : 'TRAINING',
 
         DATA_MNG_CONTENT : "#data-mng",
+        ANALYSIS_CONTENT : "#fx-analysis-container",
 
         catalog : {
             defaultSelectors : ['contextSystem', "dataDomain","resourceType" ],

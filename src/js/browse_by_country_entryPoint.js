@@ -60,7 +60,6 @@ define([
         s.lang = String(s.lang).toUpperCase();
 
         this.lang = s.lang;
-
     };
 
     BrowseByCountry_EntryPoint.prototype._attach = function () {

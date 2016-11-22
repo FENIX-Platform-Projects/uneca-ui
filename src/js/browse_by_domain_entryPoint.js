@@ -24,13 +24,6 @@ define([
     }
 
     BrowseByDomain_EntryPoint.prototype._createBrowseByDomainView = function () {
-        if((s.lang!=null)&&(typeof s.lang!="undefined")){
-            s.lang = $("html").attr("lang");
-            s.lang = s.lang.toUpperCase();
-        }
-        else{
-            s.lang = 'EN';
-        }
 
         s.lang= C.forceLang || $("html").attr("lang") || C.LANG,
 
