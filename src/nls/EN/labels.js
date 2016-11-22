@@ -208,10 +208,9 @@ define(function () {
 
         //gdp
         gdp1_title: "GDP (Current prices)",
-        gdp2_title: "Exports of goods and services at current prices",
-        gdp3_title: "Import of goods and services",
-        gdp4_title: "GDP Growth rate",
-        gdp5_title: "GDP per capita",
+        gdp2_title: "Exports and Imports of goods and services at current prices",
+        gdp4_title: "GDP Growth rate (annual %)",
+        gdp5_title: "GDP per capita (constant 2005 US$)",
 
         gdp1_country_title: "GDP (Current prices US$)",
         gdp2_country_title: "GDP Growth rate (annual %)",
