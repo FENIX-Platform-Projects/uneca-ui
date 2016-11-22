@@ -38,9 +38,9 @@ define([
     };
 
     function DomainView(params){
-       // log.info("DomainView Start");
+        // log.info("DomainView Start");
 
-        console.log(PC)
+       // console.log(PC)
         this._dispose();
 
         this._parseInput(params);
@@ -133,14 +133,26 @@ define([
     DomainView.prototype._onFilterClick = function () {
 
         var values = this.filter.getValues();
+        //console.log("_onFilterClick ====================");
+        //console.log(values);
 
         this.filterValues[this.currentDashboard] = values;
+
         var conf = this.dashboardConfig[this.currentDashboard];
+
         //If the dashboard contains a map return it
         var map = _.find(conf.dashboard.items, function(it){
             return it.type == 'map'});
+
+        var um = values.values.um;
+
         if(map){
             var updatedconf = this._updateDashboardConfig(conf, values);
+            this.dashboardConfig[this.currentDashboard] = updatedconf;
+            this._renderDashboard(updatedconf.dashboard);
+        } else if(um) {
+            var updatedconf = this._updateChartTitles(conf, values);
+            updatedconf = this._updateDashboardConfig(updatedconf, values);
             this.dashboardConfig[this.currentDashboard] = updatedconf;
             this._renderDashboard(updatedconf.dashboard);
         }
@@ -162,12 +174,11 @@ define([
             c.filter = $.extend(c.filter, filterValues);
 
             var countrySel = c.filter.values.CountryCode;
-
             _.each(c.items, _.bind(function (item) {
 
                 if (item.type === 'map') {
                     item.config.fenix_ui_map.zoomToCountry = countrySel;
-                    item.config.fenix_ui_map.highlightCountry = countrySel;
+                    //item.config.fenix_ui_map.highlightCountry = countrySel;
                 }
             }))
         }
@@ -175,34 +186,42 @@ define([
         return conf;
     };
 
+    DomainView.prototype._updateChartTitles = function (conf, filterValues) {
+
+        var c= conf.dashboard;
+        var self = this;
+
+        if (!_.isEmpty(c)) {
+            _.each(c.items, _.bind(function (item) {
+                if (item.type == s.CHART_TYPE) {
+                    if (item.config.config) {
+                        item.config.config = $.extend(true, {}, HighchartsTemplate, item.config.config);
+                        item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'] + ", " +  filterValues.values.um;
+                    }
+                }
+            }))
+        }
+
+
+        return conf;
+    };
+
+
+
 
     DomainView.prototype._printDashboard = function (item) {
 
-        console.log("Print dashboard", item)
-
-        var conf = this._getDashboardConfig(item),
-        filterConfig = this._getFilterConfig(item);
-        console.log(conf)
-
+        var self = this,
+            filterConfig = this._getFilterConfig(item);
 
         this.dashboardConfig[item] = PC[item];
-        console.log(conf)
 
         if (!_.isEmpty(filterConfig)) {
             this.$el.find(s.FILTER_BLOCK).show();
-            this._renderFilter(filterConfig);
+            this._renderFilter(filterConfig, item);
         } else {
             this.$el.find(s.FILTER_BLOCK).hide();
         }
-        console.log(conf)
-
-        this._printDashboardBase(item);
-
-        console.log(conf)
-        if (conf && !_.isEmpty(conf)) {
-           this._renderDashboard(conf);
-        }
-
     };
 
 
@@ -216,9 +235,15 @@ define([
 
     };
 
-    DomainView.prototype._printDashboardBase = function (id) {
+    DomainView.prototype._printDashboardBase = function (id, filterConfig) {
 
-        var html = basesTemplate(i18nLabels[this.lang]);
+        var yearSelector = filterConfig["Year"].selector.source;
+
+        var maxYear = Math.max.apply(Math,yearSelector.map(function(o){return o.value;}));
+
+        var data = $.extend(true, {maxYear: maxYear}, i18nLabels[this.lang]);
+
+        var html = basesTemplate(data);
 
         //Inject HTML
         var source = $(html).find("[data-dashboard='" + id + "']");
@@ -229,28 +254,29 @@ define([
     DomainView.prototype._getDashboardConfig = function (id) {
 
         var conf = PC[id].dashboard,
-            filterValues = this.filterValues[this.currentDashboard] || {};
+            filterValues = this.filter.getValues(),
+            um = filterValues.values.um;//this.filterValues[this.currentDashboard] || {};
         if (!Array.isArray(conf)) {
             conf = FxUtils.cleanArray([conf]);
             conf = conf[0];
         }
         var self = this;
 
-
         if (!_.isEmpty(conf)) {
 
             _.each(conf.items, _.bind(function (item) {
 
                 if (item.type == s.CHART_TYPE) {
+
                     if (item.config.config) {
                         item.config.config = $.extend(true, {}, HighchartsTemplate, item.config.config);
-                        item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
-
                     } else {
                         item.config.config = $.extend(true, {}, HighchartsTemplate);
-                        item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
-
                     }
+
+                     item.config.config.title.text = i18nLabels[self.lang][item.id+'_title'];
+                     if(um)
+                        item.config.config.title.text = item.config.config.title.text + ", " +  filterValues.values.um;
                 }
             }))
         }
@@ -261,8 +287,9 @@ define([
 
     DomainView.prototype._getFilterConfig = function (id) {
 
-        var conf = $.extend(true, {}, PC[id].filter),
-            values = this.filterValues[id] || {},
+        var conf = $.extend(true, {}, PC[id].filter);
+
+        var    values = this.filterValues[id] || {},
             result = FxUtils.mergeConfigurations(conf, values);
 
         _.each(result, _.bind(function (obj, key) {
@@ -278,7 +305,9 @@ define([
         return result;
     };
 
-    DomainView.prototype._renderFilter = function (config) {
+    DomainView.prototype._renderFilter = function (config, item) {
+
+        var self = this;
 
         if (this.filter && $.isFunction(this.filter.dispose)) {
             this.filter.dispose();
@@ -300,6 +329,18 @@ define([
                 }
             }
         });
+
+        this.filter.on('ready', function (payload) {
+
+            var conf = self._getDashboardConfig(item);
+
+            self._printDashboardBase(item, config);
+
+            if (conf && !_.isEmpty(conf)) {
+                this._renderDashboard(conf);
+            }
+
+        }, this);
 
     };
 

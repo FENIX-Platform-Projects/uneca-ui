@@ -35,8 +35,8 @@ define(function () {
 
                     selector: {
                         id: "tree",
+                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
                         source: [
-
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
                             {"value": "2011", "label": "2011", "selected": false},
@@ -76,9 +76,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
                             aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true,
                             config: {
                                 tooltip: {
                                     pointFormat: '<br/><span style="color:{point.color}">{series.name}</span>: <b>{point.y:,.0f}</b>'
@@ -165,8 +166,8 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
-                                highlightCountry: ["DZA"]
+                                zoomToCountry: ["DZA"]//,
+                               // highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -324,8 +325,8 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
-                                highlightCountry: ["DZA"]
+                                zoomToCountry: ["DZA"]//,
+                                //highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -483,8 +484,8 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
-                                highlightCountry: ["DZA"]
+                                zoomToCountry: ["DZA"]//,
+                               // highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -642,8 +643,8 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
-                                highlightCountry: ["DZA"]
+                                zoomToCountry: ["DZA"]//,
+                               // highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -791,9 +792,10 @@ define(function () {
                         config: {
                             type: "column",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -876,8 +878,8 @@ define(function () {
                                         maxZoom: 19
                                     }
                                 },
-                                zoomToCountry: ["DZA"],
-                                highlightCountry: ["DZA"]
+                                zoomToCountry: ["DZA"]//,
+                               // highlightCountry: ["DZA"]
                             }
                         },
                         filterFor: {
@@ -1046,6 +1048,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
+                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -1086,9 +1089,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -1158,9 +1162,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -1229,10 +1234,11 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            x: ["CountryCode"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -1628,10 +1634,11 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            x: ["CountryCode"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -1885,6 +1892,7 @@ define(function () {
 
                     selector: {
                         id: "tree",
+                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -1914,8 +1922,8 @@ define(function () {
                         id: "input",
                         type: "radio",
                         source: [
-                            {value: "NC", label: "National currency"},
-                            {value: "USD", label: "US dollars"}
+                            {value: "NC", label: "National currency (NC)"},
+                            {value: "USD", label: "US dollars (USD)"}
                         ],
                         default: ["NC"],
                     },
@@ -1934,65 +1942,23 @@ define(function () {
                 //preProcess : {} //D3P process
                 //postProcess : {} //D3P process
                 items: [
-                    /*      {
-                     id: "BOP-1", //ref [data-item=':id']
-                     type: "map", //chart || map || olap,
-                     config: {
-                     fenix_ui_map: {
-                     guiController: {
-                     overlay: false,
-                     baselayer: false,
-                     wmsLoader: false
-                     },
-                     baselayers: {
-                     "cartodb": {
-                     title_en: "Baselayer",
-                     url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                     subdomains: 'abcd',
-                     maxZoom: 19
-                     }
-                     }
-                     }
-                     },
-                     filter: { //FX-filter format
-
-                     IndicatorCode: ["020207"],
-
-                     "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
-                     ],
-
-                     "Year": ["2012"]
-                     }
-
-
-                     },*/
-
-
                     {
                         //Current account balance (BoP)  020204
                         id: "BOP1", //ref [data-item=':id']
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            x: ["CountryCode"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
+
                         }, // :type-creator config
-                        filter: { //FX-filter format
-
-                            IndicatorCode: ["020204"],
-                            "CountryCode": ["DZA"],
-                            "um": ["NC"]
-                        },
-
-                        // filterFor: ["CountryCode", "IndicatorCode"] // allowed dimension ids to filter,
-
 
                         filterFor: {
                             "filter_current": ['CountryCode', 'Year', 'um']
                         },
-
 
                         postProcess: [
                             {
@@ -2006,12 +1972,9 @@ define(function () {
                                     "columns": [
                                         "IndicatorCode",
                                         "CountryCode",
-                                        "Year",
-                                        "Value",
-                                        "um"
+                                        "Value"
                                     ],
                                     "rows": {
-
                                         "IndicatorCode": {
                                             "codes": [
                                                 {
@@ -2056,6 +2019,26 @@ define(function () {
                                     }
                                 },
                                 "rid": {"uid": "filter_current"}
+                            },
+                            {
+                                "name": "group",
+                                "parameters": {
+                                    "by": [
+                                        "IndicatorCode",
+                                        "CountryCode"
+                                    ],
+                                    "aggregations": [
+                                        {
+                                            "columns": [
+                                                "Value"
+                                            ],
+                                            "rule": "SUM"
+                                        }
+                                    ]
+                                },
+                                "rid": {
+                                    "uid": "total"
+                                }
                             }
                         ]
 
@@ -2067,24 +2050,12 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            x: ["CountryCode"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
-                        /*filter: { //FX-filter format
-
-                         IndicatorCode: ["020207"],
-
-                         "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
-                         ],
-                         "Year": ["2012"]
-
-
-                         },
-
-                         filterFor: ["CountryCode", "IndicatorCode"] // allowed dimension ids to filter,
-                         */
 
                         filterFor: {
                             "filter_capital": ['CountryCode', 'Year', 'um']
@@ -2103,9 +2074,7 @@ define(function () {
                                     "columns": [
                                         "IndicatorCode",
                                         "CountryCode",
-                                        "Year",
-                                        "Value",
-                                        "um"
+                                        "Value"
                                     ],
                                     "rows": {
 
@@ -2153,6 +2122,26 @@ define(function () {
                                     }
                                 },
                                 "rid": {"uid": "filter_capital"}
+                            },
+                            {
+                                "name": "group",
+                                "parameters": {
+                                    "by": [
+                                        "IndicatorCode",
+                                        "CountryCode"
+                                    ],
+                                    "aggregations": [
+                                        {
+                                            "columns": [
+                                                "Value"
+                                            ],
+                                            "rule": "SUM"
+                                        }
+                                    ]
+                                },
+                                "rid": {
+                                    "uid": "total"
+                                }
                             }
                         ]
 
@@ -2164,24 +2153,12 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            x: ["CountryCode"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
-                        /*filter: { //FX-filter format
-
-                         IndicatorCode: ["020207"],
-
-                         "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
-                         ],
-                         "Year": ["2012"]
-
-
-                         },
-
-                         filterFor: ["CountryCode", "IndicatorCode"] // allowed dimension ids to filter,
-                         */
 
                         filterFor: {
                             "filter_finan": ['CountryCode', 'Year', 'um']
@@ -2200,9 +2177,7 @@ define(function () {
                                     "columns": [
                                         "IndicatorCode",
                                         "CountryCode",
-                                        "Year",
-                                        "Value",
-                                        "um"
+                                        "Value"
                                     ],
                                     "rows": {
 
@@ -2250,66 +2225,33 @@ define(function () {
                                     }
                                 },
                                 "rid": {"uid": "filter_finan"}
+                            },
+                            {
+                                "name": "group",
+                                "parameters": {
+                                    "by": [
+                                        "IndicatorCode",
+                                        "CountryCode"
+                                    ],
+                                    "aggregations": [
+                                        {
+                                            "columns": [
+                                                "Value"
+                                            ],
+                                            "rule": "SUM"
+                                        }
+                                    ]
+                                },
+                                "rid": {
+                                    "uid": "total"
+                                }
                             }
                         ]
 
 
-                    }//,
+                    }
 
 
-                    /*{
-                     id: "BOP-3", //ref [data-item=':id']
-                     type: "map", //chart || map || olap,
-                     config: {
-                     fenix_ui_map: {
-                     guiController: {
-                     overlay: false,
-                     baselayer: false,
-                     wmsLoader: false
-                     },
-                     baselayers: {
-                     "cartodb": {
-                     title_en: "Baselayer",
-                     url: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                     subdomains: 'abcd',
-                     maxZoom: 19
-                     }
-                     }
-                     }
-                     },
-                     filter: { //FX-filter format
-
-                     IndicatorCode: ["020204"],
-
-                     "CountryCode": ["KEN", "TZA", "ZMB", "ETH"
-                     ],
-                     "Year": ["2012"]
-                     },
-
-
-                     postProcess: [{
-                     "name": "filter",
-                     "parameters": {
-                     "rows": {
-                     "IndicatorCode": {
-                     "codes": [
-                     {
-                     "uid": "UNECA_ClassificationOfActivities",
-                     "version": "2.0",
-                     "codes": [
-                     "020204"
-                     ]
-                     }
-                     ]
-                     }
-                     }
-                     }
-                     },
-                     {
-                     "name": "unecaPercentageGDP"
-                     }]
-
-                     }*/
 
                 ]
 
@@ -2344,6 +2286,7 @@ define(function () {
                     className: 'col-md-6',
                     selector: {
                         id: "tree",
+                        default: ["2013","2012","2011","2010","2009","2008","2007","2006","2005", "2004", "2003",  "2002", "2001", "2000"],
                         source: [
                             {"value": "2013", "label": "2013", "selected": false},
                             {"value": "2012", "label": "2012", "selected": false},
@@ -2443,9 +2386,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -2513,9 +2457,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -2583,9 +2528,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -2946,9 +2892,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -3018,9 +2965,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -3090,9 +3038,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -3229,9 +3178,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -3301,9 +3251,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -3373,9 +3324,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -3675,10 +3627,11 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            x: ["CountryCode"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
                         filterFor: {
                             "filter_poverty": ['CountryCode', 'Year']
@@ -3744,10 +3697,11 @@ define(function () {
                         type: "chart", //chart || map || olap,
                         config: {
                             type: "column",
-                            x: ["CountryCode_EN"], //x axis and series
-                            series: ["IndicatorCode_EN"], //Y dimension
+                            x: ["CountryCode"], //x axis and series
+                            series: ["IndicatorCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
                         filterFor: {
                             "filter_poverty": ['CountryCode', 'Year']
@@ -3879,9 +3833,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -4016,9 +3971,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {
@@ -4087,9 +4043,10 @@ define(function () {
                         config: {
                             type: "line",
                             x: ["Year"], //x axis and series
-                            series: ["CountryCode_EN"], //Y dimension
+                            series: ["CountryCode"], //Y dimension
                             y: ["Value"],
-                            aggregationFn: {"Value": "sum"}
+                            aggregationFn: {"Value": "sum"},
+                            useDimensionLabelsIfExist: true
                         }, // :type-creator config
 
                         filterFor: {

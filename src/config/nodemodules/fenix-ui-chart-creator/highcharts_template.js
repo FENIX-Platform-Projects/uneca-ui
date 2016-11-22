@@ -31,33 +31,23 @@ define([], function () {
                     var $chart = $(this.renderTo);
                     //Hide buttons and legend title
                     $chart.find('.highcharts-button').hide();
-                    $chart.find('.highcharts-legend-title').hide();
+
                 },
                 afterPrint: function (event) {
                     var $chart = $(this.renderTo);
 
                     //Re-show buttons and legend title
                     $chart.find('.highcharts-button').show();
-                    $chart.find('.highcharts-legend-title').show();
+
                 }
             }
         },
-        // title: {
-        //     text: null,
-        //     align: 'center',
-        //     style: {
-        //         fontWeight: 'bold',
-        //         fontFamily: 'Helvetica',
-        //         paddingBottom: '20px'
-        //     }
-        //
-        //     // font: normal normal 300 16px/normal "Roboto";
-        //     // color: #567794;
-        // },
+
+
         title: {
             text: null,
             align: 'left',
-            x: "20px",
+            x:10,
             style: {
                 fontWeight: 'bold',
                 fontFamily: 'Roboto',

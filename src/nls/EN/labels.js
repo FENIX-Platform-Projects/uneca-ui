@@ -114,14 +114,16 @@ define(function () {
         area_sq: "Area in sq. km",
         currency_label: "Currency",
 
+        latestYear: "Latest Year",
+
         //population
         population1_title: "Mid-year Population",
-        population2_title: "Average annual growth rate (Latest year only)",
-        population3_title: "Crude birth rate per 1,000 population (Latest year only)",
-        population4_title: "Crude death rate per 1,000 population (Latest year only)",
-        population5_title: "Total fertility (Latest year only)",
+        population2_title: "Average annual growth rate",
+        population3_title: "Crude birth rate per 1,000 population",
+        population4_title: "Crude death rate per 1,000 population",
+        population5_title: "Total fertility",
         population6_title: "Life expectancy (years)",
-        population7_title: "Urbanization rate (per cent) (Latest year only)",
+        population7_title: "Urbanization rate (per cent)",
 
 
         population1_country_title: "Mid-year Population",
@@ -141,10 +143,10 @@ define(function () {
         health1_title: "Infant mortality rate (both sexes) per 1,000",
         health2_title: "Under five mortality rate (both sexes) per 1,000",
         health3_title: "Number of doctors, nurses and midwives per 10,000 population",
-        health4_title: "Percentage of mothers provided at least one antenatal care (Latest year only)",
-        health5_title: "Percentage of deliveries attended by skilled health personnel (Latest year only)",
+        health4_title: "Percentage of mothers provided at least one antenatal care",
+        health5_title: "Percentage of deliveries attended by skilled health personnel",
         health6_title: "Percentage of children provided the vaccines (BCG, DPT3, measles, polio)",
-        health7_title: "Percentage of children under-five and underweight (Latest year only)",
+        health7_title: "Percentage of children under-five and underweight",
 
         health1_country_title: "Infant mortality rate (both sexes) per 1,000",
         health2_country_title: "Under five mortality rate (both sexes) per 1,000",
