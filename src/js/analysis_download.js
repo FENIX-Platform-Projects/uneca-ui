@@ -37,9 +37,6 @@ define([
     //style
     Analysis_Download.prototype._importThirdPartyCss = function () {
 
-        //Bootstrap
-        require('bootstrap/dist/css/bootstrap.css');
-
         //dropdown selector
         require("../../node_modules/selectize/dist/css/selectize.bootstrap3.css");
 
@@ -71,6 +68,8 @@ define([
 
         // fenix-ui-visualization-box
         require("../../node_modules/fenix-ui-visualization-box/dist/fenix-ui-visualization-box.min.css");
+
+        require("../css/unified-style.css");
 
     };
 

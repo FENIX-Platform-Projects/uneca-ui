@@ -1,0 +1,50 @@
+/* Uneca Style */
+
+
+
+
+/* Default */
+
+//@media (min-width: 768px) and (max-width: 991px) {
+//
+//}
+//
+//@media (min-width: 992px) and (max-width: 1199px) {
+//
+//}
+//
+//@media (min-width: 1200px) {
+//
+//}
+
+
+[data-section] {
+  display: none;
+}
+
+
+@import 'utils/fx-utils';
+
+@import 'themes/variables';
+
+@import 'base/fx-buttons';
+@import 'base/fx-fixed-height';
+@import 'base/fx-fonts-import';
+@import 'base/fx-icons';
+@import 'base/fx-jstree';
+@import 'base/fx-radio-checkbox';
+@import 'base/fx-typography';
+
+
+/* Pages */
+@import 'pages/home';
+
+/* Theme */
+@import 'themes/default';
+@import 'themes/footer';
+@import 'themes/topmenu';
+
+
+
+
+

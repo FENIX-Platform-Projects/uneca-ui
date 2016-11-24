@@ -41,8 +41,6 @@ define([
     };
 
     BrowseByDomain_EntryPoint.prototype._importThirdPartyCss = function () {
-        //Bootstrap
-        require('bootstrap/dist/css/bootstrap.css');
 
         require("../../node_modules/leaflet/dist/leaflet.css");
         require("../../node_modules/fenix-ui-map/dist/fenix-ui-map.min.css");
@@ -54,6 +52,11 @@ define([
         // INDEX
         //require("dist/css/index.css");
         require("../../node_modules/jstree/dist/themes/default/style.min.css");
+
+        // BROWSE BY COUNTRY CSS
+        require("../css/browseByDomain.css");
+
+        require("../css/unified-style.css");
 
     };
 

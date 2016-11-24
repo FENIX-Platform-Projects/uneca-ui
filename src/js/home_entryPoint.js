@@ -41,9 +41,8 @@ define([
     };
 
     Home_EntryPoint.prototype._importThirdPartyCss = function () {
-        //Bootstrap
-        require('bootstrap/dist/css/bootstrap.css');
 
+        require("../css/unified-style.css");
     };
 
     return new Home_EntryPoint();

@@ -74,9 +74,6 @@ define([
     //style
     DataMngPage.prototype._importThirdPartyCss = function () {
 
-        //Bootstrap
-        require('bootstrap/dist/css/bootstrap.css');
-
         //dropdown selector
         require("../../node_modules/selectize/dist/css/selectize.bootstrap3.css");
         require("../../node_modules/bootstrap-table/dist/bootstrap-table.min.css");
@@ -103,7 +100,8 @@ define([
         require("../../node_modules/fenix-ui-data-management/dist/fenix-ui-data-management.min.css");
 
         require("../../node_modules/toastr/build/toastr.min.css");
-        //host override
+
+        require("../css/unified-style.css");
     };
 
     return new DataMngPage();
