@@ -27,6 +27,7 @@ define(function () {
 
         CACHE : false,
         LANG : "EN",
+        DOMAIN: 'population',
         COUNTRY_ISO3_CODE : 'COG',
         ENVIROMENT_DEVELOP : "develop",
         ENVIROMENT_PROD : "production",

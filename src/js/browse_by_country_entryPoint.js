@@ -153,18 +153,13 @@ define([
 
         require("../../node_modules/leaflet/dist/leaflet.css");
         require("../../node_modules/fenix-ui-map/dist/fenix-ui-map.min.css");
-
         //require("dist/css/index.css");
         require("../../node_modules/jstree/dist/themes/default/style.min.css");
-
         // fenix-ui-filter
         require("../../node_modules/fenix-ui-filter/dist/fenix-ui-filter.min.css");
-
         // BROWSE BY COUNTRY CSS
         require("../css/browseByCountry.css");
-
         require("../css/unified-style.css");
-
     };
 
     return new BrowseByCountry_EntryPoint();

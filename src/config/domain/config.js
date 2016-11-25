@@ -9,28 +9,27 @@ define(function () {
         "resume": {},
 
         "population": {
-
             filter: {
 
+
                 CountryCode: {
-
                     className: 'col-md-6',
-
                     selector: {
                         id: "tree",
                         default: ["DZA"]
                     },
 
                     cl: {
-                        uid: "ISO3"
+                        uid: "UNECA_ISO3"
+
                     },
                     template: {
+                        title: "Multiple selection",
                         hideHeader: true
                     }
                 },
 
                 Year: {
-
                     className: 'col-md-6',
 
                     selector: {
@@ -51,6 +50,7 @@ define(function () {
                             {"value": "2002", "label": "2002", "selected": false},
                             {"value": "2001", "label": "2001", "selected": false},
                             {"value": "2000", "label": "2000", "selected": false}
+
                         ]
                     },
 
@@ -60,6 +60,57 @@ define(function () {
                 }
 
             },
+
+            // filter: {
+            //
+            //     CountryCode: {
+            //
+            //         className: 'col-md-6',
+            //
+            //         selector: {
+            //             id: "tree",
+            //             default: ["DZA"]
+            //         },
+            //
+            //         cl: {
+            //             uid: "ISO3"
+            //         },
+            //         template: {
+            //             hideHeader: true
+            //         }
+            //     },
+            //
+            //     Year: {
+            //
+            //         className: 'col-md-6',
+            //
+            //         selector: {
+            //             id: "tree",
+            //             default: ["2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"],
+            //             source: [
+            //                 {"value": "2013", "label": "2013", "selected": false},
+            //                 {"value": "2012", "label": "2012", "selected": false},
+            //                 {"value": "2011", "label": "2011", "selected": false},
+            //                 {"value": "2010", "label": "2010", "selected": false},
+            //                 {"value": "2009", "label": "2009", "selected": false},
+            //                 {"value": "2008", "label": "2008", "selected": false},
+            //                 {"value": "2007", "label": "2007", "selected": false},
+            //                 {"value": "2006", "label": "2006", "selected": false},
+            //                 {"value": "2005", "label": "2005", "selected": false},
+            //                 {"value": "2004", "label": "2004", "selected": false},
+            //                 {"value": "2003", "label": "2003", "selected": false},
+            //                 {"value": "2002", "label": "2002", "selected": false},
+            //                 {"value": "2001", "label": "2001", "selected": false},
+            //                 {"value": "2000", "label": "2000", "selected": false}
+            //             ]
+            //         },
+            //
+            //         template: {
+            //             hideHeader: true
+            //         }
+            //     }
+            //
+            // },
 
             dashboard: {
 

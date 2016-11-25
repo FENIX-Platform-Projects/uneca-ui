@@ -34,6 +34,7 @@ module.exports = sections.map(function (section) {
                 // 'lib': Path.join(__dirname, 'src/lib'),
                 // 'node_modules': Path.join(__dirname, 'node_modules'),
                 // 'dist': Path.join(__dirname, 'dist'),
+                'filter': Path.join(__dirname, 'node_modules/fenix-ui-filter/src/js/index.js'),
                 handlebars: Path.join(__dirname, 'node_modules/handlebars/dist/handlebars.js'),
                 jquery: Path.join(__dirname, 'node_modules/jquery/dist/jquery')
             }

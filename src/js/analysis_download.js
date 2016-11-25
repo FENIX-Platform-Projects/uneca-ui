@@ -40,6 +40,13 @@ define([
         //dropdown selector
         require("../../node_modules/selectize/dist/css/selectize.bootstrap3.css");
 
+        //Map
+        require("../../node_modules/leaflet/dist/leaflet.css");
+        require("../../node_modules/fenix-ui-map/dist/fenix-ui-map.min.css");
+
+        //tree selector
+        require("../../node_modules/jstree/dist/themes/default/style.min.css");
+
         // fenix-ui-filter
         require("../../node_modules/fenix-ui-filter/dist/fenix-ui-filter.min.css");
         // fenix-ui-dropdown
@@ -47,9 +54,6 @@ define([
 
         // bootstrap-table
         require("../../node_modules/bootstrap-table/dist/bootstrap-table.min.css");
-
-        //tree selector
-        require("../../node_modules/jstree/dist/themes/default/style.min.css");
 
         // fenix-ui-table-creator
         require("../../node_modules/fenix-ui-table-creator/dist/fenix-ui-table-creator.min.css");

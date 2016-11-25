@@ -26,34 +26,37 @@ define([
         $.extend(s, conf);
     }
 
-    Parser.prototype._parseURL = function (url) {
-        var url = s.url;
+     Parser.prototype.parseURL = function (url) {
+        //var url = s.url;
 
-        var parser = document.createElement('a'),
-            searchObject = {},
-            queries, split, i;
-        // Let the browser do the work
+         var parser = document.createElement('a'),
+          searchObject = {},
+          queries, split, i;
+       // Let the browser do the work
         parser.href = url;
         // Convert query string to object
         queries = parser.search.replace(/^\?/, '').split('&');
         for (i = 0; i < queries.length; i++) {
-            split = queries[i].split('=');
-            searchObject[split[0]] = split[1];
-        }
+          split = queries[i].split('=');
+             searchObject[split[0]] = split[1];
+         }
 
-        var parsedUrl = {
-            protocol: parser.protocol,
-            host: parser.host,
-            hostname: parser.hostname,
-            port: parser.port,
-            pathname: parser.pathname,
-            search: parser.search,
-            searchObject: searchObject,
-            hash: parser.hash
-        };
+         var parsedUrl = {
+             protocol: parser.protocol,
+             host: parser.host,
+             hostname: parser.hostname,
+             port: parser.port,
+             pathname: parser.pathname,
+             search: parser.search,
+             searchObject: searchObject,
+             hash: parser.hash
+         };
+        console.log(parsedUrl)
 
-        return parsedUrl;
+         return parsedUrl;
     }
+
+
 
     return Parser;
 });

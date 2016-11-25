@@ -7,7 +7,8 @@ define([
     '../config/config',
     '../config/domain/config',
     'fenix-ui-dashboard',
-    'fenix-ui-filter',
+    //'fenix-ui-filter',
+    'filter',
     'fenix-ui-filter-utils',
     '../lib/utils',
     '../nls/labels',
@@ -58,6 +59,7 @@ define([
     DomainView.prototype._parseInput = function (params) {
         this.lang = params.lang;
         this.$el = $(params.el);
+        this.domain = params.domain;
     };
 
     DomainView.prototype._attach = function () {
@@ -86,7 +88,8 @@ define([
         this._bindDashboardEventListeners();
 
         //print lateral menu
-        this.$lateralMenu.jstree(Utils.setI18nToJsTreeConfig(LateralMenuConfig, i18nLabels[this.lang]))
+        this.$lateralMenu
+            .jstree(Utils.setI18nToJsTreeConfig(LateralMenuConfig, i18nLabels[this.lang]))
 
             //Limit selection e select only leafs for indicators
             .on("select_node.jstree", _.bind(function (e, data) {
@@ -103,7 +106,11 @@ define([
 
             }, this));
 
-        var id = s.DEFAULT_DOMAIN;
+        // var id = s.DEFAULT_DOMAIN;
+        var id = this.domain;
+        this.$lateralMenu.bind("loaded.jstree", function (e, data) {
+            self.$lateralMenu.jstree("select_node", id, true);
+        })
         this.currentDashboard = id;
         this._printDashboard(id);
     };
@@ -254,6 +261,8 @@ define([
         //Inject HTML
         var source = $(html).find("[data-dashboard='" + id + "']");
 
+        console.log("8888888888888888888888888888888888888888888888888")
+        console.log(source)
         this.$el.find(s.DASHBOARD_CONTENT).html(source);
     };
 
@@ -337,6 +346,22 @@ define([
 
         this.filter.on('ready', function (payload) {
 
+            console.log("///////////")
+            var country_filter = "[data-selector='CountryCode']";
+           console.log($(s.FILTER_CONTAINER).find(country_filter))
+            var id = 'CountryCode';
+            var source = $(self.$el).find("[data-selector='" + id + "']");
+            source.jstree("select_node", "AMU_anchor", true);
+            source.jstree("select_node", "LBY", true);
+            source.bind("loaded.jstree", function (e, data) {
+                console.log("///////////IN!!!")
+                source.jstree("select_node", "LBY", true);
+            })
+            // source.jstree();
+            // source.jstree(true).open_node(data.node, true);
+            //source.jstree("select_node","AMU_anchor", true)
+            // ("select_node", id, true);
+            console.log(source)
             var conf = self._getDashboardConfig(item);
 
             self._printDashboardBase(item, config);

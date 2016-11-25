@@ -18,7 +18,7 @@ define([
         CONTENT: "#profile-content",
         SEARCH_FILTER_INPUT: "#searchinput",
         COUNTRY_LIST: '#list-countries',
-        SEARCH_ITEM_CHILD: 'a',
+        SEARCH_ITEM_CHILD: 'div',
         SEARCH_ITEM_EL: '.country-item',
         LATERAL_MENU: '#lateral-menu'
     };
