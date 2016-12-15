@@ -2,12 +2,7 @@ define(
     function () {
 
         var IANA = {uid: 'IANAcharacterSet'},
-            Role = [
-                {"value": "owner", "label": "Owner"},
-                {"value": "distributor", "label": "Distributor"},
-                {"value": "producer", "label": "Producer"},
-                {"value": "other", "label": "Other"}
-            ],
+            ROLE = {uid: "ResponsiblePartyRole"},
             GAUL = {uid: 'GAUL0', version: "2014"},
             Languages = {uid: 'ISO639-2', version: "1998"},
             PeriodOfReference = {uid: 'FAO_Period', version: "1.0"},
@@ -19,24 +14,14 @@ define(
             DisseminationPeriodicy = {uid: 'FAO_Period', version: "1.0"},
             PeriodicityDataCollection = {uid: 'FAO_Period', version: "1.0"},
             UpdatePeriodicity = {uid: 'FAO_Period', version: "1.0"},
-            CoverageSectorDetails = {uid: 'CSTAT_Core'},
-            CoverageSector = {uid: 'CSTAT_Core'}; // CSTAT_Core
+            CoverageSector = {uid: 'CRS_purpose_codes'};
 
-        /*
-         {
-         "eng": "English",
-         "fre": "French",
-         "por": "Portuguese",
-         "spa": "Spanish",
-         "ara": "Arabic"
-         }
-         */
 
         return {
 
             "template": {
-                "title": "Identification",
-                "description": "Basic Metadata"
+                //"title": "Identification",
+                //"description": "Basic Metadata"
             },
 
             "selectors": {
@@ -44,22 +29,21 @@ define(
                     "selector": {
                         "id": "input",
                         "type": "text",
-                        "source": [{"value": "uid", "label": "UID"}],
+                        "source": [
+                            {
+                                "value": "uid",
+                                "label": "Uid"
+                            }
+                        ],
                         config: {
                             readonly: true
                         }
-
-                    },
-                    "template": {
-                        "title": "Resource identification code",
-                        "description": "Resource identifier. It is a code that creates the match between the resource and the metadata it is associated to.",
-
                     },
                     "format": {
-                        "output": "label"
+                        "output": "string"
                     }
-
                 },
+
                 "title": {
                     "selector": {
                         "id": "input",
@@ -71,11 +55,7 @@ define(
                             }
                         ]
                     },
-                    "template": {
-                        "title": "Title",
-                        "description": "Textual label used as title of the resource.",
 
-                    },
                     "format": {
                         "output": "label"
                     },
@@ -87,11 +67,7 @@ define(
                     "selector": {
                         "id": "time"
                     },
-                    "template": {
-                        "title": "Creation Date",
-                        "description": "Creation date of the resource.",
 
-                    },
                     "format": {
                         "output": "date"
                     },
@@ -100,17 +76,12 @@ define(
                 "characterSet": {
 
                     "cl": IANA,
-
                     "selector": {
                         "id": "dropdown",
                         "default": ['106']
                     },
 
-                    "template": {
-                        "title": "Character-set",
-                        "description": "Full name of the character coding standard used by the resource.",
 
-                    },
                     "format": {
                         "output": "codes"
                     },
@@ -123,11 +94,7 @@ define(
                         "id": "dropdown",
                         "default": ['eng']
                     },
-                    "template": {
-                        "title": "Language(s)",
-                        "description": "Language used by the resource for textual information.",
 
-                    },
                     "format": {
                         "output": "codes"
                     }
@@ -143,11 +110,7 @@ define(
                             }
                         ]
                     },
-                    "template": {
-                        "title": "Language details",
-                        "description": "Comments and additional details about the language used for the textual information of the resource. This field is addressed to highlight some particular inconsistencies in the language (or languages) used in the resource, if any. For example to alert that the resource is not completely homogeneous in the language used for textual information. Otherwise it can be leaved empty.",
 
-                    },
                     "format": {
                         "output": "label"
                     }
@@ -164,11 +127,7 @@ define(
                             }
                         ]
                     },
-                    "template": {
-                        "title": "Used metadata standard",
-                        "description": "Name of the metadata standard specifications used. In FENIX framework this field would be pre-compiled by 'FENIX'.",
 
-                    },
                     "format": {
                         "output": "string"
                     },
@@ -186,11 +145,7 @@ define(
                             }
                         ]
                     },
-                    "template": {
-                        "title": "Version of metadata standard",
-                        "description": "Version of the metadata standard specifications used.",
 
-                    },
                     "format": {
                         "output": "string"
                     }
@@ -201,11 +156,7 @@ define(
                         "id": "dropdown",
                         "default": ['eng']
                     },
-                    "template": {
-                        "title": "Metadata Language",
-                        "description": "Language(s) used for metadata",
 
-                    },
                     "format": {
                         "output": "codes"
                     }
@@ -221,11 +172,7 @@ define(
                             }
                         ]
                     },
-                    "template": {
-                        "title": "Value assigned to No-data",
-                        "description": " Value assigned to the cells to represent the absence of data. Missing values are usually highlight through apposite ags, however the data matrix does not report empty cells but a predefined combination of characters (such as 'NA', '000' . . . ) indicating the absence of data.",
 
-                    },
                     "format": {
                         "output": "string"
                     }
@@ -234,10 +181,6 @@ define(
                 "contacts": {
 
                     classNames: "well",
-
-                    template: {
-                        title: "Contacts"
-                    },
 
                     "incremental": true,
 
@@ -248,11 +191,7 @@ define(
                                 "type": "text",
                                 "source": [{"value": "organization", "label": "Organization"}]
                             },
-                            "template": {
-                                "title": "Organization",
-                                "description": "Name of the responsible organization."
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -264,11 +203,7 @@ define(
                                 "source": [{"value": "organizationUnit", "label": "Organization unit/division"}]
 
                             },
-                            "template": {
-                                "title": "Organization unit/division",
-                                "description": "Addressable subdivision of an organization."
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -281,11 +216,7 @@ define(
                                 "source": [{"value": "organizationUnit", "label": "Position"}]
 
                             },
-                            "template": {
-                                "title": "Position",
-                                "description": "Role or position of the responsible person."
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -298,11 +229,7 @@ define(
                                 "source": [{"value": "pointOfContact", "label": "Point of contact"}]
 
                             },
-                            "template": {
-                                "title": "Point of contact",
-                                "description": "Responsible person-surname, given name, title separated by a delimiter. It contains information about the party who can be contacted for acquiring knowledge the resource."
 
-                            },
                             "format": {
                                 "output": "string"
                             }
@@ -310,18 +237,15 @@ define(
                         },
 
                         "role": {
+                            enumeration: ROLE,
+
                             "selector": {
                                 "id": "dropdown",
-                                source: Role,
-                                config : {
-                                    maxItems : 1
+                                config: {
+                                    maxItems: 1
                                 }
                             },
-                            "template": {
-                                "title": "Role",
-                                "description": "Textual metadata element that allows to specify the role performed by the responsible party. This field is conditional to the element \u003crole\u003e."
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -338,17 +262,13 @@ define(
                                 }
 
                             },
-                            "dependencies": {
-                                "role" : [{id : "readOnlyIfNotValue", event: "select", args : {value : "other"}}]
-                            },
-                            "template": {
-                                "title": "Specify",
-                                "description": "Textual metadata element that allows to specify the role performed by the responsible party. This field is conditional to the element \u003crole\u003e."
 
-                            },
                             "format": {
                                 "output": "label"
-                            }
+                            },
+                            dependencies: {
+                                role: [{id: "readOnlyIfNotValue", event: "select", args: {value: "other"}}]
+                            },
 
                         },
 
@@ -358,11 +278,7 @@ define(
                                 "type": "text",
                                 "source": [{"value": "phone", "label": "Telephone"}]
                             },
-                            "template": {
-                                "title": "Telephone",
-                                "description": "Telephone numbers at which the organization or individual may be contacted.",
 
-                            },
                             "format": {
                                 "output": "template",
                                 "path": "contactInfo.phone"
@@ -374,11 +290,7 @@ define(
                                 "type": "text",
                                 "source": [{"value": "address", "label": "Address"}]
                             },
-                            "template": {
-                                "title": "Address",
-                                "description": "Physical address at which the organization or individual may be contacted.",
 
-                            },
                             "format": {
                                 "output": "template",
                                 "path": "contactInfo.address"
@@ -390,11 +302,7 @@ define(
                                 "type": "text",
                                 "source": [{"value": "emailAddress", "label": "E-mail address"}]
                             },
-                            "template": {
-                                "title": "E-mail address",
-                                "description": "E-mail address at which the organization or individual may be contacted.",
 
-                            },
                             "format": {
                                 "output": "template",
                                 "path": "contactInfo.emailAddress"
@@ -406,11 +314,7 @@ define(
                                 "type": "text",
                                 "source": [{"value": "hoursOfService", "label": "Hour of service"}]
                             },
-                            "template": {
-                                "title": "Hour of service",
-                                "description": "Time period (including time zone) when individuals can contact the organization or individual.",
 
-                            },
                             "format": {
                                 "output": "template",
                                 "path": "contactInfo.hoursOfService"
@@ -422,11 +326,7 @@ define(
                                 "type": "text",
                                 "source": [{"value": "contactInstruction", "label": "Instruction"}]
                             },
-                            "template": {
-                                "title": "Instruction",
-                                "description": "Supplemental instructions on how or when to contact the individual or organization.",
 
-                            },
                             "format": {
                                 "output": "template",
                                 "path": "contactInfo.contactInstruction"
@@ -449,14 +349,20 @@ define(
                     "selectors": {
                         "keywords": {
                             "selector": {
-                                "id": "input",
-                                type: "text"
+                                id: "dropdown",
+                                config: {
+                                    plugins: ['remove_button'],
+                                    delimiter: ',',
+                                    persist: false,
+                                    create: function (input) {
+                                        return {
+                                            value: input,
+                                            text: input
+                                        }
+                                    }
+                                }
                             },
-                            "template": {
-                                "title": "Keywords",
-                                "description": "Commonly used word(s), formalized word(s) or phrase(s) used to describe the resource.",
 
-                            },
                             "format": {
                                 "output": "array"
                             }
@@ -465,7 +371,7 @@ define(
                         "description": {
                             "selector": {
                                 "id": "input",
-                                "type": "text",
+                                "type": "textarea",
                                 "source": [
                                     {
                                         "value": "description",
@@ -473,11 +379,7 @@ define(
                                     }
                                 ]
                             },
-                            "template": {
-                                "title": "Abstract",
-                                "description": "Overview of the main characteristics of the resource and summary of the information contained in the resource, in an easily understandable manner, for technical and non-technical users.",
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -493,11 +395,7 @@ define(
                                     }
                                 ]
                             },
-                            "template": {
-                                "title": "Statistical concepts / definitions",
-                                "description": " Definitions of the statistical concepts under measure (i.e. the statistical domain) and the main variables provided. The considered types of variables (e.g. raw figures, annual growth rates, index, ow or stock data, ...) should be defined and described in accordance with internationally accepted statistical standards, guidelines, or good practices.",
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -519,11 +417,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Statistical population",
-                                        "description": "Target statistical population (one or more) the resource refers to.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -539,11 +433,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Statistical unit",
-                                        "description": "Simplest unit for which information is sought and for which statistics are ultimately compiled.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -553,11 +443,7 @@ define(
                                     "selector": {
                                         "id": "dropdown"
                                     },
-                                    "template": {
-                                        "title": "Period of reference",
-                                        "description": "Specific time periods (e.g. a day, a week, a month, a fiscal year, a calendar year or several calendar years) the statistical variables refer to.",
 
-                                    },
                                     "format": {
                                         "output": "codes"
                                     }
@@ -565,19 +451,14 @@ define(
                                 "referenceArea": {
                                     "cl": AreaOfReference,
                                     "selector": {
-                                        "id": "dropdown"
+                                        "id": "dropdown",
+                                        sort: false
                                     },
-                                    "template": {
-                                        "title": "Area of reference",
-                                        "description": "Type of geographical units the resource represents or refers to. Note that the spatial resolution must refer to the minimum mapping unit whose bounds are officially recognized indipendently from the measurement process of the phonomenon taken into account. Examples are: countries, administrative level 2, etc.",
-                                    },
+
                                     "format": {
                                         "output": "codes"
                                     }
                                 }
-                            },
-                            "validator": {
-                                "valReferencePopulation": true
                             }
                         },
                         "seCoverage": {
@@ -588,10 +469,7 @@ define(
                                     "selector": {
                                         "id": "dropdown"
                                     },
-                                    "template": {
-                                        "title": "Sector",
-                                        "description": " Sector(s) the resource refers to as specified in the selected codelist. The word 'Sector' indicates the subject area the resource refers to. These sectors can be institutional sectors, economic or other sectors (e.g. local government sector, agriculture, forestry, business services, etc.).",
-                                    },
+
                                     "format": {
                                         "output": "codes"
                                     }
@@ -605,11 +483,7 @@ define(
                                             "label": "Coverage Sector Details"
                                         }]
                                     },
-                                    "template": {
-                                        "title": "Coverage Sector Details",
-                                        "description": "Textual element delimiting the statistical results with regard to the main sectors covered.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -619,35 +493,33 @@ define(
                                     "selector": {
                                         "id": "dropdown"
                                     },
-                                    "template": {
-                                        "title": "Geographic extent",
-                                        "description": "Geographical coverage represented by the resource. It is highly recommended to make reference to officially recognized or easily identifiable macro-areas (e.g. South Saharan Africa, North America, OECD member countries..).",
 
-                                    },
                                     "format": {
                                         "output": "codes"
                                     }
                                 },
                                 "coverageTime": {
-                                    "selector": {
-                                        "id": "range",
-                                        "format": "DD/MM/YYYY",
-                                        "config": {
-                                            type: "double"
-                                        }
-                                    },
-                                    "template": {
-                                        "title": "Coverage period",
-                                        "description": "Information about the time period for which data are available. It requests to report the time window of reference (reporting the starting date and the ending date) even if it presents some lacks.",
 
-                                    },
                                     "format": {
                                         "output": "period"
+                                    },
+                                    selectors: {
+                                        from: {
+                                            classNames: "col-xs-6",
+                                            selector: {
+                                                id: "time"
+                                            }
+
+                                        },
+                                        to: {
+                                            classNames: "col-xs-6",
+                                            selector: {
+                                                id: "time"
+                                            }
+                                        }
                                     }
+
                                 }
-                            },
-                            "validator": {
-                                "valCoverage": true
                             }
                         }
                     }
@@ -666,11 +538,7 @@ define(
                                     }
                                 ]
                             },
-                            "template": {
-                                "title": "Legal acts/agreements",
-                                "description": "References (citations or website link) to legal acts or other formal or informal agreements that assign responsibility as well as authority to an agency for the collection, processing, and dissemination of the resource.",
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -686,11 +554,7 @@ define(
                                     }
                                 ]
                             },
-                            "template": {
-                                "title": "Data sharing arrangements",
-                                "description": "References (citations or website link) to arrangements or procedures for data sharing and coordination.",
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -702,10 +566,6 @@ define(
                     "sections": {
                         "seDataSource": {
                             "title": "Data source",
-                            "template": {
-                                "title": "Data source",
-                                "description": "Process used to collect data. It includes a detailed description both of the primary data collection (e.g. type of collection, method to gather data from respondents, sampling procedures..) and the secondary data collection (information about data that have been already collected by another agency or institution).",
-                            },
                             "sections": {
                                 "sePrimaryDataCollection": {
                                     "title": "Primary Data Collection",
@@ -715,11 +575,7 @@ define(
                                             "selector": {
                                                 "id": "dropdown"
                                             },
-                                            "template": {
-                                                "title": "Type of collection",
-                                                "description": "Coded element which specifies the type of data collection method (e.g. census, random sampling, etc.).",
 
-                                            },
                                             "format": {
                                                 "output": "codes"
                                             }
@@ -735,11 +591,7 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Sampling procedure",
-                                                "description": "The type of sample design used to select the survey respondents to represent the population. It may refer to information on sample design, sample size, sample frame, sample updating etc.",
 
-                                            },
                                             "format": {
                                                 "output": "label"
                                             }
@@ -755,11 +607,7 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Data collection",
-                                                "description": "Methods used to gather data from the respondents (e.g. postal survey, CAPI, on-line survey, face-to-face interviews etc.) and description of data collection methods. This metadata element also includes more precise information about the kind of questionnaire (structured, unstructured etc.) and if necessary somenoteworthy aspects of the data collection process.",
 
-                                            },
                                             "format": {
                                                 "output": "label"
                                             }
@@ -769,35 +617,11 @@ define(
                                             "selector": {
                                                 "id": "dropdown"
                                             },
-                                            "template": {
-                                                "title": "Periodicity of data collection",
-                                                "description": "Frequency with which the data are collected from the sources.",
 
-                                            },
                                             "format": {
                                                 "output": "codes"
                                             }
-                                        },
-                                        "organization": {
-                                            "selector": {
-                                                "id": "input",
-                                                "type": "text",
-                                                "source": [
-                                                    {
-                                                        "value": "organization",
-                                                        "label": "Organization"
-                                                    }
-                                                ]
-                                            },
-                                            "template": {
-                                                "title": "Organization",
-                                                "description": "Organization is mandatory when 'Other International Organizations' has been chosen in originOfCollectedData *** If the element \u003c\u003coriginOfCollectedData\u003e\u003e has been generally specified as \u0027other International Organizations\u0027 this element requests to report the exact source of the resource.",
-
-                                            },
-                                            "format": {
-                                                "output": "string"
-                                            }
-                                        },
+                                        }
                                     }
                                 },
                                 "seSecondaryDataCollection": {
@@ -808,11 +632,7 @@ define(
                                             "selector": {
                                                 "id": "dropdown"
                                             },
-                                            "template": {
-                                                "title": "Origin of collected data",
-                                                "description": "Coded element which allows to specify in a standard way the origin of the resource.",
 
-                                            },
                                             "format": {
                                                 "output": "codes"
                                             }
@@ -828,11 +648,7 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Description of raw data",
-                                                "description": "Characteristics and components of the raw statistical data used for compiling statistical aggregates. It indicates if data set is based on a survey or on administrative data source. If administrative registers are used, the description of registers should be given (source, year, primary purpose, potential deficiencies, etc. ).",
 
-                                            },
                                             "format": {
                                                 "output": "label"
                                             }
@@ -848,11 +664,7 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Organization",
-                                                "description": "If the element \u003c\u003coriginOfCollectedData\u003e\u003e has been generally specified as \u0027other International Organizations\u0027 this element requests to report the exact source of the resource.",
 
-                                            },
                                             "format": {
                                                 "output": "label"
                                             }
@@ -868,11 +680,7 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Data collection",
-                                                "description": "Data collection details.",
 
-                                            },
                                             "format": {
                                                 "output": "label"
                                             }
@@ -895,11 +703,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Missing data",
-                                        "description": "It describe under which circumstance missing data are estimated or imputed and when the cells are left empty. It also describe methodologies used to estimate/impute missing values.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -915,11 +719,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Weights",
-                                        "description": "Description of weights system (if any) used in order to produce accurate statistical results. This field reports the criteria for using weights in analysis of collection, the formulas and coefficients developed and how they are applied to data.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -935,11 +735,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Process of aggregation",
-                                        "description": "Information about the methodology used to aggregate data.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -955,11 +751,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Aggregation formula",
-                                        "description": "Formula used to aggregate data.",
 
-                                    },
                                     "format": {
                                         "output": "string"
                                     }
@@ -969,11 +761,7 @@ define(
                                     "selector": {
                                         "id": "dropdown"
                                     },
-                                    "template": {
-                                        "title": "Process of adjustment",
-                                        "description": "Type of adjustment used represented by a code.",
 
-                                    },
                                     "format": {
                                         "output": "codes"
                                     }
@@ -989,11 +777,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Details on process of adjustment",
-                                        "description": "Set of procedures employed to modify statistical data to enable it to be conform with national or international standards (such as seasonal adjustment methods, time series decomposition, or other similar methods).",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1009,11 +793,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Type of index",
-                                        "description": "Data collection details.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1022,11 +802,7 @@ define(
                                     "selector": {
                                         "id": "time"
                                     },
-                                    "template": {
-                                        "title": "Base period",
-                                        "description": "Period of time used as a base of an index number or to which a time series refers (e.g. base year 2000 for certain annual data).",
 
-                                    },
                                     "format": {
                                         "output": "date"
                                     }
@@ -1047,11 +823,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Data validation - intermediate",
-                                        "description": "Assessment of the quality and correctness of intermediate calculations leading to statistical outputs.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1067,11 +839,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Data validation - output",
-                                        "description": "Assessment of discrepancies and/or inaccuracies observed in the statistical outputs.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1087,11 +855,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Data validation - source",
-                                        "description": "It describe under which circumstance missing data are estimated or imputed and when the cells are left empty. It also describe methodologies used to estimate/impute missing values.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1115,11 +879,7 @@ define(
                                     }
                                 ]
                             },
-                            "template": {
-                                "title": "Quality management",
-                                "description": "Structure, responsibilities and procedures established for guaranteeing the quality of the data.",
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -1135,11 +895,7 @@ define(
                                     }
                                 ]
                             },
-                            "template": {
-                                "title": "Data quality assessment",
-                                "description": "Overall qualitative assessment of the quality of the statistical outputs.",
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -1155,11 +911,7 @@ define(
                                     }
                                 ]
                             },
-                            "template": {
-                                "title": "Quality assurance",
-                                "description": "Description of the process assuring that the data production processes conforms to the statistical quality standards.",
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -1181,11 +933,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Accuracy - non sampling error",
-                                        "description": "Error in sample estimates which cannot be attributed to sampling fluctuations. (e.g. defects in the sampling frame, faulty demarcation of sample units, defects in the selection of sample units, mistakes in the collection of data due to personal variations, misunderstanding, bias, negligence . . . etc.)",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1201,11 +949,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Accuracy - sampling error",
-                                        "description": "If probability sampling is used, the accuracy is an evaluation of difference between a population value and an estimate thereof, derived from a random sample (so due to the fact that only a subset of the population is enumerate), normally in the form of coefficient of variation, standard error or confidence intervals. For non-probability sampling, random errors cannot be calculated without reference to some kind of model, in this case estimates of the accuracy, a motivation for the invoked model for this estimation and brief discussion of sampling bias should be provided.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1221,11 +965,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Completeness",
-                                        "description": "State of completeness of the resource.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1247,11 +987,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Revision policy",
-                                        "description": "Policy concerning the periodically revision of the resource and ensuring the transparency of disseminated data.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1267,11 +1003,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Revision practice",
-                                        "description": "Information concerning the revision of data in order to give compilers the possibility of incorporating new and more accurate information in the resource. It also describes the revision status of available data. Data may also be subject to regular or ad hoc revisions as a result of the introduction of new classification, compilation frameworks and methodologies in order to improve the accuracy of the resource.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1293,11 +1025,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Geographic comparability",
-                                        "description": "Degree of data comparability across the geographic areas or regions referenced by the resource. Data might be derived from surveys that in general are conducted by different statistical agencies. These surveys often refer to populations of different geographical areas, sometimes based on different methodologies.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1313,11 +1041,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Time comparability",
-                                        "description": "Extent to which data are comparable or reconcilable over time. It refers to the degree of comparability between the measures of a time series (e.g. related to a country, a commodity and a variable) included in the resource.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1333,11 +1057,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Internal coherence",
-                                        "description": "General estimate of the extent to which data are consistent within the resource.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1367,17 +1087,13 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Link to the on-line resource",
-                                                "description": "Link to the on-line resource. It is conditional to the policy governing distribution and sharing mechanism. For \u0027restricted\u0027 resources it is not available.",
 
-                                            },
                                             "format": {
                                                 "output": "string"
                                             }
                                         },
                                         "disseminationFormat": {
-                                            "incremental": true,
+
                                             "selector": {
                                                 "id": "input",
                                                 "type": "text",
@@ -1388,13 +1104,9 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Dissemination formats",
-                                                "description": "Formats available for downloading the resources (e.g. excel, csv, pdf, etc.). . . It is conditional to the policy governing distribution and sharing mechanism. For \u0027restricted\u0027 resources it is not available.",
 
-                                            },
                                             "format": {
-                                                "output": "array<string>"
+                                                "output": "array"
                                             }
                                         }
                                     }
@@ -1413,11 +1125,7 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Release calendar",
-                                                "description": "Policy regarding the release of the resource in accordance with the pre-announced schedule. It also provides information on the availability of the release calendar.",
 
-                                            },
                                             "format": {
                                                 "output": "label"
                                             }
@@ -1433,11 +1141,7 @@ define(
                                                     }
                                                 ]
                                             },
-                                            "template": {
-                                                "title": "Access to the release calendar",
-                                                "description": "Link or references to the release calendar.",
 
-                                            },
                                             "format": {
                                                 "output": "string"
                                             }
@@ -1447,30 +1151,28 @@ define(
                                             "selector": {
                                                 "id": "dropdown"
                                             },
-                                            "template": {
-                                                "title": "Dissemination periodicity",
-                                                "description": "Frequency of data dissemination (e.g. daily, monthly, quarterly, yearly)",
 
-                                            },
                                             "format": {
                                                 "output": "codes"
                                             }
                                         },
                                         "embargoTime": {
-                                            "selector": {
-                                                "id": "range",
-                                                "format": "DD/MM/YYYY",
-                                                "config": {
-                                                    type: "double"
-                                                }
-                                            },
-                                            "template": {
-                                                "title": "Embargo time",
-                                                "description": "Time span between the completion of the production process of statistical data and their publication.",
-
-                                            },
                                             "format": {
                                                 "output": "period"
+                                            },
+                                            "selectors": {
+                                                "from": {
+                                                    "classNames": "col-xs-6",
+                                                    "selector": {
+                                                        "id": "time"
+                                                    }
+                                                },
+                                                "to": {
+                                                    "classNames": "col-xs-6",
+                                                    "selector": {
+                                                        "id": "time"
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -1492,11 +1194,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Clarity",
-                                        "description": "Extent to which easily comprehensible metadata are available. It indicates whether a resource is accompanied by appropriate metadata and other relevant documentation.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1509,16 +1207,12 @@ define(
                                             "min": 0,
                                             "max": 100,
                                             "type": "single"
-                                        },
-                                        "template": {
-                                            "title": "Metadata completeness rate",
-                                            "description": "The percentage of completeness of metadata offers a numerical evaluation of the extent to which the resource is documented.",
-
-                                        },
-                                        "format": {
-                                            "output": "string"
                                         }
-                                    }
+                                    },
+                                    "format": {
+                                        "output": "string"
+                                    },
+
                                 }
                             }
                         },
@@ -1537,11 +1231,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Confidentiality - Policy",
-                                        "description": "Legislative measures or other formal procedures which prevent unauthorized disclosure of data that identify a person or economic entity either directly or indirectly. It consists in textual description and references to legislation or other rules related to statistical confidentiality.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1557,11 +1247,7 @@ define(
                                             }
                                         ]
                                     },
-                                    "template": {
-                                        "title": "Confidentiality - Data treatment",
-                                        "description": "Rules applied for treating the resource to ensure confidentiality and prevent unauthorized disclosure.",
 
-                                    },
                                     "format": {
                                         "output": "label"
                                     }
@@ -1571,11 +1257,7 @@ define(
                                     "selector": {
                                         "id": "dropdown"
                                     },
-                                    "template": {
-                                        "title": "Status of confidentiality",
-                                        "description": "Coded information describing the degree of confidentiality of the resource",
 
-                                    },
                                     "format": {
                                         "output": "codes"
                                     }
@@ -1600,11 +1282,7 @@ define(
                                     }
                                 ]
                             },
-                            "template": {
-                                "title": "Maintenance agency",
-                                "description": "Organization or other expert body that maintains the resource.",
 
-                            },
                             "format": {
                                 "output": "label"
                             }
@@ -1619,11 +1297,7 @@ define(
                                     "selector": {
                                         "id": "time"
                                     },
-                                    "template": {
-                                        "title": "Last update date",
-                                        "description": "Last physical update date.",
 
-                                    },
                                     "format": {
                                         "output": "date"
                                     }
@@ -1633,11 +1307,7 @@ define(
                                     "selector": {
                                         "id": "dropdown"
                                     },
-                                    "template": {
-                                        "title": "Frequency of update",
-                                        "description": "Time span between the completion of the production process of statistical data and their publication.",
 
-                                    },
                                     "format": {
                                         "output": "codes"
                                     }
@@ -1652,11 +1322,7 @@ define(
                                     "selector": {
                                         "id": "time"
                                     },
-                                    "template": {
-                                        "title": "Metadata last certified",
-                                        "description": "Latest date of certification of the metadata.",
 
-                                    },
                                     "format": {
                                         "output": "date"
                                     }
@@ -1665,11 +1331,7 @@ define(
                                     "selector": {
                                         "id": "time"
                                     },
-                                    "template": {
-                                        "title": "Metadata last posted",
-                                        "description": "Latest date of publication of the metadata. It is usually automatically updated by the metadata production system.",
 
-                                    },
                                     "format": {
                                         "output": "date"
                                     }
@@ -1678,11 +1340,7 @@ define(
                                     "selector": {
                                         "id": "time"
                                     },
-                                    "template": {
-                                        "title": "Metadata last update",
-                                        "description": "Most recent date of update of the metadata.",
 
-                                    },
                                     "format": {
                                         "output": "date"
                                     }

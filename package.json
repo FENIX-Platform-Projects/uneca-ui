@@ -8,12 +8,12 @@
     "dev": "echo \"Error: please specify a valid section to develop [e.g. npm run dev:browse_by_country]\" && exit 1",
     "dev:browse_by_country_entryPoint": "cross-env SECTIONS=browse_by_country_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "dev:browse_by_domain_entryPoint": "cross-env SECTIONS=browse_by_domain_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "dev:analysis_download": "SECTIONS=analysis_download NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "dev:analysis_download": "cross-env SECTIONS=analysis_download NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "dev:home_entryPoint": "cross-env SECTIONS=home_entryPoint NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "dev:data_management": "SECTIONS=data_management NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "dev:base": "SECTIONS=base NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "dev:data_management": "cross-env SECTIONS=data_management NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
+    "dev:base": "cross-env SECTIONS=base NODE_ENV=develop webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
     "w-dev:browse_by_country": "SET NODE_ENV=production&&SET SECTION=browse_by_country&&webpack-dev-server --content-base dev --display-error-details --progress --color --inline --hot",
-    "build": "SECTIONS=base,browse_by_country_entryPoint,browse_by_domain_entryPoint,analysis_download,home_entryPoint,data_management NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
+    "build": "cross-env SECTIONS=base,browse_by_country_entryPoint,browse_by_domain_entryPoint,analysis_download,home_entryPoint,data_management NODE_ENV=production webpack --display-error-details --profile --json  > stats.json"
   },
   "repository": {
     "type": "git",
@@ -41,11 +41,11 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "clean-webpack-plugin": "^0.1.10",
+    "cross-env": "^3.1.3",
     "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "handlebars": "^4.0.5",
-    "cross-env": "^3.1.3",
-    "extract-text-webpack-plugin": "^1.0.1",
     "handlebars-loader": "^1.4.0",
     "html-webpack-plugin": "^2.22.0",
     "image-webpack-loader": "^2.0.0",
